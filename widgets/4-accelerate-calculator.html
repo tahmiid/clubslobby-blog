@@ -1,0 +1,101 @@
+<div class="ac27" data-ac27>
+<style>
+.ac27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .ac27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .ac27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.ac27 *{box-sizing:border-box}
+.ac27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.ac27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.ac27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.ac27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.ac27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.ac27 .chip:hover{border-color:var(--muted)}
+.ac27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.ac27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.ac27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.ac27{padding:14px}}
+.ac27 .warn{font-size:12px;color:var(--ink2);background:rgba(250,178,25,.13);border:1px solid rgba(250,178,25,.4);
+  border-radius:7px;padding:8px 11px;margin:0 0 15px}
+.ac27 .warn b{color:var(--ink)}
+.ac27 select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--ring);
+  background:var(--s1);color:var(--ink);width:100%;max-width:290px;margin-bottom:15px}
+.ac27 .sl{display:grid;grid-template-columns:82px 1fr 88px;align-items:center;gap:12px;margin-bottom:10px}
+.ac27 .sl label{font-size:13px;color:var(--ink2)}
+.ac27 .sl input{width:100%;accent-color:var(--accent)}
+.ac27 .v{font-size:13px;font-variant-numeric:tabular-nums;text-align:right}
+.ac27 .v small{color:var(--muted);font-size:11.5px}
+.ac27 .out{margin-top:17px;padding-top:15px;border-top:1px solid var(--grid)}
+.ac27 .type{font-size:29px;font-weight:700;letter-spacing:-.02em;margin:0 0 2px;color:var(--accent)}
+.ac27 .bc{font-size:13px;color:var(--ink2);margin:0 0 13px}
+.ac27 .ck{display:flex;gap:8px;align-items:baseline;font-size:13px;color:var(--ink2);margin-bottom:5px}
+.ac27 .mk{font-weight:700;width:14px;flex:none}
+.ac27 .ck.ok .mk{color:var(--good)}
+.ac27 .ck.no .mk{color:var(--bad)}
+.ac27 .rch{margin-top:15px;font-size:12.5px}
+.ac27 .rch h5{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ac27 .pill{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;margin:0 4px 5px 0;
+  border:1px solid var(--ring);color:var(--muted)}
+.ac27 .pill.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+@media (max-width:600px){.ac27 .sl{grid-template-columns:70px 1fr 78px;gap:8px}}
+</style>
+<p class="hd">AcceleRATE calculator</p>
+<p class="sub">Height, Agility and Strength decide how your pro accelerates. Nothing else — not Pace.</p>
+<p class="warn"><b>Thresholds unverified for FC 26.</b> EA has never published them; these are community-documented values that have held since FIFA 23. The height and attribute limits below <em>are</em> from the Pro Clubs Lobby catalog. Spot-check in-game before trusting exact boundaries.</p>
+<span class="lbl">Archetype</span>
+<select data-arch><option value="shot-stopper">Shot Stopper · Keeper</option><option value="sweeper-keeper">Sweeper Keeper · Keeper</option><option value="progressor">Progressor · Defender</option><option value="boss" selected>Boss · Defender</option><option value="engine">Engine · Defender</option><option value="marauder">Marauder · Defender</option><option value="recycler">Recycler · Midfielder</option><option value="maestro">Maestro · Midfielder</option><option value="creator">Creator · Midfielder</option><option value="spark">Spark · Midfielder</option><option value="magician">Magician · Forward</option><option value="finisher">Finisher · Forward</option><option value="target">Target · Forward</option></select>
+<div class="sl"><label for="ac27h">Height</label><input id="ac27h" type="range" data-s="h"><span class="v" data-v="h"></span></div>
+<div class="sl"><label for="ac27a">Agility</label><input id="ac27a" type="range" data-s="a"><span class="v" data-v="a"></span></div>
+<div class="sl"><label for="ac27s">Strength</label><input id="ac27s" type="range" data-s="s"><span class="v" data-v="s"></span></div>
+<div class="out">
+  <p class="type" data-type>—</p><p class="bc" data-bc></p>
+  <div data-ck></div>
+  <div class="rch"><h5>Reachable by this archetype</h5><div data-rch></div></div>
+</div>
+<p class="foot">Height and attribute limits from the Pro Clubs Lobby catalog. Threshold rules are community-sourced.</p>
+<script>
+(function(){var R=document.querySelector('[data-ac27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var D=[{"id":"shot-stopper","name":"Shot Stopper","position":"Keeper","by":"Oliver Kahn","hMin":183,"hMax":201,"ag":[50,90],"st":[50,96],"reach":["lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","position":"Keeper","by":"Lev Yashin","hMin":178,"hMax":198,"ag":[65,90],"st":[65,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","hMin":178,"hMax":196,"ag":[70,90],"st":[70,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","hMin":180,"hMax":196,"ag":[65,90],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","hMin":168,"hMax":188,"ag":[70,92],"st":[65,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","hMin":168,"hMax":188,"ag":[70,95],"st":[60,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","hMin":173,"hMax":193,"ag":[70,92],"st":[75,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","hMin":163,"hMax":188,"ag":[75,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","hMin":163,"hMax":188,"ag":[72,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","hMin":165,"hMax":191,"ag":[72,99],"st":[70,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","hMin":178,"hMax":196,"ag":[70,92],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]}],RULES=[{"id":"explosive","name":"Explosive","h":[null,175],"stat":"agility","min":65,"diff":20},{"id":"mostly-explosive","name":"Mostly Explosive","h":[null,182],"stat":"agility","min":65,"diff":12},{"id":"controlled-explosive","name":"Controlled Explosive","h":[null,182],"stat":"agility","min":65,"diff":4},{"id":"lengthy","name":"Lengthy","h":[188,null],"stat":"strength","min":65,"diff":20},{"id":"mostly-lengthy","name":"Mostly Lengthy","h":[183,null],"stat":"strength","min":65,"diff":12},{"id":"controlled-lengthy","name":"Controlled Lengthy","h":[181,null],"stat":"strength","min":65,"diff":4}];
+var sel=R.querySelector('[data-arch]'),cur=null;
+var el={h:R.querySelector('[data-s="h"]'),a:R.querySelector('[data-s="a"]'),s:R.querySelector('[data-s="s"]')};
+var ov={h:R.querySelector('[data-v="h"]'),a:R.querySelector('[data-v="a"]'),s:R.querySelector('[data-v="s"]')};
+function classify(h,a,s){for(var i=0;i<RULES.length;i++){var r=RULES[i];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var okH=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ if(okH&&d>=r.min&&(d-o)>=r.diff)return r;}return null;}
+function checks(r,h,a,s){if(!r)return[];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var dn=r.stat==='agility'?'Agility':'Strength',on=r.stat==='agility'?'Strength':'Agility';
+ var ht=r.h[0]!=null?('Height ≥ '+r.h[0]+'cm'):('Height ≤ '+r.h[1]+'cm');
+ var ok=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ return [[ok,ht+' — you are '+h+'cm'],[d>=r.min,dn+' ≥ '+r.min+' — you are '+d],
+         [(d-o)>=r.diff,dn+' − '+on+' ≥ '+r.diff+' — you are '+(d-o)]];}
+function load(id){cur=D.filter(function(x){return x.id===id})[0];
+ el.h.min=cur.hMin;el.h.max=cur.hMax;el.h.value=Math.round((cur.hMin+cur.hMax)/2);
+ el.a.min=cur.ag[0];el.a.max=cur.ag[1];el.a.value=cur.ag[0];
+ el.s.min=cur.st[0];el.s.max=cur.st[1];el.s.value=cur.st[0];render();}
+function render(){var h=+el.h.value,a=+el.a.value,s=+el.s.value;
+ ov.h.innerHTML=h+'cm <small>'+Math.floor(h/2.54/12)+"'"+Math.round(h/2.54%12)+'"</small>';
+ ov.a.textContent=a;ov.s.textContent=s;
+ var r=classify(h,a,s);
+ R.querySelector('[data-type]').textContent=r?r.name:'Controlled';
+ R.querySelector('[data-bc]').textContent=r?'The first rule your pro satisfies.':'No Explosive or Lengthy rule is satisfied, so it falls through to Controlled.';
+ var rows=r?checks(r,h,a,s):[];
+ if(!rows.length){var best=RULES.map(function(x){var d=(x.stat==='agility')?(a-s):(s-a);return{r:x,gap:x.diff-d};})
+   .filter(function(x){return x.gap>0}).sort(function(x,y){return x.gap-y.gap})[0];
+  rows=best?[[false,'Nearest: '+best.r.name+' needs '+best.gap+' more '+(best.r.stat==='agility'?'Agility over Strength':'Strength over Agility')]]:[];}
+ R.querySelector('[data-ck]').innerHTML=rows.map(function(c){
+  return '<div class="ck '+(c[0]?'ok':'no')+'"><span class="mk">'+(c[0]?'✓':'✗')+'</span><span>'+c[1]+'</span></div>';}).join('');
+ R.querySelector('[data-rch]').innerHTML=RULES.map(function(x){
+  return '<span class="pill'+(cur.reach.indexOf(x.id)>=0?' on':'')+'">'+x.name+'</span>';}).join('')+'<span class="pill on">Controlled</span>';}
+sel.addEventListener('change',function(){load(sel.value)});
+['h','a','s'].forEach(function(k){el[k].addEventListener('input',render)});
+load(sel.value);})();
+</script>
+</div>

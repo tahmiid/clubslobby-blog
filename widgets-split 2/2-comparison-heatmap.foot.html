@@ -1,0 +1,20 @@
+<script>
+(function(){var R=document.querySelector('[data-hm27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var tip=document.createElement('div');tip.className='tip';R.appendChild(tip);
+function show(el){var r=el.getBoundingClientRect();
+ tip.innerHTML='<b>'+el.dataset.n+'</b>'+el.dataset.c+'<br>floor '+el.dataset.m+' → ceiling '+el.dataset.v;
+ tip.style.opacity='1';var t=r.top-tip.offsetHeight-8;tip.style.top=(t<4?r.bottom+8:t)+'px';
+ tip.style.left=Math.max(4,Math.min(window.innerWidth-tip.offsetWidth-4,r.left+r.width/2-tip.offsetWidth/2))+'px';}
+function hide(){tip.style.opacity='0';}
+R.querySelectorAll('td').forEach(function(c){
+ c.addEventListener('mouseenter',function(){show(c)});c.addEventListener('mouseleave',hide);
+ c.addEventListener('focus',function(){show(c)});c.addEventListener('blur',hide);});
+R.addEventListener('click',function(e){
+ var b=e.target.closest('.rb');
+ if(b){R.querySelectorAll('.det').forEach(function(d){d.hidden=(d.dataset.d!==b.dataset.a)});
+  var o=R.querySelector('.det:not([hidden])');if(o)o.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
+ var f=e.target.closest('.chip');
+ if(f){R.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===f))});
+  R.querySelectorAll('tbody tr').forEach(function(tr){tr.style.display=(f.dataset.f==='all'||tr.dataset.p===f.dataset.f)?'':'none'});}});
+window.addEventListener('scroll',hide,{passive:true});})();
+</script>

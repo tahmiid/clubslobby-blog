@@ -1,0 +1,47 @@
+<style>
+.ab27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .ab27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .ab27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.ab27 *{box-sizing:border-box}
+.ab27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.ab27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.ab27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.ab27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.ab27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.ab27 .chip:hover{border-color:var(--muted)}
+.ab27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.ab27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.ab27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.ab27{padding:14px}}
+.ab27 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:7px;margin-bottom:4px}
+.ab27 .card{font:inherit;text-align:left;background:transparent;border:1px solid var(--ring);border-radius:9px;
+  padding:9px 11px;cursor:pointer;color:var(--ink)}
+.ab27 .card:hover{border-color:var(--muted)}
+.ab27 .card[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.ab27 .card b{display:block;font-size:14px;font-weight:650}
+.ab27 .card span{font-size:11.5px;color:var(--muted)}
+.ab27 .det{margin-top:16px;padding-top:16px;border-top:1px solid var(--grid)}
+.ab27 .det h4{margin:0;font-size:18px}
+.ab27 .det .who{margin:1px 0 9px;font-size:12.5px;color:var(--muted)}
+.ab27 .det .desc{margin:0 0 14px;font-size:14px;color:var(--ink2);max-width:62ch}
+.ab27 .keys{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:15px}
+.ab27 .key{font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--bar);color:var(--ink2)}
+.ab27 h5{margin:0 0 7px;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ab27 .perk{font-size:13.5px;color:var(--ink2);margin-bottom:6px}
+.ab27 .perk b{color:var(--ink)}
+.ab27 .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:15px}
+.ab27 .spec{border:1px solid var(--ring);border-radius:9px;padding:11px}
+.ab27 .spec b{font-size:13.5px}
+.ab27 .spec .sby{font-size:11.5px;color:var(--muted);margin-left:5px}
+.ab27 .spec p{margin:5px 0 8px;font-size:12.5px;color:var(--ink2)}
+.ab27 .crit{display:flex;flex-wrap:wrap;gap:4px}
+.ab27 .crit span{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);color:var(--muted);
+  font-variant-numeric:tabular-nums}
+</style>

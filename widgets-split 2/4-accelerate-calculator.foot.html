@@ -1,0 +1,39 @@
+<script>
+(function(){var R=document.querySelector('[data-ac27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var D=[{"id":"shot-stopper","name":"Shot Stopper","position":"Keeper","by":"Oliver Kahn","hMin":183,"hMax":201,"ag":[50,90],"st":[50,96],"reach":["lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","position":"Keeper","by":"Lev Yashin","hMin":178,"hMax":198,"ag":[65,90],"st":[65,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","hMin":178,"hMax":196,"ag":[70,90],"st":[70,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","hMin":180,"hMax":196,"ag":[65,90],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","hMin":168,"hMax":188,"ag":[70,92],"st":[65,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","hMin":168,"hMax":188,"ag":[70,95],"st":[60,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","hMin":173,"hMax":193,"ag":[70,92],"st":[75,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","hMin":163,"hMax":188,"ag":[75,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","hMin":163,"hMax":188,"ag":[72,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","hMin":165,"hMax":191,"ag":[72,99],"st":[70,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","hMin":178,"hMax":196,"ag":[70,92],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]}],RULES=[{"id":"explosive","name":"Explosive","h":[null,175],"stat":"agility","min":65,"diff":20},{"id":"mostly-explosive","name":"Mostly Explosive","h":[null,182],"stat":"agility","min":65,"diff":12},{"id":"controlled-explosive","name":"Controlled Explosive","h":[null,182],"stat":"agility","min":65,"diff":4},{"id":"lengthy","name":"Lengthy","h":[188,null],"stat":"strength","min":65,"diff":20},{"id":"mostly-lengthy","name":"Mostly Lengthy","h":[183,null],"stat":"strength","min":65,"diff":12},{"id":"controlled-lengthy","name":"Controlled Lengthy","h":[181,null],"stat":"strength","min":65,"diff":4}];
+var sel=R.querySelector('[data-arch]'),cur=null;
+var el={h:R.querySelector('[data-s="h"]'),a:R.querySelector('[data-s="a"]'),s:R.querySelector('[data-s="s"]')};
+var ov={h:R.querySelector('[data-v="h"]'),a:R.querySelector('[data-v="a"]'),s:R.querySelector('[data-v="s"]')};
+function classify(h,a,s){for(var i=0;i<RULES.length;i++){var r=RULES[i];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var okH=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ if(okH&&d>=r.min&&(d-o)>=r.diff)return r;}return null;}
+function checks(r,h,a,s){if(!r)return[];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var dn=r.stat==='agility'?'Agility':'Strength',on=r.stat==='agility'?'Strength':'Agility';
+ var ht=r.h[0]!=null?('Height ≥ '+r.h[0]+'cm'):('Height ≤ '+r.h[1]+'cm');
+ var ok=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ return [[ok,ht+' — you are '+h+'cm'],[d>=r.min,dn+' ≥ '+r.min+' — you are '+d],
+         [(d-o)>=r.diff,dn+' − '+on+' ≥ '+r.diff+' — you are '+(d-o)]];}
+function load(id){cur=D.filter(function(x){return x.id===id})[0];
+ el.h.min=cur.hMin;el.h.max=cur.hMax;el.h.value=Math.round((cur.hMin+cur.hMax)/2);
+ el.a.min=cur.ag[0];el.a.max=cur.ag[1];el.a.value=cur.ag[0];
+ el.s.min=cur.st[0];el.s.max=cur.st[1];el.s.value=cur.st[0];render();}
+function render(){var h=+el.h.value,a=+el.a.value,s=+el.s.value;
+ ov.h.innerHTML=h+'cm <small>'+Math.floor(h/2.54/12)+"'"+Math.round(h/2.54%12)+'"</small>';
+ ov.a.textContent=a;ov.s.textContent=s;
+ var r=classify(h,a,s);
+ R.querySelector('[data-type]').textContent=r?r.name:'Controlled';
+ R.querySelector('[data-bc]').textContent=r?'The first rule your pro satisfies.':'No Explosive or Lengthy rule is satisfied, so it falls through to Controlled.';
+ var rows=r?checks(r,h,a,s):[];
+ if(!rows.length){var best=RULES.map(function(x){var d=(x.stat==='agility')?(a-s):(s-a);return{r:x,gap:x.diff-d};})
+   .filter(function(x){return x.gap>0}).sort(function(x,y){return x.gap-y.gap})[0];
+  rows=best?[[false,'Nearest: '+best.r.name+' needs '+best.gap+' more '+(best.r.stat==='agility'?'Agility over Strength':'Strength over Agility')]]:[];}
+ R.querySelector('[data-ck]').innerHTML=rows.map(function(c){
+  return '<div class="ck '+(c[0]?'ok':'no')+'"><span class="mk">'+(c[0]?'✓':'✗')+'</span><span>'+c[1]+'</span></div>';}).join('');
+ R.querySelector('[data-rch]').innerHTML=RULES.map(function(x){
+  return '<span class="pill'+(cur.reach.indexOf(x.id)>=0?' on':'')+'">'+x.name+'</span>';}).join('')+'<span class="pill on">Controlled</span>';}
+sel.addEventListener('change',function(){load(sel.value)});
+['h','a','s'].forEach(function(k){el[k].addEventListener('input',render)});
+load(sel.value);})();
+</script>

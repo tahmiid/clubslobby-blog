@@ -1,0 +1,122 @@
+<p>Four questions, no sign-up, answers update as you click:</p>
+
+<!--kg-card-begin: html-->
+<div class="qz27" data-qz27>
+<style>
+.qz27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .qz27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .qz27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.qz27 *{box-sizing:border-box}
+.qz27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.qz27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.qz27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.qz27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.qz27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.qz27 .chip:hover{border-color:var(--muted)}
+.qz27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.qz27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.qz27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.qz27{padding:14px}}
+.qz27 .q{margin-bottom:13px}
+.qz27 .q.off{display:none}
+.qz27 .res{margin-top:18px;padding-top:16px;border-top:1px solid var(--grid)}
+.qz27 .empty{font-size:13.5px;color:var(--muted);margin:0}
+.qz27 .row{display:grid;grid-template-columns:24px 1fr;gap:11px;align-items:start;margin-bottom:13px}
+.qz27 .n{font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted);padding-top:2px}
+.qz27 .nm{font-size:15.5px;font-weight:650;margin:0}
+.qz27 .nm span{font-weight:400;font-size:12.5px;color:var(--muted);margin-left:6px}
+.qz27 .tr{height:10px;background:var(--bar);border-radius:5px;margin:6px 0 5px;overflow:hidden}
+.qz27 .fl{display:block;height:10px;background:var(--accent2);border-radius:5px;transition:width .35s ease}
+.qz27 .row.win .fl{background:var(--accent)}
+.qz27 .why{font-size:13px;color:var(--ink2);margin:0}
+.qz27 .why b{font-weight:650;color:var(--ink)}
+.qz27 .rst{font:inherit;font-size:12.5px;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0}
+</style>
+<p class="hd">Which archetype should you play?</p>
+<p class="sub">Four questions, scored against every archetype's real attribute ceilings — not opinion.</p>
+
+<div class="q"><span class="lbl">1 · Where do you want to play?</span><div class="chips">
+<button type="button" class="chip" data-q="pos" data-v="Anywhere">Anywhere</button><button type="button" class="chip" data-q="pos" data-v="Defender">Defender</button><button type="button" class="chip" data-q="pos" data-v="Midfielder">Midfielder</button><button type="button" class="chip" data-q="pos" data-v="Forward">Forward</button><button type="button" class="chip" data-q="pos" data-v="Keeper">Keeper</button>
+</div></div>
+<div class="q gk off"><span class="lbl">2 · What kind of keeper?</span><div class="chips">
+<button type="button" class="chip" data-q="gk" data-v="shot-stopper">Stay on my line and make saves</button>
+<button type="button" class="chip" data-q="gk" data-v="sweeper-keeper">Sweep behind a high line</button>
+</div></div>
+<div class="q of"><span class="lbl">2 · What do you want to be best at?</span><div class="chips"><button type="button" class="chip" data-q="best" data-v="Pace">Pace</button><button type="button" class="chip" data-q="best" data-v="Ball Control">Ball Control</button><button type="button" class="chip" data-q="best" data-v="Passing">Passing</button><button type="button" class="chip" data-q="best" data-v="Scoring">Scoring</button><button type="button" class="chip" data-q="best" data-v="Defending">Defending</button><button type="button" class="chip" data-q="best" data-v="Physical">Physical</button></div></div>
+<div class="q of"><span class="lbl">3 · And solid at?</span><div class="chips"><button type="button" class="chip" data-q="good" data-v="Pace">Pace</button><button type="button" class="chip" data-q="good" data-v="Ball Control">Ball Control</button><button type="button" class="chip" data-q="good" data-v="Passing">Passing</button><button type="button" class="chip" data-q="good" data-v="Scoring">Scoring</button><button type="button" class="chip" data-q="good" data-v="Defending">Defending</button><button type="button" class="chip" data-q="good" data-v="Physical">Physical</button></div></div>
+<div class="q of"><span class="lbl">4 · What can you live without?</span><div class="chips"><button type="button" class="chip" data-q="weak" data-v="Pace">Pace</button><button type="button" class="chip" data-q="weak" data-v="Ball Control">Ball Control</button><button type="button" class="chip" data-q="weak" data-v="Passing">Passing</button><button type="button" class="chip" data-q="weak" data-v="Scoring">Scoring</button><button type="button" class="chip" data-q="weak" data-v="Defending">Defending</button><button type="button" class="chip" data-q="weak" data-v="Physical">Physical</button></div></div>
+
+<div class="res"><p class="empty">Answer above and your best-fit archetypes appear here.</p></div>
+<p class="foot">Weighting: best × 3, solid × 1.5, live-without × −0.5, applied to each archetype's category ceiling normalised across the outfield pool. <button type="button" class="rst">Start over</button></p>
+<script>
+(function(){var R=document.querySelector('[data-qz27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var A=[{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","perk":"Restarter","c":{"Pace":90,"Ball Control":95,"Passing":92,"Scoring":87,"Defending":97,"Physical":96},"n":{"Pace":0,"Ball Control":0.5,"Passing":0.333,"Scoring":0,"Defending":0.941,"Physical":0.857},"r":{"Pace":8,"Ball Control":7,"Passing":10,"Scoring":9,"Defending":2,"Physical":2},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":true,"Defending":false,"Physical":true}},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","perk":"Shuffler","c":{"Pace":90,"Ball Control":92,"Passing":89,"Scoring":87,"Defending":98,"Physical":97},"n":{"Pace":0,"Ball Control":0,"Passing":0,"Scoring":0,"Defending":1,"Physical":1},"r":{"Pace":8,"Ball Control":11,"Passing":11,"Scoring":9,"Defending":1,"Physical":1},"t":{"Pace":true,"Ball Control":false,"Passing":false,"Scoring":true,"Defending":false,"Physical":false}},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","perk":"Tracker","c":{"Pace":92,"Ball Control":93,"Passing":94,"Scoring":87,"Defending":93,"Physical":96},"n":{"Pace":0.286,"Ball Control":0.167,"Passing":0.556,"Scoring":0,"Defending":0.706,"Physical":0.857},"r":{"Pace":5,"Ball Control":10,"Passing":6,"Scoring":9,"Defending":5,"Physical":2},"t":{"Pace":true,"Ball Control":false,"Passing":true,"Scoring":true,"Defending":false,"Physical":true}},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","perk":"High Speed Crosser","c":{"Pace":94,"Ball Control":96,"Passing":94,"Scoring":92,"Defending":95,"Physical":95},"n":{"Pace":0.571,"Ball Control":0.667,"Passing":0.556,"Scoring":0.417,"Defending":0.824,"Physical":0.714},"r":{"Pace":4,"Ball Control":6,"Passing":6,"Scoring":8,"Defending":3,"Physical":4},"t":{"Pace":false,"Ball Control":false,"Passing":true,"Scoring":false,"Defending":true,"Physical":true}},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","perk":"Press and Pass","c":{"Pace":90,"Ball Control":95,"Passing":95,"Scoring":93,"Defending":95,"Physical":95},"n":{"Pace":0,"Ball Control":0.5,"Passing":0.667,"Scoring":0.5,"Defending":0.824,"Physical":0.714},"r":{"Pace":8,"Ball Control":7,"Passing":5,"Scoring":7,"Defending":3,"Physical":4},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":false,"Defending":true,"Physical":true}},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","perk":"Fly Trap","c":{"Pace":90,"Ball Control":98,"Passing":97,"Scoring":97,"Defending":89,"Physical":92},"n":{"Pace":0,"Ball Control":1,"Passing":0.889,"Scoring":0.833,"Defending":0.471,"Physical":0.286},"r":{"Pace":8,"Ball Control":1,"Passing":2,"Scoring":3,"Defending":6,"Physical":8},"t":{"Pace":true,"Ball Control":true,"Passing":true,"Scoring":true,"Defending":false,"Physical":true}},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","perk":"Grasshopper Passer","c":{"Pace":92,"Ball Control":97,"Passing":98,"Scoring":98,"Defending":87,"Physical":92},"n":{"Pace":0.286,"Ball Control":0.833,"Passing":1,"Scoring":0.917,"Defending":0.353,"Physical":0.286},"r":{"Pace":5,"Ball Control":5,"Passing":1,"Scoring":2,"Defending":7,"Physical":8},"t":{"Pace":true,"Ball Control":false,"Passing":false,"Scoring":false,"Defending":false,"Physical":true}},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","perk":"Bail Out","c":{"Pace":97,"Ball Control":98,"Passing":97,"Scoring":95,"Defending":82,"Physical":90},"n":{"Pace":1,"Ball Control":1,"Passing":0.889,"Scoring":0.667,"Defending":0.059,"Physical":0},"r":{"Pace":1,"Ball Control":1,"Passing":2,"Scoring":6,"Defending":10,"Physical":10},"t":{"Pace":false,"Ball Control":true,"Passing":true,"Scoring":false,"Defending":false,"Physical":true}},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","perk":"Getaway Driver","c":{"Pace":95,"Ball Control":98,"Passing":96,"Scoring":96,"Defending":81,"Physical":90},"n":{"Pace":0.714,"Ball Control":1,"Passing":0.778,"Scoring":0.75,"Defending":0,"Physical":0},"r":{"Pace":2,"Ball Control":1,"Passing":4,"Scoring":5,"Defending":11,"Physical":10},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":false,"Defending":false,"Physical":true}},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","perk":"Fake to Real","c":{"Pace":95,"Ball Control":98,"Passing":94,"Scoring":99,"Defending":83,"Physical":93},"n":{"Pace":0.714,"Ball Control":1,"Passing":0.556,"Scoring":1,"Defending":0.118,"Physical":0.429},"r":{"Pace":2,"Ball Control":1,"Passing":6,"Scoring":1,"Defending":8,"Physical":7},"t":{"Pace":true,"Ball Control":true,"Passing":true,"Scoring":false,"Defending":true,"Physical":false}},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","perk":"6th Sense","c":{"Pace":91,"Ball Control":94,"Passing":93,"Scoring":97,"Defending":83,"Physical":95},"n":{"Pace":0.143,"Ball Control":0.333,"Passing":0.444,"Scoring":0.833,"Defending":0.118,"Physical":0.714},"r":{"Pace":7,"Ball Control":9,"Passing":9,"Scoring":3,"Defending":8,"Physical":4},"t":{"Pace":false,"Ball Control":false,"Passing":false,"Scoring":true,"Defending":true,"Physical":true}}],GK=[{"id":"shot-stopper","name":"Shot Stopper","by":"Oliver Kahn","desc":"Unphased when faced with an attacker one-on-one, can be relied upon to make difficult saves.","perks":["Low Shot Saver","Ready to Act"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","by":"Lev Yashin","desc":"A modern-day keeper, comfortable with the ball at their feet, and with a high defensive line.","perks":["Back Option","Rush Specialist"]}];
+var S={pos:null,best:null,good:null,weak:null,gk:null},res=R.querySelector('.res');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function sync(){
+ R.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',String(S[b.dataset.q]===b.dataset.v))});
+ ['best','good','weak'].forEach(function(q){R.querySelectorAll('.chip[data-q="'+q+'"]').forEach(function(b){
+  var taken=['best','good','weak'].some(function(o){return o!==q&&S[o]===b.dataset.v});
+  b.disabled=taken;if(taken&&S[q]===b.dataset.v)S[q]=null;})});
+ var gk=S.pos==='Keeper';
+ R.querySelector('.gk').classList.toggle('off',!gk);
+ R.querySelectorAll('.of').forEach(function(e){e.classList.toggle('off',gk)});}
+function render(){
+ if(S.pos==='Keeper'){
+  if(!S.gk){res.innerHTML='<p class="empty">Pick a keeper style above.</p>';return;}
+  var k=GK.filter(function(x){return x.id===S.gk})[0],o=GK.filter(function(x){return x.id!==S.gk})[0];
+  res.innerHTML='<div class="row win"><span class="n">1</span><div><p class="nm">'+esc(k.name)+'<span>'+esc(k.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:100%"></span></div><p class="why">'+esc(k.desc)+' Perks: <b>'+k.perks.map(esc).join('</b>, <b>')+'</b>.</p></div></div>'+
+   '<div class="row"><span class="n">2</span><div><p class="nm">'+esc(o.name)+'<span>'+esc(o.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:45%"></span></div><p class="why">The other option: '+esc(o.desc)+'</p></div></div>';return;}
+ if(!S.best){res.innerHTML='<p class="empty">Answer above and your best-fit archetypes appear here.</p>';return;}
+ var p=A.filter(function(a){return !S.pos||S.pos==='Anywhere'||a.position===S.pos});
+ if(!p.length){res.innerHTML='<p class="empty">No archetype matches that position.</p>';return;}
+ p.forEach(function(a){a._s=3*a.n[S.best]+(S.good?1.5*a.n[S.good]:0)-(S.weak?0.5*a.n[S.weak]:0)});
+ p.sort(function(x,y){return y._s-x._s});
+ var lo=Math.min.apply(null,p.map(function(a){return a._s})),hi=Math.max.apply(null,p.map(function(a){return a._s}));
+ res.innerHTML=p.slice(0,3).map(function(a,i){
+  var w=hi===lo?100:Math.round(12+88*((a._s-lo)/(hi-lo)));
+  function part(c){return '<b>'+a.c[c]+'</b> '+c.toLowerCase()+(a.r[c]===1?(a.t[c]?' (joint highest)':' (highest of any archetype)'):' ('+(a.t[c]?'joint ':'')+'#'+a.r[c]+' of 11)');}
+  var why=part(S.best);if(S.good)why+=', '+part(S.good);
+  why+=S.weak?'. Gives up '+S.weak.toLowerCase()+' at '+a.c[S.weak]+'.':'.';
+  return '<div class="row'+(i===0?' win':'')+'"><span class="n">'+(i+1)+'</span><div>'+
+   '<p class="nm">'+esc(a.name)+'<span>'+esc(a.position)+' · '+esc(a.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:'+w+'%"></span></div>'+
+   '<p class="why">'+why+' Signature perk: <b>'+esc(a.perk)+'</b>.</p></div></div>';}).join('');}
+R.addEventListener('click',function(e){
+ var b=e.target.closest('.chip');
+ if(b&&!b.disabled){S[b.dataset.q]=(S[b.dataset.q]===b.dataset.v)?null:b.dataset.v;
+  if(b.dataset.q==='pos')S.gk=null;sync();render();return;}
+ if(e.target.closest('.rst')){S={pos:null,best:null,good:null,weak:null,gk:null};sync();render();}});
+sync();render();})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>How it decides</h2>
+<p>No hand-written recommendations. Each outfield archetype has a ceiling in six attribute categories, taken from the Pro Clubs Lobby catalog. Those ceilings sit in different bands — every archetype has decent Ball Control, almost none have elite Defending — so each category is normalised across the pool first. Otherwise Ball Control would quietly decide every answer.</p>
+<p>Your picks are then weighted: what you want to be best at counts triple, solid at counts one-and-a-half, and what you'll give up subtracts a little as a tiebreak. The bars show the spread across the whole pool, so a narrow win looks narrow.</p>
+
+<h2>If you'd rather just read it</h2>
+<p>Highest ceiling in each category:</p>
+<ul><li><strong>Pace</strong> — Spark (97)</li><li><strong>Ball Control</strong> — Maestro (98)</li><li><strong>Passing</strong> — Creator (98)</li><li><strong>Scoring</strong> — Finisher (99)</li><li><strong>Defending</strong> — Boss (98)</li><li><strong>Physical</strong> — Boss (97)</li></ul>
+<p>Two things the quiz can't weigh. <strong>Your club's shape matters more than your preference</strong> — a team of Magicians loses to an organised side, and the Recycler nobody wants to play is often why good clubs win. And <strong>perks amplify habits rather than creating them</strong>: Cut Back Specialist does nothing for a player who cuts inside and shoots every time.</p>
+
+<h2>Keepers are a different question</h2>
+<p>There are only two keeper archetypes and the choice isn't really about attributes — it's whether your defence plays a high line. Shot Stopper is built to keep the ball out and nothing else. Sweeper Keeper is comfortable receiving back passes and rushing off the line, which is an asset behind a high line and a liability behind a defence that just clears it.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Which archetype is best in Pro Clubs?</h3>
+<p>There isn't one. Archetypes are balanced against each other rather than ranked. The strongest pick is the one filling a gap in your club.</p>
+<h3>Can I change archetype later?</h3>
+<p>Yes, though it resets the progression tied to that archetype.</p>
+<h3>Does this account for playstyles?</h3>
+<p>Not yet — it scores attribute ceilings only. Signature playstyles and the PlayStyle+ options attached to each specialization are a separate layer on top of the archetype choice.</p>

@@ -1,0 +1,115 @@
+<script>
+/* ── 1-archetype-browser ── */
+(function(){var R=document.querySelector('[data-ab27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){
+  var c=e.target.closest('.card');
+  if(c){R.querySelectorAll('.card').forEach(function(x){x.setAttribute('aria-pressed',String(x===c))});
+    R.querySelectorAll('.det').forEach(function(d){d.hidden=(d.dataset.d!==c.dataset.a)});
+    var o=R.querySelector('.det:not([hidden])');if(o)o.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
+  var f=e.target.closest('.chip');
+  if(f){R.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===f))});
+    R.querySelectorAll('.card').forEach(function(x){x.style.display=(f.dataset.f==='All'||x.dataset.p===f.dataset.f)?'':'none'});}
+});})();
+
+/* ── 2-comparison-heatmap ── */
+(function(){var R=document.querySelector('[data-hm27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var tip=document.createElement('div');tip.className='tip';R.appendChild(tip);
+function show(el){var r=el.getBoundingClientRect();
+ tip.innerHTML='<b>'+el.dataset.n+'</b>'+el.dataset.c+'<br>floor '+el.dataset.m+' → ceiling '+el.dataset.v;
+ tip.style.opacity='1';var t=r.top-tip.offsetHeight-8;tip.style.top=(t<4?r.bottom+8:t)+'px';
+ tip.style.left=Math.max(4,Math.min(window.innerWidth-tip.offsetWidth-4,r.left+r.width/2-tip.offsetWidth/2))+'px';}
+function hide(){tip.style.opacity='0';}
+R.querySelectorAll('td').forEach(function(c){
+ c.addEventListener('mouseenter',function(){show(c)});c.addEventListener('mouseleave',hide);
+ c.addEventListener('focus',function(){show(c)});c.addEventListener('blur',hide);});
+R.addEventListener('click',function(e){
+ var b=e.target.closest('.rb');
+ if(b){R.querySelectorAll('.det').forEach(function(d){d.hidden=(d.dataset.d!==b.dataset.a)});
+  var o=R.querySelector('.det:not([hidden])');if(o)o.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
+ var f=e.target.closest('.chip');
+ if(f){R.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===f))});
+  R.querySelectorAll('tbody tr').forEach(function(tr){tr.style.display=(f.dataset.f==='all'||tr.dataset.p===f.dataset.f)?'':'none'});}});
+window.addEventListener('scroll',hide,{passive:true});})();
+
+/* ── 3-archetype-quiz ── */
+(function(){var R=document.querySelector('[data-qz27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var A=[{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","perk":"Restarter","c":{"Pace":90,"Ball Control":95,"Passing":92,"Scoring":87,"Defending":97,"Physical":96},"n":{"Pace":0,"Ball Control":0.5,"Passing":0.333,"Scoring":0,"Defending":0.941,"Physical":0.857},"r":{"Pace":8,"Ball Control":7,"Passing":10,"Scoring":9,"Defending":2,"Physical":2},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":true,"Defending":false,"Physical":true}},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","perk":"Shuffler","c":{"Pace":90,"Ball Control":92,"Passing":89,"Scoring":87,"Defending":98,"Physical":97},"n":{"Pace":0,"Ball Control":0,"Passing":0,"Scoring":0,"Defending":1,"Physical":1},"r":{"Pace":8,"Ball Control":11,"Passing":11,"Scoring":9,"Defending":1,"Physical":1},"t":{"Pace":true,"Ball Control":false,"Passing":false,"Scoring":true,"Defending":false,"Physical":false}},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","perk":"Tracker","c":{"Pace":92,"Ball Control":93,"Passing":94,"Scoring":87,"Defending":93,"Physical":96},"n":{"Pace":0.286,"Ball Control":0.167,"Passing":0.556,"Scoring":0,"Defending":0.706,"Physical":0.857},"r":{"Pace":5,"Ball Control":10,"Passing":6,"Scoring":9,"Defending":5,"Physical":2},"t":{"Pace":true,"Ball Control":false,"Passing":true,"Scoring":true,"Defending":false,"Physical":true}},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","perk":"High Speed Crosser","c":{"Pace":94,"Ball Control":96,"Passing":94,"Scoring":92,"Defending":95,"Physical":95},"n":{"Pace":0.571,"Ball Control":0.667,"Passing":0.556,"Scoring":0.417,"Defending":0.824,"Physical":0.714},"r":{"Pace":4,"Ball Control":6,"Passing":6,"Scoring":8,"Defending":3,"Physical":4},"t":{"Pace":false,"Ball Control":false,"Passing":true,"Scoring":false,"Defending":true,"Physical":true}},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","perk":"Press and Pass","c":{"Pace":90,"Ball Control":95,"Passing":95,"Scoring":93,"Defending":95,"Physical":95},"n":{"Pace":0,"Ball Control":0.5,"Passing":0.667,"Scoring":0.5,"Defending":0.824,"Physical":0.714},"r":{"Pace":8,"Ball Control":7,"Passing":5,"Scoring":7,"Defending":3,"Physical":4},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":false,"Defending":true,"Physical":true}},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","perk":"Fly Trap","c":{"Pace":90,"Ball Control":98,"Passing":97,"Scoring":97,"Defending":89,"Physical":92},"n":{"Pace":0,"Ball Control":1,"Passing":0.889,"Scoring":0.833,"Defending":0.471,"Physical":0.286},"r":{"Pace":8,"Ball Control":1,"Passing":2,"Scoring":3,"Defending":6,"Physical":8},"t":{"Pace":true,"Ball Control":true,"Passing":true,"Scoring":true,"Defending":false,"Physical":true}},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","perk":"Grasshopper Passer","c":{"Pace":92,"Ball Control":97,"Passing":98,"Scoring":98,"Defending":87,"Physical":92},"n":{"Pace":0.286,"Ball Control":0.833,"Passing":1,"Scoring":0.917,"Defending":0.353,"Physical":0.286},"r":{"Pace":5,"Ball Control":5,"Passing":1,"Scoring":2,"Defending":7,"Physical":8},"t":{"Pace":true,"Ball Control":false,"Passing":false,"Scoring":false,"Defending":false,"Physical":true}},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","perk":"Bail Out","c":{"Pace":97,"Ball Control":98,"Passing":97,"Scoring":95,"Defending":82,"Physical":90},"n":{"Pace":1,"Ball Control":1,"Passing":0.889,"Scoring":0.667,"Defending":0.059,"Physical":0},"r":{"Pace":1,"Ball Control":1,"Passing":2,"Scoring":6,"Defending":10,"Physical":10},"t":{"Pace":false,"Ball Control":true,"Passing":true,"Scoring":false,"Defending":false,"Physical":true}},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","perk":"Getaway Driver","c":{"Pace":95,"Ball Control":98,"Passing":96,"Scoring":96,"Defending":81,"Physical":90},"n":{"Pace":0.714,"Ball Control":1,"Passing":0.778,"Scoring":0.75,"Defending":0,"Physical":0},"r":{"Pace":2,"Ball Control":1,"Passing":4,"Scoring":5,"Defending":11,"Physical":10},"t":{"Pace":true,"Ball Control":true,"Passing":false,"Scoring":false,"Defending":false,"Physical":true}},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","perk":"Fake to Real","c":{"Pace":95,"Ball Control":98,"Passing":94,"Scoring":99,"Defending":83,"Physical":93},"n":{"Pace":0.714,"Ball Control":1,"Passing":0.556,"Scoring":1,"Defending":0.118,"Physical":0.429},"r":{"Pace":2,"Ball Control":1,"Passing":6,"Scoring":1,"Defending":8,"Physical":7},"t":{"Pace":true,"Ball Control":true,"Passing":true,"Scoring":false,"Defending":true,"Physical":false}},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","perk":"6th Sense","c":{"Pace":91,"Ball Control":94,"Passing":93,"Scoring":97,"Defending":83,"Physical":95},"n":{"Pace":0.143,"Ball Control":0.333,"Passing":0.444,"Scoring":0.833,"Defending":0.118,"Physical":0.714},"r":{"Pace":7,"Ball Control":9,"Passing":9,"Scoring":3,"Defending":8,"Physical":4},"t":{"Pace":false,"Ball Control":false,"Passing":false,"Scoring":true,"Defending":true,"Physical":true}}],GK=[{"id":"shot-stopper","name":"Shot Stopper","by":"Oliver Kahn","desc":"Unphased when faced with an attacker one-on-one, can be relied upon to make difficult saves.","perks":["Low Shot Saver","Ready to Act"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","by":"Lev Yashin","desc":"A modern-day keeper, comfortable with the ball at their feet, and with a high defensive line.","perks":["Back Option","Rush Specialist"]}];
+var S={pos:null,best:null,good:null,weak:null,gk:null},res=R.querySelector('.res');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function sync(){
+ R.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',String(S[b.dataset.q]===b.dataset.v))});
+ ['best','good','weak'].forEach(function(q){R.querySelectorAll('.chip[data-q="'+q+'"]').forEach(function(b){
+  var taken=['best','good','weak'].some(function(o){return o!==q&&S[o]===b.dataset.v});
+  b.disabled=taken;if(taken&&S[q]===b.dataset.v)S[q]=null;})});
+ var gk=S.pos==='Keeper';
+ R.querySelector('.gk').classList.toggle('off',!gk);
+ R.querySelectorAll('.of').forEach(function(e){e.classList.toggle('off',gk)});}
+function render(){
+ if(S.pos==='Keeper'){
+  if(!S.gk){res.innerHTML='<p class="empty">Pick a keeper style above.</p>';return;}
+  var k=GK.filter(function(x){return x.id===S.gk})[0],o=GK.filter(function(x){return x.id!==S.gk})[0];
+  res.innerHTML='<div class="row win"><span class="n">1</span><div><p class="nm">'+esc(k.name)+'<span>'+esc(k.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:100%"></span></div><p class="why">'+esc(k.desc)+' Perks: <b>'+k.perks.map(esc).join('</b>, <b>')+'</b>.</p></div></div>'+
+   '<div class="row"><span class="n">2</span><div><p class="nm">'+esc(o.name)+'<span>'+esc(o.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:45%"></span></div><p class="why">The other option: '+esc(o.desc)+'</p></div></div>';return;}
+ if(!S.best){res.innerHTML='<p class="empty">Answer above and your best-fit archetypes appear here.</p>';return;}
+ var p=A.filter(function(a){return !S.pos||S.pos==='Anywhere'||a.position===S.pos});
+ if(!p.length){res.innerHTML='<p class="empty">No archetype matches that position.</p>';return;}
+ p.forEach(function(a){a._s=3*a.n[S.best]+(S.good?1.5*a.n[S.good]:0)-(S.weak?0.5*a.n[S.weak]:0)});
+ p.sort(function(x,y){return y._s-x._s});
+ var lo=Math.min.apply(null,p.map(function(a){return a._s})),hi=Math.max.apply(null,p.map(function(a){return a._s}));
+ res.innerHTML=p.slice(0,3).map(function(a,i){
+  var w=hi===lo?100:Math.round(12+88*((a._s-lo)/(hi-lo)));
+  function part(c){return '<b>'+a.c[c]+'</b> '+c.toLowerCase()+(a.r[c]===1?(a.t[c]?' (joint highest)':' (highest of any archetype)'):' ('+(a.t[c]?'joint ':'')+'#'+a.r[c]+' of 11)');}
+  var why=part(S.best);if(S.good)why+=', '+part(S.good);
+  why+=S.weak?'. Gives up '+S.weak.toLowerCase()+' at '+a.c[S.weak]+'.':'.';
+  return '<div class="row'+(i===0?' win':'')+'"><span class="n">'+(i+1)+'</span><div>'+
+   '<p class="nm">'+esc(a.name)+'<span>'+esc(a.position)+' · '+esc(a.by)+'</span></p>'+
+   '<div class="tr"><span class="fl" style="width:'+w+'%"></span></div>'+
+   '<p class="why">'+why+' Signature perk: <b>'+esc(a.perk)+'</b>.</p></div></div>';}).join('');}
+R.addEventListener('click',function(e){
+ var b=e.target.closest('.chip');
+ if(b&&!b.disabled){S[b.dataset.q]=(S[b.dataset.q]===b.dataset.v)?null:b.dataset.v;
+  if(b.dataset.q==='pos')S.gk=null;sync();render();return;}
+ if(e.target.closest('.rst')){S={pos:null,best:null,good:null,weak:null,gk:null};sync();render();}});
+sync();render();})();
+
+/* ── 4-accelerate-calculator ── */
+(function(){var R=document.querySelector('[data-ac27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var D=[{"id":"shot-stopper","name":"Shot Stopper","position":"Keeper","by":"Oliver Kahn","hMin":183,"hMax":201,"ag":[50,90],"st":[50,96],"reach":["lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","position":"Keeper","by":"Lev Yashin","hMin":178,"hMax":198,"ag":[65,90],"st":[65,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","hMin":178,"hMax":196,"ag":[70,90],"st":[70,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","hMin":180,"hMax":196,"ag":[65,90],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","hMin":168,"hMax":188,"ag":[70,92],"st":[65,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","hMin":168,"hMax":188,"ag":[70,95],"st":[60,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","hMin":173,"hMax":193,"ag":[70,92],"st":[75,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","hMin":163,"hMax":188,"ag":[75,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","hMin":163,"hMax":188,"ag":[72,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","hMin":165,"hMax":191,"ag":[72,99],"st":[70,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","hMin":178,"hMax":196,"ag":[70,92],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]}],RULES=[{"id":"explosive","name":"Explosive","h":[null,175],"stat":"agility","min":65,"diff":20},{"id":"mostly-explosive","name":"Mostly Explosive","h":[null,182],"stat":"agility","min":65,"diff":12},{"id":"controlled-explosive","name":"Controlled Explosive","h":[null,182],"stat":"agility","min":65,"diff":4},{"id":"lengthy","name":"Lengthy","h":[188,null],"stat":"strength","min":65,"diff":20},{"id":"mostly-lengthy","name":"Mostly Lengthy","h":[183,null],"stat":"strength","min":65,"diff":12},{"id":"controlled-lengthy","name":"Controlled Lengthy","h":[181,null],"stat":"strength","min":65,"diff":4}];
+var sel=R.querySelector('[data-arch]'),cur=null;
+var el={h:R.querySelector('[data-s="h"]'),a:R.querySelector('[data-s="a"]'),s:R.querySelector('[data-s="s"]')};
+var ov={h:R.querySelector('[data-v="h"]'),a:R.querySelector('[data-v="a"]'),s:R.querySelector('[data-v="s"]')};
+function classify(h,a,s){for(var i=0;i<RULES.length;i++){var r=RULES[i];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var okH=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ if(okH&&d>=r.min&&(d-o)>=r.diff)return r;}return null;}
+function checks(r,h,a,s){if(!r)return[];
+ var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
+ var dn=r.stat==='agility'?'Agility':'Strength',on=r.stat==='agility'?'Strength':'Agility';
+ var ht=r.h[0]!=null?('Height ≥ '+r.h[0]+'cm'):('Height ≤ '+r.h[1]+'cm');
+ var ok=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
+ return [[ok,ht+' — you are '+h+'cm'],[d>=r.min,dn+' ≥ '+r.min+' — you are '+d],
+         [(d-o)>=r.diff,dn+' − '+on+' ≥ '+r.diff+' — you are '+(d-o)]];}
+function load(id){cur=D.filter(function(x){return x.id===id})[0];
+ el.h.min=cur.hMin;el.h.max=cur.hMax;el.h.value=Math.round((cur.hMin+cur.hMax)/2);
+ el.a.min=cur.ag[0];el.a.max=cur.ag[1];el.a.value=cur.ag[0];
+ el.s.min=cur.st[0];el.s.max=cur.st[1];el.s.value=cur.st[0];render();}
+function render(){var h=+el.h.value,a=+el.a.value,s=+el.s.value;
+ ov.h.innerHTML=h+'cm <small>'+Math.floor(h/2.54/12)+"'"+Math.round(h/2.54%12)+'"</small>';
+ ov.a.textContent=a;ov.s.textContent=s;
+ var r=classify(h,a,s);
+ R.querySelector('[data-type]').textContent=r?r.name:'Controlled';
+ R.querySelector('[data-bc]').textContent=r?'The first rule your pro satisfies.':'No Explosive or Lengthy rule is satisfied, so it falls through to Controlled.';
+ var rows=r?checks(r,h,a,s):[];
+ if(!rows.length){var best=RULES.map(function(x){var d=(x.stat==='agility')?(a-s):(s-a);return{r:x,gap:x.diff-d};})
+   .filter(function(x){return x.gap>0}).sort(function(x,y){return x.gap-y.gap})[0];
+  rows=best?[[false,'Nearest: '+best.r.name+' needs '+best.gap+' more '+(best.r.stat==='agility'?'Agility over Strength':'Strength over Agility')]]:[];}
+ R.querySelector('[data-ck]').innerHTML=rows.map(function(c){
+  return '<div class="ck '+(c[0]?'ok':'no')+'"><span class="mk">'+(c[0]?'✓':'✗')+'</span><span>'+c[1]+'</span></div>';}).join('');
+ R.querySelector('[data-rch]').innerHTML=RULES.map(function(x){
+  return '<span class="pill'+(cur.reach.indexOf(x.id)>=0?' on':'')+'">'+x.name+'</span>';}).join('')+'<span class="pill on">Controlled</span>';}
+sel.addEventListener('change',function(){load(sel.value)});
+['h','a','s'].forEach(function(k){el[k].addEventListener('input',render)});
+load(sel.value);})();
+</script>
