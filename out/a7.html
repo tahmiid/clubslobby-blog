@@ -1,0 +1,227 @@
+<p>The most consequential thing reported about FC 27 Clubs isn't The Grounds. It's a rule change most coverage has mentioned in passing: <strong>your archetype can be swapped at any time.</strong></p>
+<p>If that holds, it doesn't tweak build strategy. It replaces it.</p>
+
+<!--kg-card-begin: html-->
+<div class="sw27" data-sw27>
+<style>
+.sw27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .sw27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .sw27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.sw27 *{box-sizing:border-box}
+.sw27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.sw27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.sw27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.sw27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.sw27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.sw27 .chip:hover{border-color:var(--muted)}
+.sw27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.sw27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.sw27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.sw27{padding:14px}}
+.sw27 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:7px}
+.sw27 .card{font:inherit;text-align:left;background:transparent;border:1px solid var(--ring);border-radius:9px;
+  padding:8px 10px;cursor:pointer;color:var(--ink)}
+.sw27 .card:hover{border-color:var(--muted)}
+.sw27 .card[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.sw27 .card b{display:block;font-size:13.5px;font-weight:650}
+.sw27 .card span{font-size:11px;color:var(--muted)}
+.sw27 .det{margin-top:16px;padding-top:15px;border-top:1px solid var(--grid)}
+.sw27 .gap{font-size:13.5px;color:var(--ink2);margin:0 0 13px;max-width:62ch}
+.sw27 .gap b{color:var(--ink)}
+.sw27 .mates{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.sw27 .mate{border:1px solid var(--ring);border-radius:9px;padding:10px 11px}
+.sw27 .mate b{font-size:13.5px;display:block}
+.sw27 .mate .p{font-size:11px;color:var(--muted);margin-bottom:7px;display:block}
+.sw27 .bars{display:flex;flex-direction:column;gap:4px}
+.sw27 .br{display:grid;grid-template-columns:74px 1fr 30px;gap:7px;align-items:center;font-size:11px}
+.sw27 .br i{font-style:normal;color:var(--muted)}
+.sw27 .br u{text-decoration:none;height:5px;border-radius:3px;background:var(--bar);display:block;overflow:hidden}
+.sw27 .br u s{display:block;height:100%;background:var(--accent);border-radius:3px}
+.sw27 .br em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+</style>
+<p class="hd">Build a loadout, not a player</p>
+<p class="sub">Pick your main archetype. These are the ones that cover what it can't do — measured on real attribute ceilings, not opinion.</p>
+<div class="grid">
+<button type="button" class="card" data-a="progressor"><b>Progressor</b><span>Defender</span></button><button type="button" class="card" data-a="boss"><b>Boss</b><span>Defender</span></button><button type="button" class="card" data-a="engine"><b>Engine</b><span>Defender</span></button><button type="button" class="card" data-a="marauder"><b>Marauder</b><span>Defender</span></button><button type="button" class="card" data-a="recycler"><b>Recycler</b><span>Midfielder</span></button><button type="button" class="card" data-a="maestro"><b>Maestro</b><span>Midfielder</span></button><button type="button" class="card" data-a="creator"><b>Creator</b><span>Midfielder</span></button><button type="button" class="card" data-a="spark"><b>Spark</b><span>Midfielder</span></button><button type="button" class="card" data-a="magician"><b>Magician</b><span>Forward</span></button><button type="button" class="card" data-a="finisher"><b>Finisher</b><span>Forward</span></button><button type="button" class="card" data-a="target"><b>Target</b><span>Forward</span></button>
+</div>
+<div class="det" data-d="progressor">
+<p class="gap"><b>Progressor</b> is weakest at <b>Pace</b> and <b>Scoring</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Scoring</i><u><s style="width:100%"></s></u><em>99</em></span></div>
+</div><div class="mate">
+  <b>Spark</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:100%"></s></u><em>97</em></span><span class="br"><i>Scoring</i><u><s style="width:67%"></s></u><em>95</em></span></div>
+</div><div class="mate">
+  <b>Magician</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Scoring</i><u><s style="width:75%"></s></u><em>96</em></span></div>
+</div></div>
+</div><div class="det" data-d="boss" hidden>
+<p class="gap"><b>Boss</b> is weakest at <b>Pace</b> and <b>Ball Control</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Spark</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:100%"></s></u><em>97</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Magician</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div></div>
+</div><div class="det" data-d="engine" hidden>
+<p class="gap"><b>Engine</b> is weakest at <b>Scoring</b> and <b>Ball Control</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:100%"></s></u><em>99</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Maestro</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:83%"></s></u><em>97</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Creator</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:92%"></s></u><em>98</em></span><span class="br"><i>Ball Control</i><u><s style="width:83%"></s></u><em>97</em></span></div>
+</div></div>
+</div><div class="det" data-d="marauder" hidden>
+<p class="gap"><b>Marauder</b> is weakest at <b>Scoring</b> and <b>Passing</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Creator</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:92%"></s></u><em>98</em></span><span class="br"><i>Passing</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Maestro</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:83%"></s></u><em>97</em></span><span class="br"><i>Passing</i><u><s style="width:89%"></s></u><em>97</em></span></div>
+</div><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Scoring</i><u><s style="width:100%"></s></u><em>99</em></span><span class="br"><i>Passing</i><u><s style="width:56%"></s></u><em>94</em></span></div>
+</div></div>
+</div><div class="det" data-d="recycler" hidden>
+<p class="gap"><b>Recycler</b> is weakest at <b>Pace</b> and <b>Ball Control</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Spark</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:100%"></s></u><em>97</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Magician</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Ball Control</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div></div>
+</div><div class="det" data-d="maestro" hidden>
+<p class="gap"><b>Maestro</b> is weakest at <b>Pace</b> and <b>Physical</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Marauder</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:57%"></s></u><em>94</em></span><span class="br"><i>Physical</i><u><s style="width:71%"></s></u><em>95</em></span></div>
+</div><div class="mate">
+  <b>Engine</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:29%"></s></u><em>92</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Physical</i><u><s style="width:43%"></s></u><em>93</em></span></div>
+</div></div>
+</div><div class="det" data-d="creator" hidden>
+<p class="gap"><b>Creator</b> is weakest at <b>Pace</b> and <b>Physical</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Marauder</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:57%"></s></u><em>94</em></span><span class="br"><i>Physical</i><u><s style="width:71%"></s></u><em>95</em></span></div>
+</div><div class="mate">
+  <b>Engine</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:29%"></s></u><em>92</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div><div class="mate">
+  <b>Finisher</b><span class="p">Forward</span>
+  <div class="bars"><span class="br"><i>Pace</i><u><s style="width:71%"></s></u><em>95</em></span><span class="br"><i>Physical</i><u><s style="width:43%"></s></u><em>93</em></span></div>
+</div></div>
+</div><div class="det" data-d="spark" hidden>
+<p class="gap"><b>Spark</b> is weakest at <b>Physical</b> and <b>Defending</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Boss</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Physical</i><u><s style="width:100%"></s></u><em>97</em></span><span class="br"><i>Defending</i><u><s style="width:100%"></s></u><em>98</em></span></div>
+</div><div class="mate">
+  <b>Progressor</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span><span class="br"><i>Defending</i><u><s style="width:94%"></s></u><em>97</em></span></div>
+</div><div class="mate">
+  <b>Engine</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span><span class="br"><i>Defending</i><u><s style="width:71%"></s></u><em>93</em></span></div>
+</div></div>
+</div><div class="det" data-d="magician" hidden>
+<p class="gap"><b>Magician</b> is weakest at <b>Defending</b> and <b>Physical</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Boss</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:100%"></s></u><em>98</em></span><span class="br"><i>Physical</i><u><s style="width:100%"></s></u><em>97</em></span></div>
+</div><div class="mate">
+  <b>Progressor</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:94%"></s></u><em>97</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div><div class="mate">
+  <b>Engine</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:71%"></s></u><em>93</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div></div>
+</div><div class="det" data-d="finisher" hidden>
+<p class="gap"><b>Finisher</b> is weakest at <b>Defending</b> and <b>Physical</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Boss</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:100%"></s></u><em>98</em></span><span class="br"><i>Physical</i><u><s style="width:100%"></s></u><em>97</em></span></div>
+</div><div class="mate">
+  <b>Progressor</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:94%"></s></u><em>97</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div><div class="mate">
+  <b>Engine</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:71%"></s></u><em>93</em></span><span class="br"><i>Physical</i><u><s style="width:86%"></s></u><em>96</em></span></div>
+</div></div>
+</div><div class="det" data-d="target" hidden>
+<p class="gap"><b>Target</b> is weakest at <b>Defending</b> and <b>Pace</b>. If you can swap freely, these three cover that ground best:</p>
+<div class="mates"><div class="mate">
+  <b>Marauder</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:82%"></s></u><em>95</em></span><span class="br"><i>Pace</i><u><s style="width:57%"></s></u><em>94</em></span></div>
+</div><div class="mate">
+  <b>Spark</b><span class="p">Midfielder</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:6%"></s></u><em>82</em></span><span class="br"><i>Pace</i><u><s style="width:100%"></s></u><em>97</em></span></div>
+</div><div class="mate">
+  <b>Boss</b><span class="p">Defender</span>
+  <div class="bars"><span class="br"><i>Defending</i><u><s style="width:100%"></s></u><em>98</em></span><span class="br"><i>Pace</i><u><s style="width:0%"></s></u><em>90</em></span></div>
+</div></div>
+</div>
+<p class="foot">Scored on Pro Clubs Lobby's FC 26 catalog: category ceilings normalised across the 11 outfield archetypes. Numbers are FC 26 — the method is what carries to FC 27.</p>
+<script>
+(function(){var R=document.querySelector('[data-sw27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)return;
+  R.querySelectorAll('.card').forEach(function(x){x.setAttribute('aria-pressed',String(x===c))});
+  R.querySelectorAll('.det').forEach(function(d){d.hidden=(d.dataset.d!==c.dataset.a)});});})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>What archetype choice used to cost</h2>
+<p>In FC 26 the archetype was the one decision you couldn't walk back cheaply. It set your attribute ceilings, your two perks and which three specializations you could ever unlock — and the progression you poured into it was tied to it. Getting it wrong meant grinding a second build from scratch.</p>
+<p>That's why <em>which archetype should I play</em> has been the most-asked question in Clubs for two years. The stakes made it worth asking.</p>
+
+<h2>What it costs if swapping is free</h2>
+<p>Nothing like as much. A decision you can reverse in a menu isn't a decision worth agonising over — it's a setting. Combine that with the multiple saveable loadouts also reported for FC 27, and the shape of the question changes completely:</p>
+<ul>
+<li><strong>Before:</strong> which archetype should I commit to for the season?</li>
+<li><strong>After:</strong> which two or three should I keep ready, and when do I bring each one?</li>
+</ul>
+<p>That's a different skill. Picking one archetype well is about self-knowledge — how you actually play. Picking a <em>set</em> well is about coverage: knowing what your main can't do and having something on hand that can.</p>
+
+<h2>What still matters after the change</h2>
+<p>Here's the part that doesn't get easier. Swapping freely doesn't flatten the archetypes — the ceilings are still the ceilings. A Magician's Standing Tackle still caps far below a Boss's. All a free swap does is let you move between those ceilings rather than being stuck behind one.</p>
+<p>So the gaps between archetypes become <em>more</em> worth knowing, not less. When switching was expensive, most players learned one archetype deeply and ignored the rest. When it's free, the useful knowledge is the shape of the whole pool — which is exactly what the tool above is scoring.</p>
+
+<h2>The honest caveats</h2>
+<p>Two, and they're load-bearing.</p>
+<p><strong>This is preview reporting, not a Pitch Note.</strong> Free archetype swapping has come from hands-on coverage of The Grounds, not from EA in writing. It's the single most consequential claim in the FC 27 cycle for anyone who builds a pro, and it deserves confirmation before you rewrite your plans around it.</p>
+<p><strong>Nobody knows what a swap costs.</strong> Whether AP is refunded, whether attribute progress is shared across archetypes or tracked per archetype, whether there's a cooldown. "Swappable at any time" and "swappable at any time with no penalty" are very different games. A swap that resets your attributes isn't free, and every strategic claim on this page assumes something closer to the second.</p>
+<p>The tool above uses FC 26 ceilings, because FC 26 is the only catalog that exists. When FC 27's numbers are measurable we'll rebuild it against those and publish it as FC 27 content — the method holds, the numbers won't.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Can you change your archetype in FC 27?</h3>
+<p>Reportedly yes, at any time. This comes from hands-on previews rather than an official Pitch Note, and the cost of switching — refunded AP, shared or separate progression, cooldowns — has not been confirmed.</p>
+<h3>Could you change archetype in FC 26?</h3>
+<p>Yes, but it reset the progression tied to that archetype, which made it an expensive decision rather than a free one.</p>
+<h3>Does swapping mean archetype choice doesn't matter?</h3>
+<p>The opposite, in a way. Attribute ceilings still differ sharply between archetypes, so which one you're in still decides what you're capable of. Free swapping just means knowing the whole pool beats knowing one of them.</p>
+<h3>How many archetypes are there in FC 27?</h3>
+<p>Thirteen, with three specialization branches each — the same structure as FC 26. Whether they're the same thirteen has not been confirmed.</p>
