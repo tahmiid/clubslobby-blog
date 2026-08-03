@@ -1,4 +1,10 @@
-# clubs27.com — production runbook
+# clubs27.com — server & blog runbook
+
+**This file owns the server and the blog.** Deploying the *app* (the React
+build at `/` and the FastAPI at `/api/`) is owned by the ClubsUI repo's own
+`DEPLOYMENT.md` — `~/Desktop/Claude/ClubsUI-main/DEPLOYMENT.md`. Split by
+ownership on 2026-08-03 so each repo documents what it ships; the box, nginx,
+TLS, backups and Ghost stay here because Ghost-CLI owns that config.
 
 Everything about the live deployment: what runs where, how to change it, and the
 things that cost time to discover. Written for whoever (human or agent) picks
@@ -113,6 +119,11 @@ operation, this is why — re-add the block.
 Order matters: `location ^~ /blog` must stay above `location /`, or Ghost
 requests fall through to the SPA.
 
+**What belongs inside the app block is documented in the app repo**
+(`ClubsUI-main/DEPLOYMENT.md` → "nginx — what this app needs from it"). As of
+2026-08-03 it is missing the Open Graph crawler routing for `/b/:buildId`, so
+shared build links produce no preview, and it has no rate limiting of any kind.
+
 ```bash
 nginx -t && systemctl reload nginx     # always test before reload
 ```
@@ -121,37 +132,16 @@ nginx -t && systemctl reload nginx     # always test before reload
 
 ## 6. Deploying
 
-### Frontend
+### Frontend and backend — see the app repo
 
-Built with the API URL injected and the output redirected, so the repo's
-`build/` is never touched:
+Both live in `~/Desktop/Claude/ClubsUI-main/DEPLOYMENT.md`: the build variables
+that must be set (`GENERATE_SOURCEMAP=false` is load-bearing), the rsync
+targets, the systemd restart, and `/opt/clubs27-api/.env`.
 
-```bash
-cd ~/Desktop/Claude/ClubsUI-main/frontend
-BUILD_PATH=/tmp/clubs27-build \
-REACT_APP_BACKEND_URL=https://clubs27.com \
-GENERATE_SOURCEMAP=false CI=false yarn build
-
-rsync -az --delete -e "ssh -i ~/.ssh/proclubslobby_ed25519" \
-  /tmp/clubs27-build/ root@91.99.52.207:/var/www/clubs27-app/
-ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
-  'chown -R www-data:www-data /var/www/clubs27-app'
-```
-
-Requires Node 20 (`~/.local/node`) — the repo hard-gates `>=20 <21`.
-
-### Backend
-
-```bash
-rsync -az --delete --exclude venv/ --exclude __pycache__/ --exclude .env \
-  -e "ssh -i ~/.ssh/proclubslobby_ed25519" \
-  ~/Desktop/Claude/ClubsUI-main/backend/ root@91.99.52.207:/opt/clubs27-api/
-ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
-  '/opt/clubs27-api/venv/bin/pip install -q -r /opt/clubs27-api/requirements.txt \
-   && systemctl restart clubs27-api'
-```
-
-`--exclude .env` is deliberate — the server has its own with production values.
+They are documented there rather than here so that a change to how the app
+builds is made in the same repository as the change that caused it. What stays
+here is everything the app *depends on* but does not own: nginx (§5), TLS (§9),
+backups (§8) and the box itself (§2–§4).
 
 ### Blog articles
 
@@ -170,19 +160,14 @@ ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
 
 ## 7. Environment
 
-`/opt/clubs27-api/.env` (mode 640, `root:apiuser`):
+`/opt/clubs27-api/.env` (mode 640, `root:apiuser`) belongs to the app — its
+keys, the Atlas user, and the `TLSV1_ALERT_INTERNAL_ERROR` trap that means the
+server IP has fallen off the Atlas Access List are all documented in the app
+repo's `DEPLOYMENT.md`.
 
-| Key | Notes |
-|---|---|
-| `MONGO_URL` | Atlas, user **`clubs27-prod`** — scoped `readWrite`, separate from the dev credential |
-| `DB_NAME` | same database as dev |
-| `CORS_ORIGINS` | `https://clubs27.com` |
-| `JWT_SECRET_KEY` | generated on the server, **not** the dev secret — tokens don't transfer between local and prod, which is intended |
-
-**MongoDB Atlas requires `91.99.52.207/32` on the IP Access List.** If it's
-removed you get `SSL: TLSV1_ALERT_INTERNAL_ERROR`, *not* a timeout — Atlas
-accepts the TCP connection then kills the TLS handshake. Easy to misdiagnose as
-a certificate problem.
+Ghost's own configuration is `/var/www/proclubslobby/config.production.json`
+(MySQL credentials, `url`, mail). It is **not backed up and not reproducible** —
+keep a copy independently, same as the API's `.env`.
 
 ---
 

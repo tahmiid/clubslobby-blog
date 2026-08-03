@@ -3,8 +3,11 @@
 The Ghost blog and the article generators behind **clubs27.com/blog**, plus the
 runbook for the whole production deployment.
 
-- **[DEPLOYMENT.md](DEPLOYMENT.md)** — the production runbook. Server, services,
-  deploys, backups, TLS, gotchas. Start here.
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** — the server & blog runbook. The box,
+  access, services, nginx, TLS, backups, Ghost, publishing. Start here.
+  **Deploying the app** (the React build at `/` and the API at `/api/`) is
+  documented in the ClubsUI repo instead — `ClubsUI-main/DEPLOYMENT.md` — so
+  each repo owns what it ships.
 - `gen/` — article generators (`common.mjs` + `a1`–`a4`), the publishing
   pipeline (`publish-prod.mjs`), and `backup.mjs`.
 - `data/` — catalog snapshot the articles are built from.
