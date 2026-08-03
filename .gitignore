@@ -2,3 +2,6 @@ node_modules/
 out-cardonly/
 *.zip
 .DS_Store
+# macOS duplicate-copy artifacts
+* 2/
+* 2.*

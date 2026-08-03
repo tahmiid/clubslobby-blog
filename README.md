@@ -9,8 +9,10 @@ runbook for the whole production deployment.
   pipeline (`publish-prod.mjs`), and `backup.mjs`.
 - `data/` — catalog snapshot the articles are built from.
 - `out/` — generated article HTML with inline widgets.
-- `widgets/`, `widgets-split/`, `sitewide/` — Ghost(Pro) workarounds, kept only
-  as history. **Not needed on self-hosted Ghost**, where inline widgets work.
+Ghost(Pro) workaround files (split widgets, site-wide code injection) were
+removed once this moved to self-hosted Ghost, where inline widgets work as
+written. Why they ever existed is recorded in DEPLOYMENT.md gotcha #4; the
+files themselves remain in git history at commit cb0a852.
 
 **This is deliberately not part of the ClubsUI repo.** Ghost needs Node 22 while
 that repo hard-gates Node 20, and the Ghost export churns on every publish.
