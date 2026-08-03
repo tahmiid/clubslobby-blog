@@ -66,7 +66,7 @@ const POSTS = [
   { file: 'a5.html', slug: 'fc27-the-grounds-pro-clubs-explained', status: 'published',
     title: 'Is Pro Clubs Gone in FC 27? What The Grounds Actually Changes',
     meta_title: 'Is Pro Clubs Gone in FC 27? The Grounds Explained',
-    meta_description: 'Clubs is not removed in EA FC 27 — it is absorbed into The Grounds. What EA has confirmed, what is only reported, and the build rule that changes everything.',
+    meta_description: 'Clubs is not removed in EA FC 27 — it is absorbed into The Grounds. What EA has confirmed, what is only reported, and which widely-repeated change turns out not to be one.',
     custom_excerpt: 'Clubs is not being removed — it is being absorbed. Every claim marked by where it came from, filterable by how solid it is.',
     tags: ['News', 'FC 27'] },
 
@@ -77,7 +77,12 @@ const POSTS = [
     custom_excerpt: 'The Grounds and full Clubs skip PS4, Xbox One and the original Switch. Check your platform before you pre-order.',
     tags: ['News', 'FC 27'] },
 
-  { file: 'a7.html', slug: 'pro-clubs-archetype-swapping-explained', status: 'published',
+  // PULLED 2026-08-03: the article was built on "archetype swapping is new in
+  // FC 27". It is not — archetypes already swap freely in FC 26 with no reset,
+  // so the whole premise is wrong. The loadout tool inside it is still valid
+  // and worth keeping; the framing needs rewriting as FC 26 content before this
+  // goes back to `published`.
+  { file: 'a7.html', slug: 'pro-clubs-archetype-swapping-explained', status: 'draft',
     title: 'Archetypes Are Swappable in FC 27 — What That Does to Your Build',
     meta_title: 'FC 27 Archetype Swapping: What Changes for Builds',
     meta_description: 'If FC 27 lets you swap archetypes freely, build strategy shifts from choosing one to carrying a set — with a tool for picking complementary archetypes.',

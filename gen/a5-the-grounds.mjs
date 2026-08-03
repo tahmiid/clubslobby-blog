@@ -20,7 +20,7 @@ const FACTS = [
   [2, 'Three districts', 'Parkside, Montclair and Zeiza, each themed on a different part of football history.'],
   [2, 'Four mentors', 'Kylian Mbappé, Paulo Dybala, Chloe Kelly and — returning from The Journey — Alex Hunter hand out challenges.'],
   [2, 'Mentor paths differ', 'Mbappé toward dribbling and speed, Dybala toward tight-space play, Kelly toward finishing.'],
-  [2, 'Archetypes are swappable', 'Your archetype can reportedly be changed at any time, rather than being a one-per-build commitment.'],
+  [2, 'Archetypes stay swappable', 'Reported as changeable at any time — which is already how FC 26 works. Widely written up as a new FC 27 feature. It is not one.'],
   [2, 'Saveable loadouts', 'Multiple build loadouts can be saved and swapped between in-game.'],
   [2, 'Structure carries over', 'Thirteen archetypes, three specialization branches each, AXP and PlayStyles all return.'],
   [2, 'One pro everywhere', 'XP earned anywhere in The Grounds feeds the same Virtual Pro you take into an 11-a-side match.'],
@@ -29,7 +29,7 @@ const FACTS = [
   [3, 'The AP cost curve', 'Whether the four cost tiers survive, and what a point costs at the top end.'],
   [3, 'Whether the 13 are the same 13', 'Thirteen is confirmed as a count, not as a roster.'],
   [3, 'AcceleRATE thresholds', 'The height, Agility and Strength values that decide Controlled, Explosive and Lengthy.'],
-  [3, 'What a swap costs', 'Whether AP is refunded, whether attribute progress is shared or tracked per archetype, whether there is a cooldown.'],
+  [3, 'Whether switching still costs nothing', 'In FC 26 changing archetype is free and resets nothing. Whether FC 27 keeps it that way, or attaches a cost, has not been stated.'],
   [3, 'Grounds XP rates', 'New earning surfaces could change levelling speed sharply without the level table moving at all.'],
   [3, 'Carry-over from FC 26', 'Whether any progression follows you. Assume none does.'],
 ];
@@ -80,7 +80,7 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `<p>Short answer: <strong>no</strong>. Clubs is still in FC 27, still 11-a-side, still your pro. What changed is everything around it — and one rule about your build that quietly makes most FC 26 advice wrong.</p>
+const html = `<p>Short answer: <strong>no</strong>. Clubs is still in FC 27, still 11-a-side, still your pro. What changed is everything around it — and one thing most coverage is calling a change isn't one at all.</p>
 
 <p>A lot of what's circulating right now is one site quoting another. So every claim below is marked by where it came from, and you can filter by how solid it is:</p>
 
@@ -94,11 +94,11 @@ ${widget}
 <p>Progression reportedly runs partly through a Mentor system. Four mentors hand out challenges: Kylian Mbappé, Paulo Dybala, Chloe Kelly, and — returning from The Journey — Alex Hunter.</p>
 <p>What that means in practice is the part we'd most like EA's Clubs deep dive to answer, because it's the first progression system in Clubs that isn't simply <em>play matches, earn AXP</em>. Whether picking a mentor locks anything, whether their challenges are the fastest route to XP, whether you can work with all four — none of that is known.</p>
 
-<h2>The one change that actually affects your build</h2>
-<p>The biggest thing in this article: <strong>archetypes are reportedly swappable at any time.</strong></p>
-<p>In FC 26 your archetype was a commitment. You picked one, poured AP into its attribute ceilings, and changing your mind meant starting over. That's why <em>which archetype should I play</em> was the question worth agonising over.</p>
-<p>If archetypes swap freely, that question stops being high-stakes. It becomes closer to picking a loadout than choosing a career — and reports of multiple saveable loadouts in-game point the same way.</p>
-<p>Two things worth flagging honestly. First, nobody knows what the switch <em>costs</em>. Whether AP is refunded, whether attribute progress is shared across archetypes or tracked per archetype, whether there's a cooldown. A free swap that resets your attributes isn't free. Second, this is preview reporting, not a Pitch Note. It's the most consequential claim in the FC 27 cycle for anyone who builds a pro, and it deserves confirmation before anyone rewrites their plans around it.</p>
+<h2>The "big change" that isn't one</h2>
+<p>A lot of FC 27 coverage has led on the same line: <strong>archetypes can be swapped at any time.</strong> It's usually presented as the headline change for anyone who builds a pro.</p>
+<p>It isn't a change. <strong>Archetypes already work like that in FC 26.</strong> You can move between any of the 13 whenever you like, and switching doesn't reset your progression. If you build pros today, this is simply the game you're already playing.</p>
+<p>So the practical answer is reassuring rather than dramatic: how you think about archetype choice carries over intact. It was already closer to picking a loadout than choosing a career, and nothing reported so far changes that.</p>
+<p>The question actually worth watching is the opposite one — whether FC 27 attaches a <em>cost</em> to switching that FC 26 doesn't have. That would be a real change. Nothing has been said about it either way, and we'd rather tell you that than dress up the status quo as news.</p>
 
 <h2>What's staying the same</h2>
 <p>Thirteen archetypes, each with three specialization branches — the same structure as FC 26. AXP and PlayStyles both return, along with PlayStyles+.</p>

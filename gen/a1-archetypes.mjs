@@ -104,7 +104,7 @@ ${widget}
 <h3>Which archetype is best?</h3>
 <p>There isn't one. They're balanced against each other, not ranked. The strongest pick is whichever fills a hole in your club's shape.</p>
 <h3>Can I change archetype later?</h3>
-<p>Yes, but it resets the progression tied to that archetype — worth getting roughly right first.</p>`;
+<p>Yes, freely. You can move between any of the 13 whenever you like, and switching doesn't reset your progression — an archetype behaves more like a loadout than a permanent commitment.</p>`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a1.html'), html);
 console.log('a1: archetypes', data.length, '| specs', data.reduce((s, a) => s + a.specs.length, 0),
