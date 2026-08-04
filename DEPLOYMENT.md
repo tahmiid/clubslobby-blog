@@ -238,6 +238,22 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 5. **nginx app routes are hand-added** — see §5.
 6. **No mail transport is configured.** Ghost password reset, member signup
    confirmations and newsletters will all silently fail until SMTP is set up.
+7. **Site settings are staff-only — the Admin API cannot write them.**
+   `PUT /settings/`, `/custom_theme_settings/` and `/users/` all return
+   `NoPermissionError` for integration keys, whatever the key's role. Posts,
+   pages and image uploads work fine. Branding changes therefore go through
+   Ghost Admin, or a direct `mysql ghost_prod` UPDATE followed by
+   `ghost restart` — settings are read at boot, so a DB change is invisible
+   until Ghost restarts.
+8. **Source's header styles have two hidden dependencies, and both bite.**
+   `header_style: Landing` renders *only* when members are enabled (see
+   `partials/components/header.hbs`), so disabling members silently removes the
+   whole homepage hero, cover image included. Separately, the cover image
+   renders only under `Landing` and `Search` — `Highlight` and `Magazine`
+   ignore it, as the theme's own `package.json` declares with
+   `visibility: header_style:[Landing, Search]` on `background_image`. With no
+   SMTP, **`Search` is the only style that shows the hero**, which is why it is
+   the one set.
 
 ---
 
