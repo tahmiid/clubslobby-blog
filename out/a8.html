@@ -1,0 +1,289 @@
+<p>Every PlayStyle in Pro Clubs sits behind attribute thresholds — 99 of them across the 36 PlayStyles — and nobody has published the full list. Pick your archetype and see exactly which PlayStyles its ceilings can reach:</p>
+
+<!--kg-card-begin: html-->
+<div class="pr27" data-pr27>
+<style>
+.pr27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .pr27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .pr27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.pr27 *{box-sizing:border-box}
+.pr27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.pr27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.pr27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.pr27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.pr27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.pr27 .chip:hover{border-color:var(--muted)}
+.pr27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.pr27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.pr27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.pr27{padding:14px}}
+.pr27 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-bottom:14px}
+.pr27 select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--ring);
+  background:var(--s1);color:var(--ink);width:100%;max-width:290px}
+.pr27 .cnt{font-size:13px;color:var(--ink2);margin:0 0 12px}
+.pr27 .cnt b{color:var(--accent)}
+.pr27 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.pr27 .card{border:1px solid var(--grid);border-radius:9px;padding:11px 12px}
+.pr27 .card.no{opacity:.42}
+.pr27 .nm{font-size:14px;font-weight:650;margin:0 0 3px;display:flex;gap:7px;align-items:baseline;flex-wrap:wrap}
+.pr27 .ct{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.pr27 .sig{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+.pr27 .ds{font-size:12px;color:var(--ink2);margin:0 0 8px;line-height:1.4}
+.pr27 .rq{font-size:12.5px;color:var(--ink2);display:flex;gap:6px;align-items:baseline;margin-bottom:3px;font-variant-numeric:tabular-nums}
+.pr27 .mk{width:12px;flex:none;font-weight:700}
+.pr27 .rq.ok .mk::before{content:"✓";color:var(--good)}
+.pr27 .rq.no .mk::before{content:"✗";color:var(--bad)}
+.pr27 .hv{margin-left:auto;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.pr27 .grid{grid-template-columns:1fr}}
+</style>
+<p class="hd">PlayStyle requirements explorer</p>
+<p class="sub">All 36 PlayStyles and the attribute thresholds each demands. Pick an archetype to see which ones its ceilings can reach.</p>
+<div class="row">
+  <div><span class="lbl">Archetype</span>
+  <select data-arch><option value="">Every archetype</option><option value="shot-stopper">Shot Stopper · Keeper</option><option value="sweeper-keeper">Sweeper Keeper · Keeper</option><option value="progressor">Progressor · Defender</option><option value="boss">Boss · Defender</option><option value="engine">Engine · Defender</option><option value="marauder">Marauder · Defender</option><option value="recycler">Recycler · Midfielder</option><option value="maestro">Maestro · Midfielder</option><option value="creator">Creator · Midfielder</option><option value="spark">Spark · Midfielder</option><option value="magician">Magician · Forward</option><option value="finisher">Finisher · Forward</option><option value="target">Target · Forward</option></select></div>
+  <div><span class="lbl">Category</span>
+  <div class="chips"><button class="chip" data-cat="" aria-pressed="true">All</button><button class="chip" data-cat="Ball Control" aria-pressed="false">Ball Control</button><button class="chip" data-cat="Defending" aria-pressed="false">Defending</button><button class="chip" data-cat="Goal Keeping" aria-pressed="false">Goal Keeping</button><button class="chip" data-cat="Passing" aria-pressed="false">Passing</button><button class="chip" data-cat="Physical" aria-pressed="false">Physical</button><button class="chip" data-cat="Scoring" aria-pressed="false">Scoring</button></div></div>
+</div>
+<p class="cnt" data-cnt hidden></p>
+<div class="grid">
+<div class="card" data-ps="first-touch" data-cat="Ball Control">
+  <p class="nm">First Touch<span class="ct">Ball Control</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Reduced error when trapping the ball, transitioning quickly into dribbling.</p>
+  <div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="ballControl" data-min="75"><span class="mk"></span>Ball Control ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="press-proven" data-cat="Ball Control">
+  <p class="nm">Press Proven<span class="ct">Ball Control</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Close control at jog speed, shields ball more effectively.</p>
+  <div class="rq" data-k="strength" data-min="75"><span class="mk"></span>Strength ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="ballControl" data-min="80"><span class="mk"></span>Ball Control ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="rapid" data-cat="Ball Control">
+  <p class="nm">Rapid<span class="ct">Ball Control</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Reaches a higher sprint speed while dribbling and has reduced chance of an error when sprinting or performing knock-ons.</p>
+  <div class="rq" data-k="acceleration" data-min="75"><span class="mk"></span>Acceleration ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="sprintSpeed" data-min="80"><span class="mk"></span>Sprint Speed ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="dribbling" data-min="80"><span class="mk"></span>Dribbling ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="technical" data-cat="Ball Control">
+  <p class="nm">Technical<span class="ct">Ball Control</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Reaches a higher speed while performing controlled sprint dribbling.</p>
+  <div class="rq" data-k="balance" data-min="80"><span class="mk"></span>Balance ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="ballControl" data-min="75"><span class="mk"></span>Ball Control ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="dribbling" data-min="80"><span class="mk"></span>Dribbling ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="trickster" data-cat="Ball Control">
+  <p class="nm">Trickster<span class="ct">Ball Control</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Grants the ability to perform unique flick skill moves in tight spaces.</p>
+  <div class="rq" data-k="acceleration" data-min="80"><span class="mk"></span>Acceleration ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="agility" data-min="75"><span class="mk"></span>Agility ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="dribbling" data-min="80"><span class="mk"></span>Dribbling ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="aerial-fortress" data-cat="Defending">
+  <p class="nm">Aerial Fortress<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Wins aerial duels with improved jump reach and heading control.</p>
+  <div class="rq" data-k="jumping" data-min="75"><span class="mk"></span>Jumping ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="headingAcc" data-min="75"><span class="mk"></span>Heading Acc. ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="anticipate" data-cat="Defending">
+  <p class="nm">Anticipate<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Improved chance of successful standing tackles, keeping the ball close after winning it.</p>
+  <div class="rq" data-k="balance" data-min="80"><span class="mk"></span>Balance ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="defAware" data-min="75"><span class="mk"></span>Def. Aware ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="standTackle" data-min="80"><span class="mk"></span>Stand Tackle ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="block" data-cat="Defending">
+  <p class="nm">Block<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Improved reach and effectiveness when blocking shots and passes.</p>
+  <div class="rq" data-k="agility" data-min="80"><span class="mk"></span>Agility ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="strength" data-min="75"><span class="mk"></span>Strength ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="reactions" data-min="80"><span class="mk"></span>Reactions ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="intercept" data-cat="Defending">
+  <p class="nm">Intercept<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Increased reach and success rate when intercepting passes.</p>
+  <div class="rq" data-k="aggression" data-min="80"><span class="mk"></span>Aggression ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="interceptions" data-min="80"><span class="mk"></span>Interceptions ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="jockey" data-cat="Defending">
+  <p class="nm">Jockey<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Increased speed while jockeying and improved defensive containment.</p>
+  <div class="rq" data-k="agility" data-min="75"><span class="mk"></span>Agility ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="defAware" data-min="80"><span class="mk"></span>Def. Aware ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="standTackle" data-min="80"><span class="mk"></span>Stand Tackle ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="slide-tackle" data-cat="Defending">
+  <p class="nm">Slide Tackle<span class="ct">Defending</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Slide tackles cover more ground and keep the ball close after the challenge.</p>
+  <div class="rq" data-k="aggression" data-min="80"><span class="mk"></span>Aggression ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="slideTackle" data-min="75"><span class="mk"></span>Slide Tackle ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="1v1-close-down" data-cat="Goal Keeping">
+  <p class="nm">1v1 Close Down<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Rushes attackers in 1v1 situations with improved speed and reach.</p>
+  <div class="rq" data-k="acceleration" data-min="80"><span class="mk"></span>Acceleration ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="agility" data-min="75"><span class="mk"></span>Agility ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="aggression" data-min="80"><span class="mk"></span>Aggression ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="cross-claimer" data-cat="Goal Keeping">
+  <p class="nm">Cross Claimer<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Improved ability to catch or punch crosses under pressure.</p>
+  <div class="rq" data-k="jumping" data-min="80"><span class="mk"></span>Jumping ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="strength" data-min="80"><span class="mk"></span>Strength ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="gkPositioning" data-min="75"><span class="mk"></span>GK Pos. ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="deflector" data-cat="Goal Keeping">
+  <p class="nm">Deflector<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Deflects shots with improved control, directing the ball away from danger.</p>
+  <div class="rq" data-k="strength" data-min="75"><span class="mk"></span>Strength ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="gkDiving" data-min="80"><span class="mk"></span>GK Diving ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="gkReflexes" data-min="75"><span class="mk"></span>GK Reflexes ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="far-reach" data-cat="Goal Keeping">
+  <p class="nm">Far Reach<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Increased reach when diving to make saves.</p>
+  <div class="rq" data-k="agility" data-min="80"><span class="mk"></span>Agility ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="reactions" data-min="80"><span class="mk"></span>Reactions ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="gkDiving" data-min="75"><span class="mk"></span>GK Diving ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="far-throw" data-cat="Goal Keeping">
+  <p class="nm">Far Throw<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Can throw the ball further with more accuracy to launch counter attacks.</p>
+  <div class="rq" data-k="vision" data-min="75"><span class="mk"></span>Vision ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="longPass" data-min="75"><span class="mk"></span>Long Pass ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="gkKicking" data-min="80"><span class="mk"></span>GK Kicking ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="footwork" data-cat="Goal Keeping">
+  <p class="nm">Footwork<span class="ct">Goal Keeping</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Improved reflexes when making saves with feet, with faster recovery.</p>
+  <div class="rq" data-k="agility" data-min="80"><span class="mk"></span>Agility ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="balance" data-min="80"><span class="mk"></span>Balance ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="gkReflexes" data-min="75"><span class="mk"></span>GK Reflexes ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="incisive-pass" data-cat="Passing">
+  <p class="nm">Incisive Pass<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Through passes are more accurate and travel faster to break defensive lines.</p>
+  <div class="rq" data-k="vision" data-min="75"><span class="mk"></span>Vision ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="longPass" data-min="80"><span class="mk"></span>Long Pass ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="curve" data-min="80"><span class="mk"></span>Curve ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="inventive" data-cat="Passing">
+  <p class="nm">Inventive<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Performs creative flair passes with higher accuracy and unique animations.</p>
+  <div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="longPass" data-min="75"><span class="mk"></span>Long Pass ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="curve" data-min="80"><span class="mk"></span>Curve ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="long-ball-pass" data-cat="Passing">
+  <p class="nm">Long Ball Pass<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Lofted long passes are faster, more accurate and harder to intercept.</p>
+  <div class="rq" data-k="vision" data-min="85"><span class="mk"></span>Vision ≥ 85<span class="hv" data-hv></span></div><div class="rq" data-k="longPass" data-min="80"><span class="mk"></span>Long Pass ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="pinged-pass" data-cat="Passing">
+  <p class="nm">Pinged Pass<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Driven ground passes travel faster and with high accuracy over distance.</p>
+  <div class="rq" data-k="longPass" data-min="85"><span class="mk"></span>Long Pass ≥ 85<span class="hv" data-hv></span></div><div class="rq" data-k="shortPass" data-min="80"><span class="mk"></span>Short Pass ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="tiki-taka" data-cat="Passing">
+  <p class="nm">Tiki Taka<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Accurate first-time Ground Passes.</p>
+  <div class="rq" data-k="reactions" data-min="80"><span class="mk"></span>Reactions ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="ballControl" data-min="80"><span class="mk"></span>Ball Control ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="shortPass" data-min="75"><span class="mk"></span>Short Pass ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="whipped-pass" data-cat="Passing">
+  <p class="nm">Whipped Pass<span class="ct">Passing</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Crosses are faster, more curved and delivered with pinpoint accuracy.</p>
+  <div class="rq" data-k="crossing" data-min="80"><span class="mk"></span>Crossing ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="longPass" data-min="75"><span class="mk"></span>Long Pass ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="bruiser" data-cat="Physical">
+  <p class="nm">Bruiser<span class="ct">Physical</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Increased strength in physical duels when shielding or challenging for the ball.</p>
+  <div class="rq" data-k="strength" data-min="75"><span class="mk"></span>Strength ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="aggression" data-min="80"><span class="mk"></span>Aggression ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="defAware" data-min="80"><span class="mk"></span>Def. Aware ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="enforcer" data-cat="Physical">
+  <p class="nm">Enforcer<span class="ct">Physical</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Stronger in physical challenges, staying on their feet when bumped by opponents.</p>
+  <div class="rq" data-k="balance" data-min="80"><span class="mk"></span>Balance ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="strength" data-min="75"><span class="mk"></span>Strength ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="ballControl" data-min="80"><span class="mk"></span>Ball Control ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="long-throw" data-cat="Physical">
+  <p class="nm">Long Throw<span class="ct">Physical</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Performs longer and more powerful throw-ins to reach distant teammates.</p>
+  <div class="rq" data-k="strength" data-min="80"><span class="mk"></span>Strength ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="vision" data-min="75"><span class="mk"></span>Vision ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="quick-step" data-cat="Physical">
+  <p class="nm">Quick Step<span class="ct">Physical</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Accelerates faster while dribbling with the ball.</p>
+  <div class="rq" data-k="acceleration" data-min="75"><span class="mk"></span>Acceleration ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="sprintSpeed" data-min="80"><span class="mk"></span>Sprint Speed ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="stamina" data-min="80"><span class="mk"></span>Stamina ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="relentless" data-cat="Physical">
+  <p class="nm">Relentless<span class="ct">Physical</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Reduced fatigue and quicker stamina recovery, maintaining defensive work rate for the full match.</p>
+  <div class="rq" data-k="agility" data-min="80"><span class="mk"></span>Agility ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="stamina" data-min="80"><span class="mk"></span>Stamina ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="acrobatic" data-cat="Scoring">
+  <p class="nm">Acrobatic<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Performs acrobatic volleys with improved accuracy and unique animations.</p>
+  <div class="rq" data-k="agility" data-min="80"><span class="mk"></span>Agility ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="reactions" data-min="80"><span class="mk"></span>Reactions ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="volleys" data-min="75"><span class="mk"></span>Volleys ≥ 75<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="chip-shot" data-cat="Scoring">
+  <p class="nm">Chip Shot<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Performs chip shots with higher accuracy and speed when facing the keeper.</p>
+  <div class="rq" data-k="reactions" data-min="75"><span class="mk"></span>Reactions ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="balance" data-min="80"><span class="mk"></span>Balance ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="dead-ball" data-cat="Scoring">
+  <p class="nm">Dead Ball<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Set pieces are taken with increased accuracy, speed and curve.</p>
+  <div class="rq" data-k="crossing" data-min="80"><span class="mk"></span>Crossing ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="fkAcc" data-min="75"><span class="mk"></span>FK Acc. ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="shotPower" data-min="80"><span class="mk"></span>Shot Power ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="finesse-shot" data-cat="Scoring">
+  <p class="nm">Finesse Shot<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Finesse shots are performed faster with additional curve and accuracy.</p>
+  <div class="rq" data-k="vision" data-min="80"><span class="mk"></span>Vision ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="finishing" data-min="75"><span class="mk"></span>Finishing ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="curve" data-min="80"><span class="mk"></span>Curve ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="game-changer" data-cat="Scoring">
+  <p class="nm">Gamechanger<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Improved chance creation from set pieces and open play in the final third.</p>
+  <div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="finishing" data-min="75"><span class="mk"></span>Finishing ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="curve" data-min="80"><span class="mk"></span>Curve ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="low-driven-shot" data-cat="Scoring">
+  <p class="nm">Low Driven Shot<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Low driven shots are performed faster and with higher accuracy.</p>
+  <div class="rq" data-k="composure" data-min="80"><span class="mk"></span>Composure ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="finishing" data-min="75"><span class="mk"></span>Finishing ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="shotPower" data-min="80"><span class="mk"></span>Shot Power ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="power-shot" data-cat="Scoring">
+  <p class="nm">Power Shot<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Faster Power Shots with increased speed.</p>
+  <div class="rq" data-k="finishing" data-min="80"><span class="mk"></span>Finishing ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="shotPower" data-min="75"><span class="mk"></span>Shot Power ≥ 75<span class="hv" data-hv></span></div><div class="rq" data-k="longShots" data-min="80"><span class="mk"></span>Long Shots ≥ 80<span class="hv" data-hv></span></div>
+</div>
+<div class="card" data-ps="precision-header" data-cat="Scoring">
+  <p class="nm">Precision Header<span class="ct">Scoring</span><span class="sig" data-sig hidden>Signature</span></p>
+  <p class="ds">Increased accuracy for headers, Precision Header animations.</p>
+  <div class="rq" data-k="jumping" data-min="80"><span class="mk"></span>Jumping ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="strength" data-min="80"><span class="mk"></span>Strength ≥ 80<span class="hv" data-hv></span></div><div class="rq" data-k="headingAcc" data-min="75"><span class="mk"></span>Heading Acc. ≥ 75<span class="hv" data-hv></span></div>
+</div>
+</div>
+<p class="foot">Thresholds and attribute ceilings from the Pro Clubs Lobby catalog. ✓ means the archetype's ceiling in that attribute clears the bar — the number in grey is that ceiling.</p>
+<script>
+(function(){var R=document.querySelector('[data-pr27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var A=[{"id":"shot-stopper","name":"Shot Stopper","sig":["far-reach","footwork","long-ball-pass","deflector"],"max":{"acceleration":92,"aggression":92,"agility":90,"attPosition":85,"balance":90,"ballControl":85,"composure":90,"crossing":82,"curve":75,"defAware":75,"dribbling":75,"finishing":75,"fkAcc":75,"gkDiving":99,"gkHandling":99,"gkKicking":99,"gkPositioning":99,"gkReflexes":99,"headingAcc":75,"interceptions":90,"jumping":96,"longPass":90,"longShots":60,"penalties":70,"reactions":96,"shortPass":92,"shotPower":75,"slideTackle":70,"sprintSpeed":85,"stamina":92,"standTackle":75,"strength":96,"vision":99,"volleys":60},"n":21},{"id":"sweeper-keeper","name":"Sweeper Keeper","sig":["1v1-close-down","far-reach","deflector","far-throw"],"max":{"acceleration":92,"aggression":96,"agility":90,"attPosition":85,"balance":90,"ballControl":90,"composure":92,"crossing":85,"curve":75,"defAware":75,"dribbling":85,"finishing":75,"fkAcc":75,"gkDiving":99,"gkHandling":99,"gkKicking":99,"gkPositioning":99,"gkReflexes":99,"headingAcc":90,"interceptions":96,"jumping":99,"longPass":96,"longShots":60,"penalties":75,"reactions":96,"shortPass":99,"shotPower":75,"slideTackle":90,"sprintSpeed":88,"stamina":92,"standTackle":85,"strength":96,"vision":99,"volleys":60},"n":26},{"id":"progressor","name":"Progressor","sig":["long-ball-pass","anticipate","incisive-pass","intercept"],"max":{"acceleration":90,"aggression":96,"agility":90,"attPosition":90,"balance":92,"ballControl":99,"composure":96,"crossing":92,"curve":85,"defAware":99,"dribbling":92,"finishing":85,"fkAcc":90,"headingAcc":96,"interceptions":96,"jumping":99,"longPass":96,"longShots":85,"penalties":92,"reactions":99,"shortPass":96,"shotPower":92,"slideTackle":96,"sprintSpeed":90,"stamina":92,"standTackle":99,"strength":96,"vision":92,"volleys":75},"n":31},{"id":"boss","name":"Boss","sig":["bruiser","aerial-fortress","precision-header","anticipate"],"max":{"acceleration":90,"aggression":99,"agility":90,"attPosition":90,"balance":90,"ballControl":92,"composure":92,"crossing":90,"curve":80,"defAware":96,"dribbling":88,"finishing":82,"fkAcc":90,"headingAcc":99,"interceptions":96,"jumping":99,"longPass":90,"longShots":85,"penalties":92,"reactions":99,"shortPass":92,"shotPower":96,"slideTackle":99,"sprintSpeed":90,"stamina":92,"standTackle":99,"strength":99,"vision":90,"volleys":75},"n":31},{"id":"engine","name":"Engine","sig":["relentless","jockey","anticipate","rapid"],"max":{"acceleration":92,"aggression":96,"agility":92,"attPosition":90,"balance":92,"ballControl":92,"composure":92,"crossing":96,"curve":90,"defAware":99,"dribbling":92,"finishing":90,"fkAcc":95,"headingAcc":92,"interceptions":92,"jumping":92,"longPass":92,"longShots":85,"penalties":90,"reactions":99,"shortPass":96,"shotPower":92,"slideTackle":92,"sprintSpeed":92,"stamina":99,"standTackle":92,"strength":96,"vision":92,"volleys":75},"n":31},{"id":"marauder","name":"Marauder","sig":["quick-step","whipped-pass","technical","trickster"],"max":{"acceleration":92,"aggression":96,"agility":95,"attPosition":92,"balance":92,"ballControl":96,"composure":92,"crossing":99,"curve":96,"defAware":96,"dribbling":99,"finishing":90,"fkAcc":95,"headingAcc":90,"interceptions":96,"jumping":92,"longPass":92,"longShots":85,"penalties":96,"reactions":99,"shortPass":92,"shotPower":92,"slideTackle":96,"sprintSpeed":95,"stamina":96,"standTackle":96,"strength":96,"vision":92,"volleys":96},"n":31},{"id":"recycler","name":"Recycler","sig":["press-proven","intercept","power-shot","tiki-taka"],"max":{"acceleration":90,"aggression":99,"agility":92,"attPosition":90,"balance":92,"ballControl":96,"composure":99,"crossing":92,"curve":90,"defAware":99,"dribbling":92,"finishing":90,"fkAcc":99,"headingAcc":90,"interceptions":99,"jumping":90,"longPass":96,"longShots":99,"penalties":90,"reactions":99,"shortPass":96,"shotPower":96,"slideTackle":92,"sprintSpeed":90,"stamina":96,"standTackle":96,"strength":96,"vision":96,"volleys":90},"n":31},{"id":"maestro","name":"Maestro","sig":["pinged-pass","tiki-taka","long-ball-pass","incisive-pass"],"max":{"acceleration":90,"aggression":92,"agility":99,"attPosition":96,"balance":96,"ballControl":99,"composure":99,"crossing":92,"curve":96,"defAware":90,"dribbling":96,"finishing":96,"fkAcc":99,"headingAcc":85,"interceptions":92,"jumping":90,"longPass":99,"longShots":96,"penalties":99,"reactions":99,"shortPass":99,"shotPower":96,"slideTackle":90,"sprintSpeed":90,"stamina":92,"standTackle":90,"strength":92,"vision":99,"volleys":96},"n":31},{"id":"creator","name":"Creator","sig":["incisive-pass","inventive","game-changer","quick-step"],"max":{"acceleration":92,"aggression":92,"agility":99,"attPosition":99,"balance":96,"ballControl":96,"composure":96,"crossing":99,"curve":99,"defAware":85,"dribbling":96,"finishing":96,"fkAcc":99,"headingAcc":85,"interceptions":85,"jumping":90,"longPass":96,"longShots":99,"penalties":99,"reactions":99,"shortPass":96,"shotPower":96,"slideTackle":90,"sprintSpeed":92,"stamina":92,"standTackle":90,"strength":92,"vision":99,"volleys":96},"n":31},{"id":"spark","name":"Spark","sig":["trickster","rapid","inventive","technical"],"max":{"acceleration":99,"aggression":92,"agility":99,"attPosition":96,"balance":96,"ballControl":96,"composure":96,"crossing":99,"curve":99,"defAware":85,"dribbling":99,"finishing":96,"fkAcc":99,"headingAcc":85,"interceptions":85,"jumping":85,"longPass":92,"longShots":92,"penalties":99,"reactions":99,"shortPass":96,"shotPower":92,"slideTackle":75,"sprintSpeed":95,"stamina":92,"standTackle":80,"strength":90,"vision":96,"volleys":96},"n":31},{"id":"magician","name":"Magician","sig":["technical","finesse-shot","chip-shot","inventive"],"max":{"acceleration":95,"aggression":92,"agility":99,"attPosition":96,"balance":99,"ballControl":99,"composure":96,"crossing":92,"curve":99,"defAware":82,"dribbling":96,"finishing":99,"fkAcc":99,"headingAcc":85,"interceptions":82,"jumping":85,"longPass":92,"longShots":96,"penalties":99,"reactions":99,"shortPass":96,"shotPower":92,"slideTackle":75,"sprintSpeed":95,"stamina":92,"standTackle":80,"strength":90,"vision":96,"volleys":96},"n":31},{"id":"finisher","name":"Finisher","sig":["low-driven-shot","first-touch","quick-step","acrobatic"],"max":{"acceleration":95,"aggression":96,"agility":99,"attPosition":99,"balance":99,"ballControl":96,"composure":99,"crossing":92,"curve":96,"defAware":85,"dribbling":96,"finishing":99,"fkAcc":99,"headingAcc":96,"interceptions":85,"jumping":92,"longPass":92,"longShots":96,"penalties":99,"reactions":99,"shortPass":92,"shotPower":99,"slideTackle":75,"sprintSpeed":95,"stamina":92,"standTackle":75,"strength":92,"vision":92,"volleys":99},"n":29},{"id":"target","name":"Target","sig":["power-shot","precision-header","tiki-taka","press-proven"],"max":{"acceleration":90,"aggression":92,"agility":92,"attPosition":96,"balance":92,"ballControl":92,"composure":99,"crossing":90,"curve":90,"defAware":82,"dribbling":92,"finishing":96,"fkAcc":99,"headingAcc":99,"interceptions":82,"jumping":96,"longPass":92,"longShots":96,"penalties":99,"reactions":99,"shortPass":96,"shotPower":99,"slideTackle":75,"sprintSpeed":92,"stamina":92,"standTackle":75,"strength":99,"vision":92,"volleys":96},"n":29}];
+var sel=R.querySelector('[data-arch]'),cnt=R.querySelector('[data-cnt]'),cat='';
+function apply(){var a=A.filter(function(x){return x.id===sel.value})[0]||null;
+ var reach=0,shown=0;
+ R.querySelectorAll('.card').forEach(function(c){
+  var hide=cat&&c.dataset.cat!==cat;c.style.display=hide?'none':'';if(!hide)shown++;
+  var allOk=true;
+  c.querySelectorAll('.rq').forEach(function(q){
+   if(!a){q.classList.remove('ok','no');q.querySelector('[data-hv]').textContent='';allOk=false;return;}
+   var m=a.max[q.dataset.k],ok=(m||0)>=+q.dataset.min;
+   q.classList.toggle('ok',ok);q.classList.toggle('no',!ok);allOk=allOk&&ok;
+   q.querySelector('[data-hv]').textContent=(m==null?'no stat':String(m));});
+  c.classList.toggle('no',!!a&&!allOk);
+  var s=c.querySelector('[data-sig]');s.hidden=!(a&&a.sig.indexOf(c.dataset.ps)>=0);
+  if(a&&allOk&&!hide)reach++;});
+ if(a){cnt.hidden=false;cnt.innerHTML='<b>'+a.name+'</b> can hit the thresholds for <b>'+a.n+' of 36</b> PlayStyles'+(cat?' ('+reach+' of the '+shown+' shown)':'')+'. Its four signature PlayStyles are marked.';}
+ else cnt.hidden=true;}
+sel.addEventListener('change',apply);
+R.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){
+ cat=ch.dataset.cat;R.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===ch))});apply();});});
+apply();})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>What the thresholds actually gate</h2>
+<p>You can level any attribute your archetype allows, but only up to its ceiling — and the ceiling is what decides a PlayStyle, because no amount of AP pushes past it. The surprise in the data is how rarely that bites: <strong>16 of the 36 PlayStyles are reachable by every single archetype</strong>, keepers included, and 9 of the 13 archetypes tie for the widest menu at 31 PlayStyles each.</p>
+<p>The gates that do exist are sharp ones. The 5 Goal Keeping PlayStyles that demand a goalkeeper stat are keepers-only by construction — outfield archetypes simply have no GK attributes to level. And the two keepers pay for their speciality the other way round: low outfield ceilings hold the Shot Stopper to 21 PlayStyles and the Sweeper Keeper to 26, the two narrowest menus in the game.</p>
+
+<h2>The PlayStyles someone has to miss</h2>
+<p>Outside the goalkeeper-stat five, these are the only PlayStyles at least one archetype cannot reach — listed by who misses out:</p>
+<table>
+<thead><tr><th>PlayStyle</th><th>Requires</th><th>Out of reach for</th></tr></thead>
+<tbody><tr><td>Jockey</td><td>Agility ≥ 75, Def. Aware ≥ 80, Stand Tackle ≥ 80</td><td>Shot Stopper, Sweeper Keeper, Finisher and Target</td></tr><tr><td>Anticipate</td><td>Balance ≥ 80, Def. Aware ≥ 75, Stand Tackle ≥ 80</td><td>Shot Stopper, Finisher and Target</td></tr><tr><td>Incisive Pass</td><td>Vision ≥ 75, Long Pass ≥ 80, Curve ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Inventive</td><td>Composure ≥ 80, Long Pass ≥ 75, Curve ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Bruiser</td><td>Strength ≥ 75, Aggression ≥ 80, Def. Aware ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Acrobatic</td><td>Agility ≥ 80, Reactions ≥ 80, Volleys ≥ 75</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Dead Ball</td><td>Crossing ≥ 80, FK Acc. ≥ 75, Shot Power ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Finesse Shot</td><td>Vision ≥ 80, Finishing ≥ 75, Curve ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Gamechanger</td><td>Composure ≥ 80, Finishing ≥ 75, Curve ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Low Driven Shot</td><td>Composure ≥ 80, Finishing ≥ 75, Shot Power ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Power Shot</td><td>Finishing ≥ 80, Shot Power ≥ 75, Long Shots ≥ 80</td><td>Shot Stopper and Sweeper Keeper</td></tr><tr><td>Rapid</td><td>Acceleration ≥ 75, Sprint Speed ≥ 80, Dribbling ≥ 80</td><td>Shot Stopper</td></tr><tr><td>Technical</td><td>Balance ≥ 80, Ball Control ≥ 75, Dribbling ≥ 80</td><td>Shot Stopper</td></tr><tr><td>Trickster</td><td>Acceleration ≥ 80, Agility ≥ 75, Dribbling ≥ 80</td><td>Shot Stopper</td></tr><tr><td>Slide Tackle</td><td>Aggression ≥ 80, Slide Tackle ≥ 75</td><td>Shot Stopper</td></tr></tbody>
+</table>
+<p><strong>Jockey and Anticipate are the two real dividers.</strong> Both stack Def. Aware and Stand Tackle at 75–80, and that double defensive demand is exactly what the two pure forwards — Finisher and Target — gave away for their scoring ceilings. Everything else on the list is only out of a keeper's reach.</p>
+<p>One curiosity going the other way: 1v1 Close Down is filed under Goal Keeping, but its thresholds (Acceleration ≥ 80, Agility ≥ 75, Aggression ≥ 80) name no goalkeeper stat — on the numbers alone it is the one Goal Keeping PlayStyle every archetype's ceilings clear.</p>
+
+<h2>Signature PlayStyles are a separate track</h2>
+<p>Each archetype also carries four signature PlayStyles of its own — select an archetype in the tool and they light up. Those four are baked into the archetype's identity in the catalog, alongside the unlockable pool the thresholds govern. How many PlayStyle <em>slots</em> you have to equip any of this into is a levelling question, not a threshold one — the slot schedule is in our <a href="/blog/pro-clubs-level-rewards/">level rewards guide</a>.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>What are PlayStyle requirements in Pro Clubs?</h3>
+<p>Attribute thresholds recorded against each PlayStyle — for example Acceleration ≥ 80. The catalog lists 99 thresholds across the 36 PlayStyles, most commonly two or three per PlayStyle.</p>
+<h3>Can every archetype unlock every PlayStyle?</h3>
+<p>No, but it is closer than you would guess. Most outfield archetypes reach 31 of 36; Finisher and Target miss only Jockey and Anticipate; the keepers reach 21 and 26 because their outfield ceilings are the lowest in the game.</p>
+<h3>Do goalkeepers get their own PlayStyles?</h3>
+<p>5 of the 6 Goal Keeping PlayStyles require goalkeeper attributes, which only the Shot Stopper and Sweeper Keeper have — outfield archetypes cannot meet those requirements at all. The odd one out is 1v1 Close Down, whose recorded thresholds are all outfield stats.</p>
+<h3>Does levelling past a threshold do anything extra?</h3>
+<p>The thresholds are unlock bars, not scaling curves — the catalog records a single minimum per attribute. What extra points cost you is a different question entirely, covered in our <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a>.</p>

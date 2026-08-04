@@ -1,0 +1,817 @@
+<p>Every archetype carries three specializations, each sitting behind attribute thresholds — 117 of them across the game. The tool prices every threshold in AP, so you can see what each specialization really costs before you commit a single point:</p>
+
+<!--kg-card-begin: html-->
+<div class="sp27" data-sp27>
+<style>
+.sp27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .sp27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .sp27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.sp27 *{box-sizing:border-box}
+.sp27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.sp27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.sp27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.sp27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.sp27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.sp27 .chip:hover{border-color:var(--muted)}
+.sp27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.sp27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.sp27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.sp27{padding:14px}}
+.sp27 select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--ring);
+  background:var(--s1);color:var(--ink);width:100%;max-width:290px;margin-bottom:14px}
+.sp27 .card{border:1px solid var(--grid);border-radius:9px;padding:13px 14px;margin-bottom:10px}
+.sp27 .nm{font-size:15px;font-weight:650;margin:0 0 2px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.sp27 .tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--good)}
+.sp27 .by{font-size:12px;color:var(--ink2);margin:0 0 6px}
+.sp27 .ds{font-size:12.5px;color:var(--ink2);margin:0 0 10px;line-height:1.4}
+.sp27 .cr{display:grid;grid-template-columns:150px 1fr 150px;gap:10px;align-items:center;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.sp27 .cn{font-size:12.5px}
+.sp27 .bar{position:relative;height:7px;border-radius:99px;background:var(--bar);overflow:hidden}
+.sp27 .bar i{position:absolute;top:0;bottom:0;border-radius:99px;background:var(--accent)}
+.sp27 .cv{font-size:12px;color:var(--ink2);text-align:right}
+.sp27 .tot{font-size:12.5px;color:var(--ink2);margin:10px 0 0;padding-top:9px;border-top:1px solid var(--grid)}
+.sp27 .tot b{color:var(--accent)}
+@media (max-width:600px){.sp27 .cr{grid-template-columns:1fr;gap:3px}.sp27 .cv{text-align:left}}
+</style>
+<p class="hd">Specialization unlock planner</p>
+<p class="sub">Pick an archetype: its three specializations, every attribute threshold, and what meeting each one costs in AP starting from the archetype's floor.</p>
+<span class="lbl">Archetype</span>
+<select data-arch><option value="shot-stopper">Shot Stopper · Keeper</option><option value="sweeper-keeper">Sweeper Keeper · Keeper</option><option value="progressor">Progressor · Defender</option><option value="boss">Boss · Defender</option><option value="engine" selected>Engine · Defender</option><option value="marauder">Marauder · Defender</option><option value="recycler">Recycler · Midfielder</option><option value="maestro">Maestro · Midfielder</option><option value="creator">Creator · Midfielder</option><option value="spark">Spark · Midfielder</option><option value="magician">Magician · Forward</option><option value="finisher">Finisher · Forward</option><option value="target">Target · Forward</option></select>
+<div data-g="shot-stopper">
+<div class="card">
+  <p class="nm">Shot Stopper+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Oliver Kahn · unlocks the <b>Reflex Wall</b> perk and <b>Cross Claimer+</b></p>
+  <p class="ds">The ultimate Shot Stopper! An impenetrable wall that thrives when peppered with shots.</p>
+  <div class="cr">
+    <span class="cn">Jumping ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 119 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Handling ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Pos. ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>455 AP</b> — 14.4% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Spider</p>
+  <p class="by">Inspired by Iker Casillas · unlocks the <b>Sticky Gloves</b> perk and <b>1v1 Close Down+</b></p>
+  <p class="ds">Catches everything thrown at goal, smothering shots that others would parry.</p>
+  <div class="cr">
+    <span class="cn">Acceleration ≥ 90</span>
+    <span class="bar"><i style="left:0;width:88%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Agility ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+40 pts · 271 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Reflexes ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>559 AP</b> — 17.7% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Octopus</p>
+  <p class="by">Inspired by Peter Schmeichel · unlocks the <b>Rebound Killer</b> perk and <b>Deflector+</b></p>
+  <p class="ds">Limbs everywhere. Makes impossible point-blank saves look routine.</p>
+  <div class="cr">
+    <span class="cn">Strength ≥ 90</span>
+    <span class="bar"><i style="left:0;width:87%"></i></span>
+    <span class="cv">+40 pts · 189 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Diving ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Pos. ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>525 AP</b> — 16.6% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="sweeper-keeper">
+<div class="card">
+  <p class="nm">Sweeper Keeper+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Lev Yashin · unlocks the <b>Eleventh Outfielder</b> perk and <b>Far Throw+</b></p>
+  <p class="ds">The ultimate Sweeper Keeper! Starts attacks like a deep-lying playmaker.</p>
+  <div class="cr">
+    <span class="cn">Vision ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Diving ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Kicking ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>417 AP</b> — 13.2% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Launcher</p>
+  <p class="by">Inspired by Edwin van der Sar · unlocks the <b>Counter Trigger</b> perk and <b>Long Ball Pass+</b></p>
+  <p class="ds">Turns every save into an instant counter attack with rocket distribution.</p>
+  <div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Kicking ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Reflexes ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>428 AP</b> — 13.5% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Extra</p>
+  <p class="by">Inspired by Jorge Campos · unlocks the <b>Libero</b> perk and <b>Press Proven+</b></p>
+  <p class="ds">Sweeps up behind a high line, defending space no keeper should reach.</p>
+  <div class="cr">
+    <span class="cn">Composure ≥ 90</span>
+    <span class="bar"><i style="left:0;width:88%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Short Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:82%"></i></span>
+    <span class="cv">+40 pts · 271 AP</span>
+  </div><div class="cr">
+    <span class="cn">GK Pos. ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>559 AP</b> — 17.7% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="progressor">
+<div class="card">
+  <p class="nm">Progressor+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Fernando Hierro · unlocks the <b>Line Splitter</b> perk and <b>Jockey+</b></p>
+  <p class="ds">The ultimate Progressor! Dismantles a press with one perfectly weighted pass.</p>
+  <div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Def. Aware ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Stand Tackle ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>343 AP</b> — 10.8% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Pioneer</p>
+  <p class="by">Inspired by Franz Beckenbauer · unlocks the <b>Deep Architect</b> perk and <b>Pinged Pass+</b></p>
+  <p class="ds">Strides out of defence, dictating play like a libero from a lost era.</p>
+  <div class="cr">
+    <span class="cn">Dribbling ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+27 pts · 274 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Short Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>543 AP</b> — 17.1% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Janitor</p>
+  <p class="by">Inspired by Rio Ferdinand · unlocks the <b>Clean Sweeper</b> perk and <b>Quick Step+</b></p>
+  <p class="ds">Cleans up every loose ball before calmly restarting the play.</p>
+  <div class="cr">
+    <span class="cn">Acceleration ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+20 pts · 209 AP</span>
+  </div><div class="cr">
+    <span class="cn">Sprint Speed ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div><div class="cr">
+    <span class="cn">Slide Tackle ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>545 AP</b> — 17.2% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="boss">
+<div class="card">
+  <p class="nm">Boss+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Nemanja Vidić · unlocks the <b>Immovable Object</b> perk and <b>Slide Tackle+</b></p>
+  <p class="ds">The ultimate Boss! Throws their body in front of everything that moves.</p>
+  <div class="cr">
+    <span class="cn">Slide Tackle ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 114 AP</span>
+  </div><div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 65 AP</span>
+  </div><div class="cr">
+    <span class="cn">Strength ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>271 AP</b> — 8.6% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Enforcer</p>
+  <p class="by">Inspired by Patrick Vieira · unlocks the <b>Midfield General</b> perk and <b>Press Proven+</b></p>
+  <p class="ds">Sets the tone with crunching challenges that opponents remember.</p>
+  <div class="cr">
+    <span class="cn">Composure ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+27 pts · 197 AP</span>
+  </div><div class="cr">
+    <span class="cn">Vision ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+35 pts · 184 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>548 AP</b> — 17.3% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Capitano</p>
+  <p class="by">Inspired by Paolo Maldini · unlocks the <b>Last Line Hero</b> perk and <b>Block+</b></p>
+  <p class="ds">Reads danger early and leads the backline with towering interventions.</p>
+  <div class="cr">
+    <span class="cn">Agility ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+25 pts · 234 AP</span>
+  </div><div class="cr">
+    <span class="cn">Reactions ≥ 90</span>
+    <span class="bar"><i style="left:0;width:77%"></i></span>
+    <span class="cv">+30 pts · 126 AP</span>
+  </div><div class="cr">
+    <span class="cn">Def. Aware ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>519 AP</b> — 16.4% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="engine">
+<div class="card">
+  <p class="nm">Engine+</p>
+  <p class="by">Inspired by Park Ji Sung · unlocks the <b>Perpetual Motion</b> perk and <b>Intercept+</b></p>
+  <p class="ds">The ultimate Engine! Still sprinting when everyone else has stopped.</p>
+  <div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 119 AP</span>
+  </div><div class="cr">
+    <span class="cn">Interceptions ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+17 pts · 217 AP</span>
+  </div><div class="cr">
+    <span class="cn">Stand Tackle ≥ 90</span>
+    <span class="bar"><i style="left:0;width:88%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>465 AP</b> — 14.7% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Everywhere<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Javier Zanetti · unlocks the <b>Field Coverage</b> perk and <b>Tiki Taka+</b></p>
+  <p class="ds">Covers every blade of grass, appearing exactly where the ball breaks loose.</p>
+  <div class="cr">
+    <span class="cn">Reactions ≥ 92</span>
+    <span class="bar"><i style="left:0;width:79%"></i></span>
+    <span class="cv">+27 pts · 141 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div><div class="cr">
+    <span class="cn">Short Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>437 AP</b> — 13.8% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Gadget</p>
+  <p class="by">Inspired by Marcelo · unlocks the <b>Ball Winner</b> perk and <b>Technical+</b></p>
+  <p class="ds">A tenacious ball-winning tool that bites into every challenge.</p>
+  <div class="cr">
+    <span class="cn">Dribbling ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 234 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div><div class="cr">
+    <span class="cn">Balance ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+27 pts · 197 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>598 AP</b> — 18.9% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="marauder">
+<div class="card">
+  <p class="nm">Marauder+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Cafu · unlocks the <b>Overlap Threat</b> perk and <b>Slide Tackle+</b></p>
+  <p class="ds">The ultimate Marauder! Owns the entire flank from box to box.</p>
+  <div class="cr">
+    <span class="cn">Sprint Speed ≥ 92</span>
+    <span class="bar"><i style="left:0;width:85%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Slide Tackle ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>343 AP</b> — 10.8% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Speedster</p>
+  <p class="by">Inspired by Lilian Thuram · unlocks the <b>Jet Fuel</b> perk and <b>Rapid+</b></p>
+  <p class="ds">Pure pace. Leaves wingers trailing and recovers before they can blink.</p>
+  <div class="cr">
+    <span class="cn">Acceleration ≥ 90</span>
+    <span class="bar"><i style="left:0;width:88%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div><div class="cr">
+    <span class="cn">Sprint Speed ≥ 92</span>
+    <span class="bar"><i style="left:0;width:85%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">Dribbling ≥ 90</span>
+    <span class="bar"><i style="left:0;width:69%"></i></span>
+    <span class="cv">+20 pts · 209 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>545 AP</b> — 17.2% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Athlete</p>
+  <p class="by">Inspired by Roberto Carlos · unlocks the <b>Iron Lungs</b> perk and <b>Bruiser+</b></p>
+  <p class="ds">An endurance machine, repeating sprints all match without fading.</p>
+  <div class="cr">
+    <span class="cn">Strength ≥ 92</span>
+    <span class="bar"><i style="left:0;width:89%"></i></span>
+    <span class="cv">+32 pts · 209 AP</span>
+  </div><div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Def. Aware ≥ 90</span>
+    <span class="bar"><i style="left:0;width:77%"></i></span>
+    <span class="cv">+20 pts · 151 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>452 AP</b> — 14.3% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="recycler">
+<div class="card">
+  <p class="nm">Recycler+</p>
+  <p class="by">Inspired by Michaël Essien · unlocks the <b>Turnover Machine</b> perk and <b>Pinged Pass+</b></p>
+  <p class="ds">The ultimate Recycler! Turns defence into attack in a single touch.</p>
+  <div class="cr">
+    <span class="cn">Strength ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Short Pass ≥ 92</span>
+    <span class="bar"><i style="left:0;width:85%"></i></span>
+    <span class="cv">+22 pts · 249 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>470 AP</b> — 14.8% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Driver</p>
+  <p class="by">Inspired by Yaya Touré · unlocks the <b>Forward Momentum</b> perk and <b>Enforcer+</b></p>
+  <p class="ds">Powers through midfield, driving the team up the pitch.</p>
+  <div class="cr">
+    <span class="cn">Strength ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Balance ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">Sprint Speed ≥ 90</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+20 pts · 209 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>460 AP</b> — 14.5% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Thief<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Claude Makélélé · unlocks the <b>Pickpocket</b> perk and <b>Anticipate+</b></p>
+  <p class="ds">Steals possession unnoticed and hands it straight to the creators.</p>
+  <div class="cr">
+    <span class="cn">Interceptions ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Def. Aware ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Stand Tackle ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 217 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>438 AP</b> — 13.8% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="maestro">
+<div class="card">
+  <p class="nm">Maestro+</p>
+  <p class="by">Inspired by Toni Kroos · unlocks the <b>Conductor</b> perk and <b>Technical+</b></p>
+  <p class="ds">The ultimate Maestro! Controls the tempo of the match with every touch.</p>
+  <div class="cr">
+    <span class="cn">Balance ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Vision ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 114 AP</span>
+  </div><div class="cr">
+    <span class="cn">Dribbling ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 234 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>477 AP</b> — 15.1% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Crasher<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Frank Lampard · unlocks the <b>Late Arrival</b> perk and <b>First Touch+</b></p>
+  <p class="ds">Ghosts into the box late to finish moves they started.</p>
+  <div class="cr">
+    <span class="cn">Composure ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 114 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Finishing ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 234 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>440 AP</b> — 13.9% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Heartbeat</p>
+  <p class="by">Inspired by Pavel Nedved · unlocks the <b>Tempo Setter</b> perk and <b>Relentless+</b></p>
+  <p class="ds">The pulse of the team, dictating rhythm from the deepest positions.</p>
+  <div class="cr">
+    <span class="cn">Agility ≥ 92</span>
+    <span class="bar"><i style="left:0;width:74%"></i></span>
+    <span class="cv">+20 pts · 237 AP</span>
+  </div><div class="cr">
+    <span class="cn">Balance ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 119 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>485 AP</b> — 15.3% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="creator">
+<div class="card">
+  <p class="nm">Creator+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Andrés Iniesta · unlocks the <b>Assistant</b> perk and <b>Whipped Pass+</b></p>
+  <p class="ds">The ultimate Creator! Capable of delivering precise and incisive passes that can dismantle even the most organised backlines.</p>
+  <div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Crossing ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Vision ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 114 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>372 AP</b> — 11.7% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Architect</p>
+  <p class="by">Inspired by David Beckham · unlocks the <b>Quarterback</b> perk and <b>Dead Ball+</b></p>
+  <p class="ds">Builds attacks from deep with raking diagonals no one else sees.</p>
+  <div class="cr">
+    <span class="cn">Crossing ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">FK Acc. ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Shot Power ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>380 AP</b> — 12.0% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Sniper</p>
+  <p class="by">Inspired by Zinedine Zidane · unlocks the <b>Set Piece Wizard</b> perk and <b>Power Shot+</b></p>
+  <p class="ds">Bends the unstoppable ball from any dead-ball situation.</p>
+  <div class="cr">
+    <span class="cn">Finishing ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 234 AP</span>
+  </div><div class="cr">
+    <span class="cn">Shot Power ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Shots ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>485 AP</b> — 15.3% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="spark">
+<div class="card">
+  <p class="nm">Spark+</p>
+  <p class="by">Inspired by Luís Figo · unlocks the <b>Live Wire</b> perk and <b>Quick Step+</b></p>
+  <p class="ds">The ultimate Spark! Ignites attacks with electric bursts down the wing.</p>
+  <div class="cr">
+    <span class="cn">Acceleration ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Sprint Speed ≥ 90</span>
+    <span class="bar"><i style="left:0;width:75%"></i></span>
+    <span class="cv">+15 pts · 177 AP</span>
+  </div><div class="cr">
+    <span class="cn">Agility ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>465 AP</b> — 14.7% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Joker<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Eden Hazard · unlocks the <b>Wildcard</b> perk and <b>Whipped Pass+</b></p>
+  <p class="ds">Unpredictable brilliance that no defender can plan against.</p>
+  <div class="cr">
+    <span class="cn">Att. Position ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+10 pts · 71 AP</span>
+  </div><div class="cr">
+    <span class="cn">Crossing ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>397 AP</b> — 12.5% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Ace</p>
+  <p class="by">Inspired by Jay-Jay Okocha · unlocks the <b>Byline Burner</b> perk and <b>Chip Shot+</b></p>
+  <p class="ds">Beats the fullback on the outside every single time.</p>
+  <div class="cr">
+    <span class="cn">Finishing ≥ 92</span>
+    <span class="bar"><i style="left:0;width:87%"></i></span>
+    <span class="cv">+27 pts · 274 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div><div class="cr">
+    <span class="cn">Reactions ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 92 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>458 AP</b> — 14.5% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="magician">
+<div class="card">
+  <p class="nm">Magician+</p>
+  <p class="by">Inspired by Ronaldinho · unlocks the <b>Showtime</b> perk and <b>First Touch+</b></p>
+  <p class="ds">The ultimate Magician! Conjures goals from absolutely nothing.</p>
+  <div class="cr">
+    <span class="cn">Acceleration ≥ 90</span>
+    <span class="bar"><i style="left:0;width:75%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Composure ≥ 90</span>
+    <span class="bar"><i style="left:0;width:75%"></i></span>
+    <span class="cv">+18 pts · 143 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 159 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>431 AP</b> — 13.6% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Hotshot</p>
+  <p class="by">Inspired by Thierry Henry · unlocks the <b>Golden Arc</b> perk and <b>Power Shot+</b></p>
+  <p class="ds">Finds the far corner from impossible angles.</p>
+  <div class="cr">
+    <span class="cn">Finishing ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Shot Power ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+22 pts · 181 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Shots ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>477 AP</b> — 15.1% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Invader<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Mia Hamm · unlocks the <b>Ghost Runner</b> perk and <b>Incisive Pass+</b></p>
+  <p class="ds">Interprets space like no other, arriving unmarked in the box.</p>
+  <div class="cr">
+    <span class="cn">Att. Position ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+10 pts · 71 AP</span>
+  </div><div class="cr">
+    <span class="cn">Vision ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Pass ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+42 pts · 219 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>419 AP</b> — 13.2% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="finisher">
+<div class="card">
+  <p class="nm">Finisher+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Alex Morgan · unlocks the <b>Clinical Instinct</b> perk and <b>Chip Shot+</b></p>
+  <p class="ds">The ultimate Finisher! One chance is all they ever need.</p>
+  <div class="cr">
+    <span class="cn">Reactions ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 65 AP</span>
+  </div><div class="cr">
+    <span class="cn">Composure ≥ 92</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+17 pts · 114 AP</span>
+  </div><div class="cr">
+    <span class="cn">Ball Control ≥ 90</span>
+    <span class="bar"><i style="left:0;width:71%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>308 AP</b> — 9.7% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Presser</p>
+  <p class="by">Inspired by Carlos Tevez · unlocks the <b>Hunt the Ball</b> perk and <b>Relentless+</b></p>
+  <p class="ds">First line of defence, terrorising backlines into mistakes.</p>
+  <div class="cr">
+    <span class="cn">Aggression ≥ 90</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+25 pts · 119 AP</span>
+  </div><div class="cr">
+    <span class="cn">Stamina ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+27 pts · 141 AP</span>
+  </div><div class="cr">
+    <span class="cn">Agility ≥ 90</span>
+    <span class="bar"><i style="left:0;width:67%"></i></span>
+    <span class="cv">+18 pts · 197 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>457 AP</b> — 14.4% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Hunter</p>
+  <p class="by">Inspired by Birgit Prinz · unlocks the <b>Poacher's Instinct</b> perk and <b>Gamechanger+</b></p>
+  <p class="ds">Lives on the shoulder of the last defender, always ready to pounce.</p>
+  <div class="cr">
+    <span class="cn">Att. Position ≥ 90</span>
+    <span class="bar"><i style="left:0;width:53%"></i></span>
+    <span class="cv">+10 pts · 71 AP</span>
+  </div><div class="cr">
+    <span class="cn">Finishing ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Curve ≥ 92</span>
+    <span class="bar"><i style="left:0;width:85%"></i></span>
+    <span class="cv">+22 pts · 130 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>330 AP</b> — 10.4% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<div data-g="target">
+<div class="card">
+  <p class="nm">Target+<span class="tag">Cheapest for this archetype</span></p>
+  <p class="by">Inspired by Zlatan Ibrahimović · unlocks the <b>Line Breaker</b> perk and <b>Acrobatic+</b></p>
+  <p class="ds">The ultimate Target! Unplayable in the air and impossible to out-muscle.</p>
+  <div class="cr">
+    <span class="cn">Agility ≥ 90</span>
+    <span class="bar"><i style="left:0;width:91%"></i></span>
+    <span class="cv">+20 pts · 209 AP</span>
+  </div><div class="cr">
+    <span class="cn">Jumping ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 81 AP</span>
+  </div><div class="cr">
+    <span class="cn">Volleys ≥ 90</span>
+    <span class="bar"><i style="left:0;width:75%"></i></span>
+    <span class="cv">+18 pts · 102 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>392 AP</b> — 12.4% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Roamer</p>
+  <p class="by">Inspired by Francesco Totti · unlocks the <b>Blind Passer</b> perk and <b>Incisive Pass+</b></p>
+  <p class="ds">Drops deep to link play, pulling defenders out of position.</p>
+  <div class="cr">
+    <span class="cn">Vision ≥ 90</span>
+    <span class="bar"><i style="left:0;width:93%"></i></span>
+    <span class="cv">+25 pts · 167 AP</span>
+  </div><div class="cr">
+    <span class="cn">Long Pass ≥ 90</span>
+    <span class="bar"><i style="left:0;width:95%"></i></span>
+    <span class="cv">+40 pts · 189 AP</span>
+  </div><div class="cr">
+    <span class="cn">Short Pass ≥ 92</span>
+    <span class="bar"><i style="left:0;width:81%"></i></span>
+    <span class="cv">+17 pts · 217 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>573 AP</b> — 18.1% of the 3,167 AP a pro earns by level 100</p>
+</div><div class="card">
+  <p class="nm">Runner</p>
+  <p class="by">Inspired by Ronaldo · unlocks the <b>High Speed Shooter</b> perk and <b>Enforcer+</b></p>
+  <p class="ds">Runs the channels relentlessly, stretching backlines to breaking point.</p>
+  <div class="cr">
+    <span class="cn">Sprint Speed ≥ 92</span>
+    <span class="bar"><i style="left:0;width:100%"></i></span>
+    <span class="cv">+27 pts · 274 AP</span>
+  </div><div class="cr">
+    <span class="cn">Strength ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+15 pts · 129 AP</span>
+  </div><div class="cr">
+    <span class="cn">Att. Position ≥ 90</span>
+    <span class="bar"><i style="left:0;width:63%"></i></span>
+    <span class="cv">+10 pts · 71 AP</span>
+  </div>
+  <p class="tot">Total from a fresh pro: <b>474 AP</b> — 15.0% of the 3,167 AP a pro earns by level 100</p>
+</div>
+</div>
+<p class="foot">Bars show where each threshold sits between the archetype's floor and ceiling for that attribute. Criteria and ranges from the Pro Clubs Lobby catalog; AP prices are community-derived (EA publishes none) and cross-checked in-game.</p>
+<script>
+(function(){var R=document.querySelector('[data-sp27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var sel=R.querySelector('[data-arch]');
+function apply(){R.querySelectorAll('[data-g]').forEach(function(g){g.style.display=g.dataset.g===sel.value?'':'none'});}
+sel.addEventListener('change',apply);apply();})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>What a specialization gives you</h2>
+<p>Each one grants two things the moment its criteria are met: a third signature perk unique to that specialization, and an upgrade of one PlayStyle to its PlayStyle+ version. The criteria are pure attribute thresholds — meet them and the specialization is yours, and every one of the 39 sits within its archetype’s ceilings, so none is a trap.</p>
+<p>The thresholds double as a levelling plan. They tell you, in order of the bars above, which attributes the archetype is <em>expected</em> to raise — and because most criteria sit close to the ceiling, chasing a specialization usually means finishing the attributes you were building anyway.</p>
+
+<h2>Every specialization, ranked by what it costs</h2>
+<p>AP from a fresh pro (all attributes at the archetype's floor) to every criterion met, against the 3,167 AP a pro earns on the way to level 100:</p>
+<table>
+<thead><tr><th>Archetype</th><th>Specialization</th><th>Criteria</th><th>AP</th><th>Share of lifetime AP</th></tr></thead>
+<tbody><tr><td>Boss</td><td>Boss+</td><td>Slide Tackle ≥ 92, Aggression ≥ 90, Strength ≥ 90</td><td>271</td><td>8.6%</td></tr><tr><td>Finisher</td><td>Finisher+</td><td>Reactions ≥ 90, Composure ≥ 92, Ball Control ≥ 90</td><td>308</td><td>9.7%</td></tr><tr><td>Finisher</td><td>Hunter</td><td>Att. Position ≥ 90, Finishing ≥ 90, Curve ≥ 92</td><td>330</td><td>10.4%</td></tr><tr><td>Progressor</td><td>Progressor+</td><td>Long Pass ≥ 90, Def. Aware ≥ 90, Stand Tackle ≥ 92</td><td>343</td><td>10.8%</td></tr><tr><td>Marauder</td><td>Marauder+</td><td>Sprint Speed ≥ 92, Aggression ≥ 90, Slide Tackle ≥ 90</td><td>343</td><td>10.8%</td></tr><tr><td>Creator</td><td>Creator+</td><td>Long Pass ≥ 90, Crossing ≥ 90, Vision ≥ 92</td><td>372</td><td>11.7%</td></tr><tr><td>Creator</td><td>Architect</td><td>Crossing ≥ 92, FK Acc. ≥ 90, Shot Power ≥ 90</td><td>380</td><td>12.0%</td></tr><tr><td>Target</td><td>Target+</td><td>Agility ≥ 90, Jumping ≥ 92, Volleys ≥ 90</td><td>392</td><td>12.4%</td></tr><tr><td>Spark</td><td>Joker</td><td>Att. Position ≥ 90, Crossing ≥ 92, Long Pass ≥ 90</td><td>397</td><td>12.5%</td></tr><tr><td>Sweeper Keeper</td><td>Sweeper Keeper+</td><td>Vision ≥ 90, GK Diving ≥ 92, GK Kicking ≥ 90</td><td>417</td><td>13.2%</td></tr><tr><td>Magician</td><td>Invader</td><td>Att. Position ≥ 90, Vision ≥ 90, Long Pass ≥ 92</td><td>419</td><td>13.2%</td></tr><tr><td>Sweeper Keeper</td><td>Launcher</td><td>Long Pass ≥ 90, GK Kicking ≥ 92, GK Reflexes ≥ 90</td><td>428</td><td>13.5%</td></tr><tr><td>Magician</td><td>Magician+</td><td>Acceleration ≥ 90, Composure ≥ 90, Ball Control ≥ 92</td><td>431</td><td>13.6%</td></tr><tr><td>Engine</td><td>Everywhere</td><td>Reactions ≥ 92, Ball Control ≥ 90, Short Pass ≥ 90</td><td>437</td><td>13.8%</td></tr><tr><td>Recycler</td><td>Thief</td><td>Interceptions ≥ 90, Def. Aware ≥ 90, Stand Tackle ≥ 92</td><td>438</td><td>13.8%</td></tr><tr><td>Maestro</td><td>Crasher</td><td>Composure ≥ 92, Ball Control ≥ 90, Finishing ≥ 90</td><td>440</td><td>13.9%</td></tr><tr><td>Marauder</td><td>Athlete</td><td>Strength ≥ 92, Aggression ≥ 90, Def. Aware ≥ 90</td><td>452</td><td>14.3%</td></tr><tr><td>Shot Stopper</td><td>Shot Stopper+</td><td>Jumping ≥ 90, GK Handling ≥ 92, GK Pos. ≥ 90</td><td>455</td><td>14.4%</td></tr><tr><td>Finisher</td><td>Presser</td><td>Aggression ≥ 90, Stamina ≥ 92, Agility ≥ 90</td><td>457</td><td>14.4%</td></tr><tr><td>Spark</td><td>Ace</td><td>Finishing ≥ 92, Ball Control ≥ 90, Reactions ≥ 90</td><td>458</td><td>14.5%</td></tr><tr><td>Recycler</td><td>Driver</td><td>Strength ≥ 90, Balance ≥ 92, Sprint Speed ≥ 90</td><td>460</td><td>14.5%</td></tr><tr><td>Engine</td><td>Engine+</td><td>Aggression ≥ 90, Interceptions ≥ 92, Stand Tackle ≥ 90</td><td>465</td><td>14.7%</td></tr><tr><td>Spark</td><td>Spark+</td><td>Acceleration ≥ 90, Sprint Speed ≥ 90, Agility ≥ 92</td><td>465</td><td>14.7%</td></tr><tr><td>Recycler</td><td>Recycler+</td><td>Strength ≥ 90, Long Pass ≥ 90, Short Pass ≥ 92</td><td>470</td><td>14.8%</td></tr><tr><td>Target</td><td>Runner</td><td>Sprint Speed ≥ 92, Strength ≥ 90, Att. Position ≥ 90</td><td>474</td><td>15.0%</td></tr><tr><td>Maestro</td><td>Maestro+</td><td>Balance ≥ 90, Vision ≥ 92, Dribbling ≥ 90</td><td>477</td><td>15.1%</td></tr><tr><td>Magician</td><td>Hotshot</td><td>Finishing ≥ 90, Shot Power ≥ 92, Long Shots ≥ 90</td><td>477</td><td>15.1%</td></tr><tr><td>Maestro</td><td>Heartbeat</td><td>Agility ≥ 92, Balance ≥ 90, Aggression ≥ 90</td><td>485</td><td>15.3%</td></tr><tr><td>Creator</td><td>Sniper</td><td>Finishing ≥ 90, Shot Power ≥ 92, Long Shots ≥ 90</td><td>485</td><td>15.3%</td></tr><tr><td>Boss</td><td>Capitano</td><td>Agility ≥ 90, Reactions ≥ 90, Def. Aware ≥ 92</td><td>519</td><td>16.4%</td></tr><tr><td>Shot Stopper</td><td>Octopus</td><td>Strength ≥ 90, GK Diving ≥ 92, GK Pos. ≥ 90</td><td>525</td><td>16.6%</td></tr><tr><td>Progressor</td><td>Pioneer</td><td>Dribbling ≥ 92, Long Pass ≥ 90, Short Pass ≥ 90</td><td>543</td><td>17.1%</td></tr><tr><td>Progressor</td><td>Janitor</td><td>Acceleration ≥ 90, Sprint Speed ≥ 90, Slide Tackle ≥ 92</td><td>545</td><td>17.2%</td></tr><tr><td>Marauder</td><td>Speedster</td><td>Acceleration ≥ 90, Sprint Speed ≥ 92, Dribbling ≥ 90</td><td>545</td><td>17.2%</td></tr><tr><td>Boss</td><td>Enforcer</td><td>Composure ≥ 92, Vision ≥ 90, Ball Control ≥ 90</td><td>548</td><td>17.3%</td></tr><tr><td>Shot Stopper</td><td>Spider</td><td>Acceleration ≥ 90, Agility ≥ 90, GK Reflexes ≥ 92</td><td>559</td><td>17.7%</td></tr><tr><td>Sweeper Keeper</td><td>Extra</td><td>Composure ≥ 90, Short Pass ≥ 90, GK Pos. ≥ 92</td><td>559</td><td>17.7%</td></tr><tr><td>Target</td><td>Roamer</td><td>Vision ≥ 90, Long Pass ≥ 90, Short Pass ≥ 92</td><td>573</td><td>18.1%</td></tr><tr><td>Engine</td><td>Gadget</td><td>Dribbling ≥ 90, Ball Control ≥ 90, Balance ≥ 92</td><td>598</td><td>18.9%</td></tr></tbody>
+</table>
+<p><strong>The band runs from 271 AP (Boss+, Boss) to 598 AP (Gadget, Engine)</strong> — more than double. The cheap ones ask for attributes the archetype starts high in; the expensive ones demand deep runs up tier-3 pricing, where a single point costs up to 45 AP.</p>
+<p>Two caveats keep these numbers honest. They assume you level <em>only</em> what the criteria name, from the floor — points you would spend on those attributes anyway make the marginal cost lower. And attributes shared between two of an archetype's specializations count toward both at once, so unlocking a second specialization is often cheaper than its sticker price.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>How many specializations are there?</h3>
+<p>39 — three per archetype, each themed on a real player (the catalog names an inspiration for every one) and each carrying its own perk and PlayStyle+ upgrade.</p>
+<h3>Can my pro actually reach every criterion?</h3>
+<p>Yes. Checked against the catalog’s attribute ceilings, all 117 thresholds sit at or below the ceiling of the attribute they test — every specialization is reachable by its archetype.</p>
+<h3>What is the cheapest specialization in the game?</h3>
+<p>Boss+ on the Boss — 271 AP from a fresh pro. The priciest is Gadget on the Engine at 598 AP, roughly 18.9% of everything a pro earns by level 100. Where that AP itself comes from is in our <a href="/blog/pro-clubs-level-rewards/">level rewards guide</a>, and per-point pricing is in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a>.</p>
