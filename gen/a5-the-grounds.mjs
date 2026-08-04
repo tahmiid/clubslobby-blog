@@ -17,19 +17,25 @@ const FACTS = [
   [1, 'The Grounds', 'A social football hub built around your created pro — move around as your avatar, play Kickabouts, 1v1s and Clubs matches.'],
   [1, 'Platforms', 'The Grounds and the full Clubs experience are on PS5, Xbox Series X|S, PC and Nintendo Switch 2.'],
   [1, 'Not on last-gen', 'PS4, Xbox One and the original Nintendo Switch do not get The Grounds or the full Clubs experience.'],
-  [2, 'Three districts', 'Parkside, Montclair and Zeiza, each themed on a different part of football history.'],
-  [2, 'Four mentors', 'Kylian Mbappé, Paulo Dybala, Chloe Kelly and — returning from The Journey — Alex Hunter hand out challenges.'],
-  [2, 'Mentor paths differ', 'Mbappé toward dribbling and speed, Dybala toward tight-space play, Kelly toward finishing.'],
-  [2, 'Archetypes stay swappable', 'Reported as changeable at any time — which is already how FC 26 works. Widely written up as a new FC 27 feature. It is not one.'],
+  [1, 'Three districts', 'Parkside (UK working-class football), Montclair (French urban cage football) and Zeiza (Argentina’s Potrero spirit), connected by a central Terrace.'],
+  [1, 'Four mentors', 'Kylian Mbappé, Paulo Dybala, Chloe Kelly and — returning from The Journey — Alex Hunter, each with a specialist area.'],
+  [1, 'Mentor areas', 'Hunter guides player-improvement challenges, Mbappé Small-sided play, Kelly Kickabouts and in-world activities, Dybala Clubs and Stadium events.'],
+  [1, 'The roster: 12 of the 13', 'EA’s Masteries table names every archetype. Twelve match FC 26; Engine is absent and Disruptor appears instead. Rename or replacement — EA hasn’t said.'],
+  [1, 'All archetypes unlocked by default', 'Immediate access to any archetype "right out the gate" — and resets no longer cost Coins or a reset consumable.'],
+  [1, 'Per-attribute respecs', 'Fine-tune individual attributes instead of resetting a whole build, from the in-world menu, the Clubhouse, or inside Clubs and Rush lobbies.'],
+  [1, 'Masteries', 'Levelling any archetype to milestones grants permanent attribute boosts across every build. EA’s example: Finisher Level 10 → +1 Finishing, +1 Composure everywhere.'],
+  [1, 'Amps', 'New expiring boost items for the active archetype — four tiers, two Standard plus one Signature equipped, top tiers carrying PlayStyles and PlayStyles+. Earnable, and sold in the Store.'],
+  [1, 'Club Tournaments', '11v11 live tournament events beyond the returning Leagues and Playoffs, with six house rules confirmed by name.'],
+  [1, 'Club Objectives', 'Milestones (fans and Club reputation), Weeklies and Seasonals (Amps, Consumables, Coins), and Elite Objectives for Elite Division clubs.'],
+  [1, 'AXP and PlayStyles return', 'Consumables still apply AXP — including new archetype-targeted variants — and PlayStyles/PlayStyles+ appear throughout the deep dive.'],
+  [2, 'Specialization branches', 'The three-branch specialization structure is reported to return but was not mentioned in the Grounds & Clubs deep dive.'],
   [2, 'Saveable loadouts', 'Multiple build loadouts can be saved and swapped between in-game.'],
-  [2, 'Structure carries over', 'Thirteen archetypes, three specialization branches each, AXP and PlayStyles all return.'],
   [2, 'One pro everywhere', 'XP earned anywhere in The Grounds feeds the same Virtual Pro you take into an 11-a-side match.'],
   [2, 'Closed beta', 'Reported as 5–25 August, invite-only, with no public sign-up page.'],
-  [3, 'The level cap', 'FC 26 launched at 50 and moved to 100 in a title update. There is no basis yet for assuming FC 27 launches at its final cap.'],
+  [3, 'The level cap', 'FC 26 launched at 50 and moved to 100 in a title update. A "global maximum level cap" is referenced for FC 27 without a number.'],
   [3, 'The AP cost curve', 'Whether the four cost tiers survive, and what a point costs at the top end.'],
-  [3, 'Whether the 13 are the same 13', 'Thirteen is confirmed as a count, not as a roster.'],
   [3, 'AcceleRATE thresholds', 'The height, Agility and Strength values that decide Controlled, Explosive and Lengthy.'],
-  [3, 'Whether switching still costs nothing', 'In FC 26 changing archetype is free and resets nothing. Whether FC 27 keeps it that way, or attaches a cost, has not been stated.'],
+  [3, 'Mastery milestone schedule', 'Level 10 is the only named milestone and +1/+1 the only published magnitude. The full schedule is unknown.'],
   [3, 'Grounds XP rates', 'New earning surfaces could change levelling speed sharply without the level table moving at all.'],
   [3, 'Carry-over from FC 26', 'Whether any progression follows you. Assume none does.'],
 ];
@@ -66,7 +72,7 @@ ${[1, 2, 3].map((s) => `<button type="button" class="chip" data-f="${s}">${LABEL
 <div class="rows" style="margin-top:12px">
 ${FACTS.map(([s, h, d]) => `<div class="row" data-s="${s}"><span class="tag t${s}">${LABEL[s]}</span><div><b>${esc(h)}</b><p>${esc(d)}</p></div></div>`).join('')}
 </div>
-<p class="foot">Tracked by ${BRAND}. Updated as EA confirms things — last checked 3 August 2026.</p>
+<p class="foot">Tracked by ${BRAND}. Updated as EA confirms things — last updated 4 August 2026, after EA's official Grounds &amp; Clubs deep dive.</p>
 <script>
 (function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
 var N=${JSON.stringify(NOTE)},L=${JSON.stringify(LABEL)},C=${JSON.stringify(counts)};
@@ -91,17 +97,17 @@ ${widget}
 <p>The thing to understand is that it's one pro across all of it. The character you walk around The Grounds with is the same Virtual Pro you take into an 11-a-side Clubs match. Progress doesn't live in two places.</p>
 
 <h2>The mentors are a new progression axis</h2>
-<p>Progression reportedly runs partly through a Mentor system. Four mentors hand out challenges: Kylian Mbappé, Paulo Dybala, Chloe Kelly, and — returning from The Journey — Alex Hunter.</p>
-<p>What that means in practice is the part we'd most like EA's Clubs deep dive to answer, because it's the first progression system in Clubs that isn't simply <em>play matches, earn AXP</em>. Whether picking a mentor locks anything, whether their challenges are the fastest route to XP, whether you can work with all four — none of that is known.</p>
+<p>Four mentors guide different parts of The Grounds, and EA's deep dive has now assigned each a specialist area: Alex Hunter — returning from The Journey — handles player-improvement challenges, Mbappé fronts Small-sided play, Chloe Kelly runs Kickabouts and in-world activities, and Dybala anchors Clubs and Stadium events around club identity and loyalty.</p>
+<p>What's still open is the part that matters for levelling: whether mentor challenges are the fastest route to XP, and whether anything locks you to one mentor's path. The deep dive describes areas, not rates.</p>
 
 <h2>The "big change" that isn't one</h2>
 <p>A lot of FC 27 coverage has led on the same line: <strong>archetypes can be swapped at any time.</strong> It's usually presented as the headline change for anyone who builds a pro.</p>
 <p>It isn't a change. <strong>Archetypes already work like that in FC 26.</strong> You can move between any of the 13 whenever you like, and switching doesn't reset your progression. If you build pros today, this is simply the game you're already playing.</p>
 <p>So the practical answer is reassuring rather than dramatic: how you think about archetype choice carries over intact. It was already closer to picking a loadout than choosing a career, and nothing reported so far changes that.</p>
-<p>The question actually worth watching is the opposite one — whether FC 27 attaches a <em>cost</em> to switching that FC 26 doesn't have. That would be a real change. Nothing has been said about it either way, and we'd rather tell you that than dress up the status quo as news.</p>
+<p>EA's Grounds &amp; Clubs deep dive has since answered the question actually worth asking — and in the player's favour. Not only does switching stay free: <strong>resets are now free too</strong> ("no longer cost Coins or a reset consumable"), they work per-attribute instead of wiping the whole build, and every archetype is unlocked from the start. <a href="/blog/fc27-archetype-changes/">We've broken down what's genuinely new versus what was already true here.</a></p>
 
-<h2>What's staying the same</h2>
-<p>Thirteen archetypes, each with three specialization branches — the same structure as FC 26. AXP and PlayStyles both return, along with PlayStyles+.</p>
+<h2>What's staying the same — mostly</h2>
+<p>Thirteen archetypes, AXP, PlayStyles and PlayStyles+ all return — that's now official. One asterisk from EA's own Masteries table: twelve of the thirteen names match FC 26, but <strong>Engine is gone and an archetype called Disruptor appears in its place</strong>. Whether that's a rename or a replacement, EA hasn't said. The three-branch specialization structure is reported to return but wasn't mentioned in the deep dive.</p>
 <p>That structural continuity matters more than it sounds. It means the underlying maths of a Clubs build — attribute ceilings, AP costs, which PlayStyles you can equip at which values — probably still works the same way, even if every number inside it moves.</p>
 
 <h2>You may not be able to play it at all</h2>
@@ -114,7 +120,7 @@ ${widget}
 <li><strong>18 September</strong> — early access, for Ultimate and Ultimate Plus editions.</li>
 <li><strong>25 September</strong> — worldwide launch.</li>
 </ul>
-<p>EA's Clubs and Grounds deep dive hasn't landed yet. Gameplay, Career and FUT deep dives have all been published, so Clubs is next in the rotation.</p>
+<p>EA's Grounds &amp; Clubs deep dive has now landed, and it's the reason most of the tracker above turned green. We've covered each confirmed system in its own article: <a href="/blog/fc27-masteries-explained/">Masteries</a>, <a href="/blog/fc27-amps-explained/">Amps</a>, <a href="/blog/fc27-archetype-changes/">the archetype unlock and reset changes</a>, <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a>, and <a href="/blog/fc27-club-objectives/">Club Objectives</a>.</p>
 
 <h2>What we're doing about it</h2>
 <p>We rebuild the catalog from scratch every year — attribute ceilings, AP costs, PlayStyle requirements, AcceleRATE thresholds — and we don't publish numbers we haven't verified against more than one source.</p>

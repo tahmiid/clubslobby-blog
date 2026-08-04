@@ -1,0 +1,111 @@
+<p>Masteries are FC 27's answer to a question Clubs has never had a good answer for: <strong>why level an archetype you don't main?</strong> The answer now is that every archetype you develop leaves a permanent mark on your pro — reach its milestones and you unlock attribute boosts that apply to <em>every build you use</em>, not just the one you levelled. This is from EA's official Grounds &amp; Clubs deep dive, so unlike most of what's written about FC 27 right now, none of it is speculation.</p>
+
+<!--kg-card-begin: html-->
+<div class="ms27" data-ms27>
+<style>
+.ms27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .ms27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .ms27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.ms27 *{box-sizing:border-box}
+.ms27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.ms27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.ms27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.ms27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.ms27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.ms27 .chip:hover{border-color:var(--muted)}
+.ms27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.ms27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.ms27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.ms27{padding:14px}}
+.ms27 .grid{display:grid;grid-template-columns:1fr 240px;gap:16px}
+.ms27 .rows{display:flex;flex-direction:column;gap:1px;background:var(--grid);border:1px solid var(--ring);border-radius:9px;overflow:hidden}
+.ms27 .row{background:var(--s1);padding:10px 12px;display:grid;grid-template-columns:20px 128px 1fr;gap:10px;align-items:center;
+  cursor:pointer;border:0;font:inherit;text-align:left;color:var(--ink);width:100%}
+.ms27 .row:hover{background:var(--bar)}
+.ms27 .row .bx{width:16px;height:16px;border:1.5px solid var(--muted);border-radius:4px;position:relative}
+.ms27 .row[aria-pressed="true"] .bx{background:var(--accent);border-color:var(--accent)}
+.ms27 .row[aria-pressed="true"] .bx::after{content:"";position:absolute;left:4.5px;top:1.5px;width:4px;height:8px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(40deg)}
+.ms27 .row b{font-size:13.5px;font-weight:650}
+.ms27 .row .at{font-size:12.5px;color:var(--ink2)}
+.ms27 .sum{border:1px solid var(--ring);border-radius:9px;padding:13px;align-self:start;position:sticky;top:12px}
+.ms27 .sum .n{font-size:26px;font-weight:700;line-height:1.1}
+.ms27 .sum .cap{font-size:11.5px;color:var(--muted);margin:2px 0 10px}
+.ms27 .sum ul{list-style:none;margin:0;padding:0;font-size:12.5px;color:var(--ink2)}
+.ms27 .sum li{padding:2.5px 0;border-bottom:1px dashed var(--grid)}
+.ms27 .sum li:last-child{border-bottom:0}
+.ms27 .sum .empty{font-size:12.5px;color:var(--muted)}
+@media (max-width:620px){.ms27 .grid{grid-template-columns:1fr}.ms27 .sum{position:static}}
+</style>
+<p class="hd">Mastery stack planner</p>
+<p class="sub">Tick the archetypes you plan to level. Every milestone you hit adds a permanent boost to the attributes shown — on <em>every</em> build you use, forever. Pairs are EA's published table.</p>
+<div class="chips" style="margin-bottom:12px">
+<button type="button" class="chip" data-all>Select all 13</button>
+<button type="button" class="chip" data-none>Clear</button>
+</div>
+<div class="grid">
+<div class="rows">
+<button type="button" class="row" data-a="Shot Stopper" aria-pressed="false"><span class="bx"></span><b>Shot Stopper</b><span class="at">GK Positioning &amp; GK Reflexes</span></button><button type="button" class="row" data-a="Sweeper Keeper" aria-pressed="false"><span class="bx"></span><b>Sweeper Keeper</b><span class="at">GK Handling &amp; GK Diving</span></button><button type="button" class="row" data-a="Progressor" aria-pressed="false"><span class="bx"></span><b>Progressor</b><span class="at">Long Passing &amp; Standing Tackle</span></button><button type="button" class="row" data-a="Boss" aria-pressed="false"><span class="bx"></span><b>Boss</b><span class="at">Aggression &amp; Strength</span></button><button type="button" class="row" data-a="Marauder" aria-pressed="false"><span class="bx"></span><b>Marauder</b><span class="at">Sliding Tackle &amp; Sprint Speed</span></button><button type="button" class="row" data-a="Disruptor" aria-pressed="false"><span class="bx"></span><b>Disruptor</b><span class="at">Stamina &amp; Interceptions</span></button><button type="button" class="row" data-a="Recycler" aria-pressed="false"><span class="bx"></span><b>Recycler</b><span class="at">Def. Awareness &amp; Short Passing</span></button><button type="button" class="row" data-a="Maestro" aria-pressed="false"><span class="bx"></span><b>Maestro</b><span class="at">Reactions &amp; Ball Control</span></button><button type="button" class="row" data-a="Creator" aria-pressed="false"><span class="bx"></span><b>Creator</b><span class="at">Free Kick Accuracy &amp; Vision</span></button><button type="button" class="row" data-a="Spark" aria-pressed="false"><span class="bx"></span><b>Spark</b><span class="at">Crossing &amp; Dribbling</span></button><button type="button" class="row" data-a="Magician" aria-pressed="false"><span class="bx"></span><b>Magician</b><span class="at">Curve &amp; Acceleration</span></button><button type="button" class="row" data-a="Finisher" aria-pressed="false"><span class="bx"></span><b>Finisher</b><span class="at">Composure &amp; Finishing</span></button><button type="button" class="row" data-a="Target" aria-pressed="false"><span class="bx"></span><b>Target</b><span class="at">Balance &amp; Jumping</span></button>
+</div>
+<div class="sum"><div class="n" data-n>0</div><div class="cap" data-cap>attributes permanently boosted</div><ul data-list><li class="empty">Nothing selected yet.</li></ul></div>
+</div>
+<p class="foot">The only magnitude EA has published: Finisher Level 10 → +1 Finishing, +1 Composure on every archetype. Milestone levels and values beyond that example are unannounced. — Pro Clubs Lobby</p>
+<script>
+(function(){var R=document.querySelector('[data-ms27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var D=[["Shot Stopper","GK Positioning","GK Reflexes"],["Sweeper Keeper","GK Handling","GK Diving"],["Progressor","Long Passing","Standing Tackle"],["Boss","Aggression","Strength"],["Marauder","Sliding Tackle","Sprint Speed"],["Disruptor","Stamina","Interceptions"],["Recycler","Def. Awareness","Short Passing"],["Maestro","Reactions","Ball Control"],["Creator","Free Kick Accuracy","Vision"],["Spark","Crossing","Dribbling"],["Magician","Curve","Acceleration"],["Finisher","Composure","Finishing"],["Target","Balance","Jumping"]];
+function up(){var on=[].slice.call(R.querySelectorAll('.row[aria-pressed="true"]')).map(function(r){return r.dataset.a});
+  var attrs=[];D.forEach(function(m){if(on.indexOf(m[0])>-1){attrs.push([m[1],m[0]]);attrs.push([m[2],m[0]])}});
+  R.querySelector('[data-n]').textContent=attrs.length;
+  var ul=R.querySelector('[data-list]');
+  ul.innerHTML=attrs.length?attrs.map(function(p){return '<li><b>'+p[0]+'</b> — '+p[1]+'</li>'}).join(''):'<li class="empty">Nothing selected yet.</li>';
+  R.querySelector('[data-cap]').textContent=attrs.length===1?'attribute permanently boosted':'attributes permanently boosted';}
+R.addEventListener('click',function(e){
+  var r=e.target.closest('.row');
+  if(r){r.setAttribute('aria-pressed',String(r.getAttribute('aria-pressed')!=='true'));up();return}
+  if(e.target.closest('[data-all]')){R.querySelectorAll('.row').forEach(function(x){x.setAttribute('aria-pressed','true')});up();return}
+  if(e.target.closest('[data-none]')){R.querySelectorAll('.row').forEach(function(x){x.setAttribute('aria-pressed','false')});up()}
+});})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>How Masteries work</h2>
+<p>Every archetype has mastery milestones. Hit one, and you permanently gain boosts to two specific attributes — the pair EA has assigned to that archetype. The boosts follow your pro across every archetype from then on. EA's one published example: reaching <strong>Level 10 with the Finisher archetype unlocks +1 Finishing and +1 Composure on every archetype you use</strong>.</p>
+<p>EA's own framing is that Masteries "reward long-term progression" — the more archetypes you master, the better your pro becomes across the board. Structurally it's the first system in Clubs that pays you for breadth instead of depth.</p>
+
+<h2>The table is doing something clever</h2>
+<p>Look at the pairs in the planner above: across all 13 archetypes, <strong>no attribute appears twice</strong>. Twenty-six mastery slots, twenty-six different attributes. Every archetype's mastery touches a pair nothing else touches, which means there is no redundant grind — each archetype you master adds something the others can't.</p>
+<p>The pairs also read like each archetype's identity distilled: the Boss gives Aggression and Strength, the Magician gives Curve and Acceleration, the Target gives Balance and Jumping. If you want a specific attribute boosted on your main, the table tells you exactly which archetype to go level.</p>
+
+<h2>One name in the table changed</h2>
+<p>Twelve of the thirteen archetypes in EA's mastery table match the FC 26 roster by name. The exception: <strong>Engine is gone, and an archetype called Disruptor appears instead</strong>, with Stamina and Interceptions as its mastery pair — a very Engine-shaped profile.</p>
+<p>To be precise about what's confirmed: EA published a table with Disruptor in it and no Engine. Whether that's a rename, a replacement, or a reworked archetype under a new name, EA hasn't said. We'll treat the FC 26 Engine and the FC 27 Disruptor as separate things until the game or a Pitch Note connects them.</p>
+
+<h2>What it means for how you level</h2>
+<p>In FC 26, time spent in a second archetype was time your main didn't get. Masteries change that maths — a detour through the Finisher is now a permanent +1 Finishing for your Maestro. Combined with FC 27's other announced archetype changes (every archetype unlocked from the start, free resets, attribute-level respecs), the system is clearly built to make trying everything the optimal way to play.</p>
+<p>It also stacks with the new catch-up consumables EA announced in the same deep dive — AXP items that can target a specific archetype. Levelling an archetype you never intend to play suddenly has two currencies of value: its mastery boosts, and somewhere useful to point targeted AXP.</p>
+
+<h2>What EA hasn't said</h2>
+<ul>
+<li><strong>The milestone schedule.</strong> Level 10 is the only milestone EA has named, and the Finisher +1/+1 is the only magnitude. How many milestones each archetype has, and at what levels, is unannounced.</li>
+<li><strong>The stacking total.</strong> If every archetype's mastery track goes as deep as the example implies, a fully-mastered pro's total boost could be substantial — but nobody outside EA can put a number on it yet.</li>
+<li><strong>Whether mastery boosts respect attribute caps.</strong> Do the boosts push past a build's normal ceiling, or fill toward it? Not stated.</li>
+</ul>
+<p>When the game is out we'll rebuild the numbers the way we always do — from verified data, not launch-week guesses.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>What are Masteries in FC 27?</h3>
+<p>A permanent progression layer in Clubs: levelling any archetype to set milestones unlocks attribute boosts that then apply to every archetype you use. EA confirmed the system in its official Grounds &amp; Clubs deep dive.</p>
+<h3>Do mastery boosts apply to every build?</h3>
+<p>Yes — that's the point of the system. EA's example: Finisher Level 10 grants +1 Finishing and +1 Composure "to every archetype you use".</p>
+<h3>Which attributes does each archetype's mastery boost?</h3>
+<p>Each of the 13 archetypes boosts a unique pair — see the full table in the planner above. No attribute is repeated across archetypes.</p>
+<h3>Is the Engine archetype gone in FC 27?</h3>
+<p>EA's mastery table lists an archetype called Disruptor (Stamina, Interceptions) and no Engine. Whether Engine was renamed or replaced hasn't been confirmed.</p>

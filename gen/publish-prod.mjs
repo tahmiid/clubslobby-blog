@@ -77,6 +77,71 @@ const POSTS = [
     custom_excerpt: 'The Grounds and full Clubs skip PS4, Xbox One and the original Switch. Check your platform before you pre-order.',
     tags: ['News', 'FC 27'] },
 
+  // a13-a17: one confirmed FC 27 feature each, written from EA's official
+  // Grounds & Clubs deep dive (published 2 Aug 2026). Version-bound news, so
+  // slugs carry fc27- per the evergreen rule.
+  { file: 'a13.html', slug: 'fc27-masteries-explained', status: 'published',
+    title: 'FC 27 Masteries Explained: Permanent Boosts From Every Archetype You Level',
+    meta_title: 'FC 27 Masteries: Permanent Archetype Boosts Explained',
+    meta_description: 'How Masteries work in FC 27 Clubs: level any archetype to unlock permanent attribute boosts on every build — the full 13-pair table, and the one name EA changed.',
+    custom_excerpt: 'Level any archetype, boost them all: the full mastery table, a stack planner, and the Engine question.',
+    tags: ['News', 'Archetypes', 'FC 27'] },
+  { file: 'a14.html', slug: 'fc27-amps-explained', status: 'published',
+    title: 'FC 27 Amps Explained: The New Boost Items Coming to Clubs',
+    meta_title: 'FC 27 Amps: Tiers, Slots and Expiry Explained',
+    meta_description: 'What Amps are in EA FC 27: four tiers, two Standard and one Signature slot, PlayStyles+ at Tier 4, expiry after a set number of matches — and yes, the Store sells them.',
+    custom_excerpt: 'Four tiers, three slots, expiring by design — and PlayStyles+ on an equippable item for the first time.',
+    tags: ['News', 'FC 27'] },
+  { file: 'a15.html', slug: 'fc27-archetype-changes', status: 'published',
+    title: 'FC 27 Archetype Changes: Every Build Unlocked, Every Reset Free',
+    meta_title: 'FC 27 Archetype Changes: Free Resets, All Unlocked',
+    meta_description: 'EA confirmed four archetype changes for FC 27: all 13 unlocked by default, free resets, per-attribute respecs, and build editing inside lobbies — new vs already true.',
+    custom_excerpt: 'The four confirmed changes — and the "change" half the coverage leads with that FC 26 already had.',
+    tags: ['News', 'Archetypes', 'FC 27'] },
+  { file: 'a16.html', slug: 'fc27-clubs-live-tournaments', status: 'published',
+    title: 'FC 27 Club Tournaments: Live 11v11 Events and Six House Rules',
+    meta_title: 'FC 27 Club Tournaments & House Rules Explained',
+    meta_description: 'Club Tournaments in EA FC 27: live 11v11 events beyond Leagues and Playoffs, with Mystery Ball, Survival, King of the Hill and three more house rules confirmed by name.',
+    custom_excerpt: 'Live 11v11 events beyond Leagues and Playoffs — six house rules confirmed, details honestly labelled.',
+    tags: ['News', 'FC 27'] },
+  { file: 'a17.html', slug: 'fc27-club-objectives', status: 'published',
+    title: 'FC 27 Club Objectives: Milestones, Weeklies and Elite Rewards',
+    meta_title: 'FC 27 Club Objectives Explained',
+    meta_description: 'Club Objectives in EA FC 27: Bronze to Gold Milestones that earn fans and Club reputation, Weeklies and Seasonals paying Amps and Coins, and Elite Division objectives.',
+    custom_excerpt: 'Shared club progression: milestones, weeklies, and — finally — an endgame for Elite Division.',
+    tags: ['News', 'FC 27'] },
+
+  { file: 'a8.html', slug: 'pro-clubs-playstyle-requirements', status: 'published',
+    title: 'EA FC Pro Clubs PlayStyle Requirements: All 36, Every Threshold',
+    meta_title: 'Pro Clubs PlayStyle Requirements: All 36 Listed',
+    meta_description: 'Every PlayStyle unlock threshold in EA FC Pro Clubs — 99 attribute requirements across 36 PlayStyles — and which archetypes’ ceilings can reach each one.',
+    custom_excerpt: 'All 99 unlock thresholds across the 36 PlayStyles, and which archetype ceilings clear them.',
+    tags: ['Guides', 'PlayStyles', 'Tools', 'FC 26'] },
+  { file: 'a9.html', slug: 'pro-clubs-specializations-unlock-planner', status: 'published',
+    title: 'Pro Clubs Specializations: All 39 Unlocks, Priced in AP',
+    meta_title: 'Pro Clubs Specializations: All 39 Unlock Costs',
+    meta_description: 'Every EA FC Pro Clubs specialization — all 117 attribute thresholds, the perk and PlayStyle+ each grants, and the AP cost of unlocking each one from a fresh pro.',
+    custom_excerpt: 'All 117 thresholds across the 39 specializations, each priced in AP from a fresh pro.',
+    tags: ['Guides', 'Archetypes', 'Tools', 'FC 26'] },
+  { file: 'a10.html', slug: 'pro-clubs-level-rewards', status: 'published',
+    title: 'Pro Clubs Level Rewards: Every Unlock From 1 to 100',
+    meta_title: 'Pro Clubs Level Rewards: Levels 1–100 Listed',
+    meta_description: 'The full EA FC Pro Clubs level table — AP per level, PlayStyle slots, signature perks, PlayStyle+ upgrades and card tiers, in an interactive explorer.',
+    custom_excerpt: 'The complete 1–100 schedule: AP, PlayStyle slots, signature perks, PlayStyle+ and card tiers.',
+    tags: ['Guides', 'Tools', 'FC 26'] },
+  { file: 'a11.html', slug: 'pro-clubs-attribute-upgrade-costs', status: 'published',
+    title: 'Pro Clubs AP Costs: What Every Attribute Upgrade Really Costs',
+    meta_title: 'Pro Clubs AP Costs: Every Attribute Upgrade Priced',
+    meta_description: 'The full EA FC Pro Clubs AP cost curve — four tiers, per-archetype pricing, and a calculator for any upgrade. You earn 3,167 AP; spending it well is the game.',
+    custom_excerpt: 'The four cost tiers, per-archetype pricing, and a calculator that prices any upgrade.',
+    tags: ['Guides', 'Tools', 'FC 26'] },
+  { file: 'a12.html', slug: 'pro-clubs-archetypes-head-to-head', status: 'published',
+    title: 'Pro Clubs Archetypes Head to Head: Compare Any Two',
+    meta_title: 'Pro Clubs Archetype Comparison: Any Two, Side by Side',
+    meta_description: 'Compare any two EA FC Pro Clubs archetypes side by side — attribute ceilings, perks, specializations and body ranges — plus the closest and furthest pairs in the game.',
+    custom_excerpt: 'Any two archetypes side by side: ceilings, perks, specializations and body ranges.',
+    tags: ['Guides', 'Archetypes', 'Tools', 'FC 26'] },
+
   // PULLED 2026-08-03: the article was built on "archetype swapping is new in
   // FC 27". It is not — archetypes already swap freely in FC 26 with no reset,
   // so the whole premise is wrong. The loadout tool inside it is still valid
@@ -90,7 +155,12 @@ const POSTS = [
     tags: ['Guides', 'Archetypes', 'Tools', 'FC 27'] },
 ];
 
+// Optional filter: `node publish-prod.mjs a8 a12` publishes only those
+// articles (by file stem or slug). No args = the whole list, as before.
+const only = new Set(process.argv.slice(2));
+
 for (const p of POSTS) {
+  if (only.size && !only.has(p.file.replace('.html', '')) && !only.has(p.slug)) continue;
   const html = readFileSync(path.join(OUT, p.file), 'utf8');
   const body = { title: p.title, slug: p.slug, html, status: p.status,
     meta_title: p.meta_title, meta_description: p.meta_description,

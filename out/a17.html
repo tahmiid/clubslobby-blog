@@ -1,0 +1,84 @@
+<p>Club Objectives are FC 27's new shared progression layer: goals your whole club works toward, in three confirmed categories — <strong>Club Milestones</strong> (Bronze/Silver/Gold, earning fans that raise your Club reputation), <strong>Club Weeklies and Seasonals</strong> (paying Amps, Consumables, and Coins), and <strong>Elite Objectives</strong> reserved for Elite Division clubs. Confirmed in EA's official Grounds &amp; Clubs deep dive.</p>
+
+<!--kg-card-begin: html-->
+<div class="co27" data-co27>
+<style>
+.co27{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
+  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
+  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .co27{
+  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
+:root[data-theme="dark"] .co27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
+  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
+.co27 *{box-sizing:border-box}
+.co27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
+.co27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
+.co27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.co27 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.co27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
+  background:transparent;color:var(--ink2);cursor:pointer}
+.co27 .chip:hover{border-color:var(--muted)}
+.co27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
+.co27 .chip[disabled]{opacity:.32;cursor:not-allowed}
+.co27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
+@media (max-width:600px){.co27{padding:14px}}
+.co27 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.co27 .card{border:1px solid var(--ring);border-radius:9px;padding:12px;background:var(--s1);text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.co27 .card[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.co27 .card b{display:block;font-size:13.5px;font-weight:650;margin-bottom:3px}
+.co27 .card .meta{font-size:11px;color:var(--muted)}
+.co27 .det{margin-top:10px;border-left:2px solid var(--accent);background:var(--bar);border-radius:0 6px 6px 0;padding:10px 12px}
+.co27 .det p{margin:0;font-size:13px;color:var(--ink2)}
+.co27 .det .rw{font-size:11.5px;color:var(--muted);margin-top:5px}
+.co27 .ex{margin-top:14px}
+.co27 .ex .row{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:8px 0;border-top:1px dashed var(--grid);font-size:13px}
+.co27 .ex .row span:first-child{color:var(--muted);font-size:12px}
+@media (max-width:560px){.co27 .cards{grid-template-columns:1fr}.co27 .ex .row{grid-template-columns:1fr;gap:2px}}
+</style>
+<p class="hd">The three objective categories</p>
+<p class="sub">Tap a category. All three are confirmed in EA's Grounds &amp; Clubs deep dive.</p>
+<div class="cards" role="group" aria-label="Objective categories">
+<button type="button" class="card" data-i="0" aria-pressed="true"><b>Club Milestones</b><span class="meta">Long-term</span></button><button type="button" class="card" data-i="1" aria-pressed="false"><b>Club Weeklies &amp; Seasonals</b><span class="meta">Weekly / seasonal</span></button><button type="button" class="card" data-i="2" aria-pressed="false"><b>Elite Objectives</b><span class="meta">Ongoing at the top</span></button>
+</div>
+<div class="det"><p data-d>Long-haul objectives the whole club works toward, broken into Bronze, Silver and Gold. Completing them earns fans, which boost your Club reputation.</p><p class="rw" data-r>Rewards: Fans → Club reputation</p></div>
+<div class="ex"><span class="lbl">EA's two published examples</span>
+<div class="row"><span>Shared achievement</span><span>Win five League matches as a Club</span></div><div class="row"><span>Combined progress</span><span>Collectively win 50 1v1 matches across the Club</span></div>
+</div>
+<p class="foot">Every club member's play counts toward combined objectives — "even when you are not all playing together". — Pro Clubs Lobby</p>
+<script>
+(function(){var R=document.querySelector('[data-co27]');if(!R||R.dataset.on)return;R.dataset.on='1';
+var D=[["Long-haul objectives the whole club works toward, broken into Bronze, Silver and Gold. Completing them earns fans, which boost your Club reputation.","Fans → Club reputation"],["The rotating layer: objectives to complete with clubmates on a weekly and seasonal cadence, paying out the new Amp items alongside Consumables and Coins.","Amps, Consumables, Coins"],["Exclusive to clubs in Elite Division — EA’s stated aim is \"giving clubs a reason to keep playing and earning once reaching Elite\".","Extra rewards"]];
+R.addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)return;
+  R.querySelectorAll('.card').forEach(function(x){x.setAttribute('aria-pressed',String(x===c))});
+  R.querySelector('[data-d]').textContent=D[+c.dataset.i][0];
+  R.querySelector('[data-r]').textContent='Rewards: '+D[+c.dataset.i][1];
+});})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<h2>Contribution without coordination</h2>
+<p>The design detail that matters most for real clubs: some objectives track your club's <em>combined</em> progress across different experiences — EA's example is collectively winning 50 1v1 matches. A clubmate grinding <a href="/blog/fc27-the-grounds-pro-clubs-explained/">small-sided matches in The Grounds</a> on a Tuesday night is still moving the club forward. For clubs whose members can't all be online together — which is most clubs — that's the first time solo play feeds club progress.</p>
+
+<h2>Fans and reputation</h2>
+<p>Club Milestones pay out in a currency EA hasn't fully explained: <strong>fans, which "boost your Club reputation"</strong>. What reputation gates or unlocks isn't stated — but the deep dive separately notes that your Clubhouse and Clubs Stadium in The Grounds update based on club identity, so a visible-status system is the obvious reading. We'll pin it down at launch rather than guess now.</p>
+
+<h2>Elite Division gets a reason to keep playing</h2>
+<p>Elite Objectives answer a long-running complaint: reaching the top division historically meant running out of ladder. EA's stated intent is explicit — extra rewards "giving clubs a reason to keep playing and earning once reaching Elite". Between these and the new <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a>, the top of Clubs is getting an endgame it hasn't had.</p>
+
+<h2>What EA hasn't said</h2>
+<ul>
+<li>What Club reputation actually does — cosmetic, matchmaking, or something else.</li>
+<li>Objective refresh timing, and whether weeklies scale with club size.</li>
+<li>Whether Elite status (and Elite Objectives access) resets each season.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<h3>What are Club Objectives in FC 27?</h3>
+<p>Shared club-wide goals in three categories: long-term Club Milestones (Bronze/Silver/Gold), Club Weeklies and Seasonals, and Elite Objectives for Elite Division clubs.</p>
+<h3>What do Club Objectives reward?</h3>
+<p>Milestones earn fans that boost Club reputation; Weeklies and Seasonals pay Amps, Consumables, and Coins; Elite Objectives grant extra rewards EA hasn't detailed.</p>
+<h3>Do all members have to play together to progress objectives?</h3>
+<p>No — some objectives track combined progress across the club, like collectively winning 50 1v1 matches, so members contribute even when playing solo.</p>
