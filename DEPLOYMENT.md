@@ -298,7 +298,29 @@ Data snapshot in `data/` comes from the live API (`/api/archetypes`,
 **altering the archetype model's shape can silently invalidate published
 articles.**
 
-Next tools worth building, in priority order: the 78 head-to-head comparison
-pages (one template, huge SEO surface), the specialization unlock planner (39
-specializations, 117 thresholds), and a playstyle requirements tool (36
-playstyles, 99 thresholds — new data, nobody has published it).
+The specialization unlock planner (a9), playstyle requirements tool (a8), and
+three more tool articles (a10 level rewards, a11 AP costs, a12 head-to-head
+comparator) shipped 2026-08-04 — a10/a11 draw on progression tables copied
+into `data/fc26/` from the `~/Desktop/fc26-clubs-data` scrape (community-derived;
+confidence notes in that scrape's manifest). `publish-prod.mjs` and
+`set-feature-images.mjs` now accept article-stem args (`node publish-prod.mjs
+a8 a12`) to touch only those posts. Still worth building: the 78 static
+head-to-head comparison pages (one template, huge SEO surface) — a12 is the
+interactive hub for them.
+
+### Feature images
+
+`gen/make-feat.py` generates all sixteen (`python3 gen/make-feat.py`, or pass
+stems for a subset), then `set-feature-images.mjs` uploads and assigns them.
+The first generation was composed in the browser against SVGs uploaded to the
+blog; that approach is gone, and there is no local SVG rasteriser, so the
+generator is pure Pillow geometry with **no archetype icons**.
+
+Two rules in that file are load-bearing and are asserted at the end of the run:
+every image uses one of eight palettes, and **no two posts sharing a row of the
+3-up index may use the same palette**. The set it replaced was navy with white
+icons sixteen times over and was unreadable as a card wall. If you add a post,
+add it to `PALETTE_OF` *and* `ROWS`, or the assertion will not protect you.
+
+Ghost re-compresses PNGs on upload, so a served file can be smaller than the
+local one while being pixel-identical — compare pixels, not bytes.
