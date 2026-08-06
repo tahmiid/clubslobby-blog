@@ -129,8 +129,11 @@ requests fall through to the SPA.
 
 **What belongs inside the app block is documented in the app repo**
 (`ClubsUI-main/DEPLOYMENT.md` → "nginx — what this app needs from it"). As of
-2026-08-03 it is missing the Open Graph crawler routing for `/b/:buildId`, so
-shared build links produce no preview, and it has no rate limiting of any kind.
+2026-08-06 it holds the OG crawler routing for `/b/:buildId` (restored
+2026-08-03, app #22) and the `/sitemap.xml` proxy to the backend (app #57,
+added by hand with a `.bak-pre-sitemap-*` copy beside the config). It still
+has no rate limiting of any kind. If either route 404s after a Ghost
+operation, the block was regenerated away — re-add it from the app repo.
 
 ```bash
 nginx -t && systemctl reload nginx     # always test before reload
