@@ -12,6 +12,8 @@ runbook for the whole production deployment.
   pipeline (`publish-prod.mjs`), and `backup.mjs`.
 - `data/` — catalog snapshot the articles are built from.
 - `out/` — generated article HTML with inline widgets.
+- `widgets/build-card/` — the interactive build-card embed for articles
+  (approved design; not wired into Ghost yet — see its README).
 Ghost(Pro) workaround files (split widgets, site-wide code injection) were
 removed once this moved to self-hosted Ghost, where inline widgets work as
 written. Why they ever existed is recorded in DEPLOYMENT.md gotcha #4; the

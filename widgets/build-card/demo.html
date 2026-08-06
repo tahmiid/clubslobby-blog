@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build embed demo — as it would sit in a blog article</title>
+<link rel="stylesheet" href="pchq-build-card.css">
+<style>
+  /* Stand-in for Ghost's article styling, so the card is judged in context. */
+  body { background: #f7f7f8; color: #1a1c22; font: 1.05rem/1.7 Georgia, serif;
+         max-width: 680px; margin: 0 auto; padding: 40px 20px; }
+  h1 { font-family: -apple-system, "Segoe UI", sans-serif; }
+  .dark { background: #101116; color: #d6d9e0; margin: 40px -20px 0; padding: 30px 20px; }
+</style>
+</head>
+<body>
+<h1>The Maestro archetype guide</h1>
+<p>…article prose flows here. The Maestro trades pace for the best passing
+range in the game, and the community's highest-rated take on it right now is
+this one — hover it, then click through to the builder:</p>
+
+<a class="pchq-build" data-build="4a4c7278-70b1-4fe9-960c-81e749a9255e"
+   href="http://10.0.0.33:3000/b/4a4c7278-70b1-4fe9-960c-81e749a9255e">
+  Creative Playmaker — open in Pro Clubs HQ</a>
+
+<p>…more prose. A purple-tier card for contrast:</p>
+
+<a class="pchq-build" data-build="e19313b2-6f86-4d23-89a8-3d67cb9089c3"
+   href="http://10.0.0.33:3000/b/e19313b2-6f86-4d23-89a8-3d67cb9089c3">
+  Attacking Wing-Back — open in Pro Clubs HQ</a>
+
+<div class="dark">
+  <p>Same card on a dark section, plus the fetch-failure fallback (bad id):</p>
+  <a class="pchq-build" data-build="does-not-exist"
+     href="http://10.0.0.33:3000/explore">
+    Chance Creator — open in Pro Clubs HQ</a>
+</div>
+
+<script src="pchq-build-card.js" data-api-base="http://10.0.0.33:8001" defer></script>
+</body>
+</html>

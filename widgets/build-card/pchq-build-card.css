@@ -1,0 +1,115 @@
+/* Pro Clubs HQ build embed. Scoped under .pchq- so it cannot fight Ghost's
+   theme. The anchor IS the card; everything inside is display:block spans so
+   the whole surface stays one link. */
+
+.pchq-build { display: block; max-width: 420px; margin: 1.5em auto; }
+
+.pchq-card,
+.pchq-card-fallback {
+  position: relative;
+  display: block;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #15161c 0%, #0b0c10 100%);
+  border: 1px solid color-mix(in srgb, var(--pchq-tier, #e8c35a) 45%, transparent);
+  color: #f2f3f7;
+  text-decoration: none;
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+  transform: perspective(700px) rotateX(var(--pchq-rx, 0deg)) rotateY(var(--pchq-ry, 0deg));
+  transition: transform 120ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+.pchq-card:hover {
+  box-shadow: 0 14px 40px -12px color-mix(in srgb, var(--pchq-tier) 55%, transparent);
+  border-color: var(--pchq-tier);
+}
+
+/* The cursor-following glow */
+.pchq-glow {
+  content: "";
+  position: absolute; inset: 0; display: block;
+  background: radial-gradient(220px circle at var(--pchq-mx, 50%) var(--pchq-my, 50%),
+              color-mix(in srgb, var(--pchq-tier) 16%, transparent), transparent 70%);
+  opacity: 0; transition: opacity 200ms ease; pointer-events: none;
+}
+.pchq-card:hover .pchq-glow { opacity: 1; }
+
+.pchq-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.pchq-ident { display: flex; align-items: center; gap: 12px; min-width: 0; }
+/* Spans both identity lines: the label and the build name sit beside it. */
+.pchq-logo {
+  width: 46px; height: 46px; object-fit: contain; flex: none;
+  padding: 6px; border-radius: 10px;
+  background: color-mix(in srgb, var(--pchq-tier) 14%, transparent);
+}
+.pchq-id-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pchq-arch {
+  font-family: "Archivo", "Manrope", sans-serif;
+  font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;
+  color: var(--pchq-tier);
+}
+.pchq-lvl {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 8px; border-radius: 999px;
+  background: color-mix(in srgb, var(--pchq-tier) 18%, transparent);
+  color: var(--pchq-tier);
+}
+
+.pchq-name {
+  display: block;
+  font-family: "Archivo", "Manrope", sans-serif;
+  font-weight: 800; font-size: 1.2rem; line-height: 1.1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pchq-head { margin-bottom: 16px; }
+
+.pchq-attrs { display: grid; gap: 7px; margin-bottom: 14px; }
+.pchq-attr {
+  display: grid; grid-template-columns: 118px 1fr 30px;
+  align-items: center; gap: 10px; font-size: 0.78rem;
+}
+.pchq-attr-name { color: #9aa0ae; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pchq-attr-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pchq-bar {
+  display: block; height: 5px; border-radius: 999px; background: #23252e; overflow: hidden;
+}
+.pchq-fill {
+  display: block; height: 100%; border-radius: inherit; width: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--pchq-tier) 70%, #fff 0%), var(--pchq-tier));
+  animation: pchq-grow 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes pchq-grow { from { width: 0 } }
+@media (prefers-reduced-motion: reduce) {
+  .pchq-fill { animation: none; }
+  .pchq-card { transform: none !important; }
+}
+
+/* Signature PlayStyles: icon-only, gold on every tier (signature = the gold
+   PlayStyles in-game), sized to match the archetype logo. The filter chain is
+   the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree
+   about what signature gold looks like. */
+.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.pchq-sig-ic {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98)
+          drop-shadow(0 2px 6px rgba(227, 184, 78, 0.4));
+}
+
+.pchq-foot {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.78rem; color: #9aa0ae;
+  border-top: 1px solid #23252e; padding-top: 12px;
+}
+.pchq-by { font-weight: 700; color: #c8ccd6; }
+.pchq-cta {
+  margin-left: auto; font-weight: 800; color: var(--pchq-tier);
+  transition: transform 150ms ease;
+}
+.pchq-card:hover .pchq-cta { transform: translateX(3px); }
+
+/* Fetch failed: the anchor stays a respectable link, not a broken card. */
+.pchq-card-fallback { padding: 14px 18px; font-weight: 700; }
