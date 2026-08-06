@@ -1,6 +1,6 @@
 # Pro Clubs Lobby — blog & production infrastructure
 
-The Ghost blog and the article generators behind **clubs27.com/blog**, plus the
+The Ghost blog and the article generators behind **proclubshq.com/blog**, plus the
 runbook for the whole production deployment.
 
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** — the server & blog runbook. The box,

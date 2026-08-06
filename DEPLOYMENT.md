@@ -1,4 +1,4 @@
-# clubs27.com — server & blog runbook
+# proclubshq.com — server & blog runbook
 
 **This file owns the server and the blog.** Deploying the *app* (the React
 build at `/` and the FastAPI at `/api/`) is owned by the ClubsUI repo's own
@@ -10,7 +10,15 @@ Everything about the live deployment: what runs where, how to change it, and the
 things that cost time to discover. Written for whoever (human or agent) picks
 this up next.
 
-**Last verified: 2026-08-03.**
+**Last verified: 2026-08-03.** Domain cut over to `proclubshq.com` 2026-08-06.
+
+> **Everything on the box is still named `clubs27`, deliberately.** The systemd
+> units (`clubs27-api`, `ghost_clubs27-com`), the paths (`/opt/clubs27-api`,
+> `/var/www/clubs27-app`, `/var/backups/clubs27`), the nginx config
+> (`clubs27.com-ssl.conf`) and the route markers (`# ── CLUBS27-APP-ROUTES ──`)
+> all kept their names when the domain moved. Renaming them buys nothing a user
+> can see and would invalidate every command in this file. **Read `clubs27` in
+> an identifier as "this stack".** Only URLs moved.
 
 ---
 
@@ -25,7 +33,7 @@ One Hetzner box in Nuremberg serves all three surfaces, behind Cloudflare.
                                     │
         ┌───────────────────────────┼────────────────────────────┐
         │                           │                            │
-  clubs27.com/                clubs27.com/blog/           clubs27.com/api/
+  proclubshq.com/                proclubshq.com/blog/           proclubshq.com/api/
   React static build          Ghost 6 (systemd)           FastAPI (systemd)
   /var/www/clubs27-app        127.0.0.1:2368              127.0.0.1:8001
                               MySQL `ghost_prod`          → MongoDB Atlas
@@ -219,7 +227,7 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 
 ## 10. Gotchas
 
-1. **Ghost's Admin API base is `https://clubs27.com/blog/ghost/api/admin`.**
+1. **Ghost's Admin API base is `https://proclubshq.com/blog/ghost/api/admin`.**
    Subdirectory install: `127.0.0.1:2368/ghost/api/admin` 404s, and
    `127.0.0.1:2368/blog/ghost/api/admin` 301s to canonical. Use the public URL.
 2. **Admin API keys come from MySQL**, not the Ghost UI:
@@ -264,12 +272,13 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
       SMTP first.
 - [ ] **SMTP** (Mailgun free tier is enough) — needed for members/newsletters.
 - [ ] **Google Search Console + Bing Webmaster Tools**, submit
-      `https://clubs27.com/blog/sitemap.xml`.
-- [ ] **Domain decision.** Content is currently indexable on `clubs27.com`. If
-      the brand moves to a Pro Clubs Lobby domain, do it before this accumulates
-      an index — 301s carry most value across, but it costs time.
-- [ ] **`www.clubs27.com`** has no record since the Namecheap parking CNAME was
-      deleted. Add an A record if you want it.
+      `https://proclubshq.com/blog/sitemap.xml`.
+- [x] **Domain decision — settled 2026-08-06.** The brand is **Pro Clubs HQ** on
+      `proclubshq.com`, and `clubs27.com` was dropped with **no redirect**. This
+      item used to warn about doing it before an index accumulated; that warning
+      was answered by there being nothing to carry — testing never went past
+      friends, and Search Console was never set up, so no ranking existed to
+      preserve. `www` resolves via a proxied CNAME on the new zone.
 - [ ] **Hetzner snapshots** not enabled.
 - [ ] **Atlas password** for `clubs27-prod` was shared in a chat transcript —
       rotate when convenient.
