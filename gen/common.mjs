@@ -3,7 +3,8 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
-export const BRAND = 'Pro Clubs Lobby';   // ← the only place the name appears
+export const BRAND = 'Pro Clubs HQ';   // ← the only place the name appears
+export const SITE = 'https://proclubshq.com';  // app root; the blog is SITE + '/blog'
 const DIR = path.join(import.meta.dirname, '..', 'data');
 
 export const ARCH = JSON.parse(readFileSync(path.join(DIR, 'archetypes.json'), 'utf8'));

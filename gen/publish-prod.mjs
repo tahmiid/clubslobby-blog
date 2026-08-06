@@ -20,7 +20,7 @@ import { createHmac } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
-const API = 'https://clubs27.com/blog/ghost/api/admin';
+const API = 'https://proclubshq.com/blog/ghost/api/admin';
 const OUT = path.join(import.meta.dirname, 'out');
 
 const row = execFileSync('mysql', ['-N', '-B', 'ghost_prod', '-e',

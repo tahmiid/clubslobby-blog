@@ -1,4 +1,4 @@
-// Nightly backup for clubs27.com. Runs on the server via cron.
+// Nightly backup for proclubshq.com. Runs on the server via cron.
 //   1. Ghost content export (JSON)  — the irreplaceable part
 //   2. mysqldump of ghost_prod      — full DB, for a bare-metal restore
 //   3. tar of Ghost's content dir   — images, themes
@@ -8,7 +8,7 @@ import { createHmac } from 'node:crypto';
 import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
 
-const API = 'https://clubs27.com/blog/ghost/api/admin';
+const API = 'https://proclubshq.com/blog/ghost/api/admin';
 const DEST = '/var/backups/clubs27';
 const KEEP_DAYS = 14;
 const stamp = new Date().toISOString().slice(0, 10);

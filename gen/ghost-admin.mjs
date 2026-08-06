@@ -6,7 +6,7 @@
 import { execFileSync } from 'node:child_process';
 import { createHmac } from 'node:crypto';
 
-const API = 'https://clubs27.com/blog/ghost/api/admin';
+const API = 'https://proclubshq.com/blog/ghost/api/admin';
 
 const row = execFileSync('mysql', ['-N', '-B', 'ghost_prod', '-e',
   "SELECT CONCAT(k.id,':',k.secret) FROM api_keys k JOIN roles r ON r.id=k.role_id " +

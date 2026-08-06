@@ -1,4 +1,4 @@
-# Pro Clubs Lobby — blog & production infrastructure
+# Pro Clubs HQ — blog & production infrastructure
 
 The Ghost blog and the article generators behind **proclubshq.com/blog**, plus the
 runbook for the whole production deployment.

@@ -60,13 +60,13 @@ await step('navigation (sections + builder link)', () => putSettings({
     { label: 'About', url: '/about/' },
   ]),
   secondary_navigation: JSON.stringify([
-    { label: 'Player Builder', url: 'https://clubs27.com/' },
+    { label: 'Player Builder', url: 'https://proclubshq.com/' },
   ]),
 }));
 
 // -- 4. site meta for search results and social shares -----------------------
 await step('site meta title/description', () => putSettings({
-  meta_title: 'Pro Clubs Lobby — EA FC Pro Clubs Guides, Builds & Tools',
+  meta_title: 'Pro Clubs HQ — EA FC Pro Clubs Guides, Builds & Tools',
   meta_description: 'Guides and free tools for EA FC Pro Clubs, built on real attribute data: archetypes, builds, AcceleRATE and FC 27 coverage that separates confirmed from rumour.',
 }));
 
@@ -90,7 +90,7 @@ await step('"Coming soon" unpublished (draft, not deleted)', async () => {
 
 // -- 7. About page: method manifesto + unofficial-fan-site disclaimer --------
 const ABOUT = `
-<p>Pro Clubs Lobby is guides and free tools for EA SPORTS FC Pro Clubs, built on
+<p>Pro Clubs HQ is guides and free tools for EA SPORTS FC Pro Clubs, built on
 real attribute data. Behind every article sits the same catalog: all 13
 archetypes with their full attribute ranges, both perks, every specialization
 and the exact thresholds that unlock them.</p>
@@ -109,12 +109,12 @@ written for FC 26 stays accurate for FC 26; it doesn't get silently rewritten
 under you when a new game ships.</p>
 
 <h2>The builder</h2>
-<p>The same catalog powers our <a href="https://clubs27.com/">player builder</a>
+<p>The same catalog powers our <a href="https://proclubshq.com/">player builder</a>
 — plan a build against real ceilings and AP costs before spending anything
 in-game.</p>
 
 <h2>Independence</h2>
-<p>Pro Clubs Lobby is an unofficial fan project. It is not affiliated with,
+<p>Pro Clubs HQ is an unofficial fan project. It is not affiliated with,
 endorsed by, or connected to Electronic Arts. EA SPORTS FC™ and related marks
 are trademarks of Electronic Arts Inc. All attribute data is independently
 collected and verified.</p>`;
@@ -124,7 +124,7 @@ await step('About page rewritten', async () => {
   if (!f.ok) throw new Error(`about page not found (${f.status})`);
   const pg = (await f.json()).pages[0];
   const r = await call(`/pages/${pg.id}/?source=html`, { method: 'PUT',
-    body: JSON.stringify({ pages: [{ title: 'About Pro Clubs Lobby', html: ABOUT, updated_at: pg.updated_at }] }) });
+    body: JSON.stringify({ pages: [{ title: 'About Pro Clubs HQ', html: ABOUT, updated_at: pg.updated_at }] }) });
   if (!r.ok) throw new Error(`${r.status} ${JSON.stringify(await r.json()).slice(0, 120)}`);
 });
 
