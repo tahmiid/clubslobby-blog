@@ -136,6 +136,36 @@ shared build links produce no preview, and it has no rate limiting of any kind.
 nginx -t && systemctl reload nginx     # always test before reload
 ```
 
+> ### nginx refusing to boot on a DNS blip (27-minute outage, 2026-08-06)
+>
+> A package upgrade restarted nginx and `systemd-resolved` together. nginx came
+> up while the stub resolver at `127.0.0.53` was still down, could not resolve
+> the `ap.ghost.org` upstream in Ghost-CLI's ActivityPub blocks, and **refused
+> to start** — nginx resolves a static `proxy_pass` hostname at config-parse
+> time, so an unreachable resolver is a fatal startup error, not a degraded
+> upstream.
+>
+> `Restart=no` is the stock nginx unit, so nothing retried. The site was simply
+> down until someone looked. Both halves are now fixed:
+>
+> - **The cause.** Both ActivityPub `proxy_pass` directives go through a
+>   variable (`set $ghost_ap …; proxy_pass $ghost_ap$request_uri;`) with a
+>   `resolver` line in each server block. A variable defers resolution to
+>   request time, so DNS trouble degrades those two routes instead of killing
+>   the server. Verified by A/B: the static form fails `nginx -t` against an
+>   unresolvable host, the variable form passes.
+> - **The consequence.** `/etc/systemd/system/nginx.service.d/override.conf`
+>   sets `Restart=on-failure`, `RestartSec=10s`, and orders nginx
+>   `After=systemd-resolved.service`.
+>
+> `$request_uri` is load-bearing. A static `proxy_pass` with no URI part passes
+> the request URI through unchanged; once the destination is a variable, nginx
+> stops doing that and the path must be appended explicitly.
+>
+> **This is exactly the outage app-repo issue #14 (nothing monitors
+> `/api/health`) exists to catch.** Nothing alerted; it was found by chance
+> during unrelated work.
+
 ---
 
 ## 6. Deploying
@@ -244,7 +274,7 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
    Ghost(Pro) does not — it strips scripts from cards and flattens them on
    import. That difference is why this is self-hosted.
 5. **nginx app routes are hand-added** — see §5.
-6. **No mail transport is configured.** Ghost password reset, member signup
+6. **Mail runs through Resend over SMTP** (configured 2026-08-06). Was "no transport configured"; Ghost password reset, member signup
    confirmations and newsletters will all silently fail until SMTP is set up.
 7. **Site settings are staff-only — the Admin API cannot write them.**
    `PUT /settings/`, `/custom_theme_settings/` and `/users/` all return
@@ -267,10 +297,20 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 
 ## 11. Open items
 
-- [ ] **Ghost owner password unknown.** No mail configured, so the reset link
-      goes nowhere. Fix by setting a bcrypt hash directly in MySQL, or configure
-      SMTP first.
-- [ ] **SMTP** (Mailgun free tier is enough) — needed for members/newsletters.
+- [ ] **Ghost owner password unknown — but now recoverable.** This used to be a
+      dead end: no mail transport, so the reset link went nowhere, and the only
+      fix was writing a bcrypt hash into MySQL. SMTP now works (below), so
+      **"Forgot password" on `/blog/ghost/` actually delivers.** Do that rather
+      than touching the database. Worth clearing soon: site settings are
+      staff-only, so Ghost Admin is the only supported way to change branding —
+      everything else has to go through MySQL and a restart.
+- [x] **SMTP — done 2026-08-06.** Resend over `smtp.resend.com:587`, user
+      `resend`, password is a Resend API key, `from` is
+      `Pro Clubs HQ <noreply@proclubshq.com>`. Lives in
+      `config.production.json`, which therefore **holds a credential and is now
+      `640 ghost:ghost`** — it was world-readable. The same key serves the app's
+      password-reset mail from `/opt/clubs27-api/.env`; rotating it means
+      changing both.
 - [ ] **Google Search Console + Bing Webmaster Tools**, submit
       `https://proclubshq.com/blog/sitemap.xml`.
 - [x] **Domain decision — settled 2026-08-06.** The brand is **Pro Clubs HQ** on
