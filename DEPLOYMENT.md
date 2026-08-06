@@ -209,6 +209,50 @@ keep a copy independently, same as the API's `.env`.
 
 ---
 
+## 7a. Monitoring
+
+Two layers, because neither substitutes for the other:
+
+| Layer | Where | Catches |
+|---|---|---|
+| External pinger | **off-box** | the host being unreachable at all |
+| `ops/watchdog.py` | on the box, cron `*/15` | the site answering while something is still wrong |
+
+**The watchdog cannot tell you the box is down.** If the host is gone, so is the
+watchdog. That is the whole reason the external layer exists and is not
+optional.
+
+What the watchdog does catch is the slow, silent class: a TLS cert that stopped
+renewing, Atlas dropping `91.99.52.207` from its access list (surfaces as
+`/api/health` → 503), a filling disk, a stopped service, and **a nightly backup
+that has quietly produced nothing** — which is not hypothetical; the backup
+broke on 2026-08-06 when the domain moved and was found by accident.
+
+```bash
+python3 /root/watchdog.py     # run on demand; exit 1 if anything is failing
+tail -f /var/log/clubs27-watchdog.log
+```
+
+Deployed copy is `/root/watchdog.py`; the tracked source is `ops/watchdog.py` in
+this repo. **They are not synced automatically** — same as `backup.mjs`. Change
+one, copy it across, and check `md5sum` matches.
+
+> **It emails on transitions only** — when a check starts failing and again when
+> it recovers, never on steady state. That is deliberate: a monitor that mails
+> every run gets filtered into a folder, and then it looks like coverage while
+> being worth nothing. The corollary is that **silence means "no change", not
+> "all healthy"** — run it by hand if you want a positive answer.
+
+Alerts go out over the same Resend credentials the app uses, read from
+`/opt/clubs27-api/.env`. Override the recipient with `WATCHDOG_ALERT_TO` in that
+file; it defaults to the owner address.
+
+Thresholds worth knowing before they page you: cert < 21 days (acme.sh renews
+at ~30, so 21 means renewal is actually failing), disk > 85%, newest backup
+artefact older than 36h.
+
+---
+
 ## 8. Backups
 
 Nightly 03:30 → `/var/backups/clubs27/`, 14-day retention, logged to
