@@ -44,13 +44,18 @@ const only = new Set(process.argv.slice(2));
 // it's idempotent (same name overwrites, no -1 -2 litter), and it removes the
 // one multipart call that the box->Cloudflare->box loop used to 520 on.
 const GHOST_CONTENT = '/var/www/proclubslobby/content/images';
+// Bump when re-issuing art under an existing name: image URLs carry
+// max-age=31536000 and Cloudflare caches them, so a same-URL replacement
+// serves stale renders (especially the /size/ variants) more or less forever.
+const VERSION = '-v2';
 const placeDirect = (file) => {
+  const served = file.replace(/(\.\w+)$/, `${VERSION}$1`);
   const now = new Date();
   const sub = `${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, '0')}`;
   mkdirSync(`${GHOST_CONTENT}/${sub}`, { recursive: true });
-  writeFileSync(`${GHOST_CONTENT}/${sub}/${file}`,
+  writeFileSync(`${GHOST_CONTENT}/${sub}/${served}`,
     readFileSync(path.join(import.meta.dirname, 'assets', file)), { mode: 0o644 });
-  return `https://proclubshq.com/blog/content/images/${sub}/${file}`;
+  return `https://proclubshq.com/blog/content/images/${sub}/${served}`;
 };
 
 for (const [file, slug, alt] of MAP) {

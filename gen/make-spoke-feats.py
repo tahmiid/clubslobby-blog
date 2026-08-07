@@ -56,16 +56,15 @@ def main():
             img = art.copy()
             d = ImageDraw.Draw(img, 'RGBA')
             icon = icon_white(tmp, aid)
-            icon.thumbnail((150, 150))
+            icon.thumbnail((210, 210))  # no outline, bigger icon — user's call
             tw = d.textlength(label, font=font)
-            bw = int(max(tw, icon.width) + 96)
-            bh = 44 + 150 + 18 + 52 + 40
+            bw = int(max(tw, icon.width) + 88)
+            bh = 36 + 210 + 14 + 52 + 34
             bx, by = 56, 1080 - 56 - bh  # bottom-left: the one clean corner of the art
-            d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=26,
-                                fill=(13, 13, 20, 216), outline=(255, 255, 255, 64), width=2)
+            d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=26, fill=(13, 13, 20, 216))
             ix = bx + (bw - icon.width) // 2
-            img.paste(icon, (ix, by + 44), icon)
-            d.text((bx + (bw - tw) // 2, by + 44 + 150 + 18), label, font=font, fill=(255, 255, 255, 255))
+            img.paste(icon, (ix, by + 36), icon)
+            d.text((bx + (bw - tw) // 2, by + 36 + 210 + 14), label, font=font, fill=(255, 255, 255, 255))
             out = os.path.join(ASSETS, f'feat-spoke-{aid}.jpg')
             img.save(out, quality=84, optimize=True, progressive=True)
             print(f'{aid}: {os.path.getsize(out) // 1024}KB')
