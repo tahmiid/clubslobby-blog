@@ -40,7 +40,11 @@
    "tiki-taka",
    "trickster",
    "game-changer",
-   "rapid"
+   "rapid",
+   "incisive-pass",
+   "quick-step",
+   "long-ball-pass",
+   "pinged-pass"
   ],
   "unlockedSpecializations": [
    "magician-plus",
@@ -100,7 +104,10 @@
    "trickster",
    "quick-step",
    "game-changer",
-   "whipped-pass"
+   "whipped-pass",
+   "tiki-taka",
+   "first-touch",
+   "relentless"
   ],
   "unlockedSpecializations": [
    "magician-plus"

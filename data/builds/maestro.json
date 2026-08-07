@@ -40,7 +40,11 @@
    "press-proven",
    "trickster",
    "game-changer",
-   "inventive"
+   "inventive",
+   "technical",
+   "chip-shot",
+   "finesse-shot",
+   "rapid"
   ],
   "unlockedSpecializations": [
    "maestro-plus",
@@ -100,7 +104,11 @@
    "intercept",
    "slide-tackle",
    "rapid",
-   "quick-step"
+   "quick-step",
+   "1v1-close-down",
+   "chip-shot",
+   "block",
+   "acrobatic"
   ],
   "unlockedSpecializations": [
    "heartbeat"

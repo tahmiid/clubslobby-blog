@@ -42,7 +42,9 @@
   },
   "playstyles": [
    "cross-claimer",
-   "1v1-close-down"
+   "1v1-close-down",
+   "block",
+   "chip-shot"
   ],
   "unlockedSpecializations": [
    "shot-stopper-plus",
@@ -104,7 +106,10 @@
    "volleys": 40
   },
   "playstyles": [
-   "far-throw"
+   "far-throw",
+   "cross-claimer",
+   "block",
+   "long-throw"
   ],
   "unlockedSpecializations": [
    "shot-stopper-plus",

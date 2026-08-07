@@ -88,6 +88,13 @@
   .pchq-card { transform: none !important; }
 }
 
+/* Equipped PlayStyles: icon-only, natural silver, above the signature row. */
+.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.pchq-eq-ic {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
+}
+
 /* Signature PlayStyles: icon-only, gold on every tier (signature = the gold
    PlayStyles in-game), sized to match the archetype logo. The filter chain is
    the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree

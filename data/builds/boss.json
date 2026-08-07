@@ -40,7 +40,11 @@
    "jockey",
    "long-ball-pass",
    "press-proven",
-   "slide-tackle"
+   "slide-tackle",
+   "block",
+   "enforcer",
+   "tiki-taka",
+   "chip-shot"
   ],
   "unlockedSpecializations": [
    "capitano"
@@ -97,7 +101,13 @@
   "playstyles": [
    "pinged-pass",
    "long-ball-pass",
-   "relentless"
+   "relentless",
+   "press-proven",
+   "tiki-taka",
+   "slide-tackle",
+   "block",
+   "jockey",
+   "intercept"
   ],
   "unlockedSpecializations": [
    "boss-plus"

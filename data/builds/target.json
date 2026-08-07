@@ -41,7 +41,10 @@
    "low-driven-shot",
    "chip-shot",
    "long-ball-pass",
-   "quick-step"
+   "quick-step",
+   "game-changer",
+   "inventive",
+   "incisive-pass"
   ],
   "unlockedSpecializations": [
    "roamer"
@@ -98,7 +101,13 @@
   "playstyles": [
    "finesse-shot",
    "acrobatic",
-   "low-driven-shot"
+   "low-driven-shot",
+   "block",
+   "quick-step",
+   "aerial-fortress",
+   "game-changer",
+   "first-touch",
+   "1v1-close-down"
   ],
   "unlockedSpecializations": [
    "runner"

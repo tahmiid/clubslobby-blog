@@ -42,7 +42,9 @@
   },
   "playstyles": [
    "pinged-pass",
-   "long-ball-pass"
+   "long-ball-pass",
+   "cross-claimer",
+   "long-throw"
   ],
   "unlockedSpecializations": [
    "sweeper-keeper-plus"
@@ -104,7 +106,13 @@
   "playstyles": [
    "footwork",
    "cross-claimer",
-   "pinged-pass"
+   "pinged-pass",
+   "tiki-taka",
+   "block",
+   "press-proven",
+   "chip-shot",
+   "long-throw",
+   "enforcer"
   ],
   "unlockedSpecializations": [
    "sweeper-keeper-plus",

@@ -5,11 +5,14 @@ The interactive build card blog articles will embed: fetches a build live from
 tier colors, archetype logo, gold signature-PlayStyle icons), and the whole
 card is one link into the app at `/b/{id}`. Design signed off 2026-08-06.
 
-**Deliberately not wired into Ghost yet.** A backend feature that adds
-something to the card is planned first (2026-08-06, user's call); wiring into
-Ghost code injection and `gen/common.mjs` happens after that, so the 13
-archetype spoke articles ship with the final card. Until then this directory
-is the whole feature.
+**Wired into the spoke articles since 2026-08-07** (user's call): the 13
+archetype build pages embed two cards each. `gen/spoke.mjs` inlines this
+directory's CSS/JS into every article's widget kg-card — not Ghost code
+injection, which is staff-only for integrations (DEPLOYMENT.md gotcha 7) —
+so this directory stays the single source of truth; regenerate + republish
+the spokes after changing it. Added for that wiring: an equipped-PlayStyles
+row (silver, icon-only) above the gold signature row, and the embeds carry
+`target="_blank"`.
 
 ## How an article will use it
 

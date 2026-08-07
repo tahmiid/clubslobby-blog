@@ -104,6 +104,24 @@
       grid.appendChild(row);
     });
 
+    // Equipped PlayStyles: icon only, natural silver, one row above the
+    // signature set (added 2026-08-07 for the spoke articles — builds now
+    // carry their full nine slots, and the icons ARE the content).
+    var eq = h("span", "pchq-eq");
+    (b.playstyles || []).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-eq-ic";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      var title = slug.split("-").map(function (w) {
+        return w.charAt(0).toUpperCase() + w.slice(1);
+      }).join(" ");
+      ic.title = title;
+      ic.alt = title + " (PlayStyle)";
+      eq.appendChild(ic);
+    });
+
     // Signature PlayStyles: icon only, rendered gold regardless of card tier
     // (signature PlayStyles are the gold ones in-game), using the app's own
     // GOLD_FILTER recipe from PlayStyleDiamond.jsx so the blog card and the
@@ -134,6 +152,7 @@
     anchor.appendChild(glow);
     anchor.appendChild(head);
     anchor.appendChild(grid);
+    if (eq.childNodes.length) anchor.appendChild(eq);
     if (sigs.childNodes.length) anchor.appendChild(sigs);
     anchor.appendChild(foot);
 

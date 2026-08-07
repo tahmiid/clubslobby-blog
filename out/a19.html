@@ -27,40 +27,134 @@
 .a19 .top{display:flex;align-items:center;gap:12px;margin-bottom:2px}
 .a19 .aico{width:40px;height:38px;flex:none;color:var(--accent)}
 .a19 .who{font-size:12.5px;color:var(--muted);margin:0 0 14px}
-.a19 .blurb{margin:12px 0 10px;font-size:13.5px;color:var(--ink2);max-width:64ch}
-.a19 .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.a19 .m{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--bar);color:var(--ink2)}
-.a19 .m b{color:var(--ink)}
-.a19 .m.acc{background:var(--accent);color:#fff}
-.a19 .cat{display:grid;grid-template-columns:92px 1fr 84px;gap:10px;align-items:center;margin-bottom:7px}
-.a19 .cn{font-size:12.5px;color:var(--ink2)}
-.a19 .track{position:relative;height:8px;border-radius:4px;background:var(--bar);overflow:visible}
-.a19 .track i{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--accent)}
-.a19 .track u{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--muted);border-radius:1px}
-.a19 .cv{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums}
-.a19 .cv em{font-style:normal;font-weight:400;font-size:11px;color:var(--muted)}
-.a19 .ps{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px 4px 5px;
-  border-radius:999px;border:1px solid var(--ring);color:var(--ink2)}
-.a19 .ps img{width:22px;height:22px;border-radius:6px;background:#16161d;padding:2px;box-sizing:border-box}
-.a19 .ps.sig{border-color:#c9a227;background:rgba(201,162,39,.13);color:var(--ink)}
-.a19 .ps.sig img{background:#3a2f10}
-.a19 details{margin-top:12px}
-.a19 summary{font-size:12.5px;color:var(--accent);cursor:pointer}
-.a19 .agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-top:10px}
-.a19 .ar{border:1px solid var(--ring);border-radius:8px;padding:7px 9px;display:flex;flex-direction:column}
-.a19 .ar span{font-size:11px;color:var(--muted)}
-.a19 .ar b{font-size:16px}
-.a19 .ar em{font-style:normal;font-size:10.5px;color:var(--muted)}
-.a19 .ar.max b{color:var(--accent)}
-.a19 .spend{margin:12px 0 0;font-size:12.5px;color:var(--ink2)}
-.a19 .ctas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.a19 .go{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:650;
-  font-size:13.5px;padding:9px 16px;border-radius:8px}
-.a19 .go:hover{opacity:.92}
-.a19 .alt{display:inline-block;border:1px solid var(--ring);color:var(--ink2);text-decoration:none;
-  font-size:13.5px;padding:9px 16px;border-radius:8px}
-.a19 .alt:hover{border-color:var(--muted)}
-@media (max-width:520px){.a19 .cat{grid-template-columns:80px 1fr 76px}}
+.a19 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.a19 .cards .pchq-build{margin:0;max-width:none}
+.a19 .more{margin:14px 0 0;font-size:13.5px}
+.a19 .more a{color:var(--accent);text-decoration:none;font-weight:650}
+.a19 .more a:hover{text-decoration:underline}
+/* Pro Clubs HQ build embed. Scoped under .pchq- so it cannot fight Ghost's
+   theme. The anchor IS the card; everything inside is display:block spans so
+   the whole surface stays one link. */
+
+.pchq-build { display: block; max-width: 420px; margin: 1.5em auto; }
+
+.pchq-card,
+.pchq-card-fallback {
+  position: relative;
+  display: block;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #15161c 0%, #0b0c10 100%);
+  border: 1px solid color-mix(in srgb, var(--pchq-tier, #e8c35a) 45%, transparent);
+  color: #f2f3f7;
+  text-decoration: none;
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+  transform: perspective(700px) rotateX(var(--pchq-rx, 0deg)) rotateY(var(--pchq-ry, 0deg));
+  transition: transform 120ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+.pchq-card:hover {
+  box-shadow: 0 14px 40px -12px color-mix(in srgb, var(--pchq-tier) 55%, transparent);
+  border-color: var(--pchq-tier);
+}
+
+/* The cursor-following glow */
+.pchq-glow {
+  content: "";
+  position: absolute; inset: 0; display: block;
+  background: radial-gradient(220px circle at var(--pchq-mx, 50%) var(--pchq-my, 50%),
+              color-mix(in srgb, var(--pchq-tier) 16%, transparent), transparent 70%);
+  opacity: 0; transition: opacity 200ms ease; pointer-events: none;
+}
+.pchq-card:hover .pchq-glow { opacity: 1; }
+
+.pchq-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.pchq-ident { display: flex; align-items: center; gap: 12px; min-width: 0; }
+/* Spans both identity lines: the label and the build name sit beside it. */
+.pchq-logo {
+  width: 46px; height: 46px; object-fit: contain; flex: none;
+  padding: 6px; border-radius: 10px;
+  background: color-mix(in srgb, var(--pchq-tier) 14%, transparent);
+}
+.pchq-id-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pchq-arch {
+  font-family: "Archivo", "Manrope", sans-serif;
+  font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;
+  color: var(--pchq-tier);
+}
+.pchq-lvl {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 8px; border-radius: 999px;
+  background: color-mix(in srgb, var(--pchq-tier) 18%, transparent);
+  color: var(--pchq-tier);
+}
+
+.pchq-name {
+  display: block;
+  font-family: "Archivo", "Manrope", sans-serif;
+  font-weight: 800; font-size: 1.2rem; line-height: 1.1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pchq-head { margin-bottom: 16px; }
+
+.pchq-attrs { display: grid; gap: 7px; margin-bottom: 14px; }
+.pchq-attr {
+  display: grid; grid-template-columns: 118px 1fr 30px;
+  align-items: center; gap: 10px; font-size: 0.78rem;
+}
+.pchq-attr-name { color: #9aa0ae; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pchq-attr-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pchq-bar {
+  display: block; height: 5px; border-radius: 999px; background: #23252e; overflow: hidden;
+}
+.pchq-fill {
+  display: block; height: 100%; border-radius: inherit; width: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--pchq-tier) 70%, #fff 0%), var(--pchq-tier));
+  animation: pchq-grow 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes pchq-grow { from { width: 0 } }
+@media (prefers-reduced-motion: reduce) {
+  .pchq-fill { animation: none; }
+  .pchq-card { transform: none !important; }
+}
+
+/* Equipped PlayStyles: icon-only, natural silver, above the signature row. */
+.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.pchq-eq-ic {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
+}
+
+/* Signature PlayStyles: icon-only, gold on every tier (signature = the gold
+   PlayStyles in-game), sized to match the archetype logo. The filter chain is
+   the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree
+   about what signature gold looks like. */
+.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.pchq-sig-ic {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98)
+          drop-shadow(0 2px 6px rgba(227, 184, 78, 0.4));
+}
+
+.pchq-foot {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.78rem; color: #9aa0ae;
+  border-top: 1px solid #23252e; padding-top: 12px;
+}
+.pchq-by { font-weight: 700; color: #c8ccd6; }
+.pchq-cta {
+  margin-left: auto; font-weight: 800; color: var(--pchq-tier);
+  transition: transform 150ms ease;
+}
+.pchq-card:hover .pchq-cta { transform: translateX(3px); }
+
+/* Fetch failed: the anchor stays a respectable link, not a broken card. */
+.pchq-card-fallback { padding: 14px 18px; font-weight: 700; }
+
 </style>
 <div class="top">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 162" class="aico" aria-hidden="true">
@@ -71,81 +165,197 @@
 <path d="M0 0 C0 3 0 3 -1.5 4.6875 C-1.995 5.120625 -2.49 5.55375 -3 6 C-0.36 6.33 2.28 6.66 5 7 C3 9 3 9 0.3984375 9.1953125 C-0.59929688 9.17210937 -1.59703125 9.14890625 -2.625 9.125 C-4.12933594 9.09792969 -4.12933594 9.09792969 -5.6640625 9.0703125 C-6.43492188 9.04710937 -7.20578125 9.02390625 -8 9 C-6.1144852 4.71640327 -3.64034299 2.84896408 0 0 Z " fill="currentColor" transform="translate(42,20)"/>
 <path d="M0 0 C0 0.66 0 1.32 0 2 C-3.63 2 -7.26 2 -11 2 C-11.33 1.34 -11.66 0.68 -12 0 C-10.37585622 -0.19477739 -8.75063577 -0.38059458 -7.125 -0.5625 C-6.22007812 -0.66691406 -5.31515625 -0.77132813 -4.3828125 -0.87890625 C-2 -1 -2 -1 0 0 Z " fill="currentColor" transform="translate(135,27)"/>
 </svg>
-<div><p class="hd">The Shot Stopper, finished</p></div></div>
-<p class="who">Keeper · inspired by Oliver Kahn · two level-100 builds from the Pro Clubs HQ builder</p>
-<div class="chips" role="group" aria-label="Pick a build">
-  <button type="button" class="chip" data-t="896e33b0-5b31-4ee9-bfef-0173f7a45274" aria-pressed="true">Donnarumma — the Shot Stopper+</button>
-  <button type="button" class="chip" data-t="cca27aff-8f65-4b80-ac4e-75262e5e118e">Courtois — the Spider</button>
+<div><p class="hd">Shot Stopper</p></div></div>
+<p class="who">Builds from Pro Clubs HQ</p>
+<div class="cards">
+<a class="pchq-build" data-build="896e33b0-5b31-4ee9-bfef-0173f7a45274" href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274" target="_blank" rel="noopener">Gianluigi Donnarumma — open in Pro Clubs HQ</a>
+<a class="pchq-build" data-build="cca27aff-8f65-4b80-ac4e-75262e5e118e" href="https://proclubshq.com/b/cca27aff-8f65-4b80-ac4e-75262e5e118e" target="_blank" rel="noopener">Thibaut Courtois — open in Pro Clubs HQ</a>
 </div>
-<div class="pane" data-b="896e33b0-5b31-4ee9-bfef-0173f7a45274">
-  <p class="blurb">The wall. All four core keeping stats driven to the ceiling, the strength to own the six-yard box, and Shot Stopper+ so every save makes the next one better.</p>
-  <div class="meta">
-    <span class="m"><b>Shot Stopper+</b> specialization</span>
-    <span class="m">6'5" · 198 lb</span>
-    
-    
-  </div>
-  <div class="cats">
-  <div class="cat"><span class="cn">Goalkeeping</span>
-    <span class="track"><i style="width:98.0%"></i><u style="left:100.0%"></u></span>
-    <span class="cv">97<em>/99 cap</em></span></div><div class="cat"><span class="cn">Passing</span>
-    <span class="track"><i style="width:53.5%"></i><u style="left:86.9%"></u></span>
-    <span class="cv">53<em>/86 cap</em></span></div><div class="cat"><span class="cn">Physical</span>
-    <span class="track"><i style="width:87.9%"></i><u style="left:94.9%"></u></span>
-    <span class="cv">87<em>/94 cap</em></span></div><div class="cat"><span class="cn">Pace</span>
-    <span class="track"><i style="width:70.7%"></i><u style="left:89.9%"></u></span>
-    <span class="cv">70<em>/89 cap</em></span></div>
-  </div>
-  <p class="lbl" style="margin-top:12px">PlayStyles</p>
-  <div class="chips">
-  <span class="ps"><img src="https://proclubshq.com/assets/playstyles/cross-claimer.png" alt="" loading="lazy" width="22" height="22">Cross Claimer</span><span class="ps"><img src="https://proclubshq.com/assets/playstyles/1v1-close-down.png" alt="" loading="lazy" width="22" height="22">1v1 Close Down</span>
-  <span class="ps sig" title="Far Reach — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/far-reach.png" alt="" loading="lazy" width="22" height="22">Far Reach</span><span class="ps sig" title="Footwork — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/footwork.png" alt="" loading="lazy" width="22" height="22">Footwork</span><span class="ps sig" title="Long Ball Pass — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="" loading="lazy" width="22" height="22">Long Ball Pass</span><span class="ps sig" title="Deflector — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/deflector.png" alt="" loading="lazy" width="22" height="22">Deflector</span>
-  </div>
-  <details><summary>All 34 attributes, priced</summary>
-  <div class="agrid"><div class="ar max"><span>GK Diving</span><b>99</b><em>75→99 · 318 AP</em></div><div class="ar max"><span>GK Pos.</span><b>99</b><em>75→99 · 432 AP</em></div><div class="ar max"><span>GK Reflexes</span><b>99</b><em>75→99 · 318 AP</em></div><div class="ar"><span>GK Handling</span><b>98</b><em>75→98 · 285 AP</em></div><div class="ar max"><span>Jumping</span><b>96</b><em>65→96 · 192 AP</em></div><div class="ar max"><span>Reactions</span><b>96</b><em>75→96 · 165 AP</em></div><div class="ar max"><span>Strength</span><b>96</b><em>50→96 · 289 AP</em></div><div class="ar"><span>Acceleration</span><b>90</b><em>75→90 · 129 AP</em></div><div class="ar"><span>Aggression</span><b>90</b><em>65→90 · 119 AP</em></div><div class="ar max"><span>Agility</span><b>90</b><em>50→90 · 271 AP</em></div><div class="ar max"><span>Balance</span><b>90</b><em>60→90 · 179 AP</em></div><div class="ar max"><span>Composure</span><b>90</b><em>50→90 · 189 AP</em></div><div class="ar"><span>GK Kicking</span><b>90</b><em>65→90 · 234 AP</em></div><div class="ar"><span>Ball Control</span><b>65</b><em>floor</em></div><div class="ar"><span>Interceptions</span><b>65</b><em>floor</em></div><div class="ar"><span>Long Pass</span><b>65</b><em>floor</em></div><div class="ar"><span>Short Pass</span><b>65</b><em>floor</em></div><div class="ar"><span>Stamina</span><b>65</b><em>floor</em></div><div class="ar"><span>Vision</span><b>65</b><em>floor</em></div><div class="ar"><span>Att. Position</span><b>50</b><em>floor</em></div><div class="ar"><span>Shot Power</span><b>50</b><em>floor</em></div><div class="ar"><span>Slide Tackle</span><b>50</b><em>floor</em></div><div class="ar"><span>Sprint Speed</span><b>50</b><em>floor</em></div><div class="ar"><span>Crossing</span><b>40</b><em>floor</em></div><div class="ar"><span>Curve</span><b>40</b><em>floor</em></div><div class="ar"><span>Def. Aware</span><b>40</b><em>floor</em></div><div class="ar"><span>Dribbling</span><b>40</b><em>floor</em></div><div class="ar"><span>Finishing</span><b>40</b><em>floor</em></div><div class="ar"><span>FK Acc.</span><b>40</b><em>floor</em></div><div class="ar"><span>Heading Acc.</span><b>40</b><em>floor</em></div><div class="ar"><span>Long Shots</span><b>40</b><em>floor</em></div><div class="ar"><span>Penalties</span><b>40</b><em>floor</em></div><div class="ar"><span>Stand Tackle</span><b>40</b><em>floor</em></div><div class="ar"><span>Volleys</span><b>40</b><em>floor</em></div>
-  </div></details>
-  <p class="spend">Full spend: <b>3,120 AP</b> of the 3,167 a pro earns by level 100.</p>
-  <div class="ctas"><a class="go" href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">Open this build in the builder →</a>
-  <a class="alt" href="https://proclubshq.com/edit/shot-stopper">Start your own Shot Stopper</a></div>
-</div>
-<div class="pane" data-b="cca27aff-8f65-4b80-ac4e-75262e5e118e">
-  <p class="blurb">The catcher. Spider trades a little of the wall for Acceleration and Agility 90 — shots are held, not parried, and one-on-ones die in your gloves.</p>
-  <div class="meta">
-    <span class="m"><b>Spider</b> specialization</span>
-    <span class="m">6'7" · 212 lb</span>
-    
-    
-  </div>
-  <div class="cats">
-  <div class="cat"><span class="cn">Goalkeeping</span>
-    <span class="track"><i style="width:100.0%"></i><u style="left:100.0%"></u></span>
-    <span class="cv">99<em>/99 cap</em></span></div><div class="cat"><span class="cn">Passing</span>
-    <span class="track"><i style="width:62.6%"></i><u style="left:86.9%"></u></span>
-    <span class="cv">62<em>/86 cap</em></span></div><div class="cat"><span class="cn">Physical</span>
-    <span class="track"><i style="width:81.8%"></i><u style="left:94.9%"></u></span>
-    <span class="cv">81<em>/94 cap</em></span></div><div class="cat"><span class="cn">Pace</span>
-    <span class="track"><i style="width:74.7%"></i><u style="left:89.9%"></u></span>
-    <span class="cv">74<em>/89 cap</em></span></div>
-  </div>
-  <p class="lbl" style="margin-top:12px">PlayStyles</p>
-  <div class="chips">
-  <span class="ps"><img src="https://proclubshq.com/assets/playstyles/far-throw.png" alt="" loading="lazy" width="22" height="22">Far Throw</span>
-  <span class="ps sig" title="Far Reach — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/far-reach.png" alt="" loading="lazy" width="22" height="22">Far Reach</span><span class="ps sig" title="Footwork — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/footwork.png" alt="" loading="lazy" width="22" height="22">Footwork</span><span class="ps sig" title="Long Ball Pass — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="" loading="lazy" width="22" height="22">Long Ball Pass</span><span class="ps sig" title="Deflector — signature PlayStyle"><img src="https://proclubshq.com/assets/playstyles/deflector.png" alt="" loading="lazy" width="22" height="22">Deflector</span>
-  </div>
-  <details><summary>All 34 attributes, priced</summary>
-  <div class="agrid"><div class="ar max"><span>GK Diving</span><b>99</b><em>75→99 · 318 AP</em></div><div class="ar max"><span>GK Pos.</span><b>99</b><em>75→99 · 432 AP</em></div><div class="ar max"><span>GK Reflexes</span><b>99</b><em>75→99 · 318 AP</em></div><div class="ar max"><span>GK Handling</span><b>99</b><em>75→99 · 318 AP</em></div><div class="ar max"><span>GK Kicking</span><b>99</b><em>65→99 · 489 AP</em></div><div class="ar max"><span>Jumping</span><b>96</b><em>65→96 · 192 AP</em></div><div class="ar max"><span>Reactions</span><b>96</b><em>75→96 · 165 AP</em></div><div class="ar max"><span>Strength</span><b>96</b><em>50→96 · 289 AP</em></div><div class="ar"><span>Acceleration</span><b>90</b><em>75→90 · 129 AP</em></div><div class="ar max"><span>Agility</span><b>90</b><em>50→90 · 271 AP</em></div><div class="ar"><span>Long Pass</span><b>75</b><em>65→75 · 38 AP</em></div><div class="ar"><span>Vision</span><b>75</b><em>65→75 · 38 AP</em></div><div class="ar"><span>FK Acc.</span><b>74</b><em>40→74 · 50 AP</em></div><div class="ar"><span>Composure</span><b>70</b><em>50→70 · 38 AP</em></div><div class="ar max"><span>Penalties</span><b>70</b><em>40→70 · 38 AP</em></div><div class="ar"><span>Aggression</span><b>65</b><em>floor</em></div><div class="ar"><span>Ball Control</span><b>65</b><em>floor</em></div><div class="ar"><span>Interceptions</span><b>65</b><em>floor</em></div><div class="ar"><span>Short Pass</span><b>65</b><em>floor</em></div><div class="ar"><span>Stamina</span><b>65</b><em>floor</em></div><div class="ar"><span>Balance</span><b>60</b><em>floor</em></div><div class="ar"><span>Sprint Speed</span><b>57</b><em>50→57 · 14 AP</em></div><div class="ar"><span>Att. Position</span><b>50</b><em>floor</em></div><div class="ar"><span>Shot Power</span><b>50</b><em>floor</em></div><div class="ar"><span>Slide Tackle</span><b>50</b><em>floor</em></div><div class="ar"><span>Crossing</span><b>40</b><em>floor</em></div><div class="ar"><span>Curve</span><b>40</b><em>floor</em></div><div class="ar"><span>Def. Aware</span><b>40</b><em>floor</em></div><div class="ar"><span>Dribbling</span><b>40</b><em>floor</em></div><div class="ar"><span>Finishing</span><b>40</b><em>floor</em></div><div class="ar"><span>Heading Acc.</span><b>40</b><em>floor</em></div><div class="ar"><span>Long Shots</span><b>40</b><em>floor</em></div><div class="ar"><span>Stand Tackle</span><b>40</b><em>floor</em></div><div class="ar"><span>Volleys</span><b>40</b><em>floor</em></div>
-  </div></details>
-  <p class="spend">Full spend: <b>3,137 AP</b> of the 3,167 a pro earns by level 100.</p>
-  <div class="ctas"><a class="go" href="https://proclubshq.com/b/cca27aff-8f65-4b80-ac4e-75262e5e118e">Open this build in the builder →</a>
-  <a class="alt" href="https://proclubshq.com/edit/shot-stopper">Start your own Shot Stopper</a></div>
-</div>
-<p class="foot">Gold chips are the archetype's signature PlayStyles — permanent, no slot spent. Attributes and specializations from the Pro Clubs HQ catalog; AP prices are community-derived (EA publishes none) and match the table the builder runs on. Both builds are public — opening one never edits it.</p>
-<script>
-(function(){var R=document.querySelector('[data-a19]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var show=function(id){R.querySelectorAll('.pane').forEach(function(p){p.hidden=(p.dataset.b!==id)});
-  R.querySelectorAll('.chip[data-t]').forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.t===id))});};
-show('896e33b0-5b31-4ee9-bfef-0173f7a45274');
-R.addEventListener('click',function(e){var c=e.target.closest('.chip[data-t]');if(c)show(c.dataset.t);});
+<p class="more"><a href="https://proclubshq.com/edit/shot-stopper" target="_blank" rel="noopener">Start your own Shot Stopper in the builder →</a></p>
+<script>/**
+ * Pro Clubs HQ — interactive build embed for blog articles.
+ *
+ * Usage in an article (the anchor is the no-JS/SEO fallback AND the click
+ * target — the whole card is one link into the app):
+ *
+ *   <a class="pchq-build" data-build="<uuid>" href="https://proclubshq.com/b/<uuid>">
+ *     Creative Playmaker — open in Pro Clubs HQ
+ *   </a>
+ *
+ * The script hydrates every .pchq-build on the page from
+ * GET /api/builds/{id}/public — same origin as the blog, so no CORS.
+ * If the fetch fails the anchor stays a styled plain link; nothing breaks.
+ */
+(function () {
+  "use strict";
+
+  // On proclubshq.com the API and the app's static assets are both
+  // same-origin; the data attributes exist so a local demo can point at the
+  // dev servers (API on 8001, CRA assets on 3000).
+  var _ds = (document.currentScript && document.currentScript.dataset) || {};
+  var API_BASE = _ds.apiBase || "";
+  var ASSET_BASE = _ds.assetBase || "";
+
+  var LABELS = {
+    ballControl: "Ball Control", shortPass: "Short Passing", longPass: "Long Passing",
+    attPosition: "Att. Positioning", defAware: "Def. Awareness", standTackle: "Stand Tackle",
+    slideTackle: "Slide Tackle", headingAcc: "Heading Acc.", fkAcc: "FK Accuracy",
+    shotPower: "Shot Power", longShots: "Long Shots", sprintSpeed: "Sprint Speed",
+    gkPositioning: "GK Positioning", gkReflexes: "GK Reflexes", gkHandling: "GK Handling",
+    gkDiving: "GK Diving", gkKicking: "GK Kicking"
+  };
+  function label(key) {
+    if (LABELS[key]) return LABELS[key];
+    var s = key.replace(/([A-Z])/g, " $1");
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  var TIERS = {
+    bronze: "#b0793f", silver: "#b9c0cc", gold: "#e8c35a",
+    purple: "#a06bff", black: "#8affd6"
+  };
+
+  function h(tag, cls, text) {
+    var el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (text != null) el.textContent = text;
+    return el;
+  }
+
+  function hydrate(anchor) {
+    var id = anchor.dataset.build;
+    if (!id) return;
+
+    fetch(API_BASE + "/api/builds/" + encodeURIComponent(id) + "/public")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (b) { render(anchor, b); })
+      .catch(function () { anchor.classList.add("pchq-card-fallback"); });
+  }
+
+  function render(anchor, b) {
+    var tier = TIERS[b.cardTier] || "#e8c35a";
+    anchor.classList.add("pchq-card");
+    anchor.style.setProperty("--pchq-tier", tier);
+    anchor.textContent = "";
+
+    var glow = h("span", "pchq-glow");
+
+    // Header: the archetype logo spans both identity lines, with the
+    // specialization label over the build name beside it.
+    var head = h("span", "pchq-head");
+    var ident = h("span", "pchq-ident");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.className = "pchq-logo";
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.loading = "lazy";
+      // A missing icon (future archetype, renamed id) must not leave a broken
+      // image glyph on the card.
+      logo.addEventListener("error", function () { logo.remove(); });
+      ident.appendChild(logo);
+    }
+    var idCol = h("span", "pchq-id-col");
+    idCol.appendChild(h("span", "pchq-arch", b.cardLabel || ""));
+    idCol.appendChild(h("span", "pchq-name", b.buildName));
+    ident.appendChild(idCol);
+    head.appendChild(ident);
+    head.appendChild(h("span", "pchq-lvl", "LVL " + b.level));
+
+    // Top six attributes by value - the build's own numbers, nothing invented.
+    var attrs = Object.entries(b.attributes || {})
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 6);
+    var grid = h("span", "pchq-attrs");
+    attrs.forEach(function (kv) {
+      var row = h("span", "pchq-attr");
+      row.appendChild(h("span", "pchq-attr-name", label(kv[0])));
+      var bar = h("span", "pchq-bar");
+      var fill = h("span", "pchq-fill");
+      fill.style.width = kv[1] + "%";
+      bar.appendChild(fill);
+      row.appendChild(bar);
+      row.appendChild(h("span", "pchq-attr-val", String(kv[1])));
+      grid.appendChild(row);
+    });
+
+    // Equipped PlayStyles: icon only, natural silver, one row above the
+    // signature set (added 2026-08-07 for the spoke articles — builds now
+    // carry their full nine slots, and the icons ARE the content).
+    var eq = h("span", "pchq-eq");
+    (b.playstyles || []).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-eq-ic";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      var title = slug.split("-").map(function (w) {
+        return w.charAt(0).toUpperCase() + w.slice(1);
+      }).join(" ");
+      ic.title = title;
+      ic.alt = title + " (PlayStyle)";
+      eq.appendChild(ic);
+    });
+
+    // Signature PlayStyles: icon only, rendered gold regardless of card tier
+    // (signature PlayStyles are the gold ones in-game), using the app's own
+    // GOLD_FILTER recipe from PlayStyleDiamond.jsx so the blog card and the
+    // app agree about what "signature gold" looks like. The derived name
+    // survives as a tooltip and for screen readers.
+    var sigs = h("span", "pchq-sigs");
+    (b.signature || []).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-sig-ic";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      var title = slug.split("-").map(function (w) {
+        return w.charAt(0).toUpperCase() + w.slice(1);
+      }).join(" ");
+      ic.title = title;
+      ic.alt = title + " (signature PlayStyle)";
+      sigs.appendChild(ic);
+    });
+
+    var foot = h("span", "pchq-foot");
+    var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
+    foot.appendChild(h("span", "pchq-by", creator));
+    foot.appendChild(h("span", "pchq-stat", "♥ " + (b.loveCount || 0)));
+    foot.appendChild(h("span", "pchq-stat", "⧉ " + (b.copyCount || 0) + " copies"));
+    foot.appendChild(h("span", "pchq-cta", "Open in builder →"));
+
+    anchor.appendChild(glow);
+    anchor.appendChild(head);
+    anchor.appendChild(grid);
+    if (eq.childNodes.length) anchor.appendChild(eq);
+    if (sigs.childNodes.length) anchor.appendChild(sigs);
+    anchor.appendChild(foot);
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Mouse-reactive: the card tilts toward the cursor and a glow follows it.
+    anchor.addEventListener("pointermove", function (e) {
+      var r = anchor.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;   // 0..1
+      var py = (e.clientY - r.top) / r.height;
+      anchor.style.setProperty("--pchq-rx", ((0.5 - py) * 8).toFixed(2) + "deg");
+      anchor.style.setProperty("--pchq-ry", ((px - 0.5) * 10).toFixed(2) + "deg");
+      anchor.style.setProperty("--pchq-mx", (px * 100).toFixed(1) + "%");
+      anchor.style.setProperty("--pchq-my", (py * 100).toFixed(1) + "%");
+    });
+    anchor.addEventListener("pointerleave", function () {
+      anchor.style.setProperty("--pchq-rx", "0deg");
+      anchor.style.setProperty("--pchq-ry", "0deg");
+    });
+  }
+
+  function boot() {
+    document.querySelectorAll("a.pchq-build[data-build]").forEach(hydrate);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();
 </script>
 </div>

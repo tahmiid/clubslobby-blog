@@ -41,6 +41,10 @@ const catCeil = (arch, cat) => {
   return Math.round(v.reduce((s, x) => s + x.max, 0) / v.length);
 };
 
+const WIDGET_DIR = path.join(import.meta.dirname, '..', 'widgets', 'build-card');
+const PCHQ_CSS = readFileSync(path.join(WIDGET_DIR, 'pchq-build-card.css'), 'utf8');
+const PCHQ_JS = readFileSync(path.join(WIDGET_DIR, 'pchq-build-card.js'), 'utf8');
+
 export const COVER = 'https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-spokes.jpg';
 export const ft = (inches) => `${Math.floor(inches / 12)}'${inches % 12}"`;
 export const psName = (slug) => PLAYSTYLES[slug]?.name || title(slug.replace(/-/g, ' '));
@@ -54,9 +58,6 @@ export function renderSpoke(cfg) {
   const P = `a${cfg.n}`;
   const isKeeper = arch.position === 'Keeper';
   const BUILDS = JSON.parse(readFileSync(path.join(DIR, 'builds', `${arch.id}.json`), 'utf8'));
-  if (BUILDS.length !== cfg.blurbs.length || BUILDS.length !== cfg.tabs.length) {
-    throw new Error(`${arch.id}: builds/blurbs/tabs count mismatch`);
-  }
 
   const tierOf = (k) => {
     const disp = ATTRS[k].name;
@@ -139,16 +140,7 @@ export function renderSpoke(cfg) {
     .replace(/width="\d+" height="\d+"/, `viewBox="0 0 ${iw} ${ih}" class="aico" aria-hidden="true"`)
     .replace(/fill="#CCCCCC"/g, 'fill="currentColor"');
 
-  const catAvg = (b, cat) => Math.round(
-    allCats[cat].reduce((s, k) => s + b.attributes[k], 0) / allCats[cat].length);
-  const specName = (id) => arch.specializations.find((s) => s.id === id)?.name || id;
   const archName = title(arch.name);
-
-  const CATVIEW = isKeeper
-    ? ['Goalkeeping', 'Passing', 'Physical', 'Pace']
-    : CATNAMES.filter((c) => !(cfg.hideCats || []).includes(c));
-  const gridKeys = Object.keys(arch.attributes)
-    .filter((k) => isKeeper || !k.startsWith('gk'));
 
   const ctx = {
     arch, archName, builds: BUILDS, featured, spec, specs, stages, specStage,
@@ -156,98 +148,32 @@ export function renderSpoke(cfg) {
     openUrl, BUILDER, ft, psName, esc, fmt: (n) => n.toLocaleString(),
   };
 
-  const panel = (b, blurb) => {
-    const cost = buildCost(b);
-    return `<div class="pane" data-b="${b.id}">
-  <p class="blurb">${blurb}</p>
-  <div class="meta">
-    <span class="m"><b>${esc(specName(b.selectedSpecialization))}</b> specialization</span>
-    <span class="m">${ft(b.height)} · ${b.weight} lb</span>
-    ${isKeeper ? '' : `<span class="m">${b.skillMoves}★ skills · ${b.weakFoot}★ weak foot</span>`}
-    ${isKeeper || !b.accelerationType ? '' : `<span class="m acc">${esc(b.accelerationType)}</span>`}
-  </div>
-  <div class="cats">
-  ${CATVIEW.map((c) => {
-    const v = catAvg(b, c), cap = catCeil(arch, c);
-    return `<div class="cat"><span class="cn">${c}</span>
-    <span class="track"><i style="width:${(v / 99 * 100).toFixed(1)}%"></i><u style="left:${(cap / 99 * 100).toFixed(1)}%"></u></span>
-    <span class="cv">${v}<em>/${cap} cap</em></span></div>`;
-  }).join('')}
-  </div>
-  <p class="lbl" style="margin-top:12px">PlayStyles</p>
-  <div class="chips">
-  ${b.playstyles.map((s) => `<span class="ps"><img src="${psIcon(s)}" alt="" loading="lazy" width="22" height="22">${esc(psName(s))}</span>`).join('')}
-  ${arch.signature.map((s) => `<span class="ps sig" title="${esc(psName(s))} — signature PlayStyle"><img src="${psIcon(s)}" alt="" loading="lazy" width="22" height="22">${esc(psName(s))}</span>`).join('')}
-  </div>
-  <details><summary>All ${gridKeys.length} attributes, priced</summary>
-  <div class="agrid">${gridKeys
-    .sort((x, y) => b.attributes[y] - b.attributes[x])
-    .map((k) => {
-      const v = b.attributes[k], f = floorOf(k);
-      return `<div class="ar${v >= capOf(k) ? ' max' : ''}"><span>${esc(ATTRS[k].name)}</span><b>${v}</b><em>${v > f ? `${f}→${v} · ${costUp(k, f, v)} AP` : 'floor'}</em></div>`;
-    }).join('')}
-  </div></details>
-  <p class="spend">Full spend: <b>${cost.toLocaleString()} AP</b> of the ${TOTAL_AP.toLocaleString()} a pro earns by level 100.</p>
-  <div class="ctas"><a class="go" href="${openUrl(b)}">Open this build in the builder →</a>
-  <a class="alt" href="${BUILDER}">Start your own ${esc(archName)}</a></div>
-</div>`;
-  };
-
+  // The approved build card (widgets/build-card, design signed off
+  // 2026-08-06): the whole card is one link into the app, hydrated live from
+  // GET /api/builds/{id}/public — attributes, equipped PlayStyles (silver)
+  // and the signature set (gold) are always current. Its CSS/JS are inlined
+  // here because everything on this blog is inline, and Ghost's code
+  // injection is staff-only anyway (DEPLOYMENT.md gotcha 7). The anchor text
+  // is the crawlable fallback; both links open the app in a new tab.
   const widget = kg(`<div class="${P}" data-${P}>
 <style>${baseCss(P)}
 .${P} .top{display:flex;align-items:center;gap:12px;margin-bottom:2px}
 .${P} .aico{width:40px;height:38px;flex:none;color:var(--accent)}
 .${P} .who{font-size:12.5px;color:var(--muted);margin:0 0 14px}
-.${P} .blurb{margin:12px 0 10px;font-size:13.5px;color:var(--ink2);max-width:64ch}
-.${P} .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.${P} .m{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--bar);color:var(--ink2)}
-.${P} .m b{color:var(--ink)}
-.${P} .m.acc{background:var(--accent);color:#fff}
-.${P} .cat{display:grid;grid-template-columns:92px 1fr 84px;gap:10px;align-items:center;margin-bottom:7px}
-.${P} .cn{font-size:12.5px;color:var(--ink2)}
-.${P} .track{position:relative;height:8px;border-radius:4px;background:var(--bar);overflow:visible}
-.${P} .track i{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--accent)}
-.${P} .track u{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--muted);border-radius:1px}
-.${P} .cv{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums}
-.${P} .cv em{font-style:normal;font-weight:400;font-size:11px;color:var(--muted)}
-.${P} .ps{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px 4px 5px;
-  border-radius:999px;border:1px solid var(--ring);color:var(--ink2)}
-.${P} .ps img{width:22px;height:22px;border-radius:6px;background:#16161d;padding:2px;box-sizing:border-box}
-.${P} .ps.sig{border-color:#c9a227;background:rgba(201,162,39,.13);color:var(--ink)}
-.${P} .ps.sig img{background:#3a2f10}
-.${P} details{margin-top:12px}
-.${P} summary{font-size:12.5px;color:var(--accent);cursor:pointer}
-.${P} .agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-top:10px}
-.${P} .ar{border:1px solid var(--ring);border-radius:8px;padding:7px 9px;display:flex;flex-direction:column}
-.${P} .ar span{font-size:11px;color:var(--muted)}
-.${P} .ar b{font-size:16px}
-.${P} .ar em{font-style:normal;font-size:10.5px;color:var(--muted)}
-.${P} .ar.max b{color:var(--accent)}
-.${P} .spend{margin:12px 0 0;font-size:12.5px;color:var(--ink2)}
-.${P} .ctas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.${P} .go{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:650;
-  font-size:13.5px;padding:9px 16px;border-radius:8px}
-.${P} .go:hover{opacity:.92}
-.${P} .alt{display:inline-block;border:1px solid var(--ring);color:var(--ink2);text-decoration:none;
-  font-size:13.5px;padding:9px 16px;border-radius:8px}
-.${P} .alt:hover{border-color:var(--muted)}
-@media (max-width:520px){.${P} .cat{grid-template-columns:80px 1fr 76px}}
+.${P} .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.${P} .cards .pchq-build{margin:0;max-width:none}
+.${P} .more{margin:14px 0 0;font-size:13.5px}
+.${P} .more a{color:var(--accent);text-decoration:none;font-weight:650}
+.${P} .more a:hover{text-decoration:underline}
+${PCHQ_CSS}
 </style>
-<div class="top">${icon}<div><p class="hd">The ${esc(archName)}, finished</p></div></div>
-<p class="who">${esc(arch.position)} · inspired by ${esc(arch.inspiredBy)} · ${BUILDS.length === 1 ? 'a' : BUILDS.length === 2 ? 'two' : BUILDS.length} level-100 build${BUILDS.length === 1 ? '' : 's'} from the ${BRAND} builder</p>
-${BUILDS.length > 1 ? `<div class="chips" role="group" aria-label="Pick a build">
-${BUILDS.map((b, i) => `  <button type="button" class="chip" data-t="${b.id}"${i ? '' : ' aria-pressed="true"'}>${esc(cfg.tabs[i])}</button>`).join('\n')}
-</div>` : ''}
-${BUILDS.map((b, i) => panel(b, cfg.blurbs[i])).join('\n')}
-<p class="foot">Gold chips are the archetype's signature PlayStyles — permanent, no slot spent. Attributes and specializations from the ${BRAND} catalog; AP prices are community-derived (EA publishes none) and match the table the builder runs on. ${BUILDS.length === 1 ? 'The build is' : 'Both builds are'} public — opening one never edits it.</p>
-${BUILDS.length > 1 ? `<script>
-(function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var show=function(id){R.querySelectorAll('.pane').forEach(function(p){p.hidden=(p.dataset.b!==id)});
-  R.querySelectorAll('.chip[data-t]').forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.t===id))});};
-show('${featured.id}');
-R.addEventListener('click',function(e){var c=e.target.closest('.chip[data-t]');if(c)show(c.dataset.t);});
-})();
-</script>` : ''}
+<div class="top">${icon}<div><p class="hd">${esc(archName)}</p></div></div>
+<p class="who">Builds from ${BRAND}</p>
+<div class="cards">
+${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}" href="${openUrl(b)}" target="_blank" rel="noopener">${esc(b.buildName)} — open in ${BRAND}</a>`).join('\n')}
+</div>
+<p class="more"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>
+<script>${PCHQ_JS}</script>
 </div>`);
 
   // The AP path as a grid — a real <table> here inherits the theme's

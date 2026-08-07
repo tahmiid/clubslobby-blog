@@ -40,7 +40,11 @@
    "press-proven",
    "slide-tackle",
    "block",
-   "whipped-pass"
+   "whipped-pass",
+   "quick-step",
+   "1v1-close-down",
+   "chip-shot",
+   "tiki-taka"
   ],
   "unlockedSpecializations": [
    "engine-plus"
@@ -100,7 +104,10 @@
    "power-shot",
    "dead-ball",
    "low-driven-shot",
-   "first-touch"
+   "first-touch",
+   "tiki-taka",
+   "acrobatic",
+   "1v1-close-down"
   ],
   "unlockedSpecializations": [
    "everywhere"

@@ -38,7 +38,13 @@
   "playstyles": [
    "dead-ball",
    "incisive-pass",
-   "long-ball-pass"
+   "long-ball-pass",
+   "tiki-taka",
+   "inventive",
+   "first-touch",
+   "slide-tackle",
+   "intercept",
+   "pinged-pass"
   ],
   "unlockedSpecializations": [
    "marauder-plus"
@@ -96,7 +102,12 @@
    "pinged-pass",
    "jockey",
    "anticipate",
-   "long-throw"
+   "long-throw",
+   "rapid",
+   "chip-shot",
+   "tiki-taka",
+   "block",
+   "enforcer"
   ],
   "unlockedSpecializations": [
    "speedster"

@@ -41,7 +41,10 @@
    "dead-ball",
    "power-shot",
    "first-touch",
-   "tiki-taka"
+   "tiki-taka",
+   "finesse-shot",
+   "low-driven-shot",
+   "whipped-pass"
   ],
   "unlockedSpecializations": [
    "creator-plus"
@@ -100,7 +103,11 @@
    "first-touch",
    "whipped-pass",
    "long-ball-pass",
-   "chip-shot"
+   "chip-shot",
+   "low-driven-shot",
+   "tiki-taka",
+   "power-shot",
+   "technical"
   ],
   "unlockedSpecializations": [
    "creator-plus",

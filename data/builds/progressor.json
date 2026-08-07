@@ -40,7 +40,11 @@
    "block",
    "slide-tackle",
    "press-proven",
-   "bruiser"
+   "bruiser",
+   "tiki-taka",
+   "precision-header",
+   "chip-shot",
+   "enforcer"
   ],
   "unlockedSpecializations": [
    "progressor-plus",
@@ -96,7 +100,15 @@
    "volleys": 50
   },
   "playstyles": [
-   "aerial-fortress"
+   "aerial-fortress",
+   "tiki-taka",
+   "precision-header",
+   "bruiser",
+   "press-proven",
+   "slide-tackle",
+   "first-touch",
+   "pinged-pass",
+   "long-throw"
   ],
   "unlockedSpecializations": [
    "progressor-plus",

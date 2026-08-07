@@ -40,7 +40,11 @@
    "first-touch",
    "quick-step",
    "game-changer",
-   "relentless"
+   "relentless",
+   "tiki-taka",
+   "chip-shot",
+   "low-driven-shot",
+   "power-shot"
   ],
   "unlockedSpecializations": [
    "spark-plus",
@@ -100,7 +104,11 @@
    "incisive-pass",
    "first-touch",
    "game-changer",
-   "rapid"
+   "rapid",
+   "tiki-taka",
+   "chip-shot",
+   "quick-step",
+   "whipped-pass"
   ],
   "unlockedSpecializations": [
    "spark-plus",

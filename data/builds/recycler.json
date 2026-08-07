@@ -40,7 +40,11 @@
    "long-ball-pass",
    "block",
    "first-touch",
-   "incisive-pass"
+   "incisive-pass",
+   "chip-shot",
+   "bruiser",
+   "jockey",
+   "enforcer"
   ],
   "unlockedSpecializations": [
    "recycler-plus",
@@ -99,7 +103,12 @@
    "relentless",
    "dead-ball",
    "whipped-pass",
-   "block"
+   "block",
+   "inventive",
+   "jockey",
+   "incisive-pass",
+   "slide-tackle",
+   "first-touch"
   ],
   "unlockedSpecializations": [
    "thief"
