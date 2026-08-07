@@ -37,14 +37,14 @@
   },
   "playstyles": [
    "finesse-shot",
-   "first-touch",
    "low-driven-shot",
    "chip-shot",
-   "long-ball-pass",
-   "quick-step",
    "game-changer",
+   "long-ball-pass",
    "inventive",
-   "incisive-pass"
+   "incisive-pass",
+   "first-touch",
+   "quick-step"
   ],
   "unlockedSpecializations": [
    "roamer"
@@ -102,12 +102,12 @@
    "finesse-shot",
    "acrobatic",
    "low-driven-shot",
-   "block",
-   "quick-step",
-   "aerial-fortress",
    "game-changer",
+   "block",
+   "aerial-fortress",
    "first-touch",
-   "1v1-close-down"
+   "quick-step",
+   "long-throw"
   ],
   "unlockedSpecializations": [
    "runner"

@@ -36,15 +36,15 @@
    "volleys": 72
   },
   "playstyles": [
-   "pinged-pass",
-   "long-ball-pass",
    "dead-ball",
    "power-shot",
-   "first-touch",
-   "tiki-taka",
    "finesse-shot",
    "low-driven-shot",
-   "whipped-pass"
+   "pinged-pass",
+   "long-ball-pass",
+   "tiki-taka",
+   "whipped-pass",
+   "first-touch"
   ],
   "unlockedSpecializations": [
    "creator-plus"
@@ -100,13 +100,13 @@
   },
   "playstyles": [
    "finesse-shot",
-   "first-touch",
-   "whipped-pass",
-   "long-ball-pass",
    "chip-shot",
    "low-driven-shot",
-   "tiki-taka",
    "power-shot",
+   "whipped-pass",
+   "long-ball-pass",
+   "tiki-taka",
+   "first-touch",
    "technical"
   ],
   "unlockedSpecializations": [

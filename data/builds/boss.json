@@ -36,15 +36,15 @@
    "volleys": 55
   },
   "playstyles": [
+   "chip-shot",
+   "long-ball-pass",
+   "tiki-taka",
    "intercept",
    "jockey",
-   "long-ball-pass",
-   "press-proven",
    "slide-tackle",
    "block",
-   "enforcer",
-   "tiki-taka",
-   "chip-shot"
+   "press-proven",
+   "enforcer"
   ],
   "unlockedSpecializations": [
    "capitano"
@@ -101,13 +101,13 @@
   "playstyles": [
    "pinged-pass",
    "long-ball-pass",
-   "relentless",
-   "press-proven",
    "tiki-taka",
    "slide-tackle",
    "block",
    "jockey",
-   "intercept"
+   "intercept",
+   "press-proven",
+   "relentless"
   ],
   "unlockedSpecializations": [
    "boss-plus"

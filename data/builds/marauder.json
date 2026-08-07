@@ -41,10 +41,10 @@
    "long-ball-pass",
    "tiki-taka",
    "inventive",
-   "first-touch",
+   "pinged-pass",
    "slide-tackle",
    "intercept",
-   "pinged-pass"
+   "first-touch"
   ],
   "unlockedSpecializations": [
    "marauder-plus"
@@ -99,14 +99,14 @@
    "volleys": 66
   },
   "playstyles": [
+   "chip-shot",
    "pinged-pass",
+   "tiki-taka",
    "jockey",
    "anticipate",
-   "long-throw",
-   "rapid",
-   "chip-shot",
-   "tiki-taka",
    "block",
+   "rapid",
+   "long-throw",
    "enforcer"
   ],
   "unlockedSpecializations": [

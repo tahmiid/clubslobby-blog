@@ -38,7 +38,7 @@ renderSpoke({
 
   specOutro: () => `<p>The honest ranking: <strong>Sweeper Keeper+</strong> if you genuinely play the libero role — the outside-the-box control is the archetype's whole identity. <strong>Launcher</strong> if your club counter-attacks; its perk is the only one here that makes a teammate faster. <strong>Extra</strong> is the niche pick for clubs that defend with a very high line and need real tackling from their keeper. Full pricing across all 39 specializations is in <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>`,
 
-  playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots. The Neuer equips Pinged Pass and Long Ball Pass — distribution badges whose thresholds sit inside attributes the build buys anyway. Check the keeper-eligible set and every threshold in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
+  playstylesPara: () => `<p>Keeper badges are a short list and the requirements gate them hard — each build equips every badge it actually qualifies for, goalkeeping badges first, then whatever its distribution stats earn. A level-100 pro carries nine slots; a keeper rarely fills them, and that is the game's rule, not a gap in the build. Check every threshold in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
 
   physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. Go tall but not maximal: reach still saves shots, but this archetype leaves the box, and the last inch costs agility you will actually use. The Neuer stands ${ft(builds[0].height)}, the Ederson ${ft(builds[1].height)}.</p>`,
 

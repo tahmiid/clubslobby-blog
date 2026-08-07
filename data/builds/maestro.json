@@ -36,14 +36,14 @@
    "volleys": 65
   },
   "playstyles": [
+   "game-changer",
+   "chip-shot",
+   "finesse-shot",
+   "inventive",
    "first-touch",
    "press-proven",
    "trickster",
-   "game-changer",
-   "inventive",
    "technical",
-   "chip-shot",
-   "finesse-shot",
    "rapid"
   ],
   "unlockedSpecializations": [
@@ -101,14 +101,14 @@
   },
   "playstyles": [
    "power-shot",
+   "chip-shot",
+   "acrobatic",
    "intercept",
    "slide-tackle",
-   "rapid",
-   "quick-step",
-   "1v1-close-down",
-   "chip-shot",
    "block",
-   "acrobatic"
+   "rapid",
+   "trickster",
+   "quick-step"
   ],
   "unlockedSpecializations": [
    "heartbeat"

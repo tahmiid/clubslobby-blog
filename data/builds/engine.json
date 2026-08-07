@@ -36,15 +36,15 @@
    "volleys": 65
   },
   "playstyles": [
-   "bruiser",
-   "press-proven",
+   "chip-shot",
+   "whipped-pass",
+   "tiki-taka",
    "slide-tackle",
    "block",
-   "whipped-pass",
-   "quick-step",
-   "1v1-close-down",
-   "chip-shot",
-   "tiki-taka"
+   "press-proven",
+   "trickster",
+   "bruiser",
+   "quick-step"
   ],
   "unlockedSpecializations": [
    "engine-plus"
@@ -99,15 +99,15 @@
    "volleys": 75
   },
   "playstyles": [
-   "whipped-pass",
    "finesse-shot",
    "power-shot",
    "dead-ball",
    "low-driven-shot",
-   "first-touch",
-   "tiki-taka",
    "acrobatic",
-   "1v1-close-down"
+   "whipped-pass",
+   "tiki-taka",
+   "inventive",
+   "first-touch"
   ],
   "unlockedSpecializations": [
    "everywhere"

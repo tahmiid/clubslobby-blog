@@ -36,14 +36,14 @@
    "volleys": 50
   },
   "playstyles": [
+   "precision-header",
+   "chip-shot",
+   "tiki-taka",
    "jockey",
    "block",
    "slide-tackle",
    "press-proven",
    "bruiser",
-   "tiki-taka",
-   "precision-header",
-   "chip-shot",
    "enforcer"
   ],
   "unlockedSpecializations": [
@@ -100,14 +100,14 @@
    "volleys": 50
   },
   "playstyles": [
-   "aerial-fortress",
-   "tiki-taka",
    "precision-header",
-   "bruiser",
-   "press-proven",
-   "slide-tackle",
-   "first-touch",
+   "tiki-taka",
    "pinged-pass",
+   "aerial-fortress",
+   "slide-tackle",
+   "press-proven",
+   "first-touch",
+   "bruiser",
    "long-throw"
   ],
   "unlockedSpecializations": [

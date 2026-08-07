@@ -41,9 +41,9 @@
    "volleys": 40
   },
   "playstyles": [
+   "cross-claimer",
    "pinged-pass",
    "long-ball-pass",
-   "cross-claimer",
    "long-throw"
   ],
   "unlockedSpecializations": [
@@ -106,11 +106,11 @@
   "playstyles": [
    "footwork",
    "cross-claimer",
+   "chip-shot",
    "pinged-pass",
    "tiki-taka",
    "block",
    "press-proven",
-   "chip-shot",
    "long-throw",
    "enforcer"
   ],

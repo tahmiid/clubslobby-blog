@@ -37,14 +37,14 @@
   },
   "playstyles": [
    "finesse-shot",
-   "first-touch",
-   "quick-step",
    "game-changer",
-   "relentless",
-   "tiki-taka",
    "chip-shot",
    "low-driven-shot",
-   "power-shot"
+   "power-shot",
+   "tiki-taka",
+   "first-touch",
+   "quick-step",
+   "relentless"
   ],
   "unlockedSpecializations": [
    "spark-plus",
@@ -101,14 +101,14 @@
   },
   "playstyles": [
    "finesse-shot",
-   "incisive-pass",
-   "first-touch",
    "game-changer",
-   "rapid",
-   "tiki-taka",
    "chip-shot",
-   "quick-step",
-   "whipped-pass"
+   "incisive-pass",
+   "tiki-taka",
+   "whipped-pass",
+   "first-touch",
+   "rapid",
+   "quick-step"
   ],
   "unlockedSpecializations": [
    "spark-plus",

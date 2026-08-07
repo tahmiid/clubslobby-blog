@@ -21,7 +21,7 @@ renderSpoke({
   ],
 
   buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
-    `<p><strong>The De Bruyne</strong> is the assist king: Vision 98, Crossing 97, Curve 97, Long Pass 96 and Short Pass 96, carrying six PlayStyles because the passing thresholds paid for themselves — and the <strong>Creator+</strong> specialization, whose Assistant perk boosts the Finishing, Balance and Ball Control of the teammate your through ball finds. Your striker's stats improve because you passed to them.</p>`,
+    `<p><strong>The De Bruyne</strong> is the assist king: Vision 98, Crossing 97, Curve 97, Long Pass 96 and Short Pass 96, with all nine PlayStyle slots earned by the passing thresholds themselves — and the <strong>Creator+</strong> specialization, whose Assistant perk boosts the Finishing, Balance and Ball Control of the teammate your through ball finds. Your striker's stats improve because you passed to them.</p>`,
     `<p><strong>The Palmer</strong> is the shooter's version: <strong>Sniper</strong> asks for Finishing 90, Shot Power 92 and Long Shots 90, and Set Piece Wizard adds extreme curve to every dead ball. Fewer assists, more goals, same eye for space.</p>`,
     `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the De Bruyne</a>, <a href="${openUrl(builds[1])}">the Palmer</a>.</p>`,
   ],
@@ -39,7 +39,7 @@ renderSpoke({
 
   specOutro: () => `<p>The honest ranking: <strong>Creator+</strong> if assists are your currency — no other perk in the game improves a teammate at the moment it matters. <strong>Sniper</strong> if you take the set pieces and arrive for cut-backs. <strong>Architect</strong> is for deep-lying quarterbacks — raking switches off FK Accuracy 90 — a beautiful niche that most clubs don't actually need twice. Full pricing across all 39 specializations is in <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>`,
 
-  playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots. The De Bruyne runs six — Pinged Pass, Long Ball Pass, Dead Ball, Power Shot, First Touch, Tiki Taka — because this build's passing targets clear those thresholds on their own. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
+  playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots, and both builds run them full — the silver icons on the cards above, ordered shooting, passing, defending, ball control, physical. Every badge is earned: its unlock thresholds sit inside attributes the build buys anyway; nothing is bought for a badge. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
 
   physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. The De Bruyne at ${ft(builds[0].height)} comes out <strong>Explosive</strong> — the burst that buys half a yard for the cross; the Palmer at ${ft(builds[1].height)} is Controlled and glides between the lines instead. Match the frame to your first touch, not your top speed, and check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
 

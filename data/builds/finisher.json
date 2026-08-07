@@ -37,13 +37,13 @@
   },
   "playstyles": [
    "finesse-shot",
-   "rapid",
-   "technical",
-   "trickster",
    "power-shot",
    "game-changer",
    "chip-shot",
    "tiki-taka",
+   "rapid",
+   "technical",
+   "trickster",
    "relentless"
   ],
   "unlockedSpecializations": [
@@ -101,12 +101,12 @@
   },
   "playstyles": [
    "finesse-shot",
-   "rapid",
-   "trickster",
-   "technical",
    "power-shot",
    "game-changer",
    "chip-shot",
+   "rapid",
+   "trickster",
+   "technical",
    "relentless"
   ],
   "unlockedSpecializations": [

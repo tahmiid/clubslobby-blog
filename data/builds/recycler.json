@@ -36,14 +36,14 @@
    "volleys": 65
   },
   "playstyles": [
-   "anticipate",
-   "long-ball-pass",
-   "block",
-   "first-touch",
-   "incisive-pass",
    "chip-shot",
-   "bruiser",
+   "long-ball-pass",
+   "incisive-pass",
+   "anticipate",
+   "block",
    "jockey",
+   "first-touch",
+   "bruiser",
    "enforcer"
   ],
   "unlockedSpecializations": [
@@ -100,15 +100,15 @@
    "volleys": 65
   },
   "playstyles": [
-   "relentless",
    "dead-ball",
    "whipped-pass",
-   "block",
    "inventive",
-   "jockey",
    "incisive-pass",
+   "block",
+   "jockey",
    "slide-tackle",
-   "first-touch"
+   "first-touch",
+   "relentless"
   ],
   "unlockedSpecializations": [
    "thief"
