@@ -98,6 +98,15 @@ ${widget}
 <li><strong>Check the specialization requirements before you commit.</strong> They're listed on every card above. Some sit within two points of the archetype's own ceiling, meaning you must max that attribute almost exactly to qualify.</li>
 </ol>
 
+<h2>The full build guide for every archetype</h2>
+<p>Each archetype has its own complete guide — the finished level-100 build, the AP spending order, the specialization call, and real builds you can open in the builder:</p>
+<ul>
+${ARCH.map((a) => {
+  const n = title(a.name);
+  return `<li><a href="/blog/pro-clubs-${a.id}-build/">${esc(n)} build guide</a> — ${esc(a.position)}, inspired by ${esc(a.inspiredBy)}</li>`;
+}).join('\n')}
+</ul>
+
 <h2>Frequently asked questions</h2>
 <h3>How many archetypes are in Pro Clubs?</h3>
 <p>Thirteen — 2 keeper, 4 defender, 4 midfielder and 3 forward.</p>

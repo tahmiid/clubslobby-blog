@@ -1,0 +1,121 @@
+[
+ {
+  "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
+  "buildName": "Lionel Messi",
+  "archetype_id": "magician",
+  "level": 100,
+  "attributes": {
+   "acceleration": 92,
+   "aggression": 55,
+   "agility": 95,
+   "attPosition": 92,
+   "balance": 96,
+   "ballControl": 97,
+   "composure": 95,
+   "crossing": 65,
+   "curve": 96,
+   "defAware": 45,
+   "dribbling": 96,
+   "finishing": 94,
+   "fkAcc": 65,
+   "headingAcc": 65,
+   "interceptions": 50,
+   "jumping": 60,
+   "longPass": 92,
+   "longShots": 93,
+   "penalties": 75,
+   "reactions": 93,
+   "shortPass": 95,
+   "shotPower": 71,
+   "slideTackle": 40,
+   "sprintSpeed": 88,
+   "stamina": 80,
+   "standTackle": 40,
+   "strength": 65,
+   "vision": 96,
+   "volleys": 72
+  },
+  "playstyles": [
+   "first-touch",
+   "tiki-taka",
+   "trickster",
+   "game-changer",
+   "rapid"
+  ],
+  "unlockedSpecializations": [
+   "magician-plus",
+   "invader"
+  ],
+  "selectedSpecialization": "invader",
+  "signature": [
+   "technical",
+   "finesse-shot",
+   "chip-shot",
+   "inventive"
+  ],
+  "height": 67,
+  "weight": 159,
+  "weakFoot": 4,
+  "skillMoves": 4,
+  "accelerationType": "Explosive"
+ },
+ {
+  "id": "ea493d2c-3f6c-467c-af23-72d2903cb9cb",
+  "buildName": "Ousmane Dembélé",
+  "archetype_id": "magician",
+  "level": 100,
+  "attributes": {
+   "acceleration": 95,
+   "aggression": 55,
+   "agility": 96,
+   "attPosition": 93,
+   "balance": 96,
+   "ballControl": 95,
+   "composure": 92,
+   "crossing": 88,
+   "curve": 93,
+   "defAware": 45,
+   "dribbling": 96,
+   "finishing": 95,
+   "fkAcc": 65,
+   "headingAcc": 65,
+   "interceptions": 50,
+   "jumping": 60,
+   "longPass": 75,
+   "longShots": 86,
+   "penalties": 75,
+   "reactions": 92,
+   "shortPass": 89,
+   "shotPower": 70,
+   "slideTackle": 40,
+   "sprintSpeed": 95,
+   "stamina": 92,
+   "standTackle": 40,
+   "strength": 65,
+   "vision": 93,
+   "volleys": 72
+  },
+  "playstyles": [
+   "rapid",
+   "trickster",
+   "quick-step",
+   "game-changer",
+   "whipped-pass"
+  ],
+  "unlockedSpecializations": [
+   "magician-plus"
+  ],
+  "selectedSpecialization": "magician-plus",
+  "signature": [
+   "technical",
+   "finesse-shot",
+   "chip-shot",
+   "inventive"
+  ],
+  "height": 70,
+  "weight": 148,
+  "weakFoot": 5,
+  "skillMoves": 5,
+  "accelerationType": "Explosive"
+ }
+]

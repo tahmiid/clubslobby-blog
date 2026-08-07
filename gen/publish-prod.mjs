@@ -34,8 +34,25 @@ const tok = () => {
   const h = b({ alg: 'HS256', typ: 'JWT', kid }), p = b({ iat: i, exp: i + 300, aud: '/admin/' });
   return `${h}.${p}.${createHmac('sha256', Buffer.from(secret, 'hex')).update(`${h}.${p}`).digest('base64url')}`;
 };
-const call = (u, o = {}) => fetch(API + u, {
-  ...o, headers: { Authorization: `Ghost ${tok()}`, 'Content-Type': 'application/json', 'Accept-Version': 'v6.0' } });
+// curl pinned to local nginx — same transport (and same reason) as
+// ghost-admin.mjs: the post-cutover TLS catch-all 444s some Cloudflare->origin
+// connections, so box-originated fetch through the public DNS 520s at random.
+const call = (u, o = {}) => {
+  const args = ['-s', '-w', '\n%{http_code}', '--resolve', 'proclubshq.com:443:127.0.0.1',
+    '-H', `Authorization: Ghost ${tok()}`, '-H', 'Accept-Version: v6.0'];
+  if (o.method) args.push('-X', o.method);
+  let input;
+  if (typeof o.body === 'string') {
+    args.push('-H', 'Content-Type: application/json', '--data-binary', '@-');
+    input = o.body;
+  }
+  const out = execFileSync('curl', [...args, API + u],
+    { input, maxBuffer: 64 * 1024 * 1024 }).toString();
+  const nl = out.lastIndexOf('\n');
+  const status = Number(out.slice(nl + 1)), text = out.slice(0, nl);
+  return { ok: status >= 200 && status < 300, status,
+    json: async () => JSON.parse(text), text: async () => text };
+};
 
 const POSTS = [
   { file: 'a1.html', slug: 'pro-clubs-archetypes-explained', status: 'published',
@@ -141,6 +158,89 @@ const POSTS = [
     meta_description: 'Compare any two EA FC Pro Clubs archetypes side by side — attribute ceilings, perks, specializations and body ranges — plus the closest and furthest pairs in the game.',
     custom_excerpt: 'Any two archetypes side by side: ceilings, perks, specializations and body ranges.',
     tags: ['Guides', 'Archetypes', 'Tools', 'FC 26'] },
+
+  // a18+: the archetype spoke pages (blog review item 3 — hub-and-spoke).
+  // Evergreen slugs: "best <archetype> build" recurs every game year, so the
+  // page is rewritten in place for the current game. One spoke per archetype;
+  // a18 Magician is the template for the other twelve.
+  { file: 'a18.html', slug: 'pro-clubs-magician-build', status: 'published',
+    title: 'EA FC Pro Clubs Magician Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Magician Build: Level 100 Guide',
+    meta_description: 'The best Magician build in EA FC Pro Clubs: level-100 attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 Magicians — attributes, AP path and specialization order — ready to open in the builder.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a19.html', slug: 'pro-clubs-shot-stopper-build', status: 'published',
+    title: 'EA FC Pro Clubs Shot Stopper Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Shot Stopper Build: Level 100 Guide',
+    meta_description: 'The best Shot Stopper build in EA FC Pro Clubs: level-100 goalkeeper attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 keepers — a Donnarumma and a Courtois — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a20.html', slug: 'pro-clubs-sweeper-keeper-build', status: 'published',
+    title: 'EA FC Pro Clubs Sweeper Keeper Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Sweeper Keeper Build: Level 100 Guide',
+    meta_description: 'The best Sweeper Keeper build in EA FC Pro Clubs: level-100 attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 Sweeper Keepers — a Neuer and an Ederson — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a21.html', slug: 'pro-clubs-progressor-build', status: 'published',
+    title: 'EA FC Pro Clubs Progressor Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Progressor Build: Level 100 Guide',
+    meta_description: 'The best Progressor build in EA FC Pro Clubs: level-100 centre-back attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 ball-playing centre-backs — a Saliba and a Cubarsí — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a22.html', slug: 'pro-clubs-boss-build', status: 'published',
+    title: 'EA FC Pro Clubs Boss Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Boss Build: Level 100 Guide',
+    meta_description: 'The best Boss build in EA FC Pro Clubs: level-100 centre-back attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 dominant centre-backs — a Van Dijk and a Bastoni — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a23.html', slug: 'pro-clubs-engine-build', status: 'published',
+    title: 'EA FC Pro Clubs Engine Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Engine Build: Level 100 Guide',
+    meta_description: 'The best Engine build in EA FC Pro Clubs: level-100 fullback attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 Engines — a Cucurella and a Dimarco — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a24.html', slug: 'pro-clubs-marauder-build', status: 'published',
+    title: 'EA FC Pro Clubs Marauder Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Marauder Build: Level 100 Guide',
+    meta_description: 'The best Marauder build in EA FC Pro Clubs: level-100 attacking fullback attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 attacking fullbacks — an Alexander-Arnold and a Nuno Mendes — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a25.html', slug: 'pro-clubs-recycler-build', status: 'published',
+    title: 'EA FC Pro Clubs Recycler Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Recycler Build: Level 100 Guide',
+    meta_description: 'The best Recycler build in EA FC Pro Clubs: level-100 defensive midfielder attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 defensive midfielders — a Rodri and a Rice — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a26.html', slug: 'pro-clubs-maestro-build', status: 'published',
+    title: 'EA FC Pro Clubs Maestro Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Maestro Build: Level 100 Guide',
+    meta_description: 'The best Maestro build in EA FC Pro Clubs: level-100 playmaker attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 deep playmakers — a Wirtz and a Valverde — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a27.html', slug: 'pro-clubs-creator-build', status: 'published',
+    title: 'EA FC Pro Clubs Creator Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Creator Build: Level 100 Guide',
+    meta_description: 'The best Creator build in EA FC Pro Clubs: level-100 attacking midfielder attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 Creators — a De Bruyne and a Palmer — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a28.html', slug: 'pro-clubs-spark-build', status: 'published',
+    title: 'EA FC Pro Clubs Spark Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Spark Build: Level 100 Guide',
+    meta_description: 'The best Spark build in EA FC Pro Clubs: level-100 winger attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 wingers — a Vinícius and an Olise — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a29.html', slug: 'pro-clubs-finisher-build', status: 'published',
+    title: 'EA FC Pro Clubs Finisher Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Finisher Build: Level 100 Guide',
+    meta_description: 'The best Finisher build in EA FC Pro Clubs: level-100 striker attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 strikers — an Isak and a Salah — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  { file: 'a30.html', slug: 'pro-clubs-target-build', status: 'published',
+    title: 'EA FC Pro Clubs Target Build: The Best Level-100 Setup',
+    meta_title: 'Best Pro Clubs Target Build: Level 100 Guide',
+    meta_description: 'The best Target build in EA FC Pro Clubs: level-100 striker attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    custom_excerpt: 'Two finished level-100 Targets — a Kane and a Gyökeres — with the AP path and specialization order.',
+    tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
 
   // PULLED 2026-08-03: the article was built on "archetype swapping is new in
   // FC 27". It is not — archetypes already swap freely in FC 26 with no reset,

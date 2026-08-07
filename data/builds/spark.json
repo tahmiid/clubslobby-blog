@@ -1,0 +1,122 @@
+[
+ {
+  "id": "5d43144f-6d8e-495f-abd0-4abfb93a5d84",
+  "buildName": "Vinícius Júnior",
+  "archetype_id": "spark",
+  "level": 100,
+  "attributes": {
+   "acceleration": 99,
+   "aggression": 50,
+   "agility": 96,
+   "attPosition": 94,
+   "balance": 94,
+   "ballControl": 96,
+   "composure": 94,
+   "crossing": 75,
+   "curve": 93,
+   "defAware": 50,
+   "dribbling": 96,
+   "finishing": 94,
+   "fkAcc": 65,
+   "headingAcc": 50,
+   "interceptions": 55,
+   "jumping": 55,
+   "longPass": 65,
+   "longShots": 86,
+   "penalties": 75,
+   "reactions": 94,
+   "shortPass": 92,
+   "shotPower": 84,
+   "slideTackle": 45,
+   "sprintSpeed": 95,
+   "stamina": 92,
+   "standTackle": 55,
+   "strength": 65,
+   "vision": 92,
+   "volleys": 72
+  },
+  "playstyles": [
+   "finesse-shot",
+   "first-touch",
+   "quick-step",
+   "game-changer",
+   "relentless"
+  ],
+  "unlockedSpecializations": [
+   "spark-plus",
+   "ace"
+  ],
+  "selectedSpecialization": "spark-plus",
+  "signature": [
+   "trickster",
+   "rapid",
+   "inventive",
+   "technical"
+  ],
+  "height": 69,
+  "weight": 161,
+  "weakFoot": 4,
+  "skillMoves": 5,
+  "accelerationType": "Explosive"
+ },
+ {
+  "id": "3955d5cf-6bf2-44b4-b940-aa3dd8e12edc",
+  "buildName": "Michael Olise",
+  "archetype_id": "spark",
+  "level": 100,
+  "attributes": {
+   "acceleration": 94,
+   "aggression": 50,
+   "agility": 96,
+   "attPosition": 92,
+   "balance": 95,
+   "ballControl": 96,
+   "composure": 94,
+   "crossing": 92,
+   "curve": 96,
+   "defAware": 50,
+   "dribbling": 96,
+   "finishing": 91,
+   "fkAcc": 65,
+   "headingAcc": 50,
+   "interceptions": 55,
+   "jumping": 55,
+   "longPass": 91,
+   "longShots": 90,
+   "penalties": 75,
+   "reactions": 90,
+   "shortPass": 95,
+   "shotPower": 65,
+   "slideTackle": 45,
+   "sprintSpeed": 91,
+   "stamina": 88,
+   "standTackle": 55,
+   "strength": 65,
+   "vision": 96,
+   "volleys": 72
+  },
+  "playstyles": [
+   "finesse-shot",
+   "incisive-pass",
+   "first-touch",
+   "game-changer",
+   "rapid"
+  ],
+  "unlockedSpecializations": [
+   "spark-plus",
+   "joker"
+  ],
+  "selectedSpecialization": "joker",
+  "signature": [
+   "trickster",
+   "rapid",
+   "inventive",
+   "technical"
+  ],
+  "height": 70,
+  "weight": 163,
+  "weakFoot": 3,
+  "skillMoves": 4,
+  "accelerationType": "Explosive"
+ }
+]

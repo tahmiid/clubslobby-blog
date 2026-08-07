@@ -1,0 +1,118 @@
+[
+ {
+  "id": "d75cdf98-04d1-42de-a07e-6d1f8718c0be",
+  "buildName": "William Saliba",
+  "archetype_id": "progressor",
+  "level": 100,
+  "attributes": {
+   "acceleration": 90,
+   "aggression": 84,
+   "agility": 87,
+   "attPosition": 70,
+   "balance": 89,
+   "ballControl": 93,
+   "composure": 94,
+   "crossing": 50,
+   "curve": 50,
+   "defAware": 96,
+   "dribbling": 65,
+   "finishing": 50,
+   "fkAcc": 45,
+   "headingAcc": 91,
+   "interceptions": 94,
+   "jumping": 93,
+   "longPass": 93,
+   "longShots": 50,
+   "penalties": 65,
+   "reactions": 93,
+   "shortPass": 93,
+   "shotPower": 65,
+   "slideTackle": 94,
+   "sprintSpeed": 90,
+   "stamina": 91,
+   "standTackle": 96,
+   "strength": 93,
+   "vision": 89,
+   "volleys": 50
+  },
+  "playstyles": [
+   "jockey",
+   "block",
+   "slide-tackle",
+   "press-proven",
+   "bruiser"
+  ],
+  "unlockedSpecializations": [
+   "progressor-plus",
+   "janitor"
+  ],
+  "selectedSpecialization": "janitor",
+  "signature": [
+   "long-ball-pass",
+   "anticipate",
+   "incisive-pass",
+   "intercept"
+  ],
+  "height": 76,
+  "weight": 205,
+  "weakFoot": 3,
+  "skillMoves": 2,
+  "accelerationType": "Lengthy"
+ },
+ {
+  "id": "e2947dac-941e-4f40-9959-fe478bbac1f6",
+  "buildName": "Pau Cubarsí",
+  "archetype_id": "progressor",
+  "level": 100,
+  "attributes": {
+   "acceleration": 72,
+   "aggression": 92,
+   "agility": 70,
+   "attPosition": 70,
+   "balance": 70,
+   "ballControl": 94,
+   "composure": 92,
+   "crossing": 50,
+   "curve": 50,
+   "defAware": 97,
+   "dribbling": 92,
+   "finishing": 50,
+   "fkAcc": 74,
+   "headingAcc": 96,
+   "interceptions": 96,
+   "jumping": 99,
+   "longPass": 96,
+   "longShots": 50,
+   "penalties": 74,
+   "reactions": 96,
+   "shortPass": 96,
+   "shotPower": 65,
+   "slideTackle": 96,
+   "sprintSpeed": 77,
+   "stamina": 70,
+   "standTackle": 97,
+   "strength": 91,
+   "vision": 76,
+   "volleys": 50
+  },
+  "playstyles": [
+   "aerial-fortress"
+  ],
+  "unlockedSpecializations": [
+   "progressor-plus",
+   "pioneer"
+  ],
+  "selectedSpecialization": "pioneer",
+  "signature": [
+   "long-ball-pass",
+   "anticipate",
+   "incisive-pass",
+   "intercept"
+  ],
+  "height": 72,
+  "weight": 174,
+  "weakFoot": 4,
+  "skillMoves": 2,
+  "accelerationType": "Controlled"
+ }
+]

@@ -1,0 +1,121 @@
+[
+ {
+  "id": "881749e8-f0ce-46d1-b0b5-9d2a675cc642",
+  "buildName": "Marc Cucurella",
+  "archetype_id": "engine",
+  "level": 100,
+  "attributes": {
+   "acceleration": 92,
+   "aggression": 94,
+   "agility": 92,
+   "attPosition": 70,
+   "balance": 92,
+   "ballControl": 88,
+   "composure": 92,
+   "crossing": 86,
+   "curve": 65,
+   "defAware": 96,
+   "dribbling": 87,
+   "finishing": 65,
+   "fkAcc": 50,
+   "headingAcc": 76,
+   "interceptions": 92,
+   "jumping": 75,
+   "longPass": 75,
+   "longShots": 65,
+   "penalties": 65,
+   "reactions": 93,
+   "shortPass": 93,
+   "shotPower": 70,
+   "slideTackle": 92,
+   "sprintSpeed": 92,
+   "stamina": 99,
+   "standTackle": 92,
+   "strength": 84,
+   "vision": 70,
+   "volleys": 65
+  },
+  "playstyles": [
+   "bruiser",
+   "press-proven",
+   "slide-tackle",
+   "block",
+   "whipped-pass"
+  ],
+  "unlockedSpecializations": [
+   "engine-plus"
+  ],
+  "selectedSpecialization": "engine-plus",
+  "signature": [
+   "relentless",
+   "jockey",
+   "anticipate",
+   "rapid"
+  ],
+  "height": 68,
+  "weight": 146,
+  "weakFoot": 3,
+  "skillMoves": 3,
+  "accelerationType": "Explosive"
+ },
+ {
+  "id": "7d09d88e-ec53-46ed-8634-4d784fe5fe8c",
+  "buildName": "Federico Dimarco",
+  "archetype_id": "engine",
+  "level": 100,
+  "attributes": {
+   "acceleration": 92,
+   "aggression": 81,
+   "agility": 92,
+   "attPosition": 90,
+   "balance": 81,
+   "ballControl": 92,
+   "composure": 80,
+   "crossing": 96,
+   "curve": 90,
+   "defAware": 81,
+   "dribbling": 78,
+   "finishing": 80,
+   "fkAcc": 83,
+   "headingAcc": 75,
+   "interceptions": 82,
+   "jumping": 92,
+   "longPass": 92,
+   "longShots": 85,
+   "penalties": 74,
+   "reactions": 99,
+   "shortPass": 96,
+   "shotPower": 92,
+   "slideTackle": 79,
+   "sprintSpeed": 79,
+   "stamina": 96,
+   "standTackle": 80,
+   "strength": 72,
+   "vision": 80,
+   "volleys": 75
+  },
+  "playstyles": [
+   "whipped-pass",
+   "finesse-shot",
+   "power-shot",
+   "dead-ball",
+   "low-driven-shot",
+   "first-touch"
+  ],
+  "unlockedSpecializations": [
+   "everywhere"
+  ],
+  "selectedSpecialization": "everywhere",
+  "signature": [
+   "relentless",
+   "jockey",
+   "anticipate",
+   "rapid"
+  ],
+  "height": 69,
+  "weight": 165,
+  "weakFoot": 3,
+  "skillMoves": 3,
+  "accelerationType": "Explosive"
+ }
+]

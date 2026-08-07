@@ -8,9 +8,11 @@ runbook for the whole production deployment.
   **Deploying the app** (the React build at `/` and the API at `/api/`) is
   documented in the ClubsUI repo instead — `ClubsUI-main/DEPLOYMENT.md` — so
   each repo owns what it ships.
-- `gen/` — article generators (`common.mjs` + `a1`–`a4`), the publishing
-  pipeline (`publish-prod.mjs`), and `backup.mjs`.
-- `data/` — catalog snapshot the articles are built from.
+- `gen/` — article generators (`common.mjs` + `a1`–`a17`, plus `spoke.mjs`
+  and the 13 archetype build pages `a18`–`a30` it drives), the publishing
+  pipeline (`publish-prod.mjs`, `set-feature-images.mjs`), and `backup.mjs`.
+- `data/` — catalog snapshot the articles are built from; `data/builds/` holds
+  the public @buildmaster builds each spoke page embeds.
 - `out/` — generated article HTML with inline widgets.
 - `widgets/build-card/` — the interactive build-card embed for articles
   (approved design; not wired into Ghost yet — see its README).

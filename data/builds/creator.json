@@ -1,0 +1,122 @@
+[
+ {
+  "id": "35fa6e57-0263-46f2-855d-6fc3eb068b76",
+  "buildName": "Kevin De Bruyne",
+  "archetype_id": "creator",
+  "level": 100,
+  "attributes": {
+   "acceleration": 87,
+   "aggression": 55,
+   "agility": 84,
+   "attPosition": 90,
+   "balance": 86,
+   "ballControl": 94,
+   "composure": 95,
+   "crossing": 97,
+   "curve": 97,
+   "defAware": 50,
+   "dribbling": 88,
+   "finishing": 88,
+   "fkAcc": 86,
+   "headingAcc": 50,
+   "interceptions": 55,
+   "jumping": 60,
+   "longPass": 96,
+   "longShots": 96,
+   "penalties": 75,
+   "reactions": 91,
+   "shortPass": 96,
+   "shotPower": 95,
+   "slideTackle": 50,
+   "sprintSpeed": 85,
+   "stamina": 90,
+   "standTackle": 65,
+   "strength": 65,
+   "vision": 98,
+   "volleys": 72
+  },
+  "playstyles": [
+   "pinged-pass",
+   "long-ball-pass",
+   "dead-ball",
+   "power-shot",
+   "first-touch",
+   "tiki-taka"
+  ],
+  "unlockedSpecializations": [
+   "creator-plus"
+  ],
+  "selectedSpecialization": "creator-plus",
+  "signature": [
+   "incisive-pass",
+   "inventive",
+   "game-changer",
+   "quick-step"
+  ],
+  "height": 71,
+  "weight": 154,
+  "weakFoot": 5,
+  "skillMoves": 4,
+  "accelerationType": "Explosive"
+ },
+ {
+  "id": "f1ae7b2a-0cf6-420e-bc61-3f8230a74a66",
+  "buildName": "Cole Palmer",
+  "archetype_id": "creator",
+  "level": 100,
+  "attributes": {
+   "acceleration": 88,
+   "aggression": 55,
+   "agility": 91,
+   "attPosition": 93,
+   "balance": 91,
+   "ballControl": 93,
+   "composure": 96,
+   "crossing": 93,
+   "curve": 94,
+   "defAware": 50,
+   "dribbling": 92,
+   "finishing": 93,
+   "fkAcc": 75,
+   "headingAcc": 50,
+   "interceptions": 55,
+   "jumping": 60,
+   "longPass": 93,
+   "longShots": 93,
+   "penalties": 75,
+   "reactions": 93,
+   "shortPass": 94,
+   "shotPower": 93,
+   "slideTackle": 50,
+   "sprintSpeed": 85,
+   "stamina": 91,
+   "standTackle": 65,
+   "strength": 65,
+   "vision": 95,
+   "volleys": 72
+  },
+  "playstyles": [
+   "finesse-shot",
+   "first-touch",
+   "whipped-pass",
+   "long-ball-pass",
+   "chip-shot"
+  ],
+  "unlockedSpecializations": [
+   "creator-plus",
+   "sniper"
+  ],
+  "selectedSpecialization": "sniper",
+  "signature": [
+   "incisive-pass",
+   "inventive",
+   "game-changer",
+   "quick-step"
+  ],
+  "height": 73,
+  "weight": 163,
+  "weakFoot": 4,
+  "skillMoves": 4,
+  "accelerationType": "Controlled"
+ }
+]

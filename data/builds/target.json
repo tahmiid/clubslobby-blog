@@ -1,0 +1,119 @@
+[
+ {
+  "id": "86124442-118d-4ceb-9e50-86315273c3f9",
+  "buildName": "Harry Kane",
+  "archetype_id": "target",
+  "level": 100,
+  "attributes": {
+   "acceleration": 89,
+   "aggression": 65,
+   "agility": 70,
+   "attPosition": 96,
+   "balance": 82,
+   "ballControl": 88,
+   "composure": 94,
+   "crossing": 50,
+   "curve": 85,
+   "defAware": 50,
+   "dribbling": 84,
+   "finishing": 96,
+   "fkAcc": 65,
+   "headingAcc": 93,
+   "interceptions": 50,
+   "jumping": 88,
+   "longPass": 91,
+   "longShots": 92,
+   "penalties": 75,
+   "reactions": 92,
+   "shortPass": 93,
+   "shotPower": 96,
+   "slideTackle": 40,
+   "sprintSpeed": 91,
+   "stamina": 84,
+   "standTackle": 45,
+   "strength": 88,
+   "vision": 92,
+   "volleys": 90
+  },
+  "playstyles": [
+   "finesse-shot",
+   "first-touch",
+   "low-driven-shot",
+   "chip-shot",
+   "long-ball-pass",
+   "quick-step"
+  ],
+  "unlockedSpecializations": [
+   "roamer"
+  ],
+  "selectedSpecialization": "roamer",
+  "signature": [
+   "power-shot",
+   "precision-header",
+   "tiki-taka",
+   "press-proven"
+  ],
+  "height": 74,
+  "weight": 196,
+  "weakFoot": 5,
+  "skillMoves": 3,
+  "accelerationType": "Lengthy"
+ },
+ {
+  "id": "38ff16c8-bdb8-465a-bd07-3527b9577e87",
+  "buildName": "Viktor Gyökeres",
+  "archetype_id": "target",
+  "level": 100,
+  "attributes": {
+   "acceleration": 90,
+   "aggression": 92,
+   "agility": 80,
+   "attPosition": 96,
+   "balance": 75,
+   "ballControl": 90,
+   "composure": 95,
+   "crossing": 72,
+   "curve": 80,
+   "defAware": 50,
+   "dribbling": 78,
+   "finishing": 96,
+   "fkAcc": 74,
+   "headingAcc": 91,
+   "interceptions": 50,
+   "jumping": 96,
+   "longPass": 58,
+   "longShots": 80,
+   "penalties": 88,
+   "reactions": 98,
+   "shortPass": 77,
+   "shotPower": 99,
+   "slideTackle": 40,
+   "sprintSpeed": 92,
+   "stamina": 92,
+   "standTackle": 45,
+   "strength": 99,
+   "vision": 80,
+   "volleys": 77
+  },
+  "playstyles": [
+   "finesse-shot",
+   "acrobatic",
+   "low-driven-shot"
+  ],
+  "unlockedSpecializations": [
+   "runner"
+  ],
+  "selectedSpecialization": "runner",
+  "signature": [
+   "power-shot",
+   "precision-header",
+   "tiki-taka",
+   "press-proven"
+  ],
+  "height": 74,
+  "weight": 207,
+  "weakFoot": 4,
+  "skillMoves": 3,
+  "accelerationType": "Lengthy"
+ }
+]

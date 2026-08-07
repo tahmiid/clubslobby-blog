@@ -1,0 +1,122 @@
+[
+ {
+  "id": "dbeba030-49ca-4c0f-8384-69d43dd1ad1e",
+  "buildName": "Alexander Isak",
+  "archetype_id": "finisher",
+  "level": 100,
+  "attributes": {
+   "acceleration": 94,
+   "aggression": 65,
+   "agility": 94,
+   "attPosition": 95,
+   "balance": 92,
+   "ballControl": 94,
+   "composure": 95,
+   "crossing": 55,
+   "curve": 92,
+   "defAware": 55,
+   "dribbling": 96,
+   "finishing": 96,
+   "fkAcc": 65,
+   "headingAcc": 84,
+   "interceptions": 60,
+   "jumping": 65,
+   "longPass": 50,
+   "longShots": 92,
+   "penalties": 75,
+   "reactions": 92,
+   "shortPass": 84,
+   "shotPower": 94,
+   "slideTackle": 40,
+   "sprintSpeed": 94,
+   "stamina": 92,
+   "standTackle": 50,
+   "strength": 70,
+   "vision": 84,
+   "volleys": 90
+  },
+  "playstyles": [
+   "finesse-shot",
+   "rapid",
+   "technical",
+   "trickster",
+   "power-shot"
+  ],
+  "unlockedSpecializations": [
+   "finisher-plus",
+   "hunter"
+  ],
+  "selectedSpecialization": "finisher-plus",
+  "signature": [
+   "low-driven-shot",
+   "first-touch",
+   "quick-step",
+   "acrobatic"
+  ],
+  "height": 75,
+  "weight": 170,
+  "weakFoot": 4,
+  "skillMoves": 4,
+  "accelerationType": "Controlled"
+ },
+ {
+  "id": "7353c724-956d-40f3-ad2c-2fb47d0ca3de",
+  "buildName": "Mohamed Salah",
+  "archetype_id": "finisher",
+  "level": 100,
+  "attributes": {
+   "acceleration": 95,
+   "aggression": 65,
+   "agility": 95,
+   "attPosition": 96,
+   "balance": 93,
+   "ballControl": 94,
+   "composure": 95,
+   "crossing": 55,
+   "curve": 95,
+   "defAware": 55,
+   "dribbling": 95,
+   "finishing": 97,
+   "fkAcc": 65,
+   "headingAcc": 75,
+   "interceptions": 60,
+   "jumping": 65,
+   "longPass": 50,
+   "longShots": 92,
+   "penalties": 75,
+   "reactions": 95,
+   "shortPass": 70,
+   "shotPower": 92,
+   "slideTackle": 40,
+   "sprintSpeed": 95,
+   "stamina": 92,
+   "standTackle": 50,
+   "strength": 72,
+   "vision": 86,
+   "volleys": 92
+  },
+  "playstyles": [
+   "finesse-shot",
+   "rapid",
+   "trickster",
+   "technical",
+   "power-shot"
+  ],
+  "unlockedSpecializations": [
+   "finisher-plus",
+   "hunter"
+  ],
+  "selectedSpecialization": "hunter",
+  "signature": [
+   "low-driven-shot",
+   "first-touch",
+   "quick-step",
+   "acrobatic"
+  ],
+  "height": 69,
+  "weight": 157,
+  "weakFoot": 3,
+  "skillMoves": 4,
+  "accelerationType": "Explosive"
+ }
+]

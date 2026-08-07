@@ -1,0 +1,118 @@
+[
+ {
+  "id": "a9abae81-84f7-4604-8997-790da3be76f6",
+  "buildName": "Virgil van Dijk",
+  "archetype_id": "boss",
+  "level": 100,
+  "attributes": {
+   "acceleration": 84,
+   "aggression": 88,
+   "agility": 90,
+   "attPosition": 75,
+   "balance": 88,
+   "ballControl": 90,
+   "composure": 92,
+   "crossing": 45,
+   "curve": 50,
+   "defAware": 96,
+   "dribbling": 60,
+   "finishing": 45,
+   "fkAcc": 50,
+   "headingAcc": 92,
+   "interceptions": 95,
+   "jumping": 94,
+   "longPass": 90,
+   "longShots": 60,
+   "penalties": 70,
+   "reactions": 93,
+   "shortPass": 90,
+   "shotPower": 75,
+   "slideTackle": 93,
+   "sprintSpeed": 86,
+   "stamina": 89,
+   "standTackle": 96,
+   "strength": 96,
+   "vision": 87,
+   "volleys": 55
+  },
+  "playstyles": [
+   "intercept",
+   "jockey",
+   "long-ball-pass",
+   "press-proven",
+   "slide-tackle"
+  ],
+  "unlockedSpecializations": [
+   "capitano"
+  ],
+  "selectedSpecialization": "capitano",
+  "signature": [
+   "bruiser",
+   "aerial-fortress",
+   "precision-header",
+   "anticipate"
+  ],
+  "height": 77,
+  "weight": 203,
+  "weakFoot": 3,
+  "skillMoves": 2,
+  "accelerationType": "Lengthy"
+ },
+ {
+  "id": "d00a4886-c5e5-4490-9230-0c8375297f17",
+  "buildName": "Alessandro Bastoni",
+  "archetype_id": "boss",
+  "level": 100,
+  "attributes": {
+   "acceleration": 71,
+   "aggression": 97,
+   "agility": 80,
+   "attPosition": 75,
+   "balance": 75,
+   "ballControl": 90,
+   "composure": 92,
+   "crossing": 76,
+   "curve": 64,
+   "defAware": 95,
+   "dribbling": 77,
+   "finishing": 45,
+   "fkAcc": 74,
+   "headingAcc": 93,
+   "interceptions": 94,
+   "jumping": 96,
+   "longPass": 90,
+   "longShots": 60,
+   "penalties": 74,
+   "reactions": 97,
+   "shortPass": 91,
+   "shotPower": 75,
+   "slideTackle": 99,
+   "sprintSpeed": 77,
+   "stamina": 90,
+   "standTackle": 95,
+   "strength": 97,
+   "vision": 85,
+   "volleys": 55
+  },
+  "playstyles": [
+   "pinged-pass",
+   "long-ball-pass",
+   "relentless"
+  ],
+  "unlockedSpecializations": [
+   "boss-plus"
+  ],
+  "selectedSpecialization": "boss-plus",
+  "signature": [
+   "bruiser",
+   "aerial-fortress",
+   "precision-header",
+   "anticipate"
+  ],
+  "height": 75,
+  "weight": 176,
+  "weakFoot": 2,
+  "skillMoves": 2,
+  "accelerationType": "Lengthy"
+ }
+]

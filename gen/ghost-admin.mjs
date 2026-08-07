@@ -20,6 +20,29 @@ const tok = () => {
   return `${h}.${p}.${createHmac('sha256', Buffer.from(secret, 'hex')).update(`${h}.${p}`).digest('base64url')}`;
 };
 
-export const call = (u, o = {}) => fetch(API + u, { ...o,
-  headers: { Authorization: `Ghost ${tok()}`, 'Accept-Version': 'v6.0',
-    ...(o.body && typeof o.body === 'string' ? { 'Content-Type': 'application/json' } : {}) } });
+// Transport is curl pinned to local nginx, NOT fetch through the public DNS.
+// Since the 2026-08-06 cutover, sites-enabled/00-catchall-ssl.conf drops
+// (444) any origin connection that doesn't present a matching hostname, and
+// some Cloudflare->origin connections for box-originated API calls land
+// there — surfacing as intermittent 520s that killed publish runs on
+// 2026-08-07. --resolve keeps SNI and Host correct while never leaving the
+// box, so Cloudflare's connection behaviour can't matter. The origin serves
+// the real LE cert, so TLS verification stays on.
+// String bodies only; for images, write into content/images directly
+// (see set-feature-images.mjs) instead of multipart upload.
+export const call = (u, o = {}) => {
+  const args = ['-s', '-w', '\n%{http_code}', '--resolve', 'proclubshq.com:443:127.0.0.1',
+    '-H', `Authorization: Ghost ${tok()}`, '-H', 'Accept-Version: v6.0'];
+  if (o.method) args.push('-X', o.method);
+  let input;
+  if (typeof o.body === 'string') {
+    args.push('-H', 'Content-Type: application/json', '--data-binary', '@-');
+    input = o.body;
+  }
+  const out = execFileSync('curl', [...args, API + u],
+    { input, maxBuffer: 64 * 1024 * 1024 }).toString();
+  const nl = out.lastIndexOf('\n');
+  const status = Number(out.slice(nl + 1)), text = out.slice(0, nl);
+  return { ok: status >= 200 && status < 300, status,
+    json: async () => JSON.parse(text), text: async () => text };
+};

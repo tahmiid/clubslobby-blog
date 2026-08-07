@@ -339,6 +339,26 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
    `visibility: header_style:[Landing, Search]` on `background_image`. With no
    SMTP, **`Search` is the only style that shows the hero**, which is why it is
    the one set.
+9. **Box-originated Admin API calls must not loop through Cloudflare.**
+   The 2026-08-06 cutover added `sites-enabled/00-catchall-ssl.conf` — a
+   443 `default_server` that `return 444`s connections not presenting a
+   configured hostname. Some Cloudflare→origin connections for API calls made
+   *from the box itself* land in that catch-all (access log shows
+   `444 0 "-" "node"`), which Cloudflare reports to the caller as a 520 —
+   intermittently, which is worse than always. Every publish script therefore
+   talks to local nginx directly via
+   `curl --resolve proclubshq.com:443:127.0.0.1` (real LE cert, so TLS
+   verification stays on). Don't "simplify" `ghost-admin.mjs` or
+   `publish-prod.mjs` back to plain `fetch`. Feature images skip the API
+   upload entirely: `set-feature-images.mjs` writes files straight into
+   `content/images/<yyyy>/<mm>/` as root and assigns the URL — idempotent,
+   and Ghost serves/resizes them identically (cost a full evening: the
+   multipart upload was the first call to die on the Cloudflare loop).
+10. **Source's theme CSS force-restyles content tables** —
+   `.gh-content table` gets `display:inline-block` and `white-space:nowrap`,
+   so long cells overflow and overlap adjacent columns no matter what the
+   widget CSS says. Tabular layouts inside articles are built as CSS grids
+   (`role="table"` for semantics); see the AP-path grid in `gen/spoke.mjs`.
 
 ---
 
@@ -420,3 +440,43 @@ add it to `PALETTE_OF` *and* `ROWS`, or the assertion will not protect you.
 
 Ghost re-compresses PNGs on upload, so a served file can be smaller than the
 local one while being pixel-identical — compare pixels, not bytes.
+
+The 13 spoke pages are the exception to both rules above (deliberate, user's
+call 2026-08-07): they carry EA's official FC 26 key art with the archetype's
+icon badged bottom-left. `gen/make-spoke-feats.py` composes
+`feat-spoke-<id>.jpg` (macOS-only — icons rasterise through `qlmanage`,
+white-on-black then luminance-as-alpha, because there is still no real SVG
+rasteriser) plus the clean `feat-spokes.jpg` used inside article bodies. The
+key art source is `assets/EAS_FC26_WGE_KeyArt_RGB_16-9_3840x2160.jpg`,
+downloaded from EA's own CDN (drop-assets.ea.com).
+
+### The archetype spoke pages (a18–a30)
+
+One "best <archetype> build" page per archetype — the hub-and-spoke plan from
+the 2026-08-05 blog review, all 13 live since 2026-08-07. `gen/spoke.mjs` is
+the factory; each `gen/aN-<id>-build.mjs` is a thin editorial config (prose
+functions receiving a computed ctx). Slugs are evergreen
+(`pro-clubs-<id>-build`) and the hub (a1) links all thirteen.
+
+What the factory guarantees:
+
+- **The AP path sums exactly.** Stage plans are priced with the same cost
+  model as a9/a11 and asserted equal to the featured build's full price —
+  a config that overshoots a target or moves a stat backwards refuses to
+  build. Stage 2 (`spec: true`) buys precisely the featured specialization's
+  criteria; the last stage (`remainder: true`) buys whatever is still short.
+- **Real builds, not invented ones.** Each spoke embeds 1–2 public
+  @buildmaster builds snapshotted from `/api/builds/<id>/public` into
+  `data/builds/<id>.json` — refresh a snapshot if the build changes in the
+  app. "Open this build in the builder" links go to the live `/b/<id>` pages.
+- **PlayStyle logos, not names** — glyphs hotlinked from the app's own
+  `/assets/playstyles/<slug>.png`; the archetype's signature set renders as
+  GOLD chips/badges (gold means signature, sitewide), names kept in
+  alt/title. The archetype icon (assets/archetypes/<id>.svg) is inlined with
+  fills flattened to currentColor.
+- **The FC 26 cover art appears in the body** (the theme shows feature
+  images on cards, never on post pages) and each article carries FAQPage
+  JSON-LD — it is the *second* ld+json block on the page; Ghost injects its
+  own Article schema first, so verification must not stop at the first match.
+- **Keepers are handled**: GK category bars replace the outfield set and the
+  AcceleRATE section becomes height/weight.

@@ -1,0 +1,120 @@
+[
+ {
+  "id": "8fa0b248-42a5-401a-be7e-7c7221a6eeef",
+  "buildName": "Rodri",
+  "archetype_id": "recycler",
+  "level": 100,
+  "attributes": {
+   "acceleration": 80,
+   "aggression": 88,
+   "agility": 85,
+   "attPosition": 70,
+   "balance": 88,
+   "ballControl": 93,
+   "composure": 96,
+   "crossing": 65,
+   "curve": 80,
+   "defAware": 95,
+   "dribbling": 88,
+   "finishing": 50,
+   "fkAcc": 50,
+   "headingAcc": 65,
+   "interceptions": 96,
+   "jumping": 69,
+   "longPass": 94,
+   "longShots": 93,
+   "penalties": 65,
+   "reactions": 93,
+   "shortPass": 96,
+   "shotPower": 86,
+   "slideTackle": 75,
+   "sprintSpeed": 78,
+   "stamina": 93,
+   "standTackle": 95,
+   "strength": 93,
+   "vision": 93,
+   "volleys": 65
+  },
+  "playstyles": [
+   "anticipate",
+   "long-ball-pass",
+   "block",
+   "first-touch",
+   "incisive-pass"
+  ],
+  "unlockedSpecializations": [
+   "recycler-plus",
+   "thief"
+  ],
+  "selectedSpecialization": "recycler-plus",
+  "signature": [
+   "press-proven",
+   "intercept",
+   "power-shot",
+   "tiki-taka"
+  ],
+  "height": 75,
+  "weight": 181,
+  "weakFoot": 4,
+  "skillMoves": 3,
+  "accelerationType": "Lengthy"
+ },
+ {
+  "id": "b47677da-f78d-43b3-918d-488485c86b2a",
+  "buildName": "Declan Rice",
+  "archetype_id": "recycler",
+  "level": 100,
+  "attributes": {
+   "acceleration": 71,
+   "aggression": 92,
+   "agility": 80,
+   "attPosition": 77,
+   "balance": 75,
+   "ballControl": 91,
+   "composure": 92,
+   "crossing": 92,
+   "curve": 90,
+   "defAware": 90,
+   "dribbling": 82,
+   "finishing": 64,
+   "fkAcc": 75,
+   "headingAcc": 79,
+   "interceptions": 96,
+   "jumping": 90,
+   "longPass": 92,
+   "longShots": 83,
+   "penalties": 74,
+   "reactions": 96,
+   "shortPass": 93,
+   "shotPower": 93,
+   "slideTackle": 91,
+   "sprintSpeed": 73,
+   "stamina": 96,
+   "standTackle": 96,
+   "strength": 79,
+   "vision": 83,
+   "volleys": 65
+  },
+  "playstyles": [
+   "relentless",
+   "dead-ball",
+   "whipped-pass",
+   "block"
+  ],
+  "unlockedSpecializations": [
+   "thief"
+  ],
+  "selectedSpecialization": "thief",
+  "signature": [
+   "press-proven",
+   "intercept",
+   "power-shot",
+   "tiki-taka"
+  ],
+  "height": 74,
+  "weight": 176,
+  "weakFoot": 3,
+  "skillMoves": 3,
+  "accelerationType": "Lengthy"
+ }
+]

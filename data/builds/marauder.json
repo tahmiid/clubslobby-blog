@@ -1,0 +1,117 @@
+[
+ {
+  "id": "3d7dfb8f-e2e5-4a4e-a14b-f95d503feb9e",
+  "buildName": "Trent Alexander-Arnold",
+  "archetype_id": "marauder",
+  "level": 100,
+  "attributes": {
+   "acceleration": 75,
+   "aggression": 90,
+   "agility": 73,
+   "attPosition": 79,
+   "balance": 75,
+   "ballControl": 93,
+   "composure": 88,
+   "crossing": 99,
+   "curve": 96,
+   "defAware": 78,
+   "dribbling": 86,
+   "finishing": 64,
+   "fkAcc": 85,
+   "headingAcc": 69,
+   "interceptions": 90,
+   "jumping": 75,
+   "longPass": 92,
+   "longShots": 76,
+   "penalties": 74,
+   "reactions": 92,
+   "shortPass": 92,
+   "shotPower": 92,
+   "slideTackle": 90,
+   "sprintSpeed": 92,
+   "stamina": 92,
+   "standTackle": 89,
+   "strength": 68,
+   "vision": 92,
+   "volleys": 71
+  },
+  "playstyles": [
+   "dead-ball",
+   "incisive-pass",
+   "long-ball-pass"
+  ],
+  "unlockedSpecializations": [
+   "marauder-plus"
+  ],
+  "selectedSpecialization": "marauder-plus",
+  "signature": [
+   "quick-step",
+   "whipped-pass",
+   "technical",
+   "trickster"
+  ],
+  "height": 71,
+  "weight": 172,
+  "weakFoot": 4,
+  "skillMoves": 3,
+  "accelerationType": "Controlled"
+ },
+ {
+  "id": "a0fec84a-a420-4d9f-a7cc-ec6d9cfea25a",
+  "buildName": "Nuno Mendes",
+  "archetype_id": "marauder",
+  "level": 100,
+  "attributes": {
+   "acceleration": 92,
+   "aggression": 75,
+   "agility": 92,
+   "attPosition": 82,
+   "balance": 89,
+   "ballControl": 90,
+   "composure": 88,
+   "crossing": 88,
+   "curve": 78,
+   "defAware": 80,
+   "dribbling": 95,
+   "finishing": 74,
+   "fkAcc": 75,
+   "headingAcc": 74,
+   "interceptions": 82,
+   "jumping": 92,
+   "longPass": 85,
+   "longShots": 73,
+   "penalties": 85,
+   "reactions": 90,
+   "shortPass": 82,
+   "shotPower": 90,
+   "slideTackle": 83,
+   "sprintSpeed": 95,
+   "stamina": 90,
+   "standTackle": 92,
+   "strength": 80,
+   "vision": 75,
+   "volleys": 66
+  },
+  "playstyles": [
+   "pinged-pass",
+   "jockey",
+   "anticipate",
+   "long-throw"
+  ],
+  "unlockedSpecializations": [
+   "speedster"
+  ],
+  "selectedSpecialization": "speedster",
+  "signature": [
+   "quick-step",
+   "whipped-pass",
+   "technical",
+   "trickster"
+  ],
+  "height": 71,
+  "weight": 154,
+  "weakFoot": 4,
+  "skillMoves": 3,
+  "accelerationType": "Explosive"
+ }
+]
