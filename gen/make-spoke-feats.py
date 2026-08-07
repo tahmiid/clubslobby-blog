@@ -34,7 +34,7 @@ SIGNATURE = {a['id']: a['signature']
              for a in json.load(open(os.path.join(ROOT, 'data', 'archetypes.json')))}
 
 ICON_H = 270          # archetype glyph height on the 1920x1080 canvas
-PS_H = 96             # signature PlayStyle glyph height
+PS_H = ICON_H         # signature PlayStyle badges match the glyph (user's call)
 PS_GAP = 24           # between PlayStyle glyphs
 PS_LEAD = 46          # between the archetype glyph and the first PlayStyle
 MARGIN = 64           # from the bottom-left corner
@@ -63,14 +63,16 @@ def ps_gold(slug):
     """The app's PlayStyle badge recoloured signature-gold.
 
     The source PNGs are a near-white diamond plate with the pictogram drawn
-    in opaque BLACK — not as transparency. A multiply tint therefore does
-    exactly the right thing: the plate goes gold, the pictogram stays dark,
-    antialiased edges scale in between, and the alpha channel is untouched.
+    in opaque BLACK — not as transparency. Luminance drives a gold↔white
+    blend: the plate goes gold, the pictogram goes WHITE (gold-white, per
+    the user — not gold-black), antialiased edges interpolate, and the alpha
+    channel is untouched.
     """
-    from PIL import ImageChops
     im = Image.open(os.path.join(PS_ICONS, f'{slug}.png')).convert('RGBA')
-    tinted = ImageChops.multiply(im.convert('RGB'), Image.new('RGB', im.size, GOLD))
-    out = tinted.convert('RGBA')
+    lum = im.convert('L')
+    blend = Image.composite(Image.new('RGB', im.size, GOLD),
+                            Image.new('RGB', im.size, (255, 255, 255)), lum)
+    out = blend.convert('RGBA')
     out.putalpha(im.getchannel('A'))
     return out.resize((round(im.width * PS_H / im.height), PS_H), Image.LANCZOS)
 
