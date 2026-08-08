@@ -30,15 +30,18 @@ const MAP = [
   // blog had, so these are the pages worth dressing properly. The platforms
   // cover deliberately answers "does my PS4 run it" rather than staging a
   // console rivalry — the research notes say The Grounds is new-gen only.
-  // The 13 archetype spoke pages break the generated-geometry set on purpose:
-  // they carry EA's official FC 26 key art with the archetype's own icon
-  // badged bottom-left (user's calls, 2026-08-07). feat-spoke-<id>.jpg are
-  // composed by gen/make-spoke-feats.py; the clean art (feat-spokes.jpg)
-  // stays for the in-body cover figure.
+  // The 13 archetype spoke pages carry official EA SPORTS FC 26 in-game art
+  // with the archetype's name in large type — the same treatment as the FC 27
+  // set, composed by gen/make-spoke-covers.py (2026-08-08). The art is chosen
+  // by the archetype's position, so a keeper article looks like one.
+  //
+  // This replaced the FC 26 studio key art with a badged glyph: one purple
+  // poster on all thirteen, which read as dated beside the FC 27 covers.
+  // make-spoke-feats.py still owns feat-spokes.jpg, the in-body cover figure.
   ...['magician', 'shot-stopper', 'sweeper-keeper', 'progressor', 'boss', 'engine', 'marauder',
     'recycler', 'maestro', 'creator', 'spark', 'finisher', 'target']
     .map((a) => [`feat-spoke-${a}.jpg`, `pro-clubs-${a}-build`,
-      `Official EA SPORTS FC 26 cover art with the ${a.replace(/-/g, ' ')} archetype icon`]),
+      `Official EA SPORTS FC 26 in-game art with ${a.replace(/-/g, ' ').toUpperCase()} in large type`]),
 ];
 
 // Optional filter: `node set-feature-images.mjs a8 a12` assigns only those.
@@ -53,7 +56,7 @@ const GHOST_CONTENT = '/var/www/proclubslobby/content/images';
 // Bump when re-issuing art under an existing name: image URLs carry
 // max-age=31536000 and Cloudflare caches them, so a same-URL replacement
 // serves stale renders (especially the /size/ variants) more or less forever.
-const VERSION = '-v5';
+const VERSION = '-v6';
 const placeDirect = (file) => {
   const served = file.replace(/(\.\w+)$/, `${VERSION}$1`);
   const now = new Date();
