@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, PLAYSTYLES, ATTRS, CATS, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, PLAYSTYLES, ATTRS, CATS, BRAND, title, esc, kg, baseCss } from './common.mjs';
 
 const P = 'hh27';
 
@@ -160,6 +160,8 @@ ${widget}
 <tbody>${conRows}</tbody>
 </table>
 <p>No surprise at the top: the widest gulfs all pair a ball-playing archetype with a destroyer. Those comparisons make themselves — the interesting ones are the ${samePos.length} same-position pairs, where <strong>${esc(prName(samePos[0]))}</strong> run closest (${samePos[0].avg.toFixed(1)} average gap) and <strong>${esc(prName(samePos[samePos.length - 1]))}</strong> sit furthest apart (${samePos[samePos.length - 1].avg.toFixed(1)}).</p>
+
+${appCta({ href: '/meta', kicker: 'Try it yourself', head: 'See which archetypes top the meta', body: 'Published builds ranked 0–100 per position this season — the head-to-head above, settled by real builds.', label: 'Open meta rankings' })}
 
 <h2>Frequently asked questions</h2>
 <h3>Which two archetypes are most similar?</h3>

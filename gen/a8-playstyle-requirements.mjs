@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, PLAYSTYLES, ATTRS, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, PLAYSTYLES, ATTRS, BRAND, title, esc, kg, baseCss } from './common.mjs';
 
 const P = 'pr27';
 
@@ -120,6 +120,8 @@ ${widget}
 
 <h2>Signature PlayStyles are a separate track</h2>
 <p>Each archetype also carries four signature PlayStyles of its own — select an archetype in the tool and they light up. Those four are baked into the archetype's identity in the catalog, alongside the unlockable pool the thresholds govern. How many PlayStyle <em>slots</em> you have to equip any of this into is a levelling question, not a threshold one — the slot schedule is in our <a href="/blog/pro-clubs-level-rewards/">level rewards guide</a>.</p>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'Check a PlayStyle against your own build', body: 'Every threshold in this guide is enforced in the planner, so you can see which ones you clear before spending a point.', label: 'Open the builder' })}
 
 <h2>Frequently asked questions</h2>
 <h3>What are PlayStyle requirements in Pro Clubs?</h3>

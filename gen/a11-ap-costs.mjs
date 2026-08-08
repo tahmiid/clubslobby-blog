@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, ATTRS, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, ATTRS, BRAND, title, esc, kg, baseCss } from './common.mjs';
 
 const P = 'ap27';
 
@@ -152,6 +152,8 @@ ${widget}
 <tbody>${maxRows}</tbody>
 </table>
 <p><strong>Even the cheapest full build — the ${esc(byMax[byMax.length - 1].name)} at ${fmt(byMax[byMax.length - 1].maxAll)} AP — costs ${(byMax[byMax.length - 1].maxAll / TOTAL_AP).toFixed(1)}× what you will ever earn.</strong> Attribute choice is the whole game: your budget covers barely more than half the bill, and the cost tiers decide how far it stretches — the same point at value 85 costs ${stepCost('tier3', 85)} AP in a tier-3 attribute and ${stepCost('tier0', 85)} at base pricing. (Skill Moves and Weak Foot upgrades are priced on a separate star track the community sources still disagree on, so they are deliberately not in these totals.)</p>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'Price your build before you spend', body: 'The planner totals every attribute point at these prices as you move the sliders, so you never overspend in game.', label: 'Open the builder' })}
 
 <h2>Frequently asked questions</h2>
 <h3>Why does the same attribute cost different AP on different archetypes?</h3>

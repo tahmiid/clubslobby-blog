@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, BRAND, title, esc, kg, baseCss } from './common.mjs';
 
 const P = 'ac27';
 
@@ -151,6 +151,8 @@ ${widget}
 <li><strong>Then protect the gap.</strong> Chasing Explosive means treating Strength as something to leave alone.</li>
 <li><strong>Re-check after every upgrade.</strong> One point in the wrong attribute can flip you from Explosive to Mostly Explosive, silently.</li>
 </ol>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE change as you build', body: 'Height, agility and strength decide which curve you get. The planner recomputes it live while you move the sliders.', label: 'Open the builder' })}
 
 <h2>Frequently asked questions</h2>
 <h3>Does Pace affect AcceleRATE?</h3>

@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, PLAYSTYLES, ATTRS, KEY_BY_NAME, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, PLAYSTYLES, ATTRS, KEY_BY_NAME, BRAND, title, esc, kg, baseCss } from './common.mjs';
 
 const P = 'sp27';
 
@@ -121,6 +121,8 @@ ${widget}
 </table>
 <p><strong>The band runs from ${ranked[0].ap} AP (${esc(ranked[0].name)}, ${esc(ranked[0].arch)}) to ${ranked[ranked.length - 1].ap} AP (${esc(ranked[ranked.length - 1].name)}, ${esc(ranked[ranked.length - 1].arch)})</strong> — more than double. The cheap ones ask for attributes the archetype starts high in; the expensive ones demand deep runs up tier-3 pricing, where a single point costs up to ${Math.max(...Object.values(COST.tier3))} AP.</p>
 <p>Two caveats keep these numbers honest. They assume you level <em>only</em> what the criteria name, from the floor — points you would spend on those attributes anyway make the marginal cost lower. And attributes shared between two of an archetype's specializations count toward both at once, so unlocking a second specialization is often cheaper than its sticker price.</p>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'Plan your specialization unlock', body: 'Set your attributes in the planner and it shows which specializations you qualify for, and what the next one costs.', label: 'Open the builder' })}
 
 <h2>Frequently asked questions</h2>
 <h3>How many specializations are there?</h3>

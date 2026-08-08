@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, BRAND, CATNAMES, title, esc, kg, baseCss, ceiling, rankIn, tiedIn } from './common.mjs';
+import { appCta, ARCH, BRAND, CATNAMES, title, esc, kg, baseCss, ceiling, rankIn, tiedIn } from './common.mjs';
 
 const P = 'qz27';
 const pool = ARCH.filter((a) => a.position !== 'Keeper');
@@ -126,6 +126,8 @@ ${widget}
 
 <h2>Keepers are a different question</h2>
 <p>There are only two keeper archetypes and the choice isn't really about attributes — it's whether your defence plays a high line. Shot Stopper is built to keep the ball out and nothing else. Sweeper Keeper is comfortable receiving back passes and rushing off the line, which is an asset behind a high line and a liability behind a defence that just clears it.</p>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'Build the archetype you just picked', body: 'Open it in the planner and spend a full 100 levels of AP against its real ceilings before you commit in game.', label: 'Open the builder' })}
 
 <h2>Frequently asked questions</h2>
 <h3>Which archetype is best in Pro Clubs?</h3>

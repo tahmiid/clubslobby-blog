@@ -50,7 +50,7 @@
 </style>
 <p class="hd">AcceleRATE calculator</p>
 <p class="sub">Height, Agility and Strength decide how your pro accelerates. Nothing else — not Pace.</p>
-<p class="warn"><b>Thresholds unverified for FC 26.</b> EA has never published them; these are community-documented values that have held since FIFA 23. The height and attribute limits below <em>are</em> from the Pro Clubs Lobby catalog. Spot-check in-game before trusting exact boundaries.</p>
+<p class="warn"><b>Thresholds unverified for FC 26.</b> EA has never published them; these are community-documented values that have held since FIFA 23. The height and attribute limits below <em>are</em> from the Pro Clubs HQ catalog. Spot-check in-game before trusting exact boundaries.</p>
 <span class="lbl">Archetype</span>
 <select data-arch><option value="shot-stopper">Shot Stopper · Keeper</option><option value="sweeper-keeper">Sweeper Keeper · Keeper</option><option value="progressor">Progressor · Defender</option><option value="boss" selected>Boss · Defender</option><option value="engine">Engine · Defender</option><option value="marauder">Marauder · Defender</option><option value="recycler">Recycler · Midfielder</option><option value="maestro">Maestro · Midfielder</option><option value="creator">Creator · Midfielder</option><option value="spark">Spark · Midfielder</option><option value="magician">Magician · Forward</option><option value="finisher">Finisher · Forward</option><option value="target">Target · Forward</option></select>
 <div class="sl"><label for="ac27h">Height</label><input id="ac27h" type="range" data-s="h"><span class="v" data-v="h"></span></div>
@@ -61,7 +61,7 @@
   <div data-ck></div>
   <div class="rch"><h5>Reachable by this archetype</h5><div data-rch></div></div>
 </div>
-<p class="foot">Height and attribute limits from the Pro Clubs Lobby catalog. Threshold rules are community-sourced.</p>
+<p class="foot">Height and attribute limits from the Pro Clubs HQ catalog. Threshold rules are community-sourced.</p>
 <script>
 (function(){var R=document.querySelector('[data-ac27]');if(!R||R.dataset.on)return;R.dataset.on='1';
 var D=[{"id":"shot-stopper","name":"Shot Stopper","position":"Keeper","by":"Oliver Kahn","hMin":183,"hMax":201,"ag":[50,90],"st":[50,96],"reach":["lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","position":"Keeper","by":"Lev Yashin","hMin":178,"hMax":198,"ag":[65,90],"st":[65,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","hMin":178,"hMax":196,"ag":[70,90],"st":[70,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","hMin":180,"hMax":196,"ag":[65,90],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","hMin":168,"hMax":188,"ag":[70,92],"st":[65,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","hMin":168,"hMax":188,"ag":[70,95],"st":[60,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","hMin":173,"hMax":193,"ag":[70,92],"st":[75,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","hMin":163,"hMax":188,"ag":[75,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","hMin":163,"hMax":188,"ag":[72,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","hMin":165,"hMax":191,"ag":[72,99],"st":[70,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","hMin":178,"hMax":196,"ag":[70,92],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]}],RULES=[{"id":"explosive","name":"Explosive","h":[null,175],"stat":"agility","min":65,"diff":20},{"id":"mostly-explosive","name":"Mostly Explosive","h":[null,182],"stat":"agility","min":65,"diff":12},{"id":"controlled-explosive","name":"Controlled Explosive","h":[null,182],"stat":"agility","min":65,"diff":4},{"id":"lengthy","name":"Lengthy","h":[188,null],"stat":"strength","min":65,"diff":20},{"id":"mostly-lengthy","name":"Mostly Lengthy","h":[183,null],"stat":"strength","min":65,"diff":12},{"id":"controlled-lengthy","name":"Controlled Lengthy","h":[181,null],"stat":"strength","min":65,"diff":4}];
@@ -110,7 +110,7 @@ load(sel.value);})();
 <p>Explosive players hit top speed over the first few yards and fade. Lengthy players start slowly and keep accelerating past the point everyone else has topped out. There are also half-steps — Mostly and Controlled variants — that relax the height limit and the required gap.</p>
 
 <h2>Which archetypes can reach which type</h2>
-<p>Your archetype constrains height and caps both attributes, so not every type is available to every archetype. Computed from the Pro Clubs Lobby catalog's own ranges:</p>
+<p>Your archetype constrains height and caps both attributes, so not every type is available to every archetype. Computed from the Pro Clubs HQ catalog's own ranges:</p>
 <table>
 <thead><tr><th>Archetype</th><th>Height</th><th>Agility</th><th>Strength</th><th>Best Explosive</th><th>Best Lengthy</th></tr></thead>
 <tbody><tr><td>Shot Stopper</td><td>183–201cm</td><td>50–90</td><td>50–96</td><td>—</td><td>Lengthy</td></tr><tr><td>Sweeper Keeper</td><td>178–198cm</td><td>65–90</td><td>65–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Progressor</td><td>178–196cm</td><td>70–90</td><td>70–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Boss</td><td>180–196cm</td><td>65–90</td><td>75–99</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Engine</td><td>168–188cm</td><td>70–92</td><td>65–96</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Marauder</td><td>168–188cm</td><td>70–95</td><td>60–96</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Recycler</td><td>173–193cm</td><td>70–92</td><td>75–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Maestro</td><td>163–188cm</td><td>72–99</td><td>65–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Creator</td><td>163–188cm</td><td>72–99</td><td>65–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Spark</td><td>163–188cm</td><td>75–99</td><td>65–90</td><td>Explosive</td><td>Mostly Lengthy</td></tr><tr><td>Magician</td><td>163–188cm</td><td>72–99</td><td>65–90</td><td>Explosive</td><td>Mostly Lengthy</td></tr><tr><td>Finisher</td><td>165–191cm</td><td>72–99</td><td>70–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Target</td><td>178–196cm</td><td>70–92</td><td>75–99</td><td>Mostly Explosive</td><td>Lengthy</td></tr></tbody>
@@ -124,6 +124,20 @@ load(sel.value);})();
 <li><strong>Then protect the gap.</strong> Chasing Explosive means treating Strength as something to leave alone.</li>
 <li><strong>Re-check after every upgrade.</strong> One point in the wrong attribute can flip you from Explosive to Mostly Explosive, silently.</li>
 </ol>
+
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">Try it yourself</p>
+<h3>See your AcceleRATE change as you build</h3>
+<p>Height, agility and strength decide which curve you get. The planner recomputes it live while you move the sliders.</p>
+<a class="b" href="https://proclubshq.com/">Open the builder →</a>
+</div>
+<!--kg-card-end: html-->
 
 <h2>Frequently asked questions</h2>
 <h3>Does Pace affect AcceleRATE?</h3>

@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, BRAND, CATNAMES, title, esc, kg, baseCss, rampCss, RAMP_LIGHT, ceiling, floor } from './common.mjs';
+import { appCta, ARCH, BRAND, CATNAMES, title, esc, kg, baseCss, rampCss, RAMP_LIGHT, ceiling, floor } from './common.mjs';
 
 const P = 'hm27';
 const out = ARCH.filter((a) => a.position !== 'Keeper').map((a) => ({
@@ -110,6 +110,8 @@ ${widget}
 <h2>What the pattern tells you</h2>
 <p>The categories cluster tightly at the top — every ceiling in the grid sits between ${DOM[0]} and ${DOM[1]}. That's deliberate on EA's part: no archetype is strictly worse than another, they're aimed at different jobs. The real spread is in the <em>floors</em>, which is why the range bars in each profile matter more than the headline number.</p>
 <p>Category leaders, if you only want the summary: Pace <strong>Spark</strong>, Ball Control <strong>Maestro</strong>, Passing <strong>Creator</strong>, Scoring <strong>Finisher</strong>, Defending and Physical both <strong>Boss</strong>.</p>
+
+${appCta({ href: '/', kicker: 'Try it yourself', head: 'Compare every archetype in the builder', body: 'The same ceilings this article ranks, on live sliders — pick an archetype and see where its limits actually sit.', label: 'Open the archetype list' })}
 
 <h2>Frequently asked questions</h2>
 <h3>Why are keepers not in the comparison?</h3>

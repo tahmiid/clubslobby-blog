@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { appCta, BRAND, esc, kg, baseCss } from './common.mjs';
 
 const P = 'lv27';
 
@@ -103,6 +103,8 @@ ${widget}
 <tbody>${rows}</tbody>
 </table>
 <p>${triple.length ? `Note the stacked levels: ${triple.map((m) => `<strong>level ${m.level}</strong> alone brings ${m.un.join(', ').replace(/, ([^,]*)$/, ' and $1')}` ).join('; ')}.` : ''} The 9th and final PlayStyle slot lands at level 95 — pair the schedule with our <a href="/blog/pro-clubs-playstyle-requirements/">PlayStyle requirements explorer</a> to see what you will actually be able to put in those slots.</p>
+
+${appCta({ href: '/level-rewards', kicker: 'Try it yourself', head: 'The full level table, live', body: 'Every level from 1 to 100 with its AXP, AP and unlocks — the same data as above, kept current with the game.', label: 'Open level rewards' })}
 
 <h2>Frequently asked questions</h2>
 <h3>What is the level cap in Pro Clubs?</h3>

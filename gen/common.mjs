@@ -27,6 +27,29 @@ export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
 
 // Ghost's HTML->Lexical converter unwraps bare markup and drops the container
 // every scoped CSS rule depends on. These markers are load-bearing.
+// A single link out to the app, for the guide articles (2026-08-08).
+//
+// The 13 spoke pages carry 14 app links each — build cards, the editor, the
+// creator profile. These eight older guides carried ZERO: they take search
+// traffic and dead-end it. One honest CTA per article, placed after the body
+// and before the FAQ, pointing at the app surface that actually continues
+// what the reader was just doing.
+//
+// Deliberately not sprinkled inline: rewriting eight articles' prose to weave
+// links in is an authoring job with a real chance of breaking sentences that
+// already rank. One card is reversible and reads as an offer, not a trick.
+export const appCta = ({ href, kicker, head, body, label }) => kg(`<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">${esc(kicker)}</p>
+<h3>${esc(head)}</h3>
+<p>${esc(body)}</p>
+<a class="b" href="${SITE}${href}">${esc(label)} →</a>
+</div>`);
+
 export const kg = (html) => `<!--kg-card-begin: html-->\n${html}\n<!--kg-card-end: html-->`;
 
 export const ceiling = (a, cat) => {
