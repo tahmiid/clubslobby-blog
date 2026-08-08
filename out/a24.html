@@ -1,128 +1,162 @@
 <p>The Marauder is EA FC Pro Clubs' attacking fullback — the fastest defender archetype in the game, comfortable defending the flank and ending moves at the other end of it. This guide is the complete FC 26 answer: every attribute of a finished level-100 Marauder build, the order to spend your AP, which specialization to take, and two real builds — an Alexander-Arnold and a Nuno Mendes — you can <a href="https://proclubshq.com/b/3d7dfb8f-e2e5-4a4e-a14b-f95d503feb9e">open in the Pro Clubs HQ builder</a> and copy outright.</p>
 
 <!--kg-card-begin: html-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
 <style>
-/* Pro Clubs HQ build embed. Scoped under .pchq- so it cannot fight Ghost's
-   theme. The anchor IS the card; everything inside is display:block spans so
-   the whole surface stays one link. */
+/* Pro Clubs HQ build embed — the app's design language (frontend
+   DESIGN_SYSTEM.md + /style-guide), not an invented one. Redesigned
+   2026-08-08 to mirror the Edit Build page: locker-room photo background
+   with the app's own gradient stack, spec-over-name header with the white
+   archetype logo (logos have no ring), the teal LevelSlider, AttributeSlider-
+   style stat rows in the rating colors, 68px gold signature diamonds
+   (PlayStyles-tab size), and the blue btn-primary CTA with its cta-pulse.
+   NO tier border — the tier color survives only in the spec label.
+   Scoped under .pchq- so it cannot fight Ghost's theme. The anchor IS the
+   card; everything inside is display:block spans so the whole surface stays
+   one link. Full width of the article column on every viewport. */
 
-.pchq-build { display: block; max-width: 420px; margin: 1.5em auto; }
+.pchq-build { display: block; width: 100%; margin: 1.6em 0; }
 
 .pchq-card,
 .pchq-card-fallback {
   position: relative;
   display: block;
-  padding: 20px 22px;
+  padding: 24px 26px 20px;
   border-radius: 16px;
-  background: linear-gradient(160deg, #15161c 0%, #0b0c10 100%);
-  border: 1px solid color-mix(in srgb, var(--pchq-tier, #e8c35a) 45%, transparent);
+  background-color: #04040a;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   color: #f2f3f7;
   text-decoration: none;
   font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
   overflow: hidden;
-  transform: perspective(700px) rotateX(var(--pchq-rx, 0deg)) rotateY(var(--pchq-ry, 0deg));
-  transition: transform 120ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  transform: perspective(900px) rotateX(var(--pchq-rx, 0deg)) rotateY(var(--pchq-ry, 0deg));
+  transition: transform 120ms ease, border-color 200ms ease;
   will-change: transform;
 }
-.pchq-card:hover {
-  box-shadow: 0 14px 40px -12px color-mix(in srgb, var(--pchq-tier) 55%, transparent);
-  border-color: var(--pchq-tier);
-}
+.pchq-card:hover { border-color: rgba(255, 255, 255, 0.22); }
 
-/* The cursor-following glow */
-.pchq-glow {
-  content: "";
+/* The app's page background, layered exactly as App.js layers it:
+   photo at .55 over #04040a, vertical shade, radial vignette. */
+.pchq-bg {
   position: absolute; inset: 0; display: block;
-  background: radial-gradient(220px circle at var(--pchq-mx, 50%) var(--pchq-my, 50%),
-              color-mix(in srgb, var(--pchq-tier) 16%, transparent), transparent 70%);
-  opacity: 0; transition: opacity 200ms ease; pointer-events: none;
+  background: url("https://proclubshq.com/assets/locker-room.jpg") center / cover no-repeat;
+  opacity: 0.55; pointer-events: none;
+}
+.pchq-shade {
+  position: absolute; inset: 0; display: block; pointer-events: none;
+  background: linear-gradient(180deg, rgba(4,4,10,0.88) 0%, rgba(4,4,10,0.45) 30%, rgba(4,4,10,0.55) 70%, rgba(4,4,10,0.92) 100%);
+}
+.pchq-vig {
+  position: absolute; inset: 0; display: block; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgba(4,4,10,0.55) 100%);
+}
+.pchq-glow {
+  position: absolute; inset: 0; display: block; pointer-events: none;
+  background: radial-gradient(240px circle at var(--pchq-mx, 50%) var(--pchq-my, 50%),
+              rgba(45, 226, 197, 0.10), transparent 70%);
+  opacity: 0; transition: opacity 200ms ease;
 }
 .pchq-card:hover .pchq-glow { opacity: 1; }
+.pchq-in { position: relative; display: block; }
 
-.pchq-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 6px;
-}
-.pchq-ident { display: flex; align-items: center; gap: 12px; min-width: 0; }
-/* Spans both identity lines: the label and the build name sit beside it. */
-.pchq-logo {
-  width: 46px; height: 46px; object-fit: contain; flex: none;
-  padding: 6px; border-radius: 10px;
-  background: color-mix(in srgb, var(--pchq-tier) 14%, transparent);
-}
-.pchq-id-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+/* Header: specialization over the build name; white archetype logo on the
+   right spanning both lines. No ring, no backing box. */
+.pchq-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.pchq-id-col { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .pchq-arch {
   font-family: "Archivo", "Manrope", sans-serif;
-  font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;
-  color: var(--pchq-tier);
+  font-weight: 800; font-size: 0.76rem; letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--pchq-tier, #e8c35a);
 }
-.pchq-lvl {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-  padding: 3px 8px; border-radius: 999px;
-  background: color-mix(in srgb, var(--pchq-tier) 18%, transparent);
-  color: var(--pchq-tier);
-}
-
 .pchq-name {
   display: block;
   font-family: "Archivo", "Manrope", sans-serif;
-  font-weight: 800; font-size: 1.2rem; line-height: 1.1;
+  font-weight: 800; font-size: 1.7rem; line-height: 1.05;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.pchq-head { margin-bottom: 16px; }
+.pchq-logo { width: 64px; height: 64px; object-fit: contain; flex: none; }
 
-.pchq-attrs { display: grid; gap: 7px; margin-bottom: 14px; }
-.pchq-attr {
-  display: grid; grid-template-columns: 118px 1fr 30px;
-  align-items: center; gap: 10px; font-size: 0.78rem;
+/* The LevelSlider, static: label + number, teal fill, white thumb. */
+.pchq-lv { display: block; margin-bottom: 16px; }
+.pchq-lv-line { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.8rem; }
+.pchq-lv-label { color: rgba(255,255,255,0.6); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.pchq-lv-val { font-family: "Archivo", sans-serif; font-weight: 800; font-size: 1rem; color: #2DE2C5; }
+.pchq-lv-track {
+  position: relative; display: block; height: 10px; border-radius: 999px;
+  background: rgba(255,255,255,0.10); margin-top: 9px;
 }
-.pchq-attr-name { color: #9aa0ae; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pchq-attr-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pchq-lv-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; display: block;
+  border-radius: inherit; background: #2DE2C5;
+  box-shadow: 0 0 14px rgba(45, 226, 197, 0.33);
+}
+.pchq-lv-thumb {
+  position: absolute; top: 50%; display: block;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; border: 4px solid #2DE2C5;
+  box-shadow: 0 0 16px #2DE2C5, 0 2px 8px rgba(0,0,0,0.6);
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+/* Six key attributes, AttributeSlider grammar: name + value on one line,
+   the bar below, fill and value in the rating colors (set inline). */
+.pchq-attrs { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 40px; margin-bottom: 6px; }
+@media (max-width: 560px) { .pchq-attrs { grid-template-columns: 1fr; } }
+.pchq-attr { display: block; }
+.pchq-attr-line { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.84rem; }
+.pchq-attr-name { color: rgba(255,255,255,0.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pchq-attr-val { font-family: "Archivo", sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; }
 .pchq-bar {
-  display: block; height: 5px; border-radius: 999px; background: #23252e; overflow: hidden;
+  display: block; height: 9px; border-radius: 999px;
+  background: rgba(255,255,255,0.10); margin-top: 6px; overflow: hidden;
 }
 .pchq-fill {
-  /* Fill color is set inline per attribute by the app's rating scale
-     (green >= 80, orange >= 55, red below); this is only the fallback. */
   display: block; height: 100%; border-radius: inherit; width: 0;
-  background: var(--pchq-tier);
   animation: pchq-grow 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 @keyframes pchq-grow { from { width: 0 } }
-@media (prefers-reduced-motion: reduce) {
-  .pchq-fill { animation: none; }
-  .pchq-card { transform: none !important; }
-}
 
-/* Equipped PlayStyles: icon-only, natural silver, below the signature row. */
-.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
-.pchq-eq-ic {
-  width: 46px; height: 46px; object-fit: contain;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
-}
-
-/* Signature PlayStyles: icon-only, gold on every tier (signature = the gold
-   PlayStyles in-game), sized to match the archetype logo. The filter chain is
-   the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree
-   about what signature gold looks like. */
-.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+/* Signature PlayStyles at the PlayStyles-tab size (68px), the app's own
+   GOLD_FILTER recipe (PlayStyleDiamond.jsx). */
+.pchq-sigs { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 18px; }
 .pchq-sig-ic {
-  width: 46px; height: 46px; object-fit: contain;
+  width: 68px; height: 68px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98)
           drop-shadow(0 2px 6px rgba(227, 184, 78, 0.4));
 }
 
+/* Footer: creator + counts, and the btn-primary CTA with its cta-pulse. */
 .pchq-foot {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 0.78rem; color: #9aa0ae;
-  border-top: 1px solid #23252e; padding-top: 12px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
+  border-top: 1px solid rgba(255,255,255,0.12); padding-top: 14px;
 }
 .pchq-by { font-weight: 700; color: #c8ccd6; }
 .pchq-cta {
-  margin-left: auto; font-weight: 800; color: var(--pchq-tier);
-  transition: transform 150ms ease;
+  margin-left: auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; border-radius: 999px;
+  font-weight: 700; font-size: 0.9rem; color: #fff;
+  background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 22px rgba(85, 60, 230, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: pchq-cta 2.6s ease-in-out infinite;
+  transition: filter 200ms ease;
 }
-.pchq-card:hover .pchq-cta { transform: translateX(3px); }
+.pchq-card:hover .pchq-cta { filter: brightness(1.1); }
+@keyframes pchq-cta {
+  0%, 100% { box-shadow: 0 0 22px rgba(85,60,230,0.55), inset 0 1px 0 rgba(255,255,255,0.25); }
+  50% { box-shadow: 0 0 34px 4px rgba(123,47,247,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pchq-fill { animation: none; }
+  .pchq-cta { animation: none; }
+  .pchq-card { transform: none !important; }
+}
 
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */
 .pchq-card-fallback { padding: 14px 18px; font-weight: 700; }
@@ -138,22 +172,23 @@
  * Pro Clubs HQ — interactive build embed for blog articles.
  *
  * Usage in an article (the anchor is the no-JS/SEO fallback AND the click
- * target — the whole card is one link into the app):
+ * target — the whole card is one link into the app, opened in a new tab):
  *
- *   <a class="pchq-build" data-build="<uuid>" href="https://proclubshq.com/b/<uuid>">
- *     Creative Playmaker — open in Pro Clubs HQ
- *   </a>
+ *   <a class="pchq-build" data-build="<uuid>" href="https://proclubshq.com/b/<uuid>"
+ *      target="_blank" rel="noopener">Creative Playmaker — open in Pro Clubs HQ</a>
  *
  * The script hydrates every .pchq-build on the page from
  * GET /api/builds/{id}/public — same origin as the blog, so no CORS.
  * If the fetch fails the anchor stays a styled plain link; nothing breaks.
+ *
+ * Layout (2026-08-08, mirroring the Edit Build page — see the CSS header):
+ * spec over build name + white archetype logo right, the teal level slider,
+ * six key attributes in rating colors, 68px gold signature diamonds,
+ * creator + counts + the blue "Open in builder" primary button.
  */
 (function () {
   "use strict";
 
-  // On proclubshq.com the API and the app's static assets are both
-  // same-origin; the data attributes exist so a local demo can point at the
-  // dev servers (API on 8001, CRA assets on 3000).
   var _ds = (document.currentScript && document.currentScript.dataset) || {};
   var API_BASE = _ds.apiBase || "";
   var ASSET_BASE = _ds.assetBase || "";
@@ -172,10 +207,18 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
+  // Tier accent — spec label only. The card carries NO tier border.
   var TIERS = {
     bronze: "#b0793f", silver: "#b9c0cc", gold: "#e8c35a",
     purple: "#a06bff", black: "#8affd6"
   };
+
+  // The app's rating scale (AttributeSlider.jsx / StatBar.jsx).
+  function ratingColor(v) {
+    return v >= 80 ? "#2FD26B" : v >= 55 ? "#E8912D" : "#D9542F";
+  }
+
+  var LEVEL_MAX = 100;
 
   function h(tag, cls, text) {
     var el = document.createElement(tag);
@@ -195,82 +238,77 @@
   }
 
   function render(anchor, b) {
-    var tier = TIERS[b.cardTier] || "#e8c35a";
     anchor.classList.add("pchq-card");
-    anchor.style.setProperty("--pchq-tier", tier);
+    anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
 
-    var glow = h("span", "pchq-glow");
+    // The app's background stack: photo, shade, vignette, cursor glow.
+    anchor.appendChild(h("span", "pchq-bg"));
+    anchor.appendChild(h("span", "pchq-shade"));
+    anchor.appendChild(h("span", "pchq-vig"));
+    anchor.appendChild(h("span", "pchq-glow"));
 
-    // Header: the archetype logo spans both identity lines, with the
-    // specialization label over the build name beside it.
+    var inner = h("span", "pchq-in");
+
+    // Header: spec over name; white archetype logo right, spanning both lines.
     var head = h("span", "pchq-head");
-    var ident = h("span", "pchq-ident");
+    var idCol = h("span", "pchq-id-col");
+    idCol.appendChild(h("span", "pchq-arch", b.cardLabel || ""));
+    idCol.appendChild(h("span", "pchq-name", b.buildName));
+    head.appendChild(idCol);
     if (b.archetype_id) {
       var logo = document.createElement("img");
       logo.className = "pchq-logo";
       logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
       logo.alt = "";
       logo.loading = "lazy";
-      // A missing icon (future archetype, renamed id) must not leave a broken
-      // image glyph on the card.
       logo.addEventListener("error", function () { logo.remove(); });
-      ident.appendChild(logo);
+      head.appendChild(logo);
     }
-    var idCol = h("span", "pchq-id-col");
-    idCol.appendChild(h("span", "pchq-arch", b.cardLabel || ""));
-    idCol.appendChild(h("span", "pchq-name", b.buildName));
-    ident.appendChild(idCol);
-    head.appendChild(ident);
-    head.appendChild(h("span", "pchq-lvl", "LVL " + b.level));
+    inner.appendChild(head);
 
-    // Top six attributes by value - the build's own numbers, nothing invented.
-    // Bars and values use the app's rating colors (AttributeSlider.jsx /
-    // StatBar.jsx): green from 80, orange from 55, red below — NOT the tier
-    // color, so the two surfaces agree about what a good stat looks like.
+    // The level slider, static: fill stops exactly at the build's level.
+    var lv = h("span", "pchq-lv");
+    var line = h("span", "pchq-lv-line");
+    line.appendChild(h("span", "pchq-lv-label", "Level"));
+    line.appendChild(h("span", "pchq-lv-val", String(b.level)));
+    lv.appendChild(line);
+    var track = h("span", "pchq-lv-track");
+    var pct = Math.max(0, Math.min(100, (b.level / LEVEL_MAX) * 100));
+    var fill = h("span", "pchq-lv-fill");
+    fill.style.width = pct + "%";
+    track.appendChild(fill);
+    var thumb = h("span", "pchq-lv-thumb");
+    thumb.style.left = pct + "%";
+    track.appendChild(thumb);
+    lv.appendChild(track);
+    inner.appendChild(lv);
+
+    // Top six attributes by value — the build's own numbers, rating colors.
     var attrs = Object.entries(b.attributes || {})
       .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 6);
     var grid = h("span", "pchq-attrs");
     attrs.forEach(function (kv) {
-      var col = kv[1] >= 80 ? "#2FD26B" : kv[1] >= 55 ? "#E8912D" : "#D9542F";
+      var col = ratingColor(kv[1]);
       var row = h("span", "pchq-attr");
-      row.appendChild(h("span", "pchq-attr-name", label(kv[0])));
-      var bar = h("span", "pchq-bar");
-      var fill = h("span", "pchq-fill");
-      fill.style.width = kv[1] + "%";
-      fill.style.background = col;
-      fill.style.boxShadow = "0 0 6px " + col + "66";
-      bar.appendChild(fill);
-      row.appendChild(bar);
+      var top = h("span", "pchq-attr-line");
+      top.appendChild(h("span", "pchq-attr-name", label(kv[0])));
       var val = h("span", "pchq-attr-val", String(kv[1]));
       val.style.color = col;
-      row.appendChild(val);
+      top.appendChild(val);
+      row.appendChild(top);
+      var bar = h("span", "pchq-bar");
+      var f = h("span", "pchq-fill");
+      f.style.width = kv[1] + "%";
+      f.style.background = col;
+      f.style.boxShadow = "0 0 6px " + col + "66";
+      bar.appendChild(f);
+      row.appendChild(bar);
       grid.appendChild(row);
     });
+    inner.appendChild(grid);
 
-    // Equipped PlayStyles: icon only, natural silver, one row above the
-    // signature set (added 2026-08-07 for the spoke articles — builds now
-    // carry their full nine slots, and the icons ARE the content).
-    var eq = h("span", "pchq-eq");
-    (b.playstyles || []).forEach(function (slug) {
-      var ic = document.createElement("img");
-      ic.className = "pchq-eq-ic";
-      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
-      ic.loading = "lazy";
-      ic.addEventListener("error", function () { ic.remove(); });
-      var title = slug.split("-").map(function (w) {
-        return w.charAt(0).toUpperCase() + w.slice(1);
-      }).join(" ");
-      ic.title = title;
-      ic.alt = title + " (PlayStyle)";
-      eq.appendChild(ic);
-    });
-
-    // Signature PlayStyles: icon only, rendered gold regardless of card tier
-    // (signature PlayStyles are the gold ones in-game), using the app's own
-    // GOLD_FILTER recipe from PlayStyleDiamond.jsx so the blog card and the
-    // app agree about what "signature gold" looks like. The derived name
-    // survives as a tooltip and for screen readers.
+    // Signature PlayStyles: gold, PlayStyles-tab size.
     var sigs = h("span", "pchq-sigs");
     (b.signature || []).forEach(function (slug) {
       var ic = document.createElement("img");
@@ -285,21 +323,18 @@
       ic.alt = title + " (signature PlayStyle)";
       sigs.appendChild(ic);
     });
+    if (sigs.childNodes.length) inner.appendChild(sigs);
 
+    // Footer: creator + counts, and the primary-button CTA.
     var foot = h("span", "pchq-foot");
     var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
     foot.appendChild(h("span", "pchq-by", creator));
-    foot.appendChild(h("span", "pchq-stat", "♥ " + (b.loveCount || 0)));
-    foot.appendChild(h("span", "pchq-stat", "⧉ " + (b.copyCount || 0) + " copies"));
-    foot.appendChild(h("span", "pchq-cta", "Open in builder →"));
+    foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
+    foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
+    foot.appendChild(h("span", "pchq-cta", "Open in builder"));
+    inner.appendChild(foot);
 
-    anchor.appendChild(glow);
-    anchor.appendChild(head);
-    anchor.appendChild(grid);
-    // Signature (gold) row first, equipped (silver) below — user's call.
-    if (sigs.childNodes.length) anchor.appendChild(sigs);
-    if (eq.childNodes.length) anchor.appendChild(eq);
-    anchor.appendChild(foot);
+    anchor.appendChild(inner);
 
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -308,8 +343,8 @@
       var r = anchor.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width;   // 0..1
       var py = (e.clientY - r.top) / r.height;
-      anchor.style.setProperty("--pchq-rx", ((0.5 - py) * 8).toFixed(2) + "deg");
-      anchor.style.setProperty("--pchq-ry", ((px - 0.5) * 10).toFixed(2) + "deg");
+      anchor.style.setProperty("--pchq-rx", ((0.5 - py) * 5).toFixed(2) + "deg");
+      anchor.style.setProperty("--pchq-ry", ((px - 0.5) * 7).toFixed(2) + "deg");
       anchor.style.setProperty("--pchq-mx", (px * 100).toFixed(1) + "%");
       anchor.style.setProperty("--pchq-my", (py * 100).toFixed(1) + "%");
     });

@@ -148,17 +148,21 @@ export function renderSpoke(cfg) {
     openUrl, BUILDER, ft, psName, esc, fmt: (n) => n.toLocaleString(),
   };
 
-  // The approved build card (widgets/build-card, design signed off
-  // 2026-08-06), embedded exactly as the demo shows it: each card stands
-  // alone in the article flow — no container, no header, the approved dark
-  // palette untouched. Hydrated live from GET /api/builds/{id}/public;
-  // signature (gold) PlayStyles above equipped (silver). The CSS/JS are
-  // inlined because everything on this blog is inline and Ghost code
-  // injection is staff-only (DEPLOYMENT.md gotcha 7). The theme-guard rules
-  // exist because Ghost's .gh-content a styling outranks .pchq-card and
-  // repaints the card's text and underlines — that was the "colors look
-  // off" bug; don't remove them.
-  const widget = kg(`<style>
+  // The build card (widgets/build-card), redesigned 2026-08-08 to the app's
+  // own design language — Edit Build page layout, locker-room background,
+  // teal level slider, rating-colored attribute rows, 68px gold signature
+  // diamonds, btn-primary CTA. Cards stand alone in the article flow, full
+  // width of the column. Hydrated live from GET /api/builds/{id}/public.
+  // The CSS/JS are inlined because everything on this blog is inline and
+  // Ghost code injection is staff-only (DEPLOYMENT.md gotcha 7). The Google
+  // Fonts link is the one deliberate exception to "no external assets":
+  // Archivo/Manrope ARE the design language, and a fallback stack visibly
+  // breaks the card. The theme-guard rules exist because Ghost's
+  // .gh-content a styling outranks .pchq-card and repaints the card's text
+  // and underlines — that was the "colors look off" bug; don't remove them.
+  const widget = kg(`<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
+<style>
 ${PCHQ_CSS}
 .gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
