@@ -56,7 +56,7 @@ const GHOST_CONTENT = '/var/www/proclubslobby/content/images';
 // Bump when re-issuing art under an existing name: image URLs carry
 // max-age=31536000 and Cloudflare caches them, so a same-URL replacement
 // serves stale renders (especially the /size/ variants) more or less forever.
-const VERSION = '-v6';
+const VERSION = '-v7';
 const placeDirect = (file) => {
   const served = file.replace(/(\.\w+)$/, `${VERSION}$1`);
   const now = new Date();

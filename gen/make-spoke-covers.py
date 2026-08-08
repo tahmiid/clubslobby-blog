@@ -33,11 +33,31 @@ ART_BY_POSITION = {
     'Forward': 'FC26_Zlatan_Archetype_16x9.jpg',    # EA's own filename says Archetype
 }
 
+# Per-archetype overrides, which beat the position default. Both are the
+# user's calls after seeing the rendered set (2026-08-08):
+#
+# - magician takes the Musiala still even though the Magician is a forward.
+#   Musiala carrying the ball through three defenders is what a Magician does,
+#   and it separates it from the two other forwards.
+# - finisher takes the FC 26 studio key art - the purple poster the rest of
+#   this set was built to replace. Kept deliberately for one cover, where it
+#   is a contrast rather than the whole series.
+ART_OVERRIDE = {
+    'magician': 'FC26_Musiala_Gameplay_16x9.jpg',
+    'finisher': 'EAS_FC26_WGE_KeyArt_RGB_16-9_3840x2160.jpg',
+}
+
+# The studio key art carries its own EA SPORTS FC 26 lockup, so the eyebrow
+# would print the same words twice, a few centimetres apart. Suppressed there
+# and only there - every in-game still needs the eyebrow, having no branding
+# of its own.
+NO_EYEBROW = {'finisher'}
+
 
 def main():
     archetypes = json.load(open(os.path.join(ROOT, 'data', 'archetypes.json')))
     for a in archetypes:
-        art = ART_BY_POSITION.get(a['position'])
+        art = ART_OVERRIDE.get(a['id']) or ART_BY_POSITION.get(a['position'])
         if not art:
             raise SystemExit(f"no art mapped for position {a['position']!r} ({a['id']})")
         # .upper() rather than trusting the snapshot: the app's catalog was
@@ -45,7 +65,7 @@ def main():
         # that predates it. The cover wants caps either way.
         keyword_cover(os.path.join(ASSETS, f"feat-spoke-{a['id']}.jpg"),
                       a['name'].upper(), os.path.join(ASSETS, art),
-                      eyebrow=EYEBROW)
+                      eyebrow='' if a['id'] in NO_EYEBROW else EYEBROW)
 
 
 if __name__ == '__main__':

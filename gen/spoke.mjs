@@ -45,7 +45,20 @@ const WIDGET_DIR = path.join(import.meta.dirname, '..', 'widgets', 'build-card')
 const PCHQ_CSS = readFileSync(path.join(WIDGET_DIR, 'pchq-build-card.css'), 'utf8');
 const PCHQ_JS = readFileSync(path.join(WIDGET_DIR, 'pchq-build-card.js'), 'utf8');
 
-export const COVER = 'https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-spokes.jpg';
+// Each spoke's in-body hero is its OWN cover art (2026-08-08). It used to be
+// one shared image — the FC 26 studio key art — on all thirteen, which is what
+// made the articles look dated even after the feature images were replaced.
+//
+// The theme does not render the feature image on a post page, so this figure
+// IS the hero a reader sees; pointing it at the same asset the social card
+// uses means the article and its share preview agree.
+//
+// VERSION must match set-feature-images.mjs. Bump both together: these URLs
+// are Cloudflare-cached for a year, so a same-name replacement serves stale
+// art more or less forever.
+const COVER_VERSION = '-v7';
+export const coverUrl = (archId) =>
+  `https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-spoke-${archId}${COVER_VERSION}.jpg`;
 export const ft = (inches) => `${Math.floor(inches / 12)}'${inches % 12}"`;
 export const psName = (slug) => PLAYSTYLES[slug]?.name || title(slug.replace(/-/g, ' '));
 // The app serves the official PlayStyle glyphs; hotlinking is deliberate —
@@ -202,12 +215,12 @@ ${stages.map((s, i) => `<span class="c"><b>${i + 1}. ${esc(s.name)}</b><small>${
 </div>
 </div>`);
 
-  // Official FC 26 key art, in the body — the theme doesn't put the feature
-  // image on the post page, and the user wants the game visible in the article.
+  // The archetype's own cover art, in the body — the theme doesn't put the
+  // feature image on the post page, so this is the hero the reader gets.
   const coverFig = kg(`<figure class="${P}c">
 <style>.${P}c{margin:0 0 1.6em}.${P}c img{width:100%;height:auto;border-radius:12px;display:block}
 .${P}c figcaption{margin-top:8px;font-size:12.5px;color:#898781;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}</style>
-<img src="${COVER}" alt="Official EA SPORTS FC 26 cover art" loading="lazy" width="1200" height="675">
+<img src="${coverUrl(cfg.archId)}" alt="Official EA SPORTS FC 26 art for the ${arch.name} archetype" loading="lazy" width="1200" height="675">
 <figcaption>EA SPORTS FC 26 — the game these builds live in.</figcaption>
 </figure>`);
 
