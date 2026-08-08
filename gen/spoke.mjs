@@ -149,32 +149,24 @@ export function renderSpoke(cfg) {
   };
 
   // The approved build card (widgets/build-card, design signed off
-  // 2026-08-06): the whole card is one link into the app, hydrated live from
-  // GET /api/builds/{id}/public — attributes, equipped PlayStyles (silver)
-  // and the signature set (gold) are always current. Its CSS/JS are inlined
-  // here because everything on this blog is inline, and Ghost's code
-  // injection is staff-only anyway (DEPLOYMENT.md gotcha 7). The anchor text
-  // is the crawlable fallback; both links open the app in a new tab.
-  const widget = kg(`<div class="${P}" data-${P}>
-<style>${baseCss(P)}
-.${P} .top{display:flex;align-items:center;gap:12px;margin-bottom:2px}
-.${P} .aico{width:40px;height:38px;flex:none;color:var(--accent)}
-.${P} .who{font-size:12.5px;color:var(--muted);margin:0 0 14px}
-.${P} .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
-.${P} .cards .pchq-build{margin:0;max-width:none}
-.${P} .more{margin:14px 0 0;font-size:13.5px}
-.${P} .more a{color:var(--accent);text-decoration:none;font-weight:650}
-.${P} .more a:hover{text-decoration:underline}
+  // 2026-08-06), embedded exactly as the demo shows it: each card stands
+  // alone in the article flow — no container, no header, the approved dark
+  // palette untouched. Hydrated live from GET /api/builds/{id}/public;
+  // signature (gold) PlayStyles above equipped (silver). The CSS/JS are
+  // inlined because everything on this blog is inline and Ghost code
+  // injection is staff-only (DEPLOYMENT.md gotcha 7). The theme-guard rules
+  // exist because Ghost's .gh-content a styling outranks .pchq-card and
+  // repaints the card's text and underlines — that was the "colors look
+  // off" bug; don't remove them.
+  const widget = kg(`<style>
 ${PCHQ_CSS}
+.gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
+.gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
+.${P}x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
 </style>
-<div class="top">${icon}<div><p class="hd">${esc(archName)}</p></div></div>
-<p class="who">Builds from ${BRAND}</p>
-<div class="cards">
 ${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}" href="${openUrl(b)}" target="_blank" rel="noopener">${esc(b.buildName)} — open in ${BRAND}</a>`).join('\n')}
-</div>
-<p class="more"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>
-<script>${PCHQ_JS}</script>
-</div>`);
+<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>
+<script>${PCHQ_JS}</script>`);
 
   // The AP path as a grid — a real <table> here inherits the theme's
   // white-space:nowrap and overlaps columns (the a18 v1 bug).

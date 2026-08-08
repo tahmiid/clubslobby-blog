@@ -89,18 +89,26 @@
     head.appendChild(h("span", "pchq-lvl", "LVL " + b.level));
 
     // Top six attributes by value - the build's own numbers, nothing invented.
+    // Bars and values use the app's rating colors (AttributeSlider.jsx /
+    // StatBar.jsx): green from 80, orange from 55, red below — NOT the tier
+    // color, so the two surfaces agree about what a good stat looks like.
     var attrs = Object.entries(b.attributes || {})
       .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 6);
     var grid = h("span", "pchq-attrs");
     attrs.forEach(function (kv) {
+      var col = kv[1] >= 80 ? "#2FD26B" : kv[1] >= 55 ? "#E8912D" : "#D9542F";
       var row = h("span", "pchq-attr");
       row.appendChild(h("span", "pchq-attr-name", label(kv[0])));
       var bar = h("span", "pchq-bar");
       var fill = h("span", "pchq-fill");
       fill.style.width = kv[1] + "%";
+      fill.style.background = col;
+      fill.style.boxShadow = "0 0 6px " + col + "66";
       bar.appendChild(fill);
       row.appendChild(bar);
-      row.appendChild(h("span", "pchq-attr-val", String(kv[1])));
+      var val = h("span", "pchq-attr-val", String(kv[1]));
+      val.style.color = col;
+      row.appendChild(val);
       grid.appendChild(row);
     });
 
@@ -152,8 +160,9 @@
     anchor.appendChild(glow);
     anchor.appendChild(head);
     anchor.appendChild(grid);
-    if (eq.childNodes.length) anchor.appendChild(eq);
+    // Signature (gold) row first, equipped (silver) below — user's call.
     if (sigs.childNodes.length) anchor.appendChild(sigs);
+    if (eq.childNodes.length) anchor.appendChild(eq);
     anchor.appendChild(foot);
 
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;

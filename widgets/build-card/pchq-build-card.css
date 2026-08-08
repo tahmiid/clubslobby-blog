@@ -78,8 +78,10 @@
   display: block; height: 5px; border-radius: 999px; background: #23252e; overflow: hidden;
 }
 .pchq-fill {
+  /* Fill color is set inline per attribute by the app's rating scale
+     (green >= 80, orange >= 55, red below); this is only the fallback. */
   display: block; height: 100%; border-radius: inherit; width: 0;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--pchq-tier) 70%, #fff 0%), var(--pchq-tier));
+  background: var(--pchq-tier);
   animation: pchq-grow 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 @keyframes pchq-grow { from { width: 0 } }
@@ -88,8 +90,8 @@
   .pchq-card { transform: none !important; }
 }
 
-/* Equipped PlayStyles: icon-only, natural silver, above the signature row. */
-.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+/* Equipped PlayStyles: icon-only, natural silver, below the signature row. */
+.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .pchq-eq-ic {
   width: 46px; height: 46px; object-fit: contain;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
@@ -99,7 +101,7 @@
    PlayStyles in-game), sized to match the archetype logo. The filter chain is
    the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree
    about what signature gold looks like. */
-.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
 .pchq-sig-ic {
   width: 46px; height: 46px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98)

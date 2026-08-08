@@ -1,37 +1,7 @@
 <p>The Target is EA FC Pro Clubs' physical striker — the hold-up forward who wins the duels, the headers, and the goals that come from dominance rather than daylight. This guide is the complete FC 26 answer: every attribute of a finished level-100 Target build, the order to spend your AP, which specialization to take, and two real builds — a Kane and a Gyökeres — you can <a href="https://proclubshq.com/b/86124442-118d-4ceb-9e50-86315273c3f9">open in the Pro Clubs HQ builder</a> and copy outright.</p>
 
 <!--kg-card-begin: html-->
-<div class="a30" data-a30>
 <style>
-.a30{--s1:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);
-  --accent:#256abf;--accent2:#86b6ef;--bar:#e1e0d9;--good:#0ca30c;--bad:#d03b3b;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .a30{
-  --s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}}
-:root[data-theme="dark"] .a30{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--bad:#e66767}
-.a30 *{box-sizing:border-box}
-.a30 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.a30 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.a30 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.a30 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.a30 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.a30 .chip:hover{border-color:var(--muted)}
-.a30 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.a30 .chip[disabled]{opacity:.32;cursor:not-allowed}
-.a30 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.a30{padding:14px}}
-.a30 .top{display:flex;align-items:center;gap:12px;margin-bottom:2px}
-.a30 .aico{width:40px;height:38px;flex:none;color:var(--accent)}
-.a30 .who{font-size:12.5px;color:var(--muted);margin:0 0 14px}
-.a30 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
-.a30 .cards .pchq-build{margin:0;max-width:none}
-.a30 .more{margin:14px 0 0;font-size:13.5px}
-.a30 .more a{color:var(--accent);text-decoration:none;font-weight:650}
-.a30 .more a:hover{text-decoration:underline}
 /* Pro Clubs HQ build embed. Scoped under .pchq- so it cannot fight Ghost's
    theme. The anchor IS the card; everything inside is display:block spans so
    the whole surface stays one link. */
@@ -112,8 +82,10 @@
   display: block; height: 5px; border-radius: 999px; background: #23252e; overflow: hidden;
 }
 .pchq-fill {
+  /* Fill color is set inline per attribute by the app's rating scale
+     (green >= 80, orange >= 55, red below); this is only the fallback. */
   display: block; height: 100%; border-radius: inherit; width: 0;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--pchq-tier) 70%, #fff 0%), var(--pchq-tier));
+  background: var(--pchq-tier);
   animation: pchq-grow 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 @keyframes pchq-grow { from { width: 0 } }
@@ -122,8 +94,8 @@
   .pchq-card { transform: none !important; }
 }
 
-/* Equipped PlayStyles: icon-only, natural silver, above the signature row. */
-.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+/* Equipped PlayStyles: icon-only, natural silver, below the signature row. */
+.pchq-eq { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .pchq-eq-ic {
   width: 46px; height: 46px; object-fit: contain;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
@@ -133,7 +105,7 @@
    PlayStyles in-game), sized to match the archetype logo. The filter chain is
    the app's own GOLD_FILTER (PlayStyleDiamond.jsx), so the two surfaces agree
    about what signature gold looks like. */
-.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.pchq-sigs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
 .pchq-sig-ic {
   width: 46px; height: 46px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98)
@@ -155,20 +127,13 @@
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */
 .pchq-card-fallback { padding: 14px 18px; font-weight: 700; }
 
+.gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
+.gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
+.a30x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
 </style>
-<div class="top">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 162" class="aico" aria-hidden="true">
-<path d="M0 0 C18.39337375 0.8138661 32.2830958 9.33660311 45 22 C46.11568359 23.06347656 46.11568359 23.06347656 47.25390625 24.1484375 C59.42039216 36.57682428 65.26080225 54.81830077 65.5 71.9375 C65.25340844 92.75879497 57.04576543 110.45518246 42.875 125.625 C26.53841211 141.23427405 7.77284709 145.48100468 -14.2890625 145.203125 C-32.94362033 144.70599346 -48.88162993 136.00872145 -61.98046875 123.0390625 C-75.14077393 108.80385381 -81.42499111 91.8784842 -81.3125 72.6875 C-81.30686035 71.6763916 -81.3012207 70.6652832 -81.29541016 69.62353516 C-81.08602231 56.70990276 -77.78507884 46.43910411 -72 35 C-69.03 35.66 -66.06 36.32 -63 37 C-63.39832031 37.81082031 -63.79664062 38.62164062 -64.20703125 39.45703125 C-72.63749543 57.07690651 -75.37294051 75.30105729 -69.26269531 94.28393555 C-64.14855634 108.58721772 -53.86845176 120.14413665 -41 128 C-40.05060547 128.58201172 -40.05060547 128.58201172 -39.08203125 129.17578125 C-24.61122842 137.16712013 -6.16395318 138.82230853 9.73291016 134.5078125 C16.72695618 132.31360198 22.99470286 129.20262205 29 125 C30.02287109 124.35998047 30.02287109 124.35998047 31.06640625 123.70703125 C42.144637 116.31431758 50.9441021 101.54699875 54.375 88.75 C54.63611461 87.17451075 54.83391637 85.58832095 55 84 C55.06944824 83.37109863 55.13889648 82.74219727 55.21044922 82.09423828 C57.15825309 63.30240616 53.69736559 47.09257552 42 32 C41.4534375 31.28714844 40.906875 30.57429688 40.34375 29.83984375 C29.92522713 17.08698202 15.48929114 11.69677749 0 8 C0 5.36 0 2.72 0 0 Z " fill="currentColor" transform="translate(93,8)"/>
-<path d="M0 0 C0 24.75 0 49.5 0 75 C-2.31 75 -4.62 75 -7 75 C-7.33 61.8 -7.66 48.6 -8 35 C-13.61 34.01 -19.22 33.02 -25 32 C-25 34.31 -25 36.62 -25 39 C-28.0846448 40.5423224 -30.75539955 39.14989757 -33.9140625 38.234375 C-34.60253265 38.04031067 -35.29100281 37.84624634 -36.00033569 37.64630127 C-37.46229508 37.23262376 -38.92326217 36.81542599 -40.38330078 36.39501953 C-42.59316606 35.7591598 -44.80594649 35.13449042 -47.01953125 34.51171875 C-53.78240071 32.59523709 -60.47544362 30.63722226 -67 28 C-63.78729905 25.85819937 -61.38400238 25.19538596 -57.65234375 24.2734375 C-56.40775391 23.9640625 -55.16316406 23.6546875 -53.88085938 23.3359375 C-53.2339917 23.17834961 -52.58712402 23.02076172 -51.9206543 22.85839844 C-49.93961225 22.37551487 -47.96091526 21.88383601 -45.98242188 21.390625 C-36.29436384 19 -36.29436384 19 -34 19 C-34 16.36 -34 13.72 -34 11 C-27.5718305 8.05104236 -20.92302432 5.94702433 -14.1875 3.8125 C-13.04345703 3.44447266 -11.89941406 3.07644531 -10.72070312 2.69726562 C-2.2585952 0 -2.2585952 0 0 0 Z " fill="currentColor" transform="translate(88,10)"/>
-<path d="M0 0 C11.98181401 1.27355507 21.4035343 7.83759619 29 17 C36.43317323 26.83206095 39.25179574 38.77760548 38 51 C36.04116251 63.38964713 30.8326763 74.03605614 21 82 C9.30926165 90.31005634 -3.41707512 93.5066673 -17.75 91.375 C-30.63898209 88.52128109 -40.91547058 80.65202514 -48.2734375 69.87890625 C-54.81993887 58.96313361 -56.54879608 46.1888866 -53.87109375 33.7421875 C-51.8573843 27.40306627 -48.68002084 21.52003127 -45 16 C-43.02 16.33 -41.04 16.66 -39 17 C-40.41319809 20.74804711 -42.15157497 24.17083453 -44.0625 27.6875 C-46.92586721 33.30973196 -47.81542708 37.72452061 -48 44 C-42.72 44.33 -37.44 44.66 -32 45 C-32 45.33 -32 45.66 -32 46 C-37.61 46 -43.22 46 -49 46 C-47.4162951 54.5853476 -45.94284053 61.75671797 -41 69 C-40.1028125 70.3303125 -40.1028125 70.3303125 -39.1875 71.6875 C-30.66751884 80.69433723 -21.03270004 84.1722481 -9 86 C-9 80.39 -9 74.78 -9 69 C-8.67 69 -8.34 69 -8 69 C-7.505 76.92 -7.505 76.92 -7 85 C3.43788973 84.69300324 12.83041043 80.93794896 20.48046875 73.66015625 C27.89759229 65.55661511 29.69505531 57.54955456 32 47 C26.39 46.67 20.78 46.34 15 46 C15 45.67 15 45.34 15 45 C23.415 44.505 23.415 44.505 32 44 C29.81394349 31.61234642 26.4191264 20.83824188 16 13 C10.93919471 10.0606098 5.77713134 7.18575965 0 6 C0 4.02 0 2.04 0 0 Z " fill="currentColor" transform="translate(93,35)"/>
-</svg>
-<div><p class="hd">Target</p></div></div>
-<p class="who">Builds from Pro Clubs HQ</p>
-<div class="cards">
 <a class="pchq-build" data-build="86124442-118d-4ceb-9e50-86315273c3f9" href="https://proclubshq.com/b/86124442-118d-4ceb-9e50-86315273c3f9" target="_blank" rel="noopener">Harry Kane — open in Pro Clubs HQ</a>
 <a class="pchq-build" data-build="38ff16c8-bdb8-465a-bd07-3527b9577e87" href="https://proclubshq.com/b/38ff16c8-bdb8-465a-bd07-3527b9577e87" target="_blank" rel="noopener">Viktor Gyökeres — open in Pro Clubs HQ</a>
-</div>
-<p class="more"><a href="https://proclubshq.com/edit/target" target="_blank" rel="noopener">Start your own Target in the builder →</a></p>
+<p class="a30x"><a href="https://proclubshq.com/edit/target" target="_blank" rel="noopener">Start your own Target in the builder →</a></p>
 <script>/**
  * Pro Clubs HQ — interactive build embed for blog articles.
  *
@@ -260,18 +225,26 @@
     head.appendChild(h("span", "pchq-lvl", "LVL " + b.level));
 
     // Top six attributes by value - the build's own numbers, nothing invented.
+    // Bars and values use the app's rating colors (AttributeSlider.jsx /
+    // StatBar.jsx): green from 80, orange from 55, red below — NOT the tier
+    // color, so the two surfaces agree about what a good stat looks like.
     var attrs = Object.entries(b.attributes || {})
       .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 6);
     var grid = h("span", "pchq-attrs");
     attrs.forEach(function (kv) {
+      var col = kv[1] >= 80 ? "#2FD26B" : kv[1] >= 55 ? "#E8912D" : "#D9542F";
       var row = h("span", "pchq-attr");
       row.appendChild(h("span", "pchq-attr-name", label(kv[0])));
       var bar = h("span", "pchq-bar");
       var fill = h("span", "pchq-fill");
       fill.style.width = kv[1] + "%";
+      fill.style.background = col;
+      fill.style.boxShadow = "0 0 6px " + col + "66";
       bar.appendChild(fill);
       row.appendChild(bar);
-      row.appendChild(h("span", "pchq-attr-val", String(kv[1])));
+      var val = h("span", "pchq-attr-val", String(kv[1]));
+      val.style.color = col;
+      row.appendChild(val);
       grid.appendChild(row);
     });
 
@@ -323,8 +296,9 @@
     anchor.appendChild(glow);
     anchor.appendChild(head);
     anchor.appendChild(grid);
-    if (eq.childNodes.length) anchor.appendChild(eq);
+    // Signature (gold) row first, equipped (silver) below — user's call.
     if (sigs.childNodes.length) anchor.appendChild(sigs);
+    if (eq.childNodes.length) anchor.appendChild(eq);
     anchor.appendChild(foot);
 
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -355,7 +329,6 @@
   }
 })();
 </script>
-</div>
 <!--kg-card-end: html-->
 
 <h2>Why the Target</h2>
