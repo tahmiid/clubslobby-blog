@@ -323,13 +323,78 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 5. **nginx app routes are hand-added** — see §5.
 6. **Mail runs through Resend over SMTP** (configured 2026-08-06). Was "no transport configured"; Ghost password reset, member signup
    confirmations and newsletters will all silently fail until SMTP is set up.
-7. **Site settings are staff-only — the Admin API cannot write them.**
+7. **Site settings are staff-only to the *Admin API* — but writable from here.**
    `PUT /settings/`, `/custom_theme_settings/` and `/users/` all return
    `NoPermissionError` for integration keys, whatever the key's role. Posts,
-   pages and image uploads work fine. Branding changes therefore go through
-   Ghost Admin, or a direct `mysql ghost_prod` UPDATE followed by
-   `ghost restart` — settings are read at boot, so a DB change is invisible
-   until Ghost restarts.
+   pages and image uploads work fine.
+
+   That is an API limitation, not a policy. **We self-host precisely so the
+   site is ours to change from a shell** — hosted Ghost is what we would have
+   taken otherwise. So settings are changed with a direct `mysql ghost_prod`
+   UPDATE, under one non-negotiable condition: **a verified backup exists
+   first, and the rollback is known before the change is made.**
+
+   The procedure, as used for the dark theme on 2026-08-08:
+
+   ```bash
+   # 1. Dump, into the same directory the nightly cron uses
+   mysqldump -u"$DBUSER" -p"$DBPASS" ghost_prod \
+     | gzip > /var/backups/clubs27/ghost-db-pre-<change>-$(date +%Y%m%d-%H%M).sql.gz
+
+   # 2. VERIFY it — an unchecked dump is not a backup
+   gzip -t <file>                                   # not truncated
+   zcat <file> | grep -c "^CREATE TABLE"            # expect ~91
+   zcat <file> | grep -c "INSERT INTO \`settings\`" # expect >= 1
+   zcat <file> | tail -3 | grep "Dump completed"    # mysqldump's own marker
+
+   # 3. Record the current value, so rollback is one statement not a restore
+   mysql ... -N -B -e "SELECT value FROM settings WHERE \`key\`='<key>';"
+
+   # 4. Change it, then restart — settings are read at boot
+   mysql ... < change.sql
+   systemctl restart ghost_clubs27-com
+   ```
+
+   **`mysqldump` warns `Access denied ... PROCESS privilege ... tablespaces`.**
+   Benign: it only skips InnoDB tablespace metadata, which a logical restore
+   does not use. The dump is complete — step 2 is what proves that, rather
+   than the absence of a warning.
+
+   **Restart with `systemctl restart ghost_clubs27-com`, not `ghost restart`.**
+   `sudo -u ghost ghost restart` dies on `/nonexistent/.ghost/logs` because
+   that account has no home. It fails *before* touching the running site, so
+   it is loud rather than dangerous — but it is not the restart command.
+
+   Backups run nightly at 03:30 via `/etc/cron.d/clubs27-backup`, producing
+   both `ghost-db-*.sql.gz` and `ghost-files-*.tar.gz`. A same-day change
+   still takes its own dump: the nightly one predates it.
+7b. **The blog's dark look is site-wide CSS in `codeinjection_head`, and
+   Source has no dark mode of its own.** Its `assets/built/screen.css`
+   contains **zero** `data-theme` rules and **zero** `prefers-color-scheme`
+   rules (Casper has the latter; Source does not). A
+   `<script>document.documentElement.setAttribute("data-theme","dark")</script>`
+   sat in that field doing nothing at all until 2026-08-08 — if you find
+   yourself reaching for a theme dark-mode toggle, there isn't one.
+
+   Source of truth is **`assets/blog-dark.css` in this repo**; the setting is
+   a copy. Edit the file, then re-apply with the §7 procedure — never edit the
+   database value by hand and let the two drift.
+
+   It matches the app deliberately: same `#04040a` base, same locker-room
+   photo, same two gradients, lifted from `ClubsUI-main/frontend/src/App.js`.
+   Two things it does *not* do, both on purpose:
+
+   - **References `/assets/locker-room.jpg` rather than copying the image.**
+     The blog is same-origin with the app and `frontend/public/` is not
+     content-hashed by CRA, so that URL is stable and the two never drift.
+   - **No `background-attachment: fixed`.** iOS Safari janks or drops it, and
+     mobile is the majority of this site's traffic; a fixed pseudo-element
+     gets the same result everywhere.
+
+   The article hero needs its own scrim: the radial gradient leaves the centre
+   near-transparent by design, which is exactly where the title and excerpt
+   sit, and `#9aa0ae` was unreadable there.
+
 8. **Source's header styles have two hidden dependencies, and both bite.**
    `header_style: Landing` renders *only* when members are enabled (see
    `partials/components/header.hbs`), so disabling members silently removes the

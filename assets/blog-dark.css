@@ -1,0 +1,79 @@
+:root {
+  --pchq-base: #04040a;
+  --pchq-text: #f2f3f7;
+  --pchq-muted: #9aa0ae;
+  --pchq-teal: #2DE2C5;
+  --pchq-panel: rgba(12,12,20,0.85);
+  --pchq-line: rgba(255,255,255,0.10);
+}
+html { background: var(--pchq-base) !important; }
+body { background: transparent !important; color: var(--pchq-text) !important; font-family: Manrope, system-ui, sans-serif !important; }
+
+/* The app's Background component (App.js:22-27) as one fixed layer.
+   The photo at opacity .55 over #04040a is the same result as compositing a
+   flat rgba(4,4,10,.45) over it, which is what lets this be background layers
+   on one element instead of the app's img + two divs.
+
+   body must stay transparent: this sits at z-index -1, so an opaque body
+   background paints straight over it. Learned the obvious way.
+
+   Deliberately NOT background-attachment: fixed - iOS Safari janks or drops
+   it, and mobile is the majority of this site's traffic. A fixed pseudo
+   element gets the same parallax-free result everywhere. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgba(4,4,10,0.55) 100%),
+    linear-gradient(180deg, rgba(4,4,10,0.88) 0%, rgba(4,4,10,0.45) 30%, rgba(4,4,10,0.55) 70%, rgba(4,4,10,0.92) 100%),
+    linear-gradient(rgba(4,4,10,0.45), rgba(4,4,10,0.45)),
+    url("/assets/locker-room.jpg") center / cover no-repeat,
+    var(--pchq-base);
+}
+.site-content, .site-main, .gh-canvas, .post-feed, .outer, .inner { background: transparent !important; }
+
+h1,h2,h3,h4,h5,.site-title,.post-card-title,.gh-head-logo,.article-title {
+  font-family: Archivo, system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  color: var(--pchq-text) !important;
+}
+.site-description, .post-card-excerpt, .post-card-meta, .gh-head-menu a { color: var(--pchq-muted) !important; }
+
+/* The article hero sits over the *brightest* band of the photo - the radial
+   gradient leaves the centre near-transparent by design, which is right
+   behind the title and excerpt. #9aa0ae failed there in preview, so the
+   excerpt gets a lighter grey and the header a local scrim. Without this the
+   subtitle is unreadable on exactly the page people land on from search. */
+.gh-article-header, .article-header { position: relative; }
+.gh-article-header::before, .article-header::before {
+  content: ""; position: absolute; inset: -24px -40px;
+  background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(4,4,10,0.72) 0%, rgba(4,4,10,0) 100%);
+  z-index: -1; pointer-events: none;
+}
+.gh-article-excerpt, .article-excerpt { color: #c8ccd6 !important; }
+.gh-content, .gh-content p, .gh-content li, .gh-content td, .gh-content th { color: #d7dae2 !important; }
+
+.gh-head { background: rgba(4,4,10,0.72) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--pchq-line); }
+.gh-head a, .gh-head .gh-head-logo { color: var(--pchq-text) !important; }
+.gh-head-menu a:hover { color: var(--pchq-teal) !important; }
+.gh-burger-inner::before, .gh-burger-inner::after, .gh-burger-inner { background: var(--pchq-text) !important; }
+.gh-icon-btn svg { fill: var(--pchq-text) !important; color: var(--pchq-text) !important; }
+
+.post-card {
+  background: var(--pchq-panel) !important;
+  border: 1px solid var(--pchq-line) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.post-card:hover { border-color: rgba(45,226,197,0.40) !important; transform: translateY(-2px); }
+.post-card-content { padding: 18px !important; }
+.post-card-image, .post-card-image-link { background: #0a0a12 !important; }
+.post-card-primary-tag { color: var(--pchq-teal) !important; letter-spacing: .08em; text-transform: uppercase; }
+
+a { color: var(--pchq-teal); }
+.gh-content a { color: var(--pchq-teal) !important; }
+
+.site-footer, .gh-powered-by, .site-footer-nav a { background: transparent !important; color: var(--pchq-muted) !important; border-top-color: var(--pchq-line) !important; }
+.gh-announcement-bar { background: linear-gradient(90deg,#2c55e8,#7b2ff7) !important; }
+.gh-announcement-bar a, .gh-announcement-bar-content { color: #fff !important; }
