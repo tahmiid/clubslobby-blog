@@ -155,9 +155,33 @@ def platforms_cover(out):
     print(f'  {os.path.basename(out)}  old-gen struck through')
 
 
+STADIUM_SHOT = os.path.join(ASSETS, 'EA_FC27_Grounds_Bernabeu.jpg')
+FLAG_SHOT = os.path.join(ASSETS, 'EA_FC27_Grounds_Atletico.jpg')
+
+# name -> (word, source, crop_square). One or two words only: the whole point
+# is that it is legible as a thumbnail on a phone, and three words forces the
+# type down to a size that defeats it.
+#
+# Backgrounds are mostly the key art on purpose - the 13 spoke pages already
+# establish that a shared background reads as a series. It varies only where
+# a different official asset is *thematically* earned: a stadium for
+# tournaments, and the Atlético flag draped over a building for objectives -
+# club colours flown in public is what "earn fans and Club reputation" looks
+# like. I argued against the flag first, on the grounds that the crest
+# dominates the frame; the user's call was that it is the more interesting
+# image, and at thumbnail size the colour block is what carries it.
+COVERS = [
+    ('masteries', 'MASTERIES', None, False),
+    ('amps', 'AMPS', None, False),
+    ('grounds', 'THE GROUNDS', GROUNDS_SHOT, True),
+    ('archetypes', 'ARCHETYPES', None, False),
+    ('tournaments', 'TOURNAMENTS', STADIUM_SHOT, True),
+    ('objectives', 'OBJECTIVES', FLAG_SHOT, True),
+]
+
+
 if __name__ == '__main__':
-    keyword_cover(os.path.join(ASSETS, 'feat-fc27-masteries.jpg'), 'MASTERIES')
-    keyword_cover(os.path.join(ASSETS, 'feat-fc27-amps.jpg'), 'AMPS')
-    keyword_cover(os.path.join(ASSETS, 'feat-fc27-grounds.jpg'), 'THE GROUNDS',
-                  src=GROUNDS_SHOT, crop_square=True)
+    for name, word, src, sq in COVERS:
+        keyword_cover(os.path.join(ASSETS, f'feat-fc27-{name}.jpg'), word,
+                      src=src, crop_square=sq)
     platforms_cover(os.path.join(ASSETS, 'feat-fc27-platforms.jpg'))

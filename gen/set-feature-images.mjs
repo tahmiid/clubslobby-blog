@@ -21,9 +21,9 @@ const MAP = [
   ['feat-a12.png', 'pro-clubs-archetypes-head-to-head', 'Two archetypes compared across the halfway line'],
   ['feat-fc27-masteries.jpg', 'fc27-masteries-explained', 'EA SPORTS FC 27 key art with MASTERIES across it'],
   ['feat-fc27-amps.jpg', 'fc27-amps-explained', 'EA SPORTS FC 27 key art with AMPS across it'],
-  ['feat-a15.png', 'fc27-archetype-changes', 'An opened padlock — every archetype unlocked'],
-  ['feat-a16.png', 'fc27-clubs-live-tournaments', 'A tournament bracket converging on a final'],
-  ['feat-a17.png', 'fc27-club-objectives', 'Three objective tiers, the last one complete'],
+  ['feat-fc27-archetypes.jpg', 'fc27-archetype-changes', 'EA SPORTS FC 27 key art with ARCHETYPES across it'],
+  ['feat-fc27-tournaments.jpg', 'fc27-clubs-live-tournaments', 'The Bernabéu in FC 27\u2019s The Grounds, with TOURNAMENTS across it'],
+  ['feat-fc27-objectives.jpg', 'fc27-club-objectives', 'A club flag draped over a building in FC 27\u2019s The Grounds, with OBJECTIVES across it'],
   // The four FC 27 pieces also leave the generated-geometry set (2026-08-08):
   // EA's official FC 27 key art carrying each article's biggest keyword, by
   // gen/make-fc27-feats.py. Masteries earned the only real search traffic the
