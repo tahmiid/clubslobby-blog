@@ -334,7 +334,25 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
    UPDATE, under one non-negotiable condition: **a verified backup exists
    first, and the rollback is known before the change is made.**
 
-   The procedure, as used for the dark theme on 2026-08-08:
+   **`ops/ghost-setting.sh` does all of it** — dump, verify, record the
+   rollback, update, restart, confirm. Written 2026-08-10 because the dark
+   theme change was typed live and left nothing behind to repeat it, and
+   retyping a procedure is where the missed backup lives.
+
+   ```bash
+   scp -i ~/.ssh/proclubslobby_ed25519 ops/ghost-setting.sh root@91.99.52.207:/root/
+   ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
+     'bash /root/ghost-setting.sh --dry-run icon "<value>"'   # prints current + rollback
+   ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
+     'bash /root/ghost-setting.sh icon "<value>"'
+   ```
+
+   It refuses on a key that does not exist, on a dump that fails verification,
+   and on a value that does not stick. No credential is passed in or printed —
+   it reads Ghost's own config on the box.
+
+   The procedure it automates, as used by hand for the dark theme on
+   2026-08-08:
 
    ```bash
    # 1. Dump, into the same directory the nightly cron uses
