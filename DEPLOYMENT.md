@@ -280,6 +280,11 @@ attributed to blog sessions — logs cannot do that, and nothing here pretends
 to. Baseline at build time: ~250–290 blog views/day converting to ~28–45
 crossings (≈12%), landing almost entirely on build pages.
 
+Because rotation forgets after two weeks, **snapshots live in the repo**:
+`ops/funnel-snapshot.sh` (run from the Mac) writes the current report to
+`reports/funnel/YYYY-MM-DD.txt`; commit it. One a week keeps the history
+comparable forever; the first, 2026-08-11, is the baseline.
+
 ---
 
 ## 8. Backups
