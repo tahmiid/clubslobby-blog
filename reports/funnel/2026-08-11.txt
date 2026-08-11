@@ -1,21 +1,19 @@
-Blog→app funnel — proclubshq.com  (2026-08-03 → 2026-08-11, bots excluded)
+Blog→app funnel — proclubshq.com  (2026-08-05 → 2026-08-11, bots excluded)
 "Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — directional, not exact.
 
 day          blog views blog vis.  →app app views app vis.  hydr.  reg  login
 -----------------------------------------------------------------------------
-2026-08-03           26        26     0       378      210      0    1      1
-2026-08-04           21        27     0      1001      304      0    0      2
 2026-08-05            6        11     0       383      226      0    0      2
 2026-08-06            3         6     0       305      243      0    0      0
 2026-08-07           44        28     9       237      160      6    0      2
 2026-08-08          201       221    23       241      159    166    1      2
 2026-08-09          287       398    45       257      204    196    1      2
 2026-08-10          255       310    28       391      243    132    1      2
-2026-08-11           58        71     3        82       62     42    0      0
+2026-08-11           79       102     3       118       92     58    0      0
 -----------------------------------------------------------------------------
-total               901      1098   108      3275     1811    542    4     13
+total               875      1076   108      1932     1327    558    3     10
 
-(ref=proclubshq.com tagged app hits in range: 137 — subset/overlap of →app)
+(ref=proclubshq.com tagged app hits in range: 139 — subset/overlap of →app)
 
 Blog articles sending readers to the app (whole range):
      18  /blog/pro-clubs-magician-build/
@@ -41,13 +39,13 @@ Where they land in the app:
       1  /meta
 
 Most-read articles (human views, whole range):
-    124  /blog/pro-clubs-magician-build/
-     74  /blog/pro-clubs-spark-build/
+    126  /blog/pro-clubs-magician-build/
+     78  /blog/pro-clubs-spark-build/
      71  /blog/pro-clubs-accelerate-explosive-lengthy-controlled/
      50  /blog/pro-clubs-target-build/
      49  /blog/pro-clubs-maestro-build/
-     41  /blog/pro-clubs-archetypes-explained/
+     43  /blog/pro-clubs-archetypes-explained/
      38  /blog/pro-clubs-finisher-build/
-     37  /blog/pro-clubs-shot-stopper-build/
+     38  /blog/pro-clubs-shot-stopper-build/
+     38  /blog/pro-clubs-progressor-build/
      37  /blog/fc27-the-grounds-pro-clubs-explained/
-     35  /blog/fc27-archetype-changes/
