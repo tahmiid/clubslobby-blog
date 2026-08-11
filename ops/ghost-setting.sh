@@ -41,11 +41,14 @@ process.stdout.write(`export MYSQL_PWD=${q(c.password)} DBUSER=${q(c.user)} DBNA
 
 mysql_q() { mysql -u"$DBUSER" "$DBNAME" -N -B -e "$1"; }
 
-CURRENT=$(mysql_q "SELECT value FROM settings WHERE \`key\`='$KEY';")
-if [[ -z "$CURRENT" ]]; then
+# Count the row rather than test the value: settings like `logo` legitimately
+# hold the empty string, which is not the same as the row being absent.
+ROWS=$(mysql_q "SELECT COUNT(*) FROM settings WHERE \`key\`='$KEY';")
+if [[ "$ROWS" != "1" ]]; then
   echo "REFUSING: no setting named '$KEY' — nothing here creates rows." >&2
   exit 1
 fi
+CURRENT=$(mysql_q "SELECT value FROM settings WHERE \`key\`='$KEY';")
 
 echo "key:      $KEY"
 echo "current:  $CURRENT"

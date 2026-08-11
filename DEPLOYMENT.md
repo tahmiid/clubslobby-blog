@@ -339,17 +339,25 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
    theme change was typed live and left nothing behind to repeat it, and
    retyping a procedure is where the missed backup lives.
 
+   It is installed on the box at `/usr/local/bin/ghost-setting.sh` (since
+   2026-08-11; re-`scp` from `ops/` after editing it here):
+
    ```bash
-   scp -i ~/.ssh/proclubslobby_ed25519 ops/ghost-setting.sh root@91.99.52.207:/root/
    ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
-     'bash /root/ghost-setting.sh --dry-run icon "<value>"'   # prints current + rollback
+     'ghost-setting.sh --dry-run icon "<value>"'   # prints current + rollback
    ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
-     'bash /root/ghost-setting.sh icon "<value>"'
+     'ghost-setting.sh icon "<value>"'
    ```
 
-   It refuses on a key that does not exist, on a dump that fails verification,
-   and on a value that does not stick. No credential is passed in or printed —
-   it reads Ghost's own config on the box.
+   It refuses on a key that does not exist (an *empty* value is fine — `logo`
+   held one for months), on a dump that fails verification, and on a value
+   that does not stick. No credential is passed in or printed — it reads
+   Ghost's own config on the box.
+
+   Used for the brand icon + logo on 2026-08-11 — both slots live; see
+   `assets/brand/README.md` for the two traps (SVG `width`/`height`, and
+   Cloudflare's year-long cache on `content/images`, which means replacing a
+   file requires a new filename).
 
    The procedure it automates, as used by hand for the dark theme on
    2026-08-08:
@@ -451,9 +459,9 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
       dead end: no mail transport, so the reset link went nowhere, and the only
       fix was writing a bcrypt hash into MySQL. SMTP now works (below), so
       **"Forgot password" on `/blog/ghost/` actually delivers.** Do that rather
-      than touching the database. Worth clearing soon: site settings are
-      staff-only, so Ghost Admin is the only supported way to change branding —
-      everything else has to go through MySQL and a restart.
+      than touching the database. Less urgent than it was: branding no longer
+      waits on it (icon + logo applied 2026-08-11 via `ghost-setting.sh`), but
+      the owner login is still the only way into the editor and staff settings.
 - [x] **SMTP — done 2026-08-06.** Resend over `smtp.resend.com:587`, user
       `resend`, password is a Resend API key, `from` is
       `Pro Clubs HQ <noreply@proclubshq.com>`. Lives in
