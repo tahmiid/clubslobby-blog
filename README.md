@@ -8,6 +8,10 @@ runbook for the whole production deployment.
   **Deploying the app** (the React build at `/` and the API at `/api/`) is
   documented in the ClubsUI repo instead — `ClubsUI-main/DEPLOYMENT.md` — so
   each repo owns what it ships.
+- **[MONETIZATION.md](MONETIZATION.md)** — the ad/affiliate plan and the slot
+  map. **Plan only, nothing live**: written before UI polish so ad zones are
+  designed in rather than retrofitted. The one rule it fixes: the blog carries
+  ads, the app does not.
 - `gen/` — article generators (`common.mjs` + `a1`–`a17`, plus `spoke.mjs`
   and the 13 archetype build pages `a18`–`a30` it drives), the publishing
   pipeline (`publish-prod.mjs`, `set-feature-images.mjs`), and `backup.mjs`.
