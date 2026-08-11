@@ -55,10 +55,13 @@ const call = (u, o = {}) => {
 };
 
 const POSTS = [
+  // meta_title/description sharpened 2026-08-11: 228 impressions at 2.2% CTR
+  // in the first GSC export — position ~6 was fine, the snippet wasn't
+  // winning the click. Year in the title, pick-guidance in the description.
   { file: 'a1.html', slug: 'pro-clubs-archetypes-explained', status: 'published',
     title: 'EA FC Pro Clubs Archetypes Explained: All 13, Side by Side',
-    meta_title: 'EA FC Pro Clubs Archetypes: All 13 Explained',
-    meta_description: 'Every Pro Clubs archetype — key attributes, both perks, all three specializations and the exact ratings each one needs to unlock.',
+    meta_title: 'All 13 Pro Clubs Archetypes Explained (FC 26 List)',
+    meta_description: 'Every FC 26 Pro Clubs archetype explained — key attributes, perks, specializations and unlock ratings — plus how to pick the right one for your club.',
     custom_excerpt: 'Browse all 13 archetypes: perks, specializations, and the attribute ratings each specialization requires.',
     tags: ['Guides', 'Archetypes', 'FC 26'] },
   { file: 'a2.html', slug: 'pro-clubs-archetypes-compared', status: 'published',
@@ -73,10 +76,14 @@ const POSTS = [
     meta_description: 'Answer four questions and get your best-fit EA FC Pro Clubs archetype, scored against the real attribute ceilings of all 13 archetypes.',
     custom_excerpt: 'A four-question quiz scored against every archetype’s real attribute ceilings.',
     tags: ['Guides', 'Archetypes', 'Tools', 'FC 26'] },
+  // Retitled 2026-08-11: the query cluster is comparison-shaped ("lengthy vs
+  // controlled vs explosive", "is controlled or explosive better") and the
+  // old title led with the guide, not the question — 175 impressions, 1.1%
+  // CTR. Title now mirrors how the query is actually typed.
   { file: 'a4.html', slug: 'pro-clubs-accelerate-explosive-lengthy-controlled', status: 'published',
-    title: 'Explosive, Lengthy or Controlled: How AcceleRATE Works in Pro Clubs',
-    meta_title: 'Explosive, Lengthy or Controlled — Pro Clubs AcceleRATE Guide',
-    meta_description: 'How AcceleRATE works in EA FC Pro Clubs: the height, Agility and Strength thresholds for Explosive and Lengthy, plus which archetypes can reach each type.',
+    title: 'Lengthy vs Controlled vs Explosive: How AcceleRATE Works in Pro Clubs',
+    meta_title: 'Lengthy vs Controlled vs Explosive: Which Is Best?',
+    meta_description: 'Which AcceleRATE type is best in EA FC Pro Clubs: the exact height, Agility and Strength thresholds for Explosive and Lengthy, plus a live calculator for your build.',
     custom_excerpt: 'Height, Agility and Strength decide whether your pro is Explosive, Lengthy or Controlled — with a live calculator.',
     tags: ['Guides', 'Tools', 'FC 26'] },
 
@@ -211,10 +218,14 @@ const POSTS = [
     meta_description: 'The best Recycler build in EA FC Pro Clubs: level-100 defensive midfielder attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
     custom_excerpt: 'Two finished level-100 defensive midfielders — a Rodri and a Rice — with the AP path and specialization order.',
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+  // meta_title/description sharpened 2026-08-11: the spoke set's highest
+  // impressions (296) at its worst CTR (2.0%) — the boilerplate snippet
+  // didn't answer the maestro queries (specialization, height) the way the
+  // siblings' snippets answer theirs. FC 26 named; the two spec names shown.
   { file: 'a26.html', slug: 'pro-clubs-maestro-build', status: 'published',
     title: 'EA FC Pro Clubs Maestro Build: The Best Level-100 Setup',
-    meta_title: 'Best Pro Clubs Maestro Build: Level 100 Guide',
-    meta_description: 'The best Maestro build in EA FC Pro Clubs: level-100 playmaker attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
+    meta_title: 'Best Maestro Build in FC 26 Pro Clubs (Level 100)',
+    meta_description: 'The best Maestro build for FC 26 Pro Clubs: every level-100 attribute, Maestro+ or Heartbeat, the right height and AcceleRATE, and two real builds to copy.',
     custom_excerpt: 'Two finished level-100 deep playmakers — a Wirtz and a Valverde — with the AP path and specialization order.',
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
   { file: 'a27.html', slug: 'pro-clubs-creator-build', status: 'published',
@@ -241,6 +252,43 @@ const POSTS = [
     meta_description: 'The best Target build in EA FC Pro Clubs: level-100 striker attributes, the AP spending order, the right specialization, and two builds to open in the builder.',
     custom_excerpt: 'Two finished level-100 Targets — a Kane and a Gyökeres — with the AP path and specialization order.',
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
+
+  // a31-a35: the roundup set (2026-08-11), built for the first GSC export's
+  // gaps — "best archetypes" ranked ~20-30 and the position-group queries
+  // ("striker archetypes" ~36) had no page to land on. a31's tiers and every
+  // board number are computed from data/meta-season3.json, a snapshot of the
+  // app's public /api/meta/current; refresh the snapshot and regenerate when
+  // the boards move materially. Evergreen slugs — rewritten per game year.
+  { file: 'a31.html', slug: 'best-pro-clubs-archetypes', status: 'published',
+    title: 'Best Pro Clubs Archetypes: The FC 26 Meta Tier List',
+    meta_title: 'Best Pro Clubs Archetypes: FC 26 Meta Tier List',
+    meta_description: 'Every EA FC Pro Clubs archetype ranked S to B by the live meta board — the no. 1 pick for all seven positions, the scores behind them, and the builds to copy.',
+    custom_excerpt: 'All 13 archetypes ranked S to B by the live meta boards — and the meta pick for every position.',
+    tags: ['Guides', 'Archetypes', 'FC 26'] },
+  { file: 'a32.html', slug: 'pro-clubs-striker-archetypes', status: 'published',
+    title: 'Pro Clubs Striker Archetypes: Finisher, Target or Magician?',
+    meta_title: 'Pro Clubs Striker Archetypes: Which of the 3 to Pick',
+    meta_description: 'The three striker archetypes in EA FC Pro Clubs compared — Finisher, Target and Magician ceilings side by side, the meta board’s verdict, and which fits your game.',
+    custom_excerpt: 'Finisher, Target or Magician — ceilings compared, the board’s verdict, and which one is your game.',
+    tags: ['Guides', 'Archetypes', 'FC 26'] },
+  { file: 'a33.html', slug: 'pro-clubs-midfielder-archetypes', status: 'published',
+    title: 'Pro Clubs Midfielder Archetypes: All Four Compared',
+    meta_title: 'Pro Clubs Midfielder Archetypes: All 4 Compared',
+    meta_description: 'Maestro, Recycler, Creator and Spark side by side — ceilings, perks and signature PlayStyles, the meta board’s CM and CDM verdicts, and which job is yours.',
+    custom_excerpt: 'The conductor, the destroyer, the final ball and the wide threat — which midfield job is yours?',
+    tags: ['Guides', 'Archetypes', 'FC 26'] },
+  { file: 'a34.html', slug: 'pro-clubs-defender-archetypes', status: 'published',
+    title: 'Pro Clubs Defender Archetypes: All Four Compared',
+    meta_title: 'Pro Clubs Defender Archetypes: All 4 Compared',
+    meta_description: 'Progressor, Boss, Marauder and Engine side by side — the meta pairing at centre-back, the two-board Marauder, and which back-line job fits your game.',
+    custom_excerpt: 'Two centre-backs, two fullbacks — including the only archetype topping two meta boards at once.',
+    tags: ['Guides', 'Archetypes', 'FC 26'] },
+  { file: 'a35.html', slug: 'pro-clubs-goalkeeper-archetypes', status: 'published',
+    title: 'Shot Stopper vs Sweeper Keeper: Which Pro Clubs Goalkeeper?',
+    meta_title: 'Shot Stopper vs Sweeper Keeper: Which GK Archetype?',
+    meta_description: 'Pro Clubs’ two goalkeeper archetypes compared: identical saving ceilings, very different jobs. The meta board’s verdict, height ranges, and how to choose.',
+    custom_excerpt: 'Identical saving ceilings, opposite philosophies — pick by your club’s defensive line, not your reflexes.',
+    tags: ['Guides', 'Archetypes', 'FC 26'] },
 
   // PULLED 2026-08-03: the article was built on "archetype swapping is new in
   // FC 27". It is not — archetypes already swap freely in FC 26 with no reset,

@@ -94,7 +94,7 @@ window.addEventListener('scroll',hide,{passive:true});})();
 </script>
 </div>`);
 
-const html = `<p>Darker means a higher ceiling. Defensive archetypes give up scoring, attacking archetypes give up defending, and the midfield hybrids pay a little of both:</p>
+const html = `<p>Brighter means a higher ceiling. Defensive archetypes give up scoring, attacking archetypes give up defending, and the midfield hybrids pay a little of both:</p>
 
 ${widget}
 

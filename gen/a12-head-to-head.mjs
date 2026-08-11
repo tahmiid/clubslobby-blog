@@ -106,7 +106,7 @@ const widget = kg(`<div class="${P}" data-${P}>
   <div><span class="lbl">Archetype B</span><select data-b>${A.map((x) => `<option value="${x.id}"${x.id === DEF_B ? ' selected' : ''}>${esc(x.name)} · ${esc(x.position)}</option>`).join('')}</select></div>
 </div>
 <div data-body>${body(dA, dB)}</div>
-<p class="foot">Attribute ceilings, body ranges, perks and specializations from the ${BRAND} catalog. Bars are drawn on the 40–99 scale; the darker bar marks the higher ceiling.</p>
+<p class="foot">Attribute ceilings, body ranges, perks and specializations from the ${BRAND} catalog. Bars are drawn on the 40–99 scale; the brighter bar marks the higher ceiling.</p>
 <script>
 (function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
 var A=${JSON.stringify(A)},NAMES=${JSON.stringify(NAMES)},CATS=${JSON.stringify(CATS2)};

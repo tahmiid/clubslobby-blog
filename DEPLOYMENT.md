@@ -493,6 +493,14 @@ Rules that matter:
 
 - **Everything inline** — no external CSS, JS, fonts or images. The site is an
   SEO play; nothing may cost page speed.
+- **Widgets are dark, unconditionally** (2026-08-11). They used to default
+  light and follow `prefers-color-scheme`; the site has been forced dark
+  site-wide since 2026-08-08, so light-OS visitors got light cards floating
+  on a dark page. `baseCss` now emits dark tokens only, `rampCss` emits the
+  dark ramp only — which inverts the ramp's reading, so prose must say
+  *brighter* means higher (a2 and a12 were corrected). Its table `th`/`td`
+  guards are load-bearing: the dark-theme code injection forces cell text
+  with `!important` and the theme paints `thead` its own background.
 - **Widget markup stays server-rendered.** The text inside each widget
   (archetype names, attribute numbers, perk descriptions) is the indexed
   content — 1,979 / 1,400 / 482 crawlable words across the three published
@@ -571,3 +579,27 @@ What the factory guarantees:
   own Article schema first, so verification must not stop at the first match.
 - **Keepers are handled**: GK category bars replace the outfield set and the
   AcceleRATE section becomes height/weight.
+
+### The roundup set (a31–a35)
+
+Built 2026-08-11 for the first GSC export's gaps: "best archetypes" ranked
+~20–30 and the position-group queries ("striker archetypes" ~36) had no page
+to land on. One tier list (a31, `best-pro-clubs-archetypes`) plus four
+position pages (a32–a35) from `gen/group.mjs`, a factory in the spoke mould:
+configs are editorial, everything numeric is derived.
+
+- **The tier list's placements are computed, not asserted.**
+  `data/meta-season3.json` is a snapshot of the app's public
+  `GET /api/meta/current`; S = tops a position board, A = makes a top four,
+  B = outside them all. Boards move as builds publish — refresh the snapshot
+  and regenerate rather than editing prose, and expect the tiers to follow.
+- **Archetype icons are hotlinked, not inlined** (`archIcon` in common.mjs) —
+  the app's `/assets/archetypes/<id>.svg` are ~8KB of traced path each and a
+  roundup carries up to twenty; inlining put a31 at 164KB of HTML.
+- **Headings that carry an icon ride inside HTML cards** — Ghost's
+  HTML→Lexical converter strips media from bare headings. Costs the
+  auto-anchor id, which these pages don't use.
+- Covers come from `gen/make-group-feats.py`: the position pages reuse the
+  spoke set's position stills (one visual language per position), the tier
+  list takes the FC 26 studio key art — a posed lineup for a lineup page.
+  The Van Dijk still stays rejected.

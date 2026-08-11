@@ -42,6 +42,15 @@ const MAP = [
     'recycler', 'maestro', 'creator', 'spark', 'finisher', 'target']
     .map((a) => [`feat-spoke-${a}.jpg`, `pro-clubs-${a}-build`,
       `Official EA SPORTS FC 26 in-game art with ${a.replace(/-/g, ' ').toUpperCase()} in large type`]),
+  // a31-a35, the roundup set (gen/make-group-feats.py, 2026-08-11): the four
+  // position pages reuse the spoke set's position stills — deliberate, one
+  // visual language per position — and the tier list takes the FC 26 studio
+  // key art, whose five posed players read as the lineup a tier list is.
+  ['feat-a31.jpg', 'best-pro-clubs-archetypes', 'Official EA SPORTS FC 26 key art with TIER LIST in large type'],
+  ['feat-a32.jpg', 'pro-clubs-striker-archetypes', 'Official EA SPORTS FC 26 art with STRIKERS in large type'],
+  ['feat-a33.jpg', 'pro-clubs-midfielder-archetypes', 'Official EA SPORTS FC 26 art with MIDFIELD in large type'],
+  ['feat-a34.jpg', 'pro-clubs-defender-archetypes', 'Official EA SPORTS FC 26 defenders art with DEFENDERS in large type'],
+  ['feat-a35.jpg', 'pro-clubs-goalkeeper-archetypes', 'Official EA SPORTS FC 26 goalkeeper art with KEEPERS in large type'],
 ];
 
 // Optional filter: `node set-feature-images.mjs a8 a12` assigns only those.

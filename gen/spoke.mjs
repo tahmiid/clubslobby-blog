@@ -189,23 +189,17 @@ ${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}" href="${openUrl(
   // white-space:nowrap and overlaps columns (the a18 v1 bug).
   const stageGrid = kg(`<div class="${P}t">
 <style>
-.${P}t{border:1px solid rgba(11,11,11,.10);border-radius:12px;margin:0 0 1.6em;overflow-x:auto;
+.${P}t{border:1px solid rgba(255,255,255,.10);border-radius:12px;margin:0 0 1.6em;overflow-x:auto;
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .${P}t .g{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(230px,1.8fr) repeat(3,max-content);
   min-width:620px;font-size:13.5px}
 .${P}t .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:#898781;font-weight:600;
   padding:12px 14px 8px}
-.${P}t .c{padding:10px 14px;border-top:1px solid #e1e0d9}
+.${P}t .c{padding:10px 14px;border-top:1px solid #2c2c2a}
 .${P}t .c b{display:block}
 .${P}t .c small{color:#898781}
-.${P}t .buy{color:#52514e}
+.${P}t .buy{color:#c3c2b7}
 .${P}t .n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .${P}t{border-color:rgba(255,255,255,.10)}
-  :root:where(:not([data-theme="light"])) .${P}t .c{border-color:#2c2c2a}
-  :root:where(:not([data-theme="light"])) .${P}t .buy{color:#c3c2b7}}
-:root[data-theme="dark"] .${P}t{border-color:rgba(255,255,255,.10)}
-:root[data-theme="dark"] .${P}t .c{border-color:#2c2c2a}
-:root[data-theme="dark"] .${P}t .buy{color:#c3c2b7}
 </style>
 <div class="g" role="table" aria-label="AP spending order">
 <span class="h">Stage</span><span class="h">Buy</span><span class="h n">AP</span><span class="h n">Total</span><span class="h n">≈ Lvl</span>
@@ -227,18 +221,14 @@ ${stages.map((s, i) => `<span class="c"><b>${i + 1}. ${esc(s.name)}</b><small>${
   // Signature set as gold badges — logos, not names (names stay in alt/title).
   const sigCard = kg(`<div class="${P}s">
 <style>
-.${P}s{border:1px solid rgba(11,11,11,.10);border-radius:12px;padding:18px 20px;margin:0 0 1.6em;
+.${P}s{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:18px 20px;margin:0 0 1.6em;
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .${P}s .l{font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:#898781;margin:0 0 12px}
 .${P}s .row{display:flex;flex-wrap:wrap;gap:10px}
 .${P}s .sb{width:56px;height:56px;border-radius:13px;background:#3a2f10;border:1.5px solid #c9a227;
   display:flex;align-items:center;justify-content:center}
 .${P}s .sb img{width:40px;height:40px}
-.${P}s .cap{margin:12px 0 0;font-size:12.5px;color:#52514e}
-@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .${P}s{border-color:rgba(255,255,255,.10)}
-  :root:where(:not([data-theme="light"])) .${P}s .cap{color:#c3c2b7}}
-:root[data-theme="dark"] .${P}s{border-color:rgba(255,255,255,.10)}
-:root[data-theme="dark"] .${P}s .cap{color:#c3c2b7}
+.${P}s .cap{margin:12px 0 0;font-size:12.5px;color:#c3c2b7}
 </style>
 <p class="l">The ${esc(archName)}'s signature PlayStyles</p>
 <div class="row">
