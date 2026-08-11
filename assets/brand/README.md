@@ -1,36 +1,33 @@
-# Brand assets for Ghost
+# Brand assets — pack v3 (2026-08-11)
 
-The same mark the app uses, copied from `ClubsUI-main/frontend/public/icons/`
-so the blog and the app cannot drift apart. **Copies, not the originals** — the
-app owns them; if the mark changes, it changes there first and comes here after.
+The mark is the **white-HQ monogram over the Emerald Aurora ball** — brand
+pack v3, chosen by the user over the black-HQ alternate because both surfaces
+are permanently dark. This directory preserves the pack's essentials so the
+brand survives the Downloads folder; `BRAND-GUIDE.md` here is the authority
+on palette, minimum sizes and what may never be done to the mark.
 
-| File | What it is | Where it is in Ghost |
+| File | What it is | Where it's deployed |
 |---|---|---|
-| `publication-icon-512.png` | 512×512 PNG of the mark | **Publication icon** — applied 2026-08-11 |
-| `mark.svg` | the vector master (+ `width`/`height`, see below) | **Publication logo** — applied 2026-08-11, uploaded as `pchq-logo.svg` |
+| `pro-clubs-hq-logo-white.svg` | vector master, white HQ (~3MB — archive, never serve) | nowhere, on purpose |
+| `pro-clubs-hq-logo-black.svg` | vector master, black HQ alternate | nowhere yet (light/print) |
+| `pro-clubs-hq-monogram-*.svg` | HQ letters alone, no ball | nowhere yet |
+| `pchq-icon-v3.png` (512) | Ghost **publication icon** | `content/images/2026/08/` |
+| `pchq-logo-v3.png` (256) | Ghost **publication logo** (header + home hero) | `content/images/2026/08/` |
+| `pro-clubs-hq-tokens.css` | palette tokens | reference |
 
-## Both slots are live (2026-08-11)
+The app's copies live in `ClubsUI-main/frontend/public/icons/` (favicon.ico,
+logo-128 for the header `<Logo />`, apple-touch, PWA + maskable set) plus
+`public/og-default.png` — all rasters from the same pack.
 
-Applied via `ops/ghost-setting.sh` (on the box at `/usr/local/bin/`), not Ghost
-Admin — settings are staff-only to the Admin API, so the script's MySQL route
-is the supported path here. Current values:
+Rules that bit us before, still true in v3:
 
-- `icon` → `content/images/2026/08/publication-icon-512.png` — Ghost derives
-  resized versions on the fly (`/size/w256h256/…`), so the DB route loses
-  nothing over an Admin upload.
-- `logo` → `content/images/2026/08/pchq-logo.svg` — renders top-left in the
-  header on every page except home, where the theme hides the header logo and
-  shows the publication logo centered in the hero instead.
+- **Never serve the 3MB vector.** Every deployed asset is a raster sized to
+  its job; the header logo is 256px for a 40px slot.
+- **Cloudflare caches `content/images` for a year** — replacing a brand file
+  means a NEW filename (hence `-v3`), never an overwrite.
+- Ghost settings (`icon`, `logo`) are changed with `ops/ghost-setting.sh`,
+  never by hand.
 
-## Two traps, both hit on 2026-08-11
-
-1. **The SVG needs explicit `width`/`height` attributes.** With only a
-   `viewBox`, Chrome gives the `<img>` no intrinsic size and the theme's
-   `max-height: 40px` header constraint collapses it to 0×0 — markup present,
-   nothing painted. `mark.svg` here now carries `width="1000" height="1000"`;
-   this is display metadata only, the artwork is unchanged, but it means this
-   copy differs from the app's original.
-2. **Cloudflare caches `content/images` for a year.** Re-uploading a fixed
-   file over the same filename changes nothing for visitors. Replace by
-   **renaming** (hence `pchq-logo.svg` on the box) — don't fight the cache.
-   The original `mark.svg` URL on the box was removed for this reason.
+Superseded 2026-08-11: `mark.svg` and `publication-icon-512.png` (the v1
+gradient-circle mark). The old files on the box stay — their URLs are
+year-cached — but nothing references them.

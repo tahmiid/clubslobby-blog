@@ -1,0 +1,15 @@
+:root {
+  --pro-clubs-hq-emerald: #2bcb8c;
+  --pro-clubs-hq-teal: #078d86;
+  --pro-clubs-hq-blue: #1b51b6;
+  --pro-clubs-hq-white: #f9fffe;
+  --pro-clubs-hq-black: #071821;
+  --pro-clubs-hq-night: #051019;
+  --pro-clubs-hq-mist: #e8eef2;
+}
+
+.pro-clubs-hq-loader { width: 96px; height: 96px; object-fit: contain; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pro-clubs-hq-loader[data-animated="true"] { display: none; }
+}
