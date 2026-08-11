@@ -254,6 +254,32 @@ Thresholds worth knowing before they page you: cert < 21 days (acme.sh renews
 at ~30, so 21 means renewal is actually failing), disk > 85%, newest backup
 artefact older than 36h.
 
+### The blog→app funnel (`funnel-report.py`)
+
+The third question monitoring answers is not "is it up" but "is the blog
+doing its job" — added 2026-08-11, first thing built after the initial GSC
+export. The app deliberately ships no telemetry, and it doesn't need any for
+this: blog and app share one origin, so every reader who crosses carries a
+`/blog/` Referer that nginx already logs.
+
+```bash
+ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 'funnel-report.py --days 7'
+```
+
+Per day: human blog views and approximate visitors, **→app crossings** (a GET
+for an app *page* with a blog Referer — widget hydrations are counted apart),
+where crossings land (`/b/…` overwhelmingly), which articles send them, and
+whole-app register/login counts for shape. Deployed copy is
+`/usr/local/bin/funnel-report.py`; tracked source `ops/funnel-report.py` —
+not synced automatically, same rule as the watchdog.
+
+Read it with its caveats, which the report prints on itself: visitor counts
+are (IP, UA) pairs over Cloudflare edge IPs, directional only; nginx keeps
+~14 days, so older days age out; register counts are daily totals, **not**
+attributed to blog sessions — logs cannot do that, and nothing here pretends
+to. Baseline at build time: ~250–290 blog views/day converting to ~28–45
+crossings (≈12%), landing almost entirely on build pages.
+
 ---
 
 ## 8. Backups
