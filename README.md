@@ -8,6 +8,10 @@ runbook for the whole production deployment.
   **Deploying the app** (the React build at `/` and the API at `/api/`) is
   documented in the ClubsUI repo instead — `ClubsUI-main/DEPLOYMENT.md` — so
   each repo owns what it ships.
+- **[ROADMAP-FC27.md](ROADMAP-FC27.md)** — the consolidated plan to the FC 27
+  launch (25 Sep 2026): what shipped against the 5 Aug reviews, the week-by-week
+  to launch, and why the club subscription is a Q4 build rather than a
+  pre-launch one. **Start here for "what should I work on".**
 - **[MONETIZATION.md](MONETIZATION.md)** — the ad/affiliate plan and the slot
   map. **Plan only, nothing live**: written before UI polish so ad zones are
   designed in rather than retrofitted. The one rule it fixes: the blog carries
