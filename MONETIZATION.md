@@ -11,9 +11,12 @@ production as of this date.
 short-form video, subscriptions and sponsorship (§§7–10), the answer is two
 cheap switches and one engine:
 
-1. **Display ads** — apply for AdSense now, switch on at the FC 27 spike.
+1. **Display ads** — apply to **Journey by Mediavine**, not AdSense (§7: the
+   existing AdSense account's country cannot be changed, and Journey takes
+   publishers from 1,000 sessions with no AdSense account needed). Switch on at
+   the FC 27 spike.
 2. **Affiliate links** — apply now, live before 18 September.
-3. **The visual guide format** (§9) — the only work here that compounds.
+3. **The visual guide format** (§10) — the only work here that compounds.
 
 Everything else — sponsorship, subscription, an AI product, a video pipeline —
 is deferred behind traffic. The honest position is that at ~250 views/day no
@@ -195,12 +198,33 @@ can cost both, so they must not overlap:
 3. Apply fresh with the correct country. The site clears the usual bars — 34
    articles, real search traffic, and a privacy policy already exists.
 
-**If that path stalls, AdSense is not the only network.** Ezoic has no traffic
-minimum and would sidestep the account problem entirely — but it injects
-significantly more script than AdSense, and this site's only acquisition
-channel is search. Measure Core Web Vitals before and after, and treat a
-ranking drop as disqualifying. Media.net is the other fallback. Mediavine and
-Raptive pay multiples of all of them but are gated on traffic (§8).
+### The better answer: don't wait for AdSense at all
+
+**Journey by Mediavine takes publishers from 1,000 monthly sessions**, needs no
+existing AdSense account, and no prior ad income. We clear that bar today. It
+is Mediavine's entry product, so the ad tech is the performance-conscious kind
+— which matters more here than RPM, because search is the only acquisition
+channel this site has.
+
+**The catch is exclusivity: Journey requires full control of programmatic
+inventory**, so AdSense cannot run alongside it. Anything adding lines to
+`ads.txt` breaks the terms. Right now that costs us nothing — AdSense is
+blocked anyway and was only worth $25–50/month — and crucially **affiliate
+links and direct sponsorship are explicitly carved out**, so §5 and the reel
+sponsorship idea are unaffected. Read the actual terms before signing rather
+than trusting this summary, and note that some publishers report leaving
+Journey because AdSense paid them better — so measure, don't assume.
+
+**Ezoic is no longer an option.** It raised its minimum from 10k to **250k
+users/month in February 2026**. Any guide recommending it for small sites
+predates that change.
+
+**Media.net** remains a viable non-exclusive alternative for sites this size,
+and our 51% US+UK traffic suits its demand. Worth holding as the backup if
+Journey's exclusivity turns out to be the wrong trade.
+
+The old AdSense account should still be closed as housekeeping, and reopening
+it keeps the option alive — but it is **no longer the critical path**.
 
 ---
 
@@ -213,11 +237,12 @@ Raptive pay multiples of all of them but are gated on traffic (§8).
    polish.
 2. **At the FC 27 traffic spike.** Turn on slots A and D only. Measure real
    RPM and Core Web Vitals for 30 days before adding B or C.
-3. **At ~50k sessions/month.** Apply to a premium network — Mediavine and
-   Raptive both pay multiples of AdSense but have entry thresholds (roughly
-   50k sessions and 100k pageviews respectively; **verify at decision time,
-   these change**). This is the first point where ad revenue is a real line
-   item.
+3. **At ~25k pageviews/month — closer than it used to be.** Raptive dropped its
+   minimum to **25,000 pageviews in October 2025**; Mediavine's main tier wants
+   **50,000 monthly sessions**. A 5–10× FC 27 spike on ~8k pageviews clears the
+   Raptive bar, so this is a realistic post-spike upgrade rather than a distant
+   one — the first point where ad revenue is a real line item. Thresholds move
+   (Ezoic's jumped 25× in a single month); **re-verify before applying.**
 4. **Once the audience is provable.** Sell one native reel sponsorship
    directly and compare its rate against a month of display.
 
@@ -343,8 +368,14 @@ classic version of this mistake.
 
 Both switches have lead time and neither commits us to anything:
 
-- [ ] Close the old AdSense account, then apply fresh (§7).
-- [ ] Apply to Awin and one other affiliate route (§5).
+- [ ] Rewrite `/privacy` — it currently says there is no advertising, which
+      contradicts every application a reviewer will read (§4). This gates the
+      rest.
+- [ ] **Apply to Journey by Mediavine** (§7) — read the exclusivity terms
+      first. This replaces waiting on AdSense.
+- [ ] Apply to Awin and one other affiliate route (§5). Unaffected by the
+      exclusivity above.
+- [ ] Close the old AdSense account as housekeeping — no longer urgent.
 - [ ] Build the controller diagram component and write ten situation cards for
       one archetype (§10). **Ten cards is the measurement that matters** — it
       tells us whether a full archetype is an evening or a week, and therefore
