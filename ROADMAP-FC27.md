@@ -25,6 +25,44 @@ Companion documents: `MONETIZATION.md` (ad/affiliate slot map and sequence),
 
 The machine works. What it does not yet do is take money.
 
+### Update — 12 Aug, second GSC export
+
+The table above is the 11 Aug picture. One week of real data changes three
+lines of it, and two of the changes matter more than anything else in §5.
+
+| Measure | 11 Aug | 12 Aug | |
+|---|---|---|---|
+| Blog views/day | ~250–290 "and climbing" | peaked **287** on the 9th, now **109–152** | **falling, not climbing** |
+| Registrations/day | ~1 | **~1.5** (13 accounts total) | 3 on the 12th, **all via Google** |
+| Blog→app crossing | ~12% | **12.8%** | holds |
+| Search | position ~5 | 4,485 impressions · 151 clicks · **3.37%** · position 4.9 | |
+
+**Traffic is decaying, and publishing five articles on the 11th produced no
+visible bump.** That is the initial indexing surge wearing off, and it is the
+clearest possible argument for §5's "stop batch-publishing" item — which is
+still not done.
+
+**Google SSO paid for itself immediately.** Signups tripled on its first full
+day. Related: the funnel report had been reading zero registrations since SSO
+shipped, because `/auth/google` answered 200 for both sign-up and sign-in;
+fixed 12 Aug (`DEPLOYMENT.md` §7a).
+
+**Mobile CTR is 6.1%, desktop is 1.4%** at the same average position — a 4×
+gap that is a titles-and-snippets problem, not a ranking one. Acted on the
+same day: four titles rewritten, all 13 spoke descriptions now name the two
+real players each one builds, and tag archives are `noindex`.
+
+Also learned and not yet acted on:
+
+- **Real-player queries are an uncovered cluster with proven demand.** "van
+  dijk build fc 26" converted at 100% off a single impression; salah, ronaldo,
+  rodrygo, messi and usain bolt all drew impressions with nothing aimed at
+  them. Cheapest new content on the board.
+- **The 264 `/b/` pages are thin content, not an opportunity.** 955
+  impressions, 8 clicks, ranking 1.3–3 — and GSC reports *no queries* for most
+  of them, meaning they rank first for phrases nobody searches. Do not invest
+  in optimising them.
+
 ---
 
 ## 2. Scorecard against the 5 Aug reviews
@@ -191,17 +229,23 @@ starts with something shippable before 18 September.
 
 ## 7. Metrics that decide things
 
-| Metric | Today | What it gates |
-|---|---|---|
-| Blog views/day | ~250–290 | Ad timing; premium-network eligibility |
-| Blog→app crossing | ~12% | Whether content CTAs work |
-| Registrations/day | ~1 | Everything downstream; the honest health number |
-| Newsletter subscribers | 0 | The owned audience; sponsorship inventory |
-| Squads created | n/a | Whether the club thesis has any demand at all |
-| Clubs waitlist | n/a | Whether to build clubs in Q4 |
+| Metric | 11 Aug | 12 Aug | What it gates |
+|---|---|---|---|
+| Blog views/day | ~250–290 | **109–152, falling** | Ad timing; premium-network eligibility |
+| Search CTR | — | **3.37%** (mobile 6.1 / desktop 1.4) | The cheapest lever there is |
+| Blog→app crossing | ~12% | 12.8% | Whether content CTAs work |
+| Registrations/day | ~1 | **~1.5** | Everything downstream; the honest health number |
+| Newsletter subscribers | 0 | 0 | The owned audience; sponsorship inventory |
+| Squads created | n/a | n/a | Whether the club thesis has any demand at all |
+| Clubs waitlist | n/a | n/a | Whether to build clubs in Q4 |
 
 Re-run `ops/funnel-snapshot.sh` weekly. The 11 Aug snapshot is the baseline for
-the reel and Google SSO.
+the reel and Google SSO; 12 Aug is the baseline for the title and description
+rewrites — **check those against it around 20 Aug**, once Google has recrawled.
+
+One caveat carried by every snapshot before 13 Aug: Google signups were logged
+as 200 and counted as logins, so `reg` understates and `login` overstates on
+11–12 Aug. The `goog` column is meaningful from 13 Aug on.
 
 ---
 

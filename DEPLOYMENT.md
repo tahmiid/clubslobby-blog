@@ -285,6 +285,35 @@ Because rotation forgets after two weeks, **snapshots live in the repo**:
 `reports/funnel/YYYY-MM-DD.txt`; commit it. One a week keeps the history
 comparable forever; the first, 2026-08-11, is the baseline.
 
+#### The report only sees what the log distinguishes — a worked failure
+
+Google SSO shipped 2026-08-11 through a new endpoint, `/api/auth/google`,
+which answered **200 whether it created an account or signed one in**. This
+report counts registrations by watching `/api/auth/register`, so for two days
+it printed **zero new users while the database gained four** — the number the
+whole roadmap steers by, silently reading empty. Nothing errored. It surfaced
+only because the user mentioned seeing new accounts in production.
+
+Fixed on both sides, 2026-08-12, and the fix is a **cross-repo contract**:
+
+- **App** — `/auth/google` now returns **201 when it creates an account**, 200
+  when it signs one in. Linking a password account to Google is a sign-in, not
+  a registration. `backend/tests/test_auth_google.py` pins this; the docstring
+  explains why it is load-bearing rather than cosmetic.
+- **Blog** — this report splits on that status, and the table gained a `goog`
+  column: the subset of `reg` that arrived through Google.
+
+Two rules that fall out of it, worth applying to anything measured this way:
+
+1. **A new auth path is added here in the same change.** There is no test that
+   can catch its absence — the metric just goes quiet.
+2. **Prefer a distinguishing status code over inferring intent from a path.**
+   One path can serve two jobs, and an access log cannot tell which it did.
+
+History cannot be recovered: signups on 11–12 Aug were logged as 200 and count
+as logins in every snapshot taken before the fix. The `goog` column is
+meaningful from **13 Aug** onward.
+
 ---
 
 ## 8. Backups

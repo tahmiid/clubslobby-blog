@@ -41,6 +41,29 @@ the blog's first week of real search traffic:
 | Blog → app crossing rate | ~12% |
 | Registrations | ~1/day |
 
+**Re-measured 12 Aug — the sizing above was the peak, not the level.** A second
+GSC export plus Cloudflare Web Analytics:
+
+| Measure | 12 Aug | vs above |
+|---|---|---|
+| Blog views/day | **109–152** (peaked 287 on the 9th) | **falling** |
+| Cloudflare, whole domain, 7 days | **634 visits · 1,190 page views** | ~5,100/month, not 8,000 |
+| Search | 4,485 impressions · 151 clicks · **3.37%** · position 4.9 | |
+| Registrations | **~1.5/day** (13 accounts total) | Google SSO tripled the daily rate |
+
+**What this does to the ad plan: nothing structural, but halve the estimate.**
+At ~5,100 monthly page views display is worth **$15–30/month**, not $25–50.
+Journey's floor is 1,000 sessions/month and we sit near 2,700, so we still
+qualify comfortably — apply anyway, because the switch is nearly free to run
+and the FC 27 spike is the event that matters. A 5–10× spike on 5,100 lands at
+25,000–51,000 page views, which clears Raptive's 25,000 threshold (§8).
+
+**The pre-ads Core Web Vitals baseline was captured the same day** (Cloudflare,
+7 days to 12 Aug): page load 847ms, INP and CLS almost entirely green, **LCP
+carrying a visible amber and red tail already**. That is the "before" for the
+30-day measurement in §8 — screenshot it before the first ad renders, because
+this reading cannot be recovered afterwards.
+
 **Honest revenue estimate at this size: $25–50/month** after ad-blocking.
 Gaming is a low-RPM niche, mobile pays less than desktop, and Pro Clubs
 players block ads at well above average rates. Halve any published RPM

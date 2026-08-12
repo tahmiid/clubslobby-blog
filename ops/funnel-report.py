@@ -22,6 +22,19 @@
 # - IPs are Cloudflare edge addresses (real client IPs are not logged), so
 #   "visitors" = distinct (IP, UA) pairs — directional, not exact.
 # - Rotation keeps ~14 days. Older days silently age out of the report.
+#
+# A third caveat, learned the hard way on 2026-08-12: **this report only sees
+# what the access log distinguishes.** Google SSO shipped on the 11th through
+# a new endpoint, `/api/auth/google`, which answered 200 whether it created an
+# account or signed one into an existing one. Registrations here read zero for
+# two days while the database gained four — and nothing failed, nothing was
+# logged as an error, the number just went quiet. It was caught because the
+# user happened to mention seeing new accounts.
+#
+# So: when an auth path is added, added here in the same change. And prefer
+# giving the API a distinguishing status code (that endpoint now returns 201
+# on create) over inferring intent from a path — a path can serve two jobs,
+# and a log cannot tell which one it did.
 import argparse
 import gzip
 import re
@@ -113,6 +126,25 @@ def main():
                         days[day]['registers'] += 1
                     elif path == '/api/auth/login':
                         days[day]['logins'] += 1
+                    elif path == '/api/auth/google':
+                        # One endpoint doing both jobs. It answered 200 to
+                        # each of them until 2026-08-12, so this report read
+                        # zero new users for the two days after SSO shipped
+                        # while the database gained four — the headline number
+                        # silently empty, with nothing broken enough to notice.
+                        #
+                        # `app/api/auth.py` now returns **201 when it created
+                        # an account** and 200 when it signed one in. Linking
+                        # a password account to Google counts as a sign-in:
+                        # that person already counted the day they registered.
+                        # The status code is the only part of this exchange an
+                        # access log can see, so the contract is load-bearing
+                        # across both repos — a test in the app pins it.
+                        if status == 201:
+                            days[day]['registers'] += 1
+                            days[day]['google_reg'] += 1
+                        else:
+                            days[day]['logins'] += 1
                     continue
                 if r['method'] != 'GET' or status >= 400:
                     continue
@@ -157,9 +189,12 @@ def main():
     print(f'Blog→app funnel — {HOST}  ({all_days[0]} → {all_days[-1]}, '
           f'bots excluded)')
     print('"Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — '
-          'directional, not exact.\n')
+          'directional, not exact.')
+    print('"goog" is the subset of "reg" that signed up through Google '
+          '(201 on /auth/google).\n')
     hdr = (f'{"day":<12}{"blog views":>11}{"blog vis.":>10}{"→app":>6}'
-           f'{"app views":>10}{"app vis.":>9}{"hydr.":>7}{"reg":>5}{"login":>7}')
+           f'{"app views":>10}{"app vis.":>9}{"hydr.":>7}{"reg":>5}'
+           f'{"goog":>6}{"login":>7}')
     print(hdr)
     print('-' * len(hdr))
     tot = Counter()
@@ -171,11 +206,12 @@ def main():
         print(f'{d:<12}{c["blog_views"]:>11}{len(blog_visitors[d]):>10}'
               f'{c["crossings"]:>6}{c["app_views"]:>10}'
               f'{len(app_visitors[d]):>9}{c["hydrations"]:>7}'
-              f'{c["registers"]:>5}{c["logins"]:>7}')
+              f'{c["registers"]:>5}{c["google_reg"]:>6}{c["logins"]:>7}')
     print('-' * len(hdr))
     print(f'{"total":<12}{tot["blog_views"]:>11}{tot["blog_vis"]:>10}'
           f'{tot["crossings"]:>6}{tot["app_views"]:>10}{tot["app_vis"]:>9}'
-          f'{tot["hydrations"]:>7}{tot["registers"]:>5}{tot["logins"]:>7}')
+          f'{tot["hydrations"]:>7}{tot["registers"]:>5}'
+          f'{tot["google_reg"]:>6}{tot["logins"]:>7}')
     if tot['ref_tagged']:
         print(f'\n(ref=proclubshq.com tagged app hits in range: '
               f'{tot["ref_tagged"]} — subset/overlap of →app)')
