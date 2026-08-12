@@ -335,6 +335,32 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 
 ## 10. Gotchas
 
+0. **The Casper theme carries one local edit, and an upgrade will revert it.**
+   `content/themes/casper/default.hbs` has a hand-added line immediately before
+   `{{ghost_head}}`:
+
+   ```hbs
+   {{#is "tag"}}<meta name="robots" content="noindex, follow" />{{/is}}
+   ```
+
+   Added 2026-08-12. Tag archives were ranking *against* the articles they
+   list — `/blog/tag/fc-26/` alone had **214 impressions and zero clicks** in
+   GSC, `/blog/tag/archetypes/` another 70. `noindex, follow` drops them from
+   results while still passing link equity to the posts.
+
+   This is a stock Casper file, so **any theme or Ghost upgrade silently
+   removes it.** A timestamped `.bak-*` sits beside it. After any upgrade,
+   re-add the line, `systemctl restart ghost_clubs27-com`, and verify:
+
+   ```bash
+   curl -s https://proclubshq.com/blog/tag/fc-26/ | grep -o '<meta name="robots"[^>]*>'   # expect noindex
+   curl -s https://proclubshq.com/blog/pro-clubs-magician-build/ | grep -c 'name="robots"' # expect 0
+   ```
+
+   Author pages and `/blog/page/N/` are the same class of problem and are
+   **not** covered yet — `{{#is "author"}}` / `{{#is "paged"}}` if that becomes
+   worth doing.
+
 1. **Ghost's Admin API base is `https://proclubshq.com/blog/ghost/api/admin`.**
    Subdirectory install: `127.0.0.1:2368/ghost/api/admin` 404s, and
    `127.0.0.1:2368/blog/ghost/api/admin` 301s to canonical. Use the public URL.

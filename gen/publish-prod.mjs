@@ -80,9 +80,15 @@ const POSTS = [
   // controlled vs explosive", "is controlled or explosive better") and the
   // old title led with the guide, not the question — 175 impressions, 1.1%
   // CTR. Title now mirrors how the query is actually typed.
+  //
+  // 2026-08-12, second pass: 274 impressions at 0.73%, position 6.3. Matching
+  // the phrase was not enough — neither "Pro Clubs" nor the year appeared,
+  // and they are in most of the 14 variants. "Which Is Best?" also promises
+  // an argument where the queries ("is controlled or explosive better") want
+  // a decision.
   { file: 'a4.html', slug: 'pro-clubs-accelerate-explosive-lengthy-controlled', status: 'published',
     title: 'Lengthy vs Controlled vs Explosive: How AcceleRATE Works in Pro Clubs',
-    meta_title: 'Lengthy vs Controlled vs Explosive: Which Is Best?',
+    meta_title: 'Lengthy vs Controlled vs Explosive in FC 26 Pro Clubs',
     meta_description: 'Which AcceleRATE type is best in EA FC Pro Clubs: the exact height, Agility and Strength thresholds for Explosive and Lengthy, plus a live calculator for your build.',
     custom_excerpt: 'Height, Agility and Strength decide whether your pro is Explosive, Lengthy or Controlled — with a live calculator.',
     tags: ['Guides', 'Tools', 'FC 26'] },
@@ -94,9 +100,15 @@ const POSTS = [
     custom_excerpt: 'Clubs is not being removed — it is being absorbed. Every claim marked by where it came from, filterable by how solid it is.',
     tags: ['News', 'FC 27'] },
 
+  // Retitled 2026-08-12: 236 impressions at 1.27%, position 6.3. The article
+  // has a definitive answer — Clubs skips PS4, Xbox One and the original
+  // Switch — and the old title hid it behind a question mark. On a yes/no
+  // query, stating the answer raises clicks rather than satisfying them: it
+  // proves we know, and the reader still needs what to do about it. Kept
+  // short deliberately; 80% of clicks are mobile, where titles truncate hard.
   { file: 'a6.html', slug: 'fc27-clubs-platforms-ps4-xbox-one-switch', status: 'published',
     title: 'Can You Play FC 27 Clubs on PS4, Xbox One or Switch?',
-    meta_title: 'FC 27 Clubs on PS4, Xbox One & Switch — Can You Play?',
+    meta_title: 'Can You Play FC 27 Clubs on PS4 or Xbox One? (No)',
     meta_description: 'The Grounds and the full Clubs experience are PS5, Xbox Series X|S, PC and Switch 2 only. What last-gen players get in EA FC 27, and what to do about it.',
     custom_excerpt: 'The Grounds and full Clubs skip PS4, Xbox One and the original Switch. Check your platform before you pre-order.',
     tags: ['News', 'FC 27'] },
@@ -153,15 +165,23 @@ const POSTS = [
     meta_description: 'The full EA FC Pro Clubs level table — AP per level, PlayStyle slots, signature perks, PlayStyle+ upgrades and card tiers, in an interactive explorer.',
     custom_excerpt: 'The complete 1–100 schedule: AP, PlayStyle slots, signature perks, PlayStyle+ and card tiers.',
     tags: ['Guides', 'Tools', 'FC 26'] },
+  // Retitled 2026-08-12: 126 impressions, position 3.4, ZERO clicks — the
+  // worst ratio on the site. Ranking is done; the title was the whole problem.
+  // "Priced" is not a word anyone searches, and the year was missing while
+  // "fc26" appears throughout the query data.
   { file: 'a11.html', slug: 'pro-clubs-attribute-upgrade-costs', status: 'published',
     title: 'Pro Clubs AP Costs: What Every Attribute Upgrade Really Costs',
-    meta_title: 'Pro Clubs AP Costs: Every Attribute Upgrade Priced',
+    meta_title: 'FC 26 Pro Clubs AP Costs: What Every Upgrade Costs',
     meta_description: 'The full EA FC Pro Clubs AP cost curve — four tiers, per-archetype pricing, and a calculator for any upgrade. You earn 3,167 AP; spending it well is the game.',
     custom_excerpt: 'The four cost tiers, per-archetype pricing, and a calculator that prices any upgrade.',
     tags: ['Guides', 'Tools', 'FC 26'] },
+  // Retitled 2026-08-12: 187 impressions, position 4.8, ZERO clicks. "Any Two"
+  // sells the tool's mechanic; nobody searches for the ability to compare two
+  // things. The queries are "pro clubs archetypes" and "all pro clubs
+  // archetypes" — so lead with the count, which is what they are asking for.
   { file: 'a12.html', slug: 'pro-clubs-archetypes-head-to-head', status: 'published',
     title: 'Pro Clubs Archetypes Head to Head: Compare Any Two',
-    meta_title: 'Pro Clubs Archetype Comparison: Any Two, Side by Side',
+    meta_title: 'Pro Clubs Archetype Comparison: All 13 Side by Side',
     meta_description: 'Compare any two EA FC Pro Clubs archetypes side by side — attribute ceilings, perks, specializations and body ranges — plus the closest and furthest pairs in the game.',
     custom_excerpt: 'Any two archetypes side by side: ceilings, perks, specializations and body ranges.',
     tags: ['Guides', 'Archetypes', 'Tools', 'FC 26'] },
