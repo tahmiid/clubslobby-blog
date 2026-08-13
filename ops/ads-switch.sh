@@ -36,7 +36,12 @@ END='<!-- pchq-ads:end -->'
 MODE="${1:-}"
 DRY=""
 [[ "${2:-}" == "--dry-run" ]] && DRY="--dry-run"
-[[ "$MODE" =~ ^(on|off|status)$ ]] || { echo "usage: $0 {on|off|status} [--dry-run]" >&2; exit 2; }
+[[ "$MODE" =~ ^(on|verify|off|status)$ ]] || {
+  echo "usage: $0 {on|verify|off|status} [--dry-run]" >&2
+  echo "  verify  the loader script alone — no slots, no ads. What AdSense's" >&2
+  echo "          'connect your site' review needs to find on the page." >&2
+  exit 2
+}
 
 cd "$GHOST_DIR"
 eval "$(node -e '
@@ -50,12 +55,17 @@ process.stdout.write(`export MYSQL_PWD=${q(c.password)} DBUSER=${q(c.user)} DBNA
 CURRENT=$(mysql -u"$DBUSER" "$DBNAME" -N -B --raw -e \
   "SELECT value FROM settings WHERE \`key\`='$KEY';")
 
-if grep -qF "$BEGIN" <<<"$CURRENT"; then STATE=on; else STATE=off; fi
+# Three states, not two: the loader can be live for AdSense's site review
+# while no slot is filled and no ad renders.
+if ! grep -qF "$BEGIN" <<<"$CURRENT"; then STATE=off
+elif grep -q 'pchq-ad\[data-ad' <<<"$CURRENT"; then STATE=on
+else STATE=verify; fi
 
 if [[ "$MODE" == status ]]; then
   echo "ads: $STATE"
+  [[ "$STATE" == verify ]] && echo "  (loader only — the review can see it; nothing renders)"
   echo "$KEY: ${#CURRENT} chars"
-  [[ "$STATE" == on ]] && sed -n "/${BEGIN//\//\\/}/,/pchq-ads:end/p" <<<"$CURRENT" | grep -o 'ca-pub-[0-9X]*' | head -1
+  [[ "$STATE" != off ]] && sed -n "/${BEGIN//\//\\/}/,/pchq-ads:end/p" <<<"$CURRENT" | grep -o 'ca-pub-[0-9X]*' | head -1
   exit 0
 fi
 
@@ -75,10 +85,32 @@ if [[ "$MODE" == off ]]; then
   exec ghost-setting.sh $DRY "$KEY" "$STRIPPED"
 fi
 
-# ── on: validate the block before it can reach a live page ──────────────────
 [[ -f "$BLOCK" ]] || { echo "REFUSING: no $BLOCK" >&2; exit 1; }
 BODY=$(cat "$BLOCK")
 
+# ── verify: the loader alone ────────────────────────────────────────────────
+# A hosted AdSense account (one created through YouTube or AdMob) cannot serve
+# ads on your own site and has no Ads page to create units on, so there are no
+# unit ids to fill in yet. What it does need is the loader on the live site for
+# the "connect your site" review. That is this mode: the same publisher id from
+# the same file, and nothing else — no slot CSS, so no height is reserved for
+# an ad that cannot arrive, and no filler, so nothing is inserted.
+if [[ "$MODE" == verify ]]; then
+  PUB=$(grep -o 'ca-pub-[0-9]\+' <<<"$BODY" | head -1)
+  [[ -n "$PUB" ]] || { echo "REFUSING: no real publisher id in $BLOCK" >&2; exit 1; }
+  LOADER=$(grep -F 'pagead2.googlesyndication.com' <<<"$BODY" | head -1)
+  [[ -n "$LOADER" ]] || { echo "REFUSING: no loader script line in $BLOCK" >&2; exit 1; }
+  echo "turning ads to VERIFY for $PUB (loader only — no slot renders)"
+  exec ghost-setting.sh $DRY "$KEY" "$STRIPPED
+
+$BEGIN — verify mode, managed by ops/ads-switch.sh.
+     The loader only: AdSense's site review needs to find it, and no slot is
+     filled, so nothing renders. \`ads-switch.sh on\` is the real switch. -->
+$LOADER
+$END"
+fi
+
+# ── on: validate the block before it can reach a live page ──────────────────
 if grep -qE 'ca-pub-X+|SLOT_[A-D]_ID' <<<"$BODY"; then
   echo "REFUSING: $BLOCK still has placeholders." >&2
   echo "  Fill in from AdSense: the publisher id (ca-pub-…) and one unit id per live slot." >&2

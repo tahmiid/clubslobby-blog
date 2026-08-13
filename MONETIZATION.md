@@ -215,10 +215,42 @@ for the rate, not the total, and don't let it displace §9.
 
 ## 7a. AdSense, and what only you can do (2026-08-13)
 
-The account is verified, so §7 below is history — kept because the reasoning
-about exclusivity still decides what happens if AdSense underperforms.
+> ### The account is hosted, and cannot serve ads on this site yet
+>
+> Found the same afternoon: the AdSense sidebar shows only **Home, Reports,
+> Payments, Account, Feedback** — no **Sites**, no **Ads**, no **Privacy &
+> messaging**. That is Google's own diagnostic for a **hosted account**, one
+> created through YouTube or AdMob: *"If you see a Sites page in your AdSense
+> account, it's already upgraded. If not, your account is still the hosted
+> AdSense for YouTube version."* A hosted account may only serve on Google's
+> own properties.
+>
+> So "verified" was the address/identity verification, not permission to run
+> ads on `proclubshq.com`. **Publisher id `pub-7746895194950296` is real and
+> correct**; the account it belongs to just isn't upgraded.
+>
+> **Upgrade it at `adsense.google.com/start`** with the same Google account:
+> Get started → Continue → enter `https://proclubshq.com` → Start using
+> AdSense → then complete *payment information* and *connect your site*.
+> Review is "a few days, in some cases 2–4 weeks".
+>
+> **Do not create a second account.** One per publisher is policy, and two
+> overlapping accounts can cost both — the same trap §7 records.
+>
+> **Check the payments profile country first.** §7's original blocker was an
+> AdSense payments profile whose country cannot be changed, and this is
+> plausibly that same account. The country is fixed at creation because it
+> decides which Google entity the contract sits with. If it is wrong, three
+> weeks of review ends at a payout that cannot be made — so read it before
+> spending the time, not after.
+>
+> **Timing.** 2–4 weeks against an FC 27 spike on 25 September leaves no
+> slack. Journey by Mediavine needs no AdSense account at all (§7) and remains
+> the fallback if the upgrade stalls or the country is wrong.
 
-**Three things need the dashboard, and no script can do them.**
+**Three things need the dashboard, and no script can do them.** The first two
+only become possible *after* the upgrade above — the menus they live in do not
+exist on a hosted account.
 
 1. **The publisher id** (`ca-pub-…`), from *Account → Settings → Account
    information*. It goes in exactly two places: `ops/adsense-block.html`
@@ -261,8 +293,26 @@ Everything below runs against production, and every step is reversible.
 > the one failure here with a regulator attached. **`/privacy` naming AdSense
 > is on `dev` and undeployed as of 2026-08-13.**
 
+**Phase 1 — get the account upgraded** (§7a). The review has to find the
+loader on the live site, so this phase puts it there and nothing else. No slot
+is filled, no height is reserved, nothing renders.
+
 ```bash
-# 1. Fill in the ids — publisher id and one unit id per live slot.
+# Deploy the app first: /ads.txt and the AdSense-naming /privacy both ride
+# that build, and a reviewer reads the policy.
+ssh clubs 'ads-switch.sh verify --dry-run'
+ssh clubs 'ads-switch.sh verify'
+curl -s https://proclubshq.com/blog/ | grep -c adsbygoogle   # 1
+```
+
+Then apply at `adsense.google.com/start` and wait. `ads-switch.sh off` backs
+it out at any point.
+
+**Phase 2 — turn ads on**, once **Ads** and **Privacy & messaging** have
+appeared in the sidebar and the two units exist.
+
+```bash
+# 1. Fill in the unit ids (the publisher id is already in).
 $EDITOR ops/adsense-block.html
 scp -i ~/.ssh/proclubslobby_ed25519 ops/adsense-block.html ops/ads-switch.sh \
     root@91.99.52.207:/usr/local/bin/
@@ -274,6 +324,12 @@ node gen/a18-magician-build.mjs   # …and the rest, then the usual Ghost push
 ssh clubs 'ads-switch.sh on --dry-run'
 ssh clubs 'ads-switch.sh on'
 ```
+
+**Watch for Auto ads switching themselves on** at approval. Google may enable
+them per-site by default, and Auto ads place their own inventory wherever they
+like — over widgets, above the lead tool, in the middle of an argument —
+which is precisely what §3's slot map exists to prevent. Turn them off for
+this site and let the slots govern placement.
 
 `ads-switch.sh` refuses rather than guesses. It will not apply a block that
 still has placeholders, one where the CSS's reserved-height list and the JS's
@@ -500,10 +556,15 @@ Both switches have lead time and neither commits us to anything:
 - [x] ~~Apply to Journey by Mediavine~~ — **superseded 2026-08-13** (§7a).
       Still the fallback if measured AdSense RPM disappoints; the exclusivity
       reasoning in §7 is what to re-read then.
-- [ ] **Fill in the three AdSense values** (§7a) — publisher id, unit ids, and
-      the European regulations message. Nothing else blocks the switch.
-- [ ] **Create `frontend/public/ads.txt` in the app repo** once the publisher
-      id exists (§7a). Deliberately not stubbed.
+- [ ] **Upgrade the hosted AdSense account** (§7a) — `adsense.google.com/start`.
+      Check the payments profile country *before* starting. This blocks
+      everything else about ads, and nothing can be done about it from here.
+- [x] ~~Publisher id~~ — `pub-7746895194950296`, in `ops/adsense-block.html`
+      and the app's `frontend/public/ads.txt`.
+- [ ] **Unit ids and the European regulations message** — impossible until the
+      upgrade lands; the menus don't exist on a hosted account.
+- [ ] **Deploy the app** so `/ads.txt` and the AdSense-naming `/privacy` are
+      live, then `ads-switch.sh verify` so the review can see the loader.
 - [ ] Apply to Awin and one other affiliate route (§5). Unaffected by any of
       the above.
 - [ ] Close the old AdSense account as housekeeping — no longer urgent.
