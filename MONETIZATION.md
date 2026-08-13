@@ -252,6 +252,15 @@ authorised to sell this inventory. A wrong one is worse than none.
 
 Everything below runs against production, and every step is reversible.
 
+> **The app deploys before the switch flips**, and this is not a preference.
+> Two things a reader can check live in that repo — `/privacy`, which must name
+> Google and not Mediavine, and `/ads.txt`, which AdSense fetches to decide
+> whether anyone may sell this inventory — reach production only through the
+> app's own deploy (`tahmiid/Clubs27`, `DEPLOYMENT.md` → Frontend). Flip first
+> and the site serves ads while the policy names the wrong company, which is
+> the one failure here with a regulator attached. **`/privacy` naming AdSense
+> is on `dev` and undeployed as of 2026-08-13.**
+
 ```bash
 # 1. Fill in the ids — publisher id and one unit id per live slot.
 $EDITOR ops/adsense-block.html
