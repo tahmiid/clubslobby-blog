@@ -316,6 +316,55 @@ meaningful from **13 Aug** onward.
 
 ---
 
+## 7c. The author is BuildMaster, and that is a privacy setting
+
+Changed 2026-08-13 at the owner's request: **the blog must not publish their
+real name or a photograph of their face.** Every byline, the author archive,
+the RSS feed and the JSON-LD now say **BuildMaster**, and the avatar is an
+anonymised image served from our own domain.
+
+**Two leaks were closed, and the second is the non-obvious one.**
+
+1. The **name** — byline, `/blog/author/<slug>/`, RSS (15 occurrences) and the
+   article JSON-LD.
+2. The **profile image was a Gravatar URL**, so every page published
+   `gravatar.com/avatar/<md5 of the owner's email>`. That is their email
+   address, hashed with an algorithm that has rainbow tables for it, on every
+   page of the site — and it ties the byline to whatever else that address
+   uses Gravatar for. Pointing `profile_image` at our own file removed it.
+
+```
+name          BuildMaster
+slug          buildmaster            (was ahmad — the old URL now 404s)
+profile_image /blog/content/images/2026/08/author-buildmaster-v1.jpg
+```
+
+**`/blog/author/ahmad/` is left to 404 on purpose.** It was in
+`sitemap-authors.xml` and is indexed, so a 301 would consolidate faster — but a
+redirect keeps a URL containing the owner's first name resolving forever, which
+is the thing this change exists to stop. Google drops it on re-crawl.
+
+**The Admin API cannot do this.** `PUT /users/` returns `NoPermissionError` for
+an integration key whatever its role (§7), so it is a direct `UPDATE` on
+`users`, with the discipline `ghost-setting.sh` enforces: verified `mysqldump`
+first, previous values recorded to
+`/var/backups/clubs27/rollback-author-<stamp>.txt`, then `systemctl restart
+ghost_clubs27-com` — Ghost caches the user record.
+
+The avatar comes from **`ops/anonymize-avatar.py`**, which destroys the face by
+downscaling to a 10×10 grid *before* blurring. Read its docstring before
+regenerating one: a blur on its own does not anonymise a photograph, and the
+wrong version looks identical to the right one. New filename every time —
+Cloudflare caches `content/images` for a year.
+
+> **What this does not do, and only the owner can.** The photograph is still on
+> **gravatar.com**, under the hash of their email. We stopped linking to it; we
+> cannot delete it. Anyone who knows the address can still fetch it until it is
+> removed from the Gravatar account itself. Search engines may also serve the
+> old name and picture from cache until they re-crawl.
+
+---
+
 ## 8. Backups
 
 Nightly 03:30 → `/var/backups/clubs27/`, 14-day retention, logged to
