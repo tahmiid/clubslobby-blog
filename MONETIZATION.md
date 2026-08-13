@@ -576,9 +576,49 @@ classic version of this mistake.
 
 ---
 
-## Next actions (as of 2026-08-12)
+## Next actions (as of 2026-08-13, end of day)
 
-Both switches have lead time and neither commits us to anything:
+**Display ads are done as a build.** Account upgraded, units created, consent
+messages published, `ads.txt` live, slot A serving, app deployed. What is left
+is one click and one wait:
+
+- [ ] **Click "Request review" in AdSense.** The site still reads
+      *Request review*, which is why every slot answers `unfilled`. Nothing
+      earns until this is approved, and nothing else on this list unblocks it.
+- [ ] **Then nothing** — ads appear on their own when Google approves. If fill
+      is still 0% a day after approval, something is wrong; until approval, 0%
+      is the expected state.
+
+**Affiliate is now the only unstarted monetization work, and it is the one
+with a deadline** (§5): links must be live *before* 18 September, applications
+take days to weeks, and it is the highest return per hour in the whole plan —
+no script, no consent banner, no page-speed cost.
+
+- [ ] **Apply to Awin and one other route** (§5). Unaffected by AdSense.
+- [ ] Place the links in the FC 27 cluster once approved, with the disclosure
+      line §4 requires.
+
+Deferred by design, not forgotten:
+
+- [ ] **Slot D** — the unit exists (`6383559998`) and cannot render: the blog
+      index is a Ghost theme page with no marker. Needs a theme edit or an
+      index-only insertion rule.
+- [ ] **Slots B and C** — §8 holds them for 30 days of measured RPM.
+- [ ] **Re-measure Core Web Vitals** against the 2026-08-12 baseline (§1) 30
+      days after ads start filling. The CLS the collapse rule costs while fill
+      is 0% is not the number to judge it by.
+- [ ] Build the controller diagram component and write ten situation cards for
+      one archetype (§10). **Ten cards is the measurement that matters** — it
+      says whether a full archetype is an evening or a week.
+
+Closed:
+
+- [x] ~~Journey by Mediavine~~ — superseded by AdSense (§7a). Still the
+      fallback if measured RPM disappoints.
+- [x] ~~Close the old AdSense account~~ — moot. The hosted account was
+      *upgraded*, so there was never a second one to close.
+
+<details><summary>The 12 Aug list, kept for the record</summary>
 
 - [x] ~~Rewrite `/privacy`~~ — done 2026-08-12, and **repointed at Google
       AdSense on 2026-08-13** (it named Journey by Mediavine). One thing to
@@ -605,6 +645,8 @@ Both switches have lead time and neither commits us to anything:
       one archetype (§10). **Ten cards is the measurement that matters** — it
       tells us whether a full archetype is an evening or a week, and therefore
       whether the card library is a September project or a Q4 one.
+
+</details>
 
 ---
 
