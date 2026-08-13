@@ -325,6 +325,39 @@ ssh clubs 'ads-switch.sh on --dry-run'
 ssh clubs 'ads-switch.sh on'
 ```
 
+> ### Live 2026-08-13 — slot A on, and filling at 0%
+>
+> Account upgraded, both units created (**in-article A `6898565314`**, index D
+> `6383559998`), EU and US consent messages created. The app deployed first
+> (`/ads.txt` serves `text/plain`, `/privacy` names Google), all 35 articles
+> republished with their markers, and `ads-switch.sh on` applied.
+>
+> **It works and it is earning nothing.** Every slot answers
+> `data-ad-status="unfilled"` — normal for a site and units this new, and not
+> something any change here fixes. Check **Sites → proclubshq.com** reads
+> *Ready* rather than still in review.
+>
+> Two things measured on the live page, both worth keeping:
+>
+> - **The unfilled slot was a 375px hole** between a paragraph and the next
+>   heading — AdSense renders an empty iframe rather than nothing. The block
+>   now collapses `:has(ins[data-ad-status="unfilled"])`.
+> - **CLS 0.086** with the collapse, **0.000** with the hole. Both "good"
+>   (<=0.1); the shift is the better trade, and it disappears the moment ads
+>   start filling, because then the reserved height is used rather than given
+>   back.
+>
+> **If fill is still 0% after a day, `ads-switch.sh verify` beats `on`** — the
+> same zero revenue without the shift or the third-party script. One command,
+> and `on` again afterwards.
+>
+> Slot D is **not live**: its unit exists but the blog index is a Ghost theme
+> page and no `data-ad="d"` marker exists for the filler to find. Its own job.
+>
+> Unmeasured from here: the **EU consent banner**, which only appears to EEA
+> and UK traffic. Verify it with a VPN or the CMP's own preview — the live
+> privacy policy promises that prompt by name.
+
 **Watch for Auto ads switching themselves on** at approval. Google may enable
 them per-site by default, and Auto ads place their own inventory wherever they
 like — over widgets, above the lead tool, in the middle of an argument —

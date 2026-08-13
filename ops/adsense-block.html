@@ -15,6 +15,26 @@
 @media (min-width:768px) {
   .pchq-ad[data-ad="a"] { min-height:250px; }
 }
+
+/* …and give the space back when Google has nothing to put in it. AdSense
+   marks the <ins> `data-ad-status="unfilled"` when it answers with no ad, and
+   without this the reserved height stands as a blank 280–375px hole between a
+   paragraph and the next heading — measured on the Magician build the day
+   ads went live, while the site was still filling at 0%. A hole is worse than
+   no ad slot at all.
+
+   The collapse is itself a layout shift and it is not free: measured **CLS
+   0.086** on the spoke articles the day this shipped, against 0.000 with the
+   hole left in. Both are inside Google's "good" band (<=0.1) and the second
+   is not worth having, so the shift is the better trade — but only while the
+   fill rate is 0%. Every load collapses, so every load shifts.
+
+   **Once AdSense fills, this rule stops firing and CLS returns to ~0**, which
+   is the whole reason the height is reserved in the first place. If fill
+   stays at 0% for more than a day, `ads-switch.sh verify` is strictly better
+   than `on`: it earns the same nothing and costs neither the shift nor the
+   script. */
+.pchq-ad:has(ins[data-ad-status="unfilled"]) { display:none; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7746895194950296" crossorigin="anonymous"></script>
 <script>
