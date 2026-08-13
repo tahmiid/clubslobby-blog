@@ -11,12 +11,26 @@ production as of this date.
 short-form video, subscriptions and sponsorship (§§7–10), the answer is two
 cheap switches and one engine:
 
-1. **Display ads** — apply to **Journey by Mediavine**, not AdSense (§7: the
-   existing AdSense account's country cannot be changed, and Journey takes
-   publishers from 1,000 sessions with no AdSense account needed). Switch on at
-   the FC 27 spike.
+1. **Display ads** — ~~apply to Journey by Mediavine, not AdSense~~ **AdSense,
+   decided 2026-08-13** when the account came back verified and §7's blocker
+   stopped existing. Journey is exclusive and AdSense is not, so this is the
+   reversible order to try them in. See §7a.
 2. **Affiliate links** — apply now, live before 18 September.
 3. **The visual guide format** (§10) — the only work here that compounds.
+
+> ### 2026-08-13 — AdSense is verified, and the integration is built and off
+>
+> The whole path is wired and **nothing is live**. What exists:
+>
+> | | |
+> |---|---|
+> | `gen/ads.mjs` | slot markers — empty `<div>`s with no height and no request |
+> | `gen/spoke.mjs`, `gen/group.mjs` | slots A, B and C placed in all 18 factory articles |
+> | `ops/adsense-block.html` | the loader, the reserved heights, the filler — **the only file carrying your AdSense ids** |
+> | `ops/ads-switch.sh` | `on` / `off` / `status`, one command each |
+>
+> Turning it on is §7b. Three things still need a human, and two of them can
+> only happen inside the AdSense dashboard.
 
 Everything else — sponsorship, subscription, an AI product, a video pipeline —
 is deferred behind traffic. The honest position is that at ~250 views/day no
@@ -198,6 +212,83 @@ for the rate, not the total, and don't let it displace §9.
   loop.
 
 ---
+
+## 7a. AdSense, and what only you can do (2026-08-13)
+
+The account is verified, so §7 below is history — kept because the reasoning
+about exclusivity still decides what happens if AdSense underperforms.
+
+**Three things need the dashboard, and no script can do them.**
+
+1. **The publisher id** (`ca-pub-…`), from *Account → Settings → Account
+   information*. It goes in exactly two places: `ops/adsense-block.html`
+   (three occurrences) and the app repo's `frontend/public/ads.txt`.
+2. **One display ad unit per live slot** — *Ads → By ad unit → Display ads*,
+   responsive. Start with **A** (in-article) and **D** (index) per §8. Each
+   gives a numeric slot id for `UNITS` in the block.
+3. **The European regulations message** — *Privacy & messaging → European
+   regulations*. Google's own CMP is certified and TCF-integrated, which is
+   what the rules have required since 16 January 2024, and it is free. **33% of
+   our traffic is UK+EU**, so without it those users get non-personalised ads
+   at best. The live privacy policy already promises this prompt by name.
+
+**`ads.txt` is not optional and does not live in this repo.** It must be served
+from the *root* of the domain, and the root is the app's static build — so the
+file is `frontend/public/ads.txt` in `tahmiid/Clubs27`, next to `robots.txt`,
+which reaches production the same way (that repo's `DEPLOYMENT.md`, nginx rule
+4's note). One line:
+
+```
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+```
+
+It was deliberately **not** created with a placeholder. `https://proclubshq.com/ads.txt`
+currently answers `200 text/html` — the React shell, which AdSense reads as
+absent — and that is the correct state until the id is real, because an
+`ads.txt` containing no valid record is a positive declaration that *nobody* is
+authorised to sell this inventory. A wrong one is worse than none.
+
+## 7b. Switching ads on
+
+Everything below runs against production, and every step is reversible.
+
+```bash
+# 1. Fill in the ids — publisher id and one unit id per live slot.
+$EDITOR ops/adsense-block.html
+scp -i ~/.ssh/proclubslobby_ed25519 ops/adsense-block.html ops/ads-switch.sh \
+    root@91.99.52.207:/usr/local/bin/
+
+# 2. Articles need their slot markers, which ship with the next content push.
+node gen/a18-magician-build.mjs   # …and the rest, then the usual Ghost push
+
+# 3. Look before leaping, then flip.
+ssh clubs 'ads-switch.sh on --dry-run'
+ssh clubs 'ads-switch.sh on'
+```
+
+`ads-switch.sh` refuses rather than guesses. It will not apply a block that
+still has placeholders, one where the CSS's reserved-height list and the JS's
+`UNITS` list disagree (a 280px hole in an article, or an ad landing in an
+unreserved box and shoving the page down — both silent), or one where no slot
+has an id at all. It splices between markers, so the 89 lines of dark-theme CSS
+sharing that setting survive untouched, and running `on` twice replaces rather
+than stacks.
+
+**Off is `ads-switch.sh off`** — one command, no republishing, because the
+markers in the articles are inert without the block.
+
+Then: `curl -sI https://proclubshq.com/ads.txt | grep -i content-type` must say
+`text/plain`, not `text/html`, and re-measure Core Web Vitals against the
+2026-08-12 baseline in §1 after 30 days before turning on B or C.
+
+> **The tooling that got fixed on the way.** `ops/ghost-setting.sh` read
+> settings without `--raw`, so MySQL's batch mode escaped every newline. On a
+> multi-line setting — `codeinjection_head` is 89 lines — the rollback file it
+> writes would have recorded the corrupted single-line form, and restoring it
+> would have destroyed the theme it exists to protect. Its two prior uses
+> (`icon`, `logo`) were single-line, which is why it went unnoticed. It now
+> also verifies the write by MD5 computed in MySQL rather than by comparing
+> strings the shell has already mangled.
 
 ## 7. The AdSense account blocker
 
@@ -391,13 +482,21 @@ classic version of this mistake.
 
 Both switches have lead time and neither commits us to anything:
 
-- [ ] Rewrite `/privacy` — it currently says there is no advertising, which
-      contradicts every application a reviewer will read (§4). This gates the
-      rest.
-- [ ] **Apply to Journey by Mediavine** (§7) — read the exclusivity terms
-      first. This replaces waiting on AdSense.
-- [ ] Apply to Awin and one other affiliate route (§5). Unaffected by the
-      exclusivity above.
+- [x] ~~Rewrite `/privacy`~~ — done 2026-08-12, and **repointed at Google
+      AdSense on 2026-08-13** (it named Journey by Mediavine). One thing to
+      know: it is written in the present tense — "the blog is ad-supported" —
+      which will not be true until the switch is flipped. That over-discloses
+      rather than under-discloses, and it is what an AdSense reviewer wants to
+      read, so it stays.
+- [x] ~~Apply to Journey by Mediavine~~ — **superseded 2026-08-13** (§7a).
+      Still the fallback if measured AdSense RPM disappoints; the exclusivity
+      reasoning in §7 is what to re-read then.
+- [ ] **Fill in the three AdSense values** (§7a) — publisher id, unit ids, and
+      the European regulations message. Nothing else blocks the switch.
+- [ ] **Create `frontend/public/ads.txt` in the app repo** once the publisher
+      id exists (§7a). Deliberately not stubbed.
+- [ ] Apply to Awin and one other affiliate route (§5). Unaffected by any of
+      the above.
 - [ ] Close the old AdSense account as housekeeping — no longer urgent.
 - [ ] Build the controller diagram component and write ten situation cards for
       one archetype (§10). **Ten cards is the measurement that matters** — it

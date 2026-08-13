@@ -39,7 +39,14 @@ const q = (s) => "\x27" + String(s).replace(/\x27/g, "\x27\\\x27\x27") + "\x27";
 process.stdout.write(`export MYSQL_PWD=${q(c.password)} DBUSER=${q(c.user)} DBNAME=${q(c.database)}\n`);
 ')"
 
-mysql_q() { mysql -u"$DBUSER" "$DBNAME" -N -B -e "$1"; }
+# `--raw` is load-bearing and was missing until 2026-08-13. Without it MySQL's
+# batch mode escapes newlines and tabs in the value it prints, so a multi-line
+# setting — `codeinjection_head` is 89 lines of dark-theme CSS — reads back as
+# one line of literal `\n`. Everything downstream inherits that: the rollback
+# file records the corrupted form, so restoring it would *destroy* the setting
+# it exists to protect. Both uses this script had before that date (`icon`,
+# `logo`) were single-line, which is the only reason it went unnoticed.
+mysql_q() { mysql -u"$DBUSER" "$DBNAME" -N -B --raw -e "$1"; }
 
 # Count the row rather than test the value: settings like `logo` legitimately
 # hold the empty string, which is not the same as the row being absent.
@@ -83,8 +90,11 @@ echo "backup:   $DUMP  ($TABLES tables, $SETTINGS settings inserts)"
 }
 
 # ---- 3. record the rollback before making the change ----------------------
+# No trailing newline: the restore reads it back through `$(cat …)`, which
+# strips trailing newlines anyway, so writing one would make the file and the
+# value it restores differ by exactly the character nobody would look for.
 ROLLBACK="$BACKUP_DIR/rollback-$KEY-$STAMP.txt"
-printf '%s\n' "$CURRENT" > "$ROLLBACK"
+printf '%s' "$CURRENT" > "$ROLLBACK"
 echo "rollback: $ROLLBACK   (./ghost-setting.sh $KEY \"\$(cat $ROLLBACK)\")"
 
 # ---- 4. change it, then restart — settings are read at boot ---------------
@@ -93,8 +103,17 @@ UPDATE settings SET value = '$(printf '%s' "$VALUE" | sed "s/'/''/g")', updated_
 WHERE \`key\` = '$KEY';
 SQL
 
-AFTER=$(mysql_q "SELECT value FROM settings WHERE \`key\`='$KEY';")
-[[ "$AFTER" == "$VALUE" ]] || { echo "REFUSING: value did not stick (got: $AFTER)" >&2; exit 1; }
+# Verify by digest computed on both sides rather than by comparing strings in
+# the shell. A multi-line value cannot survive `$(…)` intact — command
+# substitution strips trailing newlines — so a string comparison reports a
+# perfectly good write as a failure. MD5 over the stored bytes is exact.
+AFTER_MD5=$(mysql_q "SELECT MD5(value) FROM settings WHERE \`key\`='$KEY';")
+WANT_MD5=$(printf '%s' "$VALUE" | md5sum | cut -d' ' -f1)
+[[ "$AFTER_MD5" == "$WANT_MD5" ]] || {
+  echo "REFUSING: value did not stick (stored md5 $AFTER_MD5, wanted $WANT_MD5)" >&2
+  echo "  the backup is at $DUMP and the previous value at $ROLLBACK" >&2
+  exit 1
+}
 
 # `sudo -u ghost ghost restart` dies on /nonexistent/.ghost/logs — that account
 # has no home. It fails before touching the running site, so it is loud rather
@@ -102,4 +121,4 @@ AFTER=$(mysql_q "SELECT value FROM settings WHERE \`key\`='$KEY';")
 systemctl restart "$SERVICE"
 sleep 4
 systemctl is-active "$SERVICE"
-echo "done: $KEY is now $AFTER"
+echo "done: $KEY updated (${#VALUE} chars, md5 $AFTER_MD5)"

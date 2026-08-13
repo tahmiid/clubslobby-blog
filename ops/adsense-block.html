@@ -1,0 +1,56 @@
+<!-- pchq-ads:begin — managed by ops/ads-switch.sh. Do not hand-edit in Ghost;
+     the next `ads-switch.sh on` replaces everything between these markers. -->
+<style>
+/* Height is reserved HERE, in <head>, and not by the script below. The space
+   therefore exists before the first paint and the <ins> that arrives later
+   drops into a box that is already the right size. Insert the container from
+   JavaScript instead and every line beneath it moves — that is Cumulative
+   Layout Shift, a ranking signal, on a site whose only acquisition channel is
+   search (MONETIZATION.md §4).
+
+   Only slots with a unit id below are listed. A slot reserving 280px with
+   nothing to put in it is just a hole in the article, so the two lists are
+   checked against each other by ads-switch.sh before this is ever applied. */
+.pchq-ad[data-ad="a"],
+.pchq-ad[data-ad="d"] { display:block; margin:2.2em 0; min-height:280px; text-align:center; }
+@media (min-width:768px) {
+  .pchq-ad[data-ad="a"],
+  .pchq-ad[data-ad="d"] { min-height:250px; }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script>
+(function () {
+  // Slot name -> AdSense display unit id. An empty string means "not live":
+  // the marker stays an empty div and costs nothing. That is how
+  // MONETIZATION.md §8 turns on A and D first and holds B and C for 30 days
+  // of measured RPM and Core Web Vitals.
+  //
+  // Adding a letter here means adding it to the CSS above too. ads-switch.sh
+  // refuses to apply this file if the two disagree.
+  var UNITS = { a: 'SLOT_A_ID', b: '', c: '', d: 'SLOT_D_ID' };
+
+  function fill() {
+    var boxes = document.querySelectorAll('.pchq-ad[data-ad]');
+    for (var i = 0; i < boxes.length; i++) {
+      var box = boxes[i];
+      var unit = UNITS[box.getAttribute('data-ad')];
+      if (!unit || box.getAttribute('data-filled')) continue;
+      box.setAttribute('data-filled', '1');
+      var ins = document.createElement('ins');
+      ins.className = 'adsbygoogle';
+      ins.style.display = 'block';
+      ins.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXXXXXXXXX');
+      ins.setAttribute('data-ad-slot', unit);
+      ins.setAttribute('data-ad-format', 'auto');
+      ins.setAttribute('data-full-width-responsive', 'true');
+      box.appendChild(ins);
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fill);
+  else fill();
+})();
+</script>
+<!-- pchq-ads:end -->

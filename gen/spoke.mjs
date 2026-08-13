@@ -18,6 +18,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
+import { AD_A, AD_B, AD_C } from './ads.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const LEVELS = JSON.parse(readFileSync(path.join(DIR, 'fc26', 'levels.json'), 'utf8'));
@@ -265,6 +266,8 @@ ${whyParas[0]}
 ${coverFig}
 ${whyParas.slice(1).join('\n')}
 
+${AD_A}
+
 <h2>${esc(cfg.buildsH2)}</h2>
 ${cfg.buildsParas(ctx).join('\n')}
 
@@ -274,6 +277,8 @@ ${cfg.buildsParas(ctx).join('\n')}
 ${stageGrid}
 
 ${cfg.apPathOutro(ctx)}
+
+${AD_B}
 
 <h2>Specialization order: ${arch.specializations.map((s) => esc(s.name)).join(', ').replace(/, ([^,]*)$/, ' or $1')}</h2>
 <ul>
@@ -292,7 +297,9 @@ ${cfg.physiquePara(ctx)}
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${ld}
 
-${closing}`;
+${closing}
+
+${AD_C}`;
 
   const out = path.join(import.meta.dirname, '..', 'out', `a${cfg.n}.html`);
   writeFileSync(out, html);

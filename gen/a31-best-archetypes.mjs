@@ -8,6 +8,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { ARCH, BRAND, SITE, title, esc, kg, baseCss, appCta, archIcon } from './common.mjs';
+import { AD_A, AD_C } from './ads.mjs';
 
 const META = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'meta-season3.json'), 'utf8'));
 const P = 'a31';
@@ -144,6 +145,8 @@ ${tierWidget}
 
 ${coverFig}
 
+${AD_A}
+
 <h2>The meta pick for all seven positions</h2>
 ${pickGrid}
 
@@ -162,7 +165,9 @@ ${appCta({
 
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
-${ld}`;
+${ld}
+
+${AD_C}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a31.html'), html);
 console.log(`a31: tiers S:${TIERS.S.length} A:${TIERS.A.length} B:${TIERS.B.length} | season ${META.season.number} | bytes ${html.length}`);

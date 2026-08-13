@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, BRAND, SITE, CATS, title, esc, kg, baseCss, appCta, archIcon, ceiling } from './common.mjs';
 import { ft, psName, psIcon } from './spoke.mjs';
+import { AD_A, AD_B, AD_C } from './ads.mjs';
 
 const META = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'meta-season3.json'), 'utf8'));
 
@@ -119,7 +120,15 @@ ${kg(`<div class="${P}f">
 ${ed.pickIf.map((li) => `<li>${li}</li>`).join('\n')}
 </ul>
 <p>Full guide: <a href="/blog/pro-clubs-${a.id}-build/">the complete ${esc(title(a.name))} build</a> — the level-100 attributes, AP order and specialization call.</p>`;
-  }).join('\n\n');
+  });
+
+  // Slot B lands on an archetype boundary rather than at a fixed word count:
+  // these pages run 3–13 sections, and "halfway" measured in characters puts
+  // an ad inside somebody's verdict. A page with fewer than four sections
+  // gets no mid-article slot at all — there is no middle to be in.
+  const sectionsHtml = sections.length >= 4
+    ? [...sections.slice(0, Math.ceil(sections.length / 2)), AD_B, ...sections.slice(Math.ceil(sections.length / 2))].join('\n\n')
+    : sections.join('\n\n');
 
   const faq = cfg.faq({ archs, standingLine, ft });
   const ld = kg(`<script type="application/ld+json">
@@ -145,7 +154,10 @@ ${grid}
 
 ${cfg.afterGrid ? cfg.afterGrid({ archs }) : ''}
 ${coverFig}
-${sections}
+
+${AD_A}
+
+${sectionsHtml}
 
 ${cfg.closing({ archs })}
 
@@ -153,7 +165,9 @@ ${appCta(cfg.cta)}
 
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
-${ld}`;
+${ld}
+
+${AD_C}`;
 
   const out = path.join(import.meta.dirname, '..', 'out', `a${cfg.n}.html`);
   writeFileSync(out, html);
