@@ -186,7 +186,9 @@ export function renderSpoke(cfg) {
   const cardAttrs = V
     ? ` data-variant="${V}" data-art="${isKeeper ? 'keeper' : 'outfield'}"`
     : ' target="_blank" rel="noopener"';
-  const widget = kg(`<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  const cardAnchor = (b) =>
+    `<a class="pchq-build" data-build="${b.id}"${cardAttrs} href="${cardHref(b)}">${esc(b.buildName)} — open in ${BRAND}</a>`;
+  const widgetHead = `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
 <style>
 ${PCHQ_CSS}
@@ -194,11 +196,28 @@ ${PCHQ_CSS}
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .${P}x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
 .${P}k { text-align: center; font-size: 0.9em; margin: 0 0 10px; }
-</style>
-${V === 'invite' ? `<p class="${P}k">👇 This is a <strong>real build in the app</strong> — tap it and it opens, exactly as it is here. Free, no account needed.</p>` : ''}
-${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}"${cardAttrs} href="${cardHref(b)}">${esc(b.buildName)} — open in ${BRAND}</a>`).join('\n')}
-<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>
+</style>`;
+  const kicker = V === 'invite'
+    ? `<p class="${P}k">👇 This is a <strong>real build in the app</strong> — tap it and it opens, exactly as it is here. Free, no account needed.</p>`
+    : '';
+  const builderLine = `<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>`;
+
+  // Baseline articles: one block, both cards, after the intro - unchanged.
+  const widget = kg(`${widgetHead}
+${kicker}
+${BUILDS.map(cardAnchor).join('\n')}
+${builderLine}
 <script>${PCHQ_JS}</script>`);
+
+  // Variant articles (user, 2026-08-14): the featured card IS the opener -
+  // it stands before the first paragraph - and the second card lands with
+  // the section that discusses it. The script rides the top block; it
+  // hydrates every anchor on the page, including the one further down.
+  const widgetTop = kg(`${widgetHead}
+${kicker}
+${cardAnchor(BUILDS[0])}
+<script>${PCHQ_JS}</script>`);
+  const widgetSecond = kg(`${BUILDS[1] ? cardAnchor(BUILDS[1]) + '\n' : ''}${builderLine}`);
 
   // The AP path as a grid — a real <table> here inherits the theme's
   // white-space:nowrap and overlaps columns (the a18 v1 bug).
@@ -271,9 +290,9 @@ ${JSON.stringify({
     ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
     : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
 
-  const html = `${cfg.intro(ctx)}
+  const html = `${V ? widgetTop + '\n' : ''}${cfg.intro(ctx)}
 
-${widget}
+${V ? '' : widget}
 
 <h2>Why the ${esc(archName)}</h2>
 ${whyParas[0]}
@@ -284,6 +303,7 @@ ${AD_A}
 
 <h2>${esc(cfg.buildsH2)}</h2>
 ${cfg.buildsParas(ctx).join('\n')}
+${V ? widgetSecond : ''}
 
 <h2>The AP path: what to buy first</h2>
 <p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">${TOTAL_AP.toLocaleString()} in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the ${esc(cfg.shortNames[0])} build bought in ${stages.length} stages:</p>

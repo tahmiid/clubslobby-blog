@@ -194,32 +194,43 @@
   width: 46px; height: 46px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98) drop-shadow(0 2px 6px rgba(227,184,78,0.5));
 }
+/* The stream window: fixed height, scrolls internally, fades at the top -
+   the app's accumulate-and-rest, in miniature. Lines animate on insertion
+   (the JS is the scheduler), so there are no delay variables to drift. */
 .pchq-r-stream {
-  position: absolute; left: 16px; right: 74px; bottom: 158px;
+  position: absolute; left: 16px; right: 74px; bottom: 152px; height: 158px;
   display: flex; flex-direction: column; gap: 7px;
+  overflow-y: auto; overscroll-behavior: contain;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  scrollbar-width: none;
 }
+.pchq-r-stream::-webkit-scrollbar { display: none; }
 .pchq-r-line {
   display: flex; align-items: center; gap: 8px; font-size: 0.78rem;
-  color: rgba(255,255,255,0.85); opacity: 0; transform: translateY(10px);
+  color: rgba(255,255,255,0.85); flex: none;
+  animation: pchq-r-in 0.4s ease both;
 }
-.pchq-r-on .pchq-r-line {
-  animation: pchq-r-in 0.5s ease both; animation-delay: var(--pchq-d, 0s);
-}
-@keyframes pchq-r-in { to { opacity: 1; transform: none; } }
+@keyframes pchq-r-in { from { opacity: 0; transform: translateY(10px); } }
 .pchq-r-nm { min-width: 88px; color: rgba(255,255,255,0.72); }
 .pchq-r-bar { flex: 1; display: block; height: 7px; border-radius: 999px; background: rgba(255,255,255,0.16); overflow: hidden; }
 .pchq-r-fill {
   display: block; height: 100%; border-radius: inherit;
-  background: #2FD26B; box-shadow: 0 0 6px rgba(47,210,107,0.53);
-}
-.pchq-r-on .pchq-r-fill {
-  animation: pchq-r-grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  animation-delay: calc(var(--pchq-d, 0s) + 0.3s);
+  animation: pchq-r-grow 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @keyframes pchq-r-grow { from { width: 0; } }
 .pchq-r-val {
   font-family: "Archivo", sans-serif; font-weight: 800; min-width: 26px;
-  text-align: right; color: #2FD26B;
+  text-align: right;
+}
+.pchq-r-line-t .pchq-r-txt {
+  margin-left: auto; font-family: "Archivo", sans-serif; font-weight: 800;
+  color: rgba(255,255,255,0.92); letter-spacing: 0.02em;
+}
+.pchq-r-ps { margin-left: auto; display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+.pchq-r-ps-ic {
+  width: 22px; height: 22px; object-fit: contain;
+  filter: saturate(0) brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 .pchq-r-plate { position: absolute; left: 16px; right: 16px; bottom: 66px; display: flex; align-items: center; gap: 12px; }
 .pchq-r-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
@@ -248,8 +259,7 @@
   .pchq-cta, .pchq-cta-block, .pchq-r-cta { animation: none; }
   .pchq-card { transform: none !important; }
   /* The app's rule: the finished state, not a slower animation. */
-  .pchq-r-line { opacity: 1; transform: none; animation: none; }
-  .pchq-r-on .pchq-r-line, .pchq-r-on .pchq-r-fill { animation: none; }
+  .pchq-r-line, .pchq-r-fill { animation: none; }
 }
 
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */

@@ -237,21 +237,8 @@
     anchor.appendChild(rail);
 
     var stream = h("span", "pchq-r-stream");
-    Object.entries(b.attributes || {})
-      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
-      .forEach(function (kv, i) {
-        var line = h("span", "pchq-r-line");
-        line.style.setProperty("--pchq-d", (i * 0.45) + "s");
-        line.appendChild(h("span", "pchq-r-nm", label(kv[0])));
-        var bar = h("span", "pchq-r-bar");
-        var fill = h("span", "pchq-r-fill");
-        fill.style.width = kv[1] + "%";
-        bar.appendChild(fill);
-        line.appendChild(bar);
-        line.appendChild(h("span", "pchq-r-val", String(kv[1])));
-        stream.appendChild(line);
-      });
     anchor.appendChild(stream);
+    var lines = reelStreamLines(b);
 
     var plate = h("span", "pchq-r-plate");
     if (b.archetype_id) {
@@ -271,17 +258,119 @@
 
     anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
 
+    // The app's stream rule, both halves: it ACCUMULATES - lines append one
+    // by one and the window auto-scrolls, nothing is ever removed, a reader
+    // can scroll back up inside it - and reduced motion gets the finished
+    // state, not a slower animation. Appending starts the first time the
+    // card is actually seen.
+    var showAll = function () {
+      lines.forEach(function (l) { stream.appendChild(l); });
+      stream.scrollTop = stream.scrollHeight;
+    };
     var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (still || !("IntersectionObserver" in window)) {
-      anchor.classList.add("pchq-r-on");
+      showAll();
       return;
     }
+    var reveal = function (i) {
+      if (i >= lines.length) return;
+      stream.appendChild(lines[i]);
+      stream.scrollTop = stream.scrollHeight;
+      setTimeout(function () { reveal(i + 1); }, lines[i].dataset.quick ? 240 : 520);
+    };
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { anchor.classList.add("pchq-r-on"); io.disconnect(); }
+        if (e.isIntersecting) { io.disconnect(); reveal(0); }
       });
     }, { threshold: 0.35 });
     io.observe(anchor);
+  }
+
+  // The stream's content, mirroring the app's BuildStream order: the
+  // attribute-group bars first (the build's shape before anything else),
+  // then physique, run type, weak foot, skill moves, the equipped
+  // PlayStyles - and the top attributes last, the closing act. Comments and
+  // the love/send rail are the two things deliberately not replicated.
+  var GROUPS = [
+    ["Pace", ["acceleration", "sprintSpeed"]],
+    ["Ball Control", ["agility", "balance", "reactions", "ballControl", "dribbling", "composure"]],
+    ["Passing", ["vision", "crossing", "fkAcc", "shortPass", "longPass", "curve"]],
+    ["Scoring", ["attPosition", "finishing", "shotPower", "longShots", "volleys", "penalties"]],
+    ["Defending", ["interceptions", "headingAcc", "defAware", "standTackle", "slideTackle"]],
+    ["Physical", ["jumping", "strength", "stamina", "aggression"]],
+    ["Shot Stopping", ["gkDiving", "gkHandling", "gkKicking", "gkPositioning", "gkReflexes"]]
+  ];
+
+  function reelStreamLines(b) {
+    var attrs = b.attributes || {};
+    var lines = [];
+
+    function barLine(name, value, quick) {
+      var line = h("span", "pchq-r-line");
+      if (quick) line.dataset.quick = "1";
+      line.appendChild(h("span", "pchq-r-nm", name));
+      var bar = h("span", "pchq-r-bar");
+      var fill = h("span", "pchq-r-fill");
+      fill.style.width = value + "%";
+      fill.style.background = ratingColor(value);
+      fill.style.boxShadow = "0 0 6px " + ratingColor(value) + "88";
+      bar.appendChild(fill);
+      line.appendChild(bar);
+      var val = h("span", "pchq-r-val", String(value));
+      val.style.color = ratingColor(value);
+      line.appendChild(val);
+      return line;
+    }
+
+    function textLine(name, value) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", name));
+      line.appendChild(h("span", "pchq-r-txt", value));
+      return line;
+    }
+
+    GROUPS.forEach(function (g) {
+      var vals = g[1].map(function (k) { return attrs[k]; })
+        .filter(function (v) { return typeof v === "number"; });
+      if (!vals.length) return;
+      var avg = Math.round(vals.reduce(function (s, v) { return s + v; }, 0) / vals.length);
+      lines.push(barLine(g[0], avg, true));
+    });
+
+    if (b.height && b.weight) {
+      lines.push(textLine("Physique",
+        Math.floor(b.height / 12) + "'" + (b.height % 12) + '" · ' + b.weight + " lb"));
+    }
+    if (b.accelerationType) lines.push(textLine("Run type", b.accelerationType));
+    var stars = function (n) {
+      n = Math.max(1, Math.min(5, n || 0));
+      return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+    };
+    if (b.weakFoot) lines.push(textLine("Weak foot", stars(b.weakFoot)));
+    if (b.skillMoves) lines.push(textLine("Skill moves", stars(b.skillMoves)));
+
+    if (b.playstyles && b.playstyles.length) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", "PlayStyles"));
+      var row = h("span", "pchq-r-ps");
+      b.playstyles.forEach(function (slug) {
+        var ic = document.createElement("img");
+        ic.className = "pchq-r-ps-ic";
+        ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+        ic.alt = "";
+        ic.loading = "lazy";
+        ic.addEventListener("error", function () { ic.remove(); });
+        row.appendChild(ic);
+      });
+      line.appendChild(row);
+      lines.push(line);
+    }
+
+    Object.entries(attrs)
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
+      .forEach(function (kv) { lines.push(barLine(label(kv[0]), kv[1])); });
+
+    return lines;
   }
 
   function boot() {

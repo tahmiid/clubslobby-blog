@@ -1,9 +1,7 @@
 [
  {
-  "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
-  "buildName": "Lionel Messi",
+  "accelerationType": "Explosive",
   "archetype_id": "magician",
-  "level": 100,
   "attributes": {
    "acceleration": 92,
    "aggression": 55,
@@ -35,6 +33,10 @@
    "vision": 96,
    "volleys": 72
   },
+  "buildName": "Lionel Messi",
+  "height": 67,
+  "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
+  "level": 100,
   "playstyles": [
    "game-changer",
    "tiki-taka",
@@ -46,10 +48,6 @@
    "rapid",
    "quick-step"
   ],
-  "unlockedSpecializations": [
-   "magician-plus",
-   "invader"
-  ],
   "selectedSpecialization": "invader",
   "signature": [
    "technical",
@@ -57,60 +55,62 @@
    "chip-shot",
    "inventive"
   ],
-  "height": 67,
-  "weight": 159,
-  "weakFoot": 4,
   "skillMoves": 4,
-  "accelerationType": "Explosive"
+  "unlockedSpecializations": [
+   "magician-plus",
+   "invader"
+  ],
+  "weakFoot": 4,
+  "weight": 159
  },
  {
-  "id": "ea493d2c-3f6c-467c-af23-72d2903cb9cb",
-  "buildName": "Ousmane Dembélé",
+  "accelerationType": "Explosive",
   "archetype_id": "magician",
-  "level": 100,
   "attributes": {
    "acceleration": 95,
    "aggression": 55,
-   "agility": 96,
+   "agility": 97,
    "attPosition": 93,
-   "balance": 96,
-   "ballControl": 95,
+   "balance": 97,
+   "ballControl": 96,
    "composure": 92,
-   "crossing": 88,
-   "curve": 93,
+   "crossing": 65,
+   "curve": 95,
    "defAware": 45,
    "dribbling": 96,
-   "finishing": 95,
+   "finishing": 94,
    "fkAcc": 65,
    "headingAcc": 65,
    "interceptions": 50,
    "jumping": 60,
-   "longPass": 75,
-   "longShots": 86,
+   "longPass": 85,
+   "longShots": 88,
    "penalties": 75,
-   "reactions": 92,
-   "shortPass": 89,
+   "reactions": 93,
+   "shortPass": 93,
    "shotPower": 70,
    "slideTackle": 40,
-   "sprintSpeed": 95,
-   "stamina": 92,
+   "sprintSpeed": 91,
+   "stamina": 85,
    "standTackle": 40,
    "strength": 65,
-   "vision": 93,
+   "vision": 95,
    "volleys": 72
   },
+  "buildName": "Neymar Jr",
+  "height": 69,
+  "id": "0477843e-acb1-4193-9c5f-223e0b06377d",
+  "level": 100,
   "playstyles": [
    "game-changer",
-   "whipped-pass",
+   "incisive-pass",
    "tiki-taka",
-   "rapid",
+   "long-ball-pass",
    "trickster",
+   "rapid",
    "first-touch",
    "quick-step",
    "relentless"
-  ],
-  "unlockedSpecializations": [
-   "magician-plus"
   ],
   "selectedSpecialization": "magician-plus",
   "signature": [
@@ -119,10 +119,11 @@
    "chip-shot",
    "inventive"
   ],
-  "height": 70,
-  "weight": 148,
-  "weakFoot": 5,
   "skillMoves": 5,
-  "accelerationType": "Explosive"
+  "unlockedSpecializations": [
+   "magician-plus"
+  ],
+  "weakFoot": 5,
+  "weight": 150
  }
 ]

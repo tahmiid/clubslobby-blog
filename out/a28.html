@@ -1,5 +1,3 @@
-<p>The Spark is EA FC Pro Clubs' explosive winger — short bursts, byline chaos, and cut-backs that arrive like penalties. This guide is the complete FC 26 answer: every attribute of a finished level-100 Spark build, the order to spend your AP, which specialization to take, and two real builds — a Vinícius and an Olise — you can <a href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84">open in the Pro Clubs HQ builder</a> and copy outright.</p>
-
 <!--kg-card-begin: html-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
@@ -200,32 +198,43 @@
   width: 46px; height: 46px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98) drop-shadow(0 2px 6px rgba(227,184,78,0.5));
 }
+/* The stream window: fixed height, scrolls internally, fades at the top -
+   the app's accumulate-and-rest, in miniature. Lines animate on insertion
+   (the JS is the scheduler), so there are no delay variables to drift. */
 .pchq-r-stream {
-  position: absolute; left: 16px; right: 74px; bottom: 158px;
+  position: absolute; left: 16px; right: 74px; bottom: 152px; height: 158px;
   display: flex; flex-direction: column; gap: 7px;
+  overflow-y: auto; overscroll-behavior: contain;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  scrollbar-width: none;
 }
+.pchq-r-stream::-webkit-scrollbar { display: none; }
 .pchq-r-line {
   display: flex; align-items: center; gap: 8px; font-size: 0.78rem;
-  color: rgba(255,255,255,0.85); opacity: 0; transform: translateY(10px);
+  color: rgba(255,255,255,0.85); flex: none;
+  animation: pchq-r-in 0.4s ease both;
 }
-.pchq-r-on .pchq-r-line {
-  animation: pchq-r-in 0.5s ease both; animation-delay: var(--pchq-d, 0s);
-}
-@keyframes pchq-r-in { to { opacity: 1; transform: none; } }
+@keyframes pchq-r-in { from { opacity: 0; transform: translateY(10px); } }
 .pchq-r-nm { min-width: 88px; color: rgba(255,255,255,0.72); }
 .pchq-r-bar { flex: 1; display: block; height: 7px; border-radius: 999px; background: rgba(255,255,255,0.16); overflow: hidden; }
 .pchq-r-fill {
   display: block; height: 100%; border-radius: inherit;
-  background: #2FD26B; box-shadow: 0 0 6px rgba(47,210,107,0.53);
-}
-.pchq-r-on .pchq-r-fill {
-  animation: pchq-r-grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  animation-delay: calc(var(--pchq-d, 0s) + 0.3s);
+  animation: pchq-r-grow 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @keyframes pchq-r-grow { from { width: 0; } }
 .pchq-r-val {
   font-family: "Archivo", sans-serif; font-weight: 800; min-width: 26px;
-  text-align: right; color: #2FD26B;
+  text-align: right;
+}
+.pchq-r-line-t .pchq-r-txt {
+  margin-left: auto; font-family: "Archivo", sans-serif; font-weight: 800;
+  color: rgba(255,255,255,0.92); letter-spacing: 0.02em;
+}
+.pchq-r-ps { margin-left: auto; display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+.pchq-r-ps-ic {
+  width: 22px; height: 22px; object-fit: contain;
+  filter: saturate(0) brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 .pchq-r-plate { position: absolute; left: 16px; right: 16px; bottom: 66px; display: flex; align-items: center; gap: 12px; }
 .pchq-r-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
@@ -254,8 +263,7 @@
   .pchq-cta, .pchq-cta-block, .pchq-r-cta { animation: none; }
   .pchq-card { transform: none !important; }
   /* The app's rule: the finished state, not a slower animation. */
-  .pchq-r-line { opacity: 1; transform: none; animation: none; }
-  .pchq-r-on .pchq-r-line, .pchq-r-on .pchq-r-fill { animation: none; }
+  .pchq-r-line, .pchq-r-fill { animation: none; }
 }
 
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */
@@ -267,9 +275,7 @@
 .a28k { text-align: center; font-size: 0.9em; margin: 0 0 10px; }
 </style>
 
-<a class="pchq-build" data-build="5d43144f-6d8e-495f-abd0-4abfb93a5d84" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84?src=card&v=reel">Vinícius Júnior — open in Pro Clubs HQ</a>
-<a class="pchq-build" data-build="3955d5cf-6bf2-44b4-b940-aa3dd8e12edc" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/3955d5cf-6bf2-44b4-b940-aa3dd8e12edc?src=card&v=reel">Michael Olise — open in Pro Clubs HQ</a>
-<p class="a28x"><a href="https://proclubshq.com/edit/spark" target="_blank" rel="noopener">Start your own Spark in the builder →</a></p>
+<a class="pchq-build" data-build="552e4e0e-1ed4-409e-a19e-d08c58448fab" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab?src=card&v=reel">Usain Bolt — open in Pro Clubs HQ</a>
 <script>/**
  * Pro Clubs HQ — interactive build embed for blog articles.
  *
@@ -509,21 +515,8 @@
     anchor.appendChild(rail);
 
     var stream = h("span", "pchq-r-stream");
-    Object.entries(b.attributes || {})
-      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
-      .forEach(function (kv, i) {
-        var line = h("span", "pchq-r-line");
-        line.style.setProperty("--pchq-d", (i * 0.45) + "s");
-        line.appendChild(h("span", "pchq-r-nm", label(kv[0])));
-        var bar = h("span", "pchq-r-bar");
-        var fill = h("span", "pchq-r-fill");
-        fill.style.width = kv[1] + "%";
-        bar.appendChild(fill);
-        line.appendChild(bar);
-        line.appendChild(h("span", "pchq-r-val", String(kv[1])));
-        stream.appendChild(line);
-      });
     anchor.appendChild(stream);
+    var lines = reelStreamLines(b);
 
     var plate = h("span", "pchq-r-plate");
     if (b.archetype_id) {
@@ -543,17 +536,119 @@
 
     anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
 
+    // The app's stream rule, both halves: it ACCUMULATES - lines append one
+    // by one and the window auto-scrolls, nothing is ever removed, a reader
+    // can scroll back up inside it - and reduced motion gets the finished
+    // state, not a slower animation. Appending starts the first time the
+    // card is actually seen.
+    var showAll = function () {
+      lines.forEach(function (l) { stream.appendChild(l); });
+      stream.scrollTop = stream.scrollHeight;
+    };
     var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (still || !("IntersectionObserver" in window)) {
-      anchor.classList.add("pchq-r-on");
+      showAll();
       return;
     }
+    var reveal = function (i) {
+      if (i >= lines.length) return;
+      stream.appendChild(lines[i]);
+      stream.scrollTop = stream.scrollHeight;
+      setTimeout(function () { reveal(i + 1); }, lines[i].dataset.quick ? 240 : 520);
+    };
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { anchor.classList.add("pchq-r-on"); io.disconnect(); }
+        if (e.isIntersecting) { io.disconnect(); reveal(0); }
       });
     }, { threshold: 0.35 });
     io.observe(anchor);
+  }
+
+  // The stream's content, mirroring the app's BuildStream order: the
+  // attribute-group bars first (the build's shape before anything else),
+  // then physique, run type, weak foot, skill moves, the equipped
+  // PlayStyles - and the top attributes last, the closing act. Comments and
+  // the love/send rail are the two things deliberately not replicated.
+  var GROUPS = [
+    ["Pace", ["acceleration", "sprintSpeed"]],
+    ["Ball Control", ["agility", "balance", "reactions", "ballControl", "dribbling", "composure"]],
+    ["Passing", ["vision", "crossing", "fkAcc", "shortPass", "longPass", "curve"]],
+    ["Scoring", ["attPosition", "finishing", "shotPower", "longShots", "volleys", "penalties"]],
+    ["Defending", ["interceptions", "headingAcc", "defAware", "standTackle", "slideTackle"]],
+    ["Physical", ["jumping", "strength", "stamina", "aggression"]],
+    ["Shot Stopping", ["gkDiving", "gkHandling", "gkKicking", "gkPositioning", "gkReflexes"]]
+  ];
+
+  function reelStreamLines(b) {
+    var attrs = b.attributes || {};
+    var lines = [];
+
+    function barLine(name, value, quick) {
+      var line = h("span", "pchq-r-line");
+      if (quick) line.dataset.quick = "1";
+      line.appendChild(h("span", "pchq-r-nm", name));
+      var bar = h("span", "pchq-r-bar");
+      var fill = h("span", "pchq-r-fill");
+      fill.style.width = value + "%";
+      fill.style.background = ratingColor(value);
+      fill.style.boxShadow = "0 0 6px " + ratingColor(value) + "88";
+      bar.appendChild(fill);
+      line.appendChild(bar);
+      var val = h("span", "pchq-r-val", String(value));
+      val.style.color = ratingColor(value);
+      line.appendChild(val);
+      return line;
+    }
+
+    function textLine(name, value) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", name));
+      line.appendChild(h("span", "pchq-r-txt", value));
+      return line;
+    }
+
+    GROUPS.forEach(function (g) {
+      var vals = g[1].map(function (k) { return attrs[k]; })
+        .filter(function (v) { return typeof v === "number"; });
+      if (!vals.length) return;
+      var avg = Math.round(vals.reduce(function (s, v) { return s + v; }, 0) / vals.length);
+      lines.push(barLine(g[0], avg, true));
+    });
+
+    if (b.height && b.weight) {
+      lines.push(textLine("Physique",
+        Math.floor(b.height / 12) + "'" + (b.height % 12) + '" · ' + b.weight + " lb"));
+    }
+    if (b.accelerationType) lines.push(textLine("Run type", b.accelerationType));
+    var stars = function (n) {
+      n = Math.max(1, Math.min(5, n || 0));
+      return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+    };
+    if (b.weakFoot) lines.push(textLine("Weak foot", stars(b.weakFoot)));
+    if (b.skillMoves) lines.push(textLine("Skill moves", stars(b.skillMoves)));
+
+    if (b.playstyles && b.playstyles.length) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", "PlayStyles"));
+      var row = h("span", "pchq-r-ps");
+      b.playstyles.forEach(function (slug) {
+        var ic = document.createElement("img");
+        ic.className = "pchq-r-ps-ic";
+        ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+        ic.alt = "";
+        ic.loading = "lazy";
+        ic.addEventListener("error", function () { ic.remove(); });
+        row.appendChild(ic);
+      });
+      line.appendChild(row);
+      lines.push(line);
+    }
+
+    Object.entries(attrs)
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
+      .forEach(function (kv) { lines.push(barLine(label(kv[0]), kv[1])); });
+
+    return lines;
   }
 
   function boot() {
@@ -567,6 +662,9 @@
 })();
 </script>
 <!--kg-card-end: html-->
+<p>The Spark is EA FC Pro Clubs' explosive winger — short bursts, byline chaos, and cut-backs that arrive like penalties. This guide is the complete FC 26 answer: every attribute of a finished level-100 Spark build, the order to spend your AP, which specialization to take, and the two most-copied Spark builds on the site — a Usain Bolt and a Robben '14 — you can <a href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab">open in the Pro Clubs HQ builder</a> and copy outright.</p>
+
+
 
 <h2>Why the Spark</h2>
 <p>Excels in short, explosive bursts - getting to the byline and pulling back tantalising crosses for teammates. Eight ceilings reach <strong>99</strong>, and the headline pair is Acceleration and Agility — the only midfielder archetype that maxes both. Dribbling, Curve, Crossing and Reactions join them. The trade is the middle of the pitch: tackling caps are the lowest in the midfield group, and Strength is token. A Spark hugs the touchline and hurts people from it.</p>
@@ -585,12 +683,16 @@
 <!--kg-card-end: html-->
 
 <h2>The two builds</h2>
-<p><strong>The Vinícius</strong> is the burst weaponised: Acceleration at its <strong>99 cap</strong>, Sprint Speed 95, Dribbling 96 and Agility 96, with Finishing 94 so the chaos ends in goals — and the <strong>Spark+</strong> specialization, whose Live Wire perk boosts Crossing and Finishing every time you beat a defender one-on-one. Which is the whole plan.</p>
-<p><strong>The Olise</strong> is the thinking winger: <strong>Joker</strong> asks for Att. Position 90, Crossing 92 and Long Pass 90, and Wildcard boosts your next shot or pass after a successful skill move. Less raw speed, more final product, same refusal to be predictable.</p>
-<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (3,038 and 3,142 of 3,167), and opening either gives you a copy to bend toward your own game — <a href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84">the Vinícius</a>, <a href="https://proclubshq.com/b/3955d5cf-6bf2-44b4-b940-aa3dd8e12edc">the Olise</a>.</p>
+<p><strong>The Bolt</strong> is the ceiling made literal: Acceleration <strong>99</strong>, Agility <strong>99</strong> and Dribbling <strong>99</strong> — all three caps at once — with a 96 touch, Crossing 96 for the cut-backs, and Att. Position 96 when the run ends in the box. The <strong>Spark+</strong> specialization pays it out: Live Wire boosts Crossing and Finishing every time he beats a man one-on-one, and at this speed everyone is beaten. The joke is the frame: 6'2" and Controlled, long strides instead of short bursts — see the physique section for why that works.</p>
+<p><strong>The Robben '14</strong> is the inverted classic: Curve at its <strong>99 cap</strong>, Acceleration 98 and Dribbling 98, an Explosive frame, and the finesse-shot PlayStyle for the move everybody has watched a hundred times and still can't stop. Also <strong>Spark+</strong> — the same perk pays for a different geometry, inside onto the left foot instead of outside to the byline.</p>
+<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (3,167 and 3,142 of 3,167), and opening either gives you a copy to bend toward your own game — <a href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab">the Bolt</a>, <a href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797">the Robben</a>.</p>
+<!--kg-card-begin: html-->
+<a class="pchq-build" data-build="113d760f-4e0f-4d90-a2f3-365820285797" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797?src=card&v=reel">Robben '14 — open in Pro Clubs HQ</a>
+<p class="a28x"><a href="https://proclubshq.com/edit/spark" target="_blank" rel="noopener">Start your own Spark in the builder →</a></p>
+<!--kg-card-end: html-->
 
 <h2>The AP path: what to buy first</h2>
-<p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">3,167 in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the Vinícius build bought in 4 stages:</p>
+<p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">3,167 in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the Bolt build bought in 4 stages:</p>
 
 <!--kg-card-begin: html-->
 <div class="a28t">
@@ -615,17 +717,17 @@
 <span class="c"><b>2. Unlock Spark+</b><small>The three specialization criteria, nothing more.</small></span>
 <span class="c buy">Sprint Speed 75→90</span>
 <span class="c n">177</span><span class="c n">768</span><span class="c n">34</span>
-<span class="c"><b>3. The end product</b><small>Bursts win space; these stats spend it.</small></span>
-<span class="c buy">Finishing 65→94, Att. Position 80→94, Curve 75→93, Sprint Speed 90→95</span>
-<span class="c n">659</span><span class="c n">1,427</span><span class="c n">56</span>
+<span class="c"><b>3. The end product</b><small>Speed wins space; these stats spend it.</small></span>
+<span class="c buy">Finishing 65→92, Att. Position 80→94, Crossing 75→93, Sprint Speed 90→95</span>
+<span class="c n">668</span><span class="c n">1,436</span><span class="c n">56</span>
 <span class="c"><b>4. Finish the build</b><small>Acceleration to 99, then polish.</small></span>
-<span class="c buy">Short Pass 75→92, Composure 72→94, Balance 75→94, Acceleration 92→99, Vision 75→92, Stamina 65→92, Reactions 75→94, Long Shots 65→86, Shot Power 65→84, Agility 92→96, Dribbling 92→96, Ball Control 92→96</span>
-<span class="c n">1,611</span><span class="c n">3,038</span><span class="c n">99</span>
+<span class="c buy">Short Pass 75→96, Balance 75→96, Composure 72→94, Reactions 75→96, Acceleration 92→99, Agility 92→99, Dribbling 92→99, Stamina 65→92, Crossing 93→96, Ball Control 92→96, Heading Acc. 50→71, Att. Position 94→96, FK Acc. 65→74, Slide Tackle 45→48, Jumping 55→56</span>
+<span class="c n">1,731</span><span class="c n">3,167</span><span class="c n">100</span>
 </div>
 </div>
 <!--kg-card-end: html-->
 
-<p>The burst comes first — 92 Acceleration and Agility at level 29 already beats most lobby fullbacks. The Spark+ push barely costs anything by then: only Sprint Speed 90 remains, met after 768 AP around <strong>level 34</strong>. The late luxury is stage 4's ride from Acceleration 92 to the 99 cap — expensive tier pricing for the last few points, and worth it on the one archetype that can actually reach them. Per-point prices are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="https://proclubshq.com/edit/spark">drag the sliders in the builder</a>, which prices every change live.</p>
+<p>The burst comes first — 92 Acceleration and Agility at level 29 already beats most lobby fullbacks. The Spark+ push barely costs anything by then: its criteria sit inside stats this build buys anyway, met after 768 AP around <strong>level 34</strong>. The late luxury is stage 4's ride from Acceleration 92 to the 99 cap — expensive tier pricing for the last few points, and worth it on the one archetype that can actually reach them. Per-point prices are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="https://proclubshq.com/edit/spark">drag the sliders in the builder</a>, which prices every change live.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-ad" data-ad="b"></div>
@@ -665,19 +767,19 @@
 <!--kg-card-end: html-->
 
 <h2>Height, weight and AcceleRATE</h2>
-<p>The archetype allows 5'4" to 6'2" and 143–187 lb. Stay small and light: both builds — 5'9" and 5'10" — come out <strong>Explosive</strong>, and Explosive is the entire point of an archetype named after short bursts. Every inch you add is burst you give back; check the exact thresholds in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>
+<p>The archetype allows 5'4" to 6'2" and 143–187 lb — and these two builds sit at opposite ends of it on purpose. The Robben (5'11" / 176 lb) is <strong>Explosive</strong>: the short-burst profile, first five yards nobody matches. The Bolt (6'2" / 187 lb) computes as <strong>Controlled</strong>: longer strides that reach a higher cruise and hold it — with Acceleration and Agility at 99, "slower profile" still runs away from every fullback in the lobby, it just does it over twenty yards instead of five. Pick the profile that matches your runs, not your favourite number; the exact thresholds are in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>What is the Spark archetype in EA FC Pro Clubs?</h3>
 <p>The Spark is one of the four midfielder archetypes, inspired by Luís Figo. It is the only midfielder that maxes both Acceleration and Agility at 99 — with Dribbling, Curve and Crossing beside them — and its perks (Bail Out and Cut Back Specialist) live on the byline.</p>
 <h3>What is the best Spark build?</h3>
-<p>Acceleration to its 99 cap — this is the archetype that can — over Agility 96, Dribbling 96 and a 96 touch, with Finishing 94 and Att. Position 94 so the bursts become goals. The full level-100 build costs 3,038 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder.</p>
+<p>The site's most-copied Spark takes Acceleration, Agility AND Dribbling to their 99 caps at once, over a 96 touch, Crossing 96 and Att. Position 96 so the speed becomes cut-backs and goals. The full level-100 build costs 3,167 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder.</p>
 <h3>Spark or Magician — which winger should I pick?</h3>
 <p>Spark for touchline wing play: burst, byline, cut-backs, crosses. Magician for inverted wing play: it finishes better (Finishing 99 vs the Spark’s lower cap) and creates through dribbles rather than deliveries. Wide-and-cross → Spark; inside-and-shoot → Magician.</p>
 <h3>How much AP does a full Spark build cost?</h3>
-<p>3,038 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The Spark+ criteria cost just 177 AP beyond the burst this build buys anyway — the archetype and its signature specialization want the same stats.</p>
+<p>3,167 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The Spark+ criteria cost just 177 AP beyond the burst this build buys anyway — the archetype and its signature specialization want the same stats.</p>
 <h3>Can a Spark reach 99 Acceleration?</h3>
-<p>Yes — it is one of the few archetypes whose Acceleration cap is actually 99, and the featured build takes it there. Combined with a short, light Explosive frame, it is mechanically the fastest first five yards available in Pro Clubs.</p>
+<p>Yes — it is one of the few archetypes whose Acceleration cap is actually 99, and both featured builds take it to 98 or 99. On a short Explosive frame that is the fastest first five yards in Pro Clubs; the featured Bolt proves the tall Controlled version works too, trading the burst for a higher sustained top speed.</p>
 <h3>Does the Spark carry over to FC 27?</h3>
 <p>Yes — EA has confirmed all 13 archetypes return in FC 27 and are unlocked by default, with free resets. A Spark you plan now is a head start, not a throwaway.</p>
 <!--kg-card-begin: html-->
@@ -699,7 +801,7 @@
    "name": "What is the best Spark build?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Acceleration to its 99 cap — this is the archetype that can — over Agility 96, Dribbling 96 and a 96 touch, with Finishing 94 and Att. Position 94 so the bursts become goals. The full level-100 build costs 3,038 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder."
+    "text": "The site's most-copied Spark takes Acceleration, Agility AND Dribbling to their 99 caps at once, over a 96 touch, Crossing 96 and Att. Position 96 so the speed becomes cut-backs and goals. The full level-100 build costs 3,167 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder."
    }
   },
   {
@@ -715,7 +817,7 @@
    "name": "How much AP does a full Spark build cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "3,038 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The Spark+ criteria cost just 177 AP beyond the burst this build buys anyway — the archetype and its signature specialization want the same stats."
+    "text": "3,167 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The Spark+ criteria cost just 177 AP beyond the burst this build buys anyway — the archetype and its signature specialization want the same stats."
    }
   },
   {
@@ -723,7 +825,7 @@
    "name": "Can a Spark reach 99 Acceleration?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — it is one of the few archetypes whose Acceleration cap is actually 99, and the featured build takes it there. Combined with a short, light Explosive frame, it is mechanically the fastest first five yards available in Pro Clubs."
+    "text": "Yes — it is one of the few archetypes whose Acceleration cap is actually 99, and both featured builds take it to 98 or 99. On a short Explosive frame that is the fastest first five yards in Pro Clubs; the featured Bolt proves the tall Controlled version works too, trading the burst for a higher sustained top speed."
    }
   },
   {
@@ -739,7 +841,7 @@
 </script>
 <!--kg-card-end: html-->
 
-<p>The fastest way to use this guide is to not rebuild it: <a href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84">open the Vinícius build</a> or <a href="https://proclubshq.com/b/3955d5cf-6bf2-44b4-b940-aa3dd8e12edc">open the Olise build</a>, save a copy, and bend it to your game — or <a href="https://proclubshq.com/edit/spark">start a fresh Spark from the floor</a>. All 13 archetypes have finished builds on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, and the <a href="https://proclubshq.com/explore">explore feed</a> has the community's.</p>
+<p>The fastest way to use this guide is to not rebuild it: <a href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab">open the Bolt build</a> or <a href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797">open the Robben build</a>, save a copy, and bend it to your game — or <a href="https://proclubshq.com/edit/spark">start a fresh Spark from the floor</a>. All 13 archetypes have finished builds on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, and the <a href="https://proclubshq.com/explore">explore feed</a> has the community's.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-ad" data-ad="c"></div>

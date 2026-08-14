@@ -10,15 +10,18 @@ renderSpoke({
   // better ask. Baseline to beat: 15% of this article's readers crossed
   // to the app in the prior week. Decision ~2026-08-21.
   cardVariant: 'invite',
-  tabs: ['Messi — the Invader', 'Dembélé — the Magician+'],
-  shortNames: ['Messi', 'Dembélé'],
+  // Featured pair since 2026-08-14: the two most-copied public Magicians.
+  // The Messi was already both featured and most-copied; the Neymar (#2 by
+  // copies) replaces the Dembélé, per the most-copied-everywhere policy.
+  tabs: ['Messi — the Invader', 'Neymar — the Magician+'],
+  shortNames: ['Messi', 'Neymar'],
   blurbs: [
     'The central 10. Elite touch, elite vision, and the Invader specialization — runs between the lines that defenders lose, then a finish or the killer pass.',
-    'The wide Magician. Maxed acceleration and sprint speed with the stamina to repeat it, Magician+ on the ball, and real crossing — a winger who finishes.',
+    'The flair Magician. Agility and Balance at 97, a 96 touch, Curve 95 — and Magician+ boosting all of it on the ball. Beats his man for fun, then picks the finish.',
   ],
   buildsH2: 'The two builds',
 
-  intro: ({ openUrl, builds }) => `<p>The Magician is EA FC Pro Clubs' chance-creation forward — the best dribbling ceilings in the game with genuinely elite finishing behind them. This guide is the complete FC 26 answer: every attribute of a finished level-100 Magician build, the order to spend your AP, which specialization to take, and two real builds — a Messi and a Dembélé — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  intro: ({ openUrl, builds }) => `<p>The Magician is EA FC Pro Clubs' chance-creation forward — the best dribbling ceilings in the game with genuinely elite finishing behind them. This guide is the complete FC 26 answer: every attribute of a finished level-100 Magician build, the order to spend your AP, which specialization to take, and the two most-copied Magician builds on the site — a Messi and a Neymar — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} That is the catalog's own description, and the numbers back it up: Agility, Balance, Ball Control, Curve, Finishing and Reactions all cap at <strong>99</strong> — no other forward archetype puts that six together. The catch is everything else. Standing Tackle stops at 80, Defensive Awareness at 82, Heading Accuracy at 85, and Shot Power at 92: you will not win headers, you will not track back well, and your goals come from placement and curve, not raw power.</p>`,
@@ -27,8 +30,8 @@ renderSpoke({
 
   buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
     `<p><strong>The Messi</strong> is the central 10: Ball Control 97, Dribbling 96, Vision 96, Short Pass 95 and Long Pass 92, with the <strong>Invader</strong> specialization — its Ghost Runner perk makes runs between the lines harder to track, and it upgrades Incisive Pass to its PlayStyle+ version. You create for the whole team and arrive unmarked in the box.</p>`,
-    `<p><strong>The Dembélé</strong> is the wide Magician: Acceleration 95 and Sprint Speed 95 with Stamina 92 to repeat the sprints all match, Crossing 88, and <strong>Magician+</strong> for the on-ball boosts. Same touch, different geometry — you attack the byline instead of the half-space.</p>`,
-    `<p>Pick by where you actually play. Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either in the builder gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the Messi</a>, <a href="${openUrl(builds[1])}">the Dembélé</a>.</p>`,
+    `<p><strong>The Neymar</strong> is the flair Magician: Agility 97 and Balance 97 under a 96 touch, Acceleration 95 to get moving, Curve 95 on everything that leaves the boot, and <strong>Magician+</strong> boosting the on-ball game. Same touch as the Messi, different geometry — you start wide, invite the fullback, and disappear inside.</p>`,
+    `<p>Pick by where you actually play. Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either in the builder gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the Messi</a>, <a href="${openUrl(builds[1])}">the Neymar</a>.</p>`,
   ],
 
   stages: [
@@ -58,6 +61,6 @@ renderSpoke({
     ['How much AP does a full Magician build cost?',
      `${fmt(featuredCost)} AP for the complete level-100 build — inside the ${fmt(TOTAL_AP)} AP a pro earns reaching level 100, with ${fmt(TOTAL_AP - featuredCost)} left over. The three Invader criteria alone cost ${specStage.ap} AP from the floor.`],
     ['Can a Magician be Explosive?',
-     `Yes. Keep the frame short and light and the acceleration high — both builds in this guide (5'7" and 5'10") come out Explosive in the builder's AcceleRATE calculation.`],
+     `Yes. Keep the frame short and light and the acceleration high — both builds in this guide (5'7" and 5'9") come out Explosive in the builder's AcceleRATE calculation.`],
   ],
 });
