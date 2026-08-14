@@ -1,9 +1,70 @@
 [
  {
-  "id": "8fa0b248-42a5-401a-be7e-7c7221a6eeef",
-  "buildName": "Rodri",
+  "accelerationType": "Lengthy",
   "archetype_id": "recycler",
+  "attributes": {
+   "acceleration": 70,
+   "aggression": 90,
+   "agility": 70,
+   "attPosition": 76,
+   "balance": 75,
+   "ballControl": 94,
+   "composure": 99,
+   "crossing": 76,
+   "curve": 90,
+   "defAware": 93,
+   "dribbling": 81,
+   "finishing": 74,
+   "fkAcc": 74,
+   "headingAcc": 80,
+   "interceptions": 88,
+   "jumping": 84,
+   "longPass": 95,
+   "longShots": 92,
+   "penalties": 74,
+   "reactions": 94,
+   "shortPass": 96,
+   "shotPower": 95,
+   "slideTackle": 82,
+   "sprintSpeed": 70,
+   "stamina": 91,
+   "standTackle": 92,
+   "strength": 90,
+   "vision": 92,
+   "volleys": 71
+  },
+  "buildName": "Rodri '26 WC",
+  "height": 75,
+  "id": "307b6bce-10bd-41f7-9af5-40a7e234d12a",
   "level": 100,
+  "playstyles": [
+   "precision-header",
+   "long-ball-pass",
+   "inventive",
+   "incisive-pass",
+   "pinged-pass",
+   "slide-tackle",
+   "first-touch",
+   "bruiser",
+   "long-throw"
+  ],
+  "selectedSpecialization": "recycler-plus",
+  "signature": [
+   "press-proven",
+   "intercept",
+   "power-shot",
+   "tiki-taka"
+  ],
+  "skillMoves": 3,
+  "unlockedSpecializations": [
+   "recycler-plus"
+  ],
+  "weakFoot": 4,
+  "weight": 181
+ },
+ {
+  "accelerationType": "Lengthy",
+  "archetype_id": "recycler",
   "attributes": {
    "acceleration": 80,
    "aggression": 88,
@@ -35,6 +96,10 @@
    "vision": 93,
    "volleys": 65
   },
+  "buildName": "Rodri",
+  "height": 75,
+  "id": "8fa0b248-42a5-401a-be7e-7c7221a6eeef",
+  "level": 100,
   "playstyles": [
    "chip-shot",
    "long-ball-pass",
@@ -46,10 +111,6 @@
    "bruiser",
    "enforcer"
   ],
-  "unlockedSpecializations": [
-   "recycler-plus",
-   "thief"
-  ],
   "selectedSpecialization": "recycler-plus",
   "signature": [
    "press-proven",
@@ -57,73 +118,12 @@
    "power-shot",
    "tiki-taka"
   ],
-  "height": 75,
-  "weight": 181,
-  "weakFoot": 4,
   "skillMoves": 3,
-  "accelerationType": "Lengthy"
- },
- {
-  "id": "b47677da-f78d-43b3-918d-488485c86b2a",
-  "buildName": "Declan Rice",
-  "archetype_id": "recycler",
-  "level": 100,
-  "attributes": {
-   "acceleration": 71,
-   "aggression": 92,
-   "agility": 80,
-   "attPosition": 77,
-   "balance": 75,
-   "ballControl": 91,
-   "composure": 92,
-   "crossing": 92,
-   "curve": 90,
-   "defAware": 90,
-   "dribbling": 82,
-   "finishing": 64,
-   "fkAcc": 75,
-   "headingAcc": 79,
-   "interceptions": 96,
-   "jumping": 90,
-   "longPass": 92,
-   "longShots": 83,
-   "penalties": 74,
-   "reactions": 96,
-   "shortPass": 93,
-   "shotPower": 93,
-   "slideTackle": 91,
-   "sprintSpeed": 73,
-   "stamina": 96,
-   "standTackle": 96,
-   "strength": 79,
-   "vision": 83,
-   "volleys": 65
-  },
-  "playstyles": [
-   "dead-ball",
-   "whipped-pass",
-   "inventive",
-   "incisive-pass",
-   "block",
-   "jockey",
-   "slide-tackle",
-   "first-touch",
-   "relentless"
-  ],
   "unlockedSpecializations": [
+   "recycler-plus",
    "thief"
   ],
-  "selectedSpecialization": "thief",
-  "signature": [
-   "press-proven",
-   "intercept",
-   "power-shot",
-   "tiki-taka"
-  ],
-  "height": 74,
-  "weight": 176,
-  "weakFoot": 3,
-  "skillMoves": 3,
-  "accelerationType": "Lengthy"
+  "weakFoot": 4,
+  "weight": 181
  }
 ]

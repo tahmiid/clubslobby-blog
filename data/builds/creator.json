@@ -1,9 +1,7 @@
 [
  {
-  "id": "35fa6e57-0263-46f2-855d-6fc3eb068b76",
-  "buildName": "Kevin De Bruyne",
+  "accelerationType": "Explosive",
   "archetype_id": "creator",
-  "level": 100,
   "attributes": {
    "acceleration": 87,
    "aggression": 55,
@@ -35,6 +33,10 @@
    "vision": 98,
    "volleys": 72
   },
+  "buildName": "Kevin De Bruyne",
+  "height": 71,
+  "id": "35fa6e57-0263-46f2-855d-6fc3eb068b76",
+  "level": 100,
   "playstyles": [
    "dead-ball",
    "power-shot",
@@ -46,9 +48,6 @@
    "whipped-pass",
    "first-touch"
   ],
-  "unlockedSpecializations": [
-   "creator-plus"
-  ],
   "selectedSpecialization": "creator-plus",
   "signature": [
    "incisive-pass",
@@ -56,74 +55,74 @@
    "game-changer",
    "quick-step"
   ],
-  "height": 71,
-  "weight": 154,
-  "weakFoot": 5,
   "skillMoves": 4,
-  "accelerationType": "Explosive"
+  "unlockedSpecializations": [
+   "creator-plus"
+  ],
+  "weakFoot": 5,
+  "weight": 154
  },
  {
-  "id": "f1ae7b2a-0cf6-420e-bc61-3f8230a74a66",
-  "buildName": "Cole Palmer",
+  "accelerationType": "Explosive",
   "archetype_id": "creator",
-  "level": 100,
   "attributes": {
-   "acceleration": 88,
+   "acceleration": 90,
    "aggression": 55,
-   "agility": 91,
-   "attPosition": 93,
-   "balance": 91,
+   "agility": 95,
+   "attPosition": 80,
+   "balance": 80,
    "ballControl": 93,
-   "composure": 96,
-   "crossing": 93,
-   "curve": 94,
+   "composure": 85,
+   "crossing": 90,
+   "curve": 92,
    "defAware": 50,
-   "dribbling": 92,
+   "dribbling": 95,
    "finishing": 93,
    "fkAcc": 75,
    "headingAcc": 50,
    "interceptions": 55,
    "jumping": 60,
-   "longPass": 93,
-   "longShots": 93,
+   "longPass": 94,
+   "longShots": 75,
    "penalties": 75,
    "reactions": 93,
-   "shortPass": 94,
-   "shotPower": 93,
+   "shortPass": 88,
+   "shotPower": 96,
    "slideTackle": 50,
-   "sprintSpeed": 85,
-   "stamina": 91,
+   "sprintSpeed": 92,
+   "stamina": 80,
    "standTackle": 65,
    "strength": 65,
-   "vision": 95,
+   "vision": 92,
    "volleys": 72
   },
+  "buildName": "Messi WC 2026",
+  "height": 68,
+  "id": "331180c2-075d-486f-a5f1-fabe061d4594",
+  "level": 95,
   "playstyles": [
    "finesse-shot",
-   "chip-shot",
+   "first-touch",
+   "pinged-pass",
+   "dead-ball",
    "low-driven-shot",
-   "power-shot",
-   "whipped-pass",
    "long-ball-pass",
    "tiki-taka",
-   "first-touch",
+   "inventive",
    "technical"
   ],
-  "unlockedSpecializations": [
-   "creator-plus",
-   "sniper"
-  ],
-  "selectedSpecialization": "sniper",
+  "selectedSpecialization": "creator-plus",
   "signature": [
    "incisive-pass",
-   "inventive",
+   "whipped-pass",
    "game-changer",
    "quick-step"
   ],
-  "height": 73,
-  "weight": 163,
-  "weakFoot": 4,
-  "skillMoves": 4,
-  "accelerationType": "Controlled"
+  "skillMoves": 5,
+  "unlockedSpecializations": [
+   "creator-plus"
+  ],
+  "weakFoot": 5,
+  "weight": 154
  }
 ]

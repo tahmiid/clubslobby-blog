@@ -1,19 +1,21 @@
-// a27: Creator spoke — De Bruyne (Creator+) / Palmer (Sniper).
+// a27: Creator spoke — De Bruyne (Creator+) / Messi WC 2026 (Creator+).
+// Featured pair = the two most-copied public Creators since 2026-08-14;
+// the WC tribute replaced the Palmer.
 import { renderSpoke } from './spoke.mjs';
 
 renderSpoke({
   n: 27,
   archId: 'creator',
   hideCats: ['Defending'],
-  tabs: ['De Bruyne — the Creator+', 'Palmer — the Sniper'],
-  shortNames: ['De Bruyne', 'Palmer'],
+  tabs: ['De Bruyne — the Creator+', 'Messi WC 2026 — the tribute'],
+  shortNames: ['De Bruyne', 'Messi WC 2026'],
   blurbs: [
     'The assist king. Vision 98, Crossing and Curve 97, and Creator+ boosting the teammate on the end of every through ball — the final pass, perfected.',
-    'The dead-ball menace. Sniper trades a little delivery for Finishing 88 and Shot Power 95, with Set Piece Wizard bending in what the wall thinks it has covered.',
+    'The World Cup tribute. Agility and Dribbling 95 under a five-star weak foot and five-star skill moves, Shot Power 96 — the Creator who beats a man first and picks the pass or the finish after.',
   ],
   buildsH2: 'The two builds',
 
-  intro: ({ openUrl, builds }) => `<p>The Creator is EA FC Pro Clubs' final-pass specialist — the attacking midfielder whose whole game is the ball that unlocks a back line. This guide is the complete FC 26 answer: every attribute of a finished level-100 Creator build, the order to spend your AP, which specialization to take, and two real builds — a De Bruyne and a Palmer — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  intro: ({ openUrl, builds }) => `<p>The Creator is EA FC Pro Clubs' final-pass specialist — the attacking midfielder whose whole game is the ball that unlocks a back line. This guide is the complete FC 26 answer: every attribute of a finished level-100 Creator build, the order to spend your AP, which specialization to take, and the two most-copied Creator builds on the site — a De Bruyne and the Messi WC 2026 tribute — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Nine ceilings hit <strong>99</strong>, and the telling ones are Curve, Crossing, Long Shots and Att. Position — delivery stats the Maestro doesn't max. This is the higher, sharper of the two playmakers: less interested in controlling ninety minutes, entirely interested in the five passes that win the match. Defensively it is a passenger, and the build should accept that.</p>`,
@@ -22,8 +24,8 @@ renderSpoke({
 
   buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
     `<p><strong>The De Bruyne</strong> is the assist king: Vision 98, Crossing 97, Curve 97, Long Pass 96 and Short Pass 96, with all nine PlayStyle slots earned by the passing thresholds themselves — and the <strong>Creator+</strong> specialization, whose Assistant perk boosts the Finishing, Balance and Ball Control of the teammate your through ball finds. Your striker's stats improve because you passed to them.</p>`,
-    `<p><strong>The Palmer</strong> is the shooter's version: <strong>Sniper</strong> asks for Finishing 90, Shot Power 92 and Long Shots 90, and Set Piece Wizard adds extreme curve to every dead ball. Fewer assists, more goals, same eye for space.</p>`,
-    `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the De Bruyne</a>, <a href="${openUrl(builds[1])}">the Palmer</a>.</p>`,
+    `<p><strong>The Messi WC 2026</strong> is the tribute build: Agility 95 and Dribbling 95 with a five-star weak foot AND five-star skill moves, Shot Power 96, Finishing 93 — also <strong>Creator+</strong>, because after the dribble the killer pass is still the point. Built for the run that beats two men before the assist.</p>`,
+    `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the De Bruyne</a>, <a href="${openUrl(builds[1])}">the Messi WC 2026</a>.</p>`,
   ],
 
   stages: [
@@ -41,7 +43,7 @@ renderSpoke({
 
   playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots, and both builds run them full — the silver icons on the cards above, ordered shooting, passing, defending, ball control, physical. Every badge is earned: its unlock thresholds sit inside attributes the build buys anyway; nothing is bought for a badge. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
 
-  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. The De Bruyne at ${ft(builds[0].height)} comes out <strong>Explosive</strong> — the burst that buys half a yard for the cross; the Palmer at ${ft(builds[1].height)} is Controlled and glides between the lines instead. Match the frame to your first touch, not your top speed, and check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
+  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. Both builds come out <strong>Explosive</strong> — the De Bruyne at ${ft(builds[0].height)}, the Messi at ${ft(builds[1].height)} — because a Creator's burst is what buys the half-yard the pass needs. Check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
 
   faq: ({ arch, fmt, featuredCost, TOTAL_AP, specStage }) => [
     ['What is the Creator archetype in EA FC Pro Clubs?',

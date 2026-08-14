@@ -1,9 +1,7 @@
 [
  {
-  "id": "60bbdd58-4b36-4d56-98c1-6afe6ee6e8a9",
-  "buildName": "Florian Wirtz",
+  "accelerationType": "Explosive",
   "archetype_id": "maestro",
-  "level": 100,
   "attributes": {
    "acceleration": 89,
    "aggression": 65,
@@ -35,6 +33,10 @@
    "vision": 98,
    "volleys": 65
   },
+  "buildName": "Florian Wirtz",
+  "height": 69,
+  "id": "60bbdd58-4b36-4d56-98c1-6afe6ee6e8a9",
+  "level": 100,
   "playstyles": [
    "game-changer",
    "chip-shot",
@@ -46,9 +48,69 @@
    "technical",
    "rapid"
   ],
+  "selectedSpecialization": "maestro-plus",
+  "signature": [
+   "pinged-pass",
+   "tiki-taka",
+   "long-ball-pass",
+   "incisive-pass"
+  ],
+  "skillMoves": 4,
   "unlockedSpecializations": [
    "maestro-plus",
    "crasher"
+  ],
+  "weakFoot": 4,
+  "weight": 154
+ },
+ {
+  "accelerationType": "Lengthy",
+  "archetype_id": "maestro",
+  "attributes": {
+   "acceleration": 76,
+   "aggression": 66,
+   "agility": 72,
+   "attPosition": 90,
+   "balance": 90,
+   "ballControl": 96,
+   "composure": 96,
+   "crossing": 92,
+   "curve": 87,
+   "defAware": 66,
+   "dribbling": 96,
+   "finishing": 89,
+   "fkAcc": 75,
+   "headingAcc": 85,
+   "interceptions": 75,
+   "jumping": 60,
+   "longPass": 95,
+   "longShots": 92,
+   "penalties": 65,
+   "reactions": 94,
+   "shortPass": 96,
+   "shotPower": 88,
+   "slideTackle": 50,
+   "sprintSpeed": 70,
+   "stamina": 86,
+   "standTackle": 75,
+   "strength": 86,
+   "vision": 96,
+   "volleys": 91
+  },
+  "buildName": "Zinedine Zidane",
+  "height": 73,
+  "id": "31c84b8b-2c25-4f05-9d6f-45cb63423015",
+  "level": 100,
+  "playstyles": [
+   "power-shot",
+   "chip-shot",
+   "low-driven-shot",
+   "game-changer",
+   "finesse-shot",
+   "inventive",
+   "first-touch",
+   "technical",
+   "press-proven"
   ],
   "selectedSpecialization": "maestro-plus",
   "signature": [
@@ -57,73 +119,11 @@
    "long-ball-pass",
    "incisive-pass"
   ],
-  "height": 69,
-  "weight": 154,
-  "weakFoot": 4,
-  "skillMoves": 4,
-  "accelerationType": "Explosive"
- },
- {
-  "id": "da24584e-0f2d-4521-b80b-3e28e3447333",
-  "buildName": "Federico Valverde",
-  "archetype_id": "maestro",
-  "level": 100,
-  "attributes": {
-   "acceleration": 89,
-   "aggression": 90,
-   "agility": 92,
-   "attPosition": 80,
-   "balance": 90,
-   "ballControl": 90,
-   "composure": 85,
-   "crossing": 77,
-   "curve": 76,
-   "defAware": 81,
-   "dribbling": 83,
-   "finishing": 80,
-   "fkAcc": 75,
-   "headingAcc": 64,
-   "interceptions": 85,
-   "jumping": 83,
-   "longPass": 90,
-   "longShots": 94,
-   "penalties": 74,
-   "reactions": 91,
-   "shortPass": 91,
-   "shotPower": 96,
-   "slideTackle": 86,
-   "sprintSpeed": 90,
-   "stamina": 92,
-   "standTackle": 88,
-   "strength": 82,
-   "vision": 87,
-   "volleys": 82
-  },
-  "playstyles": [
-   "power-shot",
-   "chip-shot",
-   "acrobatic",
-   "intercept",
-   "slide-tackle",
-   "block",
-   "rapid",
-   "trickster",
-   "quick-step"
-  ],
+  "skillMoves": 5,
   "unlockedSpecializations": [
-   "heartbeat"
+   "maestro-plus"
   ],
-  "selectedSpecialization": "heartbeat",
-  "signature": [
-   "pinged-pass",
-   "tiki-taka",
-   "long-ball-pass",
-   "incisive-pass"
-  ],
-  "height": 72,
-  "weight": 172,
-  "weakFoot": 4,
-  "skillMoves": 3,
-  "accelerationType": "Controlled"
+  "weakFoot": 5,
+  "weight": 170
  }
 ]

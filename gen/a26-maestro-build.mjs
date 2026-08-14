@@ -1,19 +1,21 @@
-// a26: Maestro spoke — Wirtz (Maestro+) / Valverde (Heartbeat).
+// a26: Maestro spoke — Wirtz (Maestro+) / Zidane (Maestro+).
+// Featured pair = the two most-copied public Maestros since 2026-08-14;
+// the Zidane replaced the Valverde.
 import { renderSpoke } from './spoke.mjs';
 
 renderSpoke({
   n: 26,
   archId: 'maestro',
   hideCats: ['Defending'],
-  tabs: ['Wirtz — the Maestro+', 'Valverde — the Heartbeat'],
-  shortNames: ['Wirtz', 'Valverde'],
+  tabs: ['Wirtz — the Maestro+', 'Zidane — the legend'],
+  shortNames: ['Wirtz', 'Zidane'],
   blurbs: [
     'The conductor. Vision 98 over a 96-rated touch, and Maestro+ boosting the whole team’s attacking positioning every time you switch play. The game moves at your speed.',
     'The all-action eight. Heartbeat buys Agility 92 and Aggression 90, its Tempo Setter perk recovers team stamina — and Finishing 91 arrives late in the box.',
   ],
   buildsH2: 'The two builds',
 
-  intro: ({ openUrl, builds }) => `<p>The Maestro is EA FC Pro Clubs' deep playmaker — the midfielder who orchestrates everything from the middle of the pitch. This guide is the complete FC 26 answer: every attribute of a finished level-100 Maestro build, the order to spend your AP, which specialization to take, and two real builds — a Wirtz and a Valverde — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  intro: ({ openUrl, builds }) => `<p>The Maestro is EA FC Pro Clubs' deep playmaker — the midfielder who orchestrates everything from the middle of the pitch. This guide is the complete FC 26 answer: every attribute of a finished level-100 Maestro build, the order to spend your AP, which specialization to take, and the two most-copied Maestro builds on the site — a Wirtz and a Zidane — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Nine ceilings at <strong>99</strong> — Vision, Short Pass, Long Pass, Ball Control, Composure, Agility, Reactions, FK Accuracy and Penalties — make it the most technically complete midfielder in the catalog. What it is not is a sprinter or a screen: pace caps at 90 and the tackling numbers are honest, so the Maestro rules matches it can slow down to its own rhythm.</p>`,
@@ -22,8 +24,8 @@ renderSpoke({
 
   buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
     `<p><strong>The Wirtz</strong> is the conductor: Vision 98, Short Pass 96, Ball Control 96 and Dribbling 95, with Att. Position 93 and Finishing 91 so the final pass can become a finish — and the <strong>Maestro+</strong> specialization, whose Conductor perk boosts your team's attacking positioning after every completed switch of play.</p>`,
-    `<p><strong>The Valverde</strong> is the box-to-box version: <strong>Heartbeat</strong> asks for Agility 92, Balance 90 and Aggression 90, and its Tempo Setter perk recovers team stamina when you slow the game down. Same passing brain, more legs, and a Crasher-adjacent knack for arriving late in the box.</p>`,
-    `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the Wirtz</a>, <a href="${openUrl(builds[1])}">the Valverde</a>.</p>`,
+    `<p><strong>The Zidane</strong> is the legend build: a flat wall of 96s — Ball Control, Composure, Dribbling, Short Pass, Vision — under a five-star weak foot and five-star skill moves, on a 6'1" Lengthy frame that shrugs midfielders off the ball. Also <strong>Maestro+</strong>: the same orchestration, played at Zidane's tempo instead of Wirtz's.</p>`,
+    `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the Wirtz</a>, <a href="${openUrl(builds[1])}">the Zidane</a>.</p>`,
   ],
 
   stages: [
@@ -41,7 +43,7 @@ renderSpoke({
 
   playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots, and both builds run them full — the silver icons on the cards above, ordered shooting, passing, defending, ball control, physical. Every badge is earned: its unlock thresholds sit inside attributes the build buys anyway; nothing is bought for a badge. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
 
-  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. The Wirtz stays small — ${ft(builds[0].height)}, <strong>Explosive</strong> — to escape midfield pressure in the first two steps; the Valverde at ${ft(builds[1].height)} is Controlled and carries further. Both are right; match the frame to whether you receive in tight or in space, and check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
+  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. The Wirtz stays small — ${ft(builds[0].height)}, <strong>Explosive</strong> — to escape midfield pressure in the first two steps; the Zidane at ${ft(builds[1].height)} is <strong>Lengthy</strong> and glides through contact instead. Both are right; match the frame to whether you receive in tight or in space, and check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
 
   faq: ({ arch, fmt, featuredCost, TOTAL_AP, specStage }) => [
     ['What is the Maestro archetype in EA FC Pro Clubs?',

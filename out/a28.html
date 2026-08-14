@@ -150,50 +150,73 @@
   50% { box-shadow: 0 0 34px 4px rgba(123,47,247,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
 }
 
-/* ── Variant "invite" (experiment, 2026-08-14): same card, a better ask ── */
-.pchq-foot-inv { border-top: none; padding-top: 4px; }
-.pchq-social { font-weight: 700; color: #E9C767; }
-.pchq-cta-block {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  margin-top: 14px; padding: 15px 24px; border-radius: 999px;
-  font-weight: 800; font-size: 1.02rem; color: #fff;
-  background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0 26px rgba(85, 60, 230, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  animation: pchq-cta 2.6s ease-in-out infinite;
-}
-.pchq-card:hover .pchq-cta-block { filter: brightness(1.1); }
-.pchq-cta-sub {
-  display: block; text-align: center; font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.55); margin-top: 9px;
-}
-
-/* ── Variant "reel" (experiment, 2026-08-14): a miniature of /b/:id ─────
-   Phone-shaped on purpose, so it stays a portal rather than a poster:
-   full width on phones, capped and centered in the desktop column. */
+/* ── The reel card (v3, approved 2026-08-14): a miniature of /b/:id ─────
+   The app's ReelCard vocabulary verbatim - identity top-left (plate row +
+   name), the Level treatment top-right, 46px gold signature rail, the
+   stream, the display-face CTA. Phone-shaped on purpose: full width on
+   phones, capped and centered in the desktop column. Type never drops
+   below article size - the card must out-shout the paragraph beside it. */
 .pchq-build.pchq-reel {
   position: relative; display: block; max-width: 430px; margin: 1.6em auto;
-  aspect-ratio: 4 / 5.4; min-height: 480px;
+  height: 660px;
   border-radius: 20px; overflow: hidden;
   background: #04040a; border: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff; font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
 }
 .pchq-r-art {
   position: absolute; inset: 0; display: block;
-  background: url("https://proclubshq.com/assets/player-outfield.jpg") center 20% / cover no-repeat;
+  background: url("https://proclubshq.com/assets/player-outfield.jpg") center 12% / cover no-repeat;
 }
 .pchq-r-art-gk { background-image: url("https://proclubshq.com/assets/player-keeper.jpg"); }
 .pchq-r-scrim {
   position: absolute; inset: 0; display: block;
-  background: linear-gradient(180deg, rgba(4,4,10,0.15) 0%, rgba(4,4,10,0.05) 25%, rgba(4,4,10,0.35) 60%, rgba(4,4,10,0.93) 100%);
+  background: linear-gradient(180deg, rgba(4,4,10,0.42) 0%, rgba(4,4,10,0.08) 30%, rgba(4,4,10,0.38) 62%, rgba(4,4,10,0.94) 100%);
 }
-.pchq-r-lvl {
-  position: absolute; top: 14px; left: 14px;
-  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 0.74rem;
-  letter-spacing: 0.08em; padding: 7px 12px; border-radius: 999px;
-  background: rgba(4,4,10,0.55); border: 1px solid rgba(45,226,197,0.5); color: #2DE2C5;
+
+/* top-left identity */
+.pchq-r-id { position: absolute; left: 16px; top: 16px; right: 112px; display: block; }
+.pchq-r-arch-row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 15px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
 }
-.pchq-r-rail { position: absolute; right: 12px; top: 88px; display: flex; flex-direction: column; gap: 12px; }
+.pchq-r-arch-row img { width: 26px; height: 26px; object-fit: contain; }
+.pchq-r-chip {
+  border-radius: 5px; background: #E9C767; padding: 2px 6px;
+  font-size: 10.5px; letter-spacing: 0.06em; color: #0b0b0b;
+}
+.pchq-r-name {
+  display: block; font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: 30px; line-height: 1.04; margin-top: 7px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.85);
+}
+.pchq-r-by { display: block; margin-top: 5px; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); }
+.pchq-r-badge {
+  margin-top: 9px; display: inline-flex; align-items: center; gap: 5px;
+  border-radius: 999px; background: rgba(233,199,103,0.16); padding: 4px 11px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #E9C767;
+}
+
+/* top-right: the app's Level treatment */
+.pchq-r-lvl { position: absolute; right: 16px; top: 18px; text-align: right; }
+.pchq-r-lvl-l {
+  display: block; font-size: 10px; font-weight: 800; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+}
+.pchq-r-lvl-n {
+  display: block; font-family: "Archivo", sans-serif; font-weight: 900;
+  font-size: 24px; line-height: 1.05;
+}
+.pchq-r-lvl-bar {
+  display: block; margin-top: 5px; margin-left: auto; height: 4px; width: 64px;
+  border-radius: 999px; background: rgba(255,255,255,0.2); overflow: hidden;
+}
+.pchq-r-lvl-bar i { display: block; height: 100%; width: 100%; border-radius: inherit; background: #2DE2C5; }
+
+.pchq-r-rail { position: absolute; right: 14px; top: 118px; display: flex; flex-direction: column; gap: 11px; }
 .pchq-r-sig {
   width: 46px; height: 46px; object-fit: contain;
   filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98) drop-shadow(0 2px 6px rgba(227,184,78,0.5));
@@ -202,55 +225,46 @@
    the app's accumulate-and-rest, in miniature. Lines animate on insertion
    (the JS is the scheduler), so there are no delay variables to drift. */
 .pchq-r-stream {
-  position: absolute; left: 16px; right: 74px; bottom: 152px; height: 158px;
-  display: flex; flex-direction: column; gap: 7px;
+  position: absolute; left: 16px; right: 78px; bottom: 92px; height: 218px;
+  display: flex; flex-direction: column; gap: 9px;
   overflow-y: auto; overscroll-behavior: contain;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%);
-  mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 16%);
   scrollbar-width: none;
 }
 .pchq-r-stream::-webkit-scrollbar { display: none; }
 .pchq-r-line {
-  display: flex; align-items: center; gap: 8px; font-size: 0.78rem;
-  color: rgba(255,255,255,0.85); flex: none;
+  display: flex; align-items: center; gap: 10px; font-size: 15px;
+  color: rgba(255,255,255,0.9); flex: none;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
   animation: pchq-r-in 0.4s ease both;
 }
 @keyframes pchq-r-in { from { opacity: 0; transform: translateY(10px); } }
-.pchq-r-nm { min-width: 88px; color: rgba(255,255,255,0.72); }
-.pchq-r-bar { flex: 1; display: block; height: 7px; border-radius: 999px; background: rgba(255,255,255,0.16); overflow: hidden; }
+.pchq-r-nm { min-width: 104px; color: rgba(255,255,255,0.78); }
+.pchq-r-bar { flex: 1; display: block; height: 9px; border-radius: 999px; background: rgba(255,255,255,0.18); overflow: hidden; }
 .pchq-r-fill {
   display: block; height: 100%; border-radius: inherit;
   animation: pchq-r-grow 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @keyframes pchq-r-grow { from { width: 0; } }
 .pchq-r-val {
-  font-family: "Archivo", sans-serif; font-weight: 800; min-width: 26px;
-  text-align: right;
+  font-family: "Archivo", sans-serif; font-weight: 800; min-width: 32px;
+  text-align: right; font-size: 15px;
 }
 .pchq-r-line-t .pchq-r-txt {
   margin-left: auto; font-family: "Archivo", sans-serif; font-weight: 800;
-  color: rgba(255,255,255,0.92); letter-spacing: 0.02em;
+  font-size: 15px; color: rgba(255,255,255,0.95); letter-spacing: 0.02em;
 }
-.pchq-r-ps { margin-left: auto; display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+.pchq-r-ps { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
 .pchq-r-ps-ic {
-  width: 22px; height: 22px; object-fit: contain;
+  width: 26px; height: 26px; object-fit: contain;
   filter: saturate(0) brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
-.pchq-r-plate { position: absolute; left: 16px; right: 16px; bottom: 66px; display: flex; align-items: center; gap: 12px; }
-.pchq-r-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
-.pchq-r-id { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.pchq-r-spec {
-  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 0.68rem;
-  letter-spacing: 0.09em; text-transform: uppercase; color: var(--pchq-tier, #e8c35a);
-}
-.pchq-r-name {
-  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 1.55rem; line-height: 1.02;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
 .pchq-r-cta {
-  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  position: absolute; left: 14px; right: 14px; bottom: 14px;
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 14px 20px; border-radius: 999px; font-weight: 800; font-size: 1rem; color: #fff;
+  padding: 15px 20px; border-radius: 999px;
+  font-family: "Archivo", sans-serif; font-weight: 900; font-size: 20px; color: #fff;
   background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 28px rgba(85, 60, 230, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -272,10 +286,8 @@
 .gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .a28x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
-.a28k { text-align: center; font-size: 0.9em; margin: 0 0 10px; }
 </style>
-
-<a class="pchq-build" data-build="552e4e0e-1ed4-409e-a19e-d08c58448fab" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab?src=card&v=reel">Usain Bolt — open in Pro Clubs HQ</a>
+<a class="pchq-build" data-build="552e4e0e-1ed4-409e-a19e-d08c58448fab" data-variant="reel" data-top="1" data-art="outfield" href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab?src=card">Usain Bolt — open in Pro Clubs HQ</a>
 <script>/**
  * Pro Clubs HQ — interactive build embed for blog articles.
  *
@@ -345,13 +357,12 @@
       .catch(function () { anchor.classList.add("pchq-card-fallback"); });
   }
 
-  // The A/B treatments (experiment, 2026-08-14): an anchor may carry
-  // data-variant="invite" (same card, a better ask) or "reel" (a miniature
-  // of the /b/ page it opens). No attribute means the baseline card - the
-  // articles outside the experiment re-render byte-identically.
+  // Since the 2026-08-14 rollout every article card is data-variant="reel" -
+  // the approved v3, a miniature of the /b/ page it opens. The plain card
+  // below stays as the no-attribute fallback (demo.html, future embeds).
+  // The A/B experiment's "invite" variant was retired the same day.
   function render(anchor, b) {
     if (anchor.dataset.variant === "reel") { renderReel(anchor, b); return; }
-    var invite = anchor.dataset.variant === "invite";
     anchor.classList.add("pchq-card");
     anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
@@ -440,29 +451,13 @@
     if (sigs.childNodes.length) inner.appendChild(sigs);
 
     // Footer: creator + counts, and the primary-button CTA.
-    var foot = h("span", "pchq-foot" + (invite ? " pchq-foot-inv" : ""));
+    var foot = h("span", "pchq-foot");
     var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
     foot.appendChild(h("span", "pchq-by", creator));
-    if (invite) {
-      // The invite treatment never shows a zero - "0 loves" is social proof
-      // running in reverse at the exact moment of decision. What is genuinely
-      // positive gets said in a sentence, not a stat pair.
-      if ((b.copyCount || 0) > 0) {
-        foot.appendChild(h("span", "pchq-social",
-          "⚡ " + b.copyCount + (b.copyCount === 1 ? " player has" : " players have") + " copied this build"));
-      } else if ((b.loveCount || 0) > 0) {
-        foot.appendChild(h("span", "pchq-social", "❤ " + b.loveCount + " loves"));
-      }
-      inner.appendChild(foot);
-      inner.appendChild(h("span", "pchq-cta-block", "See the full build →"));
-      inner.appendChild(h("span", "pchq-cta-sub",
-        "every attribute, the AP order, and a copy you can bend into your own"));
-    } else {
-      foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
-      foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
-      foot.appendChild(h("span", "pchq-cta", "Open in builder"));
-      inner.appendChild(foot);
-    }
+    foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
+    foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
+    foot.appendChild(h("span", "pchq-cta", "Open in builder"));
+    inner.appendChild(foot);
 
     anchor.appendChild(inner);
 
@@ -494,13 +489,54 @@
   // the app follows.
   function renderReel(anchor, b) {
     anchor.classList.add("pchq-reel");
-    anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
 
     var art = h("span", "pchq-r-art" + (anchor.dataset.art === "keeper" ? " pchq-r-art-gk" : ""));
     anchor.appendChild(art);
     anchor.appendChild(h("span", "pchq-r-scrim"));
-    anchor.appendChild(h("span", "pchq-r-lvl", "LVL " + b.level));
+
+    // Top-left: identity - the app's plate row (icon, archetype, gold spec
+    // chip) moved to the top per the approved v3, with the build name doing
+    // the work the CTA no longer does, then the creator, then the badge.
+    var archName = (b.archetype_id || "").split("-").map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(" ");
+    var idc = h("span", "pchq-r-id");
+    var row = h("span", "pchq-r-arch-row");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.addEventListener("error", function () { logo.remove(); });
+      row.appendChild(logo);
+    }
+    row.appendChild(document.createTextNode(archName));
+    if (b.cardLabel) row.appendChild(h("span", "pchq-r-chip", b.cardLabel));
+    idc.appendChild(row);
+    idc.appendChild(h("span", "pchq-r-name", b.buildName));
+    if (b.creator && b.creator.handle) {
+      idc.appendChild(h("span", "pchq-r-by", "@" + b.creator.handle));
+    }
+    // The social-proof rule (user, 2026-08-14): a small number persuades
+    // nobody, so it never appears. Seven copies or more earns the count;
+    // below that, the top build wears the claim instead - and only the top
+    // build (data-top), because the badge asserts something that has to be
+    // true. The second card below seven copies wears nothing.
+    var copies = b.copyCount || 0;
+    var badge = copies >= 7 ? "⚡ Copied " + copies + " times"
+      : anchor.dataset.top === "1" ? "★ Most copied " + archName + " build"
+      : null;
+    if (badge) idc.appendChild(h("span", "pchq-r-badge", badge));
+    anchor.appendChild(idc);
+
+    // Top-right: the app's own Level treatment, verbatim (ReelCard.jsx).
+    var lvl = h("span", "pchq-r-lvl");
+    lvl.appendChild(h("span", "pchq-r-lvl-l", "Level"));
+    lvl.appendChild(h("span", "pchq-r-lvl-n", String(b.level)));
+    var lbar = h("span", "pchq-r-lvl-bar");
+    lbar.appendChild(h("i"));
+    lvl.appendChild(lbar);
+    anchor.appendChild(lvl);
 
     var rail = h("span", "pchq-r-rail");
     (b.signature || []).slice(0, 4).forEach(function (slug) {
@@ -517,22 +553,6 @@
     var stream = h("span", "pchq-r-stream");
     anchor.appendChild(stream);
     var lines = reelStreamLines(b);
-
-    var plate = h("span", "pchq-r-plate");
-    if (b.archetype_id) {
-      var logo = document.createElement("img");
-      logo.className = "pchq-r-logo";
-      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
-      logo.alt = "";
-      logo.addEventListener("error", function () { logo.remove(); });
-      plate.appendChild(logo);
-    }
-    var idc = h("span", "pchq-r-id");
-    var handle = b.creator && b.creator.handle ? " · @" + b.creator.handle : "";
-    idc.appendChild(h("span", "pchq-r-spec", (b.cardLabel || "") + handle));
-    idc.appendChild(h("span", "pchq-r-name", b.buildName));
-    plate.appendChild(idc);
-    anchor.appendChild(plate);
 
     anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
 
@@ -664,8 +684,6 @@
 <!--kg-card-end: html-->
 <p>The Spark is EA FC Pro Clubs' explosive winger — short bursts, byline chaos, and cut-backs that arrive like penalties. This guide is the complete FC 26 answer: every attribute of a finished level-100 Spark build, the order to spend your AP, which specialization to take, and the two most-copied Spark builds on the site — a Usain Bolt and a Robben '14 — you can <a href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab">open in the Pro Clubs HQ builder</a> and copy outright.</p>
 
-
-
 <h2>Why the Spark</h2>
 <p>Excels in short, explosive bursts - getting to the byline and pulling back tantalising crosses for teammates. Eight ceilings reach <strong>99</strong>, and the headline pair is Acceleration and Agility — the only midfielder archetype that maxes both. Dribbling, Curve, Crossing and Reactions join them. The trade is the middle of the pitch: tackling caps are the lowest in the midfield group, and Strength is token. A Spark hugs the touchline and hurts people from it.</p>
 <!--kg-card-begin: html-->
@@ -687,7 +705,7 @@
 <p><strong>The Robben '14</strong> is the inverted classic: Curve at its <strong>99 cap</strong>, Acceleration 98 and Dribbling 98, an Explosive frame, and the finesse-shot PlayStyle for the move everybody has watched a hundred times and still can't stop. Also <strong>Spark+</strong> — the same perk pays for a different geometry, inside onto the left foot instead of outside to the byline.</p>
 <p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (3,167 and 3,142 of 3,167), and opening either gives you a copy to bend toward your own game — <a href="https://proclubshq.com/b/552e4e0e-1ed4-409e-a19e-d08c58448fab">the Bolt</a>, <a href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797">the Robben</a>.</p>
 <!--kg-card-begin: html-->
-<a class="pchq-build" data-build="113d760f-4e0f-4d90-a2f3-365820285797" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797?src=card&v=reel">Robben '14 — open in Pro Clubs HQ</a>
+<a class="pchq-build" data-build="113d760f-4e0f-4d90-a2f3-365820285797" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/113d760f-4e0f-4d90-a2f3-365820285797?src=card">Robben '14 — open in Pro Clubs HQ</a>
 <p class="a28x"><a href="https://proclubshq.com/edit/spark" target="_blank" rel="noopener">Start your own Spark in the builder →</a></p>
 <!--kg-card-end: html-->
 

@@ -67,13 +67,12 @@
       .catch(function () { anchor.classList.add("pchq-card-fallback"); });
   }
 
-  // The A/B treatments (experiment, 2026-08-14): an anchor may carry
-  // data-variant="invite" (same card, a better ask) or "reel" (a miniature
-  // of the /b/ page it opens). No attribute means the baseline card - the
-  // articles outside the experiment re-render byte-identically.
+  // Since the 2026-08-14 rollout every article card is data-variant="reel" -
+  // the approved v3, a miniature of the /b/ page it opens. The plain card
+  // below stays as the no-attribute fallback (demo.html, future embeds).
+  // The A/B experiment's "invite" variant was retired the same day.
   function render(anchor, b) {
     if (anchor.dataset.variant === "reel") { renderReel(anchor, b); return; }
-    var invite = anchor.dataset.variant === "invite";
     anchor.classList.add("pchq-card");
     anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
@@ -162,29 +161,13 @@
     if (sigs.childNodes.length) inner.appendChild(sigs);
 
     // Footer: creator + counts, and the primary-button CTA.
-    var foot = h("span", "pchq-foot" + (invite ? " pchq-foot-inv" : ""));
+    var foot = h("span", "pchq-foot");
     var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
     foot.appendChild(h("span", "pchq-by", creator));
-    if (invite) {
-      // The invite treatment never shows a zero - "0 loves" is social proof
-      // running in reverse at the exact moment of decision. What is genuinely
-      // positive gets said in a sentence, not a stat pair.
-      if ((b.copyCount || 0) > 0) {
-        foot.appendChild(h("span", "pchq-social",
-          "⚡ " + b.copyCount + (b.copyCount === 1 ? " player has" : " players have") + " copied this build"));
-      } else if ((b.loveCount || 0) > 0) {
-        foot.appendChild(h("span", "pchq-social", "❤ " + b.loveCount + " loves"));
-      }
-      inner.appendChild(foot);
-      inner.appendChild(h("span", "pchq-cta-block", "See the full build →"));
-      inner.appendChild(h("span", "pchq-cta-sub",
-        "every attribute, the AP order, and a copy you can bend into your own"));
-    } else {
-      foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
-      foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
-      foot.appendChild(h("span", "pchq-cta", "Open in builder"));
-      inner.appendChild(foot);
-    }
+    foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
+    foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
+    foot.appendChild(h("span", "pchq-cta", "Open in builder"));
+    inner.appendChild(foot);
 
     anchor.appendChild(inner);
 
@@ -216,13 +199,54 @@
   // the app follows.
   function renderReel(anchor, b) {
     anchor.classList.add("pchq-reel");
-    anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
 
     var art = h("span", "pchq-r-art" + (anchor.dataset.art === "keeper" ? " pchq-r-art-gk" : ""));
     anchor.appendChild(art);
     anchor.appendChild(h("span", "pchq-r-scrim"));
-    anchor.appendChild(h("span", "pchq-r-lvl", "LVL " + b.level));
+
+    // Top-left: identity - the app's plate row (icon, archetype, gold spec
+    // chip) moved to the top per the approved v3, with the build name doing
+    // the work the CTA no longer does, then the creator, then the badge.
+    var archName = (b.archetype_id || "").split("-").map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(" ");
+    var idc = h("span", "pchq-r-id");
+    var row = h("span", "pchq-r-arch-row");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.addEventListener("error", function () { logo.remove(); });
+      row.appendChild(logo);
+    }
+    row.appendChild(document.createTextNode(archName));
+    if (b.cardLabel) row.appendChild(h("span", "pchq-r-chip", b.cardLabel));
+    idc.appendChild(row);
+    idc.appendChild(h("span", "pchq-r-name", b.buildName));
+    if (b.creator && b.creator.handle) {
+      idc.appendChild(h("span", "pchq-r-by", "@" + b.creator.handle));
+    }
+    // The social-proof rule (user, 2026-08-14): a small number persuades
+    // nobody, so it never appears. Seven copies or more earns the count;
+    // below that, the top build wears the claim instead - and only the top
+    // build (data-top), because the badge asserts something that has to be
+    // true. The second card below seven copies wears nothing.
+    var copies = b.copyCount || 0;
+    var badge = copies >= 7 ? "⚡ Copied " + copies + " times"
+      : anchor.dataset.top === "1" ? "★ Most copied " + archName + " build"
+      : null;
+    if (badge) idc.appendChild(h("span", "pchq-r-badge", badge));
+    anchor.appendChild(idc);
+
+    // Top-right: the app's own Level treatment, verbatim (ReelCard.jsx).
+    var lvl = h("span", "pchq-r-lvl");
+    lvl.appendChild(h("span", "pchq-r-lvl-l", "Level"));
+    lvl.appendChild(h("span", "pchq-r-lvl-n", String(b.level)));
+    var lbar = h("span", "pchq-r-lvl-bar");
+    lbar.appendChild(h("i"));
+    lvl.appendChild(lbar);
+    anchor.appendChild(lvl);
 
     var rail = h("span", "pchq-r-rail");
     (b.signature || []).slice(0, 4).forEach(function (slug) {
@@ -239,22 +263,6 @@
     var stream = h("span", "pchq-r-stream");
     anchor.appendChild(stream);
     var lines = reelStreamLines(b);
-
-    var plate = h("span", "pchq-r-plate");
-    if (b.archetype_id) {
-      var logo = document.createElement("img");
-      logo.className = "pchq-r-logo";
-      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
-      logo.alt = "";
-      logo.addEventListener("error", function () { logo.remove(); });
-      plate.appendChild(logo);
-    }
-    var idc = h("span", "pchq-r-id");
-    var handle = b.creator && b.creator.handle ? " · @" + b.creator.handle : "";
-    idc.appendChild(h("span", "pchq-r-spec", (b.cardLabel || "") + handle));
-    idc.appendChild(h("span", "pchq-r-name", b.buildName));
-    plate.appendChild(idc);
-    anchor.appendChild(plate);
 
     anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
 

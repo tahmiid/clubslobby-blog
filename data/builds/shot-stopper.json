@@ -1,9 +1,71 @@
 [
  {
-  "id": "896e33b0-5b31-4ee9-bfef-0173f7a45274",
-  "buildName": "Gianluigi Donnarumma",
+  "accelerationType": "Lengthy",
   "archetype_id": "shot-stopper",
+  "attributes": {
+   "acceleration": 78,
+   "aggression": 65,
+   "agility": 81,
+   "attPosition": 50,
+   "balance": 75,
+   "ballControl": 68,
+   "composure": 87,
+   "crossing": 40,
+   "curve": 40,
+   "defAware": 40,
+   "dribbling": 40,
+   "finishing": 40,
+   "fkAcc": 74,
+   "gkDiving": 99,
+   "gkHandling": 99,
+   "gkKicking": 99,
+   "gkPositioning": 99,
+   "gkReflexes": 99,
+   "headingAcc": 40,
+   "interceptions": 65,
+   "jumping": 96,
+   "longPass": 77,
+   "longShots": 40,
+   "penalties": 70,
+   "reactions": 96,
+   "shortPass": 68,
+   "shotPower": 50,
+   "slideTackle": 50,
+   "sprintSpeed": 56,
+   "stamina": 65,
+   "standTackle": 40,
+   "strength": 96,
+   "vision": 84,
+   "volleys": 40
+  },
+  "buildName": "Gianluigi Buffon",
+  "height": 76,
+  "id": "93ad6248-1570-4ab4-a7be-4864405daa8c",
   "level": 100,
+  "playstyles": [
+   "far-throw",
+   "cross-claimer",
+   "block",
+   "long-throw"
+  ],
+  "selectedSpecialization": "octopus",
+  "signature": [
+   "far-reach",
+   "footwork",
+   "long-ball-pass",
+   "deflector"
+  ],
+  "skillMoves": 1,
+  "unlockedSpecializations": [
+   "shot-stopper-plus",
+   "octopus"
+  ],
+  "weakFoot": 2,
+  "weight": 181
+ },
+ {
+  "accelerationType": "Lengthy",
+  "archetype_id": "shot-stopper",
   "attributes": {
    "acceleration": 90,
    "aggression": 90,
@@ -40,16 +102,15 @@
    "vision": 65,
    "volleys": 40
   },
+  "buildName": "Gianluigi Donnarumma",
+  "height": 77,
+  "id": "896e33b0-5b31-4ee9-bfef-0173f7a45274",
+  "level": 100,
   "playstyles": [
    "cross-claimer",
    "1v1-close-down",
    "chip-shot",
    "block"
-  ],
-  "unlockedSpecializations": [
-   "shot-stopper-plus",
-   "spider",
-   "octopus"
   ],
   "selectedSpecialization": "shot-stopper-plus",
   "signature": [
@@ -58,75 +119,13 @@
    "long-ball-pass",
    "deflector"
   ],
-  "height": 77,
-  "weight": 198,
-  "weakFoot": 3,
   "skillMoves": 1,
-  "accelerationType": "Lengthy"
- },
- {
-  "id": "cca27aff-8f65-4b80-ac4e-75262e5e118e",
-  "buildName": "Thibaut Courtois",
-  "archetype_id": "shot-stopper",
-  "level": 100,
-  "attributes": {
-   "acceleration": 90,
-   "aggression": 65,
-   "agility": 90,
-   "attPosition": 50,
-   "balance": 60,
-   "ballControl": 65,
-   "composure": 70,
-   "crossing": 40,
-   "curve": 40,
-   "defAware": 40,
-   "dribbling": 40,
-   "finishing": 40,
-   "fkAcc": 74,
-   "gkDiving": 99,
-   "gkHandling": 99,
-   "gkKicking": 99,
-   "gkPositioning": 99,
-   "gkReflexes": 99,
-   "headingAcc": 40,
-   "interceptions": 65,
-   "jumping": 96,
-   "longPass": 75,
-   "longShots": 40,
-   "penalties": 70,
-   "reactions": 96,
-   "shortPass": 65,
-   "shotPower": 50,
-   "slideTackle": 50,
-   "sprintSpeed": 57,
-   "stamina": 65,
-   "standTackle": 40,
-   "strength": 96,
-   "vision": 75,
-   "volleys": 40
-  },
-  "playstyles": [
-   "far-throw",
-   "cross-claimer",
-   "block",
-   "long-throw"
-  ],
   "unlockedSpecializations": [
    "shot-stopper-plus",
    "spider",
    "octopus"
   ],
-  "selectedSpecialization": "spider",
-  "signature": [
-   "far-reach",
-   "footwork",
-   "long-ball-pass",
-   "deflector"
-  ],
-  "height": 79,
-  "weight": 212,
   "weakFoot": 3,
-  "skillMoves": 1,
-  "accelerationType": "Lengthy"
+  "weight": 198
  }
 ]

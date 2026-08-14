@@ -6,10 +6,6 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 18,
   archId: 'magician',
-  // Experiment arm A (2026-08-14): the "invite" treatment - same card,
-  // better ask. Baseline to beat: 15% of this article's readers crossed
-  // to the app in the prior week. Decision ~2026-08-21.
-  cardVariant: 'invite',
   // Featured pair since 2026-08-14: the two most-copied public Magicians.
   // The Messi was already both featured and most-copied; the Neymar (#2 by
   // copies) replaces the Dembélé, per the most-copied-everywhere policy.

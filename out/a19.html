@@ -1,5 +1,3 @@
-<p>The Shot Stopper is EA FC Pro Clubs' pure goalkeeper — the archetype you pick to make saves, full stop. This guide is the complete FC 26 answer: every attribute of a finished level-100 Shot Stopper build, the order to spend your AP, which specialization to take, and two real builds — a Donnarumma and a Courtois — you can <a href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">open in the Pro Clubs HQ builder</a> and copy outright.</p>
-
 <!--kg-card-begin: html-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
@@ -152,10 +150,134 @@
   50% { box-shadow: 0 0 34px 4px rgba(123,47,247,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
 }
 
+/* ── The reel card (v3, approved 2026-08-14): a miniature of /b/:id ─────
+   The app's ReelCard vocabulary verbatim - identity top-left (plate row +
+   name), the Level treatment top-right, 46px gold signature rail, the
+   stream, the display-face CTA. Phone-shaped on purpose: full width on
+   phones, capped and centered in the desktop column. Type never drops
+   below article size - the card must out-shout the paragraph beside it. */
+.pchq-build.pchq-reel {
+  position: relative; display: block; max-width: 430px; margin: 1.6em auto;
+  height: 660px;
+  border-radius: 20px; overflow: hidden;
+  background: #04040a; border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff; font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+}
+.pchq-r-art {
+  position: absolute; inset: 0; display: block;
+  background: url("https://proclubshq.com/assets/player-outfield.jpg") center 12% / cover no-repeat;
+}
+.pchq-r-art-gk { background-image: url("https://proclubshq.com/assets/player-keeper.jpg"); }
+.pchq-r-scrim {
+  position: absolute; inset: 0; display: block;
+  background: linear-gradient(180deg, rgba(4,4,10,0.42) 0%, rgba(4,4,10,0.08) 30%, rgba(4,4,10,0.38) 62%, rgba(4,4,10,0.94) 100%);
+}
+
+/* top-left identity */
+.pchq-r-id { position: absolute; left: 16px; top: 16px; right: 112px; display: block; }
+.pchq-r-arch-row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 15px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+.pchq-r-arch-row img { width: 26px; height: 26px; object-fit: contain; }
+.pchq-r-chip {
+  border-radius: 5px; background: #E9C767; padding: 2px 6px;
+  font-size: 10.5px; letter-spacing: 0.06em; color: #0b0b0b;
+}
+.pchq-r-name {
+  display: block; font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: 30px; line-height: 1.04; margin-top: 7px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.85);
+}
+.pchq-r-by { display: block; margin-top: 5px; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); }
+.pchq-r-badge {
+  margin-top: 9px; display: inline-flex; align-items: center; gap: 5px;
+  border-radius: 999px; background: rgba(233,199,103,0.16); padding: 4px 11px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #E9C767;
+}
+
+/* top-right: the app's Level treatment */
+.pchq-r-lvl { position: absolute; right: 16px; top: 18px; text-align: right; }
+.pchq-r-lvl-l {
+  display: block; font-size: 10px; font-weight: 800; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+}
+.pchq-r-lvl-n {
+  display: block; font-family: "Archivo", sans-serif; font-weight: 900;
+  font-size: 24px; line-height: 1.05;
+}
+.pchq-r-lvl-bar {
+  display: block; margin-top: 5px; margin-left: auto; height: 4px; width: 64px;
+  border-radius: 999px; background: rgba(255,255,255,0.2); overflow: hidden;
+}
+.pchq-r-lvl-bar i { display: block; height: 100%; width: 100%; border-radius: inherit; background: #2DE2C5; }
+
+.pchq-r-rail { position: absolute; right: 14px; top: 118px; display: flex; flex-direction: column; gap: 11px; }
+.pchq-r-sig {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98) drop-shadow(0 2px 6px rgba(227,184,78,0.5));
+}
+/* The stream window: fixed height, scrolls internally, fades at the top -
+   the app's accumulate-and-rest, in miniature. Lines animate on insertion
+   (the JS is the scheduler), so there are no delay variables to drift. */
+.pchq-r-stream {
+  position: absolute; left: 16px; right: 78px; bottom: 92px; height: 218px;
+  display: flex; flex-direction: column; gap: 9px;
+  overflow-y: auto; overscroll-behavior: contain;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 16%);
+  scrollbar-width: none;
+}
+.pchq-r-stream::-webkit-scrollbar { display: none; }
+.pchq-r-line {
+  display: flex; align-items: center; gap: 10px; font-size: 15px;
+  color: rgba(255,255,255,0.9); flex: none;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+  animation: pchq-r-in 0.4s ease both;
+}
+@keyframes pchq-r-in { from { opacity: 0; transform: translateY(10px); } }
+.pchq-r-nm { min-width: 104px; color: rgba(255,255,255,0.78); }
+.pchq-r-bar { flex: 1; display: block; height: 9px; border-radius: 999px; background: rgba(255,255,255,0.18); overflow: hidden; }
+.pchq-r-fill {
+  display: block; height: 100%; border-radius: inherit;
+  animation: pchq-r-grow 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes pchq-r-grow { from { width: 0; } }
+.pchq-r-val {
+  font-family: "Archivo", sans-serif; font-weight: 800; min-width: 32px;
+  text-align: right; font-size: 15px;
+}
+.pchq-r-line-t .pchq-r-txt {
+  margin-left: auto; font-family: "Archivo", sans-serif; font-weight: 800;
+  font-size: 15px; color: rgba(255,255,255,0.95); letter-spacing: 0.02em;
+}
+.pchq-r-ps { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.pchq-r-ps-ic {
+  width: 26px; height: 26px; object-fit: contain;
+  filter: saturate(0) brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+}
+.pchq-r-cta {
+  position: absolute; left: 14px; right: 14px; bottom: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 20px; border-radius: 999px;
+  font-family: "Archivo", sans-serif; font-weight: 900; font-size: 20px; color: #fff;
+  background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 28px rgba(85, 60, 230, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: pchq-cta 2.6s ease-in-out infinite;
+}
+.pchq-reel:hover .pchq-r-cta { filter: brightness(1.1); }
+
 @media (prefers-reduced-motion: reduce) {
   .pchq-fill { animation: none; }
-  .pchq-cta { animation: none; }
+  .pchq-cta, .pchq-cta-block, .pchq-r-cta { animation: none; }
   .pchq-card { transform: none !important; }
+  /* The app's rule: the finished state, not a slower animation. */
+  .pchq-r-line, .pchq-r-fill { animation: none; }
 }
 
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */
@@ -165,9 +287,7 @@
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .a19x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
 </style>
-<a class="pchq-build" data-build="896e33b0-5b31-4ee9-bfef-0173f7a45274" href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274" target="_blank" rel="noopener">Gianluigi Donnarumma — open in Pro Clubs HQ</a>
-<a class="pchq-build" data-build="cca27aff-8f65-4b80-ac4e-75262e5e118e" href="https://proclubshq.com/b/cca27aff-8f65-4b80-ac4e-75262e5e118e" target="_blank" rel="noopener">Thibaut Courtois — open in Pro Clubs HQ</a>
-<p class="a19x"><a href="https://proclubshq.com/edit/shot-stopper" target="_blank" rel="noopener">Start your own Shot Stopper in the builder →</a></p>
+<a class="pchq-build" data-build="93ad6248-1570-4ab4-a7be-4864405daa8c" data-variant="reel" data-top="1" data-art="keeper" href="https://proclubshq.com/b/93ad6248-1570-4ab4-a7be-4864405daa8c?src=card">Gianluigi Buffon — open in Pro Clubs HQ</a>
 <script>/**
  * Pro Clubs HQ — interactive build embed for blog articles.
  *
@@ -237,7 +357,12 @@
       .catch(function () { anchor.classList.add("pchq-card-fallback"); });
   }
 
+  // Since the 2026-08-14 rollout every article card is data-variant="reel" -
+  // the approved v3, a miniature of the /b/ page it opens. The plain card
+  // below stays as the no-attribute fallback (demo.html, future embeds).
+  // The A/B experiment's "invite" variant was retired the same day.
   function render(anchor, b) {
+    if (anchor.dataset.variant === "reel") { renderReel(anchor, b); return; }
     anchor.classList.add("pchq-card");
     anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
@@ -354,6 +479,198 @@
     });
   }
 
+  // The reel teaser: a miniature of the /b/ page the click opens - same art,
+  // same scrim, level chip, gold signature rail, a taste of the stat stream,
+  // the plate, and the CTA. Visual continuity IS the seamlessness: the click
+  // feels like the card going full-screen because the destination looks like
+  // this. The stream animates in line by line the way the app's stream
+  // accumulates - triggered the first time the card is actually seen, and
+  // reduced-motion readers get the finished state immediately, the same rule
+  // the app follows.
+  function renderReel(anchor, b) {
+    anchor.classList.add("pchq-reel");
+    anchor.textContent = "";
+
+    var art = h("span", "pchq-r-art" + (anchor.dataset.art === "keeper" ? " pchq-r-art-gk" : ""));
+    anchor.appendChild(art);
+    anchor.appendChild(h("span", "pchq-r-scrim"));
+
+    // Top-left: identity - the app's plate row (icon, archetype, gold spec
+    // chip) moved to the top per the approved v3, with the build name doing
+    // the work the CTA no longer does, then the creator, then the badge.
+    var archName = (b.archetype_id || "").split("-").map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(" ");
+    var idc = h("span", "pchq-r-id");
+    var row = h("span", "pchq-r-arch-row");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.addEventListener("error", function () { logo.remove(); });
+      row.appendChild(logo);
+    }
+    row.appendChild(document.createTextNode(archName));
+    if (b.cardLabel) row.appendChild(h("span", "pchq-r-chip", b.cardLabel));
+    idc.appendChild(row);
+    idc.appendChild(h("span", "pchq-r-name", b.buildName));
+    if (b.creator && b.creator.handle) {
+      idc.appendChild(h("span", "pchq-r-by", "@" + b.creator.handle));
+    }
+    // The social-proof rule (user, 2026-08-14): a small number persuades
+    // nobody, so it never appears. Seven copies or more earns the count;
+    // below that, the top build wears the claim instead - and only the top
+    // build (data-top), because the badge asserts something that has to be
+    // true. The second card below seven copies wears nothing.
+    var copies = b.copyCount || 0;
+    var badge = copies >= 7 ? "⚡ Copied " + copies + " times"
+      : anchor.dataset.top === "1" ? "★ Most copied " + archName + " build"
+      : null;
+    if (badge) idc.appendChild(h("span", "pchq-r-badge", badge));
+    anchor.appendChild(idc);
+
+    // Top-right: the app's own Level treatment, verbatim (ReelCard.jsx).
+    var lvl = h("span", "pchq-r-lvl");
+    lvl.appendChild(h("span", "pchq-r-lvl-l", "Level"));
+    lvl.appendChild(h("span", "pchq-r-lvl-n", String(b.level)));
+    var lbar = h("span", "pchq-r-lvl-bar");
+    lbar.appendChild(h("i"));
+    lvl.appendChild(lbar);
+    anchor.appendChild(lvl);
+
+    var rail = h("span", "pchq-r-rail");
+    (b.signature || []).slice(0, 4).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-r-sig";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.alt = "";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      rail.appendChild(ic);
+    });
+    anchor.appendChild(rail);
+
+    var stream = h("span", "pchq-r-stream");
+    anchor.appendChild(stream);
+    var lines = reelStreamLines(b);
+
+    anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
+
+    // The app's stream rule, both halves: it ACCUMULATES - lines append one
+    // by one and the window auto-scrolls, nothing is ever removed, a reader
+    // can scroll back up inside it - and reduced motion gets the finished
+    // state, not a slower animation. Appending starts the first time the
+    // card is actually seen.
+    var showAll = function () {
+      lines.forEach(function (l) { stream.appendChild(l); });
+      stream.scrollTop = stream.scrollHeight;
+    };
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (still || !("IntersectionObserver" in window)) {
+      showAll();
+      return;
+    }
+    var reveal = function (i) {
+      if (i >= lines.length) return;
+      stream.appendChild(lines[i]);
+      stream.scrollTop = stream.scrollHeight;
+      setTimeout(function () { reveal(i + 1); }, lines[i].dataset.quick ? 240 : 520);
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { io.disconnect(); reveal(0); }
+      });
+    }, { threshold: 0.35 });
+    io.observe(anchor);
+  }
+
+  // The stream's content, mirroring the app's BuildStream order: the
+  // attribute-group bars first (the build's shape before anything else),
+  // then physique, run type, weak foot, skill moves, the equipped
+  // PlayStyles - and the top attributes last, the closing act. Comments and
+  // the love/send rail are the two things deliberately not replicated.
+  var GROUPS = [
+    ["Pace", ["acceleration", "sprintSpeed"]],
+    ["Ball Control", ["agility", "balance", "reactions", "ballControl", "dribbling", "composure"]],
+    ["Passing", ["vision", "crossing", "fkAcc", "shortPass", "longPass", "curve"]],
+    ["Scoring", ["attPosition", "finishing", "shotPower", "longShots", "volleys", "penalties"]],
+    ["Defending", ["interceptions", "headingAcc", "defAware", "standTackle", "slideTackle"]],
+    ["Physical", ["jumping", "strength", "stamina", "aggression"]],
+    ["Shot Stopping", ["gkDiving", "gkHandling", "gkKicking", "gkPositioning", "gkReflexes"]]
+  ];
+
+  function reelStreamLines(b) {
+    var attrs = b.attributes || {};
+    var lines = [];
+
+    function barLine(name, value, quick) {
+      var line = h("span", "pchq-r-line");
+      if (quick) line.dataset.quick = "1";
+      line.appendChild(h("span", "pchq-r-nm", name));
+      var bar = h("span", "pchq-r-bar");
+      var fill = h("span", "pchq-r-fill");
+      fill.style.width = value + "%";
+      fill.style.background = ratingColor(value);
+      fill.style.boxShadow = "0 0 6px " + ratingColor(value) + "88";
+      bar.appendChild(fill);
+      line.appendChild(bar);
+      var val = h("span", "pchq-r-val", String(value));
+      val.style.color = ratingColor(value);
+      line.appendChild(val);
+      return line;
+    }
+
+    function textLine(name, value) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", name));
+      line.appendChild(h("span", "pchq-r-txt", value));
+      return line;
+    }
+
+    GROUPS.forEach(function (g) {
+      var vals = g[1].map(function (k) { return attrs[k]; })
+        .filter(function (v) { return typeof v === "number"; });
+      if (!vals.length) return;
+      var avg = Math.round(vals.reduce(function (s, v) { return s + v; }, 0) / vals.length);
+      lines.push(barLine(g[0], avg, true));
+    });
+
+    if (b.height && b.weight) {
+      lines.push(textLine("Physique",
+        Math.floor(b.height / 12) + "'" + (b.height % 12) + '" · ' + b.weight + " lb"));
+    }
+    if (b.accelerationType) lines.push(textLine("Run type", b.accelerationType));
+    var stars = function (n) {
+      n = Math.max(1, Math.min(5, n || 0));
+      return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+    };
+    if (b.weakFoot) lines.push(textLine("Weak foot", stars(b.weakFoot)));
+    if (b.skillMoves) lines.push(textLine("Skill moves", stars(b.skillMoves)));
+
+    if (b.playstyles && b.playstyles.length) {
+      var line = h("span", "pchq-r-line pchq-r-line-t");
+      line.appendChild(h("span", "pchq-r-nm", "PlayStyles"));
+      var row = h("span", "pchq-r-ps");
+      b.playstyles.forEach(function (slug) {
+        var ic = document.createElement("img");
+        ic.className = "pchq-r-ps-ic";
+        ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+        ic.alt = "";
+        ic.loading = "lazy";
+        ic.addEventListener("error", function () { ic.remove(); });
+        row.appendChild(ic);
+      });
+      line.appendChild(row);
+      lines.push(line);
+    }
+
+    Object.entries(attrs)
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
+      .forEach(function (kv) { lines.push(barLine(label(kv[0]), kv[1])); });
+
+    return lines;
+  }
+
   function boot() {
     document.querySelectorAll("a.pchq-build[data-build]").forEach(hydrate);
   }
@@ -365,6 +682,7 @@
 })();
 </script>
 <!--kg-card-end: html-->
+<p>The Shot Stopper is EA FC Pro Clubs' pure goalkeeper — the archetype you pick to make saves, full stop. This guide is the complete FC 26 answer: every attribute of a finished level-100 Shot Stopper build, the order to spend your AP, which specialization to take, and the two most-copied Shot Stopper builds on the site — a Buffon and a Donnarumma — you can <a href="https://proclubshq.com/b/93ad6248-1570-4ab4-a7be-4864405daa8c">open in the Pro Clubs HQ builder</a> and copy outright.</p>
 
 <h2>Why the Shot Stopper</h2>
 <p>Unphased when faced with an attacker one-on-one, can be relied upon to make difficult saves. The numbers say the same thing: GK Diving, GK Handling, GK Kicking, GK Positioning and GK Reflexes all cap at <strong>99</strong>, and nothing else in the archetype matters as much. The trade is mobility with the ball — Sprint Speed stops at 85 and the outfield technical stats are token — so you are not the keeper who starts attacks. That job belongs to the Sweeper Keeper.</p>
@@ -383,12 +701,16 @@
 <!--kg-card-end: html-->
 
 <h2>The two builds</h2>
-<p><strong>The Donnarumma</strong> is the wall: GK Reflexes, Positioning and Diving at 99, Handling 98, with Strength 96 and Jumping 96 to rule the box, and the <strong>Shot Stopper+</strong> specialization — its Reflex Wall perk boosts Reflexes and Positioning after every save, which is exactly when the second shot arrives.</p>
-<p><strong>The Courtois</strong> is the Spider: the same elite core but with Acceleration 90 and Agility 90 bought early to meet the specialization, and Sticky Gloves so caught shots stay caught. Pick it if your defence concedes cut-backs and close-range scrambles rather than long-range pot shots.</p>
-<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (3,120 and 3,137 of 3,167), and opening either gives you a copy to bend toward your own game — <a href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">the Donnarumma</a>, <a href="https://proclubshq.com/b/cca27aff-8f65-4b80-ac4e-75262e5e118e">the Courtois</a>.</p>
+<p><strong>The Buffon</strong> is the legend build: all <strong>five</strong> goalkeeping stats at their 99 caps — Diving, Handling, Kicking, Positioning, Reflexes — with Strength 96, Jumping 96 and Reactions 96 behind them. It runs <strong>Octopus</strong>: the six-yard box specialization, for the keeper who owns point-blank chaos the way Buffon owned it for twenty years.</p>
+<p><strong>The Donnarumma</strong> is the wall: GK Reflexes, Positioning and Diving at 99, Handling 98, Strength and Jumping 96 — and <strong>Shot Stopper+</strong>, whose Reflex Wall perk boosts Reflexes and Positioning after every save, which is exactly when the second shot arrives.</p>
+<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (3,157 and 3,120 of 3,167), and opening either gives you a copy to bend toward your own game — <a href="https://proclubshq.com/b/93ad6248-1570-4ab4-a7be-4864405daa8c">the Buffon</a>, <a href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">the Donnarumma</a>.</p>
+<!--kg-card-begin: html-->
+<a class="pchq-build" data-build="896e33b0-5b31-4ee9-bfef-0173f7a45274" data-variant="reel" data-art="keeper" href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274?src=card">Gianluigi Donnarumma — open in Pro Clubs HQ</a>
+<p class="a19x"><a href="https://proclubshq.com/edit/shot-stopper" target="_blank" rel="noopener">Start your own Shot Stopper in the builder →</a></p>
+<!--kg-card-end: html-->
 
 <h2>The AP path: what to buy first</h2>
-<p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">3,167 in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the Donnarumma build bought in 4 stages:</p>
+<p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">3,167 in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the Buffon build bought in 4 stages:</p>
 
 <!--kg-card-begin: html-->
 <div class="a19t">
@@ -410,20 +732,20 @@
 <span class="c"><b>1. Build the wall</b><small>The four stats that are the entire job.</small></span>
 <span class="c buy">GK Reflexes 75→92, GK Diving 75→92, GK Pos. 75→90, GK Handling 75→90</span>
 <span class="c n">624</span><span class="c n">624</span><span class="c n">30</span>
-<span class="c"><b>2. Unlock Shot Stopper+</b><small>The three specialization criteria, nothing more.</small></span>
-<span class="c buy">Jumping 65→90, GK Handling 90→92</span>
-<span class="c n">149</span><span class="c n">773</span><span class="c n">34</span>
+<span class="c"><b>2. Unlock Octopus</b><small>The three specialization criteria, nothing more.</small></span>
+<span class="c buy">Strength 50→90</span>
+<span class="c n">189</span><span class="c n">813</span><span class="c n">36</span>
 <span class="c"><b>3. Command the box</b><small>Crosses, corners and collisions.</small></span>
-<span class="c buy">Strength 50→92, Reactions 75→92, Acceleration 75→90, Agility 50→90</span>
-<span class="c n">733</span><span class="c n">1,506</span><span class="c n">59</span>
+<span class="c buy">Strength 90→92, Reactions 75→92, Jumping 65→92, Composure 50→87</span>
+<span class="c n">437</span><span class="c n">1,250</span><span class="c n">50</span>
 <span class="c"><b>4. Finish the build</b><small>Drive the core to 99, then polish.</small></span>
-<span class="c buy">GK Pos. 90→99, GK Kicking 65→90, Composure 50→90, Balance 60→90, GK Diving 92→99, GK Reflexes 92→99, GK Handling 92→98, Aggression 65→90, Jumping 90→96, Strength 92→96, Reactions 92→96</span>
-<span class="c n">1,614</span><span class="c n">3,120</span><span class="c n">100</span>
+<span class="c buy">GK Kicking 65→99, GK Pos. 90→99, GK Handling 90→99, GK Diving 92→99, GK Reflexes 92→99, Agility 50→81, Vision 65→84, Strength 92→96, Jumping 92→96, Reactions 92→96, Balance 60→75, FK Acc. 40→74, Long Pass 65→77, Penalties 40→70, Acceleration 75→78, Short Pass 65→68, Sprint Speed 50→56, Ball Control 65→68</span>
+<span class="c n">1,907</span><span class="c n">3,157</span><span class="c n">100</span>
 </div>
 </div>
 <!--kg-card-end: html-->
 
-<p>The keeping core comes first because a keeper with 92 Reflexes at level 30 already steals points. The Shot Stopper+ push lands next — Jumping 90 and GK Handling 92 — met after 773 AP, around <strong>level 34</strong>, so the Reflex Wall perk works for most of your career. Per-point prices for anything you'd do differently are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="https://proclubshq.com/edit/shot-stopper">drag the sliders in the builder</a>, which prices every change live.</p>
+<p>The keeping core comes first because a keeper with 92 Reflexes at level 30 already steals points. The Octopus push lands next — its criteria sit inside the wall this build raises anyway — met after 813 AP, around <strong>level 36</strong>, so the six-yard box is yours for most of your career. Per-point prices for anything you'd do differently are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="https://proclubshq.com/edit/shot-stopper">drag the sliders in the builder</a>, which prices every change live.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-ad" data-ad="b"></div>
@@ -435,7 +757,7 @@
 <li><strong>Spider</strong> (Acceleration 90, Agility 90, GK Reflexes 92 — 559 AP from the floor): Catches everything thrown at goal, smothering shots that others would parry. Grants <strong>Sticky Gloves</strong> — caught shots are held more securely, reducing rebound chances.</li>
 <li><strong>Octopus</strong> (Strength 90, GK Diving 92, GK Pos. 90 — 525 AP from the floor): Limbs everywhere. Makes impossible point-blank saves look routine. Grants <strong>Rebound Killer</strong> — second saves in quick succession receive a boost to gk reflexes.</li>
 </ul>
-<p>The honest ranking: <strong>Shot Stopper+</strong> for most keepers — Reflex Wall triggers on the rebounds this archetype's perks already feed on. <strong>Spider</strong> if your games are full of one-on-ones and cut-backs; <strong>Octopus</strong> if you face point-blank headers from corners every match. All three cost similar AP from the floor, so this is a playstyle call, not a budget one — the full pricing across all 39 specializations is in <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>
+<p>The honest ranking: <strong>Octopus</strong> — the featured Buffon runs it — because Pro Clubs lobbies live on corners, cut-backs and six-yard scrambles, and this is the spec that ends them. <strong>Shot Stopper+</strong> — the Donnarumma's pick — if your games are longer-range sieges where the rebound save is the job. <strong>Spider</strong> for one-on-one-heavy counter-attacking lobbies. All three cost similar AP from the floor, so this is a playstyle call, not a budget one — the full pricing across all 39 specializations is in <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>
 
 <h2>PlayStyles</h2>
 <p>Keeper badges are a short list and the requirements gate them hard — each build equips every badge it actually qualifies for, goalkeeping badges first, then whatever its distribution stats earn. A level-100 pro carries nine slots; a keeper rarely fills them, and that is the game's rule, not a gap in the build. Check every threshold in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>
@@ -463,19 +785,19 @@
 <!--kg-card-end: html-->
 
 <h2>Height and weight</h2>
-<p>The archetype allows 6'0" to 6'7" and 176–220 lb, and for once, take the inches: reach wins keepers games, and the mobility cost that would sink an outfield build barely registers here. The Donnarumma stands 6'5", the Courtois 6'7" — both at the tall end on purpose.</p>
+<p>The archetype allows 6'0" to 6'7" and 176–220 lb, and for once, take the inches: reach wins keepers games, and the mobility cost that would sink an outfield build barely registers here. The Buffon stands 6'4", the Donnarumma 6'5" — both at the tall end on purpose.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>What is the Shot Stopper archetype in EA FC Pro Clubs?</h3>
 <p>The Shot Stopper is one of the two goalkeeper archetypes, inspired by Oliver Kahn. All five goalkeeping attributes reach 99, and its perks (Low Shot Saver and Ready to Act) are built around making the save and the follow-up save.</p>
 <h3>What is the best Shot Stopper build?</h3>
-<p>Drive GK Reflexes, GK Diving and GK Positioning to 99 with GK Handling right behind, then add Strength 96 and Jumping 96 to own the box. The full level-100 build costs 3,120 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder.</p>
+<p>The site's most-copied Shot Stopper drives all five goalkeeping stats — Diving, Handling, Kicking, Positioning, Reflexes — to their 99 caps, with Strength 96 and Jumping 96 to own the box. The full level-100 build costs 3,157 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder.</p>
 <h3>Which Shot Stopper specialization should I take?</h3>
-<p>Shot Stopper+ for most keepers — its Reflex Wall perk boosts Reflexes and Positioning right after a save, when the rebound arrives. Spider suits one-on-one heavy games, and Octopus is for point-blank chaos in the six-yard box.</p>
+<p>Octopus — the featured build runs it — for the point-blank chaos that decides most Pro Clubs matches. Shot Stopper+ if the rebound save is your bread and butter; Spider for one-on-one heavy games.</p>
 <h3>How much AP does a full Shot Stopper build cost?</h3>
-<p>3,120 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The three Shot Stopper+ criteria alone cost 149 AP on top of the save core.</p>
+<p>3,157 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The three Octopus criteria alone cost 189 AP on top of the save core.</p>
 <h3>How tall should a Shot Stopper be?</h3>
-<p>Tall. The archetype allows up to 6'7", and unlike outfield archetypes there is almost no downside — reach converts directly into saves, which is why the builds in this guide stand 6'5" and 6'7".</p>
+<p>Tall. The archetype allows up to 6'7", and unlike outfield archetypes there is almost no downside — reach converts directly into saves, which is why the builds in this guide stand 6'4" and 6'5".</p>
 <h3>Does the Shot Stopper carry over to FC 27?</h3>
 <p>Yes — EA has confirmed all 13 archetypes return in FC 27 and are unlocked by default, with free resets. A Shot Stopper you plan now is a head start, not a throwaway.</p>
 <!--kg-card-begin: html-->
@@ -497,7 +819,7 @@
    "name": "What is the best Shot Stopper build?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Drive GK Reflexes, GK Diving and GK Positioning to 99 with GK Handling right behind, then add Strength 96 and Jumping 96 to own the box. The full level-100 build costs 3,120 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder."
+    "text": "The site's most-copied Shot Stopper drives all five goalkeeping stats — Diving, Handling, Kicking, Positioning, Reflexes — to their 99 caps, with Strength 96 and Jumping 96 to own the box. The full level-100 build costs 3,157 AP of the 3,167 available, and you can open it directly in the Pro Clubs HQ builder."
    }
   },
   {
@@ -505,7 +827,7 @@
    "name": "Which Shot Stopper specialization should I take?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Shot Stopper+ for most keepers — its Reflex Wall perk boosts Reflexes and Positioning right after a save, when the rebound arrives. Spider suits one-on-one heavy games, and Octopus is for point-blank chaos in the six-yard box."
+    "text": "Octopus — the featured build runs it — for the point-blank chaos that decides most Pro Clubs matches. Shot Stopper+ if the rebound save is your bread and butter; Spider for one-on-one heavy games."
    }
   },
   {
@@ -513,7 +835,7 @@
    "name": "How much AP does a full Shot Stopper build cost?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "3,120 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The three Shot Stopper+ criteria alone cost 149 AP on top of the save core."
+    "text": "3,157 AP for the complete level-100 build — inside the 3,167 AP a pro earns reaching level 100. The three Octopus criteria alone cost 189 AP on top of the save core."
    }
   },
   {
@@ -521,7 +843,7 @@
    "name": "How tall should a Shot Stopper be?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Tall. The archetype allows up to 6'7\", and unlike outfield archetypes there is almost no downside — reach converts directly into saves, which is why the builds in this guide stand 6'5\" and 6'7\"."
+    "text": "Tall. The archetype allows up to 6'7\", and unlike outfield archetypes there is almost no downside — reach converts directly into saves, which is why the builds in this guide stand 6'4\" and 6'5\"."
    }
   },
   {
@@ -537,7 +859,7 @@
 </script>
 <!--kg-card-end: html-->
 
-<p>The fastest way to use this guide is to not rebuild it: <a href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">open the Donnarumma build</a> or <a href="https://proclubshq.com/b/cca27aff-8f65-4b80-ac4e-75262e5e118e">open the Courtois build</a>, save a copy, and bend it to your game — or <a href="https://proclubshq.com/edit/shot-stopper">start a fresh Shot Stopper from the floor</a>. All 13 archetypes have finished builds on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, and the <a href="https://proclubshq.com/explore">explore feed</a> has the community's.</p>
+<p>The fastest way to use this guide is to not rebuild it: <a href="https://proclubshq.com/b/93ad6248-1570-4ab4-a7be-4864405daa8c">open the Buffon build</a> or <a href="https://proclubshq.com/b/896e33b0-5b31-4ee9-bfef-0173f7a45274">open the Donnarumma build</a>, save a copy, and bend it to your game — or <a href="https://proclubshq.com/edit/shot-stopper">start a fresh Shot Stopper from the floor</a>. All 13 archetypes have finished builds on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, and the <a href="https://proclubshq.com/explore">explore feed</a> has the community's.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-ad" data-ad="c"></div>
