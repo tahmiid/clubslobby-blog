@@ -152,10 +152,110 @@
   50% { box-shadow: 0 0 34px 4px rgba(123,47,247,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
 }
 
+/* ── Variant "invite" (experiment, 2026-08-14): same card, a better ask ── */
+.pchq-foot-inv { border-top: none; padding-top: 4px; }
+.pchq-social { font-weight: 700; color: #E9C767; }
+.pchq-cta-block {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 14px; padding: 15px 24px; border-radius: 999px;
+  font-weight: 800; font-size: 1.02rem; color: #fff;
+  background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 26px rgba(85, 60, 230, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: pchq-cta 2.6s ease-in-out infinite;
+}
+.pchq-card:hover .pchq-cta-block { filter: brightness(1.1); }
+.pchq-cta-sub {
+  display: block; text-align: center; font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55); margin-top: 9px;
+}
+
+/* ── Variant "reel" (experiment, 2026-08-14): a miniature of /b/:id ─────
+   Phone-shaped on purpose, so it stays a portal rather than a poster:
+   full width on phones, capped and centered in the desktop column. */
+.pchq-build.pchq-reel {
+  position: relative; display: block; max-width: 430px; margin: 1.6em auto;
+  aspect-ratio: 4 / 5.4; min-height: 480px;
+  border-radius: 20px; overflow: hidden;
+  background: #04040a; border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff; font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+}
+.pchq-r-art {
+  position: absolute; inset: 0; display: block;
+  background: url("https://proclubshq.com/assets/player-outfield.jpg") center 20% / cover no-repeat;
+}
+.pchq-r-art-gk { background-image: url("https://proclubshq.com/assets/player-keeper.jpg"); }
+.pchq-r-scrim {
+  position: absolute; inset: 0; display: block;
+  background: linear-gradient(180deg, rgba(4,4,10,0.15) 0%, rgba(4,4,10,0.05) 25%, rgba(4,4,10,0.35) 60%, rgba(4,4,10,0.93) 100%);
+}
+.pchq-r-lvl {
+  position: absolute; top: 14px; left: 14px;
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 0.74rem;
+  letter-spacing: 0.08em; padding: 7px 12px; border-radius: 999px;
+  background: rgba(4,4,10,0.55); border: 1px solid rgba(45,226,197,0.5); color: #2DE2C5;
+}
+.pchq-r-rail { position: absolute; right: 12px; top: 88px; display: flex; flex-direction: column; gap: 12px; }
+.pchq-r-sig {
+  width: 46px; height: 46px; object-fit: contain;
+  filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(0.98) drop-shadow(0 2px 6px rgba(227,184,78,0.5));
+}
+.pchq-r-stream {
+  position: absolute; left: 16px; right: 74px; bottom: 158px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.pchq-r-line {
+  display: flex; align-items: center; gap: 8px; font-size: 0.78rem;
+  color: rgba(255,255,255,0.85); opacity: 0; transform: translateY(10px);
+}
+.pchq-r-on .pchq-r-line {
+  animation: pchq-r-in 0.5s ease both; animation-delay: var(--pchq-d, 0s);
+}
+@keyframes pchq-r-in { to { opacity: 1; transform: none; } }
+.pchq-r-nm { min-width: 88px; color: rgba(255,255,255,0.72); }
+.pchq-r-bar { flex: 1; display: block; height: 7px; border-radius: 999px; background: rgba(255,255,255,0.16); overflow: hidden; }
+.pchq-r-fill {
+  display: block; height: 100%; border-radius: inherit;
+  background: #2FD26B; box-shadow: 0 0 6px rgba(47,210,107,0.53);
+}
+.pchq-r-on .pchq-r-fill {
+  animation: pchq-r-grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--pchq-d, 0s) + 0.3s);
+}
+@keyframes pchq-r-grow { from { width: 0; } }
+.pchq-r-val {
+  font-family: "Archivo", sans-serif; font-weight: 800; min-width: 26px;
+  text-align: right; color: #2FD26B;
+}
+.pchq-r-plate { position: absolute; left: 16px; right: 16px; bottom: 66px; display: flex; align-items: center; gap: 12px; }
+.pchq-r-logo { width: 44px; height: 44px; object-fit: contain; flex: none; }
+.pchq-r-id { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pchq-r-spec {
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 0.68rem;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--pchq-tier, #e8c35a);
+}
+.pchq-r-name {
+  font-family: "Archivo", sans-serif; font-weight: 800; font-size: 1.55rem; line-height: 1.02;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pchq-r-cta {
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 20px; border-radius: 999px; font-weight: 800; font-size: 1rem; color: #fff;
+  background: linear-gradient(90deg, #2c55e8 0%, #7b2ff7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 28px rgba(85, 60, 230, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: pchq-cta 2.6s ease-in-out infinite;
+}
+.pchq-reel:hover .pchq-r-cta { filter: brightness(1.1); }
+
 @media (prefers-reduced-motion: reduce) {
   .pchq-fill { animation: none; }
-  .pchq-cta { animation: none; }
+  .pchq-cta, .pchq-cta-block, .pchq-r-cta { animation: none; }
   .pchq-card { transform: none !important; }
+  /* The app's rule: the finished state, not a slower animation. */
+  .pchq-r-line { opacity: 1; transform: none; animation: none; }
+  .pchq-r-on .pchq-r-line, .pchq-r-on .pchq-r-fill { animation: none; }
 }
 
 /* Fetch failed: the anchor stays a respectable link, not a broken card. */
@@ -164,9 +264,11 @@
 .gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .a28x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
+.a28k { text-align: center; font-size: 0.9em; margin: 0 0 10px; }
 </style>
-<a class="pchq-build" data-build="5d43144f-6d8e-495f-abd0-4abfb93a5d84" href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84" target="_blank" rel="noopener">Vinícius Júnior — open in Pro Clubs HQ</a>
-<a class="pchq-build" data-build="3955d5cf-6bf2-44b4-b940-aa3dd8e12edc" href="https://proclubshq.com/b/3955d5cf-6bf2-44b4-b940-aa3dd8e12edc" target="_blank" rel="noopener">Michael Olise — open in Pro Clubs HQ</a>
+
+<a class="pchq-build" data-build="5d43144f-6d8e-495f-abd0-4abfb93a5d84" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/5d43144f-6d8e-495f-abd0-4abfb93a5d84?src=card&v=reel">Vinícius Júnior — open in Pro Clubs HQ</a>
+<a class="pchq-build" data-build="3955d5cf-6bf2-44b4-b940-aa3dd8e12edc" data-variant="reel" data-art="outfield" href="https://proclubshq.com/b/3955d5cf-6bf2-44b4-b940-aa3dd8e12edc?src=card&v=reel">Michael Olise — open in Pro Clubs HQ</a>
 <p class="a28x"><a href="https://proclubshq.com/edit/spark" target="_blank" rel="noopener">Start your own Spark in the builder →</a></p>
 <script>/**
  * Pro Clubs HQ — interactive build embed for blog articles.
@@ -237,7 +339,13 @@
       .catch(function () { anchor.classList.add("pchq-card-fallback"); });
   }
 
+  // The A/B treatments (experiment, 2026-08-14): an anchor may carry
+  // data-variant="invite" (same card, a better ask) or "reel" (a miniature
+  // of the /b/ page it opens). No attribute means the baseline card - the
+  // articles outside the experiment re-render byte-identically.
   function render(anchor, b) {
+    if (anchor.dataset.variant === "reel") { renderReel(anchor, b); return; }
+    var invite = anchor.dataset.variant === "invite";
     anchor.classList.add("pchq-card");
     anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
@@ -326,13 +434,29 @@
     if (sigs.childNodes.length) inner.appendChild(sigs);
 
     // Footer: creator + counts, and the primary-button CTA.
-    var foot = h("span", "pchq-foot");
+    var foot = h("span", "pchq-foot" + (invite ? " pchq-foot-inv" : ""));
     var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
     foot.appendChild(h("span", "pchq-by", creator));
-    foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
-    foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
-    foot.appendChild(h("span", "pchq-cta", "Open in builder"));
-    inner.appendChild(foot);
+    if (invite) {
+      // The invite treatment never shows a zero - "0 loves" is social proof
+      // running in reverse at the exact moment of decision. What is genuinely
+      // positive gets said in a sentence, not a stat pair.
+      if ((b.copyCount || 0) > 0) {
+        foot.appendChild(h("span", "pchq-social",
+          "⚡ " + b.copyCount + (b.copyCount === 1 ? " player has" : " players have") + " copied this build"));
+      } else if ((b.loveCount || 0) > 0) {
+        foot.appendChild(h("span", "pchq-social", "❤ " + b.loveCount + " loves"));
+      }
+      inner.appendChild(foot);
+      inner.appendChild(h("span", "pchq-cta-block", "See the full build →"));
+      inner.appendChild(h("span", "pchq-cta-sub",
+        "every attribute, the AP order, and a copy you can bend into your own"));
+    } else {
+      foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
+      foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
+      foot.appendChild(h("span", "pchq-cta", "Open in builder"));
+      inner.appendChild(foot);
+    }
 
     anchor.appendChild(inner);
 
@@ -352,6 +476,84 @@
       anchor.style.setProperty("--pchq-rx", "0deg");
       anchor.style.setProperty("--pchq-ry", "0deg");
     });
+  }
+
+  // The reel teaser: a miniature of the /b/ page the click opens - same art,
+  // same scrim, level chip, gold signature rail, a taste of the stat stream,
+  // the plate, and the CTA. Visual continuity IS the seamlessness: the click
+  // feels like the card going full-screen because the destination looks like
+  // this. The stream animates in line by line the way the app's stream
+  // accumulates - triggered the first time the card is actually seen, and
+  // reduced-motion readers get the finished state immediately, the same rule
+  // the app follows.
+  function renderReel(anchor, b) {
+    anchor.classList.add("pchq-reel");
+    anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
+    anchor.textContent = "";
+
+    var art = h("span", "pchq-r-art" + (anchor.dataset.art === "keeper" ? " pchq-r-art-gk" : ""));
+    anchor.appendChild(art);
+    anchor.appendChild(h("span", "pchq-r-scrim"));
+    anchor.appendChild(h("span", "pchq-r-lvl", "LVL " + b.level));
+
+    var rail = h("span", "pchq-r-rail");
+    (b.signature || []).slice(0, 4).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-r-sig";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.alt = "";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      rail.appendChild(ic);
+    });
+    anchor.appendChild(rail);
+
+    var stream = h("span", "pchq-r-stream");
+    Object.entries(b.attributes || {})
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
+      .forEach(function (kv, i) {
+        var line = h("span", "pchq-r-line");
+        line.style.setProperty("--pchq-d", (i * 0.45) + "s");
+        line.appendChild(h("span", "pchq-r-nm", label(kv[0])));
+        var bar = h("span", "pchq-r-bar");
+        var fill = h("span", "pchq-r-fill");
+        fill.style.width = kv[1] + "%";
+        bar.appendChild(fill);
+        line.appendChild(bar);
+        line.appendChild(h("span", "pchq-r-val", String(kv[1])));
+        stream.appendChild(line);
+      });
+    anchor.appendChild(stream);
+
+    var plate = h("span", "pchq-r-plate");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.className = "pchq-r-logo";
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.addEventListener("error", function () { logo.remove(); });
+      plate.appendChild(logo);
+    }
+    var idc = h("span", "pchq-r-id");
+    var handle = b.creator && b.creator.handle ? " · @" + b.creator.handle : "";
+    idc.appendChild(h("span", "pchq-r-spec", (b.cardLabel || "") + handle));
+    idc.appendChild(h("span", "pchq-r-name", b.buildName));
+    plate.appendChild(idc);
+    anchor.appendChild(plate);
+
+    anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
+
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (still || !("IntersectionObserver" in window)) {
+      anchor.classList.add("pchq-r-on");
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { anchor.classList.add("pchq-r-on"); io.disconnect(); }
+      });
+    }, { threshold: 0.35 });
+    io.observe(anchor);
   }
 
   function boot() {

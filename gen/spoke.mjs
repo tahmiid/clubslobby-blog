@@ -174,6 +174,18 @@ export function renderSpoke(cfg) {
   // breaks the card. The theme-guard rules exist because Ghost's
   // .gh-content a styling outranks .pchq-card and repaints the card's text
   // and underlines — that was the "colors look off" bug; don't remove them.
+  // The A/B experiment (2026-08-14): cfg.cardVariant tags this article's
+  // cards "invite" or "reel" (widgets/build-card knows what those mean).
+  // Variant cards open in the SAME tab - the card becoming the app is the
+  // treatment - and carry ?src=card&v=… so the access log can split card
+  // clicks from inline text links. Articles without the flag render exactly
+  // as before; they are the experiment's control group, so the shared fixes
+  // roll out with the winner, not before.
+  const V = cfg.cardVariant || '';
+  const cardHref = (b) => `${openUrl(b)}?src=card${V ? `&v=${V}` : ''}`;
+  const cardAttrs = V
+    ? ` data-variant="${V}" data-art="${isKeeper ? 'keeper' : 'outfield'}"`
+    : ' target="_blank" rel="noopener"';
   const widget = kg(`<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Manrope:wght@400;600;700;800&display=swap">
 <style>
@@ -181,8 +193,10 @@ ${PCHQ_CSS}
 .gh-content a.pchq-build, a.pchq-build { color: #f2f3f7; text-decoration: none; box-shadow: none; }
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .${P}x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
+.${P}k { text-align: center; font-size: 0.9em; margin: 0 0 10px; }
 </style>
-${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}" href="${openUrl(b)}" target="_blank" rel="noopener">${esc(b.buildName)} — open in ${BRAND}</a>`).join('\n')}
+${V === 'invite' ? `<p class="${P}k">👇 This is a <strong>real build in the app</strong> — tap it and it opens, exactly as it is here. Free, no account needed.</p>` : ''}
+${BUILDS.map((b) => `<a class="pchq-build" data-build="${b.id}"${cardAttrs} href="${cardHref(b)}">${esc(b.buildName)} — open in ${BRAND}</a>`).join('\n')}
 <p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>
 <script>${PCHQ_JS}</script>`);
 

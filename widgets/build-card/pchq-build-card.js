@@ -67,7 +67,13 @@
       .catch(function () { anchor.classList.add("pchq-card-fallback"); });
   }
 
+  // The A/B treatments (experiment, 2026-08-14): an anchor may carry
+  // data-variant="invite" (same card, a better ask) or "reel" (a miniature
+  // of the /b/ page it opens). No attribute means the baseline card - the
+  // articles outside the experiment re-render byte-identically.
   function render(anchor, b) {
+    if (anchor.dataset.variant === "reel") { renderReel(anchor, b); return; }
+    var invite = anchor.dataset.variant === "invite";
     anchor.classList.add("pchq-card");
     anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
     anchor.textContent = "";
@@ -156,13 +162,29 @@
     if (sigs.childNodes.length) inner.appendChild(sigs);
 
     // Footer: creator + counts, and the primary-button CTA.
-    var foot = h("span", "pchq-foot");
+    var foot = h("span", "pchq-foot" + (invite ? " pchq-foot-inv" : ""));
     var creator = b.creator && b.creator.handle ? "@" + b.creator.handle : "Pro Clubs HQ";
     foot.appendChild(h("span", "pchq-by", creator));
-    foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
-    foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
-    foot.appendChild(h("span", "pchq-cta", "Open in builder"));
-    inner.appendChild(foot);
+    if (invite) {
+      // The invite treatment never shows a zero - "0 loves" is social proof
+      // running in reverse at the exact moment of decision. What is genuinely
+      // positive gets said in a sentence, not a stat pair.
+      if ((b.copyCount || 0) > 0) {
+        foot.appendChild(h("span", "pchq-social",
+          "⚡ " + b.copyCount + (b.copyCount === 1 ? " player has" : " players have") + " copied this build"));
+      } else if ((b.loveCount || 0) > 0) {
+        foot.appendChild(h("span", "pchq-social", "❤ " + b.loveCount + " loves"));
+      }
+      inner.appendChild(foot);
+      inner.appendChild(h("span", "pchq-cta-block", "See the full build →"));
+      inner.appendChild(h("span", "pchq-cta-sub",
+        "every attribute, the AP order, and a copy you can bend into your own"));
+    } else {
+      foot.appendChild(h("span", "pchq-stat", (b.loveCount || 0) + " loves"));
+      foot.appendChild(h("span", "pchq-stat", (b.copyCount || 0) + " copies"));
+      foot.appendChild(h("span", "pchq-cta", "Open in builder"));
+      inner.appendChild(foot);
+    }
 
     anchor.appendChild(inner);
 
@@ -182,6 +204,84 @@
       anchor.style.setProperty("--pchq-rx", "0deg");
       anchor.style.setProperty("--pchq-ry", "0deg");
     });
+  }
+
+  // The reel teaser: a miniature of the /b/ page the click opens - same art,
+  // same scrim, level chip, gold signature rail, a taste of the stat stream,
+  // the plate, and the CTA. Visual continuity IS the seamlessness: the click
+  // feels like the card going full-screen because the destination looks like
+  // this. The stream animates in line by line the way the app's stream
+  // accumulates - triggered the first time the card is actually seen, and
+  // reduced-motion readers get the finished state immediately, the same rule
+  // the app follows.
+  function renderReel(anchor, b) {
+    anchor.classList.add("pchq-reel");
+    anchor.style.setProperty("--pchq-tier", TIERS[b.cardTier] || "#e8c35a");
+    anchor.textContent = "";
+
+    var art = h("span", "pchq-r-art" + (anchor.dataset.art === "keeper" ? " pchq-r-art-gk" : ""));
+    anchor.appendChild(art);
+    anchor.appendChild(h("span", "pchq-r-scrim"));
+    anchor.appendChild(h("span", "pchq-r-lvl", "LVL " + b.level));
+
+    var rail = h("span", "pchq-r-rail");
+    (b.signature || []).slice(0, 4).forEach(function (slug) {
+      var ic = document.createElement("img");
+      ic.className = "pchq-r-sig";
+      ic.src = ASSET_BASE + "/assets/playstyles/" + encodeURIComponent(slug) + ".png";
+      ic.alt = "";
+      ic.loading = "lazy";
+      ic.addEventListener("error", function () { ic.remove(); });
+      rail.appendChild(ic);
+    });
+    anchor.appendChild(rail);
+
+    var stream = h("span", "pchq-r-stream");
+    Object.entries(b.attributes || {})
+      .sort(function (x, y) { return y[1] - x[1]; }).slice(0, 3)
+      .forEach(function (kv, i) {
+        var line = h("span", "pchq-r-line");
+        line.style.setProperty("--pchq-d", (i * 0.45) + "s");
+        line.appendChild(h("span", "pchq-r-nm", label(kv[0])));
+        var bar = h("span", "pchq-r-bar");
+        var fill = h("span", "pchq-r-fill");
+        fill.style.width = kv[1] + "%";
+        bar.appendChild(fill);
+        line.appendChild(bar);
+        line.appendChild(h("span", "pchq-r-val", String(kv[1])));
+        stream.appendChild(line);
+      });
+    anchor.appendChild(stream);
+
+    var plate = h("span", "pchq-r-plate");
+    if (b.archetype_id) {
+      var logo = document.createElement("img");
+      logo.className = "pchq-r-logo";
+      logo.src = ASSET_BASE + "/assets/archetypes/" + encodeURIComponent(b.archetype_id) + ".svg";
+      logo.alt = "";
+      logo.addEventListener("error", function () { logo.remove(); });
+      plate.appendChild(logo);
+    }
+    var idc = h("span", "pchq-r-id");
+    var handle = b.creator && b.creator.handle ? " · @" + b.creator.handle : "";
+    idc.appendChild(h("span", "pchq-r-spec", (b.cardLabel || "") + handle));
+    idc.appendChild(h("span", "pchq-r-name", b.buildName));
+    plate.appendChild(idc);
+    anchor.appendChild(plate);
+
+    anchor.appendChild(h("span", "pchq-r-cta", "Check out the whole build →"));
+
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (still || !("IntersectionObserver" in window)) {
+      anchor.classList.add("pchq-r-on");
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { anchor.classList.add("pchq-r-on"); io.disconnect(); }
+      });
+    }, { threshold: 0.35 });
+    io.observe(anchor);
   }
 
   function boot() {

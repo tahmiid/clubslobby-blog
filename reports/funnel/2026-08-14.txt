@@ -1,0 +1,58 @@
+Blog→app funnel — proclubshq.com  (2026-08-03 → 2026-08-14, bots excluded)
+"Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — directional, not exact.
+"goog" is the subset of "reg" that signed up through Google (201 on /auth/google).
+
+day          blog views blog vis.  →app app views app vis.  hydr.  reg  goog  login
+-----------------------------------------------------------------------------------
+2026-08-03           26        26     0       378      210      0    1     0      1
+2026-08-04           21        27     0      1001      304      0    0     0      2
+2026-08-05            6        11     0       383      226      0    0     0      2
+2026-08-06            3         6     0       305      243      0    0     0      0
+2026-08-07           44        28     9       237      160      6    0     0      2
+2026-08-08          201       221    23       241      159    166    1     0      2
+2026-08-09          287       398    45       257      204    196    1     0      2
+2026-08-10          255       310    28       391      243    132    1     0      2
+2026-08-11          152       166    22       221      166    116    0     0      4
+2026-08-12          132       140     7       318      216     60    2     2      6
+2026-08-13          210       229    25       288      182    118    1     1      1
+2026-08-14          194       218    40       195      157    118    4     4      2
+-----------------------------------------------------------------------------------
+total              1531      1780   199      4215     2470    912   11     7     26
+
+(ref=proclubshq.com tagged app hits in range: 202 — subset/overlap of →app)
+
+Blog articles sending readers to the app (whole range):
+     29  /blog/pro-clubs-magician-build/
+     24  /blog/pro-clubs-maestro-build/
+     22  /blog/
+     22  /blog/pro-clubs-spark-build/
+     18  /blog/pro-clubs-finisher-build/
+     16  /blog/pro-clubs-creator-build/
+     14  /blog/pro-clubs-target-build/
+     11  /blog/pro-clubs-recycler-build/
+      8  /blog/pro-clubs-shot-stopper-build/
+      7  /blog/pro-clubs-sweeper-keeper-build/
+      6  /blog/pro-clubs-progressor-build/
+      5  /blog/pro-clubs-striker-archetypes/
+
+Where they land in the app:
+    138  /b/…
+     18  /admin
+     16  /edit/…
+     12  / (home)
+      5  /explore
+      4  /u/…
+      4  /build
+      2  /meta
+
+Most-read articles (human views, whole range):
+    196  /blog/pro-clubs-magician-build/
+    130  /blog/pro-clubs-maestro-build/
+    123  /blog/pro-clubs-spark-build/
+    105  /blog/pro-clubs-accelerate-explosive-lengthy-controlled/
+     79  /blog/pro-clubs-archetypes-explained/
+     70  /blog/fc27-masteries-explained/
+     67  /blog/pro-clubs-target-build/
+     64  /blog/pro-clubs-finisher-build/
+     50  /blog/pro-clubs-creator-build/
+     47  /blog/pro-clubs-shot-stopper-build/

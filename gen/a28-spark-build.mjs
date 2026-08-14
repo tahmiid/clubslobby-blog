@@ -4,6 +4,10 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 28,
   archId: 'spark',
+  // Experiment arm B (2026-08-14): the "reel" treatment - the card is a
+  // miniature of the /b/ page it opens. Baseline to beat: 18% crossing.
+  // Decision ~2026-08-21.
+  cardVariant: 'reel',
   hideCats: ['Defending'],
   tabs: ['Vinícius — the Spark+', 'Olise — the Joker'],
   shortNames: ['Vinícius', 'Olise'],
