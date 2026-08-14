@@ -285,6 +285,17 @@ Because rotation forgets after two weeks, **snapshots live in the repo**:
 `reports/funnel/YYYY-MM-DD.txt`; commit it. One a week keeps the history
 comparable forever; the first, 2026-08-11, is the baseline.
 
+Since 2026-08-14 the app repo carries the same parsing rules into a nightly
+Mongo rollup — `backend/scripts/analytics_collect.py` feeding the admin
+panel's Traffic section (app repo #100–#102), staged in its
+`deploy/analytics/`. That collector supersedes nothing here: this report
+stays the on-demand human-readable view, and the two files **must change
+together** when an auth path or bot pattern moves (both say so in their
+headers). The app half also adds what this section calls impossible twice
+over: real client IPs (Cloudflare `real_ip`, replacing edge addresses) and
+own-traffic exclusion via a `pchq_int` cookie column appended to the log
+format — appended precisely so this report's anchored regex never notices.
+
 #### The report only sees what the log distinguishes — a worked failure
 
 Google SSO shipped 2026-08-11 through a new endpoint, `/api/auth/google`,

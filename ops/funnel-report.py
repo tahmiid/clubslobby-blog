@@ -35,6 +35,12 @@
 # giving the API a distinguishing status code (that endpoint now returns 201
 # on create) over inferring intent from a path — a path can serve two jobs,
 # and a log cannot tell which one it did.
+#
+# PORTED: the app repo's backend/scripts/analytics_collect.py (its #102)
+# carries these same rules — bot pattern, static/article/crossing judgements,
+# the auth accounting above — into a nightly Mongo rollup for the admin
+# dashboard. The two files move together: change a rule here, change it
+# there in the same sitting (its test suite pins the shared judgements).
 import argparse
 import gzip
 import re
