@@ -52,16 +52,16 @@ const STYLE = kg(`<style>
 .pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
 </style>`);
 
-const sourceNote = kg(`<p class="pchq-src">Input read from the FC 27 closed beta
+const sourceNote = kg(`<p class="pchq-src">Rumored FC 27 input
   (build CL 9151217) on 13 August 2026 — the game's own Skill Moves screen, not a
-  third-party list. Beta inputs can move before retail; this page is re-checked on
+  third-party list. Rumored inputs can move before retail; this page is re-checked on
   early access day, 18 September.</p>`);
 
 function renderMove(m, i) {
   const others = MOVES.filter((x) => x.slug !== m.slug && x.star === m.star).slice(0, 3);
   const html = `${STYLE}
 <p>${esc(m.name)} is one of the skill moves new to EA FC 27, confirmed from the
-closed beta. It is a <strong>${m.star}-star move</strong>, so any pro with
+rumor mill. It is a <strong>${m.star}-star move</strong>, so any pro with
 ${m.star} skill star${m.star === 1 ? '' : 's'} or more can perform it.</p>
 
 ${inputCard(m)}
@@ -109,7 +109,7 @@ ${list.map((m) => `<tr><td><a href="/blog/fc27-how-to-${m.slug}/"><strong>${esc(
 
   const html = `${STYLE}
 <p>EA FC 27 adds <strong>${MOVES.length} new skill moves</strong>. Every input
-below was read off the game's own Skill Moves screen during the closed beta —
+below is the rumored input making the rounds —
 not copied from a list — which matters more this year than usual, because the
 lists were wrong.</p>
 

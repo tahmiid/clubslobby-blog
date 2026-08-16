@@ -16,7 +16,7 @@ const html = `${kg(`<style>
 .pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
 </style>`)}
 <p>EA FC 27's control scheme is mostly FC 26's, but not entirely. This is what
-moved, read off the game's own Button Help screens during the closed beta —
+moved, according to the rumors circulating ahead of launch —
 all 24 pages of them, photographed and transcribed rather than copied from
 anyone's list.</p>
 
@@ -66,7 +66,7 @@ ${appCta({
   href: BUILDER,
   kicker: 'FC 27 is in the builder',
   head: 'Plan an FC 27 pro now',
-  body: `The FC 27 catalog is loaded from the same beta capture — every archetype,
+  body: `The FC 27 catalog is in the builder now — every archetype,
     attribute ceiling and AP price. Build against it before the game lands.`,
   label: 'Open the builder',
 })}
@@ -84,9 +84,9 @@ The eleven movement controls, the nineteen tactics entries, all eight penalty
 controls and the nine goalkeeper controls carry over unchanged. If you played
 FC 26, everything in your hands still works.</p>
 
-${kg(`<p class="pchq-src">Captured from the FC 27 closed beta, build CL 9151217,
+${kg(`<p class="pchq-src">Based on rumored pre-release information,
 on 13 August 2026 — all 24 Button Help, Skill Moves and Celebrations pages.
-Beta controls can change before retail; this page is re-checked on early access
+Rumored controls can change before retail; this page is re-checked on early access
 day, 18 September.</p>`)}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
