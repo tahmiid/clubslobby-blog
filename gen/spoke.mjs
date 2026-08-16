@@ -309,6 +309,12 @@ ${sigCard}
 <h2>${isKeeper ? 'Height and weight' : 'Height, weight and AcceleRATE'}</h2>
 ${cfg.physiquePara(ctx)}
 
+
+${kg(`<div class="fc27-callout" style="margin:2em 0;padding:16px 20px;border:1px solid rgba(201,162,39,.45);border-radius:12px;background:rgba(58,47,16,.35)">
+<p style="margin:0 0 4px;font:700 11.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9a227">FC 27 is here</p>
+<p style="margin:0;font:400 14px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3">The ${esc(archName)} returns in FC 27 — and the FC 27 builder is live with ready-made level-40 builds. <a href="/blog/fc27-archetypes/" style="color:#7fb0ff">See all FC 27 archetypes</a> or <a href="${SITE}/explore?year=27" style="color:#7fb0ff">open FC 27 in the app</a>.</p>
+</div>`)}
+
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${ld}

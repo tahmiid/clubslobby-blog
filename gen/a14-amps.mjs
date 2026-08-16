@@ -5,7 +5,7 @@
 // AXP), so the article states it and stops there.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'am27';
 
@@ -83,6 +83,15 @@ ${widget}
 <li><strong>Stacking rules.</strong> Whether two Standard Amps can boost the same attribute, and what happens when an Amp's PlayStyle duplicates one your build already has.</li>
 <li><strong>Pricing.</strong> Nothing on Store cost, in Coins or otherwise.</li>
 </ul>
+
+
+${appCta({
+  href: '/explore?year=27',
+  kicker: 'FC 27 in the app',
+  head: 'Try FC 27 builds now',
+  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  label: 'Browse FC 27 builds',
+})}
 
 <h2>Frequently asked questions</h2>
 <h3>What are Amps in FC 27?</h3>

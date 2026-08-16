@@ -6,7 +6,7 @@
 // limited to the one fact verified in-game: free switching, no reset on switch.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'ac27';
 
@@ -86,6 +86,15 @@ ${widget}
 <li>What "tuning updates across all existing Archetypes" actually moved — ceilings, AP costs, and PlayStyle thresholds are all unverified for FC 27.</li>
 <li>The level cap, and whether progression carries over from FC 26 (assume it doesn't).</li>
 </ul>
+
+
+${appCta({
+  href: '/explore?year=27',
+  kicker: 'FC 27 in the app',
+  head: 'Try FC 27 builds now',
+  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  label: 'Browse FC 27 builds',
+})}
 
 <h2>Frequently asked questions</h2>
 <h3>Are all archetypes unlocked in FC 27?</h3>

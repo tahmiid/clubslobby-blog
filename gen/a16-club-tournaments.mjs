@@ -6,7 +6,7 @@
 // article's honesty mechanism, same as a5's evidence tiers.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'ct27';
 
@@ -72,6 +72,15 @@ ${widget}
 <li><strong>Rewards.</strong> "Rewards" is confirmed as a word; nothing about what they are — though the same deep dive's Club Objectives system pays out Amps, Consumables, and Coins, so that's the likely currency set.</li>
 <li><strong>Format.</strong> Bracket sizes, seeding, and what happens when a club can't field eleven.</li>
 </ul>
+
+
+${appCta({
+  href: '/explore?year=27',
+  kicker: 'FC 27 in the app',
+  head: 'Try FC 27 builds now',
+  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  label: 'Browse FC 27 builds',
+})}
 
 <h2>Frequently asked questions</h2>
 <h3>What are Club Tournaments in FC 27?</h3>

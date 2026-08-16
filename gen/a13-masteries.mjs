@@ -6,7 +6,7 @@
 // framed as an observation, not a confirmed rename.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'ms27';
 
@@ -108,6 +108,15 @@ ${widget}
 <li><strong>Whether mastery boosts respect attribute caps.</strong> Do the boosts push past a build's normal ceiling, or fill toward it? Not stated.</li>
 </ul>
 <p>When the game is out we'll rebuild the numbers the way we always do — from verified data, not launch-week guesses.</p>
+
+
+${appCta({
+  href: '/explore?year=27',
+  kicker: 'FC 27 in the app',
+  head: 'Try FC 27 builds now',
+  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  label: 'Browse FC 27 builds',
+})}
 
 <h2>Frequently asked questions</h2>
 <h3>What are Masteries in FC 27?</h3>

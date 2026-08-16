@@ -4,7 +4,7 @@
 // this is the one FC 27 article with no reporting or speculation in it.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss } from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'pl27';
 
@@ -81,6 +81,15 @@ ${widget}
 <li><strong>Buy FC 27 on last-gen anyway</strong> — reasonable if you mainly play Ultimate Team or Career, much less so if Clubs is the reason you buy the game at all.</li>
 </ol>
 <p>The one thing worth avoiding is pre-ordering a last-gen copy expecting Clubs to work as it does now. That's the mistake this page exists to prevent.</p>
+
+
+${appCta({
+  href: '/explore?year=27',
+  kicker: 'FC 27 in the app',
+  head: 'Try FC 27 builds now',
+  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  label: 'Browse FC 27 builds',
+})}
 
 <h2>Frequently asked questions</h2>
 <h3>Can you play FC 27 Pro Clubs on PS4?</h3>

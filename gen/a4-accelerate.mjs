@@ -154,6 +154,18 @@ ${widget}
 
 ${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE change as you build', body: 'Height, agility and strength decide which curve you get. The planner recomputes it live while you move the sliders.', label: 'Open the builder' })}
 
+
+<h2>Does this change in FC 27?</h2>
+<p>The rumors say the three AcceleRATE types return unchanged in FC 27, with the same height, agility and strength gates — but treat the exact thresholds as rumor until EA publishes them. Our FC 27 builder already computes your type live against the rumored numbers, so the fastest way to check a planned build is simply to make it.</p>
+
+${appCta({
+  href: '/build',
+  kicker: 'The living calculator',
+  head: 'See your AcceleRATE type as you build',
+  body: 'The builder computes Lengthy, Controlled or Explosive live as you set height, weight and attributes — FC 26 and FC 27 both.',
+  label: 'Open the builder',
+})}
+
 <h2>Frequently asked questions</h2>
 <h3>Does Pace affect AcceleRATE?</h3>
 <p>No. Acceleration and Sprint Speed change how fast you end up going; they play no part in which profile you get. Only height, Agility and Strength do.</p>
