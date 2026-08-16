@@ -148,10 +148,12 @@ Everything here is cheap, compounding, and has lead time attached.
       spike; it commits nothing.
 - [ ] **Apply to affiliate programmes** (game keys, peripherals). Same
       reasoning: lead time, no commitment.
-- [ ] **CTAs on the 7 FC 27 articles** — the known funnel leak, blocked only on
-      approving copy for a coming-soon year.
-- [ ] **Decide FC 27's release status.** Production has it `hidden`; a
-      coming-soon shop window is what CTAs would land on.
+- [ ] **CTAs on the 7 FC 27 articles** — the known funnel leak. *Unblocked
+      2026-08-16: FC 27 is live, the coming-soon copy question is gone
+      (blog issue #3).*
+- [x] **Decide FC 27's release status.** *Decided and done 2026-08-16: the
+      owner flipped it `live` five weeks early — a pre-release launch with
+      61 house builds published the same day (Clubs27 migrations 0035/0036).*
 - [ ] **Stop batch-publishing.** Move to 2–3 posts/week, spaced to 25 Sep.
 - [ ] **Publish the pricing philosophy** ("the build maker and all stats are
       free forever; club tools will have a paid tier") before anything is ever
@@ -191,10 +193,11 @@ introduces), **#76** (masteries), **#77** (per-year rule enforcement), **#81**
 
 ### Launch window — 18 Sep – 2 Oct · execute, do not build
 
-Ship nothing new. Capture the beta→retail catalog on EA day, flip FC 27 live,
-publish daily, push affiliate, and **open a waitlist for club features** — that
-waitlist is how the subscription thesis gets validated with real email
-addresses instead of assumptions.
+Ship nothing new. Capture the beta→retail catalog on EA day and re-run 0028
+against it (FC 27 has been live since 16 Aug — launch week is a recapture,
+not a flip), publish daily, push affiliate, and **open a waitlist for club
+features** — that waitlist is how the subscription thesis gets validated with
+real email addresses instead of assumptions.
 
 ### After — Oct onward
 
