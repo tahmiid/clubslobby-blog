@@ -1,0 +1,129 @@
+{
+  "_source": "FC 27 closed beta, photographed 2026-08-12/13, build CL 9151217. Inputs read off the game's own Skill Moves screen — see ~/Desktop/fc26-controls-data/raw/fc27-beta-capture.md. Provisional until retail.",
+  "_note": "Flair Nutmegs and Drag To Chop are NOT new to FC 27 — they existed and were missing from the web sources. They belong in the hub as corrections, not as their own pages.",
+  "moves": [
+    {
+      "slug": "giant-fake-shot",
+      "name": "Giant Fake Shot",
+      "star": 1,
+      "ps": "Hold L2 + ▢ or ◯ + ✕",
+      "condition": "standing",
+      "what": "A fake shot with a much larger body swing than the standard one — the full wind-up, then nothing.",
+      "when": "Standing still with a defender closing. The exaggerated motion sells harder than the normal fake shot, which is why it is a one-star move that still works against people who have seen a thousand fake shots.",
+      "who": "Everyone. One star means every build in the game can do it from level one, which makes it the single best value move on this list.",
+      "note": "It only fires from a standstill. Coming out of a sprint you get the ordinary fake shot."
+    },
+    {
+      "slug": "stop-and-go",
+      "name": "Stop And Go",
+      "star": 2,
+      "ps": "Hold L2 + R ↓ ↑",
+      "what": "Kill the ball dead, then push off again in the same motion.",
+      "when": "Running at a retreating defender. The stop buys the half-yard their momentum costs them; the go takes it.",
+      "who": "Anything with Agility and Acceleration to punish the gap — but at two stars, most builds qualify."
+    },
+    {
+      "slug": "drag-to-drag",
+      "name": "Drag To Drag",
+      "star": 2,
+      "ps": "Hold L2 + ▢ or ◯ then hold ✕ or R ↓",
+      "what": "Two drags chained — the ball goes back under your body twice without a touch forward.",
+      "when": "Facing your own goal with pressure behind you. It is a possession move, not a beating move.",
+      "who": "Deep midfielders who receive with their back to play. A Maestro or Recycler uses this more than any winger will."
+    },
+    {
+      "slug": "foot-to-foot",
+      "name": "Foot To Foot",
+      "star": 3,
+      "ps": "Hold L2 + ▢ or ◯ + ✕ + L ↑",
+      "what": "The ball is rolled from one foot to the other in a single quick transfer.",
+      "when": "Tight spaces where a full skill move would take too long. It shifts the ball a boot's width and changes which side you can strike from.",
+      "who": "Anyone with a decent weak foot — the whole point is finishing on the other side."
+    },
+    {
+      "slug": "lateral-heel-to-heel",
+      "name": "Lateral Heel To Heel",
+      "star": 3,
+      "ps": "Hold L1 + flick R ←→ or →←",
+      "what": "A heel-to-heel played sideways instead of forward and back.",
+      "when": "Running along a defensive line rather than at it. It moves you laterally without losing the ball forward, which is the standard heel-to-heel's weakness.",
+      "who": "Wide players cutting infield."
+    },
+    {
+      "slug": "drag-turn",
+      "name": "Drag Turn",
+      "star": 4,
+      "ps": "Flick R ↓ then R ← or →",
+      "what": "Drag the ball back and turn out of it in one motion, exiting either side.",
+      "when": "Receiving under pressure. The drag creates the space, the turn decides where you go — and because the exit is a separate input, the defender cannot read it from the first movement.",
+      "who": "Any midfielder who receives facing their own goal."
+    },
+    {
+      "slug": "standing-scoop-turn",
+      "name": "Standing Scoop Turn",
+      "star": 4,
+      "ps": "▢ or ◯ + ✕ + L direction",
+      "what": "Scoop the ball up and turn under it from a standing start.",
+      "when": "Cornered on the touchline with no forward option. It buys a full rotation in almost no space.",
+      "who": "Technical forwards who get isolated wide.",
+      "note": "No shoulder button at all, which makes it unusually easy to fire by accident when you meant a fake shot."
+    },
+    {
+      "slug": "flair-roulette",
+      "name": "Flair Roulette",
+      "star": 4,
+      "ps": "Hold L1 + rotate R",
+      "what": "The roulette, with the flair animation and a slightly wider turning arc.",
+      "when": "The same situations as the normal roulette — running into contact — but the wider arc clears a second defender the standard one does not.",
+      "who": "Players with the flair trait; the animation is slower, so it needs the space the extra arc buys."
+    },
+    {
+      "slug": "four-touch-skill",
+      "name": "Four Touch Skill",
+      "star": 4,
+      "ps": "Hold L2 + flick R ↓↓",
+      "what": "Four quick touches in sequence, moving the ball a short distance under close control.",
+      "when": "Beating a jockeying defender who is not committing. Four touches gives four chances for them to step, and the move ends with you still on the ball either way.",
+      "who": "Dribblers with high Ball Control — the touches are tight enough that a low rating loses it."
+    },
+    {
+      "slug": "skilled-bridge",
+      "name": "Skilled Bridge",
+      "star": 4,
+      "ps": "Hold L2 + flick R ↑↓",
+      "what": "Knock the ball through the defender's legs and run the other side of them.",
+      "when": "A defender square on with their feet apart — usually one who has just planted to jockey.",
+      "who": "Pace builds. The move puts the ball past them but you still have to win the footrace to it."
+    },
+    {
+      "slug": "first-time-spin",
+      "name": "First Time Spin",
+      "star": 5,
+      "ps": "Hold L1 + R1",
+      "what": "Spin away from your marker on the first touch, before the ball has settled.",
+      "when": "Receiving a pass with a defender tight behind you. It is the only move on this list that happens *during* the first touch rather than after it.",
+      "who": "Five-star strikers who play with their back to goal.",
+      "note": "Two shoulder buttons and nothing else — the simplest input of any five-star move in the game."
+    },
+    {
+      "slug": "alternate-elastico-chop",
+      "name": "Alternate Elastico Chop",
+      "star": 5,
+      "ps": "Hold L2 + R1 + flick R ↓ then ← or →",
+      "what": "An elastico that finishes with a chop instead of the usual push-out.",
+      "when": "When the defender has learned to read your elastico. The first half is identical; the finish is not.",
+      "who": "Five-star skillers who already use the elastico enough for opponents to anticipate it."
+    },
+    {
+      "slug": "running-fake-drag",
+      "name": "Running Fake Drag",
+      "star": 5,
+      "ps": "Hold L2 + ▢ or ◯ + ✕ + L ↑",
+      "condition": "running",
+      "what": "A fake shot that becomes a drag, performed at full speed.",
+      "when": "Running at a defender who respects your shot. The fake stops them; the drag goes past them.",
+      "who": "Forwards with a shot worth respecting — the move only works if the fake is credible.",
+      "note": "The standing version of this is Giant Fake Shot at one star. This is the sprinting variant and costs four more stars."
+    }
+  ]
+}
