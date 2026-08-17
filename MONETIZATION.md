@@ -582,12 +582,37 @@ classic version of this mistake.
 messages published, `ads.txt` live, slot A serving, app deployed. What is left
 is one click and one wait:
 
-- [ ] **Click "Request review" in AdSense.** The site still reads
-      *Request review*, which is why every slot answers `unfilled`. Nothing
-      earns until this is approved, and nothing else on this list unblocks it.
+- [x] **Click "Request review" in AdSense.** *Done ~14 Aug (owner). As of
+      17 Aug the site reads "Getting ready" — that IS the post-request review
+      state; three days in it is unremarkable (typical: days to two weeks,
+      stated ceiling four). 0% fill stays the expected state until approval.
+      Auto ads confirmed OFF (owner, 17 Aug) — still watch it at approval;
+      Google can re-enable per site.*
 - [ ] **Then nothing** — ads appear on their own when Google approves. If fill
       is still 0% a day after approval, something is wrong; until approval, 0%
       is the expected state.
+
+> ### 2026-08-17 — the spike, re-sized on real data
+>
+> Re-run against Steam player counts and our own GSC curve. Headline inputs:
+> FC 26 is at its *summer peak*, not an end-of-cycle trough — July averaged
+> ~102k concurrent on Steam vs ~55k in launch month, the World Cup update did
+> it — while our search impressions quadrupled in the week to 16 Aug and
+> FC 27 query demand is still embryonic (~58 impressions/14d, informational
+> queries). Projections for the launch-window peak month:
+>
+> | Peak month | Pageviews | Slot A only | With B+C |
+> |---|---|---|---|
+> | Conservative | ~37,000 | ~$92 | ~$205 |
+> | Base | ~103,000 | ~$258 | ~$565 |
+> | Optimistic | ~297,000 | ~$740 | ~$1,630 |
+>
+> Low hundreds most likely, low four figures at the top. Two riders: every
+> RPM here is a guess until 30 days of real fill exist, and **§1/§8's Raptive
+> 25,000 threshold was re-verified current on 17 Aug** (dropped from 100k in
+> Oct 2025; a tier-one traffic-share requirement applies, which the 32% US /
+> 19% UK mix comfortably meets). The base case clears it — the spike's real
+> value is premium-network qualification, not the AdSense cheque.
 
 **Affiliate is now the only unstarted monetization work, and it is the one
 with a deadline** (§5): links must be live *before* 18 September, applications

@@ -63,6 +63,40 @@ Also learned and not yet acted on:
   of them, meaning they rank first for phrases nobody searches. Do not invest
   in optimising them.
 
+### Update — 17 Aug, the week the instruments arrived
+
+| Measure | 12 Aug | 17 Aug | |
+|---|---|---|---|
+| Blog views/day | 109–152, falling | **~225–300, recovered** | the 12 Aug dip was the indexing surge wearing off, not a trend |
+| Registrations/day | ~1.5 (13 accounts) | **3–5 (30 accounts, 23 organic)** | ~95% Google SSO; activation gap closed — 19 of the last 20 accounts built |
+| Blog→app crossing | 12.8% | **12–18%** | Aug 16 hit 18% on 297 views |
+| Search, weekly | 4,485 impr · 3.37% | **11,873 impr · 1.84% · pos 4.2** | impressions quadrupled; CTR dropped on low-intent FC 27 queries — judge after ~20 Aug |
+
+What changed under the numbers:
+
+- **The funnel is properly instrumented now** — admin Traffic dashboard,
+  nightly collector (nginx + Cloudflare + GSC), first-party beacon (app repo
+  #100–#104, live 14 Aug). The reel card was measured honestly for the first
+  time on 17 Aug: **22→40% click-per-hydration, the best converter on the
+  blog** — the earlier "the card isn't clicked" read came from
+  `funnel-report.py` not knowing the card's `?src=card` tag. Both parsers now
+  count `src=card` and `src=grid`.
+- **The grid layout is being A/B'd on the magician spoke** (17 Aug): the FC 27
+  articles' build grid replaced the reel card there, tagged `src=grid`.
+  Verdict in the log in about a week; the other 12 spokes are untouched.
+- **AdSense slot A is live (13 Aug), review requested, still "Getting ready"**
+  — 0% fill is the expected state until approval; auto ads confirmed off.
+- **FC 27 flipped live 16 Aug** with 61 house builds; the skill-move cluster
+  (13 how-tos + hub) is public; every FC 27 article now carries the app CTA.
+- House-build quality: every fillable custom PlayStyle slot filled
+  (app migration 0043, 17 Aug) — the grid cards no longer advertise
+  half-empty builds.
+
+**Still not moving, and deadline-shaped:** the two week-1 items that were the
+point of week 1 — **affiliate applications** (unstarted; must be live before
+18 Sep, applications take days–weeks) and the **newsletter** (still off).
+Batch-publishing also continues (the skill cluster went out as one batch).
+
 ---
 
 ## 2. Scorecard against the 5 Aug reviews
@@ -143,14 +177,14 @@ Everything here is cheap, compounding, and has lead time attached.
       form in the article template and the index. *This is the single
       highest-return unbuilt thing on the list, and it is a settings change
       plus a template edit.*
-- [ ] **Apply for AdSense.** Approval takes 1–2 weeks and requires the privacy
-      policy that now exists. Applying now is what makes ads possible at the
-      spike; it commits nothing.
+- [x] **Apply for AdSense.** *Done and further: account upgraded, slot A live
+      13 Aug, review requested — awaiting approval ("Getting ready"), 0% fill
+      expected until then. See MONETIZATION.md §7b.*
 - [ ] **Apply to affiliate programmes** (game keys, peripherals). Same
-      reasoning: lead time, no commitment.
-- [ ] **CTAs on the 7 FC 27 articles** — the known funnel leak. *Unblocked
-      2026-08-16: FC 27 is live, the coming-soon copy question is gone
-      (blog issue #3).*
+      reasoning: lead time, no commitment. **Still unstarted 17 Aug — the
+      oldest open item with a hard deadline.**
+- [x] **CTAs on the 7 FC 27 articles** — *done 2026-08-16 with the FC 27
+      wave: every FC 27 article carries `appCta()` (blog commit 4b7e00d).*
 - [x] **Decide FC 27's release status.** *Decided and done 2026-08-16: the
       owner flipped it `live` five weeks early — a pre-release launch with
       61 house builds published the same day (Clubs27 migrations 0035/0036).*
@@ -245,6 +279,9 @@ starts with something shippable before 18 September.
 Re-run `ops/funnel-snapshot.sh` weekly. The 11 Aug snapshot is the baseline for
 the reel and Google SSO; 12 Aug is the baseline for the title and description
 rewrites — **check those against it around 20 Aug**, once Google has recrawled.
+The 17 Aug re-measure lives in §1's update table; since 14 Aug the nightly
+collector (app repo) makes these numbers permanent, so snapshots are now the
+weekly narrative, not the only record.
 
 One caveat carried by every snapshot before 13 Aug: Google signups were logged
 as 200 and counted as logins, so `reg` understates and `login` overstates on

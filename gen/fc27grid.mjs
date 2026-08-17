@@ -4,6 +4,13 @@
 // single signature slot), then the three silver regular PlayStyles. Height/
 // weight ride along as a quiet last line.
 //
+// BADGE-ROW RULE (owner, 2026-08-17): the 1-gold + 3-silver split is FC 27's
+// signature count, not a card constant. The row's real rule is "signatures
+// first, all gold; leftover spaces take regulars" — an FC 26 level-100 build
+// carries FOUR signatures, so its row is all gold (spoke.mjs gridCard, which
+// derives the split from b.signature.length). Copying this file's split onto
+// FC 26 cards dressed three signatures as regulars; don't repeat it.
+//
 // Visual language is the spokes' existing badge (.sb): dark-gold ground,
 // #c9a227 border, official glyph untouched inside — gold marks signature
 // (user's standing call), silver-bordered same shape marks a regular.

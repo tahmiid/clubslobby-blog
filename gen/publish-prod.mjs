@@ -208,8 +208,8 @@ const POSTS = [
   { file: 'a18.html', slug: 'pro-clubs-magician-build', status: 'published',
     title: 'EA FC Pro Clubs Magician Build: The Best Level-100 Setup',
     meta_title: 'Best Pro Clubs Magician Build: Level 100 Guide',
-    meta_description: 'The best Magician build in FC 26 Pro Clubs: a Messi and a Neymar at level 100 — every attribute, the AP order and the right specialization, ready to copy.',
-    custom_excerpt: 'Two finished level-100 Magicians — attributes, AP path and specialization order — ready to open in the builder.',
+    meta_description: 'Fourteen level-100 Magician builds for FC 26 Pro Clubs — Messi, Neymar, Dembélé, Ronaldinho — plus every attribute, the AP order and the best specialization.',
+    custom_excerpt: 'Fourteen finished level-100 Magicians — attributes, AP path and specialization order — ready to open in the builder.',
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 26'] },
   { file: 'a19.html', slug: 'pro-clubs-shot-stopper-build', status: 'published',
     title: 'EA FC Pro Clubs Shot Stopper Build: The Best Level-100 Setup',
@@ -337,12 +337,14 @@ const POSTS = [
     custom_excerpt: 'Free swapping turns archetype choice from a commitment into a loadout. Pick a main, see which archetypes cover its gaps.',
     tags: ['Guides', 'Archetypes', 'Tools', 'FC 27'] },
 
-  // ── FC 27 new-skill-move cluster (#draft, 13 Aug 2026) ──────────────────
+  // ── FC 27 new-skill-move cluster (public since 16 Aug 2026) ─────────────
   // Published WITHOUT video on purpose: a page that appears on 18 September has
   // almost no chance of ranking during the spike, one that appears in August has
   // five weeks to age. The clips drop into these same URLs on early-access day.
-  // Left as drafts for review — nothing here is public until someone flips it.
-  { file: 'a49.html', slug: 'fc27-new-skill-moves', status: 'draft',
+  // The hub was left behind as a draft when the 13 how-tos were flipped on the
+  // 16th, which 404'd the hub link in every one of them until the owner flipped
+  // it too (2026-08-17, found by the all-articles link sweep).
+  { file: 'a49.html', slug: 'fc27-new-skill-moves', status: 'published',
     title: 'Every New Skill Move in EA FC 27 (Confirmed From the Beta)',
     meta_title: 'All New FC 27 Skill Moves — Inputs for PS5 and Xbox',
     meta_description: 'Every skill move new to EA FC 27, with the exact input for PlayStation and Xbox — read off the game\'s own screen during the closed beta, not copied from a list.',

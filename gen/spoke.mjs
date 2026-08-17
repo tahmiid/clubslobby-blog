@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
+import { gridCss } from './fc27grid.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const LEVELS = JSON.parse(readFileSync(path.join(DIR, 'fc26', 'levels.json'), 'utf8'));
@@ -202,6 +203,55 @@ ${cardAnchor(BUILDS[0], true)}
 <script>${PCHQ_JS}</script>`);
   const widgetSecond = kg(`${BUILDS[1] ? cardAnchor(BUILDS[1], false) + '\n' : ''}${builderLine}`);
 
+  // --- The build grid, opt-in per spoke (owner, 2026-08-17) ---------------
+  // The FC 27 articles show a grid of tappable builds instead of one big card,
+  // and the owner judged that layout better by eye. This is the same grid, on
+  // an FC 26 spoke, behind `cfg.gridFile` so the other twelve are untouched
+  // and the experiment stays reversible. gridCss is imported rather than
+  // copied: two copies of this CSS would drift within a week.
+  //
+  // Tagged `?src=grid`, deliberately NOT `?src=card` and not
+  // `ref=proclubshq.com` - the whole point is telling the two layouts apart in
+  // the access log. funnel-report.py and the collector both know this tag.
+  const gridBuilds = cfg.gridFile
+    ? JSON.parse(readFileSync(path.join(DIR, 'builds', cfg.gridFile), 'utf8')).builds
+    : null;
+
+  // THE BADGE-ROW RULE (owner, 2026-08-17 — learned by shipping it wrong):
+  // the card's four badge spaces show the build's SIGNATURE loadout first —
+  // every signature PlayStyle, gold — and only spaces left over take
+  // regulars (silver). How many signatures a build carries is the YEAR's
+  // rule, not the card's: FC 26 gives four (the row reads all gold and the
+  // regulars stay in the caption), FC 27 level-40 gives one (1 gold +
+  // 3 silver — fc27grid.mjs). The first version of this card hardcoded the
+  // FC 27 split onto FC 26 builds and dressed three signatures up as
+  // silver regulars. Never hardcode the split; derive it from
+  // b.signature.length.
+  const gridCard = (b) => {
+    const sigs = b.signature || [];
+    const regs = (b.playstyles || []).slice(0, Math.max(4 - sigs.length, 0));
+    return `<a class="bc" href="${openUrl(b)}?src=grid">
+<p class="nm">${esc(b.buildName)}</p>
+<p class="ar">${esc(archName)} · Lv ${b.level}</p>
+<div class="ps">
+${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
+${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
+</div>
+<p class="sg">${(b.playstyles || []).length} regular PlayStyles</p>
+<p class="hw">${ft(b.height)} · ${b.weight} lbs · ${esc(b.accelerationType)}</p>
+</a>`;
+  };
+
+  const buildGridBlock = gridBuilds && kg(`<div class="${P}g">
+<style>${gridCss(`${P}g`)}
+.${P}g .hd{font:800 17px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7;margin:0 0 2px}
+.${P}g .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}
+.${P}g{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.6em 0}</style>
+<p class="hd">${esc(cfg.gridHead)}</p>
+<p class="sub">${esc(cfg.gridSub)}</p>
+<div class="grid">${gridBuilds.map(gridCard).join('\n')}</div>
+</div>`);
+
   // The AP path as a grid — a real <table> here inherits the theme's
   // white-space:nowrap and overlaps columns (the a18 v1 bug).
   const stageGrid = kg(`<div class="${P}t">
@@ -273,7 +323,27 @@ ${JSON.stringify({
     ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
     : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
 
-  const html = `${widgetTop}
+  // Grid spokes follow the FC 27 articles' arrangement: the hook paragraph
+  // first, the builds immediately under it, then the sections. No cover art -
+  // the owner's judgement (2026-08-17) is that the layout reads better without
+  // an image in the body, and the FC 27 articles carry none. The depth stays:
+  // every section below is unchanged, because this page's length is part of
+  // why it ranks.
+  // Only the OPENING differs between the two layouts. Everything from the AP
+  // path down is shared - splitting the whole template instead of just its
+  // head is how the first attempt silently dropped five of the seven sections
+  // and 4,700 words from the page.
+  const opening = gridBuilds ? `${cfg.intro(ctx)}
+${buildGridBlock}
+
+<h2>Why the ${esc(archName)}</h2>
+${whyParas.join('\n')}
+
+${AD_A}
+
+<h2>${esc(cfg.buildsH2)}</h2>
+${cfg.buildsParas(ctx).join('\n')}
+${builderLine}` : `${widgetTop}
 ${cfg.intro(ctx)}
 
 <h2>Why the ${esc(archName)}</h2>
@@ -285,7 +355,9 @@ ${AD_A}
 
 <h2>${esc(cfg.buildsH2)}</h2>
 ${cfg.buildsParas(ctx).join('\n')}
-${widgetSecond}
+${widgetSecond}`;
+
+  const html = `${opening}
 
 <h2>The AP path: what to buy first</h2>
 <p>AP arrives with levels — <a href="/blog/pro-clubs-level-rewards/">${TOTAL_AP.toLocaleString()} in total by level 100</a> — but attribute prices climb steeply near the caps, so order matters. This is the ${esc(cfg.shortNames[0])} build bought in ${stages.length} stages:</p>
