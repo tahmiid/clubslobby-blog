@@ -188,6 +188,8 @@ def main():
                     days[day]['card_clicks'] += 1
                 if 'src=grid' in path_q:
                     days[day]['grid_clicks'] += 1
+                if 'src=digest' in path_q:
+                    days[day]['digest_clicks'] += 1
                 if blog_ref:
                     days[day]['crossings'] += 1
                     ref_path = ref.split(HOST, 1)[1].split('?', 1)[0]
@@ -208,7 +210,7 @@ def main():
     print('"goog" is the subset of "reg" that signed up through Google '
           '(201 on /auth/google).\n')
     hdr = (f'{"day":<12}{"blog views":>11}{"blog vis.":>10}{"→app":>6}'
-           f'{"app views":>10}{"app vis.":>9}{"hydr.":>7}{"card":>6}{"grid":>6}'
+           f'{"app views":>10}{"app vis.":>9}{"hydr.":>7}{"card":>6}{"grid":>6}{"dgst":>6}'
            f'{"reg":>5}{"goog":>6}{"login":>7}')
     print(hdr)
     print('-' * len(hdr))
@@ -221,12 +223,12 @@ def main():
         print(f'{d:<12}{c["blog_views"]:>11}{len(blog_visitors[d]):>10}'
               f'{c["crossings"]:>6}{c["app_views"]:>10}'
               f'{len(app_visitors[d]):>9}{c["hydrations"]:>7}'
-              f'{c["card_clicks"]:>6}{c["grid_clicks"]:>6}{c["registers"]:>5}'
+              f'{c["card_clicks"]:>6}{c["grid_clicks"]:>6}{c["digest_clicks"]:>6}{c["registers"]:>5}'
               f'{c["google_reg"]:>6}{c["logins"]:>7}')
     print('-' * len(hdr))
     print(f'{"total":<12}{tot["blog_views"]:>11}{tot["blog_vis"]:>10}'
           f'{tot["crossings"]:>6}{tot["app_views"]:>10}{tot["app_vis"]:>9}'
-          f'{tot["hydrations"]:>7}{tot["card_clicks"]:>6}{tot["grid_clicks"]:>6}'
+          f'{tot["hydrations"]:>7}{tot["card_clicks"]:>6}{tot["grid_clicks"]:>6}{tot["digest_clicks"]:>6}'
           f'{tot["registers"]:>5}{tot["google_reg"]:>6}{tot["logins"]:>7}')
     if tot['ref_tagged']:
         print(f'\n(ref=proclubshq.com tagged app hits in range: '
