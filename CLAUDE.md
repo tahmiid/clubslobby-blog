@@ -64,6 +64,44 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
   200 sign-in**) — that contract lives in the app repo and breaking it
   silences the funnel's headline number with no failing test.
 
+## Affiliate links
+
+State lives in `data/affiliate-merchants.json`, never in code. Four commands:
+
+```
+node ops/affiliate-switch.mjs status                              # who is live
+node ops/affiliate-switch.mjs on cdkeys-us --awinmid=N --cookie=N # approved
+node ops/affiliate-switch.mjs off amazon-us                       # stop it
+node ops/affiliate-check.mjs                                      # before any scp
+node ops/affiliate-test.mjs                                       # after editing the module
+```
+
+- **This is NOT the ads pattern and cannot be.** An ad slot is an empty div
+  Ghost's injection fills at request time, so `ads-switch.sh` never touches an
+  article. An affiliate link is a real `<a href>` in the body — the only
+  head-side switch would rewrite links at runtime, which is Awin's
+  Convert-a-Link and Amazon's OneLink, both refused (MONETIZATION.md §4.2).
+  **So flipping a merchant means regenerating and republishing** the articles
+  carrying it. `affiliate-switch.mjs` flips and tells you; it never publishes.
+- **A `pending` merchant emits nothing at all** — no link, no box, no
+  disclosure. That is what lets the plumbing sit in the repo while every
+  application is still under review, which is the state today.
+- **The disclosure and the links are emitted by one call or not at all.**
+  `affiliateBlock()` is the only exported emitter and there is deliberately no
+  bare link helper, so a link cannot ship without its FTC/ASA disclosure above
+  it. `ops/affiliate-check.mjs` also greps for the failure directly, because
+  the invariant only holds for links that went through the module.
+- **`cookieDays` is a placement rule, not a note.** 30d (key sellers) survives
+  the pre-launch research window and goes anywhere. **1d (Amazon) is dead in an
+  evergreen guide** — accessories only, at points of immediate intent, which
+  also matches Amazon paying badly on games and better on electronics.
+- **`sells` is enforced at generation.** Routing an accessory to a key seller
+  throws rather than quietly earning 1%.
+- Tracking ids (`awinaffid=3047467`, `tag=proclubshq-20`) are in
+  `gen/affiliate.mjs` and are **not secrets** — they appear in every public
+  affiliate link, exactly as the AdSense publisher id sits in
+  `ops/adsense-block.html`.
+
 ## Content rules that survive sessions
 
 - The author is **BuildMaster** — never the owner's real name or face on any

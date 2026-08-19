@@ -1,0 +1,69 @@
+{
+  "_comment": [
+    "Merchant state for the affiliate links. gen/affiliate.mjs reads this;",
+    "ops/affiliate-switch.mjs writes it. Kept out of the code deliberately:",
+    "turning a merchant on or off is an operational decision made on revenue",
+    "data, not a code change, and this is the file an admin panel would write",
+    "if one is ever built (MONETIZATION.md \u00a75).",
+    "",
+    "status      'pending' emits NOTHING. 'live' emits links.",
+    "awinmid     advertiser id from the Awin programme page (in its profile URL).",
+    "cookieDays  decides placement, not documentation. 30d survives the",
+    "            pre-launch research window; 1d (Amazon) must sit at immediate",
+    "            intent, on accessories only.",
+    "sells       which product kinds may route here; enforced at generation."
+  ],
+  "merchants": {
+    "cdkeys-us": {
+      "label": "CDKeys",
+      "network": "awin",
+      "status": "pending",
+      "awinmid": null,
+      "cookieDays": null,
+      "sells": [
+        "game",
+        "key"
+      ],
+      "store": "https://www.cdkeys.com",
+      "note": "applied 2026-08-19, under review"
+    },
+    "cdkeys-uk": {
+      "label": "CDKeys",
+      "network": "awin",
+      "status": "pending",
+      "awinmid": null,
+      "cookieDays": null,
+      "sells": [
+        "game",
+        "key"
+      ],
+      "store": "https://www.cdkeys.com",
+      "note": "applied 2026-08-19, under review"
+    },
+    "fanatical": {
+      "label": "Fanatical",
+      "network": "awin",
+      "status": "pending",
+      "awinmid": 118821,
+      "cookieDays": 30,
+      "sells": [
+        "game",
+        "key"
+      ],
+      "store": "https://www.fanatical.com",
+      "note": "applied 2026-08-19, under review; mid+cookie from its Awin profile"
+    },
+    "amazon-us": {
+      "label": "Amazon",
+      "network": "amazon",
+      "status": "pending",
+      "awinmid": null,
+      "cookieDays": 1,
+      "sells": [
+        "accessory"
+      ],
+      "store": "https://www.amazon.com",
+      "note": "account created 2026-08-19; tax + bank details outstanding"
+    }
+  }
+}

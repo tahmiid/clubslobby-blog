@@ -187,6 +187,150 @@ sixty sales, roughly £3 each on a £60 game. **Call it £100–400 for about th
 hours of work, once a year.** Good hourly rate, small absolute number — do it
 for the rate, not the total, and don't let it displace §9.
 
+> ### 2026-08-19 — applications filed, and the numbers to reuse
+>
+> **Awin's chooser is a trap: pick "content creator and influencer", never
+> "advertiser".** An advertiser is a *merchant* who pays commission — that path
+> opens a paid merchant account with setup and monthly platform fees. Awin's
+> older word for our side is **publisher**; a later screen saying publisher is
+> still us.
+>
+> **Site-stats block** (12 collector days to 08-18) — every application, media
+> kit and sponsor enquiry asks for these, so they live here now:
+>
+> | Field | Value |
+> |---|---|
+> | Sitewide pageviews | ~50,000/month (avg 1,664/day) |
+> | Sitewide uniques | ~23,000/month (avg 766/day) |
+> | Blog article views | ~7,000/month (avg 236/day) |
+> | Geography, 7-day | US 36.8 · CA 16.8 · BR 15.6 · GB 9.4 · DE 4.7% |
+> | Search | avg position ~4.2, 40+ articles |
+> | Device | ~80% mobile |
+>
+> **Quote sitewide as sitewide and blog as blog — never blend them.** A
+> reviewer clicking through lands on the blog, so the smaller number has to
+> look plausible. US+CA+GB = 63%, the tier-one share networks screen for.
+>
+> **The 255-char description used** (247): *Pro Clubs HQ is a build-planning
+> app and guide site for EA Sports FC Pro Clubs. Players plan, save and share
+> builds; its guides rank in Google at avg position 4.2. ~50,000 pageviews and
+> 23,000 uniques a month, 80% mobile, mainly US, UK and Canada.*
+>
+> **"How you'll promote"** — the field that decides approval odds. Include the
+> last sentence verbatim; organic-no-paid-search-no-vouchers is the cleanest
+> partner profile there is: *Contextual links inside existing build guides —
+> game keys for EA Sports FC 27 around the September launch, plus controllers
+> and headsets referenced in gameplay guides. Traffic is organic search only.
+> No paid search, no incentivised traffic, no coupon or voucher activity.*
+> Promotional type: **Content site / Blog**. Site URL: the **root**, not
+> `/blog`. Social following: leave zero — the site is the asset.
+>
+> **Amazon Associates goes in on the same day as Awin**, for timing not
+> breadth: it closes accounts with <~3 qualifying sales in 180 days, so
+> applying in August puts the 18–25 Sep spike *inside* the window. Applying in
+> September starts the clock after the one traffic event that matters.
+>
+> **Network approval is not merchant approval.** Awin accepting us is not
+> CDKeys accepting us; each merchant approves separately and *those* are the
+> approvals that must land before 18 Sep. Apply to the resellers the moment the
+> network lets you in.
+>
+> **§4's policy debt is already paid** — `/privacy` has carried an "Advertising
+> and affiliate links" section since 12–13 Aug and it is verified live in the
+> deployed bundle. No policy work blocks link placement. What is still owed is
+> the **per-page disclosure line** (§4: visible, *above* the link): nothing in
+> `gen/` or `ops/` emits one today. Build it with a single link registry so a
+> rejected merchant is a one-line swap, not a sweep across 40+ generators.
+>
+> ### Same day, later — what Awin actually carries, and the build
+>
+> **§5's route table was wrong and is corrected here.** It said the key sellers
+> were "reachable via Awin/Impact". They are not. Verified 2026-08-19 by
+> searching the directory (exact-match, quoted, regions widened) and then by
+> primary sources:
+>
+> | Merchant | Where it really is | Rate | Cookie |
+> |---|---|---|---|
+> | CDKeys | **Awin** — US and UK are two programmes | — | — |
+> | Fanatical | **Awin**, but the directory search does NOT surface it — reach it at `ui.awin.com/merchant-profile/118821` | — | 30d |
+> | Green Man Gaming | direct, `greenmangaming.com/affiliates` | ≤5%, 10% bundles | 30d |
+> | Eneba | Impact or CJ, or direct | ≤5% | 30d |
+> | Instant Gaming | in-house only | ~3% | — |
+>
+> **Third-party affiliate directories are worthless here** — on Fanatical alone
+> they claimed ShareASale, CJ, and "closed Jul 2026 on Daisycon", all wrong.
+> Trust the Awin merchant profile or the merchant's own `/affiliates` page.
+>
+> **Concentration beats breadth at this size.** Every programme has a minimum
+> payout (Eneba's is €50); £100–400 spread over six merchants leaves balances
+> that never pay out. Applied: CDKeys US, CDKeys UK, Fanatical, Amazon US.
+> Eneba and Instant Gaming deliberately skipped — a whole new network account
+> for the same 5% we already have.
+> **Green Man Gaming dropped by the owner the same day**; no further merchant
+> applications. Owner's priority: **AdSense and Amazon primary, key sellers
+> backup.** Worth holding alongside that: for the launch fortnight the key
+> sellers are the better-shaped instrument (30-day cookie, 3–8% on the exact
+> product bought that week) against Amazon's 24-hour cookie and weak games
+> rate — Amazon wins accessories year-round, the keys win 25 Sep.
+>
+> **Amazon is not like the others, and it changes placement.** Its cookie is
+> **24 hours** (90 days only if carted) against the key sellers' 30. A link in
+> an evergreen guide read three weeks before launch is dead. So Amazon gets
+> **accessories only, at points of immediate intent** — which matches its rate
+> card, since it pays badly on games and better on electronics. The game goes
+> to the key sellers. The April 2026 agreement update also disqualifies
+> purchases referred via any paid or boosted ad, and requires delivery+payment
+> within 180 days of click.
+>
+> **OneLink and Convert-a-Link are both refused.** Each would recover real
+> money (OneLink covers the 63% of traffic that is not US) and each works by
+> putting a third-party script on every page — §4.2, on a site whose only
+> channel is search. Revisit OneLink only if Amazon shows real revenue after
+> the spike.
+>
+> **BUILT the same day** (`gen/affiliate.mjs`, `ops/affiliate-check.mjs`):
+> a registry keyed by programme, with `status`, `awinmid`, `cookieDays` and
+> `sells`. **This deliberately does NOT follow `ads.mjs`'s pattern** — an ad is
+> an inert div that Ghost's injection fills, but an affiliate link is a real
+> `<a href>` in the body, so the only head-side switch would be runtime link
+> rewriting, i.e. Convert-a-Link. The switch is therefore at *generation* time:
+> a `pending` merchant emits nothing at all, so the plumbing ships weeks before
+> any approval and going live is one line plus a regenerate-and-republish.
+> **The one invariant: `affiliateBlock()` emits the disclosure and the links
+> together or emits nothing** — there is no bare link helper to reach for, so a
+> link cannot ship without its FTC/ASA disclosure above it. `sells` blocks a
+> headset being routed to a key seller at generation time.
+> `ops/affiliate-check.mjs` is the `ads-switch.sh`-style refusal: it exits 1 on
+> a link without a disclosure, a stale disclosure with no link, an unfilled
+> tracking id, or a missing `rel="sponsored"`. Run it after `node gen/aNN-*.mjs`
+> and before the scp.
+>
+> **Control surface (owner asked for one, 2026-08-19).** State moved out of the
+> module into `data/affiliate-merchants.json`; `ops/affiliate-switch.mjs`
+> is `status` / `on <m> --awinmid=N --cookie=N` / `off <m>`, with `--dry-run`.
+> It refuses an Awin merchant with no `awinmid` and any merchant with no
+> `cookieDays` (placement depends on it), and it never publishes — it prints
+> the regenerate → check → publish sequence instead.
+>
+> **An app-admin toggle was considered and is not what got built.** It could not
+> be honest: the links are baked into published article HTML, so a panel switch
+> would either appear instant while doing nothing until a republish, or need the
+> runtime link-rewriting script that §4.2 rules out. The JSON file is
+> deliberately the shape an admin panel *would* write, so the decision is
+> reversible if the numbers ever justify it.
+>
+> **If a real-time toggle plus per-merchant click data is ever wanted**, the
+> design is a first-party redirect — `/go/<merchant>/<dest>` 302-ing to the
+> tracking URL. Server-side target means instant on/off with no republish, and
+> nginx logs every click so the existing collector could count them per
+> merchant, no JavaScript anywhere. Two things to settle first: Amazon's
+> operating agreement restricts link cloaking/masking (check before pointing a
+> redirect at them), and the whole line is sized at £100–400/yr, so this is a
+> build to justify with revenue, not to do speculatively.
+>
+> Tests: `ops/affiliate-test.mjs` (7 cases). The load-bearing one is that with
+> every merchant pending the generator returns the empty string.
+
 ---
 
 ## 6. Deferred, and why
