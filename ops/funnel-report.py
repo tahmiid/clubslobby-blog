@@ -41,8 +41,18 @@
 # the auth accounting above — into a nightly Mongo rollup for the admin
 # dashboard. The two files move together: change a rule here, change it
 # there in the same sitting (its test suite pins the shared judgements).
+#
+# Internal traffic (ported BACK from the collector, 2026-08-20): the owner's
+# own browsing sat in every number here while the collector had been dropping
+# it since the 14th — the two reports disagreed by 500–1,100 lines a day and
+# the difference was us. Same two marks as the collector: any IP in
+# INTERNAL_IPS, and any line whose trailing `$cookie_pchq_int` column reads
+# "1" (a browser gets that cookie by ever holding an admin session). The
+# dropped count is printed on the report, so a run where the filter had
+# nothing to bite on is visibly different from a run where it worked.
 import argparse
 import gzip
+import os
 import re
 import sys
 from collections import Counter, defaultdict
@@ -51,13 +61,32 @@ from glob import glob
 
 LOG_GLOB = '/var/log/nginx/access.log*'
 HOST = 'proclubshq.com'
+API_ENV = '/opt/clubs27-api/.env'
 
-# Combined log format. Request line is parsed separately: scanners send
-# garbage there, and a line whose request does not parse is theirs.
+# Combined log format, with one optional trailing column: "$cookie_pchq_int",
+# which deploy/analytics/ (app repo) appends. Optional so logs from before
+# that nginx change, and any other combined-format log, still parse.
 LINE = re.compile(
     r'(?P<ip>\S+) \S+ \S+ \[(?P<time>[^\]]+)\] "(?P<req>[^"]*)" '
-    r'(?P<status>\d{3}) \S+ "(?P<ref>[^"]*)" "(?P<ua>[^"]*)"')
+    r'(?P<status>\d{3}) \S+ "(?P<ref>[^"]*)" "(?P<ua>[^"]*)"'
+    r'(?: "(?P<internal>[^"]*)")?')
 REQ = re.compile(r'(?P<method>[A-Z]+) (?P<path>\S+) HTTP/')
+
+
+def internal_ips():
+    """INTERNAL_IPS from the environment, else from the API's .env — the
+    box's authoritative env file — else empty. Comma-separated."""
+    raw = os.environ.get('INTERNAL_IPS')
+    if raw is None:
+        try:
+            with open(API_ENV) as fh:
+                for line in fh:
+                    if line.startswith('INTERNAL_IPS='):
+                        raw = line.split('=', 1)[1].strip().strip('"\'')
+                        break
+        except OSError:
+            pass
+    return frozenset(ip.strip() for ip in (raw or '').split(',') if ip.strip())
 
 BOT_UA = re.compile(
     r'bot|crawl|spider|slurp|preview|externalhit|whatsapp|telegram|discord|'
@@ -104,6 +133,8 @@ def main():
     blog_visitors = defaultdict(set)     # day -> {(ip, ua)}
     app_visitors = defaultdict(set)
     top_articles = Counter()             # article -> human views
+    own_ips = internal_ips()
+    internal_dropped = 0
 
     for f in sorted(glob(args.glob)):
         opener = gzip.open if f.endswith('.gz') else open
@@ -114,6 +145,9 @@ def main():
                     continue
                 r = REQ.match(m['req'])
                 if not r:
+                    continue
+                if m['ip'] in own_ips or m['internal'] == '1':
+                    internal_dropped += 1
                     continue
                 ua = m['ua']
                 if not ua or ua == '-' or BOT_UA.search(ua):
@@ -208,7 +242,9 @@ def main():
     print('"Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — '
           'directional, not exact.')
     print('"goog" is the subset of "reg" that signed up through Google '
-          '(201 on /auth/google).\n')
+          '(201 on /auth/google).')
+    print(f'Internal (our own) traffic excluded: {internal_dropped} lines '
+          f'dropped (pchq_int cookie mark; {len(own_ips)} listed ips).\n')
     hdr = (f'{"day":<12}{"blog views":>11}{"blog vis.":>10}{"→app":>6}'
            f'{"app views":>10}{"app vis.":>9}{"hydr.":>7}{"card":>6}{"grid":>6}{"dgst":>6}'
            f'{"reg":>5}{"goog":>6}{"login":>7}')
