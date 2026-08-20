@@ -24,6 +24,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
+import { AD_A, AD_C } from './ads.mjs';
 import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
 
 const DIR = path.join(import.meta.dirname, '..');
@@ -88,19 +89,14 @@ const spokeByName = new Map(SKILLS.moves.map((m) => [m.name, m.slug]));
 for (const m of SKILLS.moves) {
   inSet(added, m.name === 'Giant Fake Shot' ? 'Giant Fake Shot (Standing)' : m.name);
 }
-
-// Editorial: in the menu for the first time, but NOT new to the game.
-['Flair Nutmegs', 'Call For Cross / Lob', 'Call for Ground Cross', 'Call for High Cross']
-  .forEach((n) => inSet(added, n));
 inSet(removed, 'Flick Up', 'Attacking - Advanced');
 inSet(removed, 'Flick Up', '1 Star Moves');
 inSet(removed, 'Edge Of Box Run');
 inSet(removed, 'Crowd the Goalkeeper');
 
 // ── last year's combos, as words ───────────────────────────────────────────
-// These are quoted, not performed: the point of the corrections table is what
-// the OLD tables said, so it stays prose on purpose — animating a wrong input
-// would teach it.
+// Quoted, not performed: the changed-inputs table shows what FC 26 asked for,
+// and animating a superseded input would teach it.
 const WORD = {
   S: 'Square', O: 'Circle', X: 'Cross', T: 'Triangle',
   L: 'left stick', R: 'right stick',
@@ -112,12 +108,14 @@ const WORD = {
 const asWords = (combo) => combo.replace(/\*(\w+)\*/g, (_, t) => WORD[t] || t)
   .replace(/\s+/g, ' ').trim();
 
+const NUM = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+             'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+const numWord = (n) => NUM[n] || String(n);
+
 const row = (...cells) => `<tr>${cells.map((c) => `<td>${c}</td>`).join('')}</tr>`;
 const list = (moves) => kg(moveList(moves));
 
 const STYLE = kg(`<style>
-.pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
-/* Bare <table>s wear the Ghost theme's own pale thead on a dark page. */
 .pchq-sk{margin:0 0 1.6em;overflow-x:auto}
 .pchq-sk table{width:100%;border-collapse:collapse;background:#0a1826!important;
   border:1px solid #23364c;border-radius:12px;overflow:hidden;font-size:15px}
@@ -128,10 +126,6 @@ const STYLE = kg(`<style>
   border-top:1px solid #23364c;vertical-align:middle}
 .pchq-sk td strong{color:#f2f3f7}
 .pchq-sk td em{color:#9aa0ae}
-/* The corrections table on a phone: without a floor under the quoted column,
-   table auto-layout squeezes it to one word per line and the animated column
-   clips anyway. Give the words room and let the wrapper's overflow-x carry the
-   width — a sideways scroll beats vertical spaghetti. */
 .pchq-sk td:first-child{min-width:7.5em}
 .pchq-sk td:nth-child(2){min-width:11em}
 ${CONTROL_CSS}
@@ -143,34 +137,32 @@ const starList = [1, 2, 3, 4, 5].map((s) => {
   return names.length ? `<li><strong>${s} star</strong> — ${names.join(', ')}</li>` : '';
 }).filter(Boolean).join('\n');
 
-const CORRECTION_ROWS = differs
+const CHANGED_ROWS = differs
   .map((k) => [M26.get(k), M27.get(k)])
   .sort(([, a], [, b]) => (a.pageNo - b.pageNo) || (a.displayOrder - b.displayOrder));
 
+const renamesSorted = renames
+  .sort((a, b) => (a[1].pageNo - b[1].pageNo) || (a[1].displayOrder - b[1].displayOrder));
+
+// ── the page: lists first, then ads, then the writing (owner, 2026-08-20) ──
 const html = `${STYLE}
-<p>The FC 27 action menu is <strong>${CONTROLS.moves.length} entries across 24
-pages</strong> — Button Help, Skill Moves and Celebrations. We rebuilt the whole
-menu from the rumored pre-release screens making the rounds, entry by entry,
-and compared it against last year's tables. The short version:
-<strong>${shared.length - differs.length} entries carry exactly the input you
-already know</strong>, ${added.length} are new to the menu, ${removed.length}
-are gone, ${renames.length} changed name, and ${differs.length} print a
-different input from the one you have probably been taught.</p>
-<p>Every input on this page is played for you, one row at a time — tap a row to
-replay it, and use the dock at the bottom to switch PlayStation or Xbox, colour
-or white buttons, and the game's wording or a simplified reading.</p>
+<p>EA FC 27 keeps most of FC 26's controls — <strong>${shared.length - differs.length}
+of the menu's ${CONTROLS.moves.length} entries are unchanged</strong>. Everything
+that moved is below: every new control, every changed input, every rename.
+Every input is played for you, one row at a time — tap a row to replay it, and
+use the dock at the bottom to switch PlayStation or Xbox, colour or white
+buttons, and the game's wording or a simplified reading.</p>
 
 <h2>Thirteen new skill moves</h2>
-<p>The headline additions get their own guides — every input, every variant, and
-what each move is actually for, in
-<a href="${HUB}">every new skill move in FC 27</a>. The list:</p>
+<p>Each has its own guide — every input, every variant, and what the move is
+for — in <a href="${HUB}">every new skill move in FC 27</a>. The list:</p>
 <ul>
 ${starList}
 </ul>
 
 <h2>Set pieces got a tactics system</h2>
-<p>The biggest structural change. Free kicks and corners now carry pre-set
-player instructions of the kind that used to be attacking-tactics-only. On free
+<p>The biggest change. Free kicks and corners now carry pre-set player
+instructions of the kind that used to be attacking-tactics-only. On free
 kicks, everything hangs off <strong>D-pad up</strong> — press it once for the
 tactics display, then:</p>
 ${list([
@@ -197,8 +189,8 @@ ${list([
 add/remove-player system.</p>
 
 <h2>Throw-ins gained two controls</h2>
-<p>Neither of these existed in FC 26. Push the left stick toward the opponent to
-shield the ball; pull it away to slip the press:</p>
+<p>Neither existed in FC 26. Push the left stick toward the opponent to shield
+the ball; pull it away to slip the press:</p>
 ${list([
   pick(added, 'Shielding'),
   pick(added, 'Avoidance'),
@@ -210,17 +202,16 @@ ${list([
   pick(added, 'Trigger Curved Runs'),
   pick(added, 'Pass and Follow'),
 ])}
-<p>And one replacement rather than an addition: <strong>Flick Up</strong> on
-<strong>R3</strong> is gone from both pages that carried it. In its place is
-<strong>Flick Up for Volley</strong> on the right stick — listed under
-Attacking&nbsp;–&nbsp;Advanced and again as a one-star skill move, same input in
-both places:</p>
+<p>And one replacement: <strong>Flick Up</strong> on <strong>R3</strong> is gone
+from both pages that carried it. In its place is <strong>Flick Up for
+Volley</strong> on the right stick — listed under Attacking&nbsp;–&nbsp;Advanced
+and again as a one-star skill move, same input in both places:</p>
 ${list([pick(added, 'Flick Up for Volley', 'Attacking - Advanced')])}
 
-<h2>Eight celebrations the tables never had</h2>
-<p>The celebration pages carry eight entries last year's lists did not.
-<strong>Nap</strong> is printed on two pages — Finishing Moves and Pro
-Unlockables — with the same input on both:</p>
+<h2>Eight new celebrations</h2>
+<p>The celebration pages pick up eight entries. <strong>Nap</strong> is listed
+on two pages — Finishing Moves and Pro Unlockables — with the same input on
+both:</p>
 ${list([
   pick(added, 'Motorbike'),
   pick(added, 'Walk'),
@@ -231,28 +222,11 @@ ${list([
   pick(added, 'Jump Dance'),
 ])}
 
-<h2>Renamed, not rebound</h2>
-<p>Same input, different label — worth knowing when you go looking for
-something and cannot find it under the name you knew:</p>
-${kg(`<div class="pchq-sk"><table><thead><tr><th>FC 26</th><th>FC 27</th><th></th></tr></thead><tbody>
-${renames.sort((a, b) => (a[1].pageNo - b[1].pageNo) || (a[1].displayOrder - b[1].displayOrder))
-  .map(([o, n]) => row(esc(o.name), `<strong>${esc(n.name)}</strong>`, esc(n.page)))
-  .join('\n')}
-</tbody></table></div>`)}
-<p>${cosmetic.length} more differ only in capitalisation
-(${cosmetic.map((k) => esc(M27.get(k).name)).join(', ')}) — same entries, same
-inputs. The one to enjoy is <em>Stutter Feint</em>: the widely-copied tables
-have spelled it <em>Shutter</em> Feint for years.</p>
-
-<h2>Twelve inputs that differ from last year's tables</h2>
-<p>These are the rows that matter most, and the ones we are most careful about.
-Our FC 26 table — like everyone's — was compiled from the published lists. The
-FC 27 menu was read off the screens themselves, and on every row where a third
-record existed to arbitrate, <a href="${HUB}">the screens won and the lists
-lost</a>. So whether EA rebound these or the lists were simply wrong all along,
-the right-hand column is what works in FC 27:</p>
-${kg(`<div class="pchq-sk"><table><thead><tr><th>Move</th><th>The tables said</th><th>FC 27 prints</th></tr></thead><tbody>
-${CORRECTION_ROWS.map(([o, n]) => {
+<h2>${numWord(differs.length)} input${differs.length === 1 ? '' : 's'} actually changed</h2>
+<p>Carried-over moves whose input is different in FC 27. If one of these is in
+your muscle memory, this is the retraining list:</p>
+${kg(`<div class="pchq-sk"><table><thead><tr><th>Move</th><th>FC 26</th><th>FC 27</th></tr></thead><tbody>
+${CHANGED_ROWS.map(([o, n]) => {
   const slug = spokeByName.get(n.name);
   const name = slug ? `<a href="/blog/fc27-how-to-${slug}/">${esc(n.name)}</a>`
                     : `<strong>${esc(n.name)}</strong>`;
@@ -260,28 +234,38 @@ ${CORRECTION_ROWS.map(([o, n]) => {
 }).join('\n')}
 </tbody></table></div>`)}
 
-<h2>In the menu at last — but not new</h2>
-<p>A few of this year's "new" entries are nothing of the sort; they existed all
-along and simply never made the lists people copy from. If a site tells you
-these are FC 27 additions, you know how they compiled their table:</p>
-${list([
-  pick(added, 'Flair Nutmegs'),
-  pick(added, 'Call For Cross / Lob'),
-  pick(added, 'Call for Ground Cross'),
-  pick(added, 'Call for High Cross'),
-])}
-<p>One oddity in the same spirit: <strong>Drag To Chop</strong> is now printed
-twice on the 4-star page — once with the left or right roll you know, and once
-as a bare rotate of the right stick. Same move, two listings.</p>
-
 <h2>What did not change</h2>
 <p><strong>${shared.length - differs.length} of the menu's
-${CONTROLS.moves.length} entries carry the same input as last year</strong>, and
+${CONTROLS.moves.length} entries carry the same input as FC 26</strong>, and
 ${untouchedPages.length} of the 24 pages are untouched top to bottom:
 ${untouchedPages.map((p) => esc(p)).join(' · ')}. (Yes, the basic free-kick page
 is in that list — the new set-piece tactics all live on its
 <em>Advanced</em> sibling.) If you played FC 26, almost everything in your hands
 still works — the changes above are the complete list.</p>
+
+${AD_A}
+${affiliateSection({ heading: 'Get the game',
+  layout: 'rows', image: 'fc27', tag: 'fc27',
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+
+<h2>The changes, in short</h2>
+<p>EA FC 27's control changes concentrate in three places: set pieces, skill
+moves and celebrations. The set-piece tactics system is the one that changes
+how teams play — being able to add or remove a runner, send them near or far
+post, and switch between zonal and player marking from the pad mid-match is a
+layer FC 26 simply did not have, and in club play it will decide corners. The
+thirteen new skill moves stretch from a one-star fake shot every build can use
+to five-star flourishes, and the two new throw-in controls — shielding and
+avoidance — give the receiving player answers they never had.</p>
+<p>A handful of entries changed name without changing input:
+${renamesSorted.map(([o, n]) => `${esc(o.name)} is now <strong>${esc(n.name)}</strong>`).join(', ')}.
+And the sharp-eyed will notice the 3-star page now spells
+<strong>Stutter Feint</strong> the way the dictionary does.</p>
+<p>The retraining list is short: ${CHANGED_ROWS.map(([, n]) =>
+  `<strong>${esc(n.name)}</strong>`).join(', ')} are performed differently in
+FC 27 than in FC 26 — the table above has the new inputs, animated. Everything
+else in your hands carries straight over: movement, shooting, passing,
+defending, goalkeeping and penalties are identical, page for page.</p>
 
 ${appCta({
   href: BUILDER,
@@ -292,17 +276,14 @@ ${appCta({
   label: 'Open the builder',
 })}
 
-${kg(`<p class="pchq-src">Based on rumored pre-release information,
-on 13 August 2026 — all 24 Button Help, Skill Moves and Celebrations pages,
-compared entry by entry against last year's published tables. Rumored controls
-can change before retail; this page is re-checked on early access day,
-18 September.</p>`)}${affiliateSection({ heading: 'Kit worth having',
+${AD_C}
+${affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
 ${kg(padSwitcher())}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
-console.log(`a63.html — fc27-control-changes (rewritten from the diff)`);
+console.log(`a63.html — fc27-control-changes (lists first, computed diff)`);
 console.log(`  ${added.length} added · ${removed.length} removed · ${renames.length} renamed`
-  + ` (+${cosmetic.length} cosmetic) · ${differs.length} inputs differ`
+  + ` (+${cosmetic.length} cosmetic) · ${differs.length} changed`
   + ` · ${shared.length - differs.length} unchanged · untouched pages: ${untouchedPages.length}`);

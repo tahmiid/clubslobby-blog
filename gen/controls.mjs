@@ -404,7 +404,11 @@ export const padSwitcher = () => `<div class="padsw" hidden>
 <script>
 (function(){
   var BASE=${JSON.stringify(BASE)},K='pchq-pad',
-      st={platform:${JSON.stringify(DEFAULT_PLATFORM)},set:${JSON.stringify(DEFAULT_SET)},read:'auth'};
+      // Reading default is responsive (owner, 2026-08-20): a phone gets the
+      // simplified sequence, a desktop gets the game's wording. A stored
+      // choice — made on either control — still wins on every later visit.
+      st={platform:${JSON.stringify(DEFAULT_PLATFORM)},set:${JSON.stringify(DEFAULT_SET)},
+          read:(window.innerWidth<=640?'simple':'auth')};
   try{Object.assign(st,JSON.parse(localStorage.getItem(K)||'{}'));}catch(e){}
   var NAME=${JSON.stringify(Object.fromEntries(
         Object.entries(CONTROL_TOKEN).flatMap(([ctl, tok]) =>

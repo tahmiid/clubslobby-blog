@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
+import { AD_A } from './ads.mjs';
 import { renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS,
          lookup } from './controls.mjs';
 
@@ -61,22 +62,25 @@ const STYLE = kg(`<style>
 ${CONTROL_CSS}
 </style>`);
 
-const sourceNote = kg(`<p class="pchq-src">Rumored FC 27 input
-  (build CL 9151217) on 13 August 2026 — the game's own Skill Moves screen, not a
-  third-party list. Rumored inputs can move before retail; this page is re-checked on
-  early access day, 18 September.</p>`);
+// The game block: readers of a skill page own a controller already; the game
+// is the purchase in front of them (owner, 2026-08-20). Every page carries it.
+const gameBlock = affiliateSection({ heading: 'Get the game',
+  layout: 'rows', image: 'fc27', tag: 'fc27',
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
 
 function renderMove(m, i) {
   const others = MOVES.filter((x) => x.slug !== m.slug && x.star === m.star).slice(0, 3);
   const html = `${STYLE}
-<p>${esc(m.name)} is one of the skill moves new to EA FC 27, confirmed from the
-rumor mill. It is a <strong>${m.star}-star move</strong>, so any pro with
+<p>${esc(m.name)} is one of the 13 skill moves new to EA FC 27. It is a
+<strong>${m.star}-star move</strong>, so any pro with
 ${m.star} skill star${m.star === 1 ? '' : 's'} or more can perform it.</p>
 
 ${inputCard(m)}
 
 <h2>What it does</h2>
 <p>${esc(m.what)}</p>
+
+${AD_A}
 
 <h2>When to use it</h2>
 <p>${esc(m.when)}</p>
@@ -101,7 +105,7 @@ ${appCta({
   : ''}The full list, with every input, is in
 <a href="${HUB}">every new skill move in FC 27</a>.</p>
 
-${sourceNote}
+${gameBlock}
 ${kg(padSwitcher())}`;
   writeFileSync(path.join(DIR, 'out', `a${50 + i}.html`), html);
   return { file: `a${50 + i}.html`, slug: `fc27-how-to-${m.slug}`, move: m };
@@ -118,12 +122,15 @@ ${kg(moveList(list.map((m) => ({
 
   const html = `${STYLE}
 <p>EA FC 27 adds <strong>${MOVES.length} new skill moves</strong>. Every input
-below is the rumored input making the rounds —
-not copied from a list — which matters more this year than usual, because the
-lists were wrong.</p>
+below is played for you, one row at a time — tap a row to replay it, and use
+the dock at the bottom to switch PlayStation or Xbox, colour or white buttons,
+and the game's wording or a simplified reading.</p>
 
 <h2>Every new move</h2>
 ${table}
+
+${AD_A}
+${gameBlock}
 
 ${appCta({
   href: BUILDER,
@@ -137,19 +144,13 @@ ${appCta({
 <h2>Two that are not new — but were missing</h2>
 <p><strong>Flair Nutmegs</strong> and <strong>Drag To Chop</strong> turn up in
 FC 27 write-ups as additions. They are not: both existed already and were simply
-absent from the widely-copied skill lists. If you have been told they are new,
-that is where it came from.</p>
+absent from the widely-copied skill lists.</p>
 
-<h2>Why these inputs differ from other sites</h2>
-<p>We cross-checked this year's published skill tables against a hand-built
-database from FC 25 and against a second independent source. On
-<strong>13 rows where they disagreed, the popular list was wrong every time</strong>
-— Drag Back is L1 + R1 rather than L2 + R2, Simple Rainbow is down-then-up rather
-than down-up-up, Heel Flick Turn needs L2 as well as R1. Those are carried-over
-moves people have been performing incorrectly for a year.</p>
-<p>Everything on this page comes from photographs of the game instead.</p>
+<p>Skill moves are not the whole story — set pieces, throw-ins and a handful of
+attacking controls changed too. The complete list is in
+<a href="/blog/fc27-control-changes/">what changed in FC 27's controls</a>.</p>
 
-${sourceNote}${affiliateSection({ heading: 'Kit worth having',
+${affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
 ${kg(padSwitcher())}`;
