@@ -1619,24 +1619,22 @@
    "pageNo": 2,
    "displayOrder": 35,
    "star": null,
-   "canonical": "STICK_R:move:any",
+   "canonical": "STICK_R_CLICK:press",
    "conditions": [],
-   "keyCombo": "*R* Direction",
-   "guidedCombo": "Move *R* in any direction",
+   "keyCombo": "*R3*",
+   "guidedCombo": "Press *R3*",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "*R* Direction",
+     "keyCombo": "*R3*",
      "steps": [
       [
        {
-        "control": "STICK_R",
-        "verb": "move",
-        "path": [
-         "any"
-        ],
+        "control": "STICK_R_CLICK",
+        "verb": "press",
+        "path": [],
         "repeat": 1,
         "sustained": false
        }
@@ -7930,24 +7928,22 @@
    "pageNo": 14,
    "displayOrder": 195,
    "star": 1,
-   "canonical": "STICK_R:move:any",
+   "canonical": "STICK_R_CLICK:press",
    "conditions": [],
-   "keyCombo": "*R* Direction",
-   "guidedCombo": "Move *R* in any direction",
+   "keyCombo": "*R3*",
+   "guidedCombo": "Press *R3*",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "*R* Direction",
+     "keyCombo": "*R3*",
      "steps": [
       [
        {
-        "control": "STICK_R",
-        "verb": "move",
-        "path": [
-         "any"
-        ],
+        "control": "STICK_R_CLICK",
+        "verb": "press",
+        "path": [],
         "repeat": 1,
         "sustained": false
        }
@@ -8545,7 +8541,7 @@
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *L2* + *S* then *X*",
+     "keyCombo": "Hold *L2* + *S* then *X* then Hold *R* *AB*",
      "steps": [
       [
        {
@@ -8566,29 +8562,6 @@
       [
        {
         "control": "FACE_DOWN",
-        "verb": "press",
-        "path": [],
-        "repeat": 1,
-        "sustained": false
-       }
-      ]
-     ]
-    },
-    {
-     "index": 1,
-     "variantType": "alternate_button",
-     "keyCombo": "Hold *L2* + *S* then Hold *R* *AB*",
-     "steps": [
-      [
-       {
-        "control": "TRIGGER_L",
-        "verb": "hold",
-        "path": [],
-        "repeat": 1,
-        "sustained": true
-       },
-       {
-        "control": "FACE_LEFT",
         "verb": "press",
         "path": [],
         "repeat": 1,
@@ -8609,9 +8582,9 @@
      ]
     },
     {
-     "index": 2,
+     "index": 1,
      "variantType": "alternate_button",
-     "keyCombo": "Hold *L2* + *O* then *X*",
+     "keyCombo": "Hold *L2* + *O* then *X* then Hold *R* *AB*",
      "steps": [
       [
        {
@@ -8632,29 +8605,6 @@
       [
        {
         "control": "FACE_DOWN",
-        "verb": "press",
-        "path": [],
-        "repeat": 1,
-        "sustained": false
-       }
-      ]
-     ]
-    },
-    {
-     "index": 3,
-     "variantType": "alternate_button",
-     "keyCombo": "Hold *L2* + *O* then Hold *R* *AB*",
-     "steps": [
-      [
-       {
-        "control": "TRIGGER_L",
-        "verb": "hold",
-        "path": [],
-        "repeat": 1,
-        "sustained": true
-       },
-       {
-        "control": "FACE_RIGHT",
         "verb": "press",
         "path": [],
         "repeat": 1,
@@ -9776,16 +9726,16 @@
    "pageNo": 17,
    "displayOrder": 229,
    "star": 4,
-   "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:flick:up > STICK_R:direction:left",
+   "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:rotate:down-right-up-left",
    "conditions": [],
-   "keyCombo": "Hold *L2* + Hold *R1* + Flick *R* *AT* then *R* *AL*",
-   "guidedCombo": "Hold *L2* and hold *R1* and flick *R* up, then push *R* left",
+   "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RBRTL*",
+   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* bottom, right, top, left",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *L2* + Hold *R1* + Flick *R* *AT* then *R* *AL*",
+     "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RBRTL*",
      "steps": [
       [
        {
@@ -9804,19 +9754,11 @@
        },
        {
         "control": "STICK_R",
-        "verb": "flick",
+        "verb": "rotate",
         "path": [
-         "up"
-        ],
-        "repeat": 1,
-        "sustained": false
-       }
-      ],
-      [
-       {
-        "control": "STICK_R",
-        "verb": "direction",
-        "path": [
+         "down",
+         "right",
+         "up",
          "left"
         ],
         "repeat": 1,
@@ -9835,16 +9777,16 @@
    "pageNo": 17,
    "displayOrder": 230,
    "star": 4,
-   "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:flick:up > STICK_R:direction:right",
+   "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:rotate:down-left-up-right",
    "conditions": [],
-   "keyCombo": "Hold *L2* + Hold *R1* + Flick *R* *AT* then *R* *AR*",
-   "guidedCombo": "Hold *L2* and hold *R1* and flick *R* up, then push *R* right",
+   "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RBLTR*",
+   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* bottom, left, top, right",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *L2* + Hold *R1* + Flick *R* *AT* then *R* *AR*",
+     "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RBLTR*",
      "steps": [
       [
        {
@@ -9863,19 +9805,11 @@
        },
        {
         "control": "STICK_R",
-        "verb": "flick",
+        "verb": "rotate",
         "path": [
-         "up"
-        ],
-        "repeat": 1,
-        "sustained": false
-       }
-      ],
-      [
-       {
-        "control": "STICK_R",
-        "verb": "direction",
-        "path": [
+         "down",
+         "left",
+         "up",
          "right"
         ],
         "repeat": 1,
@@ -11475,24 +11409,44 @@
    "pageNo": 18,
    "displayOrder": 259,
    "star": 5,
-   "canonical": "STICK_R:hold:down-up-up",
+   "canonical": "STICK_R:flick:down > STICK_R:hold:up > STICK_R:flick:up",
    "conditions": [],
-   "keyCombo": "Hold *R* *AB* *AT* *AT*",
-   "guidedCombo": "Hold *R* down then up then up",
+   "keyCombo": "Flick *R* *AB* then Hold *R* *AT* then Flick *R* *AT*",
+   "guidedCombo": "Flick *R* down, then hold *R* up, then flick *R* up",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *R* *AB* *AT* *AT*",
+     "keyCombo": "Flick *R* *AB* then Hold *R* *AT* then Flick *R* *AT*",
      "steps": [
+      [
+       {
+        "control": "STICK_R",
+        "verb": "flick",
+        "path": [
+         "down"
+        ],
+        "repeat": 1,
+        "sustained": false
+       }
+      ],
       [
        {
         "control": "STICK_R",
         "verb": "hold",
         "path": [
-         "down",
-         "up",
+         "up"
+        ],
+        "repeat": 1,
+        "sustained": false
+       }
+      ],
+      [
+       {
+        "control": "STICK_R",
+        "verb": "flick",
+        "path": [
          "up"
         ],
         "repeat": 1,
@@ -11578,7 +11532,7 @@
    ]
   },
   {
-   "name": "Roll & Flick Left (while running)",
+   "name": "Ball Roll & Flick Left (while running)",
    "actionId": "fc27_skill_move_5_star_roll_flick_left_while_running",
    "screen": "Skill Moves",
    "page": "5 Star Moves",
@@ -11623,7 +11577,7 @@
    ]
   },
   {
-   "name": "Roll & Flick Right (while running)",
+   "name": "Ball Roll & Flick Right (while running)",
    "actionId": "fc27_skill_move_5_star_roll_flick_right_while_running",
    "screen": "Skill Moves",
    "page": "5 Star Moves",
@@ -12129,7 +12083,7 @@
    "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:rotate:right-down-left",
    "conditions": [],
    "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RRBL*",
-   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* right then down then left",
+   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* right to down to left",
    "displayInGame": null,
    "inputs": [
     {
@@ -12143,14 +12097,14 @@
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "BUMPER_R",
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "STICK_R",
@@ -12179,7 +12133,7 @@
    "canonical": "TRIGGER_L:hold+BUMPER_R:hold+STICK_R:rotate:left-down-right",
    "conditions": [],
    "keyCombo": "Hold *L2* + Hold *R1* + Rotate *R* *RLBR*",
-   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* left then down then right",
+   "guidedCombo": "Hold *L2* and hold *R1* and rotate *R* left to down to right",
    "displayInGame": null,
    "inputs": [
     {
@@ -12193,14 +12147,14 @@
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "BUMPER_R",
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "STICK_R",

@@ -15,8 +15,9 @@
 //     verbatim — including the ones that differ subtly from the fan names.
 //   · Rows run button-first, action-second, like the game's Button | Action
 //     columns, ordered by displayOrder.
-//   · EVERY input renders as its own always-visible line — no variant toggle
-//     to click through, because a hidden variant is an unchecked variant.
+//   · ONE row per action, variants behind the ALT button — the same uniform
+//     rule as the articles (owner, 2026-08-20: "we are never showing two rows
+//     for any of the moves"). The button carries the variant count.
 //   · Every row carries `page № · row №` so a correction can be dictated as
 //     "page 15, row 3" and found again.
 import { writeFileSync } from 'node:fs';
@@ -30,22 +31,12 @@ const SCREENS = [
   ['Celebrations', 'check-celebrations.html'],
 ];
 
-const VARIANT = {
-  primary: '', alternate_button: 'alt button', alternate_sequence: 'alt sequence',
-  mirrored_direction: 'mirrored', mirrored_gesture: 'mirrored',
-};
-
 const stars = (n) => n ? '★'.repeat(n) + '☆'.repeat(5 - n) : '';
 
 const rowHtml = (m, i) => {
-  const lines = m.inputs.map((inp) => {
-    const tag = VARIANT[inp.variantType] ?? inp.variantType;
-    return `<span class="gk-line">${renderMove({ ...m, inputs: [inp] })}`
-      + (tag ? `<span class="gk-var">${esc(tag)}</span>` : '') + `</span>`;
-  }).join('\n');
   const meta = [stars(m.star), (m.conditions || []).join(' · ')].filter(Boolean).join(' · ');
   return `<div class="cm gk-row">
-  <span class="gk-inputs">${lines}<span class="cm-cap" aria-live="polite"></span></span>
+  <span class="gk-inputs"><span class="gk-line">${renderMove(m)}</span><span class="cm-cap" aria-live="polite"></span></span>
   <span class="gk-action"><span class="gk-name">${esc(m.name)}</span>
     ${meta ? `<span class="gk-meta">${esc(meta)}</span>` : ''}
     <span class="gk-idx">p${m.pageNo} · ${i + 1}</span></span>
@@ -76,8 +67,6 @@ body{margin:0;padding:0 0 110px;background:#050d16;color:#e9edf6;
   gap:6px 18px;align-items:center;padding:12px 4px;border-bottom:1px solid #14233a}
 .gk-inputs{display:flex;flex-direction:column;gap:8px;min-width:0}
 .gk-line{display:flex;align-items:center;gap:10px;min-width:0;overflow-x:auto}
-.gk-var{flex:0 0 auto;font:600 10.5px/1 -apple-system,system-ui,sans-serif;
-  letter-spacing:.08em;text-transform:uppercase;color:#5c6474}
 .gk-action{text-align:right}
 .gk-name{display:block;font-weight:700;font-size:15px}
 .gk-meta{display:block;font-size:11.5px;color:#9aa0ae;margin-top:2px}

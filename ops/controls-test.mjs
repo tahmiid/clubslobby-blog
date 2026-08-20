@@ -94,10 +94,18 @@ t('every input in the dataset gets rendered', () => {
     assert(n === mv.inputs.length, `${mv.name}: rendered ${n}, dataset has ${mv.inputs.length}`);
   }
 });
-t('Drag To Drag keeps all four combos', () => {
+t('Drag To Drag keeps both combos and ends on the stick', () => {
+  // Two variants (Square or Circle), each ending X THEN hold R down — the
+  // menu's trailing "or" misleads; the owner confirmed the sequence in-game
+  // (migration 0051). Four combos here means stale data.
   const mv = lookup('Drag To Drag');
-  assert(mv.inputs.length === 4, `dataset has ${mv.inputs.length}`);
-  assert((renderMove(mv).match(/class="cvar/g) || []).length === 4, 'renderer dropped some');
+  assert(mv.inputs.length === 2, `dataset has ${mv.inputs.length}`);
+  assert((renderMove(mv).match(/class="cvar/g) || []).length === 2, 'renderer dropped some');
+  for (const inp of mv.inputs) {
+    const last = inp.steps[inp.steps.length - 1][0];
+    assert(last.control === 'STICK_R' && last.verb === 'hold',
+      'a variant does not end on the held stick');
+  }
 });
 t('every timeline step addresses a glyph that exists', () => {
   for (const mv of CONTROLS.moves) {

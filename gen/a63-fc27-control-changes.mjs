@@ -89,8 +89,6 @@ const spokeByName = new Map(SKILLS.moves.map((m) => [m.name, m.slug]));
 for (const m of SKILLS.moves) {
   inSet(added, m.name === 'Giant Fake Shot' ? 'Giant Fake Shot (Standing)' : m.name);
 }
-inSet(removed, 'Flick Up', 'Attacking - Advanced');
-inSet(removed, 'Flick Up', '1 Star Moves');
 inSet(removed, 'Edge Of Box Run');
 inSet(removed, 'Crowd the Goalkeeper');
 
@@ -202,11 +200,6 @@ ${list([
   pick(added, 'Trigger Curved Runs'),
   pick(added, 'Pass and Follow'),
 ])}
-<p>And one replacement: <strong>Flick Up</strong> on <strong>R3</strong> is gone
-from both pages that carried it. In its place is <strong>Flick Up for
-Volley</strong> on the right stick — listed under Attacking&nbsp;–&nbsp;Advanced
-and again as a one-star skill move, same input in both places:</p>
-${list([pick(added, 'Flick Up for Volley', 'Attacking - Advanced')])}
 
 <h2>Eight new celebrations</h2>
 <p>The celebration pages pick up eight entries. <strong>Nap</strong> is listed
@@ -258,7 +251,8 @@ thirteen new skill moves stretch from a one-star fake shot every build can use
 to five-star flourishes, and the two new throw-in controls — shielding and
 avoidance — give the receiving player answers they never had.</p>
 <p>A handful of entries changed name without changing input:
-${renamesSorted.map(([o, n]) => `${esc(o.name)} is now <strong>${esc(n.name)}</strong>`).join(', ')}.
+${[...new Map(renamesSorted.map(([o, n]) => [`${o.name}\u0000${n.name}`, [o, n]])).values()]
+  .map(([o, n]) => `${esc(o.name)} is now <strong>${esc(n.name)}</strong>`).join(', ')}.
 And the sharp-eyed will notice the 3-star page now spells
 <strong>Stutter Feint</strong> the way the dictionary does.</p>
 <p>The retraining list is short: ${CHANGED_ROWS.map(([, n]) =>
