@@ -328,8 +328,47 @@ for the rate, not the total, and don't let it displace §9.
 > redirect at them), and the whole line is sized at £100–400/yr, so this is a
 > build to justify with revenue, not to do speculatively.
 >
-> Tests: `ops/affiliate-test.mjs` (7 cases). The load-bearing one is that with
+> Tests: `ops/affiliate-test.mjs` (11 cases). The load-bearing one is that with
 > every merchant pending the generator returns the empty string.
+>
+> ### LIVE 2026-08-20 — Amazon on ten articles, and how it gets judged
+>
+> Published: the pre-order block (PS5/Xbox/PC discs + PC digital) on magician,
+> maestro, creator, spark, finisher, target, fc27-archetypes and
+> fc27-level-40-builds; the gear block (two pads + grips) on the skill hub and
+> fc27-control-changes. Both **below the app CTA**. The 13 per-move how-tos are
+> untouched at ~4 views/day each.
+>
+> **Baseline captured the same hour: `reports/affiliate/2026-08-20-baseline.txt`.**
+> It could not have been captured later — nginx keeps ~14 days.
+>
+> **The seven un-blocked spokes are a control group**, and that is deliberate:
+> same article type, same audience, same week. Treated-vs-control is the only
+> way to separate "the block cost us crossings" from "traffic moved anyway".
+>
+> **The risk under watch is cannibalisation, not affiliate revenue.** The app is
+> the product and this line is sized at £100–400/yr. A block that earns £200 and
+> costs a few percent of crossings is a bad trade. Sitewide baseline: **427
+> crossings / 1750 blog visitors = 24.4%**.
+>
+> **Decision rules, written down now so the data actually decides something:**
+>
+> | Observation (re-run ~27 Aug, then post-launch) | Action |
+> |---|---|
+> | Treated crossings/view fall >15% vs control | Block is cannibalising — move it further down or pull it from build guides |
+> | Crossings hold AND Amazon earns anything | Expand to the remaining seven spokes |
+> | Crossings hold AND Amazon earns ~£0 after the spike | Keep on FC 27 pages only; the pages are not the problem, the category rate is |
+> | GSC position on the treated ten drops vs control | Pull immediately — rankings are the whole business |
+> | No sight of 3 qualifying sales by ~Dec | Amazon will close the account at ~180 days; decide then whether to care |
+>
+> **Attribution gap to close cheaply:** every link carries the single tag
+> `proclubshq-20`, so Amazon's dashboard shows clicks and earnings in aggregate
+> and cannot say *which placement* worked. Amazon allows up to 100 tracking IDs.
+> Creating two more (one for build guides, one for FC 27 pages) and splitting
+> them per block turns the dashboard into per-placement attribution for about
+> five minutes of work. **Owner action — Associates → account settings.**
+> Outbound clicks cannot be counted on our side without either JavaScript or the
+> `/go/` redirect above, so Amazon's own reporting is the instrument.
 
 ---
 

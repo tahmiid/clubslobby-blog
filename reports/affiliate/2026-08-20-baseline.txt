@@ -1,0 +1,96 @@
+Affiliate baseline — captured 2026-08-20, at the moment Amazon went live
+======================================================================
+
+Ten articles got an Amazon block today. SEVEN COMPARABLE SPOKES DID NOT,
+and that is the point of this file: they are a free control group. Same
+article type, same audience, same week. If crossings fall on the treated
+ten but hold on the control seven, the block caused it. If both fall, it
+is seasonal and the block is innocent.
+
+THE RISK BEING MONITORED IS NOT 'does Amazon earn'. It is whether the
+block cannibalises app crossings. The app is the product; the affiliate
+line is sized at GBP 100-400/yr. A block that earns 200 and costs even a
+few percent of crossings is a bad trade, and that is only visible if the
+before-picture below was captured. It cannot be reconstructed later:
+nginx keeps ~14 days.
+
+TREATED (block placed 2026-08-20)   crossings over the 7 days to 08-20
+  magician            123
+  maestro              90
+  finisher             58
+  spark                48
+  target               32
+  creator              30
+  fc27-archetypes      21
+  fc27-level-40-builds  (below the top-12 cut)
+  fc27-new-skill-moves  (below the cut)
+  fc27-control-changes  (below the cut)
+
+CONTROL (no block)
+  shot-stopper         16
+  recycler             15
+  progressor           14
+  boss / marauder / sweeper-keeper / engine  (below the cut)
+
+SITEWIDE AT BASELINE: 427 crossings / 1750 blog visitors = 24.4%
+
+Full funnel-report.py output follows, so future snapshots compare like
+with like (this tool, not an ad-hoc grep — its parsing is twinned with
+the app's collector).
+
+======================================================================
+Blog→app funnel — proclubshq.com  (2026-08-14 → 2026-08-20, bots excluded)
+"Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — directional, not exact.
+"goog" is the subset of "reg" that signed up through Google (201 on /auth/google).
+
+day          blog views blog vis.  →app app views app vis.  hydr.  card  grid  dgst  reg  goog  login
+-----------------------------------------------------------------------------------------------------
+2026-08-14          238       248    50       234      183    162     1     0     0    4     4      2
+2026-08-15          240       216    40       236      163    132    30     0     0    5     4      2
+2026-08-16          306       254    69       460      180    194    49     0     0    3     3      0
+2026-08-17          779       308    65       348      228    149    59     8     0    2     2      1
+2026-08-18          368       332    85       304      204    132    32    27     0    4     4      5
+2026-08-19          417       351   106       290      213    164    39    19     0    2     2      3
+2026-08-20           48        41    12        34       28     32     5     3     0    0     0      0
+-----------------------------------------------------------------------------------------------------
+total              2396      1750   427      1906     1199    965   215    57     0   20    19     13
+
+(ref=proclubshq.com tagged app hits in range: 431 — subset/overlap of →app)
+
+Blog articles sending readers to the app (whole range):
+    123  /blog/pro-clubs-magician-build/
+     90  /blog/pro-clubs-maestro-build/
+     79  /blog/
+     58  /blog/pro-clubs-finisher-build/
+     48  /blog/pro-clubs-spark-build/
+     32  /blog/pro-clubs-target-build/
+     30  /blog/pro-clubs-creator-build/
+     21  /blog/fc27-archetypes/
+     16  /blog/pro-clubs-shot-stopper-build/
+     15  /blog/pro-clubs-recycler-build/
+     14  /blog/pro-clubs-progressor-build/
+     11  /blog/fc27-disruptor-build/
+
+Where they land in the app:
+    413  /b/…
+     68  /admin
+     35  /edit/…
+     21  / (home)
+     17  /explore
+     12  /build
+     10  /u/…
+      5  /meta
+      4  /my-builds
+      1  /inbox
+
+Most-read articles (human views, whole range):
+    605  /blog/pro-clubs-magician-build/
+    389  /blog/pro-clubs-maestro-build/
+    226  /blog/pro-clubs-spark-build/
+    212  /blog/pro-clubs-accelerate-explosive-lengthy-controlled/
+    162  /blog/pro-clubs-finisher-build/
+    139  /blog/pro-clubs-target-build/
+    133  /blog/fc27-masteries-explained/
+    120  /blog/pro-clubs-creator-build/
+     97  /blog/pro-clubs-archetypes-explained/
+     95  /blog/pro-clubs-marauder-build/
