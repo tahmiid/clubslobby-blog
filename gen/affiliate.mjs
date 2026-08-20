@@ -114,8 +114,13 @@ export const AFF_IMAGES = {
 };
 
 export const DISCLOSURE =
-  'Some links below earn us a commission if you buy through them, '
-  + 'at no extra cost to you. It never changes what we recommend.';
+  'Affiliate links — buying through them keeps this site free. '
+  + 'No extra cost to you.';
+// Shortened 2026-08-20 from a 25-word version the owner judged nobody would
+// read, and he is right — an unread disclosure discloses nothing. What cannot
+// go is the phrase "affiliate links": that is the bit doing the legal work
+// (FTC in the US, ASA/CMA in the UK), and "keeps this site free" is the reason
+// a reader might actually want to click. Do not trim it further.
 
 // ── The only way to emit a link ────────────────────────────────────────────
 // items: [{ merchant, dest, label, kind }]
@@ -127,7 +132,8 @@ export const DISCLOSURE =
 //
 // Returns '' when no item's merchant is live — the article then contains no
 // affiliate markup whatsoever, which is why this can ship before any approval.
-export const affiliateBlock = ({ heading, items, image, tag = 'default' }) => {
+export const affiliateBlock = ({ heading, items, image, tag = 'default',
+                                 layout = 'rows', cta = 'View \u2192' }) => {
   const live = [];
   for (const raw of items) {
     // A string is a key into PRODUCTS; an object is a one-off item.
@@ -148,34 +154,55 @@ export const affiliateBlock = ({ heading, items, image, tag = 'default' }) => {
   }
   if (!live.length) return '';                  // nothing live → nothing at all
 
-  const rows = live.map(({ m, dest, label }) =>
-    `<li><a class="aff" rel="sponsored nofollow noopener" target="_blank" `
-    + `href="${esc(buildUrl(m, dest, tag))}">${esc(label)} <span>at ${esc(m.label)}</span></a></li>`
-  ).join('\n');
+  const url = (it) => buildUrl(it.m, it.dest, tag);
+  const A = (it, cls, inner) =>
+    `<a class="${cls}" rel="sponsored nofollow noopener" target="_blank" `
+    + `href="${esc(url(it))}" aria-label="${esc(it.label)} at ${esc(it.m.label)}">${inner}</a>`;
+
+  // Two layouts, chosen per block rather than one compromise for both.
+  // `cards`: three parallel options (the FC 27 platforms) read best side by
+  // side. `rows`: three differently-named products need the width for their
+  // names. Both collapse to a stack under 560px, which is where 80% of the
+  // traffic is, so on mobile they converge.
+  const body = layout === 'cards'
+    ? `<div class="affgrid">\n` + live.map((it) => A(it, 'affcard',
+        `<span class="b">${esc(it.badge || '')}</span>`
+        + `<span class="n">${esc(it.short || it.label)}</span>`
+        + `<span class="g">${esc(cta)}</span>`)).join('\n') + `\n</div>`
+    : `<div class="affrows">\n` + live.map((it) => A(it, 'affrow',
+        `<span class="b">${esc(it.badge || '')}</span>`
+        + `<span class="n">${esc(it.short || it.label)}</span>`
+        + `<span class="g">\u2192</span>`)).join('\n') + `\n</div>`;
 
   const art = image ? AFF_IMAGES[image] : null;
   if (image && !art) throw new Error(`affiliate: no image "${image}"`);
   const banner = art
-    ? `<img class="affimg" src="${esc(art.src)}" alt="${esc(art.alt)}" `
-      + `width="${art.w}" height="${art.h}" loading="lazy" decoding="async">\n`
+    ? A(live[0], 'affimglink',
+        `<img class="affimg" src="${esc(art.src)}" alt="${esc(art.alt)}" `
+        + `width="${art.w}" height="${art.h}" loading="lazy" decoding="async">`) + '\n'
     : '';
 
-  // The disclosure is the first child, above every link, and carries the
-  // marker ops/affiliate-check.mjs greps for.
   return kg(`<div class="pchq-aff" data-aff="1">
 <style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
 .pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
-.pchq-aff .disc{margin:0 0 14px;font:400 13px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad}
-.pchq-aff h3{margin:0 0 10px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
-.pchq-aff ul{margin:0;padding:0;list-style:none}
-.pchq-aff li{margin:0 0 8px}
-.pchq-aff a.aff{display:inline-block;font:700 15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:#2DE2C5!important;text-decoration:none}
-.pchq-aff a.aff span{font-weight:400;color:#c3c7d1}</style>
-${banner}<p class="disc">${esc(DISCLOSURE)}</p>
-${heading ? `<h3>${esc(heading)}</h3>` : ''}
-<ul>
-${rows}
-</ul>
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">${esc(DISCLOSURE)}</p>
+${banner}${heading ? `<h3>${esc(heading)}</h3>` : ''}
+${body}
 </div>`);
 };
 

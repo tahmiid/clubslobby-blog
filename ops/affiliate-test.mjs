@@ -111,15 +111,17 @@ t('an unknown tag key THROWS rather than falling back', () => {
     /no tracking id "typo"/, 'silent fallback would lose the attribution');
   MERCHANTS['amazon-us'].status = 'pending';
 });
-t('banner sits above the disclosure, which stays above every link', () => {
+t('disclosure comes FIRST, then the banner, which is itself a link', () => {
   MERCHANTS['amazon-us'].status = 'live';
   const out = affiliateBlock({ items: ['controller-ps5'], image: 'controllers', tag: 'fc27' });
   assert(out.includes('aff-controllers.webp'), 'banner missing');
-  assert(out.indexOf('affimg') < out.indexOf('class="disc"'), 'banner below disclosure');
-  assert(out.indexOf('class="disc"') < out.indexOf('href='), 'disclosure below the link');
+  // NB: 'affimg' also appears in the <style> block, so match the real tag.
+  assert(out.indexOf('class="disc"') < out.indexOf('<img class="affimg"'),
+         'disclosure must precede the banner');
+  assert(out.indexOf('class="disc"') < out.indexOf('href='), 'disclosure below a link');
+  assert(/<a class="affimglink"[^>]*rel="sponsored/.test(out), 'banner is not a sponsored link');
   assert(/width="1200" height="600"/.test(out), 'no intrinsic size — that is layout shift');
   assert(out.includes('loading="lazy"'), 'not lazy');
-  assert(!/<a[^>]*>\s*<img class="affimg"/.test(out), 'banner wrapped in a link, above the disclosure');
   MERCHANTS['amazon-us'].status = 'pending';
 });
 t('an unknown image key throws', () => {

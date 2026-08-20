@@ -335,7 +335,8 @@ ${JSON.stringify({
                          // can say whether BUILD GUIDES sold anything as against
                          // the FC 27 pages. That question is unanswerable from
                          // our side: outbound clicks never touch our nginx.
-                         tag: cfg.affiliateTag || 'buildguide' })
+                         tag: cfg.affiliateTag || 'buildguide',
+                         layout: 'cards', cta: 'Pre-order \u2192' })
     : '';
 
   const closing = BUILDS.length > 1
