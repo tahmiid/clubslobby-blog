@@ -64,6 +64,14 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const STATE = join(HERE, '..', 'data', 'affiliate-merchants.json');
 export const MERCHANTS = JSON.parse(readFileSync(STATE, 'utf8')).merchants;
 
+// Verified products, keyed by a short name an article can read. Every ASIN was
+// resolved from the owner's own SiteStripe link and title-checked against the
+// live listing — see the header of data/affiliate-products.json. Articles refer
+// to products by KEY, never by raw ASIN, so a product can be re-pointed or
+// retired in one place instead of hunted through 40+ generators.
+const CATALOG = join(HERE, '..', 'data', 'affiliate-products.json');
+export const PRODUCTS = JSON.parse(readFileSync(CATALOG, 'utf8')).products;
+
 // ── Link builders ──────────────────────────────────────────────────────────
 // Awin's deep link wraps the destination in `ued=`, so one tracking link can
 // point at any page on the merchant's site. Amazon's tag is a query parameter
@@ -97,7 +105,10 @@ export const DISCLOSURE =
 // affiliate markup whatsoever, which is why this can ship before any approval.
 export const affiliateBlock = ({ heading, items }) => {
   const live = [];
-  for (const it of items) {
+  for (const raw of items) {
+    // A string is a key into PRODUCTS; an object is a one-off item.
+    const it = typeof raw === 'string' ? PRODUCTS[raw] : raw;
+    if (!it) throw new Error(`affiliate: no product "${raw}"`);
     const m = MERCHANTS[it.merchant];
     if (!m) throw new Error(`affiliate: no merchant "${it.merchant}"`);
     if (!it.kind || !m.sells.includes(it.kind)) {

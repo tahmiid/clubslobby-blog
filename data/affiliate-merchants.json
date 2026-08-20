@@ -60,10 +60,11 @@
       "awinmid": null,
       "cookieDays": 1,
       "sells": [
-        "accessory"
+        "accessory",
+        "game"
       ],
       "store": "https://www.amazon.com",
-      "note": "account created 2026-08-19; tax + bank details outstanding"
+      "note": "account created 2026-08-19; tax + bank outstanding. sells widened to include 'game' 2026-08-19: discs are an Amazon-only gap (key sellers sell keys, not discs), and with Awin still pending, ~1% now beats 0% waiting. Move the PC digital SKU to a key seller on approval."
     }
   }
 }

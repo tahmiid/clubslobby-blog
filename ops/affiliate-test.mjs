@@ -6,7 +6,7 @@
 // Test 1 is the one that matters most: with everything pending the generator
 // must emit the empty string, because that is what makes it safe for these
 // files to sit in the repo while every application is still under review.
-import { MERCHANTS, affiliateBlock, DISCLOSURE } from '../gen/affiliate.mjs';
+import { MERCHANTS, PRODUCTS, affiliateBlock, DISCLOSURE } from '../gen/affiliate.mjs';
 let pass = 0, fail = 0;
 const t = (name, fn) => {
   try { fn(); console.log(`  PASS  ${name}`); pass++; }
@@ -65,6 +65,34 @@ t('amazon builds a /dp/ASIN link, never a search URL', () => {
   const out = affiliateBlock({ items: [{ merchant: 'amazon-us', dest: 'B08FC5L3RG', label: 'Controller', kind: 'accessory' }] });
   assert(out.includes('amazon.com/dp/B08FC5L3RG?tag='), 'bad amazon url');
   MERCHANTS['amazon-us'].status = 'pending';
+});
+
+console.log('\n4. the product catalogue');
+t('every product resolves to a known merchant and a plausible ASIN', () => {
+  for (const [k, p] of Object.entries(PRODUCTS)) {
+    assert(MERCHANTS[p.merchant], `${k}: unknown merchant ${p.merchant}`);
+    assert(/^B0[A-Z0-9]{8}$/.test(p.dest), `${k}: "${p.dest}" is not an ASIN`);
+    assert(MERCHANTS[p.merchant].sells.includes(p.kind), `${k}: ${p.merchant} cannot sell ${p.kind}`);
+    assert(p.label && p.label.length > 3, `${k}: no label`);
+    assert(!/[£$€]\s*\d/.test(p.label), `${k}: label quotes a PRICE — against Amazon's terms`);
+  }
+});
+t('a block can be built from product keys', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  const out = affiliateBlock({ heading: 'Gear', items: ['controller-ps5', 'thumb-grips'] });
+  assert(out.includes('/dp/B0CQKKHT5J?tag=proclubshq-20'), 'ps5 pad link wrong');
+  assert(out.includes('/dp/B016P09VFS?tag=proclubshq-20'), 'grips link wrong');
+  assert(!/crid=|dib=|qid=|ref_=/.test(out), 'SiteStripe search cruft leaked into the link');
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+t('the three FC 27 SKUs are all routable now that amazon sells games', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  const out = affiliateBlock({ heading: 'Pre-order', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
+  for (const a of ['B0H9SYK5Q7', 'B0H9T7MTYK', 'B0H73HPJ1H']) assert(out.includes(a), `${a} missing`);
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+t('an unknown product key throws', () => {
+  throws(() => affiliateBlock({ items: ['nope-not-a-product'] }), /no product "nope/, 'unknown key');
 });
 
 console.log(`\n${pass} passed, ${fail} failed`);
