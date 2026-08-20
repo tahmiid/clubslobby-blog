@@ -36,6 +36,7 @@ const APP = process.env.CLUBSUI_DIR
   || path.join(homedir(), 'Desktop', 'Claude', 'ClubsUI-main');
 const CATALOG = path.join(APP, 'backend', 'catalog', `controls_fc${YEAR}.json`);
 const SEMANTICS = path.join(APP, 'backend', 'migrations', '0049_controls_semantics.py');
+const ANIMATION = path.join(APP, 'backend', 'migrations', '0054_controls_animation_model.py');
 const OUT = path.join(REPO, arg('--out', `data/fc${YEAR}-controls.json`));
 
 const cat = JSON.parse(readFileSync(CATALOG, 'utf8'));
@@ -58,6 +59,17 @@ import json, importlib.util as u
 s = u.spec_from_file_location('m', ${JSON.stringify(SEMANTICS)})
 m = u.module_from_spec(s); s.loader.exec_module(m)
 print(json.dumps({'rules': m.RULES, 'annotations': []}))
+`], { encoding: 'utf8' }));
+
+// The animation model (migration 0054): how any input becomes motion. The
+// renderer's verb table, timing constants and token maps ARE these rows —
+// values living only in renderer code would be exactly the unreproducible
+// memory the owner banned.
+const animation = JSON.parse(execFileSync('python3', ['-c', `
+import json, importlib.util as u
+s = u.spec_from_file_location('m', ${JSON.stringify(ANIMATION)})
+m = u.module_from_spec(s); s.loader.exec_module(m)
+print(json.dumps(m.MODEL))
 `], { encoding: 'utf8' }));
 
 const byAction = new Map();
@@ -98,11 +110,12 @@ writeFileSync(OUT, JSON.stringify({
     + ` is in the glyph-token vocabulary and steps is the timeline.`,
   _generatedBy: 'ops/export-controls.mjs',
   _capturedAt: cat.capturedAt, _build: cat.build, _provisional: cat.provisional,
-  bindings, moves, semantics, _missing,
+  bindings, moves, semantics, animation, _missing,
 }, null, 1) + '\n');
 
 console.log(`${OUT}`);
 console.log(`  ${moves.length} actions · ${cat.inputs.length} inputs`
   + ` · ${Object.keys(bindings).length} bindings`
   + ` · ${semantics.rules.length} semantics rules`
+  + ` · ${Object.keys(animation).length} animation docs`
   + (_missing.length ? ` · ${_missing.length} WITHOUT INPUTS` : ''));

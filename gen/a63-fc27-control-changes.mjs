@@ -64,6 +64,8 @@ const WORD = {
   L: 'left stick', R: 'right stick',
   AT: 'up', AB: 'down', AL: 'left', AR: 'right',
   ALT: 'up-left', ART: 'up-right', ALB: 'down-left', ARB: 'down-right',
+  PU: 'D-pad up', PD: 'D-pad down', PL: 'D-pad left', PR: 'D-pad right',
+  R3: 'R3', L3: 'L3',
   RCW: 'a clockwise circle', RACW: 'a counter-clockwise circle',
   RLBR: 'a left–down–right arc', RRBL: 'a right–down–left arc',
 };
@@ -137,11 +139,10 @@ ${list([
   pick(added, 'Drop Back (Defending)'),
   pick(added, 'Offside Trap (Defending)'),
 ])}
-<p>Corners are the part to read carefully, because two things are true at once.
-The corner menu itself is still <strong>D-pad down</strong>, exactly where FC 26
-kept it, with the near- and far-post runs you already use. But every one of the
-<em>new</em> corner instructions sits on <strong>D-pad up</strong> instead —
-it is a second menu, not a move:</p>
+<p>Corners made the same move, and this one will fight your muscle memory:
+the corner-tactics menu is on <strong>D-pad up</strong> now, not D-pad down —
+and the near- and far-post runs went with it, on up-left and up-right. The
+new instructions live there too:</p>
 ${list([
   pick(added, 'Add Player', 'Set Pieces - Corners & Throw Ins'),
   pick(added, 'Remove Player', 'Set Pieces - Corners & Throw Ins'),
@@ -182,8 +183,8 @@ ${list([
 ])}
 
 ${differs.length ? `<h2>${numWord(differs.length)} input${differs.length === 1 ? '' : 's'} actually changed</h2>
-<p>Carried-over moves whose input is different in FC 27. If one of these is in
-your muscle memory, this is the retraining list:</p>
+<p>Carried-over entries whose input is different in FC 27. If one of these is
+in your muscle memory, this is the retraining list:</p>
 ${kg(`<div class="pchq-sk"><table><thead><tr><th>Move</th><th>FC 26</th><th>FC 27</th></tr></thead><tbody>
 ${CHANGED_ROWS.map(([o, n]) => {
   const slug = spokeByName.get(n.name);

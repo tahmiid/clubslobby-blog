@@ -47,14 +47,21 @@ const CONTROL_TOKEN = {
 // keyed `upleft`, so every diagonal in the menu fell through to the default
 // down-arrow — ten of them, all in stepovers and spins. Look up through
 // `dirKey` and the two vocabularies cannot drift again.
-const DIR_TOKEN = {
-  up: 'at', down: 'ab', left: 'al', right: 'ar',
-  upleft: 'alt', upright: 'art', downleft: 'alb', downright: 'arb',
-};
+// THE ANIMATION MODEL COMES FROM THE DATABASE (migration 0054, exported
+// under `animation`): verb words, timing, direction tokens, rotation rules.
+// This file keeps the branch logic; every value a future implementer would
+// have to rediscover lives in `controls_animation`. Missing model = loud
+// failure, never a silent fallback to constants that could drift.
+const ANIM = CONTROLS.animation;
+if (!ANIM || !ANIM.verbs || !ANIM.timing || !ANIM.direction_tokens || !ANIM.rotation) {
+  throw new Error('controls: the export carries no animation model — re-run ops/export-controls.mjs');
+}
 const dirKey = (d) => String(d || '').replace(/[_\s-]/g, '').toLowerCase();
+const DIR_TOKEN = Object.fromEntries(Object.entries(ANIM.direction_tokens)
+  .filter(([k]) => k !== 'note').map(([k, v]) => [dirKey(k), v]));
 const dirToken = (d) => DIR_TOKEN[dirKey(d)];
 // A full turn has no waypoints — it is the whole circle, and the pack draws it.
-const SPIN = { clockwise: ['rcw', 360], counterclockwise: ['racw', -360] };
+const SPIN = ANIM.rotation.full_circle;
 const STICKS = new Set(['STICK_L', 'STICK_R']);
 const PNG = new Set(['racw','rbl','rbltr','rbr','rbrtl','rcw','rlbr','rlt','rrbl','rrt','rtl','rtr']);
 const ext = (t) => (PNG.has(t) ? 'png' : 'svg');
@@ -106,11 +113,8 @@ const stickUnit = (control, dir, idx, platform, set) => {
 // fall silently through to a plain press — printing "*O*" where the game prints
 // "Double tap *O*", which is a different input. Anything not in here now throws
 // rather than rendering a lie (see `verbWord`).
-const VERB_WORD = {
-  press: '', hold: 'Hold ', flick: 'Flick ', direction: '', move: '',
-  rotate: 'Rotate ', roll: 'Roll ', run: 'Run ', tap: 'Tap ',
-  double_tap: 'Double tap ',
-};
+const VERB_WORD = Object.fromEntries(
+  Object.entries(ANIM.verbs).map(([v, spec]) => [v, spec.word]));
 const verbWord = (v) => {
   if (!(v in VERB_WORD)) throw new Error(`controls: unknown verb "${v}" — add it`
     + ` to VERB_WORD in gen/controls.mjs rather than letting it render as a press`);
@@ -118,10 +122,13 @@ const verbWord = (v) => {
 };
 // `tap` and `double_tap` are presses as far as the timeline is concerned; only
 // the wording differs. `roll` is a rotation with a different word for it.
-const PRESSY = new Set(['press', 'tap', 'double_tap']);
-const SPINNY = new Set(['rotate', 'roll']);
+const PRESSY = new Set(Object.entries(ANIM.verbs)
+  .filter(([, s2]) => s2.motion === 'press').map(([v]) => v));
+const SPINNY = new Set(Object.entries(ANIM.verbs)
+  .filter(([, s2]) => s2.motion === 'rotate').map(([v]) => v));
 
-const FAST = 600, SLOW = 1200, LEAD = 700, GEST = 800, TAIL = 1200, PRESS_MS = 520;
+const { fast: FAST, slow: SLOW, lead: LEAD, gest: GEST, tail: TAIL,
+        press_ms: PRESS_MS } = ANIM.timing;
 
 // Build glyphs, wording and timeline from `steps` in ONE pass, so a timeline
 // step and the glyph it lights can never disagree about position.
@@ -170,7 +177,10 @@ const buildInput = (input, platform, set, wording = '') => {
           const idx = n++;
           const u = stickUnit(ctl, dir, idx, platform, set);
           auth += u; simple += u;
-          steps.push({ t, i: idx, type: verb === 'hold' ? 'hold' : 'flick', dir,
+          // `dir` rides normalized (upleft, not up_left) because it becomes a
+          // CSS class — the raw key silently matched nothing, which is why
+          // every diagonal on the menu lit without moving.
+          steps.push({ t, i: idx, type: verb === 'hold' ? 'hold' : 'flick', dir: dirKey(dir),
             label: `${verb === 'flick' ? 'Flick' : verb === 'hold' ? 'Hold' : 'Push'} ${lbl} ${dir}` });
           t += di < path.length - 1 ? GEST : 0;
         });
@@ -182,7 +192,7 @@ const buildInput = (input, platform, set, wording = '') => {
         // The dataset says "down"; the rotation tokens say "b" for bottom.
         // Taking the first letter gave "d", which matched nothing and silently
         // produced no arc at all.
-        const LETTER = { up: 't', down: 'b', left: 'l', right: 'r' };
+        const LETTER = ANIM.rotation.letters;
         // A full turn (`clockwise` / `counterclockwise`) has no waypoints to
         // walk — it is the whole circle, and the pack draws it as one glyph.
         const spin = path.length === 1 && SPIN[path[0]];
@@ -283,7 +293,9 @@ const buildInput = (input, platform, set, wording = '') => {
         const dg = `<span class="cgx" data-i="${di}">`
           + glyph(DIR_TOKEN[dir] || 'ab', platform, set, 'cg-solo', dir) + `</span>`;
         auth += dg; simple += dg;
-        steps.push({ t, i: di, type: verb === 'hold' ? 'hold' : 'press',
+        // A bare arrow that only LIGHTS reads as a button press; give it its
+        // motion (owner, 2026-08-20 — Point to Sky's up arrow was not going up).
+        steps.push({ t, i: di, type: verb === 'hold' ? 'hold' : 'flick', dir: dirKey(dir),
                      label: `${verb === 'hold' ? 'Hold' : 'Push'} ${dir}` });
       });
     });
@@ -426,8 +438,12 @@ export const padSwitcher = () => `<div class="padsw" hidden>
     });
     var sw=document.querySelector('.padsw'); if(!sw) return;
     sw.hidden=false;
+    // The platform icon states are fixed, not tied to the art setting:
+    // SELECTED wears the coloured mark (PlayStation blue, Xbox green — the
+    // pack's colour set), unselected goes monochrome (owner, 2026-08-20).
     sw.querySelectorAll('.padsw-i').forEach(function(i){
-      i.src=BASE+'/'+st.set+'/'+i.getAttribute('data-p')+'/h.svg';});
+      var p=i.getAttribute('data-p');
+      i.src=BASE+'/'+(p===st.platform?'colour':'mono')+'/'+p+'/h.svg';});
     sw.querySelectorAll('.padsw-seg button').forEach(function(b){
       b.setAttribute('aria-pressed', String(b.getAttribute('data-v')===st.platform));});
     sw.querySelector('.padsw-c').setAttribute('aria-pressed', String(st.set==='colour'));
@@ -479,7 +495,7 @@ export const padSwitcher = () => `<div class="padsw" hidden>
     // screen without the runtime needing to know which that is.
     function units(i){ return v.querySelectorAll('.cgx[data-i="'+i+'"]'); }
     function reset(){ gs.forEach(function(g){
-        g.className=g.className.replace(/\s*(lit|tap|go|nu-\w+)/g,'');});
+        g.className=g.className.replace(/\s*(lit|tap|go|nu-\w+|held-\w+)/g,'');});
       wrap.classList.remove('playing'); if(row) row.classList.remove('playing');
       if(cap) cap.textContent=''; wrap.dataset.busy='';
       if(nm) nm.classList.remove('lit');
@@ -498,7 +514,10 @@ export const padSwitcher = () => `<div class="padsw" hidden>
         var us=units(s.i); if(!us.length) return;
         if(cap) cap.textContent=s.label;
         us.forEach(function(g){
-          if(s.type==='hold'){ g.classList.add('lit'); }
+          if(s.type==='hold'){ g.classList.add('lit');
+            // A held DIRECTION moves there and stays until the action ends
+            // (Telephone holds down; Hands Out ends held left).
+            if(s.dir){ g.classList.add('held-'+s.dir); } }
           else if(s.type==='press'){ g.classList.add('lit','tap');
             setTimeout(function(){ g.classList.remove('lit','tap'); }, tl.press); }
           else if(s.type==='flick'){ g.classList.add('lit','nu-'+s.dir);
@@ -641,10 +660,28 @@ export const CONTROL_CSS = `
 .cgx.nu-down{animation:nudown .8s ease}
 .cgx.nu-left{animation:nuleft .8s ease}
 .cgx.nu-right{animation:nuright .8s ease}
+.cgx.nu-upleft{animation:nuupleft .8s ease}
+.cgx.nu-upright{animation:nuupright .8s ease}
+.cgx.nu-downleft{animation:nudownleft .8s ease}
+.cgx.nu-downright{animation:nudownright .8s ease}
+/* a held direction: move there and stay until reset */
+.cgx[class*="held-"]{transition:transform .25s ease}
+.cgx.held-up{transform:translateY(-5px)}
+.cgx.held-down{transform:translateY(5px)}
+.cgx.held-left{transform:translateX(-5px)}
+.cgx.held-right{transform:translateX(5px)}
+.cgx.held-upleft{transform:translate(-4px,-4px)}
+.cgx.held-upright{transform:translate(4px,-4px)}
+.cgx.held-downleft{transform:translate(-4px,4px)}
+.cgx.held-downright{transform:translate(4px,4px)}
 @keyframes nuup{0%,100%{transform:translateY(0)}45%{transform:translateY(-11px)}}
 @keyframes nudown{0%,100%{transform:translateY(0)}45%{transform:translateY(11px)}}
 @keyframes nuleft{0%,100%{transform:translateX(0)}45%{transform:translateX(-11px)}}
 @keyframes nuright{0%,100%{transform:translateX(0)}45%{transform:translateX(11px)}}
+@keyframes nuupleft{0%,100%{transform:translate(0,0)}45%{transform:translate(-8px,-8px)}}
+@keyframes nuupright{0%,100%{transform:translate(0,0)}45%{transform:translate(8px,-8px)}}
+@keyframes nudownleft{0%,100%{transform:translate(0,0)}45%{transform:translate(-8px,8px)}}
+@keyframes nudownright{0%,100%{transform:translate(0,0)}45%{transform:translate(8px,8px)}}
 /* ── the list ─────────────────────────────────────────────────────────────
    The game shows moves as a list and most readers are on a phone, so the LIST
    is the player: a row animates its own sequence where it already sits. */
@@ -672,6 +709,7 @@ a.cm-name:hover{text-decoration:underline}
 .cspeed{margin:0 0 14px;font:600 12px/1.4 system-ui,-apple-system,sans-serif;color:#5c6474}
 /* ── the switcher ─────────────────────────────────────────────────────── */
 .padsw{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;
+  max-width:calc(100vw - 16px);
   display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;
   border:1px solid #33506f;background:rgba(8,16,26,.97);
   box-shadow:0 10px 30px rgba(0,0,0,.62);font:600 14px/1 system-ui,-apple-system,sans-serif}
@@ -684,16 +722,22 @@ a.cm-name:hover{text-decoration:underline}
 .padsw-i{width:22px;height:22px;display:block;opacity:.55}
 .padsw-seg button[aria-pressed="true"] .padsw-i{opacity:1}
 .padsw-m{flex:0 0 auto;padding:9px 13px;border-radius:999px;border:1px solid #33506f;
-  background:transparent;color:#9aa0ae;cursor:pointer;font:600 13px/1 system-ui,-apple-system,sans-serif}
+  background:transparent;color:#9aa0ae;cursor:pointer;white-space:nowrap;
+  font:600 13px/1 system-ui,-apple-system,sans-serif}
 .padsw-sep{width:1px;align-self:stretch;margin:4px 2px;background:#23364c}
 .padsw-m[aria-pressed="true"]{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.13);color:#2DE2C5}
 .padsw-c{width:30px;height:30px;flex:0 0 auto;margin-right:4px;border-radius:999px;cursor:pointer;
   border:1px solid #33506f;background:conic-gradient(#e2657a,#e0b154,#5fc97a,#56a0f0,#c98ad8,#e2657a)}
 .padsw-c[aria-pressed="false"]{background:#cfd4de}
 .padsw-c:focus-visible,.padsw-seg button:focus-visible,.padsw-m:focus-visible{outline:2px solid #2DE2C5;outline-offset:2px}
-@media(max-width:560px){
-  .padsw{bottom:10px;font-size:13.5px}
-  .padsw-seg button{padding:10px 13px;gap:6px}
+@media(max-width:640px){
+  /* Phone dock: the logos alone, larger — the words were the width problem,
+     and a coloured mark against a mono one says selected without them. */
+  .padsw{bottom:10px;font-size:13px;gap:5px}
+  .padsw-seg button span{display:none}
+  .padsw-seg button{padding:8px 12px}
+  .padsw-i{width:28px;height:28px}
+  .padsw-m{padding:8px 11px;font-size:12px}
   .cm-name{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){

@@ -1,86 +1,86 @@
 {
-  "_comment": [
-    "Verified affiliate products. Every ASIN here was resolved from the owner's",
-    "own SiteStripe short link on 2026-08-19 and its title checked against the",
-    "live listing \u2014 never transcribe an ASIN from memory or a search result, and",
-    "never invent one: a wrong ASIN links silently to the wrong product.",
-    "",
-    "`dest` is the bare ASIN. gen/affiliate.mjs builds a clean",
-    "amazon.com/dp/<ASIN>?tag=... from it, deliberately dropping SiteStripe's",
-    "search cruft (crid/dib/qid/sr/ref_) \u2014 those are search-session artifacts,",
-    "some are timestamps, and Amazon's agreement is against search-result links.",
-    "",
-    "NO PRICES anywhere near these. Amazon restricts quoting prices outside its",
-    "API and prices move; the copy describes the product, never what it costs.",
-    "",
-    "badge/short: what the card or row actually shows. `label` stays the full",
-    "name and becomes the link's aria-label, because 'Physical disc' alone is",
-    "meaningless to a screen reader. Three FC 27 SKUs differ ONLY by platform,",
-    "so the badge carries more information than a box shot would \u2014 which is just",
-    "as well: Amazon's Operating Agreement forbids scraping product images, the",
-    "Product Advertising API needs 3 qualifying sales first, and SiteStripe image",
-    "embeds would load from Amazon's servers on every page view."
-  ],
-  "products": {
-    "controller-ps5": {
-      "merchant": "amazon-us",
-      "dest": "B0CQKKHT5J",
-      "kind": "accessory",
-      "label": "PlayStation DualSense controller",
-      "platform": "ps5",
-      "note": "Midnight Black. Owner picked black over Sterling Silver 2026-08-19 \u2014 same product, two colours, linking both only splits clicks.",
-      "badge": "PS5",
-      "short": "DualSense controller"
-    },
-    "controller-xbox": {
-      "merchant": "amazon-us",
-      "dest": "B0B789CGGQ",
-      "kind": "accessory",
-      "label": "Xbox Elite Series 2 Core controller",
-      "platform": "xbox",
-      "note": "White. Console, PC and Android.",
-      "badge": "XBOX",
-      "short": "Elite Series 2 Core controller"
-    },
-    "thumb-grips": {
-      "merchant": "amazon-us",
-      "dest": "B016P09VFS",
-      "kind": "accessory",
-      "label": "KontrolFreek thumbstick grips",
-      "platform": "ps5",
-      "note": "FPS Freek Galaxy, PS4/PS5. Owner kept it 2026-08-19 after being shown the 'FPS' branding reads slightly off in a football article.",
-      "badge": "GRIPS",
-      "short": "KontrolFreek thumbsticks"
-    },
-    "fc27-ps5": {
-      "merchant": "amazon-us",
-      "dest": "B0H9SYK5Q7",
-      "kind": "game",
-      "label": "EA SPORTS FC 27 \u2014 PlayStation 5 disc",
-      "platform": "ps5",
-      "note": "PERMANENT on Amazon: CDKeys and Fanatical sell keys only, so a disc buyer has no other route. Pre-order converts at click time, which sidesteps the 24h cookie.",
-      "badge": "PS5",
-      "short": "Physical disc"
-    },
-    "fc27-xbox": {
-      "merchant": "amazon-us",
-      "dest": "B0H9T7MTYK",
-      "kind": "game",
-      "label": "EA SPORTS FC 27 \u2014 Xbox Series X disc",
-      "platform": "xbox",
-      "note": "PERMANENT on Amazon, same reason as the PS5 disc.",
-      "badge": "XBOX",
-      "short": "Physical disc"
-    },
-    "fc27-pc": {
-      "merchant": "amazon-us",
-      "dest": "B0H73HPJ1H",
-      "kind": "game",
-      "label": "EA SPORTS FC 27 \u2014 PC (EA App) digital",
-      "platform": "pc",
-      "note": "STOPGAP. Digital competes head-on with CDKeys/Fanatical at 3-8% against Amazon's ~1%. MOVE THIS to a key seller the day one of them approves. No disc edition exists for PC (owner, 2026-08-19).",
-      "badge": "PC",
-      "short": "EA App digital"
-    }
+ "_comment": [
+  "Verified affiliate products. Every ASIN here was resolved from the owner's",
+  "own SiteStripe short link on 2026-08-19 and its title checked against the",
+  "live listing — never transcribe an ASIN from memory or a search result, and",
+  "never invent one: a wrong ASIN links silently to the wrong product.",
+  "",
+  "`dest` is the bare ASIN. gen/affiliate.mjs builds a clean",
+  "amazon.com/dp/<ASIN>?tag=... from it, deliberately dropping SiteStripe's",
+  "search cruft (crid/dib/qid/sr/ref_) — those are search-session artifacts,",
+  "some are timestamps, and Amazon's agreement is against search-result links.",
+  "",
+  "NO PRICES anywhere near these. Amazon restricts quoting prices outside its",
+  "API and prices move; the copy describes the product, never what it costs.",
+  "",
+  "badge/short: what the card or row actually shows. `label` stays the full",
+  "name and becomes the link's aria-label, because 'Physical disc' alone is",
+  "meaningless to a screen reader. Three FC 27 SKUs differ ONLY by platform,",
+  "so the badge carries more information than a box shot would — which is just",
+  "as well: Amazon's Operating Agreement forbids scraping product images, the",
+  "Product Advertising API needs 3 qualifying sales first, and SiteStripe image",
+  "embeds would load from Amazon's servers on every page view."
+ ],
+ "products": {
+  "controller-ps5": {
+   "merchant": "amazon-us",
+   "dest": "B0CQKKHT5J",
+   "kind": "accessory",
+   "label": "PlayStation DualSense controller",
+   "platform": "ps5",
+   "note": "Midnight Black. Owner picked black over Sterling Silver 2026-08-19 — same product, two colours, linking both only splits clicks.",
+   "badge": "PS5",
+   "short": "DualSense controller"
+  },
+  "controller-xbox": {
+   "merchant": "amazon-us",
+   "dest": "B0B789CGGQ",
+   "kind": "accessory",
+   "label": "Xbox Elite Series 2 Core controller",
+   "platform": "xbox",
+   "note": "White. Console, PC and Android.",
+   "badge": "XBOX",
+   "short": "Elite Series 2 Core controller"
+  },
+  "thumb-grips": {
+   "merchant": "amazon-us",
+   "dest": "B016P09VFS",
+   "kind": "accessory",
+   "label": "KontrolFreek thumbstick grips",
+   "platform": "ps5",
+   "note": "FPS Freek Galaxy, PS4/PS5. Owner kept it 2026-08-19 after being shown the 'FPS' branding reads slightly off in a football article.",
+   "badge": "GRIPS",
+   "short": "KontrolFreek thumbsticks"
+  },
+  "fc27-ps5": {
+   "merchant": "amazon-us",
+   "dest": "B0H9SYK5Q7",
+   "kind": "game",
+   "label": "EA SPORTS FC 27 — PlayStation 5 disc",
+   "platform": "ps5",
+   "note": "PERMANENT on Amazon: CDKeys and Fanatical sell keys only, so a disc buyer has no other route. Pre-order converts at click time, which sidesteps the 24h cookie.",
+   "badge": "PS5",
+   "short": "PlayStation 5"
+  },
+  "fc27-xbox": {
+   "merchant": "amazon-us",
+   "dest": "B0H9T7MTYK",
+   "kind": "game",
+   "label": "EA SPORTS FC 27 — Xbox Series X disc",
+   "platform": "xbox",
+   "note": "PERMANENT on Amazon, same reason as the PS5 disc.",
+   "badge": "XBOX",
+   "short": "Xbox Series X"
+  },
+  "fc27-pc": {
+   "merchant": "amazon-us",
+   "dest": "B0H73HPJ1H",
+   "kind": "game",
+   "label": "EA SPORTS FC 27 — PC (EA App) digital",
+   "platform": "pc",
+   "note": "STOPGAP. Digital competes head-on with CDKeys/Fanatical at 3-8% against Amazon's ~1%. MOVE THIS to a key seller the day one of them approves. No disc edition exists for PC (owner, 2026-08-19).",
+   "badge": "PC",
+   "short": "PC (EA App)"
   }
+ }
 }
