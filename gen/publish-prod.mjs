@@ -428,11 +428,13 @@ const POSTS = [
     meta_description: 'The Running Fake Drag is a 5-star skill move new to EA FC 27. Exact input for PlayStation and Xbox, what it does and when to use it.',
     custom_excerpt: 'A fake shot that becomes a drag, performed at full speed.' ,
     tags: ['Guides', 'Skill Moves', 'FC 27'] },
+  // Rewritten 2026-08-20 from the full two-year diff (the numbers below are
+  // computed by the generator — keep them in sync with its output).
   { file: 'a63.html', slug: 'fc27-control-changes', status: 'published',
     title: 'What Changed in EA FC 27\'s Controls',
-    meta_title: 'FC 27 Control Changes — Everything New and Renamed',
-    meta_description: 'Set-piece tactics, new throw-in controls, three new attacking actions and five renames — what moved in EA FC 27, read off the game\'s Button Help screens.',
-    custom_excerpt: 'Set-piece tactics are new, corner tactics moved to D-Pad Up, and five actions were renamed.',
+    meta_title: 'FC 27 Control Changes — Every New, Renamed and Rebound Input',
+    meta_description: 'All 420 menu entries compared against FC 26: 44 new to the menu, 9 renamed, 12 inputs that differ from the published tables, and 8 new celebrations — every input animated.',
+    custom_excerpt: 'We compared all 420 FC 27 menu entries against last year\'s: 44 new, 9 renamed, 12 inputs that differ from the old tables — every input animated.',
     tags: ['Guides', 'Controls', 'FC 27'] },
   // The FC 27 wave (2026-08-16): rumor framing throughout (owner rule).
   { file: 'a64.html', slug: 'fc27-disruptor-build', status: 'published',

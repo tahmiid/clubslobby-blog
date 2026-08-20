@@ -74,6 +74,7 @@ const moves = cat.actions.map((a) => ({
   pageNo: a.page,
   displayOrder: a.displayOrder,
   star: a.starRating,
+  canonical: a.canonical,
   conditions: a.conditions || [],
   keyCombo: a.keyCombo,
   guidedCombo: a.guidedCombo,
