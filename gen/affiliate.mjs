@@ -49,7 +49,10 @@ import { kg, esc } from './common.mjs';
 // placeholder reach a published article, the same way `ads-switch.sh` refuses
 // `ca-pub-XXXX`, so replacing either with a stub re-arms that guard.
 export const AWIN_AFFID = '3047467';        // Awin publisher ID (owner, 2026-08-19)
-export const AMAZON_TAG = 'proclubshq-20'; // Amazon US store ID (owner, 2026-08-19)
+// Amazon has NO constant here on purpose. Its tracking ids are per-placement
+// and live in data/affiliate-merchants.json under amazon-us.tags, because a
+// second copy in code is a trap: someone edits the constant, nothing changes,
+// and the links keep paying into whichever id the data file names.
 
 // ── The registry ───────────────────────────────────────────────────────────
 // **State lives in `data/affiliate-merchants.json`, not here.** Turning a
@@ -76,7 +79,7 @@ export const PRODUCTS = JSON.parse(readFileSync(CATALOG, 'utf8')).products;
 // Awin's deep link wraps the destination in `ued=`, so one tracking link can
 // point at any page on the merchant's site. Amazon's tag is a query parameter
 // on a normal product URL.
-const buildUrl = (m, dest) => {
+const buildUrl = (m, dest, tagKey = 'default') => {
   if (m.network === 'awin') {
     return `https://www.awin1.com/cread.php?awinmid=${m.awinmid}`
          + `&awinaffid=${AWIN_AFFID}&ued=${encodeURIComponent(dest || m.store)}`;
@@ -84,9 +87,30 @@ const buildUrl = (m, dest) => {
   if (m.network === 'amazon') {
     // Always a /dp/<ASIN> URL: Amazon search-result links are against the
     // operating agreement and break whenever the result set changes.
-    return `${m.store}/dp/${dest}?tag=${AMAZON_TAG}`;
+    const tag = (m.tags || {})[tagKey];
+    if (!tag) {
+      throw new Error(`affiliate: ${m.label} has no tracking id "${tagKey}" `
+        + `(have: ${Object.keys(m.tags || {}).join(', ')}). Falling back to the `
+        + `default would silently lose the attribution the split exists for.`);
+    }
+    return `${m.store}/dp/${dest}?tag=${tag}`;
   }
   throw new Error(`affiliate: unknown network "${m.network}"`);
+};
+
+// Banner art, keyed by name. Hosted in Ghost's content store on our own
+// domain — same rule as the archetype glyphs: never hotlink someone else's
+// host, never inline a photo. NOT wrapped in the affiliate link on purpose:
+// an <a> here would sit ABOVE the disclosure, and the disclosure has to come
+// first. Width/height are on the tag and the ratio is in CSS because this
+// block sits mid-article, and an image that resizes on load is layout shift —
+// the exact thing MONETIZATION.md §4.2 says the rankings cannot afford.
+const IMG = 'https://proclubshq.com/blog/content/images/2026/08';
+export const AFF_IMAGES = {
+  controllers: { src: `${IMG}/aff-controllers.webp`, w: 1200, h: 600,
+    alt: 'A PlayStation DualSense controller and an Xbox Wireless Controller side by side' },
+  fc27: { src: `${IMG}/aff-fc27.webp`, w: 1200, h: 600,
+    alt: 'EA Sports FC 27 key art' },
 };
 
 export const DISCLOSURE =
@@ -103,7 +127,7 @@ export const DISCLOSURE =
 //
 // Returns '' when no item's merchant is live — the article then contains no
 // affiliate markup whatsoever, which is why this can ship before any approval.
-export const affiliateBlock = ({ heading, items }) => {
+export const affiliateBlock = ({ heading, items, image, tag = 'default' }) => {
   const live = [];
   for (const raw of items) {
     // A string is a key into PRODUCTS; an object is a one-off item.
@@ -126,20 +150,28 @@ export const affiliateBlock = ({ heading, items }) => {
 
   const rows = live.map(({ m, dest, label }) =>
     `<li><a class="aff" rel="sponsored nofollow noopener" target="_blank" `
-    + `href="${esc(buildUrl(m, dest))}">${esc(label)} <span>at ${esc(m.label)}</span></a></li>`
+    + `href="${esc(buildUrl(m, dest, tag))}">${esc(label)} <span>at ${esc(m.label)}</span></a></li>`
   ).join('\n');
+
+  const art = image ? AFF_IMAGES[image] : null;
+  if (image && !art) throw new Error(`affiliate: no image "${image}"`);
+  const banner = art
+    ? `<img class="affimg" src="${esc(art.src)}" alt="${esc(art.alt)}" `
+      + `width="${art.w}" height="${art.h}" loading="lazy" decoding="async">\n`
+    : '';
 
   // The disclosure is the first child, above every link, and carries the
   // marker ops/affiliate-check.mjs greps for.
   return kg(`<div class="pchq-aff" data-aff="1">
 <style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
 .pchq-aff .disc{margin:0 0 14px;font:400 13px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad}
 .pchq-aff h3{margin:0 0 10px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
 .pchq-aff ul{margin:0;padding:0;list-style:none}
 .pchq-aff li{margin:0 0 8px}
 .pchq-aff a.aff{display:inline-block;font:700 15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:#2DE2C5!important;text-decoration:none}
 .pchq-aff a.aff span{font-weight:400;color:#c3c7d1}</style>
-<p class="disc">${esc(DISCLOSURE)}</p>
+${banner}<p class="disc">${esc(DISCLOSURE)}</p>
 ${heading ? `<h3>${esc(heading)}</h3>` : ''}
 <ul>
 ${rows}

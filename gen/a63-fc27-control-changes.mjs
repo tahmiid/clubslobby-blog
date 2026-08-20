@@ -89,6 +89,7 @@ ${kg(`<p class="pchq-src">Based on rumored pre-release information,
 on 13 August 2026 — all 24 Button Help, Skill Moves and Celebrations pages.
 Rumored controls can change before retail; this page is re-checked on early access
 day, 18 September.</p>`)}${affiliateSection({ heading: 'Kit worth having',
+  image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);

@@ -69,6 +69,7 @@ ${appCta({
 <p>Position first: Finisher or Target up top, Maestro or Creator in midfield, Boss or Progressor at the back. Then open a few builds above and see whose PlayStyles fit how you actually play — that's a better guide than any tier list before launch.</p>
 <h3>Are the FC 27 numbers final?</h3>
 <p>No — everything beyond EA's official statements is rumor until release, and the builder re-prices automatically if the numbers move.</p>${affiliateSection({ heading: 'Pre-order EA SPORTS FC 27',
+  image: 'fc27', tag: 'fc27',
   items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a66.html'), html);

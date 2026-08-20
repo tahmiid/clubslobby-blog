@@ -329,7 +329,13 @@ ${JSON.stringify({
   // `ops/affiliate-switch.mjs on` flips it.
   const affiliate = cfg.affiliate
     ? affiliateSection({ heading: cfg.affiliateHeading || 'Pre-order EA SPORTS FC 27',
-                         items: cfg.affiliate })
+                         items: cfg.affiliate,
+                         image: cfg.affiliateImage || 'fc27',
+                         // Its own Amazon tracking id, so the Associates report
+                         // can say whether BUILD GUIDES sold anything as against
+                         // the FC 27 pages. That question is unanswerable from
+                         // our side: outbound clicks never touch our nginx.
+                         tag: cfg.affiliateTag || 'buildguide' })
     : '';
 
   const closing = BUILDS.length > 1

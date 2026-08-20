@@ -54,6 +54,7 @@ ${appCta({
 <p>Forty is the rumored pre-release cap, worth ${AP} AP all-in. When the cap rises, the builds have room to grow — copying one now is a head start, not a throwaway.</p>
 <h3>Can I copy a build and change it?</h3>
 <p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Pre-order EA SPORTS FC 27',
+  image: 'fc27', tag: 'fc27',
   items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a65.html'), html);

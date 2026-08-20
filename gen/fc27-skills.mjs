@@ -142,6 +142,7 @@ moves people have been performing incorrectly for a year.</p>
 <p>Everything on this page comes from photographs of the game instead.</p>
 
 ${sourceNote}${affiliateSection({ heading: 'Kit worth having',
+  image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
   writeFileSync(path.join(DIR, 'out', 'a49.html'), html);
 }

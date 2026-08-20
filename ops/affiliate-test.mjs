@@ -95,5 +95,38 @@ t('an unknown product key throws', () => {
   throws(() => affiliateBlock({ items: ['nope-not-a-product'] }), /no product "nope/, 'unknown key');
 });
 
+console.log('\n5. per-placement tracking ids and banner art');
+t('each placement tag produces its own Amazon id', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  const bg = affiliateBlock({ items: ['fc27-ps5'], tag: 'buildguide' });
+  const f7 = affiliateBlock({ items: ['fc27-ps5'], tag: 'fc27' });
+  assert(bg.includes('tag=proclubshq-buildguide-20'), 'buildguide id missing');
+  assert(f7.includes('tag=proclubshq-fc27-20'), 'fc27 id missing');
+  assert(!bg.includes('tag=proclubshq-20"'), 'buildguide fell back to default');
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+t('an unknown tag key THROWS rather than falling back', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  throws(() => affiliateBlock({ items: ['fc27-ps5'], tag: 'typo' }),
+    /no tracking id "typo"/, 'silent fallback would lose the attribution');
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+t('banner sits above the disclosure, which stays above every link', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  const out = affiliateBlock({ items: ['controller-ps5'], image: 'controllers', tag: 'fc27' });
+  assert(out.includes('aff-controllers.webp'), 'banner missing');
+  assert(out.indexOf('affimg') < out.indexOf('class="disc"'), 'banner below disclosure');
+  assert(out.indexOf('class="disc"') < out.indexOf('href='), 'disclosure below the link');
+  assert(/width="1200" height="600"/.test(out), 'no intrinsic size — that is layout shift');
+  assert(out.includes('loading="lazy"'), 'not lazy');
+  assert(!/<a[^>]*>\s*<img class="affimg"/.test(out), 'banner wrapped in a link, above the disclosure');
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+t('an unknown image key throws', () => {
+  MERCHANTS['amazon-us'].status = 'live';
+  throws(() => affiliateBlock({ items: ['controller-ps5'], image: 'nope' }), /no image "nope"/, 'unknown image');
+  MERCHANTS['amazon-us'].status = 'pending';
+});
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

@@ -4,14 +4,20 @@
     "ops/affiliate-switch.mjs writes it. Kept out of the code deliberately:",
     "turning a merchant on or off is an operational decision made on revenue",
     "data, not a code change, and this is the file an admin panel would write",
-    "if one is ever built (MONETIZATION.md §5).",
+    "if one is ever built (MONETIZATION.md \u00a75).",
     "",
     "status      'pending' emits NOTHING. 'live' emits links.",
     "awinmid     advertiser id from the Awin programme page (in its profile URL).",
     "cookieDays  decides placement, not documentation. 30d survives the",
     "            pre-launch research window; 1d (Amazon) must sit at immediate",
     "            intent, on accessories only.",
-    "sells       which product kinds may route here; enforced at generation."
+    "sells       which product kinds may route here; enforced at generation.",
+    "",
+    "tags (amazon only): Amazon allows up to 100 tracking IDs and reports on each",
+    "separately, which is the ONLY per-placement attribution available to us \u2014",
+    "outbound clicks cannot be counted our side without JavaScript. A block passes",
+    "a tag KEY; an unknown key throws at generation rather than silently paying",
+    "into the default and losing the attribution the split existed for."
   ],
   "merchants": {
     "cdkeys-us": {
@@ -64,7 +70,12 @@
         "game"
       ],
       "store": "https://www.amazon.com",
-      "note": "live since 2026-08-20"
+      "note": "live since 2026-08-20",
+      "tags": {
+        "default": "proclubshq-20",
+        "buildguide": "proclubshq-buildguide-20",
+        "fc27": "proclubshq-fc27-20"
+      }
     }
   }
 }

@@ -369,6 +369,40 @@ for the rate, not the total, and don't let it displace §9.
 > five minutes of work. **Owner action — Associates → account settings.**
 > Outbound clicks cannot be counted on our side without either JavaScript or the
 > `/go/` redirect above, so Amazon's own reporting is the instrument.
+>
+> ### Same day — art, and per-placement ids (owner supplied both)
+>
+> **Attribution gap CLOSED.** `proclubshq-buildguide-20` on the six FC 26 build
+> guides, `proclubshq-fc27-20` on the four FC 27 pages. Amazon's report can now
+> answer "did build guides sell anything, or only the FC 27 pages" — a question
+> that is unanswerable from our side at any price. Tags live in
+> `data/affiliate-merchants.json` under `amazon-us.tags`; **there is no Amazon
+> tag constant in code any more**, because a second copy is a trap (edit it,
+> nothing changes). An unknown tag key throws rather than falling back to the
+> default, since a silent fallback loses exactly the attribution the split
+> exists for.
+>
+> **Art, because a text-only block reads as dead** (owner, and he is right about
+> this audience). Clean FC 27 key art on the pre-order block; a PS5+Xbox
+> controller photo on the gear block. Both cropped 2:1 at 1200×600, **WebP not
+> JPEG** — 167KB→122KB and 45KB→19KB, which matters because page speed is the
+> acquisition channel. Served from Ghost's own content store, never hotlinked.
+>
+> Two rules the banner follows: it is **not wrapped in the affiliate link** (an
+> `<a>` there would sit above the disclosure, and the disclosure must come
+> first), and it carries **width/height plus a fixed `aspect-ratio`** so it
+> reserves its box before loading — a mid-article image that resizes on load is
+> layout shift, the one cost §4.2 says rankings cannot absorb.
+>
+> **Uploading images is not what the scripts say.** `upload-assets.mjs` and
+> `upload-image-jpg.mjs` are BROKEN: `ghost-admin.mjs`'s `call()` shells out to
+> curl and handles **string bodies only**, so a FormData body is silently
+> dropped and Ghost answers 422 "Please select an image". Its own header comment
+> gives the working route — `install -o ghost -g ghost` straight into
+> `/var/www/proclubslobby/content/images/YYYY/MM/`, served at
+> `/blog/content/images/YYYY/MM/`.
+>
+> Tests: 15.
 
 ---
 
