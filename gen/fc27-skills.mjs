@@ -101,8 +101,10 @@ ${appCta({
 <p>${others.length
   ? `Also new at ${m.star} stars: ${others.map((o) =>
       `<a href="/blog/fc27-how-to-${o.slug}/">${esc(o.name)}</a>`).join(', ')}. `
-  : ''}The full list, with every input, is in
-<a href="${HUB}">every new skill move in FC 27</a>.</p>
+  : ''}The full list of new moves, with every input, is in
+<a href="${HUB}">every new skill move in FC 27</a> — and
+<a href="/blog/fc27-skill-moves/">all FC 27 skill moves</a> has the whole
+menu, every tier, animated.</p>
 
 ${gameBlock}
 ${kg(padSwitcher())}`;
@@ -145,8 +147,11 @@ ${appCta({
 FC 27 write-ups as additions. They are not: both existed already and were simply
 absent from the widely-copied skill lists.</p>
 
-<p>Skill moves are not the whole story — set pieces, throw-ins and a handful of
-attacking controls changed too. The complete list is in
+<p>This page covers what is <em>new</em>. The whole menu — every tier, every
+carried-over move, animated — is in
+<a href="/blog/fc27-skill-moves/">all FC 27 skill moves</a>. And skill moves
+are not the whole story: set pieces, throw-ins and a handful of attacking
+controls changed too — the complete list is in
 <a href="/blog/fc27-control-changes/">what changed in FC 27's controls</a>.</p>
 
 ${affiliateSection({ heading: 'Kit worth having',

@@ -37,6 +37,12 @@ COVERS = [
     ('archetypes', 'ARCHETYPES', None, False),
     ('tournaments', 'TOURNAMENTS', STADIUM_SHOT, True),
     ('objectives', 'OBJECTIVES', FLAG_SHOT, True),
+    # The controls suite (2026-08-20): pillar + three lists. 'controls' is
+    # taken — it is a63's cover — so the pillar wears ALL CONTROLS.
+    ('controls-hub', 'ALL CONTROLS', None, False),
+    ('basic-controls', 'BASIC CONTROLS', None, False),
+    ('skill-moves', 'SKILL MOVES', None, False),
+    ('celebrations', 'CELEBRATIONS', None, False),
 ]
 
 
@@ -79,7 +85,14 @@ def platforms_cover(out):
 
 
 if __name__ == '__main__':
+    # Optional name filter, so adding a cover does not re-encode the others
+    # (identical pixels, churned JPEG bytes).
+    import sys
+    only = set(sys.argv[1:])
     for name, word, src, sq in COVERS:
+        if only and name not in only:
+            continue
         keyword_cover(os.path.join(ASSETS, f'feat-fc27-{name}.jpg'), word,
                       src or KEY_ART, eyebrow=EYEBROW, crop_square=sq)
-    platforms_cover(os.path.join(ASSETS, 'feat-fc27-platforms.jpg'))
+    if not only:
+        platforms_cover(os.path.join(ASSETS, 'feat-fc27-platforms.jpg'))

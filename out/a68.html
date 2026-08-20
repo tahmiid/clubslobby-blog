@@ -1,0 +1,301 @@
+<!--kg-card-begin: html-->
+<style>
+/* ── glyphs ───────────────────────────────────────────────────────────────
+   Sized in em so they track their type. A fixed px size with a negative
+   vertical-align overflowed the line box on a phone. */
+.cg{display:block;opacity:.45;transition:opacity .18s ease}
+.cgx{position:relative;display:inline-block;vertical-align:middle;margin:0 .2em;
+  width:1.5em;height:1.5em;transition:transform .18s ease}
+.cgx .cg-solo{width:1.5em;height:1.5em}
+/* THE FLICK ICONS — one shape per stick, so the two are tellable apart instantly.
+   LEFT uses the pack's own drawn glyph (lt/lb/ll/lr): the stick circle with its
+   arrowhead, already designed and unimprovable by composition.
+   RIGHT has no such asset, so it takes the direction arrow with the stick badged
+   into the corner — a different silhouette, which is the point. */
+.cgx-b{width:1.95em;height:1.95em}
+.cg-pack{position:absolute;left:50%;top:50%;width:1.95em;height:1.95em;transform:translate(-50%,-50%)}
+.cgx-d{width:1.85em;height:1.85em}
+.cg-arrow{position:absolute;left:50%;top:50%;width:1.5em;height:1.5em;transform:translate(-50%,-50%)}
+.cg-badge{position:absolute;right:-.06em;bottom:-.06em;width:.92em;height:.92em;
+  filter:drop-shadow(0 0 3px #0a1826)}
+/* ── rotation ─────────────────────────────────────────────────────────────
+   The stick stays put and readable; a dot travels the ring around it. Orbiting
+   the stick itself covered its own letter, which is the one thing it is for. */
+.cgx-spin{width:2.3em;height:2.3em;margin:0 .3em}
+.cgx-spin .cg-stick{position:absolute;left:50%;top:50%;width:1.35em;height:1.35em;
+  transform:translate(-50%,-50%)}
+.cgx-spin .cgx-ring{position:absolute;inset:0;border-radius:50%;
+  border:1.5px dashed rgba(45,226,197,.4)}
+.cgx-spin .cgx-dot{position:absolute;left:50%;top:50%;width:.42em;height:.42em;margin:-.21em;
+  border-radius:50%;background:#2DE2C5;opacity:0;
+  transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+.cgx-spin.go .cgx-dot{opacity:1;animation:cgorbit 2s linear}
+.cgx-spin.go .cgx-ring{border-color:rgba(45,226,197,.9)}
+/* Starts where the data says and travels the way the data says. It used to
+   begin at the top and go clockwise regardless of the move. */
+@keyframes cgorbit{from{transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+  to{transform:rotate(var(--rto,360deg)) translateY(-1.15em)}}
+/* ── a sequence ───────────────────────────────────────────────────────────
+   One line, always. If it outgrows the column the ROW scrolls; glyphs never wrap. */
+.cwrap{display:flex;align-items:center;gap:10px;width:100%}
+.cseq{flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;
+  line-height:2.6;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cseq::-webkit-scrollbar{display:none}
+.cvar{display:none;white-space:nowrap}
+.cvar.on{display:inline}
+.cread-simple{display:none}
+.simpleread .cread-auth{display:none}
+.simpleread .cread-simple{display:inline}
+/* The simple reading drops the connecting words, so the line has room to spare.
+   Spend it on the glyphs — they are the whole content in this mode. */
+.simpleread .cgx{margin:0 .45em}
+.simpleread .cseq{line-height:2.9}
+.simpleread .cgx .cg-solo{width:1.75em;height:1.75em}
+.simpleread .cgx{width:1.75em;height:1.75em}
+.simpleread .cgx-b{width:2.25em;height:2.25em}
+.simpleread .cgx-b .cg-pack{width:2.25em;height:2.25em}
+.simpleread .cgx-d{width:2.15em;height:2.15em}
+.simpleread .cgx-d .cg-arrow{width:1.75em;height:1.75em}
+.simpleread .cgx-d .cg-badge{width:1.05em;height:1.05em}
+.simpleread .cgx-spin{width:2.6em;height:2.6em}
+/* At rest everything reads at full strength; dimming is a state of the
+   animation, never how the page sits still. */
+.cwrap:not(.playing) .cg,.cwrap:not(.playing) .chev{opacity:1}
+/* THE ALTERNATIVE IS A FOOTNOTE. Dim, lowercase, no accent, detached from the
+   sequence so it never competes with the input the reader came for. */
+.cacts{flex:0 0 auto;margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.calt{padding:1px 0;border:0;background:none;cursor:pointer;color:#5c6474;
+  font:400 11.5px/1.25 system-ui,-apple-system,sans-serif;letter-spacing:.02em;
+  border-bottom:1px dotted #3a4354;white-space:nowrap}
+.calt:hover{color:#9aa0ae;border-bottom-color:#5c6474}
+.calt[aria-pressed="true"]{color:#9aa0ae}
+.calt:focus-visible{outline:2px solid #2DE2C5;outline-offset:3px;border-radius:2px}
+/* ── animation states ─────────────────────────────────────────────────────
+   A HOLD stays lit. A PRESS lights and goes dark again — Giant Fake Shot
+   presses and RELEASES Square before Cross. */
+.cgx.lit .cg{opacity:1;filter:drop-shadow(0 0 8px rgba(45,226,197,.8))}
+.cgx.tap{animation:cgtap .5s ease}
+@keyframes cgtap{0%{transform:scale(1)}40%{transform:scale(.76)}100%{transform:scale(1)}}
+.cgx.nu-up{animation:nuup .8s ease}
+.cgx.nu-down{animation:nudown .8s ease}
+.cgx.nu-left{animation:nuleft .8s ease}
+.cgx.nu-right{animation:nuright .8s ease}
+@keyframes nuup{0%,100%{transform:translateY(0)}45%{transform:translateY(-11px)}}
+@keyframes nudown{0%,100%{transform:translateY(0)}45%{transform:translateY(11px)}}
+@keyframes nuleft{0%,100%{transform:translateX(0)}45%{transform:translateX(-11px)}}
+@keyframes nuright{0%,100%{transform:translateX(0)}45%{transform:translateX(11px)}}
+/* ── the list ─────────────────────────────────────────────────────────────
+   The game shows moves as a list and most readers are on a phone, so the LIST
+   is the player: a row animates its own sequence where it already sits. */
+.cmoves{display:flex;flex-direction:column;gap:8px;margin:0 0 1.6em}
+.cm{position:relative;display:flex;flex-direction:column;gap:3px;padding:11px 14px;
+  border:1px solid #23364c;border-radius:11px;background:#0a1826;
+  cursor:pointer;overflow:hidden;transition:border-color .2s ease}
+.cm.active{border-color:rgba(45,226,197,.3)}
+/* Focus reads as a line filling along the TOP edge only. A ring round the whole
+   block drew more attention than the content inside it. */
+.cm-bar{position:absolute;left:0;top:0;height:2px;width:0;background:#2DE2C5;opacity:0}
+.cm.active .cm-bar{opacity:1}
+.cm-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cm-name{font:700 15.5px/1.4 system-ui,-apple-system,sans-serif;color:#2DE2C5;text-decoration:none;
+  transition:text-shadow .2s ease,color .2s ease}
+a.cm-name:hover{text-decoration:underline}
+/* The name lights first, so the reader knows which row has started before any
+   button moves. */
+.cm-name.lit{color:#7dfbe4;text-shadow:0 0 12px rgba(45,226,197,.55)}
+.cm-meta{flex:0 0 auto;font:600 11.5px/1 system-ui,-apple-system,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:#5c6474}
+.cm-cap{min-height:1.25em;font:600 12px/1.25 system-ui,-apple-system,sans-serif;color:#2DE2C5;
+  opacity:0;transition:opacity .18s ease}
+.cm.playing .cm-cap{opacity:1}
+.cspeed{margin:0 0 14px;font:600 12px/1.4 system-ui,-apple-system,sans-serif;color:#5c6474}
+/* ── the switcher ─────────────────────────────────────────────────────── */
+.padsw{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;
+  display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;
+  border:1px solid #33506f;background:rgba(8,16,26,.97);
+  box-shadow:0 10px 30px rgba(0,0,0,.62);font:600 14px/1 system-ui,-apple-system,sans-serif}
+.padsw-seg{display:flex;gap:4px}
+.padsw-seg button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
+  border:1px solid transparent;background:transparent;color:#9aa0ae;cursor:pointer;font:inherit}
+.padsw-seg button:hover{color:#e9edf6}
+.padsw-seg button[aria-pressed="true"]{background:rgba(45,226,197,.15);
+  border-color:rgba(45,226,197,.65);color:#2DE2C5}
+.padsw-i{width:22px;height:22px;display:block;opacity:.55}
+.padsw-seg button[aria-pressed="true"] .padsw-i{opacity:1}
+.padsw-m{flex:0 0 auto;padding:9px 13px;border-radius:999px;border:1px solid #33506f;
+  background:transparent;color:#9aa0ae;cursor:pointer;font:600 13px/1 system-ui,-apple-system,sans-serif}
+.padsw-sep{width:1px;align-self:stretch;margin:4px 2px;background:#23364c}
+.padsw-m[aria-pressed="true"]{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.13);color:#2DE2C5}
+.padsw-c{width:30px;height:30px;flex:0 0 auto;margin-right:4px;border-radius:999px;cursor:pointer;
+  border:1px solid #33506f;background:conic-gradient(#e2657a,#e0b154,#5fc97a,#56a0f0,#c98ad8,#e2657a)}
+.padsw-c[aria-pressed="false"]{background:#cfd4de}
+.padsw-c:focus-visible,.padsw-seg button:focus-visible,.padsw-m:focus-visible{outline:2px solid #2DE2C5;outline-offset:2px}
+@media(max-width:560px){
+  .padsw{bottom:10px;font-size:13.5px}
+  .padsw-seg button{padding:10px 13px;gap:6px}
+  .cm-name{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cg,.chev{opacity:1!important}
+  .cgx,.cgx-spin.go .cgx-dot{animation:none!important}
+}
+.gk-tabs{position:sticky;top:0;z-index:30;display:flex;gap:2px;overflow-x:auto;
+  scrollbar-width:thin;background:rgba(5,13,22,.97);border-bottom:1px solid #23364c;
+  margin:0 0 12px}
+.gk-tab{flex:0 0 auto;padding:9px 14px;border:0;border-bottom:3px solid transparent;
+  background:transparent;color:#9aa0ae;cursor:pointer;
+  font:700 12.5px/1 -apple-system,system-ui,sans-serif;letter-spacing:.05em;white-space:nowrap}
+.gk-tab.on{color:#2DE2C5;border-bottom-color:#2DE2C5}
+.gk-page{display:none}
+.gk-page.on{display:block}
+.gk-count{font:600 12px/1.4 -apple-system,system-ui,sans-serif;color:#5c6474;margin:10px 2px}
+.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:2px 14px;align-items:center;padding:7px 12px;margin:0 0 8px;
+  border:1px solid #14233a;border-radius:10px;background:#0a1826;font-size:15px}
+.gk-inputs{display:flex;flex-direction:column;gap:4px;min-width:0}
+.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto}
+.gk-action{text-align:right;max-width:14em}
+.gk-name{display:block;font-weight:700;font-size:14px;line-height:1.25;color:#e9edf6}
+.gk-nm{color:#e9edf6;text-decoration:none;border-bottom:1px dotted #33506f}
+.gk-nm:hover{color:#2DE2C5}
+.gk-new{display:inline-block;vertical-align:2px;margin-left:2px;padding:2px 6px;border-radius:999px;
+  background:rgba(45,226,197,.14);color:#2DE2C5;
+  font:800 9px/1 -apple-system,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.gk-meta{display:inline;font-size:11px;color:#9aa0ae}
+.gk-idx{display:inline;font:600 10px/1 ui-monospace,monospace;color:#3d4a61;margin-left:8px}
+.cm.gk-row .cm-cap{position:absolute;right:12px;bottom:5px;min-height:0;
+  font-size:10.5px;pointer-events:none}
+@media(max-width:620px){
+  .cm.gk-row{grid-template-columns:1fr;gap:2px;padding:6px 10px}
+  .gk-action{text-align:left;order:-1;max-width:none}
+}
+.pchq-tri{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 1.6em}
+.pchq-tri a{display:block;padding:14px 16px;border:1px solid #23364c;border-radius:12px;
+  background:#0a1826;text-decoration:none;color:#e9edf6}
+.pchq-tri a:hover{border-color:rgba(45,226,197,.5)}
+.pchq-tri .t{display:block;font-weight:800;font-size:15px}
+.pchq-tri .c{display:block;font-size:11.5px;color:#9aa0ae;margin-top:3px}
+.pchq-tri a.on{border-color:rgba(45,226,197,.65);background:rgba(45,226,197,.08)}
+.pchq-tri a.on .t{color:#2DE2C5}
+@media(max-width:560px){.pchq-tri{grid-template-columns:1fr;gap:8px}
+  .pchq-tri a{padding:11px 14px}}
+</style>
+<!--kg-card-end: html-->
+<p>Every control in EA FC 27 — all <strong>420 entries
+across 24 pages</strong> of the
+game's own menu, every input animated, switchable between PlayStation and
+Xbox. The game splits its controls three ways, and so do we:</p>
+<!--kg-card-begin: html-->
+<div class="pchq-tri">
+<a class="" href="/blog/fc27-basic-controls/">
+  <span class="t">Basic Controls</span>
+  <span class="c">190 entries · 13 pages · 16 new</span></a>
+<a class="" href="/blog/fc27-skill-moves/">
+  <span class="t">Skill Moves</span>
+  <span class="c">102 entries · 6 pages · 13 new</span></a>
+<a class="" href="/blog/fc27-celebrations/">
+  <span class="t">Celebrations</span>
+  <span class="c">128 entries · 5 pages · 8 new</span></a>
+</div>
+<!--kg-card-end: html-->
+<h2>New in FC 27</h2>
+<p>FC 27 adds <strong>42 entries</strong> to the menu and renames
+10 more — but not
+a single carried-over input changed, so everything your hands learned in FC 26
+still works. The highlights:</p>
+<ul>
+<li><a href="/blog/fc27-new-skill-moves/">13 new skill moves</a>,
+each with its own guide</li>
+<li>A <a href="/blog/fc27-control-changes/">set-piece tactics system</a> on
+D-pad up, two new throw-in controls, and 8 new
+celebrations</li>
+</ul>
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get the game</h3>
+<div class="affrows">
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">Physical disc</span><span class="g">→</span></a>
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Physical disc</span><span class="g">→</span></a>
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">EA App digital</span><span class="g">→</span></a>
+</div>
+</div>
+<!--kg-card-end: html-->
+<h2>Pro Clubs controls, in one place</h2>
+<p>These pages cover the whole menu as it appears in Clubs — Be A Pro pages
+included, which most control lists skip. Basic controls run from the simple
+attacking page to goalkeeping and set pieces; skill moves are gated by your
+pro's skill-star rating; celebrations include both unlockable sets. Every
+input on every page is played for you rather than written out, and the dock
+remembers whether you play on PlayStation or Xbox.</p>
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">FC 27 is in the builder</p>
+<h3>Plan an FC 27 pro now</h3>
+<p>Every archetype, attribute ceiling and AP price is in the builder —
+    including the skill-star levels these moves need. Build your pro against it.</p>
+<a class="b" href="https://proclubshq.comhttps://proclubshq.com/">Open the builder →</a>
+</div>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="c"></div>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0CQKKHT5J?tag=proclubshq-fc27-20" aria-label="PlayStation DualSense controller at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-controllers.webp" alt="A PlayStation DualSense controller and an Xbox Wireless Controller side by side" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Kit worth having</h3>
+<div class="affrows">
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0CQKKHT5J?tag=proclubshq-fc27-20" aria-label="PlayStation DualSense controller at Amazon"><span class="b">PS5</span><span class="n">DualSense controller</span><span class="g">→</span></a>
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0B789CGGQ?tag=proclubshq-fc27-20" aria-label="Xbox Elite Series 2 Core controller at Amazon"><span class="b">XBOX</span><span class="n">Elite Series 2 Core controller</span><span class="g">→</span></a>
+<a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B016P09VFS?tag=proclubshq-fc27-20" aria-label="KontrolFreek thumbstick grips at Amazon"><span class="b">GRIPS</span><span class="n">KontrolFreek thumbsticks</span><span class="g">→</span></a>
+</div>
+</div>
+<!--kg-card-end: html-->

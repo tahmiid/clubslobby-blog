@@ -26,50 +26,14 @@ import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
+import { M26, M27, differs, cosmetic, renames, added, removed, sharedCount,
+         untouchedPages } from './controls-diff.mjs';
 
 const DIR = path.join(import.meta.dirname, '..');
-const C26 = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc26-controls.json'), 'utf8'));
 const SKILLS = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
 
 const BUILDER = `${SITE}/`;
 const HUB = '/blog/fc27-new-skill-moves/';
-
-// ── the diff ───────────────────────────────────────────────────────────────
-const sfx = (id) => id.replace(/^fc\d+_/, '');
-const M27 = new Map(CONTROLS.moves.map((m) => [sfx(m.actionId), m]));
-const M26 = new Map(C26.moves.map((m) => [sfx(m.actionId), m]));
-
-const shared = [...M27.keys()].filter((k) => M26.has(k));
-const differs = shared.filter((k) => M26.get(k).keyCombo !== M27.get(k).keyCombo);
-const cosmetic = shared.filter((k) => M26.get(k).name !== M27.get(k).name);
-let only26 = [...M26.keys()].filter((k) => !M27.has(k));
-let only27 = [...M27.keys()].filter((k) => !M26.has(k));
-
-// A rename changes the id (it is derived from the name), so re-pair the
-// leftovers by page + canonical input: same screen position, same input,
-// different words.
-const renames = [];
-for (const k of [...only26]) {
-  const o = M26.get(k);
-  const cand = only27.filter((k2) => M27.get(k2).page === o.page
-    && M27.get(k2).canonical === o.canonical);
-  if (cand.length === 1) {
-    renames.push([o, M27.get(cand[0])]);
-    only26 = only26.filter((x) => x !== k);
-    only27 = only27.filter((x) => x !== cand[0]);
-  }
-}
-const added = only27.map((k) => M27.get(k));
-const removed = only26.map((k) => M26.get(k));
-
-// Pages the year left completely alone.
-const touched = new Set([
-  ...differs.map((k) => M27.get(k).page),
-  ...renames.map(([, n]) => n.page),
-  ...added.map((m) => m.page), ...removed.map((m) => m.page),
-]);
-const untouchedPages = [...new Set(CONTROLS.moves.map((m) => m.page))]
-  .filter((p) => !touched.has(p));
 
 // ── the guardrail: every name the prose cites must be in the computed set ──
 const inSet = (list, name, page) => {
@@ -144,7 +108,7 @@ const renamesSorted = renames
 
 // ── the page: lists first, then ads, then the writing (owner, 2026-08-20) ──
 const html = `${STYLE}
-<p>EA FC 27 keeps most of FC 26's controls — <strong>${shared.length - differs.length}
+<p>EA FC 27 keeps most of FC 26's controls — <strong>${sharedCount - differs.length}
 of the menu's ${CONTROLS.moves.length} entries are unchanged</strong>. Everything
 that moved is below: every new control, every changed input, every rename.
 Every input is played for you, one row at a time — tap a row to replay it, and
@@ -153,7 +117,9 @@ buttons, and the game's wording or a simplified reading.</p>
 
 <h2>Thirteen new skill moves</h2>
 <p>Each has its own guide — every input, every variant, and what the move is
-for — in <a href="${HUB}">every new skill move in FC 27</a>. The list:</p>
+for — in <a href="${HUB}">every new skill move in FC 27</a>; the whole menu,
+tier by tier, is in <a href="/blog/fc27-skill-moves/">all FC 27 skill
+moves</a>. The list:</p>
 <ul>
 ${starList}
 </ul>
@@ -229,7 +195,7 @@ ${CHANGED_ROWS.map(([o, n]) => {
 <h2>What did not change</h2>
 <p><strong>Not a single carried-over input changed.</strong> Every control and
 every skill move you could perform in FC 26 is performed identically in FC 27 —
-<strong>${shared.length - differs.length} of the menu's
+<strong>${sharedCount - differs.length} of the menu's
 ${CONTROLS.moves.length} entries carry over exactly</strong>, and
 ${untouchedPages.length} of the 24 pages are untouched top to bottom:
 ${untouchedPages.map((p) => esc(p)).join(' · ')}. (Yes, the basic free-kick page
@@ -261,7 +227,12 @@ And the sharp-eyed will notice the 3-star page now spells
 FC 27 than in FC 26 — the table above has the new inputs, animated. Everything
 else in your hands` : `There is no retraining list: no carried-over input
 changed. Everything in your hands`} carries straight over: movement, shooting,
-passing, defending, goalkeeping and penalties are identical, page for page.</p>
+passing, defending, goalkeeping and penalties are identical, page for page.
+The full menu lives in three animated lists —
+<a href="/blog/fc27-basic-controls/">basic controls</a>,
+<a href="/blog/fc27-skill-moves/">skill moves</a> and
+<a href="/blog/fc27-celebrations/">celebrations</a> — tied together in the
+<a href="/blog/fc27-controls/">FC 27 controls hub</a>.</p>
 
 ${appCta({
   href: BUILDER,
@@ -282,4 +253,4 @@ writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
 console.log(`a63.html — fc27-control-changes (lists first, computed diff)`);
 console.log(`  ${added.length} added · ${removed.length} removed · ${renames.length} renamed`
   + ` (+${cosmetic.length} cosmetic) · ${differs.length} changed`
-  + ` · ${shared.length - differs.length} unchanged · untouched pages: ${untouchedPages.length}`);
+  + ` · ${sharedCount - differs.length} unchanged · untouched pages: ${untouchedPages.length}`);

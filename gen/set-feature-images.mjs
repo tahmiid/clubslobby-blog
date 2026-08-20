@@ -60,6 +60,11 @@ const MAP = [
   ['feat-fc27-all13.jpg', 'fc27-archetypes', "EA SPORTS FC 27 key art with ALL 13 across it"],
   ['feat-fc27-specs.jpg', 'fc27-best-specializations', "EA SPORTS FC 27 key art with SPECIALIZATIONS across it"],
   ['feat-fc27-controls.jpg', 'fc27-control-changes', "EA SPORTS FC 27 key art with CONTROLS across it"],
+  // The controls suite (2026-08-20).
+  ['feat-fc27-controls-hub.jpg', 'fc27-controls', "EA SPORTS FC 27 key art with ALL CONTROLS across it"],
+  ['feat-fc27-basic-controls.jpg', 'fc27-basic-controls', "EA SPORTS FC 27 key art with BASIC CONTROLS across it"],
+  ['feat-fc27-skill-moves.jpg', 'fc27-skill-moves', "EA SPORTS FC 27 key art with SKILL MOVES across it"],
+  ['feat-fc27-celebrations.jpg', 'fc27-celebrations', "EA SPORTS FC 27 key art with CELEBRATIONS across it"],
   ['feat-fc27-disruptor.jpg', 'fc27-disruptor-build', "EA SPORTS FC 27 key art with DISRUPTOR across it"],
   ['feat-fc27-level40.jpg', 'fc27-level-40-builds', "EA SPORTS FC 27 key art with LEVEL 40 across it"],
   ['feat-fc27-skills.jpg', 'fc27-new-skill-moves', "EA SPORTS FC 27 key art with SKILL MOVES across it"],

@@ -461,6 +461,35 @@ const POSTS = [
     meta_description: 'All 40 FC 27 specializations with their rumored unlock criteria and PlayStyle+ rewards — and a live build wearing every single one.',
     custom_excerpt: 'Every specialization, its PlayStyle+, its criteria — and a real build wearing it.',
     tags: ['Guides', 'Archetypes', 'FC 27'] },
+  // The controls suite (2026-08-20): the pillar + three full lists, mirroring
+  // the game's own three-button Controls screen. Rendered by the same module
+  // as the owner's check pages, so what publishes is what was verified
+  // in-game. Publish the four together with the updated cluster (a49-a63) —
+  // they cross-link heavily.
+  { file: 'a68.html', slug: 'fc27-controls', status: 'published',
+    title: 'FC 27 Controls: Every Button, Skill Move & Celebration',
+    meta_title: 'FC 27 Controls — Every Input, Animated (Pro Clubs)',
+    meta_description: 'All 420 FC 27 controls on the game\'s own 24 pages — basic controls, skill moves and celebrations, every input animated, PlayStation and Xbox.',
+    custom_excerpt: 'The whole FC 27 controls menu, split the way the game splits it — every input animated, PlayStation and Xbox.',
+    tags: ['Guides', 'Controls', 'FC 27'] },
+  { file: 'a69.html', slug: 'fc27-basic-controls', status: 'published',
+    title: 'All FC 27 Basic Controls, Animated',
+    meta_title: 'All FC 27 Basic Controls — Every Button, Animated',
+    meta_description: 'Every FC 27 basic control on the game\'s own 13 pages — attacking, movement, defending, goalkeeper, set pieces and Be A Pro — animated for PlayStation and Xbox.',
+    custom_excerpt: 'All 190 basic controls on the game\'s own 13 pages, every input animated.',
+    tags: ['Guides', 'Controls', 'FC 27'] },
+  { file: 'a70.html', slug: 'fc27-skill-moves', status: 'published',
+    title: 'All FC 27 Skill Moves by Star Rating, Animated',
+    meta_title: 'All FC 27 Skill Moves — Every Star Tier, Animated',
+    meta_description: 'Every FC 27 skill move from 1 to 5 stars plus juggling tricks, in the game\'s own order — every input animated for PlayStation and Xbox, new moves badged.',
+    custom_excerpt: 'All 102 skill moves, tier by tier, every input animated — with the 13 new moves badged.',
+    tags: ['Guides', 'Skill Moves', 'FC 27'] },
+  { file: 'a71.html', slug: 'fc27-celebrations', status: 'published',
+    title: 'All FC 27 Celebrations, Animated',
+    meta_title: 'All FC 27 Celebrations — Every Input, Animated',
+    meta_description: 'Every FC 27 celebration across all five pages — basics, running, finishing and both unlockable sets — with every input animated for PlayStation and Xbox.',
+    custom_excerpt: 'All 128 celebrations, including both unlockable sets, every input animated.',
+    tags: ['Guides', 'Celebrations', 'FC 27'] },
 ];
 
 // Optional filter: `node publish-prod.mjs a8 a12` publishes only those
