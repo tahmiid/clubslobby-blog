@@ -66,8 +66,22 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
 
 ## Control glyphs (skill-move and controls pages)
 
-`gen/controls.mjs` turns the dataset's input notation into button art:
-`renderInput(ps, 'ps'|'xbox')`, plus `CONTROL_CSS` for any page that calls it.
+**The full story is `~/Desktop/Claude/ClubsUI-main/backend/CONTROLS.md`** — the
+collections, the `*TOKEN*` vocabulary, the glyph pack's matched pairs, the
+semantics layer, the animation model, the 24-page menu order and how to
+regenerate all of it. Read that first; what follows is only what is specific to
+this repo.
+
+`gen/controls.mjs` renders from `data/fc27-controls.json` (exported from the
+`controls_*` collections): `renderMove(move)`, `moveList(moves)`, `padSwitcher()`
+and `CONTROL_CSS`. `ops/controls-test.mjs` is the oracle — it compares what we
+render against the `keyCombo` the dataset records, across every input. Run it
+after any change here.
+
+**Do not parse the prose.** Variants come from `controls_inputs` rows, timing
+from `steps`, platform labels from `controls_bindings`. An earlier version split
+sentences on `" or "` and guessed timing from `"+"`; all of it was a worse copy
+of something the dataset already held.
 
 - **The stored notation does not change.** The dataset keeps ONE
   PlayStation-shaped string per move (`"Hold L2 + ▢ or ◯ + ✕"`) and **Xbox is

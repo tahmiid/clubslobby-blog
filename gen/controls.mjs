@@ -63,6 +63,17 @@ const glyph = (token, platform, set, role = '', alt = '') =>
 
 const PACK_L = { up: 'lt', down: 'lb', left: 'll', right: 'lr' };
 
+// ── semantics ─────────────────────────────────────────────────────────────
+// How an action is PERFORMED, which the game's screens do not print. Stored in
+// `controls_semantics` and exported under its own key, deliberately apart from
+// the capture — see migration 0049. These affect the ANIMATION only. The
+// wording never changes, which is what lets ops/controls-test.mjs keep checking
+// our rendering against what the game says.
+const SEM = (CONTROLS.semantics && CONTROLS.semantics.rules) || [];
+const rule = (name) => SEM.find((r) => r.rule === name);
+const MODIFIERS = new Set((rule('modifier_sustain') || {}).controls || []);
+const CENTRED_WORDS = ((rule('stick_centred') || {}).match || {}).wordingContains || [];
+
 // A stick pushed in a direction is ONE unit. Left uses the pack's drawn glyph;
 // right has no equivalent, so it takes the arrow with the stick badged in.
 const stickUnit = (control, dir, idx, platform, set) => {
@@ -85,8 +96,12 @@ const FAST = 600, SLOW = 1200, LEAD = 700, GEST = 800, TAIL = 1200, PRESS_MS = 5
 
 // Build glyphs, wording and timeline from `steps` in ONE pass, so a timeline
 // step and the glyph it lights can never disagree about position.
-const buildInput = (input, platform, set) => {
+const buildInput = (input, platform, set, wording = '') => {
   let auth = '', simple = '', steps = [], t = 0, n = 0;
+  // A stick with no direction is one of two different instructions, and only the
+  // wording tells them apart: "centred" means locked for the whole action,
+  // anything else means the direction is the player's choice.
+  const centred = CENTRED_WORDS.some((w) => wording.toLowerCase().includes(w));
 
   input.steps.forEach((phase, pi) => {
     if (pi > 0) { auth += esc(' then '); t += SLOW; }
@@ -103,12 +118,18 @@ const buildInput = (input, platform, set) => {
       const anyDir = path.length && path.every((d) => d === 'any');
       if (STICKS.has(ctl) && verb !== 'rotate' && (anyDir || !path.length)) {
         const idx = n++;
-        const u = `<span class="cgx" data-i="${idx}">`
-          + glyph(tok, platform, set, 'cg-solo', lbl) + `</span>`;
+        const locked = centred && verb === 'move';
+        const u = `<span class="cgx${locked ? ' cgx-locked' : ''}" data-i="${idx}">`
+          + glyph(locked ? `${tok}-locked` : tok, platform, set, 'cg-solo',
+                  locked ? `${lbl}, keep centred` : lbl) + `</span>`;
         auth += u + (anyDir ? esc(' Direction') : ''); simple += u;
-        steps.push({ t, i: idx, type: 'press',
-                     label: anyDir ? `${lbl}, any direction` : lbl });
-        t += FAST;
+        // A locked stick is an instruction that runs for the WHOLE action, so it
+        // is a hold at t=0 rather than a beat in the sequence.
+        steps.push(locked
+          ? { t: 0, i: idx, type: 'hold', label: `Keep ${lbl} centred` }
+          : { t, i: idx, type: 'press',
+              label: anyDir || !path.length ? `${lbl}, any direction` : lbl });
+        if (!locked) t += FAST;
         return;
       }
       // Rotate is checked BEFORE the directional branch: a rotation carries a
@@ -181,6 +202,14 @@ const buildInput = (input, platform, set) => {
         const first = pi === 0;
         steps.push({ t: first ? 0 : t, i: idx, type: 'hold', label: `Hold ${lbl}` });
         if (first && t === 0) t = LEAD; else t += FAST;
+      } else if (MODIFIERS.has(ctl)) {
+        // MODIFIER RULE (owner, 2026-08-20): L1/L2/R1/R2 are held from the
+        // moment they appear until the action ends, whether or not the screen
+        // says "Hold". Alternate Elastico Chop prints R1 as a plain press and it
+        // is held. Only the TIMELINE changes — the wording still reads as the
+        // game prints it, or the capture and the page would disagree.
+        steps.push({ t, i: idx, type: 'hold', label: `Hold ${lbl}` });
+        t += FAST;
       } else {
         steps.push({ t, i: idx, type: 'press', label: `Press ${lbl}` });
         t += FAST;
@@ -225,7 +254,7 @@ export const rotateArc = (spec) => {
 // from a sentence. Variant 0 shows; the rest are one tap away.
 export const renderMove = (move, platform = DEFAULT_PLATFORM, set = DEFAULT_SET) => {
   const body = move.inputs.map((inp, i) => {
-    const { auth, simple, tl } = buildInput(inp, platform, set);
+    const { auth, simple, tl } = buildInput(inp, platform, set, inp.keyCombo || '');
     return `<span class="cvar${i ? '' : ' on'}" data-tl="${escAttr(JSON.stringify(tl))}"`
       + ` data-variant="${escAttr(inp.variantType || '')}">`
       + `<span class="cread cread-auth">${auth}</span>`

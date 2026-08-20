@@ -1319,5 +1319,58 @@
       ]
     }
   ],
+  "semantics": {
+    "rules": [
+      {
+        "_id": "rule_modifier_sustain",
+        "rule": "modifier_sustain",
+        "controls": [
+          "BUMPER_L",
+          "BUMPER_R",
+          "TRIGGER_L",
+          "TRIGGER_R"
+        ],
+        "effect": "hold_until_end",
+        "confidence": "owner_stated",
+        "summary": "L1, L2, R1 and R2 are modifiers: held from first appearance until the action ends."
+      },
+      {
+        "_id": "rule_stick_centred",
+        "rule": "stick_centred",
+        "match": {
+          "verb": "move",
+          "path": [],
+          "wordingContains": [
+            "centred",
+            "centered"
+          ]
+        },
+        "effect": "stick_locked_for_whole_action",
+        "confidence": "derived",
+        "summary": "Wording that says the stick is centred means it must stay untouched throughout."
+      },
+      {
+        "_id": "rule_stick_any",
+        "rule": "stick_any",
+        "match": {
+          "verb": "move",
+          "pathAnyOf": [
+            [],
+            [
+              "any"
+            ]
+          ],
+          "wordingExcludes": [
+            "centred",
+            "centered"
+          ]
+        },
+        "effect": "stick_any_direction",
+        "confidence": "derived",
+        "summary": "A bare stick with no direction, and no 'centred' wording, means any direction."
+      }
+    ],
+    "annotations": []
+  },
   "_missing": []
 }
