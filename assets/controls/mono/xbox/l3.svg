@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        mask: url(#mask);
+      }
+
+      .st2 {
+        display: none;
+        fill: #1c212a;
+      }
+    </style>
+    <mask id="mask" x="205.9" y="169.1" width="117.6" height="205.9" maskUnits="userSpaceOnUse">
+      <g id="svg_1">
+        <rect class="st0" x="205.9" y="169.1" width="117.6" height="205.9"/>
+        <path d="M315.4,360.3h-104.2v-175h39.4v143.1h64.8v32Z"/>
+      </g>
+    </mask>
+  </defs>
+  <g id="Layer_11" data-name="Layer_1">
+    <g>
+      <rect class="st0" x="132.4" y="371.3" width="235.3" height="58.8"/>
+      <g>
+        <path class="st0" d="M382.4,136H117.6C52.7,136,0,188.7,0,253.7s52.7,117.6,117.6,117.6h264.7c65,0,117.6-52.7,117.6-117.6s-52.7-117.6-117.6-117.6ZM315.4,349.3h-104.2v-175h39.4v143.1h64.8v32Z"/>
+        <polygon class="st2" points="250.6 174.2 211.2 174.2 211.2 349.3 315.4 349.3 315.4 317.3 250.6 317.3 250.6 174.2"/>
+      </g>
+      <g class="st1">
+        <path class="st2" d="M315.4,349.3v1.5h1.5v-1.5h-1.5ZM211.2,349.3h-1.5v1.5h1.5v-1.5ZM211.2,174.2v-1.5h-1.5v1.5h1.5ZM250.6,174.2h1.5v-1.5h-1.5v1.5ZM250.6,317.3h-1.5v1.5h1.5v-1.5ZM315.4,317.3h1.5v-1.5h-1.5v1.5ZM315.4,347.8h-104.2v2.9h104.2v-2.9ZM212.7,349.3v-175h-2.9v175h2.9ZM211.2,175.7h39.4v-2.9h-39.4s0,2.9,0,2.9ZM249.2,174.2v143.1h2.9v-143.1s-2.9,0-2.9,0ZM250.6,318.8h64.8v-2.9h-64.8v2.9ZM314,317.3v32h2.9v-32h-2.9Z"/>
+      </g>
+      <path class="st0" d="M250,136l50.9-66.2h-101.9l50.9,66.2Z"/>
+    </g>
+  </g>
+</svg>

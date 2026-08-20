@@ -1,0 +1,1327 @@
+{
+  "_source": "controls_actions/controls_inputs/controls_bindings, gameYear 27, exported from clubs_prod. Structure preserved on purpose: keyCombo is in the glyph-token vocabulary and steps is the timeline.",
+  "bindings": {
+    "BUMPER_L": {
+      "ps": {
+        "glyph": "L1",
+        "label": "L1"
+      },
+      "xbox": {
+        "glyph": "LB",
+        "label": "LB"
+      }
+    },
+    "BUMPER_R": {
+      "ps": {
+        "glyph": "R1",
+        "label": "R1"
+      },
+      "xbox": {
+        "glyph": "RB",
+        "label": "RB"
+      }
+    },
+    "DPAD": {
+      "ps": {
+        "glyph": "D-Pad",
+        "label": "D-Pad"
+      },
+      "xbox": {
+        "glyph": "D-Pad",
+        "label": "D-Pad"
+      }
+    },
+    "FACE_DOWN": {
+      "ps": {
+        "glyph": "\u2715",
+        "label": "Cross"
+      },
+      "xbox": {
+        "glyph": "A",
+        "label": "A"
+      }
+    },
+    "FACE_LEFT": {
+      "ps": {
+        "glyph": "\u25a2",
+        "label": "Square"
+      },
+      "xbox": {
+        "glyph": "X",
+        "label": "X"
+      }
+    },
+    "FACE_RIGHT": {
+      "ps": {
+        "glyph": "\u25ef",
+        "label": "Circle"
+      },
+      "xbox": {
+        "glyph": "B",
+        "label": "B"
+      }
+    },
+    "FACE_UP": {
+      "ps": {
+        "glyph": "\u25b3",
+        "label": "Triangle"
+      },
+      "xbox": {
+        "glyph": "Y",
+        "label": "Y"
+      }
+    },
+    "MENU": {
+      "ps": {
+        "glyph": "Options",
+        "label": "Options"
+      },
+      "xbox": {
+        "glyph": "Menu",
+        "label": "Menu"
+      }
+    },
+    "STICK_L": {
+      "ps": {
+        "glyph": "L",
+        "label": "Left Stick"
+      },
+      "xbox": {
+        "glyph": "L",
+        "label": "Left Stick"
+      }
+    },
+    "STICK_L_CLICK": {
+      "ps": {
+        "glyph": "L3",
+        "label": "L3"
+      },
+      "xbox": {
+        "glyph": "L3",
+        "label": "Left Stick Click"
+      }
+    },
+    "STICK_R": {
+      "ps": {
+        "glyph": "R",
+        "label": "Right Stick"
+      },
+      "xbox": {
+        "glyph": "R",
+        "label": "Right Stick"
+      }
+    },
+    "STICK_R_CLICK": {
+      "ps": {
+        "glyph": "R3",
+        "label": "R3"
+      },
+      "xbox": {
+        "glyph": "R3",
+        "label": "Right Stick Click"
+      }
+    },
+    "TRIGGER_L": {
+      "ps": {
+        "glyph": "L2",
+        "label": "L2"
+      },
+      "xbox": {
+        "glyph": "LT",
+        "label": "LT"
+      }
+    },
+    "TRIGGER_R": {
+      "ps": {
+        "glyph": "R2",
+        "label": "R2"
+      },
+      "xbox": {
+        "glyph": "RT",
+        "label": "RT"
+      }
+    },
+    "VIEW": {
+      "ps": {
+        "glyph": "Touchpad",
+        "label": "Touchpad"
+      },
+      "xbox": {
+        "glyph": "View",
+        "label": "View"
+      }
+    }
+  },
+  "moves": [
+    {
+      "name": "Giant Fake Shot",
+      "dbName": "Giant Fake Shot (Standing)",
+      "actionId": "fc27_skill_move_1_star_giant_fake_shot_standing",
+      "star": 1,
+      "page": "1 Star Moves",
+      "conditions": [
+        "standing"
+      ],
+      "keyCombo": "Hold *L2* + *S* or *O* + *X* (while standing)",
+      "guidedCombo": "Hold *L2* and press *S* or *O* and press *X* (while standing)",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *S* + *X* (while standing)",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *O* + *X* (while standing)",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stop And Go",
+      "dbName": "Stop And Go",
+      "actionId": "fc27_skill_move_2_star_stop_and_go",
+      "star": 2,
+      "page": "2 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + *R* *AB* *AT*",
+      "guidedCombo": "Hold *L2* and push *R* down then up",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *R* *AB* *AT*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "direction",
+                "path": [
+                  "down",
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drag To Drag",
+      "dbName": "Drag To Drag",
+      "actionId": "fc27_skill_move_2_star_drag_to_drag",
+      "star": 2,
+      "page": "2 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + *S* or *O* then Hold *X* or *R* *AB*",
+      "guidedCombo": "Hold *L2* and press *S* or *O*, then hold *X* or *R*",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *S* then Hold *X* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "FACE_DOWN",
+                "verb": "hold",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *S* then Hold *R* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "hold",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *O* then Hold *X* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "FACE_DOWN",
+                "verb": "hold",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *O* then Hold *R* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "hold",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Foot To Foot",
+      "dbName": "Foot To Foot",
+      "actionId": "fc27_skill_move_3_star_foot_to_foot",
+      "star": 3,
+      "page": "3 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + *S* or *O* + *X* + *L* *AT*",
+      "guidedCombo": "Hold *L2* and press *S* or *O* and press *X* and push *L* up",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *S* + *X* + *L* *AT*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "direction",
+                "path": [
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *O* + *X* + *L* *AT*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "direction",
+                "path": [
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lateral Heel To Heel",
+      "dbName": "Lateral Heel To Heel",
+      "actionId": "fc27_skill_move_3_star_lateral_heel_to_heel",
+      "star": 3,
+      "page": "3 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L1* + Flick *R* *AL* *AR* or *AR* *AL*",
+      "guidedCombo": "Hold *L1* and flick *R* left then right",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L1* + Flick *R* *AL* *AR*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "left",
+                  "right"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "mirrored_direction",
+          "keyCombo": "Hold *L1* + Flick *R* *AR* *AL*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "right",
+                  "left"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drag Turn",
+      "dbName": "Drag Turn",
+      "actionId": "fc27_skill_move_4_star_drag_turn",
+      "star": 4,
+      "page": "4 Star Moves",
+      "conditions": [],
+      "keyCombo": "Flick *R* *AB* then *R* *AL* or *AR*",
+      "guidedCombo": "Flick *R* down, then push *R* left",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Flick *R* *AB* then *R* *AL*",
+          "steps": [
+            [
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "direction",
+                "path": [
+                  "left"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "mirrored_direction",
+          "keyCombo": "Flick *R* *AB* then *R* *AR*",
+          "steps": [
+            [
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "direction",
+                "path": [
+                  "right"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Standing Scoop Turn",
+      "dbName": "Standing Scoop Turn",
+      "actionId": "fc27_skill_move_4_star_standing_scoop_turn",
+      "star": 4,
+      "page": "4 Star Moves",
+      "conditions": [],
+      "keyCombo": "*S* or *O* + *X* + *L*",
+      "guidedCombo": "Press *S* or *O* and press *X* and move *L*",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "*S* + *X* + *L*",
+          "steps": [
+            [
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "move",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "*O* + *X* + *L*",
+          "steps": [
+            [
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "move",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flair Roulette",
+      "dbName": "Flair Roulette",
+      "actionId": "fc27_skill_move_4_star_flair_roulette",
+      "star": 4,
+      "page": "4 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L1* + Rotate *R* *RBLT* or *RBRT*",
+      "guidedCombo": "Hold *L1* and rotate *R* from the bottom up, either way round",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L1* + Rotate *R* *RBLT*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "STICK_R",
+                "verb": "rotate",
+                "path": [
+                  "down",
+                  "left",
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "mirrored_gesture",
+          "keyCombo": "Hold *L1* + Rotate *R* *RBRT*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "STICK_R",
+                "verb": "rotate",
+                "path": [
+                  "down",
+                  "right",
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Four Touch Skill",
+      "dbName": "Four Touch Skill",
+      "actionId": "fc27_skill_move_4_star_four_touch_skill",
+      "star": 4,
+      "page": "4 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + Flick *R* *AB* *AB*",
+      "guidedCombo": "Hold *L2* and flick *R* down then down",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + Flick *R* *AB* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "down",
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skilled Bridge",
+      "dbName": "Skilled Bridge",
+      "actionId": "fc27_skill_move_4_star_skilled_bridge",
+      "star": 4,
+      "page": "4 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + Flick *R* *AT* *AB*",
+      "guidedCombo": "Hold *L2* and flick *R* up then down",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + Flick *R* *AT* *AB*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "up",
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "First Time Spin",
+      "dbName": "First Time Spin",
+      "actionId": "fc27_skill_move_5_star_first_time_spin",
+      "star": 5,
+      "page": "5 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L1* + *R1*",
+      "guidedCombo": "Hold *L1* and press *R1*",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L1* + *R1*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alternate Elastico Chop",
+      "dbName": "Alternate Elastico Chop",
+      "actionId": "fc27_skill_move_5_star_alternate_elastico_chop",
+      "star": 5,
+      "page": "5 Star Moves",
+      "conditions": [],
+      "keyCombo": "Hold *L2* + *R1* + Flick *R* *AB* then *R* *AL* or *AR*",
+      "guidedCombo": "Hold *L2* and press *R1* and flick *R* down, then push *R* left",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *R1* + Flick *R* *AB* then *R* *AL*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "direction",
+                "path": [
+                  "left"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "mirrored_direction",
+          "keyCombo": "Hold *L2* + *R1* + Flick *R* *AB* then *R* *AR*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": true
+              },
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_R",
+                "verb": "flick",
+                "path": [
+                  "down"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ],
+            [
+              {
+                "control": "STICK_R",
+                "verb": "direction",
+                "path": [
+                  "right"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Running Fake Drag",
+      "dbName": "Running Fake Drag",
+      "actionId": "fc27_skill_move_5_star_running_fake_drag",
+      "star": 5,
+      "page": "5 Star Moves",
+      "conditions": [
+        "running"
+      ],
+      "keyCombo": "Hold *L2* + *S* or *O* + *X* + *L* *AT* (while running)",
+      "guidedCombo": "Hold *L2* and press *S* or *O* and press *X* and push *L* up (while running)",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *L2* + *S* + *X* + *L* *AT* (while running)",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "direction",
+                "path": [
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *L2* + *O* + *X* + *L* *AT* (while running)",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "direction",
+                "path": [
+                  "up"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Directional Fake Shot to Stop",
+      "dbName": "Directional Fake Shot to Stop",
+      "actionId": "fc27_gameplay_attacking_simple_directional_fake_shot_to_stop",
+      "star": null,
+      "page": "Attacking - Simple",
+      "conditions": [],
+      "keyCombo": "Hold *R1* + *S* or *O* + *X* + *L* Direction",
+      "guidedCombo": "Hold *R1* and press *S* or *O* and press *X* and move *L* in any direction",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "Hold *R1* + *S* + *X* + *L* Direction",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_R",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "move",
+                "path": [
+                  "any"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "variantType": "alternate_button",
+          "keyCombo": "Hold *R1* + *O* + *X* + *L* Direction",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_R",
+                "verb": "hold",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_RIGHT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "move",
+                "path": [
+                  "any"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trigger Curved Runs",
+      "dbName": "Trigger Curved Runs",
+      "actionId": "fc27_gameplay_attacking_advanced_trigger_curved_runs",
+      "star": null,
+      "page": "Attacking - Advanced",
+      "conditions": [],
+      "keyCombo": "*L1* + *R1* + *L* Direction",
+      "guidedCombo": "Press *L1* and press *R1* and push *L* in any direction",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "*L1* + *R1* + *L* Direction",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "STICK_L",
+                "verb": "direction",
+                "path": [
+                  "any"
+                ],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pass and Follow",
+      "dbName": "Pass and Follow",
+      "actionId": "fc27_gameplay_attacking_advanced_pass_and_follow",
+      "star": null,
+      "page": "Attacking - Advanced",
+      "conditions": [],
+      "keyCombo": "*L1* + *R1* + *X*",
+      "guidedCombo": "Press *L1*, *R1* and *X* together",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "*L1* + *R1* + *X*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_L",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_DOWN",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Precision Ground Pass",
+      "dbName": "Precision Ground Pass",
+      "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+      "star": null,
+      "page": "Attacking - Advanced",
+      "conditions": [],
+      "keyCombo": "*R1* + *T*",
+      "guidedCombo": "Press *R1* and *T* together",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "*R1* + *T*",
+          "steps": [
+            [
+              {
+                "control": "BUMPER_R",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_UP",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flair Lob / Cross / Outside The Foot",
+      "dbName": "Flair Lob / Cross / Outside The Foot",
+      "actionId": "fc27_gameplay_attacking_advanced_flair_lob_cross_outside_the_foot",
+      "star": null,
+      "page": "Attacking - Advanced",
+      "conditions": [],
+      "keyCombo": "*L2* + *S*",
+      "guidedCombo": "Press *L2* and *S* together",
+      "inputs": [
+        {
+          "index": 0,
+          "variantType": "primary",
+          "keyCombo": "*L2* + *S*",
+          "steps": [
+            [
+              {
+                "control": "TRIGGER_L",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              },
+              {
+                "control": "FACE_LEFT",
+                "verb": "press",
+                "path": [],
+                "repeat": 1,
+                "sustained": false
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "_missing": []
+}

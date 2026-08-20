@@ -8,7 +8,8 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
-import { renderInput, CONTROL_CSS } from './controls.mjs';
+import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
+const CTRL = Object.fromEntries(CONTROLS.moves.map((m) => [m.name, m]));
 
 const BUILDER = `${SITE}/`;
 
@@ -54,12 +55,8 @@ Run</em> are gone, replaced by the add/remove-player system.</p>
 FC 26.</p>
 
 <h2>New in attack</h2>
-${kg(`<div class="pchq-sk"><table><thead><tr><th>Action</th><th>PlayStation</th><th>Xbox</th></tr></thead><tbody>
-${[['Directional Fake Shot to Stop', 'Hold R1 + ▢ or ◯ + ✕ + L direction'],
-    ['Trigger Curved Runs', 'L1 + R1 + direction'],
-    ['Pass and Follow', 'L1 + R1 + ✕']]
-   .map(([name, ps]) => row(name, renderInput(ps, 'ps'), renderInput(ps, 'xbox'))).join('\n')}
-</tbody></table></div>`)}
+${kg(moveList(['Directional Fake Shot to Stop', 'Trigger Curved Runs', 'Pass and Follow']
+  .map((n) => CTRL[n])))}
 
 <h2>Renamed, not rebound</h2>
 <p>Same input, different label — worth knowing if you are searching for
@@ -67,8 +64,8 @@ something and cannot find it:</p>
 ${kg(`<div class="pchq-sk"><table><thead><tr><th>FC 26</th><th>FC 27</th><th></th></tr></thead><tbody>
 ${row('Fake Shot to Shot', '<strong>Fake Shot to Stop</strong>', 'the FC 26 name was wrong all along')}
 ${row('Get In The Box', '<strong>Get In Box</strong>', 'tactics')}
-${row('Precision Pass', '<strong>Precision Ground Pass</strong>', renderInput('R1 + △'))}
-${row('Flair Lob / Cross', '<strong>Flair Lob / Cross / Outside The Foot</strong>', renderInput('L2 + ▢'))}
+${row('Precision Pass', '<strong>Precision Ground Pass</strong>', renderMove(CTRL['Precision Ground Pass']))}
+${row('Flair Lob / Cross', '<strong>Flair Lob / Cross / Outside The Foot</strong>', renderMove(CTRL['Flair Lob / Cross / Outside The Foot']))}
 ${row('Call for Far Lobbed Through Pass', '<strong>Call For Driven Lobbed Through Pass</strong>', 'Be A Pro')}
 </tbody></table></div>`)}
 
@@ -87,9 +84,12 @@ ${appCta({
 })}
 
 <h2>Three controls that were never missing — just undocumented</h2>
-<p>The Be A Pro pages carry <strong>Call For Cross / Lob</strong> (${renderInput('▢')}),
-<strong>Call for Ground Cross</strong> (${renderInput('R1 + ▢')}) and <strong>Call for High
-Cross</strong> (${renderInput('L1 + ▢')}). These are not new. They are absent from the skill and
+<p>The Be A Pro pages carry <strong>Call For Cross / Lob</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*S*',
+    steps: [[{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}),
+<strong>Call for Ground Cross</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*R1* + *S*',
+    steps: [[{ control:'BUMPER_R', verb:'press', path:[] },{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}) and <strong>Call for High
+Cross</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*L1* + *S*',
+    steps: [[{ control:'BUMPER_L', verb:'press', path:[] },{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}). These are not new. They are absent from the skill and
 control lists most sites publish, and have been for at least two editions —
 which is a good illustration of why we stopped using those lists.</p>
 
@@ -104,7 +104,8 @@ on 13 August 2026 — all 24 Button Help, Skill Moves and Celebrations pages.
 Rumored controls can change before retail; this page is re-checked on early access
 day, 18 September.</p>`)}${affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
-  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
+  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
+${kg(padSwitcher())}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
 console.log('a63.html — fc27-control-changes');

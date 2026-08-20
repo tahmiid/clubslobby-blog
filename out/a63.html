@@ -12,7 +12,145 @@
 .pchq-sk td{background:transparent!important;color:#e9edf6!important;padding:11px 14px;
   border-top:1px solid #23364c;vertical-align:middle}
 .pchq-sk td strong{color:#f2f3f7}
-.cg{display:inline-block;vertical-align:-7px;width:28px;height:28px;margin:0 1px}.cg-w{width:42px}@media(max-width:560px){.cg{width:25px;height:25px;vertical-align:-6px}.cg-w{width:38px}}
+
+/* ── glyphs ───────────────────────────────────────────────────────────────
+   Sized in em so they track their type. A fixed px size with a negative
+   vertical-align overflowed the line box on a phone. */
+.cg{display:block;opacity:.45;transition:opacity .18s ease}
+.cgx{position:relative;display:inline-block;vertical-align:middle;margin:0 .2em;
+  width:1.5em;height:1.5em;transition:transform .18s ease}
+.cgx .cg-solo{width:1.5em;height:1.5em}
+/* THE FLICK ICONS — one shape per stick, so the two are tellable apart instantly.
+   LEFT uses the pack's own drawn glyph (lt/lb/ll/lr): the stick circle with its
+   arrowhead, already designed and unimprovable by composition.
+   RIGHT has no such asset, so it takes the direction arrow with the stick badged
+   into the corner — a different silhouette, which is the point. */
+.cgx-b{width:1.95em;height:1.95em}
+.cg-pack{position:absolute;left:50%;top:50%;width:1.95em;height:1.95em;transform:translate(-50%,-50%)}
+.cgx-d{width:1.85em;height:1.85em}
+.cg-arrow{position:absolute;left:50%;top:50%;width:1.5em;height:1.5em;transform:translate(-50%,-50%)}
+.cg-badge{position:absolute;right:-.06em;bottom:-.06em;width:.92em;height:.92em;
+  filter:drop-shadow(0 0 3px #0a1826)}
+/* ── rotation ─────────────────────────────────────────────────────────────
+   The stick stays put and readable; a dot travels the ring around it. Orbiting
+   the stick itself covered its own letter, which is the one thing it is for. */
+.cgx-spin{width:2.3em;height:2.3em;margin:0 .3em}
+.cgx-spin .cg-stick{position:absolute;left:50%;top:50%;width:1.35em;height:1.35em;
+  transform:translate(-50%,-50%)}
+.cgx-spin .cgx-ring{position:absolute;inset:0;border-radius:50%;
+  border:1.5px dashed rgba(45,226,197,.4)}
+.cgx-spin .cgx-dot{position:absolute;left:50%;top:50%;width:.42em;height:.42em;margin:-.21em;
+  border-radius:50%;background:#2DE2C5;opacity:0;
+  transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+.cgx-spin.go .cgx-dot{opacity:1;animation:cgorbit 2s linear}
+.cgx-spin.go .cgx-ring{border-color:rgba(45,226,197,.9)}
+/* Starts where the data says and travels the way the data says. It used to
+   begin at the top and go clockwise regardless of the move. */
+@keyframes cgorbit{from{transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+  to{transform:rotate(var(--rto,360deg)) translateY(-1.15em)}}
+/* ── a sequence ───────────────────────────────────────────────────────────
+   One line, always. If it outgrows the column the ROW scrolls; glyphs never wrap. */
+.cwrap{display:flex;align-items:center;gap:10px;width:100%}
+.cseq{flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;
+  line-height:2.6;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cseq::-webkit-scrollbar{display:none}
+.cvar{display:none;white-space:nowrap}
+.cvar.on{display:inline}
+.cread-simple{display:none}
+.simpleread .cread-auth{display:none}
+.simpleread .cread-simple{display:inline}
+/* The simple reading drops the connecting words, so the line has room to spare.
+   Spend it on the glyphs — they are the whole content in this mode. */
+.simpleread .cgx{margin:0 .45em}
+.simpleread .cseq{line-height:2.9}
+.simpleread .cgx .cg-solo{width:1.75em;height:1.75em}
+.simpleread .cgx{width:1.75em;height:1.75em}
+.simpleread .cgx-b{width:2.25em;height:2.25em}
+.simpleread .cgx-b .cg-pack{width:2.25em;height:2.25em}
+.simpleread .cgx-d{width:2.15em;height:2.15em}
+.simpleread .cgx-d .cg-arrow{width:1.75em;height:1.75em}
+.simpleread .cgx-d .cg-badge{width:1.05em;height:1.05em}
+.simpleread .cgx-spin{width:2.6em;height:2.6em}
+/* At rest everything reads at full strength; dimming is a state of the
+   animation, never how the page sits still. */
+.cwrap:not(.playing) .cg,.cwrap:not(.playing) .chev{opacity:1}
+/* THE ALTERNATIVE IS A FOOTNOTE. Dim, lowercase, no accent, detached from the
+   sequence so it never competes with the input the reader came for. */
+.cacts{flex:0 0 auto;margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.calt,.cmode{padding:1px 0;border:0;background:none;cursor:pointer;color:#5c6474;
+  font:400 11.5px/1.25 system-ui,-apple-system,sans-serif;letter-spacing:.02em;
+  border-bottom:1px dotted #3a4354;white-space:nowrap}
+.calt:hover,.cmode:hover{color:#9aa0ae;border-bottom-color:#5c6474}
+.calt[aria-pressed="true"],.cmode[aria-pressed="true"]{color:#9aa0ae}
+.calt:focus-visible,.cmode:focus-visible{outline:2px solid #2DE2C5;outline-offset:3px;border-radius:2px}
+/* ── animation states ─────────────────────────────────────────────────────
+   A HOLD stays lit. A PRESS lights and goes dark again — Giant Fake Shot
+   presses and RELEASES Square before Cross. */
+.cgx.lit .cg{opacity:1;filter:drop-shadow(0 0 8px rgba(45,226,197,.8))}
+.cgx.tap{animation:cgtap .5s ease}
+@keyframes cgtap{0%{transform:scale(1)}40%{transform:scale(.76)}100%{transform:scale(1)}}
+.cgx.nu-up{animation:nuup .8s ease}
+.cgx.nu-down{animation:nudown .8s ease}
+.cgx.nu-left{animation:nuleft .8s ease}
+.cgx.nu-right{animation:nuright .8s ease}
+@keyframes nuup{0%,100%{transform:translateY(0)}45%{transform:translateY(-11px)}}
+@keyframes nudown{0%,100%{transform:translateY(0)}45%{transform:translateY(11px)}}
+@keyframes nuleft{0%,100%{transform:translateX(0)}45%{transform:translateX(-11px)}}
+@keyframes nuright{0%,100%{transform:translateX(0)}45%{transform:translateX(11px)}}
+/* ── the list ─────────────────────────────────────────────────────────────
+   The game shows moves as a list and most readers are on a phone, so the LIST
+   is the player: a row animates its own sequence where it already sits. */
+.cmoves{display:flex;flex-direction:column;gap:8px;margin:0 0 1.6em}
+.cm{position:relative;display:flex;flex-direction:column;gap:3px;padding:11px 14px;
+  border:1px solid #23364c;border-radius:11px;background:#0a1826;
+  cursor:pointer;overflow:hidden;transition:border-color .2s ease}
+.cm.active{border-color:rgba(45,226,197,.3)}
+/* Focus reads as a line filling along the TOP edge only. A ring round the whole
+   block drew more attention than the content inside it. */
+.cm-bar{position:absolute;left:0;top:0;height:2px;width:0;background:#2DE2C5;opacity:0}
+.cm.active .cm-bar{opacity:1}
+.cm-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cm-name{font:700 15.5px/1.4 system-ui,-apple-system,sans-serif;color:#2DE2C5;text-decoration:none;
+  transition:text-shadow .2s ease,color .2s ease}
+a.cm-name:hover{text-decoration:underline}
+/* The name lights first, so the reader knows which row has started before any
+   button moves. */
+.cm-name.lit{color:#7dfbe4;text-shadow:0 0 12px rgba(45,226,197,.55)}
+.cm-meta{flex:0 0 auto;font:600 11.5px/1 system-ui,-apple-system,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:#5c6474}
+.cm-cap{min-height:1.25em;font:600 12px/1.25 system-ui,-apple-system,sans-serif;color:#2DE2C5;
+  opacity:0;transition:opacity .18s ease}
+.cm.playing .cm-cap{opacity:1}
+.cspeed{margin:0 0 14px;font:600 12px/1.4 system-ui,-apple-system,sans-serif;color:#5c6474}
+/* ── the switcher ─────────────────────────────────────────────────────── */
+.padsw{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;
+  display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;
+  border:1px solid #33506f;background:rgba(8,16,26,.97);
+  box-shadow:0 10px 30px rgba(0,0,0,.62);font:600 14px/1 system-ui,-apple-system,sans-serif}
+.padsw-seg{display:flex;gap:4px}
+.padsw-seg button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
+  border:1px solid transparent;background:transparent;color:#9aa0ae;cursor:pointer;font:inherit}
+.padsw-seg button:hover{color:#e9edf6}
+.padsw-seg button[aria-pressed="true"]{background:rgba(45,226,197,.15);
+  border-color:rgba(45,226,197,.65);color:#2DE2C5}
+.padsw-i{width:22px;height:22px;display:block;opacity:.55}
+.padsw-seg button[aria-pressed="true"] .padsw-i{opacity:1}
+.padsw-m{flex:0 0 auto;padding:9px 13px;border-radius:999px;border:1px solid #33506f;
+  background:transparent;color:#9aa0ae;cursor:pointer;font:600 13px/1 system-ui,-apple-system,sans-serif}
+.padsw-m[aria-pressed="true"]{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.13);color:#2DE2C5}
+.padsw-c{width:30px;height:30px;flex:0 0 auto;margin-right:4px;border-radius:999px;cursor:pointer;
+  border:1px solid #33506f;background:conic-gradient(#e2657a,#e0b154,#5fc97a,#56a0f0,#c98ad8,#e2657a)}
+.padsw-c[aria-pressed="false"]{background:#cfd4de}
+.padsw-c:focus-visible,.padsw-seg button:focus-visible,.padsw-m:focus-visible{outline:2px solid #2DE2C5;outline-offset:2px}
+@media(max-width:560px){
+  .padsw{bottom:10px;font-size:13.5px}
+  .padsw-seg button{padding:10px 13px;gap:6px}
+  .cm-name{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cg,.chev{opacity:1!important}
+  .cgx,.cgx-spin.go .cgx-dot{animation:none!important}
+}
 </style>
 <!--kg-card-end: html-->
 <p>EA FC 27's control scheme is mostly FC 26's, but not entirely. This is what
@@ -41,11 +179,11 @@ FC 26.</p>
 
 <h2>New in attack</h2>
 <!--kg-card-begin: html-->
-<div class="pchq-sk"><table><thead><tr><th>Action</th><th>PlayStation</th><th>Xbox</th></tr></thead><tbody>
-<tr><td>Directional Fake Shot to Stop</td><td>Hold <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-r1.svg" alt="R1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-square.svg" alt="Square button" width="28" height="28" loading="lazy" decoding="async"> or <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-circle.svg" alt="Circle button" width="28" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-cross.svg" alt="Cross button" width="28" height="28" loading="lazy" decoding="async"> + L direction</td><td>Hold <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-rb.svg" alt="RB" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/xb-x.svg" alt="X button" width="28" height="28" loading="lazy" decoding="async"> or <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/xb-b.svg" alt="B button" width="28" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/xb-a.svg" alt="A button" width="28" height="28" loading="lazy" decoding="async"> + L direction</td></tr>
-<tr><td>Trigger Curved Runs</td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-l1.svg" alt="L1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-r1.svg" alt="R1" width="42" height="28" loading="lazy" decoding="async"> + direction</td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-lb.svg" alt="LB" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-rb.svg" alt="RB" width="42" height="28" loading="lazy" decoding="async"> + direction</td></tr>
-<tr><td>Pass and Follow</td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-l1.svg" alt="L1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-r1.svg" alt="R1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-cross.svg" alt="Cross button" width="28" height="28" loading="lazy" decoding="async"></td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-lb.svg" alt="LB" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-rb.svg" alt="RB" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/xb-a.svg" alt="A button" width="28" height="28" loading="lazy" decoding="async"></td></tr>
-</tbody></table></div>
+<div class="cmoves">
+<div class="cm"><span class="cm-top"><span class="cm-name">Directional Fake Shot to Stop</span></span><span class="cwrap" data-v="2"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R1&quot;},{&quot;t&quot;:1300,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Square&quot;},{&quot;t&quot;:2500,&quot;i&quot;:2,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Cross&quot;},{&quot;t&quot;:3700,&quot;i&quot;:3,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Left Stick, any direction&quot;}],&quot;total&quot;:5500,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth">Hold <span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="3"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span> Direction</span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span><span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span><span class="cgx" data-i="3"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span></span><span class="cvar" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R1&quot;},{&quot;t&quot;:1300,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Circle&quot;},{&quot;t&quot;:2500,&quot;i&quot;:2,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Cross&quot;},{&quot;t&quot;:3700,&quot;i&quot;:3,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Left Stick, any direction&quot;}],&quot;total&quot;:5500,&quot;press&quot;:520}" data-variant="alternate_button"><span class="cread cread-auth">Hold <span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="3"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span> Direction</span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span><span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span><span class="cgx" data-i="3"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="calt" type="button" aria-pressed="false" title="1 other way to perform this move">alternative</button><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">Trigger Curved Runs</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press L1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press R1&quot;},{&quot;t&quot;:2400,&quot;i&quot;:2,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Left Stick, any direction&quot;}],&quot;total&quot;:4200,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="2"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span> Direction</span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="2"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">Pass and Follow</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press L1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press R1&quot;},{&quot;t&quot;:2400,&quot;i&quot;:2,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Cross&quot;}],&quot;total&quot;:4200,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="2"><img class="cg cg-solo" data-t="x" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/x.svg" alt="Cross" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+</div>
 <!--kg-card-end: html-->
 
 <h2>Renamed, not rebound</h2>
@@ -55,8 +193,8 @@ something and cannot find it:</p>
 <div class="pchq-sk"><table><thead><tr><th>FC 26</th><th>FC 27</th><th></th></tr></thead><tbody>
 <tr><td>Fake Shot to Shot</td><td><strong>Fake Shot to Stop</strong></td><td>the FC 26 name was wrong all along</td></tr>
 <tr><td>Get In The Box</td><td><strong>Get In Box</strong></td><td>tactics</td></tr>
-<tr><td>Precision Pass</td><td><strong>Precision Ground Pass</strong></td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-r1.svg" alt="R1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-triangle.svg" alt="Triangle button" width="28" height="28" loading="lazy" decoding="async"></td></tr>
-<tr><td>Flair Lob / Cross</td><td><strong>Flair Lob / Cross / Outside The Foot</strong></td><td><img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-l2.svg" alt="L2" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-square.svg" alt="Square button" width="28" height="28" loading="lazy" decoding="async"></td></tr>
+<tr><td>Precision Pass</td><td><strong>Precision Ground Pass</strong></td><td><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press R1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Triangle&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="t" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/t.svg" alt="Triangle" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="t" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/t.svg" alt="Triangle" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span></td></tr>
+<tr><td>Flair Lob / Cross</td><td><strong>Flair Lob / Cross / Outside The Foot</strong></td><td><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press L2&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Square&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l2.svg" alt="L2" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l2.svg" alt="L2" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span></td></tr>
 <tr><td>Call for Far Lobbed Through Pass</td><td><strong>Call For Driven Lobbed Through Pass</strong></td><td>Be A Pro</td></tr>
 </tbody></table></div>
 <!--kg-card-end: html-->
@@ -82,9 +220,9 @@ The one-star skill-move version stays on R3.</p>
 <!--kg-card-end: html-->
 
 <h2>Three controls that were never missing — just undocumented</h2>
-<p>The Be A Pro pages carry <strong>Call For Cross / Lob</strong> (<img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-square.svg" alt="Square button" width="28" height="28" loading="lazy" decoding="async">),
-<strong>Call for Ground Cross</strong> (<img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-r1.svg" alt="R1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-square.svg" alt="Square button" width="28" height="28" loading="lazy" decoding="async">) and <strong>Call for High
-Cross</strong> (<img class="cg cg-w" src="https://proclubshq.com/blog/content/images/2026/08/controls/btn-l1.svg" alt="L1" width="42" height="28" loading="lazy" decoding="async"> + <img class="cg" src="https://proclubshq.com/blog/content/images/2026/08/controls/ps-square.svg" alt="Square button" width="28" height="28" loading="lazy" decoding="async">). These are not new. They are absent from the skill and
+<p>The Be A Pro pages carry <strong>Call For Cross / Lob</strong> (<span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Square&quot;}],&quot;total&quot;:1800,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span>),
+<strong>Call for Ground Cross</strong> (<span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press R1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Square&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span>) and <strong>Call for High
+Cross</strong> (<span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press L1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Square&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="s" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/s.svg" alt="Square" loading="lazy" decoding="async"></span></span></span></span><span class="cacts"><button class="cmode" type="button" aria-pressed="false" title="Game wording, or just the buttons in order">simple</button></span></span>). These are not new. They are absent from the skill and
 control lists most sites publish, and have been for at least two editions —
 which is a good illustration of why we stopped using those lists.</p>
 
@@ -129,4 +267,162 @@ day, 18 September.</p>
 <a class="affrow" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B016P09VFS?tag=proclubshq-fc27-20" aria-label="KontrolFreek thumbstick grips at Amazon"><span class="b">GRIPS</span><span class="n">KontrolFreek thumbsticks</span><span class="g">→</span></a>
 </div>
 </div>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="padsw" hidden>
+<div class="padsw-seg" data-k="platform" role="group" aria-label="Controller">
+  <button type="button" data-v="ps">
+    <img class="padsw-i" data-p="ps" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/h.svg" alt=""><span>PlayStation</span>
+  </button>
+  <button type="button" data-v="xbox">
+    <img class="padsw-i" data-p="xbox" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/xbox/h.svg" alt=""><span>Xbox</span>
+  </button>
+</div>
+<button class="padsw-c" type="button" data-k="set"
+        aria-label="Switch between colour and white buttons" title="Colour or white buttons"></button>
+</div>
+<script>
+(function(){
+  var BASE="https://proclubshq.com/blog/content/images/2026/08/controls",K='pchq-pad',
+      st={platform:"ps",set:"colour",read:'auth'};
+  try{Object.assign(st,JSON.parse(localStorage.getItem(K)||'{}'));}catch(e){}
+  var NAME={"l2":["L2","LT"],"r2":["R2","RT"],"l1":["L1","LB"],"r1":["R1","RB"],"s":["Square","X"],"o":["Circle","B"],"x":["Cross","A"],"t":["Triangle","Y"],"l":["Left Stick","Left Stick"],"l-badge":["Left Stick","Left Stick"],"r":["Right Stick","Right Stick"],"r-badge":["Right Stick","Right Stick"],"l3":["L3","Left Stick Click"],"r3":["R3","Right Stick Click"],"st":["Options","Menu"],"tp":["Touchpad","View"],"pd":["D-Pad","D-Pad"]},
+      PNG=["racw","rbl","rbltr","rbr","rbrtl","rcw","rlbr","rlt","rrbl","rrt","rtl","rtr"];
+  function ext(t){ return PNG.indexOf(t)>=0 ? 'png' : 'svg'; }
+  function paint(){
+    document.querySelectorAll('img.cg').forEach(function(g){
+      var t=g.getAttribute('data-t');
+      g.src=BASE+'/'+st.set+'/'+st.platform+'/'+t+'.'+ext(t);
+      var n=NAME[t]; if(n) g.alt=n[st.platform==='xbox'?1:0];
+    });
+    var sw=document.querySelector('.padsw'); if(!sw) return;
+    sw.hidden=false;
+    sw.querySelectorAll('.padsw-i').forEach(function(i){
+      i.src=BASE+'/'+st.set+'/'+i.getAttribute('data-p')+'/h.svg';});
+    sw.querySelectorAll('.padsw-seg button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-v')===st.platform));});
+    sw.querySelector('.padsw-c').setAttribute('aria-pressed', String(st.set==='colour'));
+    document.documentElement.classList.toggle('simpleread', st.read==='simple');
+    document.querySelectorAll('.cmode').forEach(function(b){
+      b.setAttribute('aria-pressed', String(st.read==='simple'));
+      b.textContent = st.read==='simple' ? 'game wording' : 'simple'; });
+  }
+  function save(){try{localStorage.setItem(K,JSON.stringify(st));}catch(e){}}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.padsw-seg button');
+    if(b){st.platform=b.getAttribute('data-v'); save(); paint(); return;}
+    if(e.target.closest('.padsw-c')){st.set=st.set==='colour'?'mono':'colour'; save(); paint(); return;}
+    if(e.target.closest('.cmode')){st.read=st.read==='simple'?'auth':'simple'; save(); paint(); return;}
+    var cmRow=e.target.closest('.cm');
+    if(cmRow&&!e.target.closest('.calt')&&!e.target.closest('.cmode')&&!e.target.closest('a')){
+      var w=cmRow.querySelector('.cwrap'); if(!w) return;
+      pinned = (pinned===w) ? null : w;   // tap again to release it back to the queue
+      run(w); return; }
+    var a=e.target.closest('.calt');
+    if(a){var q=a.closest('.cwrap').querySelector('.cseq'),vs=q.querySelectorAll('.cvar'),c=0;
+      vs.forEach(function(v,i){if(v.classList.contains('on'))c=i;});
+      vs[c].classList.remove('on'); var n=(c+1)%vs.length; vs[n].classList.add('on');
+      a.setAttribute('aria-pressed', String(n!==0));}
+  });
+
+  // ── playback ──────────────────────────────────────────────────────────
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function bar(row, ms, on){
+    var b=row&&row.querySelector('.cm-bar'); if(!b) return;
+    b.style.transition='none'; b.style.width='0';
+    if(!on) return;
+    void b.getBoundingClientRect();          // reflow, so the fill starts at zero
+    b.style.transition='width '+ms+'ms linear'; b.style.width='100%';
+  }
+  function play(wrap, done){
+    if(!wrap||wrap.dataset.busy) return;
+    var v=wrap.querySelector('.cvar.on'); if(!v) return;
+    var tl; try{ tl=JSON.parse(v.getAttribute('data-tl')); }catch(err){ return; }
+    var LEADIN=520;                        // the name gets the first beat to itself
+    var row=wrap.closest('.cm'), cap=row&&row.querySelector('.cm-cap'),
+        nm=row&&row.querySelector('.cm-name'), gs=v.querySelectorAll('.cgx');
+    // Both readings carry the same indices, so a step lights whichever is on
+    // screen without the runtime needing to know which that is.
+    function units(i){ return v.querySelectorAll('.cgx[data-i="'+i+'"]'); }
+    function reset(){ gs.forEach(function(g){
+        g.className=g.className.replace(/s*(lit|tap|go|nu-w+)/g,'');});
+      wrap.classList.remove('playing'); if(row) row.classList.remove('playing');
+      if(cap) cap.textContent=''; wrap.dataset.busy='';
+      if(nm) nm.classList.remove('lit');
+      if(row){ row.classList.remove('active'); } bar(row, 0, false); }
+    if(RM){ if(cap){ cap.textContent=tl.steps.map(function(s){return s.label;}).join(' → ');
+      if(row) row.classList.add('playing'); } return; }
+    var timers=[];
+    wrap._stop=function(){ timers.forEach(clearTimeout); timers.length=0; reset(); };
+    wrap.dataset.busy='1'; reset(); wrap.dataset.busy='1';
+    wrap.classList.add('playing'); if(row){ row.classList.add('playing'); row.classList.add('active'); }
+    bar(row, tl.total+LEADIN, true);
+    if(nm){ nm.classList.add('lit');
+      if(cap) cap.textContent=nm.textContent; }
+    tl.steps.forEach(function(s){
+      timers.push(setTimeout(function(){
+        var us=units(s.i); if(!us.length) return;
+        if(cap) cap.textContent=s.label;
+        us.forEach(function(g){
+          if(s.type==='hold'){ g.classList.add('lit'); }
+          else if(s.type==='press'){ g.classList.add('lit','tap');
+            setTimeout(function(){ g.classList.remove('lit','tap'); }, tl.press); }
+          else if(s.type==='flick'){ g.classList.add('lit','nu-'+s.dir);
+            setTimeout(function(){ g.classList.remove('lit','nu-'+s.dir); }, 800); }
+          else if(s.type==='rotate'){ g.classList.add('lit','go');
+            setTimeout(function(){ g.classList.remove('go'); }, 2000); }
+        });
+      }, s.t+LEADIN));
+    });
+    timers.push(setTimeout(function(){ if(nm) nm.classList.remove('lit'); }, LEADIN+200));
+    timers.push(setTimeout(function(){ reset(); if(done) done(); }, tl.total+LEADIN));
+  }
+  // ONE AT A TIME, TOP TO BOTTOM. Thirteen rows animating at once is noise, and
+  // a reader cannot follow any of them. The list plays like a queue: whatever is
+  // on screen runs in document order, each waiting for the one before it to
+  // finish. Tapping a row takes over the queue from there.
+  var seqOn=false, current=null, pinned=null, visible=[];
+  function stop(w){ if(w&&w._stop){ w._stop(); w.dataset.busy=''; } }
+  var all=[].slice.call(document.querySelectorAll('.cwrap'));
+  function inView(){ return all.filter(function(w){ return visible.indexOf(w)>=0; }); }
+  function advance(from){
+    var list=inView(); if(!list.length){ seqOn=false; current=null; return; }
+    var i=from ? list.indexOf(from) : -1;
+    var nxt=list[i+1>=list.length ? 0 : i+1];
+    if(!nxt){ seqOn=false; current=null; return; }
+    run(nxt);
+  }
+  function run(w){
+    if(current&&current!==w) stop(current);
+    current=w; seqOn=true;
+    play(w, function(){
+      if(current!==w) return;
+      setTimeout(function(){
+        // A tapped row keeps repeating. The reader asked for that one; moving on
+        // would take it away from them mid-thought.
+        if(pinned===w && visible.indexOf(w)>=0) run(w);
+        else advance(w);
+      }, 420);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        var k=visible.indexOf(en.target);
+        if(en.isIntersecting){ if(k<0) visible.push(en.target); }
+        else if(k>=0) visible.splice(k,1);
+      });
+      visible.sort(function(a,b){ return all.indexOf(a)-all.indexOf(b); });
+      // Whatever is playing off-screen is teaching nobody: stop it, drop any pin
+      // on it, and give the time to something the reader can actually see.
+      if(current && visible.indexOf(current)<0){
+        stop(current); if(pinned===current) pinned=null;
+        current=null; seqOn=false; advance(null);
+      } else if(!seqOn) advance(null);
+    },{threshold:.55});
+    all.forEach(function(w){io.observe(w);});
+  }
+  paint();
+})();
+</script>
 <!--kg-card-end: html-->

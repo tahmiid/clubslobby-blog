@@ -13,7 +13,12 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
-import { renderInput, CONTROL_CSS } from './controls.mjs';
+import { CONTROLS, renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
+
+// The inputs come from the controls dataset (data/fc27-controls.json, exported
+// from controls_actions/controls_inputs). data/fc27-skills.json keeps the
+// editorial half — the prose, the slug, what the move is for.
+const CTRL = Object.fromEntries(CONTROLS.moves.map((m) => [m.name, m]));
 
 const DIR = path.join(import.meta.dirname, '..');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
@@ -25,11 +30,11 @@ const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 
 // The input is the reason someone is on the page, so it gets its own block
 // rather than sitting inside a paragraph.
+// One platform at a time (owner, 2026-08-20): a reader plays on one pad and
+// the other column is noise. The floating switcher changes it anywhere on the
+// page and remembers the choice.
 const inputCard = (m) => kg(`<div class="pchq-input">
-  <div class="pchq-input-label">PlayStation</div>
-  <div class="pchq-input-combo">${renderInput(m.ps, 'ps')}</div>
-  <div class="pchq-input-label">Xbox</div>
-  <div class="pchq-input-combo">${renderInput(m.ps, 'xbox')}</div>
+  <div class="pchq-input-combo">${renderInputs(CTRL[m.name])}</div>
   <div class="pchq-input-meta">${stars(m.star)} &nbsp;·&nbsp; ${m.star}-star move${
     m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}</div>
 </div>`);
@@ -40,30 +45,13 @@ const inputCard = (m) => kg(`<div class="pchq-input">
 
 const STYLE = kg(`<style>
 .pchq-input{border:1px solid #23364c;border-radius:12px;padding:16px 18px;margin:22px 0;
-  background:#0a1826;color:#e9edf6;display:grid;grid-template-columns:auto 1fr;
-  gap:8px 16px;align-items:center;font-size:15px}
+  background:#0a1826;color:#e9edf6;font-size:17px}
 .pchq-input-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:#2DE2C5;font-weight:700}
-.pchq-input-combo{font-weight:650;letter-spacing:.01em}
-.pchq-input-meta{grid-column:1/-1;border-top:1px solid #23364c;padding-top:10px;
+.pchq-input-combo{font-weight:650;overflow-x:auto;overflow-y:hidden;padding-bottom:2px}
+.pchq-input-meta{border-top:1px solid #23364c;padding-top:10px;
   margin-top:4px;font-size:13px;color:#9aa0ae}
 .pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
-/* The hub's move tables were bare <table>s in the article body, so they took
-   the Ghost theme's own thead background — a pale band on a dark page, which
-   reads as a rendering bug. These are the same th/td guards common.mjs applies
-   inside widgets (see its comment: the dark code injection forces cell colour
-   with !important, and equal-specificity !important later in the document is
-   what wins). Scoped to .pchq-sk so nothing else on the site shifts. */
-.pchq-sk{margin:0 0 1.6em;overflow-x:auto}
-.pchq-sk table{width:100%;border-collapse:collapse;background:#0a1826!important;
-  border:1px solid #23364c;border-radius:12px;overflow:hidden;font-size:15px}
-.pchq-sk thead tr{background:#0e2033!important}
-.pchq-sk th{background:#0e2033!important;color:#9aa0ae!important;text-align:left;
-  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:10px 14px}
-.pchq-sk td{background:transparent!important;color:#e9edf6!important;padding:11px 14px;
-  border-top:1px solid #23364c;vertical-align:middle}
-.pchq-sk td a{color:#2DE2C5!important;text-decoration:none}
-.pchq-sk td a:hover{text-decoration:underline}
 ${CONTROL_CSS}
 </style>`);
 
@@ -107,7 +95,8 @@ ${appCta({
   : ''}The full list, with every input, is in
 <a href="${HUB}">every new skill move in FC 27</a>.</p>
 
-${sourceNote}`;
+${sourceNote}
+${kg(padSwitcher())}`;
   writeFileSync(path.join(DIR, 'out', `a${50 + i}.html`), html);
   return { file: `a${50 + i}.html`, slug: `fc27-how-to-${m.slug}`, move: m };
 }
@@ -117,11 +106,9 @@ function renderHub() {
     .filter(([, list]) => list.length);
 
   const table = byStar.map(([s, list]) => `<h3>${s} star</h3>
-${kg(`<div class="pchq-sk"><table>
-<thead><tr><th>Move</th><th>PlayStation</th><th>Xbox</th></tr></thead><tbody>
-${list.map((m) => `<tr><td><a href="/blog/fc27-how-to-${m.slug}/"><strong>${esc(m.name)}</strong></a></td>
-<td>${renderInput(m.ps, 'ps')}</td><td>${renderInput(m.ps, 'xbox')}</td></tr>`).join('\n')}
-</tbody></table></div>`)}`).join('\n\n');
+${kg(moveList(list.map((m) => ({
+  ...CTRL[m.name], name: m.name, href: `/blog/fc27-how-to-${m.slug}/`,
+}))))}`).join('\n\n');
 
   const html = `${STYLE}
 <p>EA FC 27 adds <strong>${MOVES.length} new skill moves</strong>. Every input
@@ -158,7 +145,8 @@ moves people have been performing incorrectly for a year.</p>
 
 ${sourceNote}${affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
-  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
+  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
+${kg(padSwitcher())}`;
   writeFileSync(path.join(DIR, 'out', 'a49.html'), html);
 }
 
