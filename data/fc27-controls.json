@@ -272,13 +272,13 @@
       "star": 2,
       "page": "2 Star Moves",
       "conditions": [],
-      "keyCombo": "Hold *L2* + *S* or *O* then Hold *X* or *R* *AB*",
-      "guidedCombo": "Hold *L2* and press *S* or *O*, then hold *X* or *R*",
+      "keyCombo": "Hold *L2* + *S* or *O* then *X* or *R* Hold *AB*",
+      "guidedCombo": "Hold *L2* and press *S* or *O*, then press *X* \u2014 or hold *R* down instead",
       "inputs": [
         {
           "index": 0,
           "variantType": "primary",
-          "keyCombo": "Hold *L2* + *S* then Hold *X* *AB*",
+          "keyCombo": "Hold *L2* + *S* then *X*",
           "steps": [
             [
               {
@@ -299,10 +299,8 @@
             [
               {
                 "control": "FACE_DOWN",
-                "verb": "hold",
-                "path": [
-                  "down"
-                ],
+                "verb": "press",
+                "path": [],
                 "repeat": 1,
                 "sustained": false
               }
@@ -346,7 +344,7 @@
         {
           "index": 2,
           "variantType": "alternate_button",
-          "keyCombo": "Hold *L2* + *O* then Hold *X* *AB*",
+          "keyCombo": "Hold *L2* + *O* then *X*",
           "steps": [
             [
               {
@@ -367,10 +365,8 @@
             [
               {
                 "control": "FACE_DOWN",
-                "verb": "hold",
-                "path": [
-                  "down"
-                ],
+                "verb": "press",
+                "path": [],
                 "repeat": 1,
                 "sustained": false
               }

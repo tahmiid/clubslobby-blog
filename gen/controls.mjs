@@ -152,20 +152,41 @@ const buildInput = (input, platform, set) => {
         t += GEST * 2;
         return;
       }
+      // The D-PAD has a combined glyph per direction (`pu`/`pd`/`pl`/`pr`), and
+      // the dataset names them that way — `*PU*`, not `*PD*` plus an arrow. Its
+      // path therefore replaces the glyph rather than adding one beside it.
+      if (ctl === 'DPAD' && path.length) {
+        const DP = { up: 'pu', down: 'pd', left: 'pl', right: 'pr' };
+        path.forEach((dir) => {
+          const di = n++;
+          const dg = `<span class="cgx" data-i="${di}">`
+            + glyph(DP[dir] || 'pd', platform, set, 'cg-solo', `D-pad ${dir}`) + `</span>`;
+          auth += dg; simple += dg;
+          steps.push({ t, i: di, type: verb === 'hold' ? 'hold' : 'press',
+                       label: `${verb === 'hold' ? 'Hold' : 'Press'} D-pad ${dir}` });
+        });
+        return;
+      }
       const idx = n++;
       const u = `<span class="cgx" data-i="${idx}">`
         + glyph(tok, platform, set, 'cg-solo', lbl) + `</span>`;
       if (verb === 'hold') auth += esc('Hold ');
       auth += u; simple += u;
       if (verb === 'hold') {
-        steps.push({ t: 0, i: idx, type: 'hold', label: `Hold ${lbl}` });
-        if (t === 0) t = LEAD;
+        // A hold in the FIRST phase is engaged before anything else happens and
+        // stays down — that is the lead-in. A hold in a later phase is part of
+        // the sequence and starts when its phase does. Hardcoding 0 for both lit
+        // "Hold Cross" at the same instant as "Hold L2" on Drag To Drag, which
+        // reads as press-them-together and is a different move.
+        const first = pi === 0;
+        steps.push({ t: first ? 0 : t, i: idx, type: 'hold', label: `Hold ${lbl}` });
+        if (first && t === 0) t = LEAD; else t += FAST;
       } else {
         steps.push({ t, i: idx, type: 'press', label: `Press ${lbl}` });
         t += FAST;
       }
-      // A button can carry a direction of its own — the dataset writes
-      // `Hold *X* *AB*`, and dropping the arrow lost part of four combos.
+      // Any other button carrying a direction of its own — the dataset writes
+      // e.g. `Hold *L1* *AR* *AL*` for a celebration.
       path.forEach((dir) => {
         const di = n++;
         const dg = `<span class="cgx" data-i="${di}">`
