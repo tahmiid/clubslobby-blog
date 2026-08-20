@@ -33,7 +33,6 @@ const MOVES = DATA.moves;
 const BUILDER = `${SITE}/`;
 const HUB = '/blog/fc27-new-skill-moves/';
 
-const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 
 // The input is the reason someone is on the page, so it gets its own block
 // rather than sitting inside a paragraph.
@@ -42,7 +41,7 @@ const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 // page and remembers the choice.
 const inputCard = (m) => kg(`<div class="pchq-input">
   <div class="pchq-input-combo">${renderInputs(CTRL(m.name))}</div>
-  <div class="pchq-input-meta">${stars(m.star)} &nbsp;·&nbsp; ${m.star}-star move${
+  <div class="pchq-input-meta">${m.star}-star move${
     m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}</div>
 </div>`);
 

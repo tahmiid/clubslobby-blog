@@ -31,10 +31,8 @@ const SCREENS = [
   ['Celebrations', 'check-celebrations.html'],
 ];
 
-const stars = (n) => n ? '★'.repeat(n) + '☆'.repeat(5 - n) : '';
-
 const rowHtml = (m, i) => {
-  const meta = [stars(m.star), (m.conditions || []).join(' · ')].filter(Boolean).join(' · ');
+  const meta = (m.conditions || []).join(' · ');
   return `<div class="cm gk-row">
   <span class="gk-inputs"><span class="gk-line">${renderMove(m)}</span><span class="cm-cap" aria-live="polite"></span></span>
   <span class="gk-action"><span class="gk-name">${esc(m.name)}</span>
@@ -63,18 +61,23 @@ body{margin:0;padding:0 0 110px;background:#050d16;color:#e9edf6;
 .gk-page{display:none;max-width:860px;margin:0 auto;padding:10px 16px}
 .gk-page.on{display:block}
 .gk-count{font:600 12px/1.4 -apple-system,system-ui,sans-serif;color:#5c6474;margin:12px 2px}
-.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(9em,16em);
-  gap:6px 18px;align-items:center;padding:12px 4px;border-bottom:1px solid #14233a}
-.gk-inputs{display:flex;flex-direction:column;gap:8px;min-width:0}
-.gk-line{display:flex;align-items:center;gap:10px;min-width:0;overflow-x:auto}
-.gk-action{text-align:right}
-.gk-name{display:block;font-weight:700;font-size:15px}
-.gk-meta{display:block;font-size:11.5px;color:#9aa0ae;margin-top:2px}
-.gk-idx{display:block;font:600 10.5px/1 ui-monospace,monospace;color:#3d4a61;margin-top:5px}
+.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:2px 14px;align-items:center;padding:7px 12px;margin:0 0 8px;
+  border:1px solid #14233a;border-radius:10px;background:#0a1826;font-size:15px}
+.gk-inputs{display:flex;flex-direction:column;gap:4px;min-width:0}
+.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto}
+.gk-action{text-align:right;max-width:14em}
+.gk-name{display:block;font-weight:700;font-size:14px;line-height:1.25}
+.gk-meta{display:inline;font-size:11px;color:#9aa0ae}
+.gk-idx{display:inline;font:600 10px/1 ui-monospace,monospace;color:#3d4a61;margin-left:8px}
+/* The caption overlays the card's corner instead of reserving a blank line —
+   on a 190-row list the empty reservation was most of the "too much empty
+   space" (owner). */
+.cm.gk-row .cm-cap{position:absolute;right:12px;bottom:5px;min-height:0;
+  font-size:10.5px;pointer-events:none}
 @media(max-width:620px){
-  .cm.gk-row{grid-template-columns:1fr;gap:4px}
-  .gk-action{text-align:left;order:-1;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-  .gk-idx,.gk-meta{margin:0}
+  .cm.gk-row{grid-template-columns:1fr;gap:2px;padding:6px 10px}
+  .gk-action{text-align:left;order:-1;max-width:none}
 }
 </style>`;
 

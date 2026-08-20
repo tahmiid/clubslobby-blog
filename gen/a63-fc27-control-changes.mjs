@@ -215,7 +215,7 @@ ${list([
   pick(added, 'Jump Dance'),
 ])}
 
-<h2>${numWord(differs.length)} input${differs.length === 1 ? '' : 's'} actually changed</h2>
+${differs.length ? `<h2>${numWord(differs.length)} input${differs.length === 1 ? '' : 's'} actually changed</h2>
 <p>Carried-over moves whose input is different in FC 27. If one of these is in
 your muscle memory, this is the retraining list:</p>
 ${kg(`<div class="pchq-sk"><table><thead><tr><th>Move</th><th>FC 26</th><th>FC 27</th></tr></thead><tbody>
@@ -225,11 +225,12 @@ ${CHANGED_ROWS.map(([o, n]) => {
                     : `<strong>${esc(n.name)}</strong>`;
   return row(`${name}<br><em>${esc(n.page)}</em>`, `<em>${esc(asWords(o.keyCombo))}</em>`, renderMove(n));
 }).join('\n')}
-</tbody></table></div>`)}
-
+</tbody></table></div>`)}` : ''}
 <h2>What did not change</h2>
-<p><strong>${shared.length - differs.length} of the menu's
-${CONTROLS.moves.length} entries carry the same input as FC 26</strong>, and
+<p><strong>Not a single carried-over input changed.</strong> Every control and
+every skill move you could perform in FC 26 is performed identically in FC 27 —
+<strong>${shared.length - differs.length} of the menu's
+${CONTROLS.moves.length} entries carry over exactly</strong>, and
 ${untouchedPages.length} of the 24 pages are untouched top to bottom:
 ${untouchedPages.map((p) => esc(p)).join(' · ')}. (Yes, the basic free-kick page
 is in that list — the new set-piece tactics all live on its
@@ -255,11 +256,12 @@ ${[...new Map(renamesSorted.map(([o, n]) => [`${o.name}\u0000${n.name}`, [o, n]]
   .map(([o, n]) => `${esc(o.name)} is now <strong>${esc(n.name)}</strong>`).join(', ')}.
 And the sharp-eyed will notice the 3-star page now spells
 <strong>Stutter Feint</strong> the way the dictionary does.</p>
-<p>The retraining list is short: ${CHANGED_ROWS.map(([, n]) =>
+<p>${CHANGED_ROWS.length ? `The retraining list is short: ${CHANGED_ROWS.map(([, n]) =>
   `<strong>${esc(n.name)}</strong>`).join(', ')} are performed differently in
 FC 27 than in FC 26 — the table above has the new inputs, animated. Everything
-else in your hands carries straight over: movement, shooting, passing,
-defending, goalkeeping and penalties are identical, page for page.</p>
+else in your hands` : `There is no retraining list: no carried-over input
+changed. Everything in your hands`} carries straight over: movement, shooting,
+passing, defending, goalkeeping and penalties are identical, page for page.</p>
 
 ${appCta({
   href: BUILDER,

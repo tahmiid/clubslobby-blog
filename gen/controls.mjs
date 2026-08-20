@@ -355,13 +355,13 @@ export const renderMove = (move, platform = DEFAULT_PLATFORM, set = DEFAULT_SET)
       + `<span class="cread cread-auth">${auth}</span>`
       + `<span class="cread cread-simple">${simple}</span></span>`;
   }).join('');
-  const acts = `<span class="cacts">`
-    + (move.inputs.length > 1
-        ? `<button class="calt" type="button" aria-pressed="false"`
-          + ` title="${move.inputs.length - 1} other way${move.inputs.length > 2 ? 's' : ''} to perform this move">`
-          + `alternative</button>` : '')
-    + `<button class="cmode" type="button" aria-pressed="false"`
-    + ` title="Game wording, or just the buttons in order">simple</button></span>`;
+  // The reading switch lives in the dock ONLY (owner, 2026-08-20) — a per-row
+  // copy was the same setting in a second place. The ALT button stays per-row
+  // because it is per-move state, not a page setting.
+  const acts = move.inputs.length > 1
+    ? `<span class="cacts"><button class="calt" type="button" aria-pressed="false"`
+      + ` title="${move.inputs.length - 1} other way${move.inputs.length > 2 ? 's' : ''} to perform this move">`
+      + `alternative</button></span>` : '';
   return `<span class="cwrap" data-v="${move.inputs.length}">`
     + `<span class="cseq">${body}</span>${acts}</span>`;
 };
@@ -371,7 +371,7 @@ export const moveList = (moves, platform = DEFAULT_PLATFORM, set = DEFAULT_SET) 
     const name = m.href
       ? `<a class="cm-name" href="${escAttr(m.href)}">${esc(m.name)}</a>`
       : `<span class="cm-name">${esc(m.name)}</span>`;
-    const meta = [m.star ? `${m.star}\u2605` : '', (m.conditions || []).join(' · ')]
+    const meta = [m.star ? `${m.star}-star` : '', (m.conditions || []).join(' · ')]
       .filter(Boolean).join(' · ');
     return `<div class="cm">`
       + `<span class="cm-top">${name}`
@@ -436,7 +436,7 @@ export const padSwitcher = () => `<div class="padsw" hidden>
     // for the whole page) and the button on each row (found where the reader is
     // already looking). Both are painted from the same state, so neither can
     // show the opposite of what is on screen.
-    document.querySelectorAll('.cmode,.padsw-m[data-k="read"]').forEach(function(b){
+    document.querySelectorAll('.padsw-m[data-k="read"]').forEach(function(b){
       b.setAttribute('aria-pressed', String(st.read==='simple'));
       b.textContent = st.read==='simple' ? 'game wording' : 'simple'; });
   }
@@ -445,10 +445,10 @@ export const padSwitcher = () => `<div class="padsw" hidden>
     var b=e.target.closest('.padsw-seg button');
     if(b){st.platform=b.getAttribute('data-v'); save(); paint(); return;}
     if(e.target.closest('.padsw-c')){st.set=st.set==='colour'?'mono':'colour'; save(); paint(); return;}
-    if(e.target.closest('.cmode')||e.target.closest('.padsw-m[data-k="read"]')){
+    if(e.target.closest('.padsw-m[data-k="read"]')){
       st.read=st.read==='simple'?'auth':'simple'; save(); paint(); return;}
     var cmRow=e.target.closest('.cm');
-    if(cmRow&&!e.target.closest('.calt')&&!e.target.closest('.cmode')&&!e.target.closest('a')){
+    if(cmRow&&!e.target.closest('.calt')&&!e.target.closest('a')){
       var w=cmRow.querySelector('.cwrap'); if(!w) return;
       pinned = (pinned===w) ? null : w;   // tap again to release it back to the queue
       run(w); return; }
@@ -625,12 +625,12 @@ export const CONTROL_CSS = `
 /* THE ALTERNATIVE IS A FOOTNOTE. Dim, lowercase, no accent, detached from the
    sequence so it never competes with the input the reader came for. */
 .cacts{flex:0 0 auto;margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
-.calt,.cmode{padding:1px 0;border:0;background:none;cursor:pointer;color:#5c6474;
+.calt{padding:1px 0;border:0;background:none;cursor:pointer;color:#5c6474;
   font:400 11.5px/1.25 system-ui,-apple-system,sans-serif;letter-spacing:.02em;
   border-bottom:1px dotted #3a4354;white-space:nowrap}
-.calt:hover,.cmode:hover{color:#9aa0ae;border-bottom-color:#5c6474}
-.calt[aria-pressed="true"],.cmode[aria-pressed="true"]{color:#9aa0ae}
-.calt:focus-visible,.cmode:focus-visible{outline:2px solid #2DE2C5;outline-offset:3px;border-radius:2px}
+.calt:hover{color:#9aa0ae;border-bottom-color:#5c6474}
+.calt[aria-pressed="true"]{color:#9aa0ae}
+.calt:focus-visible{outline:2px solid #2DE2C5;outline-offset:3px;border-radius:2px}
 /* ── animation states ─────────────────────────────────────────────────────
    A HOLD stays lit. A PRESS lights and goes dark again — Giant Fake Shot
    presses and RELEASES Square before Cross. */

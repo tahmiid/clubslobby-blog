@@ -11646,14 +11646,14 @@
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "BUMPER_R",
         "verb": "hold",
         "path": [],
         "repeat": 1,
-        "sustained": false
+        "sustained": true
        },
        {
         "control": "STICK_R",
