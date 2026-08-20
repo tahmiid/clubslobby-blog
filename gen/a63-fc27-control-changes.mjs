@@ -8,8 +8,14 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
-import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
-const CTRL = Object.fromEntries(CONTROLS.moves.map((m) => [m.name, m]));
+import { renderMove, moveList, padSwitcher, CONTROL_CSS, lookup } from './controls.mjs';
+
+// Every input on this page comes out of the dataset by name and page. Nothing
+// is typed here: three of them used to be hand-written `steps` literals inline
+// (the Be A Pro cross calls), which is a second copy of data the export has
+// held all along — and a page-qualified lookup is also what stops "Flick Up for
+// Volley", which exists on two pages, resolving to the wrong one.
+const CTRL = (name, page) => lookup(name, { page });
 
 const BUILDER = `${SITE}/`;
 
@@ -44,19 +50,34 @@ kind of pre-set instructions that used to be attacking-tactics-only:</p>
 <li><strong>Drop Back</strong> and <strong>Offside Trap</strong> (defending)</li>
 <li><strong>Zonal Marking</strong> and <strong>Player Marking</strong> on corners</li>
 </ul>
-<p>Corner tactics have also moved from <strong>D-Pad Down</strong> to
-<strong>D-Pad Up</strong>. If you have muscle memory from FC 26, that is the one
-that will catch you. FC 26's <em>Crowd the Goalkeeper</em> and <em>Edge Of Box
-Run</em> are gone, replaced by the add/remove-player system.</p>
+${kg(moveList([
+  ['Add Player', 'Set Pieces - Corners & Throw Ins'],
+  ['Remove Player', 'Set Pieces - Corners & Throw Ins'],
+  ['Zonal Marking (Defending)', 'Set Pieces - Corners & Throw Ins'],
+  ['Player Marking (Defending)', 'Set Pieces - Corners & Throw Ins'],
+].map(([n, p]) => CTRL(n, p))))}
+<p>Note where those sit. The corner menu itself is still
+<strong>D-Pad Down</strong>, exactly as in FC 26, and so are the runs you
+already know — but every one of the new entries hangs off <strong>D-Pad
+Up</strong> instead. Two menus, not one. FC 26's <em>Crowd the Goalkeeper</em>
+and <em>Edge Of Box Run</em> are gone, replaced by the add/remove-player
+system.</p>
 
 <h2>Throw-ins gained two controls</h2>
-<p><strong>Shielding</strong> (L2 + left stick toward the opponent) and
-<strong>Avoidance</strong> (R1 + left stick) are both new. Neither existed in
-FC 26.</p>
+<p><strong>Shielding</strong> and <strong>Avoidance</strong> are both new.
+Neither existed in FC 26 — push the stick toward the opponent to shield, away
+to avoid:</p>
+${kg(moveList([
+  ['Shielding', 'Set Pieces - Corners & Throw Ins'],
+  ['Avoidance', 'Set Pieces - Corners & Throw Ins'],
+].map(([n, p]) => CTRL(n, p))))}
 
 <h2>New in attack</h2>
-${kg(moveList(['Directional Fake Shot to Stop', 'Trigger Curved Runs', 'Pass and Follow']
-  .map((n) => CTRL[n])))}
+${kg(moveList([
+  ['Directional Fake Shot to Stop', 'Attacking - Simple'],
+  ['Trigger Curved Runs', 'Attacking - Advanced'],
+  ['Pass and Follow', 'Attacking - Advanced'],
+].map(([n, p]) => CTRL(n, p))))}
 
 <h2>Renamed, not rebound</h2>
 <p>Same input, different label — worth knowing if you are searching for
@@ -64,15 +85,16 @@ something and cannot find it:</p>
 ${kg(`<div class="pchq-sk"><table><thead><tr><th>FC 26</th><th>FC 27</th><th></th></tr></thead><tbody>
 ${row('Fake Shot to Shot', '<strong>Fake Shot to Stop</strong>', 'the FC 26 name was wrong all along')}
 ${row('Get In The Box', '<strong>Get In Box</strong>', 'tactics')}
-${row('Precision Pass', '<strong>Precision Ground Pass</strong>', renderMove(CTRL['Precision Ground Pass']))}
-${row('Flair Lob / Cross', '<strong>Flair Lob / Cross / Outside The Foot</strong>', renderMove(CTRL['Flair Lob / Cross / Outside The Foot']))}
+${row('Precision Pass', '<strong>Precision Ground Pass</strong>', renderMove(CTRL('Precision Ground Pass', 'Attacking - Advanced')))}
+${row('Flair Lob / Cross', '<strong>Flair Lob / Cross / Outside The Foot</strong>', renderMove(CTRL('Flair Lob / Cross / Outside The Foot', 'Attacking - Advanced')))}
 ${row('Call for Far Lobbed Through Pass', '<strong>Call For Driven Lobbed Through Pass</strong>', 'Be A Pro')}
 </tbody></table></div>`)}
 
 <h2>One genuine rebind</h2>
 <p><strong>Flick Up</strong> is now <strong>Flick Up for Volley</strong>, and it
-moved from <strong>R3</strong> to <strong>right stick + direction, held</strong>.
-The one-star skill-move version stays on R3.</p>
+moved off <strong>R3</strong> onto the right stick:</p>
+${kg(moveList([CTRL('Flick Up for Volley', 'Attacking - Advanced')]))}
+<p>It keeps its own entry on the one-star skill-move page, with the same input.</p>
 
 ${appCta({
   href: BUILDER,
@@ -84,14 +106,15 @@ ${appCta({
 })}
 
 <h2>Three controls that were never missing — just undocumented</h2>
-<p>The Be A Pro pages carry <strong>Call For Cross / Lob</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*S*',
-    steps: [[{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}),
-<strong>Call for Ground Cross</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*R1* + *S*',
-    steps: [[{ control:'BUMPER_R', verb:'press', path:[] },{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}) and <strong>Call for High
-Cross</strong> (${renderMove({ inputs: [{ variantType:'primary', keyCombo:'*L1* + *S*',
-    steps: [[{ control:'BUMPER_L', verb:'press', path:[] },{ control:'FACE_LEFT', verb:'press', path:[] }]] }] })}). These are not new. They are absent from the skill and
+<p>The Be A Pro pages carry three cross calls that are absent from the skill and
 control lists most sites publish, and have been for at least two editions —
-which is a good illustration of why we stopped using those lists.</p>
+which is a good illustration of why we stopped using those lists. They are not
+new:</p>
+${kg(moveList([
+  ['Call For Cross / Lob', 'Be A Pro: Player (Attacking Off The Ball)'],
+  ['Call for Ground Cross', 'Be A Pro: Player (Attacking Off The Ball)'],
+  ['Call for High Cross', 'Be A Pro: Player (Attacking Off The Ball)'],
+].map(([n, p]) => CTRL(n, p))))}
 
 <h2>What did not change</h2>
 <p>Movement, shooting, passing and defending are effectively identical to FC 26.

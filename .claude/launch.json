@@ -1,0 +1,8 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "out", "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4310", "--directory", "out"],
+      "port": 4310 }
+  ]
+}

@@ -397,6 +397,9 @@ export const padSwitcher = () => `<div class="padsw" hidden>
 </div>
 <button class="padsw-c" type="button" data-k="set"
         aria-label="Switch between colour and white buttons" title="Colour or white buttons"></button>
+<span class="padsw-sep" aria-hidden="true"></span>
+<button class="padsw-m" type="button" data-k="read" aria-pressed="false"
+        title="Show the game's own wording, or just the buttons in press order">simple</button>
 </div>
 <script>
 (function(){
@@ -425,7 +428,11 @@ export const padSwitcher = () => `<div class="padsw" hidden>
       b.setAttribute('aria-pressed', String(b.getAttribute('data-v')===st.platform));});
     sw.querySelector('.padsw-c').setAttribute('aria-pressed', String(st.set==='colour'));
     document.documentElement.classList.toggle('simpleread', st.read==='simple');
-    document.querySelectorAll('.cmode').forEach(function(b){
+    // The reading is one setting with two controls: the dock (found once, used
+    // for the whole page) and the button on each row (found where the reader is
+    // already looking). Both are painted from the same state, so neither can
+    // show the opposite of what is on screen.
+    document.querySelectorAll('.cmode,.padsw-m[data-k="read"]').forEach(function(b){
       b.setAttribute('aria-pressed', String(st.read==='simple'));
       b.textContent = st.read==='simple' ? 'game wording' : 'simple'; });
   }
@@ -434,7 +441,8 @@ export const padSwitcher = () => `<div class="padsw" hidden>
     var b=e.target.closest('.padsw-seg button');
     if(b){st.platform=b.getAttribute('data-v'); save(); paint(); return;}
     if(e.target.closest('.padsw-c')){st.set=st.set==='colour'?'mono':'colour'; save(); paint(); return;}
-    if(e.target.closest('.cmode')){st.read=st.read==='simple'?'auth':'simple'; save(); paint(); return;}
+    if(e.target.closest('.cmode')||e.target.closest('.padsw-m[data-k="read"]')){
+      st.read=st.read==='simple'?'auth':'simple'; save(); paint(); return;}
     var cmRow=e.target.closest('.cm');
     if(cmRow&&!e.target.closest('.calt')&&!e.target.closest('.cmode')&&!e.target.closest('a')){
       var w=cmRow.querySelector('.cwrap'); if(!w) return;
@@ -673,6 +681,7 @@ a.cm-name:hover{text-decoration:underline}
 .padsw-seg button[aria-pressed="true"] .padsw-i{opacity:1}
 .padsw-m{flex:0 0 auto;padding:9px 13px;border-radius:999px;border:1px solid #33506f;
   background:transparent;color:#9aa0ae;cursor:pointer;font:600 13px/1 system-ui,-apple-system,sans-serif}
+.padsw-sep{width:1px;align-self:stretch;margin:4px 2px;background:#23364c}
 .padsw-m[aria-pressed="true"]{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.13);color:#2DE2C5}
 .padsw-c{width:30px;height:30px;flex:0 0 auto;margin-right:4px;border-radius:999px;cursor:pointer;
   border:1px solid #33506f;background:conic-gradient(#e2657a,#e0b154,#5fc97a,#56a0f0,#c98ad8,#e2657a)}

@@ -72,11 +72,22 @@ semantics layer, the animation model, the 24-page menu order and how to
 regenerate all of it. Read that first; what follows is only what is specific to
 this repo.
 
-`gen/controls.mjs` renders from `data/fc27-controls.json` (exported from the
-`controls_*` collections): `renderMove(move)`, `moveList(moves)`, `padSwitcher()`
+`gen/controls.mjs` renders from `data/fc27-controls.json`:
+`renderMove(move)`, `moveList(moves)`, `lookup(name, { page })`, `padSwitcher()`
 and `CONTROL_CSS`. `ops/controls-test.mjs` is the oracle — it compares what we
-render against the `keyCombo` the dataset records, across every input. Run it
-after any change here.
+render against the `keyCombo` the dataset records, across **all 465 inputs**.
+Run it after any change here.
+
+- **`node ops/export-controls.mjs` rebuilds the data file** from the app repo's
+  `backend/catalog/controls_fc27.json` (offline; `CLUBSUI_DIR` overrides where
+  that repo is). The whole 24-page menu is exported, not the moves an article
+  happens to cite, so citing a new one is a copy change and not a data change.
+- **Cite a move with `lookup(name, { page })`.** 25 action names appear on two
+  pages; a name map serves the goalkeeper's Chip Shot to a striker's article
+  without failing. `lookup` throws on a miss or an ambiguity, at build time.
+- **Never hand-write `steps` in an article generator.** a63 carried three
+  inline literals for the Be A Pro cross calls; the export had them all along,
+  and a second copy is a second thing to correct.
 
 **Do not parse the prose.** Variants come from `controls_inputs` rows, timing
 from `steps`, platform labels from `controls_bindings`. An earlier version split
@@ -88,9 +99,10 @@ of something the dataset already held.
   computed, never typed** — the same rule the FC 26 controls dataset used, and
   the reason the two platforms cannot drift. a63 was typing its Xbox column by
   hand until 2026-08-20; that is what this prevents.
-- **The glyphs are ours.** 24 SVGs from `gen/make-control-glyphs.py` — original
-  geometry, authentic symbol colours so a row scans as a controller. There was
-  no glyph set in either repo before this; don't go looking for one.
+- **The glyphs are the owner's pack**, 44 tokens per platform, in matched
+  pairs (`colour` = PS/3 + XBOX/2, `mono` = PS/1 + XBOX/3). Derived files
+  (`-badge`, `-locked`, the shared Xbox sticks) come from
+  `gen/make-derived-glyphs.py`; the pack's own files are never edited.
 - Served from Ghost's content store
   (`/blog/content/images/2026/08/controls/`), not the app's `/assets/`, because
   installing a file there needs no app deploy. Referenced by `<img>`, never

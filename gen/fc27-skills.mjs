@@ -13,12 +13,18 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
-import { CONTROLS, renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
+import { renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS,
+         lookup } from './controls.mjs';
 
 // The inputs come from the controls dataset (data/fc27-controls.json, exported
 // from controls_actions/controls_inputs). data/fc27-skills.json keeps the
 // editorial half — the prose, the slug, what the move is for.
-const CTRL = Object.fromEntries(CONTROLS.moves.map((m) => [m.name, m]));
+//
+// Looked up through `lookup()` rather than a name map: the export now carries
+// the whole 420-action menu, where 25 names appear twice. A miss or an
+// ambiguity throws here, at generation time, instead of publishing a blank
+// sequence — every move on this page is a Skill Moves screen action.
+const CTRL = (name) => lookup(name, { screen: 'Skill Moves' });
 
 const DIR = path.join(import.meta.dirname, '..');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
@@ -34,7 +40,7 @@ const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 // the other column is noise. The floating switcher changes it anywhere on the
 // page and remembers the choice.
 const inputCard = (m) => kg(`<div class="pchq-input">
-  <div class="pchq-input-combo">${renderInputs(CTRL[m.name])}</div>
+  <div class="pchq-input-combo">${renderInputs(CTRL(m.name))}</div>
   <div class="pchq-input-meta">${stars(m.star)} &nbsp;·&nbsp; ${m.star}-star move${
     m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}</div>
 </div>`);
@@ -107,7 +113,7 @@ function renderHub() {
 
   const table = byStar.map(([s, list]) => `<h3>${s} star</h3>
 ${kg(moveList(list.map((m) => ({
-  ...CTRL[m.name], name: m.name, href: `/blog/fc27-how-to-${m.slug}/`,
+  ...CTRL(m.name), name: m.name, href: `/blog/fc27-how-to-${m.slug}/`,
 }))))}`).join('\n\n');
 
   const html = `${STYLE}
