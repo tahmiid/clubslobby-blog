@@ -4,7 +4,7 @@
 // The load-bearing one is the ORACLE: the dataset already records what the game
 // prints, as `keyCombo`. We render from `steps`, independently. If the two
 // disagree, the renderer is wrong — the data is not the thing to edit.
-import { CONTROLS, renderMove, rotateArc, moveList } from '../gen/controls.mjs';
+import { CONTROLS, renderMove, rotateArc, moveList, lookup } from '../gen/controls.mjs';
 
 let pass = 0, fail = 0;
 const t = (n, fn) => { try { fn(); console.log(`  PASS  ${n}`); pass++; }
@@ -34,14 +34,35 @@ const asTokens = (html) => html
 //   2. A stick pushed twice renders as TWO units (R-down, R-up) because a
 //      direction is one glyph with its stick; the dataset writes the stick once
 //      and then both directions. Same input, two notations.
+//   4. A CONDITION is shown in the row's meta line, not inside the sequence:
+//      "(After Power Up)", "(Away From Ball)", "(reverse)". The dataset appends
+//      it to keyCombo; the article prints it beside the stars. Only a
+//      parenthetical that matches one of the action's own `conditions` is
+//      dropped — an unrecognised one still fails, because that would be an
+//      instruction going missing.
+//   5. A stick that must stay CENTRED renders as the `-locked` glyph, which is
+//      the whole point of the semantics layer (CONTROLS.md §4): the game says it
+//      in words, we say it in a glyph, and both mean keep the stick still.
+//   6. A rotation token expands to the waypoints it names. The dataset writes
+//      some rotations as a token (*RTR*) and some as the arrows themselves
+//      (*AB**AL**AB**AR*); we always draw an arc and carry the token. Expanding
+//      both sides compares the PATH, which is the thing that has to agree.
 const DIRS = 'AB|AT|AL|AR|ALT|ART|ALB|ARB';
-const norm = (s) => {
-  let x = s.replace(/\s*\(while [^)]+\)\s*/g, ' ')      // conditions live in meta, not the sequence
+const WAYPOINT = { T: 'AT', B: 'AB', L: 'AL', R: 'AR' };
+const expandRot = (x) => x.replace(/\*R([TBLR]{2,})\*/g,
+  (_, w) => w.split('').map((c) => `*${WAYPOINT[c]}*`).join(''));
+const norm = (s, conditions = []) => {
+  const condWords = conditions.map((c) => c.replace(/_/g, ' ').toLowerCase());
+  let x = s.replace(/\s*\(([^)]+)\)\s*/g, (m, inner) =>
+             condWords.includes(inner.replace(/^while /, '').toLowerCase()) ? ' ' : m)
+           .replace(/\s+with the stick cent(?:re|er)d/gi, '')   // rule 5
+           .replace(/-LOCKED\*/g, '*')                          // rule 5
            .replace(/\*\s+\*/g, '**')                    // rule 1
            .replace(/\s+/g, ' ').trim();
   //   3. A rotation token is carried on the wrapper, so it extracts before the
   //      stick glyph nested inside it. The dataset writes the stick first.
-  x = x.replace(/\*(R[A-Z]{3,})\*\*(R|L)\*/g, '*$2**$1*');
+  x = x.replace(/\*(R(?:[A-Z]){2,})\*\*(R|L)\*/g, '*$2**$1*');
+  x = expandRot(x);                                             // rule 6
   let prev;
   do { prev = x;                                          // rule 2
        x = x.replace(new RegExp(`\\*(${DIRS})\\*\\*(R|L)\\*\\*(${DIRS})\\*`, 'g'), '*$1**$3*');
@@ -57,7 +78,8 @@ for (const mv of CONTROLS.moves) {
     .map((m) => asTokens(m[1]));
   mv.inputs.forEach((inp, i) => {
     checked++;
-    const ours = norm(auths[i] || ''), theirs = norm(inp.keyCombo || '');
+    const conds = mv.conditions || [];
+    const ours = norm(auths[i] || '', conds), theirs = norm(inp.keyCombo || '', conds);
     if (ours !== theirs) diffs.push(`${mv.name} [${i}]\n            ours:    ${ours}\n            dataset: ${theirs}`);
   });
 }
@@ -73,7 +95,7 @@ t('every input in the dataset gets rendered', () => {
   }
 });
 t('Drag To Drag keeps all four combos', () => {
-  const mv = CONTROLS.moves.find((m) => m.name === 'Drag To Drag');
+  const mv = lookup('Drag To Drag');
   assert(mv.inputs.length === 4, `dataset has ${mv.inputs.length}`);
   assert((renderMove(mv).match(/class="cvar/g) || []).length === 4, 'renderer dropped some');
 });
@@ -89,11 +111,43 @@ t('every timeline step addresses a glyph that exists', () => {
   }
 });
 t('holds persist and presses do not', () => {
-  const mv = CONTROLS.moves.find((m) => m.name === 'Giant Fake Shot');
+  const mv = lookup('Giant Fake Shot');
   const tl = JSON.parse(renderMove(mv).match(/data-tl="([^"]*)"/)[1].replace(/&quot;/g, '"'));
   const kinds = tl.steps.map((s) => s.type);
   assert(kinds[0] === 'hold', 'L2 should be a hold');
   assert(kinds.filter((k) => k === 'press').length === 2, 'Square and Cross should both be presses');
+});
+
+console.log('\n2b. the whole menu, not just the moves an article cites');
+t('every action in the export has at least one input', () => {
+  assert((CONTROLS._missing || []).length === 0,
+    `${(CONTROLS._missing || []).length} action(s) would render as a blank sequence: `
+    + (CONTROLS._missing || []).slice(0, 5).join(', '));
+});
+t('a repeated press renders twice, not once', () => {
+  const mv = lookup('Lofted Ground Pass');
+  // Both readings ship in the markup, so count within one of them.
+  const auth = renderMove(mv).match(/cread-auth">([\s\S]*?)<\/span><span class="cread cread-simple/)[1];
+  const n = (auth.match(/class="cgx"/g) || []).length;
+  assert(n === 2, `rendered ${n} glyph(s) for a double press`);
+});
+t('an unknown verb throws instead of becoming a press', () => {
+  let threw = false;
+  try { renderMove({ inputs: [{ keyCombo: '', steps: [[{ control: 'FACE_DOWN',
+    verb: 'wiggle', path: [], repeat: 1 }]] }] }); } catch (e) { threw = /unknown verb/.test(e.message); }
+  assert(threw, 'a verb the renderer has never seen rendered anyway');
+});
+t('an ambiguous name throws rather than picking one', () => {
+  let threw = false;
+  try { lookup('Chip Shot'); } catch (e) { threw = /ambiguous/.test(e.message); }
+  assert(threw, 'a name on two pages resolved silently');
+  assert(lookup('Chip Shot', { page: 'Set Pieces - Penalties' }).page === 'Set Pieces - Penalties',
+    'page did not disambiguate');
+});
+t('a name the dataset does not have throws', () => {
+  let threw = false;
+  try { lookup('Bicycle Nutmeg Supreme'); } catch (e) { threw = /no action named/.test(e.message); }
+  assert(threw, 'an unknown move rendered as nothing');
 });
 
 console.log('\n3. rotation reads the data');

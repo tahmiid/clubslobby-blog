@@ -43,10 +43,18 @@ const CONTROL_TOKEN = {
   STICK_L: 'l', STICK_R: 'r', STICK_L_CLICK: 'l3', STICK_R_CLICK: 'r3',
   MENU: 'st', VIEW: 'tp', DPAD: 'pd',
 };
+// The dataset writes `up_left`; the pack's filenames are `alt`. The map was
+// keyed `upleft`, so every diagonal in the menu fell through to the default
+// down-arrow — ten of them, all in stepovers and spins. Look up through
+// `dirKey` and the two vocabularies cannot drift again.
 const DIR_TOKEN = {
   up: 'at', down: 'ab', left: 'al', right: 'ar',
   upleft: 'alt', upright: 'art', downleft: 'alb', downright: 'arb',
 };
+const dirKey = (d) => String(d || '').replace(/[_\s-]/g, '').toLowerCase();
+const dirToken = (d) => DIR_TOKEN[dirKey(d)];
+// A full turn has no waypoints — it is the whole circle, and the pack draws it.
+const SPIN = { clockwise: ['rcw', 360], counterclockwise: ['racw', -360] };
 const STICKS = new Set(['STICK_L', 'STICK_R']);
 const PNG = new Set(['racw','rbl','rbltr','rbr','rbrtl','rcw','rlbr','rlt','rrbl','rrt','rtl','rtr']);
 const ext = (t) => (PNG.has(t) ? 'png' : 'svg');
@@ -79,18 +87,39 @@ const CENTRED_WORDS = ((rule('stick_centred') || {}).match || {}).wordingContain
 const stickUnit = (control, dir, idx, platform, set) => {
   const stok = CONTROL_TOKEN[control];
   const name = `${label(control, platform)} ${dir}`;
-  if (control === 'STICK_L' && PACK_L[dir]) {
+  if (control === 'STICK_L' && PACK_L[dirKey(dir)]) {
     return `<span class="cgx cgx-b" data-i="${idx}">`
-      + glyph(PACK_L[dir], platform, set, 'cg-pack', name) + `</span>`;
+      + glyph(PACK_L[dirKey(dir)], platform, set, 'cg-pack', name) + `</span>`;
   }
   // `-badge` is the stick glyph without its outer stroked ring. At badge size
   // that ring was most of what you saw and the letter inside it was not. The
   // ring only exists in the colour set's PlayStation art; the variants are
   // derived by gen/make-badge-glyphs.py and the pack's own files are untouched.
-  return `<span class="cgx cgx-d cgx-${dir}" data-i="${idx}">`
+  return `<span class="cgx cgx-d cgx-${dirKey(dir)}" data-i="${idx}">`
     + glyph(`${stok}-badge`, platform, set, 'cg-badge', label(control, platform))
-    + glyph(DIR_TOKEN[dir] || 'ab', platform, set, 'cg-arrow', dir) + `</span>`;
+    + glyph(dirToken(dir) || 'ab', platform, set, 'cg-arrow', dir) + `</span>`;
 };
+
+// THE CAPTURE'S OWN VERBS. `press` · `hold` · `flick` · `direction` · `move` ·
+// `rotate` were the six the skill-move pages happened to need; the full menu
+// also uses `tap`, `double_tap`, `roll` and `run`, and an unknown verb used to
+// fall silently through to a plain press — printing "*O*" where the game prints
+// "Double tap *O*", which is a different input. Anything not in here now throws
+// rather than rendering a lie (see `verbWord`).
+const VERB_WORD = {
+  press: '', hold: 'Hold ', flick: 'Flick ', direction: '', move: '',
+  rotate: 'Rotate ', roll: 'Roll ', run: 'Run ', tap: 'Tap ',
+  double_tap: 'Double tap ',
+};
+const verbWord = (v) => {
+  if (!(v in VERB_WORD)) throw new Error(`controls: unknown verb "${v}" — add it`
+    + ` to VERB_WORD in gen/controls.mjs rather than letting it render as a press`);
+  return VERB_WORD[v];
+};
+// `tap` and `double_tap` are presses as far as the timeline is concerned; only
+// the wording differs. `roll` is a rotation with a different word for it.
+const PRESSY = new Set(['press', 'tap', 'double_tap']);
+const SPINNY = new Set(['rotate', 'roll']);
 
 const FAST = 600, SLOW = 1200, LEAD = 700, GEST = 800, TAIL = 1200, PRESS_MS = 520;
 
@@ -116,13 +145,13 @@ const buildInput = (input, platform, set, wording = '') => {
       // data explicitly declines to give, which is the exact failure this
       // rewrite exists to stop. Show the stick and the word.
       const anyDir = path.length && path.every((d) => d === 'any');
-      if (STICKS.has(ctl) && verb !== 'rotate' && (anyDir || !path.length)) {
+      if (STICKS.has(ctl) && !SPINNY.has(verb) && (anyDir || !path.length)) {
         const idx = n++;
         const locked = centred && verb === 'move';
         const u = `<span class="cgx${locked ? ' cgx-locked' : ''}" data-i="${idx}">`
           + glyph(locked ? `${tok}-locked` : tok, platform, set, 'cg-solo',
                   locked ? `${lbl}, keep centred` : lbl) + `</span>`;
-        auth += u + (anyDir ? esc(' Direction') : ''); simple += u;
+        auth += esc(verbWord(verb)) + u + (anyDir ? esc(' Direction') : ''); simple += u;
         // A locked stick is an instruction that runs for the WHOLE action, so it
         // is a hold at t=0 rather than a beat in the sequence.
         steps.push(locked
@@ -135,9 +164,8 @@ const buildInput = (input, platform, set, wording = '') => {
       // Rotate is checked BEFORE the directional branch: a rotation carries a
       // path too (RBR is down→right), and letting the flick branch see it first
       // turned every spec'd rotation into a pair of flicks.
-      if (STICKS.has(ctl) && verb !== 'rotate' && path.length) {
-        if (verb === 'flick') auth += esc('Flick ');
-        else if (verb === 'hold') auth += esc('Hold ');
+      if (STICKS.has(ctl) && !SPINNY.has(verb) && path.length) {
+        auth += esc(verbWord(verb));
         path.forEach((dir, di) => {
           const idx = n++;
           const u = stickUnit(ctl, dir, idx, platform, set);
@@ -149,27 +177,47 @@ const buildInput = (input, platform, set, wording = '') => {
         t += GEST;
         return;
       }
-      if (verb === 'rotate') {
+      if (SPINNY.has(verb)) {
         const idx = n++;
         // The dataset says "down"; the rotation tokens say "b" for bottom.
         // Taking the first letter gave "d", which matched nothing and silently
         // produced no arc at all.
         const LETTER = { up: 't', down: 'b', left: 'l', right: 'r' };
-        const spec = path.length ? path.map((d) => LETTER[d] || '').join('') : null;
-        const arc = rotateArc(spec);
+        // A full turn (`clockwise` / `counterclockwise`) has no waypoints to
+        // walk — it is the whole circle, and the pack draws it as one glyph.
+        const spin = path.length === 1 && SPIN[path[0]];
+        // ONE waypoint is not a rotation, it is a direction: the game prints
+        // "Rotate *R* *AR*", a quarter turn to a named point. Drawing an arc
+        // needs two ends, so this renders as the stick and its arrow with the
+        // word "Rotate" kept — which is also exactly what the capture says.
+        const single = !spin && path.length === 1 && dirToken(path[0]);
+        const spec = !spin && !single && path.length
+          ? path.map((d) => LETTER[dirKey(d)] || '').join('') : null;
+        const arc = spin ? { from: 0, to: spin[1] } : rotateArc(spec);
+        const rot = spin ? spin[0].toUpperCase() : (spec ? `R${spec.toUpperCase()}` : '');
+        auth += esc(verbWord(verb));
+        if (single) {
+          const u = stickUnit(ctl, path[0], idx, platform, set);
+          auth += u; simple += u;
+          steps.push({ t, i: idx, type: 'flick', dir: dirKey(path[0]),
+            label: `${verbWord(verb).trim()} ${lbl} ${path[0]}` });
+          t += GEST * 2;
+          return;
+        }
         // `data-rot` carries the dataset's own rotation token even though no
         // glyph is drawn for it — the ring and the travelling dot are how a
         // rotation is expressed here. Recording it means the oracle can still
         // check the token round-trips instead of being told to ignore it.
         const u = `<span class="cgx cgx-spin" data-i="${idx}"`
-          + (spec ? ` data-rot="R${spec.toUpperCase()}"` : '')
+          + (rot ? ` data-rot="${rot}"` : '')
           + (arc ? ` style="--rfrom:${arc.from}deg;--rto:${arc.to}deg"` : '') + `>`
           + glyph(tok, platform, set, 'cg-stick', lbl)
           + `<span class="cgx-ring" aria-hidden="true"></span>`
           + `<span class="cgx-dot" aria-hidden="true"></span></span>`;
-        auth += esc('Rotate ') + u; simple += u;
+        auth += u; simple += u;
         steps.push({ t, i: idx, type: 'rotate',
-          label: path.length ? `Rotate ${lbl}: ${path.join(' → ')}` : `Rotate ${lbl}` });
+          label: path.length ? `${verbWord(verb).trim()} ${lbl}: ${path.join(' \u2192 ')}`
+                             : `${verbWord(verb).trim()} ${lbl}` });
         t += GEST * 2;
         return;
       }
@@ -191,8 +239,20 @@ const buildInput = (input, platform, set, wording = '') => {
       const idx = n++;
       const u = `<span class="cgx" data-i="${idx}">`
         + glyph(tok, platform, set, 'cg-solo', lbl) + `</span>`;
-      if (verb === 'hold') auth += esc('Hold ');
+      auth += esc(verbWord(verb));
       auth += u; simple += u;
+      // `repeat` is a SECOND PRESS OF THE SAME BUTTON, and the game prints it
+      // that way — "*X* + *X*" for Lofted Ground Pass, "*R3* + *R3*" for Chest
+      // Flick. It was ignored, so seven inputs across the menu rendered as a
+      // single tap of a double-tap move. Each repetition gets its own glyph and
+      // its own beat: one glyph flashing twice cannot be told from one press.
+      for (let r = 1; r < (st.repeat || 1); r++) {
+        const ri = n++;
+        const ru = `<span class="cgx" data-i="${ri}">`
+          + glyph(tok, platform, set, 'cg-solo', lbl) + `</span>`;
+        auth += esc(' + ') + ru; simple += ru;
+        steps.push({ t: t + r * PRESS_MS, i: ri, type: 'press', label: `Press ${lbl} again` });
+      }
       if (verb === 'hold') {
         // A hold in the FIRST phase is engaged before anything else happens and
         // stays down — that is the lead-in. A hold in a later phase is part of
@@ -211,9 +271,11 @@ const buildInput = (input, platform, set, wording = '') => {
         steps.push({ t, i: idx, type: 'hold', label: `Hold ${lbl}` });
         t += FAST;
       } else {
-        steps.push({ t, i: idx, type: 'press', label: `Press ${lbl}` });
+        steps.push({ t, i: idx, type: 'press',
+          label: verb === 'double_tap' ? `Double tap ${lbl}` : `Press ${lbl}` });
         t += FAST;
       }
+      t += ((st.repeat || 1) - 1) * PRESS_MS;
       // Any other button carrying a direction of its own — the dataset writes
       // e.g. `Hold *L1* *AR* *AL*` for a celebration.
       path.forEach((dir) => {
@@ -248,6 +310,39 @@ export const rotateArc = (spec) => {
     out.push(out[i - 1] + d);
   }
   return { from: out[0], to: out[out.length - 1] };
+};
+
+// ── looking a move up ──────────────────────────────────────────────────────
+// The export carries the whole menu — 420 actions — and 25 action NAMES appear
+// on two different pages ("Chip Shot" is both a shot and a goalkeeper control;
+// "Flick Up for Volley" is both an attacking control and a one-star skill).
+// A bare `byName[...]` map keeps whichever it saw last, silently, and an
+// article ends up printing the goalkeeper's input for the striker's move.
+//
+// So: matching is explicit. Pass `page` (or `screen`) to disambiguate, and an
+// ambiguous or unknown name THROWS at generation time rather than rendering a
+// blank or the wrong row.
+//
+// The dataset's names are the game's own, qualifiers included ("Giant Fake Shot
+// (Standing)"). An article calls the move what a reader calls it, so a name
+// without the parenthetical matches the one with it — as long as that is
+// unambiguous too.
+const bare = (n) => String(n).replace(/\s*\([^)]*\)\s*$/, '').trim().toLowerCase();
+export const lookup = (name, { page, screen } = {}) => {
+  const want = String(name).trim().toLowerCase();
+  const pool = CONTROLS.moves.filter((m) =>
+    (!page || m.page === page) && (!screen || m.screen === screen));
+  let hits = pool.filter((m) => m.name.toLowerCase() === want);
+  if (!hits.length) hits = pool.filter((m) => bare(m.name) === want);
+  if (!hits.length) hits = pool.filter((m) => bare(m.name) === bare(name));
+  if (hits.length === 1) return hits[0];
+  const where = [page, screen].filter(Boolean).join(' / ');
+  if (!hits.length) {
+    throw new Error(`controls: no action named "${name}"`
+      + (where ? ` on ${where}` : '') + ' in the dataset');
+  }
+  throw new Error(`controls: "${name}" is ambiguous — ${hits.length} actions`
+    + ` (${hits.map((m) => m.page).join(', ')}). Pass { page } to choose one.`);
 };
 
 // A move renders every performable combo from the dataset — not two guessed
