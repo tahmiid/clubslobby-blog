@@ -9,6 +9,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, appCta, archIcon } from './common.mjs';
+import { affiliateSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, FC27_PROG, buildGrid } from './fc27grid.mjs';
 
 const AP = FC27_PROG.levels.find((l) => l.level === 40).apCumulative;
@@ -52,7 +53,8 @@ ${appCta({
 <h3>Why level 40?</h3>
 <p>Forty is the rumored pre-release cap, worth ${AP} AP all-in. When the cap rises, the builds have room to grow — copying one now is a head start, not a throwaway.</p>
 <h3>Can I copy a build and change it?</h3>
-<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>`;
+<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Pre-order EA SPORTS FC 27',
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a65.html'), html);
 console.log('a65: fc27 level 40 hub | builds', FC27_BUILDS.length, '| bytes', html.length);

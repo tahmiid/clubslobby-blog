@@ -6,6 +6,9 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 27,
   archId: 'creator',
+  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
+  // Emits nothing while amazon-us is pending.
+  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   hideCats: ['Defending'],
   tabs: ['De Bruyne — the Creator+', 'Messi WC 2026 — the tribute'],
   shortNames: ['De Bruyne', 'Messi WC 2026'],

@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
+import { affiliateSection } from './affiliate.mjs';
 
 const DIR = path.join(import.meta.dirname, '..');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
@@ -140,7 +141,8 @@ than down-up-up, Heel Flick Turn needs L2 as well as R1. Those are carried-over
 moves people have been performing incorrectly for a year.</p>
 <p>Everything on this page comes from photographs of the game instead.</p>
 
-${sourceNote}`;
+${sourceNote}${affiliateSection({ heading: 'Kit worth having',
+  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
   writeFileSync(path.join(DIR, 'out', 'a49.html'), html);
 }
 

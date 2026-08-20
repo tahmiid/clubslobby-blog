@@ -4,7 +4,7 @@
     "ops/affiliate-switch.mjs writes it. Kept out of the code deliberately:",
     "turning a merchant on or off is an operational decision made on revenue",
     "data, not a code change, and this is the file an admin panel would write",
-    "if one is ever built (MONETIZATION.md \u00a75).",
+    "if one is ever built (MONETIZATION.md §5).",
     "",
     "status      'pending' emits NOTHING. 'live' emits links.",
     "awinmid     advertiser id from the Awin programme page (in its profile URL).",
@@ -56,7 +56,7 @@
     "amazon-us": {
       "label": "Amazon",
       "network": "amazon",
-      "status": "pending",
+      "status": "live",
       "awinmid": null,
       "cookieDays": 1,
       "sells": [
@@ -64,7 +64,7 @@
         "game"
       ],
       "store": "https://www.amazon.com",
-      "note": "account created 2026-08-19; tax + bank outstanding. sells widened to include 'game' 2026-08-19: discs are an Amazon-only gap (key sellers sell keys, not discs), and with Awin still pending, ~1% now beats 0% waiting. Move the PC digital SKU to a key seller on approval."
+      "note": "live since 2026-08-20"
     }
   }
 }

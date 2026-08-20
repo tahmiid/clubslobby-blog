@@ -147,6 +147,18 @@ ${rows}
 </div>`);
 };
 
+// Interpolate this, not affiliateBlock, from an article template. It carries
+// its own separating blank line when there is something to show and returns a
+// bare '' when there is not — so a pending merchant leaves the generated file
+// BYTE-IDENTICAL instead of gaining a stray blank line. That property is the
+// whole basis for putting these keys in the configs before any approval, so it
+// is worth the extra helper: caught 2026-08-19 when adding the keys dirtied
+// ten out/ files with nothing but whitespace.
+export const affiliateSection = (opts) => {
+  const html = affiliateBlock(opts);
+  return html ? `\n\n${html}` : '';
+};
+
 // Small helper for the status line in `ops/affiliate-check.mjs` and for humans.
 export const merchantStatus = () => Object.entries(MERCHANTS)
   .map(([k, m]) => `${k.padEnd(11)} ${m.status.padEnd(8)} ${m.network.padEnd(7)}`

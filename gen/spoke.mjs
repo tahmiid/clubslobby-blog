@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
+import { affiliateSection } from './affiliate.mjs';
 import { gridCss } from './fc27grid.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
@@ -319,6 +320,18 @@ ${JSON.stringify({
 </script>`);
 
   const whyParas = cfg.whyParas(ctx);
+  // Affiliate block, opt-in per spoke via `cfg.affiliate` exactly as the grid
+  // is opt-in via `cfg.gridFile` — a spoke without the key is byte-identical
+  // and reverting is deleting one line. It sits BELOW `closing`, which is the
+  // app CTA, for the same reason AD_C does (MONETIZATION.md §3): one click
+  // into the app is worth more than a hundred impressions. Emits '' while the
+  // merchant is pending, so adding the key to a config changes nothing until
+  // `ops/affiliate-switch.mjs on` flips it.
+  const affiliate = cfg.affiliate
+    ? affiliateSection({ heading: cfg.affiliateHeading || 'Pre-order EA SPORTS FC 27',
+                         items: cfg.affiliate })
+    : '';
+
   const closing = BUILDS.length > 1
     ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
     : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
@@ -391,7 +404,7 @@ ${kg(`<div class="fc27-callout" style="margin:2em 0;padding:16px 20px;border:1px
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${ld}
 
-${closing}
+${closing}${affiliate}
 
 ${AD_C}`;
 

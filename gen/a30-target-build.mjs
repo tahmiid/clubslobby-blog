@@ -7,6 +7,9 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 30,
   archId: 'target',
+  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
+  // Emits nothing while amazon-us is pending.
+  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   hideCats: ['Defending'],
   tabs: ['Ronaldo — the Target+', 'Kane — the Roamer'],
   shortNames: ['Ronaldo', 'Kane'],

@@ -7,6 +7,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
+import { affiliateSection } from './affiliate.mjs';
 
 const BUILDER = `${SITE}/`;
 
@@ -87,7 +88,8 @@ FC 26, everything in your hands still works.</p>
 ${kg(`<p class="pchq-src">Based on rumored pre-release information,
 on 13 August 2026 — all 24 Button Help, Skill Moves and Celebrations pages.
 Rumored controls can change before retail; this page is re-checked on early access
-day, 18 September.</p>`)}`;
+day, 18 September.</p>`)}${affiliateSection({ heading: 'Kit worth having',
+  items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
 console.log('a63.html — fc27-control-changes');

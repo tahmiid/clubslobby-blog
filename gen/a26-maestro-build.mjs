@@ -6,6 +6,9 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 26,
   archId: 'maestro',
+  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
+  // Emits nothing while amazon-us is pending.
+  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   hideCats: ['Defending'],
   tabs: ['Wirtz — the Maestro+', 'Zidane — the legend'],
   shortNames: ['Wirtz', 'Zidane'],

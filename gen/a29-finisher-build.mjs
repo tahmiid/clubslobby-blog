@@ -7,6 +7,9 @@ import { renderSpoke } from './spoke.mjs';
 renderSpoke({
   n: 29,
   archId: 'finisher',
+  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
+  // Emits nothing while amazon-us is pending.
+  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   hideCats: ['Defending'],
   tabs: ['Agüero 93:20 — the Hunter', "Suárez '14 — the Presser"],
   shortNames: ['Agüero', 'Suárez'],
