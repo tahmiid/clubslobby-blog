@@ -64,6 +64,55 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
   200 sign-in**) — that contract lives in the app repo and breaking it
   silences the funnel's headline number with no failing test.
 
+## Control glyphs (skill-move and controls pages)
+
+`gen/controls.mjs` turns the dataset's input notation into button art:
+`renderInput(ps, 'ps'|'xbox')`, plus `CONTROL_CSS` for any page that calls it.
+
+- **The stored notation does not change.** The dataset keeps ONE
+  PlayStation-shaped string per move (`"Hold L2 + ▢ or ◯ + ✕"`) and **Xbox is
+  computed, never typed** — the same rule the FC 26 controls dataset used, and
+  the reason the two platforms cannot drift. a63 was typing its Xbox column by
+  hand until 2026-08-20; that is what this prevents.
+- **The glyphs are ours.** 24 SVGs from `gen/make-control-glyphs.py` — original
+  geometry, authentic symbol colours so a row scans as a controller. There was
+  no glyph set in either repo before this; don't go looking for one.
+- Served from Ghost's content store
+  (`/blog/content/images/2026/08/controls/`), not the app's `/assets/`, because
+  installing a file there needs no app deploy. Referenced by `<img>`, never
+  inlined — a hub page carries ~90 of them.
+- **Unmatched text falls through as prose on purpose.** "Hold", "or", "then"
+  carry the timing of a two-stage move; dropping them makes the input wrong.
+  After editing the tokenizer, re-run the whole dataset through it and assert
+  no `[▢◯✕△↑↓←→]` or bare `L1/R1/L2/R2` survives outside an `alt`.
+
+**Bare `<table>` in an article body wears the Ghost theme's pale `thead`** — a
+light band on a dark page that reads as a rendering bug. Wrap it in
+`.pchq-sk` (skills hub, a63) or a widget prefix; `common.mjs` explains why the
+`th`/`td` `!important` guards are load-bearing.
+
+## Feature images
+
+**Every published article needs one** — Google shows it in results and
+Discover. Nineteen shipped without one and were fixed 2026-08-20; audit against
+**Ghost's `posts` table**, not this repo, because the art can exist on disk and
+simply never have been assigned:
+
+```sql
+SELECT slug FROM posts WHERE status='published' AND (feature_image IS NULL OR feature_image='');
+```
+
+`gen/make-missing-feats.py` composes them via `coverkit.py`; `MAP` in
+`gen/set-feature-images.mjs` assigns them (runs on the box, writes straight into
+`content/images` — see the ghost-admin note below). **One or two words only**:
+the type is sized to fill the width, so a third word drops it under ~150px and
+it stops working as a phone thumbnail. "Giant Fake Shot" ships as FAKE SHOT.
+
+**`ghost-admin.mjs`'s `call()` takes string bodies only.** `upload-assets.mjs`
+and `upload-image-jpg.mjs` are broken against it — a FormData body is silently
+dropped and Ghost answers 422 "Please select an image". Install images directly:
+`install -o ghost -g ghost -m 644 <file> /var/www/proclubslobby/content/images/YYYY/MM/`.
+
 ## Affiliate links
 
 State lives in `data/affiliate-merchants.json`, never in code. Four commands:

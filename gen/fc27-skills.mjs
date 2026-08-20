@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
+import { renderInput, CONTROL_CSS } from './controls.mjs';
 
 const DIR = path.join(import.meta.dirname, '..');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
@@ -26,20 +27,16 @@ const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 // rather than sitting inside a paragraph.
 const inputCard = (m) => kg(`<div class="pchq-input">
   <div class="pchq-input-label">PlayStation</div>
-  <div class="pchq-input-combo">${esc(m.ps)}</div>
+  <div class="pchq-input-combo">${renderInput(m.ps, 'ps')}</div>
   <div class="pchq-input-label">Xbox</div>
-  <div class="pchq-input-combo">${esc(xbox(m.ps))}</div>
+  <div class="pchq-input-combo">${renderInput(m.ps, 'xbox')}</div>
   <div class="pchq-input-meta">${stars(m.star)} &nbsp;·&nbsp; ${m.star}-star move${
     m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}</div>
 </div>`);
 
-// PlayStation glyphs map to Xbox positionally. Doing it here rather than storing
-// both is the same reason the dataset does it: X is a different button on each
-// platform, and typing both invites getting one wrong.
-const XMAP = { '▢': 'X', '◯': 'B', '✕': 'A', '△': 'Y', L1: 'LB', R1: 'RB', L2: 'LT', R2: 'RT' };
-function xbox(ps) {
-  return ps.replace(/L1|R1|L2|R2|▢|◯|✕|△/g, (t) => XMAP[t] || t);
-}
+// The PS->Xbox mapping moved to controls.mjs when inputs became glyphs, so
+// there is still exactly one place that knows X is a different button on each
+// platform. The dataset stores the PlayStation string; Xbox stays computed.
 
 const STYLE = kg(`<style>
 .pchq-input{border:1px solid #23364c;border-radius:12px;padding:16px 18px;margin:22px 0;
@@ -51,6 +48,23 @@ const STYLE = kg(`<style>
 .pchq-input-meta{grid-column:1/-1;border-top:1px solid #23364c;padding-top:10px;
   margin-top:4px;font-size:13px;color:#9aa0ae}
 .pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
+/* The hub's move tables were bare <table>s in the article body, so they took
+   the Ghost theme's own thead background — a pale band on a dark page, which
+   reads as a rendering bug. These are the same th/td guards common.mjs applies
+   inside widgets (see its comment: the dark code injection forces cell colour
+   with !important, and equal-specificity !important later in the document is
+   what wins). Scoped to .pchq-sk so nothing else on the site shifts. */
+.pchq-sk{margin:0 0 1.6em;overflow-x:auto}
+.pchq-sk table{width:100%;border-collapse:collapse;background:#0a1826!important;
+  border:1px solid #23364c;border-radius:12px;overflow:hidden;font-size:15px}
+.pchq-sk thead tr{background:#0e2033!important}
+.pchq-sk th{background:#0e2033!important;color:#9aa0ae!important;text-align:left;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:10px 14px}
+.pchq-sk td{background:transparent!important;color:#e9edf6!important;padding:11px 14px;
+  border-top:1px solid #23364c;vertical-align:middle}
+.pchq-sk td a{color:#2DE2C5!important;text-decoration:none}
+.pchq-sk td a:hover{text-decoration:underline}
+${CONTROL_CSS}
 </style>`);
 
 const sourceNote = kg(`<p class="pchq-src">Rumored FC 27 input
@@ -103,10 +117,11 @@ function renderHub() {
     .filter(([, list]) => list.length);
 
   const table = byStar.map(([s, list]) => `<h3>${s} star</h3>
-<table><thead><tr><th>Move</th><th>PlayStation</th><th>Xbox</th></tr></thead><tbody>
+${kg(`<div class="pchq-sk"><table>
+<thead><tr><th>Move</th><th>PlayStation</th><th>Xbox</th></tr></thead><tbody>
 ${list.map((m) => `<tr><td><a href="/blog/fc27-how-to-${m.slug}/"><strong>${esc(m.name)}</strong></a></td>
-<td>${esc(m.ps)}</td><td>${esc(xbox(m.ps))}</td></tr>`).join('\n')}
-</tbody></table>`).join('\n\n');
+<td>${renderInput(m.ps, 'ps')}</td><td>${renderInput(m.ps, 'xbox')}</td></tr>`).join('\n')}
+</tbody></table></div>`)}`).join('\n\n');
 
   const html = `${STYLE}
 <p>EA FC 27 adds <strong>${MOVES.length} new skill moves</strong>. Every input

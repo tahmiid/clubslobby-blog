@@ -51,6 +51,31 @@ const MAP = [
   ['feat-a33.jpg', 'pro-clubs-midfielder-archetypes', 'Official EA SPORTS FC 26 art with MIDFIELD in large type'],
   ['feat-a34.jpg', 'pro-clubs-defender-archetypes', 'Official EA SPORTS FC 26 defenders art with DEFENDERS in large type'],
   ['feat-a35.jpg', 'pro-clubs-goalkeeper-archetypes', 'Official EA SPORTS FC 26 goalkeeper art with KEEPERS in large type'],
+  // The FC 27 wave and the skill cluster shipped with no feature image at
+  // all — nineteen published articles, audited 2026-08-20 against Ghost's
+  // posts table rather than against this repo. Google shows this image in
+  // results and Discover, so an article without one competes short-handed.
+  // Art by gen/make-missing-feats.py; keywords cut to one or two words
+  // because the type is sized to fill the width.
+  ['feat-fc27-all13.jpg', 'fc27-archetypes', "EA SPORTS FC 27 key art with ALL 13 across it"],
+  ['feat-fc27-specs.jpg', 'fc27-best-specializations', "EA SPORTS FC 27 key art with SPECIALIZATIONS across it"],
+  ['feat-fc27-controls.jpg', 'fc27-control-changes', "EA SPORTS FC 27 key art with CONTROLS across it"],
+  ['feat-fc27-disruptor.jpg', 'fc27-disruptor-build', "EA SPORTS FC 27 key art with DISRUPTOR across it"],
+  ['feat-fc27-level40.jpg', 'fc27-level-40-builds', "EA SPORTS FC 27 key art with LEVEL 40 across it"],
+  ['feat-fc27-skills.jpg', 'fc27-new-skill-moves', "EA SPORTS FC 27 key art with SKILL MOVES across it"],
+  ['feat-skill-giant-fake-shot.jpg', 'fc27-how-to-giant-fake-shot', "EA SPORTS FC 27 key art with FAKE SHOT across it"],
+  ['feat-skill-stop-and-go.jpg', 'fc27-how-to-stop-and-go', "EA SPORTS FC 27 key art with STOP & GO across it"],
+  ['feat-skill-drag-to-drag.jpg', 'fc27-how-to-drag-to-drag', "EA SPORTS FC 27 key art with DRAG TO DRAG across it"],
+  ['feat-skill-foot-to-foot.jpg', 'fc27-how-to-foot-to-foot', "EA SPORTS FC 27 key art with FOOT TO FOOT across it"],
+  ['feat-skill-lateral-heel-to-heel.jpg', 'fc27-how-to-lateral-heel-to-heel', "EA SPORTS FC 27 key art with HEEL TO HEEL across it"],
+  ['feat-skill-drag-turn.jpg', 'fc27-how-to-drag-turn', "EA SPORTS FC 27 key art with DRAG TURN across it"],
+  ['feat-skill-standing-scoop-turn.jpg', 'fc27-how-to-standing-scoop-turn', "EA SPORTS FC 27 key art with SCOOP TURN across it"],
+  ['feat-skill-flair-roulette.jpg', 'fc27-how-to-flair-roulette', "EA SPORTS FC 27 key art with ROULETTE across it"],
+  ['feat-skill-four-touch-skill.jpg', 'fc27-how-to-four-touch-skill', "EA SPORTS FC 27 key art with FOUR TOUCH across it"],
+  ['feat-skill-skilled-bridge.jpg', 'fc27-how-to-skilled-bridge', "EA SPORTS FC 27 key art with SKILLED BRIDGE across it"],
+  ['feat-skill-first-time-spin.jpg', 'fc27-how-to-first-time-spin', "EA SPORTS FC 27 key art with FIRST TIME SPIN across it"],
+  ['feat-skill-alternate-elastico-chop.jpg', 'fc27-how-to-alternate-elastico-chop', "EA SPORTS FC 27 key art with ELASTICO CHOP across it"],
+  ['feat-skill-running-fake-drag.jpg', 'fc27-how-to-running-fake-drag', "EA SPORTS FC 27 key art with FAKE DRAG across it"],
 ];
 
 // Optional filter: `node set-feature-images.mjs a8 a12` assigns only those.
