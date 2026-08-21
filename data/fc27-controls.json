@@ -7737,16 +7737,16 @@
    "pageNo": 14,
    "displayOrder": 193,
    "star": 1,
-   "canonical": "BUMPER_L:hold+FACE_LEFT|FACE_RIGHT:press > FACE_DOWN:press+STICK_L:direction:down_left",
+   "canonical": "BUMPER_L:hold+FACE_LEFT|FACE_RIGHT:press > FACE_DOWN:press+STICK_L:direction:up_left",
    "conditions": [],
-   "keyCombo": "Hold *L1* + *S* or *O* then *X* + *L* *ALB*",
-   "guidedCombo": "Hold *L1* and press *S* or *O*, then press *X* and push *L* down-left",
+   "keyCombo": "Hold *L1* + *S* or *O* then *X* + *L* *ALT*",
+   "guidedCombo": "Hold *L1* and press *S* or *O*, then press *X* and push *L* up-left",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *L1* + *S* then *X* + *L* *ALB*",
+     "keyCombo": "Hold *L1* + *S* then *X* + *L* *ALT*",
      "steps": [
       [
        {
@@ -7776,7 +7776,7 @@
         "control": "STICK_L",
         "verb": "direction",
         "path": [
-         "down_left"
+         "up_left"
         ],
         "repeat": 1,
         "sustained": false
@@ -7787,7 +7787,7 @@
     {
      "index": 1,
      "variantType": "alternate_button",
-     "keyCombo": "Hold *L1* + *O* then *X* + *L* *ALB*",
+     "keyCombo": "Hold *L1* + *O* then *X* + *L* *ALT*",
      "steps": [
       [
        {
@@ -7817,7 +7817,7 @@
         "control": "STICK_L",
         "verb": "direction",
         "path": [
-         "down_left"
+         "up_left"
         ],
         "repeat": 1,
         "sustained": false
@@ -9965,18 +9965,18 @@
    "pageNo": 17,
    "displayOrder": 239,
    "star": 4,
-   "canonical": "TRIGGER_R:hold+FACE_LEFT|FACE_RIGHT:press > FACE_DOWN:press+STICK_L:direction:down_left",
+   "canonical": "TRIGGER_R:hold+FACE_LEFT|FACE_RIGHT:press > FACE_DOWN:press+STICK_L:direction:up_left",
    "conditions": [
     "standing"
    ],
-   "keyCombo": "Hold *R2* + *S* or *O* then *X* + *L* *ALB*",
-   "guidedCombo": "Hold *R2* and press *S* or *O*, then press *X* and push *L* down-left",
+   "keyCombo": "Hold *R2* + *S* or *O* then *X* + *L* *ALT*",
+   "guidedCombo": "Hold *R2* and press *S* or *O*, then press *X* and push *L* up-left",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *R2* + *S* then *X* + *L* *ALB*",
+     "keyCombo": "Hold *R2* + *S* then *X* + *L* *ALT*",
      "steps": [
       [
        {
@@ -10006,7 +10006,7 @@
         "control": "STICK_L",
         "verb": "direction",
         "path": [
-         "down_left"
+         "up_left"
         ],
         "repeat": 1,
         "sustained": false
@@ -10017,7 +10017,7 @@
     {
      "index": 1,
      "variantType": "alternate_button",
-     "keyCombo": "Hold *R2* + *O* then *X* + *L* *ALB*",
+     "keyCombo": "Hold *R2* + *O* then *X* + *L* *ALT*",
      "steps": [
       [
        {
@@ -10047,7 +10047,7 @@
         "control": "STICK_L",
         "verb": "direction",
         "path": [
-         "down_left"
+         "up_left"
         ],
         "repeat": 1,
         "sustained": false

@@ -8814,14 +8814,14 @@
    "conditions": [
     "standing"
    ],
-   "keyCombo": "Hold *R2* + *S* or *O* then *X* + *L* *ALT* (while standing)",
-   "guidedCombo": "Hold *R2* and press *S* or *O*, then press *X* and push *L* up-left (while standing)",
+   "keyCombo": "Hold *R2* + *S* or *O* then *X* + *L* *ALT*",
+   "guidedCombo": "Hold *R2* and press *S* or *O*, then press *X* and push *L* up-left",
    "displayInGame": null,
    "inputs": [
     {
      "index": 0,
      "variantType": "primary",
-     "keyCombo": "Hold *R2* + *S* then *X* + *L* *ALT* (while standing)",
+     "keyCombo": "Hold *R2* + *S* then *X* + *L* *ALT*",
      "steps": [
       [
        {
@@ -8862,7 +8862,7 @@
     {
      "index": 1,
      "variantType": "alternate_button",
-     "keyCombo": "Hold *R2* + *O* then *X* + *L* *ALT* (while standing)",
+     "keyCombo": "Hold *R2* + *O* then *X* + *L* *ALT*",
      "steps": [
       [
        {
