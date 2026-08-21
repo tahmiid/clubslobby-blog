@@ -80,12 +80,18 @@ export const SCREEN_CSS = `
 .gk-page{display:none}
 .gk-page.on{display:block}
 .gk-count{font:600 12px/1.4 -apple-system,system-ui,sans-serif;color:#5c6474;margin:10px 2px}
-.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;
+/* Desktop reads name FIRST, input second (owner, 2026-08-21) — the game's
+   button-first columns made sense pad-in-hand, but a reader scans for the
+   move's name. The DOM keeps inputs first (the animation queue and capture
+   parity don't care); the grid re-seats them. */
+.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(9em,16em) minmax(0,1fr);
   gap:2px 14px;align-items:center;padding:7px 12px;margin:0 0 8px;
   border:1px solid #14233a;border-radius:10px;background:#0a1826;font-size:15px}
 .gk-inputs{display:flex;flex-direction:column;gap:4px;min-width:0}
-.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto}
-.gk-action{text-align:right;max-width:14em}
+.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto;
+  justify-content:flex-end}
+.gk-line .cwrap{margin-left:auto}
+.gk-action{order:-1;text-align:left;max-width:16em}
 .gk-name{display:block;font-weight:700;font-size:14px;line-height:1.25;color:#e9edf6}
 .gk-nm{color:#e9edf6;text-decoration:none;border-bottom:1px dotted #33506f}
 .gk-nm:hover{color:#2DE2C5}
@@ -98,5 +104,7 @@ export const SCREEN_CSS = `
   font-size:10.5px;pointer-events:none}
 @media(max-width:620px){
   .cm.gk-row{grid-template-columns:1fr;gap:2px;padding:6px 10px}
-  .gk-action{text-align:left;order:-1;max-width:none}
+  .gk-action{max-width:none}
+  .gk-line{justify-content:flex-start}
+  .gk-line .cwrap{margin-left:0}
 }`;

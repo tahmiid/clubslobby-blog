@@ -174,12 +174,18 @@ a.cm-name:hover{text-decoration:underline}
 .gk-page{display:none}
 .gk-page.on{display:block}
 .gk-count{font:600 12px/1.4 -apple-system,system-ui,sans-serif;color:#5c6474;margin:10px 2px}
-.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;
+/* Desktop reads name FIRST, input second (owner, 2026-08-21) — the game's
+   button-first columns made sense pad-in-hand, but a reader scans for the
+   move's name. The DOM keeps inputs first (the animation queue and capture
+   parity don't care); the grid re-seats them. */
+.cm.gk-row{position:relative;display:grid;grid-template-columns:minmax(9em,16em) minmax(0,1fr);
   gap:2px 14px;align-items:center;padding:7px 12px;margin:0 0 8px;
   border:1px solid #14233a;border-radius:10px;background:#0a1826;font-size:15px}
 .gk-inputs{display:flex;flex-direction:column;gap:4px;min-width:0}
-.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto}
-.gk-action{text-align:right;max-width:14em}
+.gk-line{display:flex;align-items:center;gap:8px;min-width:0;overflow-x:auto;
+  justify-content:flex-end}
+.gk-line .cwrap{margin-left:auto}
+.gk-action{order:-1;text-align:left;max-width:16em}
 .gk-name{display:block;font-weight:700;font-size:14px;line-height:1.25;color:#e9edf6}
 .gk-nm{color:#e9edf6;text-decoration:none;border-bottom:1px dotted #33506f}
 .gk-nm:hover{color:#2DE2C5}
@@ -192,7 +198,9 @@ a.cm-name:hover{text-decoration:underline}
   font-size:10.5px;pointer-events:none}
 @media(max-width:620px){
   .cm.gk-row{grid-template-columns:1fr;gap:2px;padding:6px 10px}
-  .gk-action{text-align:left;order:-1;max-width:none}
+  .gk-action{max-width:none}
+  .gk-line{justify-content:flex-start}
+  .gk-line .cwrap{margin-left:0}
 }
 .pchq-tri{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 1.6em}
 .pchq-tri a{display:block;padding:14px 16px;border:1px solid #23364c;border-radius:12px;
@@ -202,8 +210,21 @@ a.cm-name:hover{text-decoration:underline}
 .pchq-tri .c{display:block;font-size:11.5px;color:#9aa0ae;margin-top:3px}
 .pchq-tri a.on{border-color:rgba(45,226,197,.65);background:rgba(45,226,197,.08)}
 .pchq-tri a.on .t{color:#2DE2C5}
+/* The pillar's cards are the page's whole job; small chips read as decoration
+   and people leave (owner, 2026-08-21). Big, obviously pressable. */
+.pchq-tri.big{grid-template-columns:1fr;gap:14px;margin:1.2em 0 2em}
+.pchq-tri.big a{display:grid;grid-template-columns:1fr auto;align-items:center;
+  gap:4px 18px;padding:24px 24px;border-width:2px;border-radius:16px}
+.pchq-tri.big .t{font-size:23px}
+.pchq-tri.big .c{font-size:13.5px;margin-top:6px}
+.pchq-tri.big .go{grid-row:1 / span 2;grid-column:2;padding:12px 18px;border-radius:999px;
+  background:rgba(45,226,197,.14);color:#2DE2C5;white-space:nowrap;
+  font:700 14px/1 -apple-system,system-ui,sans-serif}
+.pchq-tri.big a:hover .go{background:rgba(45,226,197,.3)}
 @media(max-width:560px){.pchq-tri{grid-template-columns:1fr;gap:8px}
-  .pchq-tri a{padding:11px 14px}}
+  .pchq-tri a{padding:11px 14px}
+  .pchq-tri.big a{padding:18px 16px}.pchq-tri.big .t{font-size:19px}
+  .pchq-tri.big .go{padding:9px 13px;font-size:12.5px}}
 </style>
 <!--kg-card-end: html-->
 <!--kg-card-begin: html-->
@@ -1085,15 +1106,33 @@ once your rating meets its tier — the tabs above follow the game's own pages,
 one per tier, plus juggling tricks. In Clubs, skill stars are an attribute you
 buy with AP like any other, so the tier you can reach is a build decision, not
 a fixed cap.</p>
+<h2>The tiers, at a glance</h2>
+<p><strong>1 star</strong> (7 moves) is available to every
+build in the game from level one — Directional Nutmeg, Open Up Fake Shot, Flick Up for Volley and FC 27's
+new Giant Fake Shot. <strong>2 star</strong> (12) is the
+feint tier: body feints, stepovers, drag back, and the new Stop And Go and
+Drag To Drag. <strong>3 star</strong> (12) brings the
+roulettes, heel chops and feint-and-exit turns, plus the new Foot To Foot and
+Lateral Heel To Heel.</p>
+<p><strong>4 star</strong> is the deepest page at 33 moves
+— ball rolls, fake passes, lane changes, the spins and rainbows, and five new
+entries including Flair Roulette and Skilled Bridge. <strong>5 star</strong>
+(25) is the showpiece tier: the elastico family, Hocus
+Pocus, Tornado Spin, the rainbows, and the new First Time Spin, Alternate
+Elastico Chop and Running Fake Drag. <strong>Juggling Tricks</strong>
+(9) round it out — sombrero flicks, around the world
+and the chest flick, performed while juggling.</p>
 <p><strong>13 of these moves are new to FC 27.</strong>
 They wear a badge above, and each has its own guide with when to use it and
 which builds suit it — start from
 <a href="/blog/fc27-new-skill-moves/">every new skill move in FC 27</a>.
 Inputs for moves carried over from FC 26 are unchanged — every move you could
-already do works identically.</p>
+already do works identically, so nothing you drilled last year is wasted.</p>
 <p>The other two lists cover
 <a href="/blog/fc27-basic-controls/">every basic control</a> and
-<a href="/blog/fc27-celebrations/">every celebration</a>.</p>
+<a href="/blog/fc27-celebrations/">every celebration</a>, and the
+<a href="/blog/fc27-controls/">FC 27 controls hub</a> ties all three
+together.</p>
 <!--kg-card-begin: html-->
 <div class="pchq-cta">
 <style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
