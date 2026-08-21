@@ -1,7 +1,7 @@
 // The verification pages: the game's three screens, rendered by the SAME
 // module the published lists use (gen/controls-screen.mjs) with the check
-// dressing on top — a sticky title bar and a per-row `p№ · row№` locator so a
-// correction can be dictated as "page 15, row 3" (owner, 2026-08-20).
+// dressing on top — a sticky title bar. (The per-row `p№ · row№` locator was
+// dropped once verification finished; re-enable idx for the next sweep.)
 //
 //   node gen/controls-check.mjs
 //     -> out/check-button-help.html · check-skill-moves.html · check-celebrations.html
@@ -23,7 +23,9 @@ const SCREENS = [
 ];
 
 for (const [screen, file] of SCREENS) {
-  const list = screenList(screen, { idx: true });
+  // idx dropped 2026-08-20 (owner): verification is done, and the locator
+  // read as content. Flip back to { idx: true } for the next capture sweep.
+  const list = screenList(screen, {});
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
