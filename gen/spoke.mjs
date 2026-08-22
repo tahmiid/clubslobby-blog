@@ -194,6 +194,10 @@ ${PCHQ_CSS}
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 .${P}x { text-align: center; font-size: 0.9em; margin: 0 0 1.6em; }
 </style>`;
+  const gridBuilds = cfg.gridFile
+    ? JSON.parse(readFileSync(path.join(DIR, 'builds', cfg.gridFile), 'utf8')).builds
+    : null;
+
   const builderLine = `<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>`;
 
   // The featured card IS the opener - it stands before the first paragraph -
@@ -203,6 +207,29 @@ ${PCHQ_CSS}
 ${cardAnchor(BUILDS[0], true)}
 <script>${PCHQ_JS}</script>`);
   const widgetSecond = kg(`${BUILDS[1] ? cardAnchor(BUILDS[1], false) + '\n' : ''}${builderLine}`);
+
+  // ONE reel card, mid-article, for grid spokes (owner, 2026-08-21). The grid
+  // answers "what are my options" at the top; this answers "show me one in
+  // full" to the reader who stayed. It is the archetype's MOST-COPIED build
+  // and it carries `data-top`, so the widget's "Most copied" badge stays a
+  // true claim (the badge hydrates from live copy counts - see the
+  // social-proof rule in widgets/build-card).
+  //
+  // `cfg.midReel` picks which of the featured pair that is (default 0).
+  // The pair's ORDER is editorial and stays put; the copy counts move.
+  // On 2026-08-21 three archetypes' counts had drifted past their pair
+  // order - maestro (Zidane 10 > Wirtz 6), creator (Messi WC 2026 5 >
+  // De Bruyne 3), sweeper-keeper (Ederson 2 > Neuer 1) - so those three
+  // set `midReel: 1`. Re-check the counts when featuring changes, not
+  // weekly; the badge itself always prints live data either way.
+  //
+  // It keeps the card's own `?src=card` tag while the grid keeps `?src=grid`,
+  // which is the whole point: the two surfaces stay separable in the funnel
+  // report and the collector, so we can see what the mid-article reel adds on
+  // top of the grid rather than guessing.
+  const midReel = gridBuilds ? kg(`${widgetHead}
+${cardAnchor(BUILDS[cfg.midReel ?? 0] || BUILDS[0], true)}
+<script>${PCHQ_JS}</script>`) : '';
 
   // --- The build grid, opt-in per spoke (owner, 2026-08-17) ---------------
   // The FC 27 articles show a grid of tappable builds instead of one big card,
@@ -214,9 +241,7 @@ ${cardAnchor(BUILDS[0], true)}
   // Tagged `?src=grid`, deliberately NOT `?src=card` and not
   // `ref=proclubshq.com` - the whole point is telling the two layouts apart in
   // the access log. funnel-report.py and the collector both know this tag.
-  const gridBuilds = cfg.gridFile
-    ? JSON.parse(readFileSync(path.join(DIR, 'builds', cfg.gridFile), 'utf8')).builds
-    : null;
+  // (gridBuilds is declared above builderLine — midReel depends on it.)
 
   // THE BADGE-ROW RULE (owner, 2026-08-17 — learned by shipping it wrong):
   // the card's four badge spaces show the build's SIGNATURE loadout first —
@@ -356,10 +381,10 @@ ${JSON.stringify({
   const opening = gridBuilds ? `${cfg.intro(ctx)}
 ${buildGridBlock}
 
+${AD_A}
+
 <h2>Why the ${esc(archName)}</h2>
 ${whyParas.join('\n')}
-
-${AD_A}
 
 <h2>${esc(cfg.buildsH2)}</h2>
 ${cfg.buildsParas(ctx).join('\n')}
@@ -393,6 +418,8 @@ ${AD_B}
 ${specs.map((s) => `<li><strong>${esc(s.name)}</strong> (${s.crit.map((c) => `${esc(c.label)} ${c.need}`).join(', ')} — ${s.ap} AP from the floor): ${esc(s.desc)} Grants <strong>${esc(s.perkName)}</strong> — ${esc(s.perkDesc).toLowerCase()}</li>`).join('\n')}
 </ul>
 ${cfg.specOutro(ctx)}
+
+${midReel}
 
 <h2>PlayStyles</h2>
 ${cfg.playstylesPara(ctx)}

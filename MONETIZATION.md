@@ -7,6 +7,18 @@ nothing has to be retrofitted into a design that never left room for it.
 Nothing here is live. No ad script, affiliate link or consent banner is in
 production as of this date.
 
+> ### 2026-08-21 — slot A moves to directly below the grid, on all 13 spokes
+>
+> The grid rollout (magician A/B: 32% clicks-per-view vs the card's 10%)
+> rearranged every spoke: grid first, then the written guide. Slot A moved
+> with it — it now sits between the grid and the first `<h2>`, taking the
+> pause after the reader has seen their options. §3's two non-negotiables
+> still hold: A is *after* the lead tool (the grid IS the lead tool now),
+> and C stays below the app CTA. B is untouched on its `<h2>` boundary.
+> Positions are set in `gen/spoke.mjs` (the `opening` template); nothing
+> here changed — the same empty `pchq-ad` divs, filled only when AdSense
+> approves.
+
 **Updated 2026-08-12 with a decision.** After working through AI products,
 short-form video, subscriptions and sponsorship (§§7–10), the answer is two
 cheap switches and one engine:

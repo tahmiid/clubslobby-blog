@@ -17,9 +17,17 @@ renderSpoke({
     'The runaway. Acceleration, Agility AND Dribbling all at 99 on a 6\'2" frame — a Controlled runner nobody catches once he\'s moving, with Crossing 96 waiting at the byline.',
     'The cut-inside classic. Curve at its 99 cap, Acceleration 98, and the finesse-shot PlayStyle — one move, everyone knows it, nobody stops it.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Spark is EA FC Pro Clubs' explosive winger — short bursts, byline chaos, and cut-backs that arrive like penalties. This guide is the complete FC 26 answer: every attribute of a finished level-100 Spark build, the order to spend your AP, which specialization to take, and the two most-copied Spark builds on the site — a Usain Bolt and a Robben '14 — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'spark-grid.json',
+  gridHead: 'Fourteen Spark builds, ready to copy',
+  gridSub: 'Vinícius Júnior, Saka, Musiala, Rodrygo, Raphinha — plus Usain Bolt, Robben \'14 and Beckham. Tap any card to open it.',
+
+  intro: () => `<p>The Spark is EA FC Pro Clubs' explosive winger — short bursts, byline chaos, and cut-backs that arrive like penalties. Here are fourteen finished level-100 Spark builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Eight ceilings reach <strong>99</strong>, and the headline pair is Acceleration and Agility — the only midfielder archetype that maxes both. Dribbling, Curve, Crossing and Reactions join them. The trade is the middle of the pitch: tackling caps are the lowest in the midfield group, and Strength is token. A Spark hugs the touchline and hurts people from it.</p>`,

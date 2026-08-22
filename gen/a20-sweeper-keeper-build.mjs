@@ -10,9 +10,18 @@ renderSpoke({
     'The original. Every goalkeeping stat at 99, Vision 92, and Sweeper Keeper+ so your touch and passing hold up when you leave the box — a deep-lying playmaker in gloves.',
     'The counter-attack trigger. Launcher pairs GK Kicking 92 with Long Pass 90, and its Counter Trigger perk speeds up the runner your throw or kick releases.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Sweeper Keeper is EA FC Pro Clubs' modern goalkeeper — elite saves plus the feet and vision to play behind a high line. This guide is the complete FC 26 answer: every attribute of a finished level-100 Sweeper Keeper build, the order to spend your AP, which specialization to take, and two real builds — a Neuer and an Ederson — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'sweeper-keeper-grid.json',
+  gridHead: 'Six Sweeper Keeper builds, ready to copy',
+  gridSub: 'Ederson, Neuer, Sommer, Maignan, Raya — plus the Sweeper Libero concept. Tap any card to open it.',
+  midReel: 1,  // Ederson: 2 copies vs Neuer 1 on 2026-08-21 - the badge must stay true
+
+  intro: () => `<p>The Sweeper Keeper is EA FC Pro Clubs' modern goalkeeper — elite saves plus the feet and vision to play behind a high line. Here are six finished level-100 Sweeper Keeper builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} The catalog backs the billing: all five goalkeeping attributes cap at <strong>99</strong>, and so do Short Pass, Vision and Jumping — a passing range no Shot Stopper can touch. The cost is nothing on the save side, which makes this the more flexible of the two keeper archetypes; what you give up is the Shot Stopper's rebound-oriented perk pair.</p>`,

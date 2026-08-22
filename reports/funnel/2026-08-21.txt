@@ -1,0 +1,63 @@
+Blog→app funnel — proclubshq.com  (2026-08-08 → 2026-08-22, bots excluded)
+"Visitors" are distinct (IP, UA) pairs on Cloudflare edge IPs — directional, not exact.
+"goog" is the subset of "reg" that signed up through Google (201 on /auth/google).
+Internal (our own) traffic excluded: 5743 lines dropped (pchq_int cookie mark; 0 listed ips).
+
+day          blog views blog vis.  →app app views app vis.  hydr.  card  grid  dgst  reg  goog  login
+-----------------------------------------------------------------------------------------------------
+2026-08-08          201       221    23       241      159    166     0     0     0    1     0      2
+2026-08-09          287       398    45       257      204    196     0     0     0    1     0      2
+2026-08-10          255       310    28       391      243    132     0     0     0    1     0      2
+2026-08-11          152       166    22       221      166    116     0     0     0    0     0      4
+2026-08-12          132       140     7       318      216     60     0     0     0    2     2      6
+2026-08-13          210       229    25       288      182    118     0     0     0    1     1      1
+2026-08-14          228       246    29       212      181    144     1     0     0    4     4      2
+2026-08-15          237       215    30       218      159    128    30     0     0    5     4      2
+2026-08-16          297       251    53       439      176    190    47     0     0    3     3      0
+2026-08-17          769       305    47       325      223    145    58     5     0    2     2      0
+2026-08-18          368       331    75       290      202    132    32    27     0    4     4      3
+2026-08-19          413       347    87       270      208    162    39    19     0    2     2      2
+2026-08-20          357       293   112       332      236    212    59    29     0    4     3      3
+2026-08-21          504       354    92       789      258    220    68    55     0    4     4      1
+2026-08-22            7         3     4         9        7      0     0     0     0    1     0      0
+-----------------------------------------------------------------------------------------------------
+total              4417      3809   679      4600     2820   2121   334   135     0   35    29     30
+
+(ref=proclubshq.com tagged app hits in range: 1077 — subset/overlap of →app)
+
+Blog articles sending readers to the app (whole range):
+    167  /blog/pro-clubs-magician-build/
+    121  /blog/pro-clubs-maestro-build/
+     72  /blog/pro-clubs-finisher-build/
+     54  /blog/pro-clubs-spark-build/
+     39  /blog/pro-clubs-target-build/
+     38  /blog/fc27-archetypes/
+     33  /blog/pro-clubs-creator-build/
+     20  /blog/pro-clubs-recycler-build/
+     18  /blog/pro-clubs-shot-stopper-build/
+     17  /blog/pro-clubs-progressor-build/
+     15  /blog/pro-clubs-marauder-build/
+     15  /blog/pro-clubs-sweeper-keeper-build/
+
+Where they land in the app:
+    561  /b/…
+     53  /edit/…
+     19  / (home)
+     14  /build
+     14  /explore
+      8  /u/…
+      4  /meta
+      4  /admin
+      2  /my-builds
+
+Most-read articles (human views, whole range):
+    720  /blog/pro-clubs-magician-build/
+    481  /blog/pro-clubs-maestro-build/
+    233  /blog/pro-clubs-accelerate-explosive-lengthy-controlled/
+    232  /blog/pro-clubs-spark-build/
+    197  /blog/pro-clubs-finisher-build/
+    172  /blog/pro-clubs-target-build/
+    143  /blog/pro-clubs-creator-build/
+    141  /blog/fc27-masteries-explained/
+    130  /blog/pro-clubs-marauder-build/
+    111  /blog/pro-clubs-archetypes-explained/

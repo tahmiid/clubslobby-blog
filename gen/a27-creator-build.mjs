@@ -16,9 +16,18 @@ renderSpoke({
     'The assist king. Vision 98, Crossing and Curve 97, and Creator+ boosting the teammate on the end of every through ball — the final pass, perfected.',
     'The World Cup tribute. Agility and Dribbling 95 under a five-star weak foot and five-star skill moves, Shot Power 96 — the Creator who beats a man first and picks the pass or the finish after.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Creator is EA FC Pro Clubs' final-pass specialist — the attacking midfielder whose whole game is the ball that unlocks a back line. This guide is the complete FC 26 answer: every attribute of a finished level-100 Creator build, the order to spend your AP, which specialization to take, and the two most-copied Creator builds on the site — a De Bruyne and the Messi WC 2026 tribute — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'creator-grid.json',
+  gridHead: 'Seven Creator builds, ready to copy',
+  gridSub: 'De Bruyne, Pedri, Palmer, Bruno Fernandes, Güler — plus the Dead Ball Demon and Sniper concepts. Tap any card to open it.',
+  midReel: 1,  // Messi WC 2026: 5 copies vs De Bruyne 3 on 2026-08-21 - the badge must stay true
+
+  intro: () => `<p>The Creator is EA FC Pro Clubs' final-pass specialist — the attacking midfielder whose whole game is the ball that unlocks a back line. Here are seven finished level-100 Creator builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Nine ceilings hit <strong>99</strong>, and the telling ones are Curve, Crossing, Long Shots and Att. Position — delivery stats the Maestro doesn't max. This is the higher, sharper of the two playmakers: less interested in controlling ninety minutes, entirely interested in the five passes that win the match. Defensively it is a passenger, and the build should accept that.</p>`,

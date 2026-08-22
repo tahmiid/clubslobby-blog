@@ -14,8 +14,12 @@ REPO="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$REPO/reports/funnel/$(date +%Y-%m-%d).txt"
 mkdir -p "$REPO/reports/funnel"
 
-ssh -i ~/.ssh/proclubslobby_ed25519 root@91.99.52.207 \
-  "funnel-report.py $*" > "$OUT"
+# Use the `clubs` host alias from ~/.ssh/config, never a hardcoded key path:
+# the key lives in Google Drive ("Pro Clubs HQ Essentials/01-Secrets/ssh") and
+# moved there on 2026-08-19, which broke this script silently — snapshots just
+# stopped, and nothing said so until the next run a week later. The alias is
+# the one maintained place that knows where the key is.
+ssh clubs "funnel-report.py $*" > "$OUT"
 
 echo "wrote $OUT"
 echo "commit it:  cd $REPO && git add reports/funnel && git commit -m 'Funnel snapshot $(date +%Y-%m-%d)'"

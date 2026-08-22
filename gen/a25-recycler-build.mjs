@@ -13,9 +13,17 @@ renderSpoke({
     "The tournament build. Composure at its 99 cap — the calm that ran a World Cup — over Short Pass 96, Long Pass 95, and a 95 Shot Power strike from the top of the box.",
     'The metronome. Short Pass 96 under Composure 96 and a 95-rated defensive screen — the everyday Rodri: nothing gets through, nothing gets wasted.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Recycler is EA FC Pro Clubs' defensive midfielder — the passing machine that takes the ball off your back line, keeps it under pressure, and gives it to the players who hurt teams. This guide is the complete FC 26 answer: every attribute of a finished level-100 Recycler build, the order to spend your AP, which specialization to take, and the two most-copied Recycler builds on the site — the Rodri '26 WC tribute and the regular Rodri — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'recycler-grid.json',
+  gridHead: 'Fourteen Recycler builds, ready to copy',
+  gridSub: 'Rodri, Rice, Modrić, Kimmich, Casemiro, de Jong — plus the Rodri \'26 WC tribute. Tap any card to open it.',
+
+  intro: () => `<p>The Recycler is EA FC Pro Clubs' defensive midfielder — the passing machine that takes the ball off your back line, keeps it under pressure, and gives it to the players who hurt teams. Here are fourteen finished level-100 Recycler builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Seven ceilings reach <strong>99</strong> — Composure, Interceptions, Defensive Awareness, Aggression, Reactions, FK Accuracy and, the surprise, Long Shots. It is the rare archetype that is elite at winning the ball <em>and</em> keeping it, and the long-range strike is a genuine secret weapon. What it lacks is speed: Acceleration and Sprint Speed cap at 90, so position yourself early — you will not recover with pace.</p>`,

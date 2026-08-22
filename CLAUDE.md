@@ -64,6 +64,17 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
   200 sign-in**) — that contract lives in the app repo and breaking it
   silences the funnel's headline number with no failing test.
 
+- **Click-per-hydration only measures layouts that hydrate.** The reel card is
+  a client-side widget: it calls `/api/builds/<id>/public`, so hydrations are
+  its impression count. The grid (`gen/spoke.mjs`, a18) is baked HTML that
+  calls nothing — magician's hydrations went to **0** the day it shipped
+  (2026-08-18) while its clicks tripled, and clicks/hydrations read as 306%.
+  Nothing errored; the ratio was just meaningless. **Compare layouts on clicks
+  per ARTICLE VIEW**, which is defined for both. Judged that way on 18–21 Aug:
+  grid 32% (101/314) vs card 10% (137/1328), and magician itself was 8% on the
+  card two days earlier — the grid is ~3x, not the ~1x the hydration ratio
+  implied.
+
 ## Control glyphs (skill-move and controls pages)
 
 **The full story is `~/Desktop/Claude/ClubsUI-main/backend/CONTROLS.md`** — the

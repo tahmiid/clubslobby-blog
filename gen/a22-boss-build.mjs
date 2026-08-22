@@ -11,9 +11,17 @@ renderSpoke({
     'The leader. Elite duels plus Agility 90 and Reactions 93 through Capitano — reads danger first, arrives first, and lifts every defender around him inside the box.',
     'The destroyer. Boss+ maxes the physical trio — Slide Tackle 92, Aggression 90, Strength 90 — and its Immovable Object perk makes every duel you win feed the next one.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Boss is EA FC Pro Clubs' dominant centre-back — the archetype that wins headers, wins tackles, and wins the physical battle every single time. This guide is the complete FC 26 answer: every attribute of a finished level-100 Boss build, the order to spend your AP, which specialization to take, and two real builds — a Van Dijk and a Bastoni — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'boss-grid.json',
+  gridHead: 'Fourteen Boss builds, ready to copy',
+  gridSub: 'Van Dijk, Bastoni, Rüdiger, Marquinhos, Konaté, van de Ven — plus Maldini and Cannavaro from the legends shelf. Tap any card to open it.',
+
+  intro: () => `<p>The Boss is EA FC Pro Clubs' dominant centre-back — the archetype that wins headers, wins tackles, and wins the physical battle every single time. Here are fourteen finished level-100 Boss builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Seven attributes cap at <strong>99</strong> — Strength, Aggression, Jumping, Heading Accuracy, Standing Tackle, Slide Tackle and Reactions — which is every stat a duel can be decided by. The trade is on the ball: this archetype starts Lengthy by default, and while its passing ceilings are respectable, nobody picks a Boss to dictate play. You pick it so nothing gets past.</p>`,

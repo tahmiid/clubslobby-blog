@@ -11,9 +11,17 @@ renderSpoke({
     'The playmaking fullback. Crossing 99 and Curve 96 with a midfielder’s passing range, and Marauder+ boosting every overlap delivery — assists from the touchline.',
     'The wing rocket. Speedster stacks Acceleration 90 on Sprint Speed 92, and its Jet Fuel perk boosts your dribbling at exactly top speed — nobody recovers, nobody escapes.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Marauder is EA FC Pro Clubs' attacking fullback — the fastest defender archetype in the game, comfortable defending the flank and ending moves at the other end of it. This guide is the complete FC 26 answer: every attribute of a finished level-100 Marauder build, the order to spend your AP, which specialization to take, and two real builds — an Alexander-Arnold and a Nuno Mendes — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'marauder-grid.json',
+  gridHead: 'Fourteen Marauder builds, ready to copy',
+  gridSub: 'Alexander-Arnold, Nuno Mendes, Hakimi, Theo Hernández, Robertson — plus Roberto Carlos and Cafu from the legends shelf. Tap any card to open it.',
+
+  intro: () => `<p>The Marauder is EA FC Pro Clubs' attacking fullback — the fastest defender archetype in the game, comfortable defending the flank and ending moves at the other end of it. Here are fourteen finished level-100 Marauder builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} The three 99 ceilings say it plainly: Crossing, Dribbling, Reactions. This is the defender that attacks. The trade is in the middle — Heading Accuracy stops at 90 and the pure centre-back stats sit below both the Boss and the Progressor — so a Marauder lives on the touchline, not in the six-yard box.</p>`,

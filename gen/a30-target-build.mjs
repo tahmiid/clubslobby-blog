@@ -17,9 +17,17 @@ renderSpoke({
     'The icon. Finishing, Shot Power and Att. Position 96 under Jumping 96 and Heading 95 — Target+ locks down the air, and five-star skill moves handle the ground. Siuuu.',
     'The complete nine. The same 96-rated scoring core with a playmaker\'s Short Pass 93 through Roamer — drops deep, links the play, then arrives to end it.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Target is EA FC Pro Clubs' physical striker — the hold-up forward who wins the duels, the headers, and the goals that come from dominance rather than daylight. This guide is the complete FC 26 answer: every attribute of a finished level-100 Target build, the order to spend your AP, which specialization to take, and the two most-copied Target builds on the site — a Ronaldo and a Kane — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'target-grid.json',
+  gridHead: 'Fourteen Target builds, ready to copy',
+  gridSub: 'Ronaldo, Kane, Haaland, Gyökeres, Leão — plus Zlatan the Bicycle and the CL Ronaldo. Tap any card to open it.',
+
+  intro: () => `<p>The Target is EA FC Pro Clubs' physical striker — the hold-up forward who wins the duels, the headers, and the goals that come from dominance rather than daylight. Here are fourteen finished level-100 Target builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} The ceilings read like a heavyweight's card: Strength, Shot Power, Heading Accuracy, Composure, Reactions, FK Accuracy and Penalties all at <strong>99</strong>. It is the striker defenders can't move — and the trade is burst: Acceleration caps at 90, so a Target wins position, not footraces. Every cross, long ball and second ball in the box belongs to you.</p>`,

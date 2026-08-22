@@ -16,9 +16,18 @@ renderSpoke({
     'The conductor. Vision 98 over a 96-rated touch, and Maestro+ boosting the whole team’s attacking positioning every time you switch play. The game moves at your speed.',
     'The all-action eight. Heartbeat buys Agility 92 and Aggression 90, its Tempo Setter perk recovers team stamina — and Finishing 91 arrives late in the box.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Maestro is EA FC Pro Clubs' deep playmaker — the midfielder who orchestrates everything from the middle of the pitch. This guide is the complete FC 26 answer: every attribute of a finished level-100 Maestro build, the order to spend your AP, which specialization to take, and the two most-copied Maestro builds on the site — a Wirtz and a Zidane — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'maestro-grid.json',
+  gridHead: 'Fourteen Maestro builds, ready to copy',
+  gridSub: 'Wirtz, Bellingham, Valverde, Barella, Enzo Fernández — plus Zidane, Gerrard and Kaká from the legends shelf. Tap any card to open it.',
+  midReel: 1,  // Zidane: 10 copies vs Wirtz 6 on 2026-08-21 - the badge must stay true
+
+  intro: () => `<p>The Maestro is EA FC Pro Clubs' deep playmaker — the midfielder who orchestrates everything from the middle of the pitch. Here are fourteen finished level-100 Maestro builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Nine ceilings at <strong>99</strong> — Vision, Short Pass, Long Pass, Ball Control, Composure, Agility, Reactions, FK Accuracy and Penalties — make it the most technically complete midfielder in the catalog. What it is not is a sprinter or a screen: pace caps at 90 and the tackling numbers are honest, so the Maestro rules matches it can slow down to its own rhythm.</p>`,

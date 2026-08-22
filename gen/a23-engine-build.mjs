@@ -11,9 +11,17 @@ renderSpoke({
     'The pest. Stamina 99, a 96 defensive brain, and Engine+ so the sprints keep coming in minute 85 — the fullback opponents are sick of by half time.',
     'The all-pitch presence. Everywhere pairs Reactions 92 with real ball skills, and its Field Coverage perk accelerates you to every loose ball first.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Engine is EA FC Pro Clubs' perpetual-motion fullback — the archetype whose whole identity is that it never, ever stops. This guide is the complete FC 26 answer: every attribute of a finished level-100 Engine build, the order to spend your AP, which specialization to take, and two real builds — a Cucurella and a Dimarco — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'engine-grid.json',
+  gridHead: 'Eight Engine builds, ready to copy',
+  gridSub: 'Cucurella, Dimarco, Calafiori, Porro, Gusto — plus the Cucurella \'26 WC tribute. Tap any card to open it.',
+
+  intro: () => `<p>The Engine is EA FC Pro Clubs' perpetual-motion fullback — the archetype whose whole identity is that it never, ever stops. Here are eight finished level-100 Engine builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Three ceilings define it: Stamina, Defensive Awareness and Reactions all cap at <strong>99</strong>. It will not out-sprint a Marauder over ten yards or out-muscle a Boss in the air — Strength stops well short — but from minute one to minute ninety it makes more runs, more tackles and more recoveries than anything else on the pitch.</p>`,

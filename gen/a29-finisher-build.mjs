@@ -17,9 +17,17 @@ renderSpoke({
     'The moment. Finishing 99, Att. Position 98, Composure 97 — the 93:20 build converts the chance that decides a title, and Hunter keeps it on the last shoulder to meet it.',
     'The menace. Finishing 99 on a 6-foot Controlled frame with Aggression 96 — Presser makes the defence play scared, and everything loose in the box is his.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Finisher is EA FC Pro Clubs' out-and-out striker — the archetype built to do one thing better than anything else in the game: score. This guide is the complete FC 26 answer: every attribute of a finished level-100 Finisher build, the order to spend your AP, which specialization to take, and the two most-copied Finisher builds on the site — the Agüero 93:20 and the Suárez '14 — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'finisher-grid.json',
+  gridHead: 'Fourteen Finisher builds, ready to copy',
+  gridSub: 'Agüero 93:20, Suárez \'14, Mbappé, Isak, Salah — plus Henry and the R9 from the legends shelf. Tap any card to open it.',
+
+  intro: () => `<p>The Finisher is EA FC Pro Clubs' out-and-out striker — the archetype built to do one thing better than anything else in the game: score. Here are fourteen finished level-100 Finisher builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} Ten ceilings at <strong>99</strong> — including Finishing, Att. Position, Composure, Reactions, Volleys and Shot Power — make this statistically the most complete goalscorer in the catalog. What it is not is a target man: Strength and Heading sit below the Target's, and nobody is asking a Finisher to hold the ball up. Get chances; end them.</p>`,

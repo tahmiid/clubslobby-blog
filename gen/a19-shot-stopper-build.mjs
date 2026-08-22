@@ -13,9 +13,17 @@ renderSpoke({
     'The legend. All FIVE keeping stats at 99 — kicking included — with Octopus turning the six-yard box into his personal property. The complete goalkeeper, no compromises.',
     'The wall. Reflexes, Positioning and Diving at 99 with Handling 98, Strength and Jumping 96 — and Shot Stopper+ so every save makes the next one better.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Shot Stopper is EA FC Pro Clubs' pure goalkeeper — the archetype you pick to make saves, full stop. This guide is the complete FC 26 answer: every attribute of a finished level-100 Shot Stopper build, the order to spend your AP, which specialization to take, and the two most-copied Shot Stopper builds on the site — a Buffon and a Donnarumma — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'shot-stopper-grid.json',
+  gridHead: 'Fourteen Shot Stopper builds, ready to copy',
+  gridSub: 'Courtois, Donnarumma, Alisson, Oblak, Kobel, Joan García — plus Buffon from the legends shelf. Tap any card to open it.',
+
+  intro: () => `<p>The Shot Stopper is EA FC Pro Clubs' pure goalkeeper — the archetype you pick to make saves, full stop. Here are fourteen finished level-100 Shot Stopper builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} The numbers say the same thing: GK Diving, GK Handling, GK Kicking, GK Positioning and GK Reflexes all cap at <strong>99</strong>, and nothing else in the archetype matters as much. The trade is mobility with the ball — Sprint Speed stops at 85 and the outfield technical stats are token — so you are not the keeper who starts attacks. That job belongs to the Sweeper Keeper.</p>`,

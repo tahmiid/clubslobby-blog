@@ -11,9 +11,17 @@ renderSpoke({
     'The recovery machine. Acceleration and Sprint Speed 90 behind a 96-rated tackle, with Janitor cleaning up everything that drops — the centre-back for a high line.',
     'The ball-player. Pioneer takes Dribbling to 92 and both passing stats past 90 — a libero who strides out and switches play like a midfielder.',
   ],
-  buildsH2: 'The two builds',
+  buildsH2: 'The two builds, in full',
 
-  intro: ({ openUrl, builds }) => `<p>The Progressor is EA FC Pro Clubs' ball-playing centre-back — a defender first, but one who starts attacks instead of just ending them. This guide is the complete FC 26 answer: every attribute of a finished level-100 Progressor build, the order to spend your AP, which specialization to take, and two real builds — a Saliba and a Cubarsí — you can <a href="${openUrl(builds[0])}">open in the Pro Clubs HQ builder</a> and copy outright.</p>`,
+  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
+  // view against the card's 10% over 18-21 Aug, so every spoke now opens
+  // with the grid. Data exported from prod; every id API-verified
+  // (CLAUDE.md publishing rule 1).
+  gridFile: 'progressor-grid.json',
+  gridHead: 'Eleven Progressor builds, ready to copy',
+  gridSub: 'Saliba, Cubarsí, Huijsen, Tapsoba, Hato, Bisseck — eleven ball-playing centre-backs. Tap any card to open it.',
+
+  intro: () => `<p>The Progressor is EA FC Pro Clubs' ball-playing centre-back — a defender first, but one who starts attacks instead of just ending them. Here are eleven finished level-100 Progressor builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
 
   whyParas: ({ arch, esc }) => [
     `<p>${esc(arch.description)} The ceilings tell you what kind of centre-back this is: Standing Tackle, Defensive Awareness, Ball Control, Reactions and Jumping all cap at <strong>99</strong> — defending and the first touch, together. What it is not is a bruiser: Strength stops at 93 and Aggression at 90-something short of a Boss, so you win the ball by reading play and stepping in, not by flattening people.</p>`,
