@@ -29,6 +29,7 @@ import path from 'node:path';
 import { ARCH, ATTRS, BRAND, SITE, title, esc, kg, baseCss, appCta } from './common.mjs';
 import { AD_A, AD_B } from './ads.mjs';
 import { gridCss } from './fc27grid.mjs';
+import { breadcrumbLd } from './jsonld.mjs';
 import { coverUrl, ft, psName, psIcon } from './spoke.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
@@ -173,6 +174,7 @@ ${fc26 ? gridCard(fc26, 'FC 26') : ''}
     }),
     kg(`<div class="${P}">${faq}</div>`),
     kg(`<div class="${P}"><p class="rel"><strong>More player builds:</strong> ${related}</p></div>`),
+    breadcrumbLd([['Blog', '/'], ['Player Builds', null], [cfg.name, null]]),
   ].filter(Boolean).join('\n\n');
 
   return body;

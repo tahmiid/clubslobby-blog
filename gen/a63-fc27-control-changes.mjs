@@ -25,6 +25,7 @@ import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
+import { breadcrumbLd } from './jsonld.mjs';
 import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
 import { M26, M27, differs, cosmetic, renames, added, removed, sharedCount,
          untouchedPages } from './controls-diff.mjs';
@@ -250,7 +251,8 @@ ${affiliateSection({ heading: 'Kit worth having',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
 ${kg(padSwitcher())}`;
 
-writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html);
+writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a63.html'), html + `
+${breadcrumbLd([['Blog', '/'], ['FC 27 Controls', '/fc27-controls/'], ["What changed in FC 27's controls", null]])}`);
 console.log(`a63.html — fc27-control-changes (lists first, computed diff)`);
 console.log(`  ${added.length} added · ${removed.length} removed · ${renames.length} renamed`
   + ` (+${cosmetic.length} cosmetic) · ${differs.length} changed`

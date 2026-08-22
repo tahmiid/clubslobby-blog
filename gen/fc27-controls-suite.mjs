@@ -19,6 +19,7 @@ import { affiliateSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { CONTROLS, padSwitcher, CONTROL_CSS } from './controls.mjs';
 import { screenList, SCREEN_CSS } from './controls-screen.mjs';
+import { breadcrumbLd, itemListLd } from './jsonld.mjs';
 import { newSfx, added, renames, sfx } from './controls-diff.mjs';
 
 const DIR = path.join(import.meta.dirname, '..');
@@ -125,7 +126,16 @@ ${writing}
 ${cta}
 ${AD_C}
 ${kitBlock}
-${kg(padSwitcher())}`;
+${kg(padSwitcher())}
+${breadcrumbLd([['Blog', '/'], ['FC 27 Controls', '/fc27-controls/'], [s.label, null]])}
+${itemListLd({
+  // Capped: a full list would add double-digit kilobytes of JSON to a page
+  // that already carries every entry as content. numberOfItems states the
+  // real total; the elements are the first hundred in the game's own order.
+  name: `EA FC 27 ${s.label} — every entry`,
+  items: CONTROLS.moves.filter((m) => m.screen === s.screen).slice(0, 100)
+    .map((m) => ({ name: m.name })),
+})}`;
   writeFileSync(path.join(DIR, 'out', file), html);
   console.log(`${file}  ${s.slug}`);
 }
@@ -275,5 +285,16 @@ reading. Set it once and every page remembers.</p>
 ${cta}
 ${AD_C}
 ${kitBlock}`;
-writeFileSync(path.join(DIR, 'out', 'a68.html'), pillar);
+writeFileSync(path.join(DIR, 'out', 'a68.html'), pillar + `
+${breadcrumbLd([['Blog', '/'], ['FC 27 Controls', null]])}
+${itemListLd({
+  name: 'FC 27 controls, list by list',
+  items: [
+    { name: 'FC 27 Basic Controls', url: '/fc27-basic-controls/' },
+    { name: 'All FC 27 Skill Moves', url: '/fc27-skill-moves/' },
+    { name: 'All FC 27 Celebrations', url: '/fc27-celebrations/' },
+    { name: 'New FC 27 Skill Moves', url: '/fc27-new-skill-moves/' },
+    { name: "What Changed in FC 27's Controls", url: '/fc27-control-changes/' },
+  ],
+})}`);
 console.log('a68.html  fc27-controls');

@@ -20,6 +20,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, BRAND, esc, kg, appCta } from './common.mjs';
 import { AD_A, AD_C } from './ads.mjs';
+import { breadcrumbLd } from './jsonld.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const RULES = JSON.parse(readFileSync(path.join(DIR, 'fc26', 'rules_progression.json'), 'utf8'));
@@ -133,6 +134,7 @@ ${ruleList(len)}
   `<h2 id="fc27">What about FC 27?</h2>
 <p>EA has not published FC 27's acceleration thresholds. Treat any FC 27 numbers you see as rumor until release — this page will be updated with the real values once the game is out (Early Access opens 18 September).</p>`,
   AD_C,
+  breadcrumbLd([['Blog', '/'], ['Lengthy vs Controlled vs Explosive', null]]),
 ].join('\n\n');
 
 const html = body + '\n';

@@ -16,6 +16,7 @@ import { affiliateSection } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
 import { renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS,
          lookup } from './controls.mjs';
+import { breadcrumbLd, howToLd, itemListLd, plainCombo } from './jsonld.mjs';
 
 // The inputs come from the controls dataset (data/fc27-controls.json, exported
 // from controls_actions/controls_inputs). data/fc27-skills.json keeps the
@@ -107,7 +108,13 @@ ${appCta({
 menu, every tier, animated.</p>
 
 ${gameBlock}
-${kg(padSwitcher())}`;
+${kg(padSwitcher())}
+${breadcrumbLd([['Blog', '/'], ['New FC 27 Skill Moves', HUB], [m.name, null]])}
+${howToLd({
+  name: `How to do ${m.name} in EA FC 27`,
+  description: `${m.star}-star skill move — PlayStation inputs; the page renders Xbox too.`,
+  steps: [plainCombo(CTRL(m.name).guidedCombo)],
+})}`;
   writeFileSync(path.join(DIR, 'out', `a${50 + i}.html`), html);
   return { file: `a${50 + i}.html`, slug: `fc27-how-to-${m.slug}`, move: m };
 }
@@ -157,7 +164,12 @@ controls changed too — the complete list is in
 ${affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] })}
-${kg(padSwitcher())}`;
+${kg(padSwitcher())}
+${breadcrumbLd([['Blog', '/'], ['New FC 27 Skill Moves', null]])}
+${itemListLd({
+  name: 'New skill moves in EA FC 27',
+  items: MOVES.map((m) => ({ name: m.name, url: `/fc27-how-to-${m.slug}/` })),
+})}`;
   writeFileSync(path.join(DIR, 'out', 'a49.html'), html);
 }
 
