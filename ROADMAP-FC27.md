@@ -7,7 +7,9 @@ This replaces nothing and supersedes the scheduling in two earlier documents:
 holds and most of it has been executed; their *timeline* assumed a product that
 does not exist yet. See §3.
 
-Companion documents: `MONETIZATION.md` (ad/affiliate slot map and sequence),
+Companion documents: `LAUNCH-DAY-2026-09-18.md` (the dated launch checklist —
+what must be true before 18 Sep and what the two game days need),
+`MONETIZATION.md` (ad/affiliate slot map and sequence),
 `DEPLOYMENT.md` (how anything ships), `reports/funnel/` (the numbers).
 
 ---
