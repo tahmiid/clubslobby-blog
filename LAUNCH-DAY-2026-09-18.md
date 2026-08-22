@@ -30,6 +30,10 @@ trial). Full launch **Thu 25 Sep**. The traffic window is 18 Sep – early Oct.
   formation, meta attribute per group, gold/silver PlayStyle sets, reference
   builds per position — so declaring the season at launch is data entry, not
   design. The admin dry-run exists for rehearsal.
+- [ ] **AdSense re-review requested** — after the #141 index curation has
+  been recrawled (watch Search Console page counts, ~early September), hit
+  "Request review" in the AdSense console. Approval before 18 Sep is the
+  goal; slot A fills itself the moment it lands.
 - [ ] **Deploy state clean**: `main == dev == production`, suites green, so
   launch-day changes ride on a known baseline.
 

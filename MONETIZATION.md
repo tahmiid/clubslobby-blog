@@ -7,6 +7,24 @@ nothing has to be retrofitted into a design that never left room for it.
 Nothing here is live. No ad script, affiliate link or consent banner is in
 production as of this date.
 
+> ### 2026-08-22 — AdSense rejects: "Low value content", and the fix ships
+>
+> The review verdict arrived by email. Diagnosis was arithmetic, not
+> content: the APP's sitemap advertised 484 URLs of which 432 were ~174-word
+> templated build pages and 46 creator pages — 90% of the domain's indexable
+> surface read as auto-generated, drowning the blog's 57 real articles.
+> The blog itself passes every content test.
+>
+> Fix (app repo, #141): sitemap curated to the top 100 house builds by
+> views, creator pages out entirely, `noindex,follow` on every organic
+> build page and all /crawl/u pages, and real derived prose on build pages.
+>
+> **Do not request the re-review immediately.** Googlebot must recrawl the
+> pruned map first (~1–2 weeks); the player-article wave landing in the
+> same window adds editorial weight. Request the review from the AdSense
+> console once Search Console shows the noindexed pages dropping out.
+> Slot A's empty divs stay as they are — code present, nothing rendered.
+
 > ### 2026-08-21 — slot A moves to directly below the grid, on all 13 spokes
 >
 > The grid rollout (magician A/B: 32% clicks-per-view vs the card's 10%)
