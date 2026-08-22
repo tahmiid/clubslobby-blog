@@ -96,6 +96,15 @@ What changed under the numbers:
   (app migration 0043, 17 Aug) — the grid cards no longer advertise
   half-empty builds.
 
+**Player-page demand is researched (22 Aug):** `reports/player-demand-2026-08-22.md`
+— Search Console shows player queries ranking with zero clicks (titled pages
+are the fix; Zidane, the one covered name, converts), the roster already
+holds ~90% of demanded players, only Gullit/Drogba/Rashford (+Lewandowski,
+Foden, and FC 27 Griezmann/Dembélé/Rodrygo) need new builds. Batch-1 list of
+15 pages is in the report, plus three non-player gaps that outscore every
+player: magician best-stats (48 imp), the AcceleRATE/lengthy cluster (~90
+imp, calculator opportunity), sweeper-keeper-vs-shot-stopper (~40 imp).
+
 **Affiliate moved (19–20 Aug):** Amazon Associates is live on ten articles
 (accessories only, below the app CTA — 24h cookie shapes the placement), and
 the Awin applications are in (CDKeys US + UK, Fanatical; GMG dropped by the
