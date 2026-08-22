@@ -1,0 +1,100 @@
+<p>Every Pro Clubs build runs one of three acceleration styles — <strong>Explosive</strong>, <strong>Lengthy</strong> or <strong>Controlled</strong> — and the game decides which from exactly four numbers: height, Agility, Strength and Acceleration. The thresholds below are the actual FC 26 rules (the same data the Pro Clubs HQ builder computes from), and the calculator applies them live.</p>
+
+<!--kg-card-begin: html-->
+<div class="a87c">
+<style>
+.a87c{background:#0c0c14;border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:18px 16px;margin:1.6em 0;color:#f2f3f7;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.a87c h3{margin:0 0 4px;font-size:17px;color:#f2f3f7}
+.a87c .sub{font-size:12.5px;color:#9aa0ad;margin:0 0 14px}
+.a87c .row{display:flex;align-items:center;gap:10px;margin:10px 0}
+.a87c label{flex:0 0 118px;font-size:13px;color:#dfe2ea}
+.a87c input[type=range]{flex:1;accent-color:#2DE2C5}
+.a87c output{flex:0 0 74px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;font-size:14px}
+.a87c .res{margin-top:16px;border-top:1px solid rgba(255,255,255,.12);padding-top:14px}
+.a87c .type{font-size:26px;font-weight:800;letter-spacing:.02em;color:#2DE2C5}
+.a87c .why{font-size:12.5px;color:#9aa0ad;margin-top:4px;line-height:1.55}
+</style>
+<h3>AcceleRATE calculator — FC 26</h3>
+<p class="sub">The same rules the Pro Clubs HQ builder applies. Drag to your build's numbers.</p>
+<div class="row"><label for="a87h">Height</label><input id="a87h" type="range" min="160" max="205" value="180"><output id="a87ho">180 cm</output></div>
+<div class="row"><label for="a87ag">Agility</label><input id="a87ag" type="range" min="30" max="99" value="80"><output id="a87ago">80</output></div>
+<div class="row"><label for="a87st">Strength</label><input id="a87st" type="range" min="30" max="99" value="70"><output id="a87sto">70</output></div>
+<div class="row"><label for="a87ac">Acceleration</label><input id="a87ac" type="range" min="30" max="99" value="85"><output id="a87aco">85</output></div>
+<div class="res"><div class="type" id="a87res">—</div><div class="why" id="a87why"></div></div>
+<script>
+(function(){
+var RULES=[{"t":"Explosive","hmin":null,"hmax":182,"ag":65,"st":null,"ac":80,"diff":"agility - strength","dmin":10},{"t":"Lengthy","hmin":183,"hmax":null,"ag":null,"st":65,"ac":40,"diff":"strength - agility","dmin":4},{"t":"Controlled","hmin":null,"hmax":null,"ag":null,"st":null,"ac":null,"diff":null,"dmin":null}];
+function typeOf(a,s,ac,h){
+  for(var i=0;i<RULES.length;i++){var r=RULES[i];
+    if(r.hmin!=null&&h<r.hmin)continue;
+    if(r.hmax!=null&&h>r.hmax)continue;
+    if(r.ag!=null&&a<r.ag)continue;
+    if(r.st!=null&&s<r.st)continue;
+    if(r.ac!=null&&ac<r.ac)continue;
+    if(r.dmin!=null){var d=r.diff==='agility - strength'?a-s:s-a;if(d<r.dmin)continue;}
+    return r.t;}
+  return 'Controlled';}
+var ids=['h','ag','st','ac'];
+function ftIn(cm){var i=Math.round(cm/2.54);return Math.floor(i/12)+"'"+(i%12)+'"';}
+function upd(){
+  var h=+document.getElementById('a87h').value,
+      a=+document.getElementById('a87ag').value,
+      s=+document.getElementById('a87st').value,
+      ac=+document.getElementById('a87ac').value;
+  document.getElementById('a87ho').textContent=h+' cm';
+  document.getElementById('a87ago').textContent=a;
+  document.getElementById('a87sto').textContent=s;
+  document.getElementById('a87aco').textContent=ac;
+  var t=typeOf(a,s,ac,h);
+  document.getElementById('a87res').textContent=t;
+  var why={
+   'Explosive':'Short bursts — fastest over the first few metres. ('+ftIn(h)+', Agility '+a+' vs Strength '+s+')',
+   'Lengthy':'Slow to start, hardest to catch at top speed. ('+ftIn(h)+', Strength '+s+' vs Agility '+a+')',
+   'Controlled':'The default — neither the Explosive nor the Lengthy conditions are met at '+ftIn(h)+'.'};
+  document.getElementById('a87why').textContent=why[t];}
+ids.forEach(function(x){document.getElementById('a87'+x).addEventListener('input',upd);});
+upd();})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<h2 id="explosive">Explosive — the checklist</h2>
+<p>Short bursts of speed; accelerates fastest over the first few metres.</p>
+<ul><li>height <strong>182 cm or under</strong> (5'0" and below)</li><li>Agility <strong>65+</strong></li><li><strong>agility - strength ≥ 10</strong></li><li>Acceleration <strong>80+</strong></li></ul>
+<p>Miss any one line and the build is not Explosive — the conditions are all-or-nothing, checked in order.</p>
+
+<h2 id="lengthy">Lengthy — the checklist</h2>
+<p>Slow to start but very hard to catch once at top speed.</p>
+<ul><li>height <strong>183 cm or over</strong> (6'0" and up)</li><li>Strength <strong>65+</strong></li><li><strong>strength - agility ≥ 4</strong></li><li>Acceleration <strong>40+</strong></li></ul>
+<p>So yes — <strong>you can be Lengthy in Pro Clubs</strong>: stand 183 cm or taller, keep Strength at 65+ with Strength beating Agility by 4+, and hold at least 40 Acceleration.</p>
+
+<h2 id="controlled">Controlled — the default</h2>
+<p>Default — any build that meets neither the Explosive nor the Lengthy conditions. There is no Controlled checklist to pass; it is what remains when the other two fail.</p>
+
+<h2 id="which">Which should you run?</h2>
+<p>It follows from the body your archetype allows: heights under 183 cm can chase Explosive, heights from 183 cm can chase Lengthy, and the band between them is Controlled territory no matter the stats. Every build card in the app prints its AcceleRATE type, and the <a href="https://proclubshq.com/blog/best-pro-clubs-archetypes/">archetype tier list</a> notes where each archetype's height range lands.</p>
+
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">Free — no install</p>
+<h3>Test it on a real build</h3>
+<p>Open the Pro Clubs HQ builder, set your height and attributes, and watch the AcceleRATE type update as you spend points.</p>
+<a class="b" href="https://proclubshq.comhttps://proclubshq.com/?ref=proclubshq.com">Open the builder → →</a>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="fc27">What about FC 27?</h2>
+<p>EA has not published FC 27's acceleration thresholds. Treat any FC 27 numbers you see as rumor until release — this page will be updated with the real values once the game is out (Early Access opens 18 September).</p>
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="c"></div>
+<!--kg-card-end: html-->

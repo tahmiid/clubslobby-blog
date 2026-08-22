@@ -1,0 +1,2075 @@
+{
+    "gameYear": 26,
+    "levels": [
+        {
+            "level": 1,
+            "axpRequired": 0,
+            "ap": 100,
+            "apCumulative": 100,
+            "cardTier": "Bronze 1",
+            "playstyleSlot": 1,
+            "signaturePerk": true,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 2,
+            "axpRequired": 120,
+            "ap": 9,
+            "apCumulative": 109,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 3,
+            "axpRequired": 320,
+            "ap": 9,
+            "apCumulative": 118,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 4,
+            "axpRequired": 590,
+            "ap": 9,
+            "apCumulative": 127,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 5,
+            "axpRequired": 910,
+            "ap": 19,
+            "apCumulative": 146,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 6,
+            "axpRequired": 1290,
+            "ap": 10,
+            "apCumulative": 156,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 7,
+            "axpRequired": 1710,
+            "ap": 10,
+            "apCumulative": 166,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 8,
+            "axpRequired": 2160,
+            "ap": 10,
+            "apCumulative": 176,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 9,
+            "axpRequired": 2640,
+            "ap": 10,
+            "apCumulative": 186,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 10,
+            "axpRequired": 3150,
+            "ap": 38,
+            "apCumulative": 224,
+            "cardTier": "Bronze 2",
+            "playstyleSlot": 2,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 11,
+            "axpRequired": 3690,
+            "ap": 13,
+            "apCumulative": 237,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 12,
+            "axpRequired": 4250,
+            "ap": 13,
+            "apCumulative": 250,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 13,
+            "axpRequired": 4840,
+            "ap": 13,
+            "apCumulative": 263,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 14,
+            "axpRequired": 5450,
+            "ap": 13,
+            "apCumulative": 276,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 15,
+            "axpRequired": 6080,
+            "ap": 25,
+            "apCumulative": 301,
+            "cardTier": "Silver 1",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 16,
+            "axpRequired": 6730,
+            "ap": 13,
+            "apCumulative": 314,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 17,
+            "axpRequired": 7400,
+            "ap": 13,
+            "apCumulative": 327,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 18,
+            "axpRequired": 8090,
+            "ap": 13,
+            "apCumulative": 340,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 19,
+            "axpRequired": 8800,
+            "ap": 13,
+            "apCumulative": 353,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 20,
+            "axpRequired": 9530,
+            "ap": 44,
+            "apCumulative": 397,
+            "cardTier": null,
+            "playstyleSlot": 3,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 21,
+            "axpRequired": 10280,
+            "ap": 19,
+            "apCumulative": 416,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 22,
+            "axpRequired": 11050,
+            "ap": 19,
+            "apCumulative": 435,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 23,
+            "axpRequired": 11840,
+            "ap": 19,
+            "apCumulative": 454,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 24,
+            "axpRequired": 12640,
+            "ap": 19,
+            "apCumulative": 473,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 25,
+            "axpRequired": 13460,
+            "ap": 38,
+            "apCumulative": 511,
+            "cardTier": "Silver 2",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 26,
+            "axpRequired": 14300,
+            "ap": 25,
+            "apCumulative": 536,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 27,
+            "axpRequired": 15150,
+            "ap": 25,
+            "apCumulative": 561,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 28,
+            "axpRequired": 16020,
+            "ap": 25,
+            "apCumulative": 586,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 29,
+            "axpRequired": 16900,
+            "ap": 25,
+            "apCumulative": 611,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 30,
+            "axpRequired": 17800,
+            "ap": 63,
+            "apCumulative": 674,
+            "cardTier": "Gold 1",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": true
+        },
+        {
+            "level": 31,
+            "axpRequired": 18710,
+            "ap": 25,
+            "apCumulative": 699,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 32,
+            "axpRequired": 19640,
+            "ap": 25,
+            "apCumulative": 724,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 33,
+            "axpRequired": 20580,
+            "ap": 25,
+            "apCumulative": 749,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 34,
+            "axpRequired": 21540,
+            "ap": 25,
+            "apCumulative": 774,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 35,
+            "axpRequired": 22510,
+            "ap": 38,
+            "apCumulative": 812,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 36,
+            "axpRequired": 23500,
+            "ap": 25,
+            "apCumulative": 837,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 37,
+            "axpRequired": 24500,
+            "ap": 25,
+            "apCumulative": 862,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 38,
+            "axpRequired": 25510,
+            "ap": 25,
+            "apCumulative": 887,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 39,
+            "axpRequired": 26540,
+            "ap": 25,
+            "apCumulative": 912,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 40,
+            "axpRequired": 27580,
+            "ap": 50,
+            "apCumulative": 962,
+            "cardTier": "Gold 2",
+            "playstyleSlot": 4,
+            "signaturePerk": true,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 41,
+            "axpRequired": 28630,
+            "ap": 25,
+            "apCumulative": 987,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 42,
+            "axpRequired": 29700,
+            "ap": 25,
+            "apCumulative": 1012,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 43,
+            "axpRequired": 30780,
+            "ap": 25,
+            "apCumulative": 1037,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 44,
+            "axpRequired": 31870,
+            "ap": 25,
+            "apCumulative": 1062,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 45,
+            "axpRequired": 32970,
+            "ap": 44,
+            "apCumulative": 1106,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 46,
+            "axpRequired": 34090,
+            "ap": 25,
+            "apCumulative": 1131,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 47,
+            "axpRequired": 35220,
+            "ap": 25,
+            "apCumulative": 1156,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 48,
+            "axpRequired": 36360,
+            "ap": 25,
+            "apCumulative": 1181,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 49,
+            "axpRequired": 37510,
+            "ap": 25,
+            "apCumulative": 1206,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 50,
+            "axpRequired": 38670,
+            "ap": 63,
+            "apCumulative": 1269,
+            "cardTier": "Platinum 1",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": true
+        },
+        {
+            "level": 51,
+            "axpRequired": 40390,
+            "ap": 25,
+            "apCumulative": 1294,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 52,
+            "axpRequired": 42110,
+            "ap": 25,
+            "apCumulative": 1319,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 53,
+            "axpRequired": 43830,
+            "ap": 25,
+            "apCumulative": 1344,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 54,
+            "axpRequired": 45550,
+            "ap": 25,
+            "apCumulative": 1369,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 55,
+            "axpRequired": 47270,
+            "ap": 50,
+            "apCumulative": 1419,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 56,
+            "axpRequired": 48990,
+            "ap": 25,
+            "apCumulative": 1444,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 57,
+            "axpRequired": 50710,
+            "ap": 25,
+            "apCumulative": 1469,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 58,
+            "axpRequired": 52430,
+            "ap": 25,
+            "apCumulative": 1494,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 59,
+            "axpRequired": 54150,
+            "ap": 25,
+            "apCumulative": 1519,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 60,
+            "axpRequired": 55870,
+            "ap": 50,
+            "apCumulative": 1569,
+            "cardTier": null,
+            "playstyleSlot": 5,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 61,
+            "axpRequired": 57590,
+            "ap": 25,
+            "apCumulative": 1594,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 62,
+            "axpRequired": 59310,
+            "ap": 25,
+            "apCumulative": 1619,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 63,
+            "axpRequired": 61030,
+            "ap": 25,
+            "apCumulative": 1644,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 64,
+            "axpRequired": 62750,
+            "ap": 25,
+            "apCumulative": 1669,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 65,
+            "axpRequired": 64470,
+            "ap": 50,
+            "apCumulative": 1719,
+            "cardTier": "Platinum 2",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 66,
+            "axpRequired": 66190,
+            "ap": 25,
+            "apCumulative": 1744,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 67,
+            "axpRequired": 67910,
+            "ap": 25,
+            "apCumulative": 1769,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 68,
+            "axpRequired": 69630,
+            "ap": 25,
+            "apCumulative": 1794,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 69,
+            "axpRequired": 71350,
+            "ap": 25,
+            "apCumulative": 1819,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 70,
+            "axpRequired": 73070,
+            "ap": 50,
+            "apCumulative": 1869,
+            "cardTier": null,
+            "playstyleSlot": 6,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 71,
+            "axpRequired": 74790,
+            "ap": 25,
+            "apCumulative": 1894,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 72,
+            "axpRequired": 76510,
+            "ap": 25,
+            "apCumulative": 1919,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 73,
+            "axpRequired": 78230,
+            "ap": 25,
+            "apCumulative": 1944,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 74,
+            "axpRequired": 79950,
+            "ap": 25,
+            "apCumulative": 1969,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 75,
+            "axpRequired": 81670,
+            "ap": 75,
+            "apCumulative": 2044,
+            "cardTier": "Diamond 1",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": true
+        },
+        {
+            "level": 76,
+            "axpRequired": 83610,
+            "ap": 31,
+            "apCumulative": 2075,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 77,
+            "axpRequired": 85550,
+            "ap": 31,
+            "apCumulative": 2106,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 78,
+            "axpRequired": 87490,
+            "ap": 31,
+            "apCumulative": 2137,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 79,
+            "axpRequired": 89430,
+            "ap": 31,
+            "apCumulative": 2168,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 80,
+            "axpRequired": 91370,
+            "ap": 63,
+            "apCumulative": 2231,
+            "cardTier": "Diamond 2",
+            "playstyleSlot": 7,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 81,
+            "axpRequired": 93310,
+            "ap": 31,
+            "apCumulative": 2262,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 82,
+            "axpRequired": 95250,
+            "ap": 31,
+            "apCumulative": 2293,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 83,
+            "axpRequired": 97190,
+            "ap": 31,
+            "apCumulative": 2324,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 84,
+            "axpRequired": 99130,
+            "ap": 31,
+            "apCumulative": 2355,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 85,
+            "axpRequired": 101070,
+            "ap": 88,
+            "apCumulative": 2443,
+            "cardTier": "Blue 1",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 86,
+            "axpRequired": 103320,
+            "ap": 31,
+            "apCumulative": 2474,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 87,
+            "axpRequired": 105570,
+            "ap": 31,
+            "apCumulative": 2505,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 88,
+            "axpRequired": 107820,
+            "ap": 31,
+            "apCumulative": 2536,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 89,
+            "axpRequired": 110070,
+            "ap": 31,
+            "apCumulative": 2567,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 90,
+            "axpRequired": 112320,
+            "ap": 63,
+            "apCumulative": 2630,
+            "cardTier": "Blue 2",
+            "playstyleSlot": 8,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 91,
+            "axpRequired": 114570,
+            "ap": 31,
+            "apCumulative": 2661,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 92,
+            "axpRequired": 116820,
+            "ap": 31,
+            "apCumulative": 2692,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 93,
+            "axpRequired": 119070,
+            "ap": 31,
+            "apCumulative": 2723,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 94,
+            "axpRequired": 121320,
+            "ap": 31,
+            "apCumulative": 2754,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 95,
+            "axpRequired": 123570,
+            "ap": 100,
+            "apCumulative": 2854,
+            "cardTier": "Elite 1",
+            "playstyleSlot": 9,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": true
+        },
+        {
+            "level": 96,
+            "axpRequired": 126310,
+            "ap": 50,
+            "apCumulative": 2904,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 97,
+            "axpRequired": 129050,
+            "ap": 50,
+            "apCumulative": 2954,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 98,
+            "axpRequired": 131790,
+            "ap": 50,
+            "apCumulative": 3004,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 99,
+            "axpRequired": 134530,
+            "ap": 50,
+            "apCumulative": 3054,
+            "cardTier": null,
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        },
+        {
+            "level": 100,
+            "axpRequired": 137270,
+            "ap": 113,
+            "apCumulative": 3167,
+            "cardTier": "Elite 2",
+            "playstyleSlot": null,
+            "signaturePerk": false,
+            "signaturePlaystyleUpgrade": false
+        }
+    ],
+    "apCostTiers": {
+        "tier0": [
+            {
+                "min": 41,
+                "max": 66,
+                "cost": 1
+            },
+            {
+                "min": 67,
+                "max": 74,
+                "cost": 2
+            },
+            {
+                "min": 75,
+                "max": 84,
+                "cost": 3
+            },
+            {
+                "min": 85,
+                "max": 89,
+                "cost": 6
+            },
+            {
+                "min": 90,
+                "max": 94,
+                "cost": 8
+            },
+            {
+                "min": 95,
+                "max": 95,
+                "cost": 9
+            },
+            {
+                "min": 96,
+                "max": 96,
+                "cost": 12
+            },
+            {
+                "min": 97,
+                "max": 97,
+                "cost": 14
+            },
+            {
+                "min": 98,
+                "max": 98,
+                "cost": 16
+            },
+            {
+                "min": 99,
+                "max": 99,
+                "cost": 18
+            }
+        ],
+        "tier1": [
+            {
+                "min": 41,
+                "max": 63,
+                "cost": 1
+            },
+            {
+                "min": 64,
+                "max": 69,
+                "cost": 2
+            },
+            {
+                "min": 70,
+                "max": 74,
+                "cost": 3
+            },
+            {
+                "min": 75,
+                "max": 79,
+                "cost": 4
+            },
+            {
+                "min": 80,
+                "max": 84,
+                "cost": 5
+            },
+            {
+                "min": 85,
+                "max": 89,
+                "cost": 8
+            },
+            {
+                "min": 90,
+                "max": 94,
+                "cost": 11
+            },
+            {
+                "min": 95,
+                "max": 95,
+                "cost": 13
+            },
+            {
+                "min": 96,
+                "max": 96,
+                "cost": 16
+            },
+            {
+                "min": 97,
+                "max": 97,
+                "cost": 19
+            },
+            {
+                "min": 98,
+                "max": 98,
+                "cost": 22
+            },
+            {
+                "min": 99,
+                "max": 99,
+                "cost": 24
+            }
+        ],
+        "tier2": [
+            {
+                "min": 41,
+                "max": 60,
+                "cost": 1
+            },
+            {
+                "min": 61,
+                "max": 63,
+                "cost": 2
+            },
+            {
+                "min": 64,
+                "max": 69,
+                "cost": 3
+            },
+            {
+                "min": 70,
+                "max": 74,
+                "cost": 4
+            },
+            {
+                "min": 75,
+                "max": 79,
+                "cost": 6
+            },
+            {
+                "min": 80,
+                "max": 84,
+                "cost": 7
+            },
+            {
+                "min": 85,
+                "max": 89,
+                "cost": 11
+            },
+            {
+                "min": 90,
+                "max": 94,
+                "cost": 15
+            },
+            {
+                "min": 95,
+                "max": 95,
+                "cost": 18
+            },
+            {
+                "min": 96,
+                "max": 96,
+                "cost": 22
+            },
+            {
+                "min": 97,
+                "max": 97,
+                "cost": 26
+            },
+            {
+                "min": 98,
+                "max": 98,
+                "cost": 30
+            },
+            {
+                "min": 99,
+                "max": 99,
+                "cost": 33
+            }
+        ],
+        "tier3": [
+            {
+                "min": 41,
+                "max": 60,
+                "cost": 2
+            },
+            {
+                "min": 61,
+                "max": 63,
+                "cost": 3
+            },
+            {
+                "min": 64,
+                "max": 66,
+                "cost": 4
+            },
+            {
+                "min": 67,
+                "max": 69,
+                "cost": 5
+            },
+            {
+                "min": 70,
+                "max": 74,
+                "cost": 6
+            },
+            {
+                "min": 75,
+                "max": 79,
+                "cost": 8
+            },
+            {
+                "min": 80,
+                "max": 84,
+                "cost": 10
+            },
+            {
+                "min": 85,
+                "max": 89,
+                "cost": 15
+            },
+            {
+                "min": 90,
+                "max": 94,
+                "cost": 20
+            },
+            {
+                "min": 95,
+                "max": 95,
+                "cost": 25
+            },
+            {
+                "min": 96,
+                "max": 96,
+                "cost": 30
+            },
+            {
+                "min": 97,
+                "max": 97,
+                "cost": 35
+            },
+            {
+                "min": 98,
+                "max": 98,
+                "cost": 40
+            },
+            {
+                "min": 99,
+                "max": 99,
+                "cost": 45
+            }
+        ]
+    },
+    "archetypeCosts": {
+        "boss": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier1",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier1",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier1",
+                "aggression": "tier0"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 40
+            }
+        },
+        "creator": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier1",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier1",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier2",
+                "longPass": "tier2",
+                "curve": "tier0",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "engine": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier1",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier2",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier2",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier0",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "finisher": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier0",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier1",
+                "attPosition": "tier1",
+                "finishing": "tier2",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier0",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "maestro": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier1",
+                "dribbling": "tier3",
+                "composure": "tier1",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier1",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier1",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "magician": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier1",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier2",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier0",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier2",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            },
+            "weakFoot": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            }
+        },
+        "marauder": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier1",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier1",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier2",
+                "jumping": "tier1",
+                "stamina": "tier0",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            }
+        },
+        "progressor": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier1",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier1",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier1",
+                "standTackle": "tier2",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "recycler": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier1",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier2",
+                "headingAcc": "tier2",
+                "defAware": "tier1",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier1",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "shot-stopper": {
+            "tiers": {
+                "gkDiving": "tier2",
+                "gkHandling": "tier2",
+                "gkKicking": "tier3",
+                "gkReflexes": "tier2",
+                "gkPositioning": "tier3",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier1",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier2",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            },
+            "weakFoot": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 40
+            }
+        },
+        "spark": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier2",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier1",
+                "dribbling": "tier2",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier2",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            },
+            "weakFoot": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            }
+        },
+        "sweeper-keeper": {
+            "tiers": {
+                "gkDiving": "tier2",
+                "gkHandling": "tier3",
+                "gkKicking": "tier2",
+                "gkReflexes": "tier3",
+                "gkPositioning": "tier2",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier2",
+                "longShots": "tier1",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier1",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier2",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier1",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        },
+        "target": {
+            "tiers": {
+                "gkDiving": "tier0",
+                "gkHandling": "tier0",
+                "gkKicking": "tier0",
+                "gkReflexes": "tier0",
+                "gkPositioning": "tier0",
+                "agility": "tier3",
+                "balance": "tier2",
+                "reactions": "tier1",
+                "ballControl": "tier2",
+                "dribbling": "tier3",
+                "composure": "tier2",
+                "attPosition": "tier1",
+                "finishing": "tier3",
+                "shotPower": "tier1",
+                "longShots": "tier2",
+                "volleys": "tier1",
+                "penalties": "tier1",
+                "vision": "tier2",
+                "crossing": "tier2",
+                "fkAcc": "tier1",
+                "shortPass": "tier3",
+                "longPass": "tier2",
+                "curve": "tier1",
+                "interceptions": "tier3",
+                "headingAcc": "tier1",
+                "defAware": "tier2",
+                "standTackle": "tier3",
+                "slideTackle": "tier2",
+                "acceleration": "tier3",
+                "sprintSpeed": "tier3",
+                "jumping": "tier0",
+                "stamina": "tier1",
+                "strength": "tier2",
+                "aggression": "tier1"
+            },
+            "skillMoves": {
+                "2": 10,
+                "3": 20,
+                "4": 35,
+                "5": 50
+            },
+            "weakFoot": {
+                "2": 8,
+                "3": 15,
+                "4": 25,
+                "5": 40
+            }
+        }
+    },
+    "accelerationRules": [
+        {
+            "acceleration_type": "Explosive",
+            "evaluation_order": 1,
+            "height_min_cm_men": null,
+            "height_max_cm_men": 182,
+            "height_min_cm_women": null,
+            "height_max_cm_women": 162,
+            "agility_min": 65,
+            "strength_min": null,
+            "differential": "agility - strength",
+            "differential_min": 10,
+            "acceleration_min": 80,
+            "description": "Short bursts of speed; accelerates fastest over the first few metres."
+        },
+        {
+            "acceleration_type": "Lengthy",
+            "evaluation_order": 2,
+            "height_min_cm_men": 183,
+            "height_max_cm_men": null,
+            "height_min_cm_women": 164,
+            "height_max_cm_women": null,
+            "agility_min": null,
+            "strength_min": 65,
+            "differential": "strength - agility",
+            "differential_min": 4,
+            "acceleration_min": 40,
+            "description": "Slow to start but very hard to catch once at top speed."
+        },
+        {
+            "acceleration_type": "Controlled",
+            "evaluation_order": 3,
+            "height_min_cm_men": null,
+            "height_max_cm_men": null,
+            "height_min_cm_women": null,
+            "height_max_cm_women": null,
+            "agility_min": null,
+            "strength_min": null,
+            "differential": null,
+            "differential_min": null,
+            "acceleration_min": null,
+            "description": "Default \u2014 any build that meets neither the Explosive nor the Lengthy conditions."
+        }
+    ],
+    "bodyModifiers": {
+        "height_goalkeeper": {
+            "dimension": "height",
+            "playerType": "goalkeeper",
+            "bands": [
+                {
+                    "deltaMin": 1,
+                    "deltaMax": 4,
+                    "magnitude": 1
+                },
+                {
+                    "deltaMin": 5,
+                    "deltaMax": 8,
+                    "magnitude": 2
+                },
+                {
+                    "deltaMin": 9,
+                    "deltaMax": 12,
+                    "magnitude": 3
+                },
+                {
+                    "deltaMin": 13,
+                    "deltaMax": 16,
+                    "magnitude": 4
+                }
+            ],
+            "signs": {
+                "gkDiving": 1,
+                "gkHandling": -1,
+                "gkReflexes": 1,
+                "acceleration": -1,
+                "sprintSpeed": 1,
+                "strength": 1
+            }
+        },
+        "height_outfield": {
+            "dimension": "height",
+            "playerType": "outfield",
+            "bands": [
+                {
+                    "deltaMin": 1,
+                    "deltaMax": 4,
+                    "magnitude": 1
+                },
+                {
+                    "deltaMin": 5,
+                    "deltaMax": 8,
+                    "magnitude": 2
+                },
+                {
+                    "deltaMin": 9,
+                    "deltaMax": 12,
+                    "magnitude": 3
+                },
+                {
+                    "deltaMin": 13,
+                    "deltaMax": 16,
+                    "magnitude": 4
+                }
+            ],
+            "signs": {
+                "acceleration": -1,
+                "agility": -1,
+                "balance": -1,
+                "jumping": 1,
+                "sprintSpeed": 1,
+                "strength": 1
+            }
+        },
+        "weight_goalkeeper": {
+            "dimension": "weight",
+            "playerType": "goalkeeper",
+            "bands": [
+                {
+                    "deltaMin": 1,
+                    "deltaMax": 8,
+                    "magnitude": 1
+                },
+                {
+                    "deltaMin": 9,
+                    "deltaMax": 16,
+                    "magnitude": 2
+                }
+            ],
+            "signs": {
+                "gkDiving": -1,
+                "gkHandling": 1,
+                "gkReflexes": -1,
+                "acceleration": -1,
+                "sprintSpeed": -1,
+                "strength": 1
+            }
+        },
+        "weight_outfield": {
+            "dimension": "weight",
+            "playerType": "outfield",
+            "bands": [
+                {
+                    "deltaMin": 1,
+                    "deltaMax": 8,
+                    "magnitude": 1
+                },
+                {
+                    "deltaMin": 9,
+                    "deltaMax": 16,
+                    "magnitude": 2
+                }
+            ],
+            "signs": {
+                "acceleration": -1,
+                "agility": -1,
+                "balance": 1,
+                "jumping": 1,
+                "sprintSpeed": -1,
+                "strength": 1
+            }
+        }
+    },
+    "maxLevel": 100
+}
