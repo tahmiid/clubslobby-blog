@@ -81,9 +81,11 @@ What changed under the numbers:
   blog** — the earlier "the card isn't clicked" read came from
   `funnel-report.py` not knowing the card's `?src=card` tag. Both parsers now
   count `src=card` and `src=grid`.
-- **The grid layout is being A/B'd on the magician spoke** (17 Aug): the FC 27
-  articles' build grid replaced the reel card there, tagged `src=grid`.
-  Verdict in the log in about a week; the other 12 spokes are untouched.
+- **The grid A/B is settled and rolled out** (21 Aug): judged on clicks per
+  ARTICLE VIEW (never hydrations — baked grids don't hydrate), the grid
+  converts 32% vs the card's 10%. All 13 spokes now lead with their
+  archetype's grid, ad slot A moved directly below it, and the repo caught
+  up to the published site on 22 Aug (commit 1c5511d).
 - **AdSense slot A is live (13 Aug), review requested, still "Getting ready"**
   — 0% fill is the expected state until approval; auto ads confirmed off.
 - **FC 27 flipped live 16 Aug** with 61 house builds; the skill-move cluster
@@ -92,10 +94,12 @@ What changed under the numbers:
   (app migration 0043, 17 Aug) — the grid cards no longer advertise
   half-empty builds.
 
-**Still not moving, and deadline-shaped:** the two week-1 items that were the
-point of week 1 — **affiliate applications** (unstarted; must be live before
-18 Sep, applications take days–weeks) and the **newsletter** (still off).
-Batch-publishing also continues (the skill cluster went out as one batch).
+**Affiliate moved (19–20 Aug):** Amazon Associates is live on ten articles
+(accessories only, below the app CTA — 24h cookie shapes the placement), and
+the Awin applications are in (CDKeys US + UK, Fanatical; GMG dropped by the
+owner). What's left is merchant-by-merchant approval before 18 Sep and the
+per-page disclosure line (MONETIZATION.md §4). **The newsletter is still
+off** — now the oldest deadline-shaped item on the list.
 
 ---
 
@@ -180,9 +184,10 @@ Everything here is cheap, compounding, and has lead time attached.
 - [x] **Apply for AdSense.** *Done and further: account upgraded, slot A live
       13 Aug, review requested — awaiting approval ("Getting ready"), 0% fill
       expected until then. See MONETIZATION.md §7b.*
-- [ ] **Apply to affiliate programmes** (game keys, peripherals). Same
-      reasoning: lead time, no commitment. **Still unstarted 17 Aug — the
-      oldest open item with a hard deadline.**
+- [x] **Apply to affiliate programmes** (game keys, peripherals). *Done
+      19–20 Aug: Amazon live on ten articles, Awin applications in (CDKeys
+      US/UK, Fanatical). Merchant approvals and the per-page disclosure
+      line are what remain before 18 Sep — see MONETIZATION.md.*
 - [x] **CTAs on the 7 FC 27 articles** — *done 2026-08-16 with the FC 27
       wave: every FC 27 article carries `appCta()` (blog commit 4b7e00d).*
 - [x] **Decide FC 27's release status.** *Decided and done 2026-08-16: the
