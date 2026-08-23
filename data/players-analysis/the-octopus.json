@@ -1,0 +1,569 @@
+{
+ "player": "The Octopus",
+ "fc26": {
+  "player": "The Octopus",
+  "year": 26,
+  "role": "gk-shotstopper",
+  "family": "keeper",
+  "archetype": "Shot Stopper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "Far Reach",
+   "Footwork",
+   "Long Ball Pass",
+   "Deflector"
+  ],
+  "regulars": [
+   "Cross Claimer",
+   "Block",
+   "Long Throw"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "GK Reflexes",
+    "v": 99
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 99
+   },
+   {
+    "attr": "GK Kicking",
+    "v": 99
+   },
+   {
+    "attr": "GK Handling",
+    "v": 99
+   },
+   {
+    "attr": "GK Diving",
+    "v": 99
+   },
+   {
+    "attr": "Strength",
+    "v": 96
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Deflector, Far Reach together",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     },
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Diving",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 77,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 73,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 73,
+      "strong": false
+     },
+     {
+      "name": "Vision",
+      "v": 77,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 73,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 73,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Deflector flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     },
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_drop_kick",
+    "action": "Drop Kick",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Footwork flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "footwork",
+      "name": "Footwork",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 73,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "The Octopus",
+  "year": 27,
+  "role": "gk-shotstopper",
+  "family": "keeper",
+  "archetype": "Shot Stopper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "Far Reach"
+  ],
+  "regulars": [
+   "Cross Claimer",
+   "Block",
+   "Long Throw"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "GK Handling",
+    "v": 92
+   },
+   {
+    "attr": "Jumping",
+    "v": 90
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 90
+   },
+   {
+    "attr": "GK Diving",
+    "v": 89
+   },
+   {
+    "attr": "Reactions",
+    "v": 84
+   },
+   {
+    "attr": "GK Reflexes",
+    "v": 84
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "GK Diving",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Cross Claimer, and his GK Handling 92 backs it up",
+    "playstyles": [
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_grab_ball",
+    "action": "Grab Ball",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Cross Claimer, and his GK Handling 92 and GK Pos. 90 backs it up",
+    "playstyles": [
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "GK Pos.",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Interceptions",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 55,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_jockey",
+    "action": "Jockey",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "no PlayStyle for it, but GK Pos. 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

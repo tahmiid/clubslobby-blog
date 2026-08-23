@@ -1,0 +1,326 @@
+{
+ "player": "Messi '26 WC",
+ "fc27": {
+  "player": "Messi '26 WC",
+  "year": 27,
+  "role": "am-dribbler",
+  "family": "attack",
+  "archetype": "Magician",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "First Touch"
+  ],
+  "regulars": [
+   "Trickster",
+   "Tiki Taka",
+   "Bruiser"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Ball Control",
+    "v": 96
+   },
+   {
+    "attr": "Balance",
+    "v": 96
+   },
+   {
+    "attr": "Composure",
+    "v": 90
+   },
+   {
+    "attr": "Acceleration",
+    "v": 90
+   },
+   {
+    "attr": "Curve",
+    "v": 89
+   },
+   {
+    "attr": "Reactions",
+    "v": 80
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 60,
+    "atFloor": true
+   },
+   {
+    "attr": "Crossing",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 73,
+    "atFloor": false
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser, and his Balance 96 and Composure 90 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_pass_and_go",
+    "action": "Pass and Go",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka, and his Acceleration 90 backs it up",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Acceleration",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser, and his Balance 96 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 40,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

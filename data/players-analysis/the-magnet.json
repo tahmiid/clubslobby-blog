@@ -1,0 +1,647 @@
+{
+ "player": "The Magnet",
+ "fc26": {
+  "player": "The Magnet",
+  "year": 26,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Pinged Pass",
+   "Tiki Taka",
+   "Long Ball Pass",
+   "First Touch"
+  ],
+  "regulars": [
+   "Technical",
+   "Press Proven",
+   "Chip Shot",
+   "Acrobatic",
+   "Finesse Shot",
+   "Gamechanger",
+   "Inventive",
+   "Whipped Pass",
+   "Block"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Short Pass",
+    "v": 99
+   },
+   {
+    "attr": "Reactions",
+    "v": 99
+   },
+   {
+    "attr": "Composure",
+    "v": 99
+   },
+   {
+    "attr": "Ball Control",
+    "v": 99
+   },
+   {
+    "attr": "Vision",
+    "v": 98
+   },
+   {
+    "attr": "Agility",
+    "v": 98
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Acceleration",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Long Pass",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 98,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Tiki Taka flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 98,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Vision",
+      "v": 98,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "The Magnet",
+  "year": 27,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Pinged Pass"
+  ],
+  "regulars": [
+   "Acrobatic",
+   "Block",
+   "Chip Shot"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Composure",
+    "v": 92
+   },
+   {
+    "attr": "Finishing",
+    "v": 90
+   },
+   {
+    "attr": "Ball Control",
+    "v": 90
+   },
+   {
+    "attr": "Vision",
+    "v": 84
+   },
+   {
+    "attr": "Short Pass",
+    "v": 84
+   },
+   {
+    "attr": "Reactions",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 72,
+    "atFloor": true
+   },
+   {
+    "attr": "Long Pass",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+    "action": "Precision Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Acrobatic, and his Finishing 90 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 50,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_flick_up_for_volley",
+    "action": "Flick Up for Volley",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "he wears Acrobatic, and his Ball Control 90 and Agility 84 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Volleys",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Interceptions",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Ball Control 90 and Agility 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 77,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

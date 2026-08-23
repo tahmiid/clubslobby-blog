@@ -1,0 +1,617 @@
+{
+ "player": "De Paul '26 Fighter",
+ "fc26": {
+  "player": "De Paul '26 Fighter",
+  "year": 26,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Pinged Pass",
+   "Relentless",
+   "Long Ball Pass",
+   "Incisive Pass"
+  ],
+  "regulars": [
+   "Press Proven",
+   "Bruiser",
+   "Intercept",
+   "Tiki Taka",
+   "Chip Shot",
+   "Finesse Shot",
+   "Gamechanger",
+   "Low Driven Shot",
+   "Inventive"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Vision",
+    "v": 94
+   },
+   {
+    "attr": "Short Pass",
+    "v": 94
+   },
+   {
+    "attr": "Ball Control",
+    "v": 94
+   },
+   {
+    "attr": "Long Pass",
+    "v": 93
+   },
+   {
+    "attr": "Dribbling",
+    "v": 93
+   },
+   {
+    "attr": "Curve",
+    "v": 93
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Incisive Pass, Long Ball Pass together",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 78,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": false
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "De Paul '26 Fighter",
+  "year": 27,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Pinged Pass"
+  ],
+  "regulars": [
+   "Bruiser",
+   "Chip Shot",
+   "Finesse Shot"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Vision",
+    "v": 92
+   },
+   {
+    "attr": "Dribbling",
+    "v": 90
+   },
+   {
+    "attr": "Balance",
+    "v": 90
+   },
+   {
+    "attr": "Ball Control",
+    "v": 89
+   },
+   {
+    "attr": "Short Pass",
+    "v": 81
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 80
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 72,
+    "atFloor": true
+   },
+   {
+    "attr": "Long Pass",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 81,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+    "action": "Precision Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 81,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser, and his Balance 90 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser, and his Balance 90 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Finesse Shot",
+    "playstyles": [
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 72,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

@@ -1,0 +1,326 @@
+{
+ "player": "Roberto Carlos '02 WC",
+ "fc27": {
+  "player": "Roberto Carlos '02 WC",
+  "year": 27,
+  "role": "fullback-attacking",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [],
+  "gold": [
+   "Bruiser"
+  ],
+  "regulars": [
+   "Dead Ball",
+   "Power Shot",
+   "Rapid"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 92
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 90
+   },
+   {
+    "attr": "Aggression",
+    "v": 90
+   },
+   {
+    "attr": "Curve",
+    "v": 89
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 80
+   },
+   {
+    "attr": "Shot Power",
+    "v": 80
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 61,
+    "atFloor": false
+   },
+   {
+    "attr": "Composure",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 70,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 66,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 66,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Dribbling 80 and Sprint Speed 80 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 80,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 80,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Power Shot, and his Shot Power 80 and Finishing 80 backs it up",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 80,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 80,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Power Shot, and his Shot Power 80 and Long Shots 80 backs it up",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 80,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 80,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

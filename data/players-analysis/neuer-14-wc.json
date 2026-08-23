@@ -1,0 +1,316 @@
+{
+ "player": "Neuer '14 WC",
+ "fc27": {
+  "player": "Neuer '14 WC",
+  "year": 27,
+  "role": "gk-sweeper",
+  "family": "keeper",
+  "archetype": "Sweeper Keeper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "Press Proven"
+  ],
+  "regulars": [
+   "Pinged Pass",
+   "Long Ball Pass",
+   "Far Throw"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "GK Pos.",
+    "v": 92
+   },
+   {
+    "attr": "Short Pass",
+    "v": 90
+   },
+   {
+    "attr": "Composure",
+    "v": 90
+   },
+   {
+    "attr": "Vision",
+    "v": 89
+   },
+   {
+    "attr": "Long Pass",
+    "v": 89
+   },
+   {
+    "attr": "GK Kicking",
+    "v": 88
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Agility",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "GK Reflexes",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Jumping",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 66,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_move_player",
+    "action": "Move Player",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 66,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 90 and Long Pass 89 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+    "action": "Precision Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 90 and Composure 90 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass, and his Vision 89 and Long Pass 89 backs it up",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

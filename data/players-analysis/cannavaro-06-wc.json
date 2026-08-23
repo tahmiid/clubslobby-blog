@@ -1,0 +1,336 @@
+{
+ "player": "Cannavaro '06 WC",
+ "fc27": {
+  "player": "Cannavaro '06 WC",
+  "year": 27,
+  "role": "cb-ballplayer",
+  "family": "defence",
+  "archetype": "Progressor",
+  "position": "Defender",
+  "traits": [],
+  "gold": [
+   "Quick Step"
+  ],
+  "regulars": [
+   "Jockey",
+   "Bruiser",
+   "Aerial Fortress"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Jumping",
+    "v": 99
+   },
+   {
+    "attr": "Acceleration",
+    "v": 92
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 90
+   },
+   {
+    "attr": "Slide Tackle",
+    "v": 90
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 84
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Composure",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Jumping 99 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_clearance",
+    "action": "Clearance",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Jumping 99 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Jumping",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Jockey, and his Sprint Speed 90 backs it up",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Jockey",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

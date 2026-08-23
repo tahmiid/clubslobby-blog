@@ -1,0 +1,608 @@
+{
+ "player": "Corner Specialist",
+ "fc26": {
+  "player": "Corner Specialist",
+  "year": 26,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Whipped Pass",
+   "Rapid",
+   "Inventive",
+   "Technical"
+  ],
+  "regulars": [
+   "Dead Ball",
+   "Precision Header",
+   "Aerial Fortress",
+   "Finesse Shot",
+   "Gamechanger",
+   "Low Driven Shot",
+   "Tiki Taka",
+   "Incisive Pass",
+   "Long Ball Pass"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Curve",
+    "v": 99
+   },
+   {
+    "attr": "Crossing",
+    "v": 99
+   },
+   {
+    "attr": "Reactions",
+    "v": 98
+   },
+   {
+    "attr": "Dribbling",
+    "v": 97
+   },
+   {
+    "attr": "Vision",
+    "v": 96
+   },
+   {
+    "attr": "Short Pass",
+    "v": 96
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Acceleration",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Rapid flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_lob_pass_cross_header",
+    "action": "Lob Pass / Cross / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_lob_pass_driven_cross",
+    "action": "Driven Lob Pass / Driven Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_ground_cross",
+    "action": "Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_cross",
+    "action": "Driven Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Corner Specialist",
+  "year": 27,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Whipped Pass"
+  ],
+  "regulars": [
+   "Aerial Fortress",
+   "Dead Ball",
+   "Finesse Shot"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Finishing",
+    "v": 92
+   },
+   {
+    "attr": "Reactions",
+    "v": 90
+   },
+   {
+    "attr": "Ball Control",
+    "v": 90
+   },
+   {
+    "attr": "Curve",
+    "v": 89
+   },
+   {
+    "attr": "Crossing",
+    "v": 89
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Composure",
+    "v": 72,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_simple_lob_pass_cross_header",
+    "action": "Lob Pass / Cross / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_lob_pass_driven_cross",
+    "action": "Driven Lob Pass / Driven Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_high_lob",
+    "action": "High Lob / Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_ground_cross",
+    "action": "Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_cross",
+    "action": "Driven Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_lob_cross_outside_the_foot",
+    "action": "Flair Lob / Cross / Outside The Foot",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Finesse Shot, and his Finishing 92 and Curve 89 backs it up",
+    "playstyles": [
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

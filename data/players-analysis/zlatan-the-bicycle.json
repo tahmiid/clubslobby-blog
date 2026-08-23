@@ -1,0 +1,686 @@
+{
+ "player": "Zlatan the Bicycle",
+ "fc26": {
+  "player": "Zlatan the Bicycle",
+  "year": 26,
+  "role": "st-target",
+  "family": "attack",
+  "archetype": "Target",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Acrobatic",
+   "Precision Header",
+   "Tiki Taka",
+   "Press Proven"
+  ],
+  "regulars": [
+   "Trickster",
+   "First Touch",
+   "Power Shot",
+   "Low Driven Shot",
+   "Block",
+   "Aerial Fortress",
+   "Rapid",
+   "Long Throw"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 99
+   },
+   {
+    "attr": "Volleys",
+    "v": 96
+   },
+   {
+    "attr": "Composure",
+    "v": 95
+   },
+   {
+    "attr": "Shot Power",
+    "v": 94
+   },
+   {
+    "attr": "Finishing",
+    "v": 93
+   },
+   {
+    "attr": "Long Shots",
+    "v": 92
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Heading Acc.",
+    "v": 76,
+    "atFloor": false
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Acrobatic, Precision Header together",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": true
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 93,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 76,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 51,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 76,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_move_player",
+    "action": "Move Player",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Tiki Taka flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_pass_and_go",
+    "action": "Pass and Go",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Tiki Taka flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Acceleration",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Zlatan the Bicycle",
+  "year": 27,
+  "role": "st-target",
+  "family": "attack",
+  "archetype": "Target",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Precision Header"
+  ],
+  "regulars": [
+   "Aerial Fortress",
+   "Block",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "Jumping",
+    "v": 92
+   },
+   {
+    "attr": "Volleys",
+    "v": 90
+   },
+   {
+    "attr": "Agility",
+    "v": 90
+   },
+   {
+    "attr": "Strength",
+    "v": 89
+   },
+   {
+    "attr": "Shot Power",
+    "v": 84
+   },
+   {
+    "attr": "Finishing",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Crossing",
+    "v": 50,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 60,
+    "atFloor": true
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Vision",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Dribbling",
+    "v": 70,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Volleys",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Agility 90 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_clearance",
+    "action": "Clearance",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Jumping 92 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 50,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Jumping",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 50,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Block",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 50,
+      "strong": false
+     },
+     {
+      "name": "Interceptions",
+      "v": 50,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

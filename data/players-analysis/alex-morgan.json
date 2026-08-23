@@ -1,0 +1,320 @@
+{
+ "player": "Alex Morgan",
+ "fc27": {
+  "player": "Alex Morgan",
+  "year": 27,
+  "role": "st-poacher",
+  "family": "attack",
+  "archetype": "Finisher",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Chip Shot"
+  ],
+  "regulars": [
+   "Quick Step",
+   "First Touch",
+   "Low Driven Shot"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Composure",
+    "v": 92
+   },
+   {
+    "attr": "Reactions",
+    "v": 90
+   },
+   {
+    "attr": "Ball Control",
+    "v": 90
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 89
+   },
+   {
+    "attr": "Shot Power",
+    "v": 89
+   },
+   {
+    "attr": "Finishing",
+    "v": 89
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Crossing",
+    "v": 55,
+    "atFloor": true
+   },
+   {
+    "attr": "Vision",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Dribbling",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 90 and Reactions 90 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 90 and Composure 92 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 90 and Composure 92 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_shot",
+    "action": "Low Driven Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_fake_shot",
+    "action": "Fake Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Ball Control 90 and Composure 92 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

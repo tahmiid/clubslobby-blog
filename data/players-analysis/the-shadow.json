@@ -1,0 +1,653 @@
+{
+ "player": "The Shadow",
+ "fc26": {
+  "player": "The Shadow",
+  "year": 26,
+  "role": "cb-stopper",
+  "family": "defence",
+  "archetype": "Engine",
+  "position": "Defender",
+  "traits": [],
+  "gold": [
+   "Relentless",
+   "Jockey",
+   "Anticipate",
+   "Intercept"
+  ],
+  "regulars": [
+   "Aerial Fortress",
+   "Slide Tackle",
+   "Quick Step"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Stamina",
+    "v": 99
+   },
+   {
+    "attr": "Reactions",
+    "v": 99
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 99
+   },
+   {
+    "attr": "Short Pass",
+    "v": 96
+   },
+   {
+    "attr": "Crossing",
+    "v": 96
+   },
+   {
+    "attr": "Aggression",
+    "v": 96
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Strength",
+    "v": 69,
+    "atFloor": false
+   },
+   {
+    "attr": "Slide Tackle",
+    "v": 78,
+    "atFloor": false
+   },
+   {
+    "attr": "Jumping",
+    "v": 79,
+    "atFloor": false
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 69,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 69,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 69,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Interceptions",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 69,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 92 and Sprint Speed 92 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Heading Acc. 92 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 79,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 69,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_sliding_tackle",
+    "action": "Sliding Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Slide Tackle, and his Reactions 99 and Def. Aware 99 backs it up",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 78,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_slide_tackle",
+    "action": "Hard Slide Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Slide Tackle, and his Reactions 99 and Aggression 96 backs it up",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 78,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3165,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "The Shadow",
+  "year": 27,
+  "role": "fullback-attacking",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [],
+  "gold": [
+   "Relentless"
+  ],
+  "regulars": [
+   "Aerial Fortress",
+   "Quick Step",
+   "Slide Tackle"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 92
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 90
+   },
+   {
+    "attr": "Aggression",
+    "v": 90
+   },
+   {
+    "attr": "Reactions",
+    "v": 89
+   },
+   {
+    "attr": "Stamina",
+    "v": 84
+   },
+   {
+    "attr": "Short Pass",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Stand Tackle",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 71,
+    "atFloor": false
+   },
+   {
+    "attr": "Slide Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Strength 92 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_sliding_tackle",
+    "action": "Sliding Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Slide Tackle, and his Reactions 89 and Def. Aware 90 backs it up",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_slide_tackle",
+    "action": "Hard Slide Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Slide Tackle, and his Reactions 89 and Aggression 90 backs it up",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_clearance",
+    "action": "Clearance",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Def. Aware 90 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Jumping",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Def. Aware 90 and Strength 92 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 65,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "no PlayStyle for it, but Def. Aware 90 and Aggression 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Def. Aware",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "no PlayStyle for it, but Strength 92 and Aggression 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

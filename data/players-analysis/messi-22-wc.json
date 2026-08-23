@@ -1,0 +1,671 @@
+{
+ "player": "Messi '22 WC",
+ "fc26": {
+  "player": "Messi '22 WC",
+  "year": 26,
+  "role": "am-dribbler",
+  "family": "attack",
+  "archetype": "Magician",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Technical",
+   "Finesse Shot",
+   "Incisive Pass",
+   "Inventive"
+  ],
+  "regulars": [
+   "Tiki Taka",
+   "First Touch",
+   "Gamechanger",
+   "Dead Ball",
+   "Chip Shot",
+   "Power Shot",
+   "Low Driven Shot",
+   "Long Ball Pass",
+   "Pinged Pass"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Ball Control",
+    "v": 97
+   },
+   {
+    "attr": "Vision",
+    "v": 96
+   },
+   {
+    "attr": "Dribbling",
+    "v": 96
+   },
+   {
+    "attr": "Curve",
+    "v": 96
+   },
+   {
+    "attr": "Composure",
+    "v": 96
+   },
+   {
+    "attr": "Balance",
+    "v": 96
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 61,
+    "atFloor": false
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 68,
+    "atFloor": false
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Incisive Pass, Inventive together",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 93,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 95,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 95,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 95,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 95,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 92,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 92,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_flair_pass_swerve",
+    "action": "Flair Pass / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 95,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 93,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Messi '22 WC",
+  "year": 27,
+  "role": "am-dribbler",
+  "family": "attack",
+  "archetype": "Magician",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "First Touch"
+  ],
+  "regulars": [
+   "Tiki Taka",
+   "Gamechanger",
+   "Dead Ball"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Composure",
+    "v": 96
+   },
+   {
+    "attr": "Balance",
+    "v": 96
+   },
+   {
+    "attr": "Ball Control",
+    "v": 92
+   },
+   {
+    "attr": "Acceleration",
+    "v": 90
+   },
+   {
+    "attr": "Curve",
+    "v": 89
+   },
+   {
+    "attr": "Shot Power",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 60,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Finishing",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 81,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_pass_and_go",
+    "action": "Pass and Go",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka, and his Acceleration 90 backs it up",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Acceleration",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 81,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_shot_outside_the_foot",
+    "action": "Flair Shot / Outside The Foot",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Gamechanger",
+    "playstyles": [
+     {
+      "id": "game-changer",
+      "name": "Gamechanger",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Curve",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 81,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Balance 96 and Ball Control 92 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_stop_and_face_goal",
+    "action": "Stop and Face Goal",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Balance 96 and Ball Control 92 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

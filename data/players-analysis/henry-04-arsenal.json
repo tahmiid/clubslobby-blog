@@ -1,0 +1,312 @@
+{
+ "player": "Henry '04 Arsenal",
+ "fc27": {
+  "player": "Henry '04 Arsenal",
+  "year": 27,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Chip Shot"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "Rapid",
+   "Low Driven Shot"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Finishing",
+    "v": 95
+   },
+   {
+    "attr": "Ball Control",
+    "v": 91
+   },
+   {
+    "attr": "Reactions",
+    "v": 90
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   },
+   {
+    "attr": "Curve",
+    "v": 84
+   },
+   {
+    "attr": "Long Shots",
+    "v": 83
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 55,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Crossing",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Dribbling 84 and Ball Control 91 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 91,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_shot",
+    "action": "Low Driven Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot, and his Finishing 95 backs it up",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Shot Power",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Finesse Shot, Low Driven Shot, and his Finishing 95 and Curve 84 backs it up",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     },
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot, and his Finishing 95 backs it up",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Dribbling 84 and Ball Control 91 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 91,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Ball Control 91 and Reactions 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 91,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_pass_swerve",
+    "action": "Flair Pass / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Reactions 90 and Curve 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Reactions 90 and Curve 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

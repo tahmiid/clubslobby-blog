@@ -1,0 +1,588 @@
+{
+ "player": "Sweeper Libero",
+ "fc26": {
+  "player": "Sweeper Libero",
+  "year": 26,
+  "role": "gk-sweeper",
+  "family": "keeper",
+  "archetype": "Sweeper Keeper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "1v1 Close Down",
+   "Far Reach",
+   "Deflector",
+   "Far Throw"
+  ],
+  "regulars": [
+   "Long Ball Pass",
+   "Pinged Pass",
+   "Footwork",
+   "Chip Shot",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Vision",
+    "v": 99
+   },
+   {
+    "attr": "Short Pass",
+    "v": 99
+   },
+   {
+    "attr": "GK Reflexes",
+    "v": 99
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 99
+   },
+   {
+    "attr": "GK Kicking",
+    "v": 99
+   },
+   {
+    "attr": "GK Diving",
+    "v": 99
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Reactions",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Deflector, Far Reach together",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     },
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Diving",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Deflector flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_rush",
+    "action": "Rush",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_jockey",
+    "action": "Jockey",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_driven_throw",
+    "action": "Driven Throw",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Throw flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_throw_pass",
+    "action": "Throw / Pass",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Throw flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Short Pass",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 99 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 96,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3166,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Sweeper Libero",
+  "year": 27,
+  "role": "gk-sweeper",
+  "family": "keeper",
+  "archetype": "Sweeper Keeper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "1v1 Close Down"
+  ],
+  "regulars": [
+   "Footwork",
+   "Chip Shot",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "GK Diving",
+    "v": 92
+   },
+   {
+    "attr": "Vision",
+    "v": 90
+   },
+   {
+    "attr": "GK Kicking",
+    "v": 90
+   },
+   {
+    "attr": "Short Pass",
+    "v": 84
+   },
+   {
+    "attr": "GK Reflexes",
+    "v": 84
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Reactions",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_rush",
+    "action": "Rush",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_jockey",
+    "action": "Jockey",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_drop_kick",
+    "action": "Drop Kick",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Footwork, and his GK Kicking 90 backs it up",
+    "playstyles": [
+     {
+      "id": "footwork",
+      "name": "Footwork",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_driven_kick",
+    "action": "Driven Kick",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Footwork, and his GK Kicking 90 backs it up",
+    "playstyles": [
+     {
+      "id": "footwork",
+      "name": "Footwork",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Short Pass 84 and Vision 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Vision",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}

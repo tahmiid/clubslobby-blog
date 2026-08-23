@@ -217,22 +217,28 @@ ${PCHQ_CSS}
   // mistake. It is the ONLY place the other release is mentioned up here.
   const jump = B && A ? kg(`<div class="${P}"><p class="jump">Playing FC ${otherYear}? <a href="#fc${otherYear}">Jump to the FC ${otherYear} ${esc(first)} build →</a></p></div>`) : '';
 
-  // Two arms, both APPROVED positions (MONETIZATION.md §3): the affiliate
-  // block belongs below an app CTA, and this page has two of them. What is
-  // being tested is which one earns the click - not a new placement.
-  const affHere = (which) => which === arm ? affArm(arm, {
-    heading: 'The pad you press these with',
-    items: cfg.affiliate || ['controller-ps5', 'controller-xbox', 'thumb-grips'],
-    tag: 'buildguide',
-    layout: arm === 'inline' ? 'rows' : 'cards',
-    cta: 'Check price →',
-  }) : '';
+  // TWO blocks, both in the format already approved and running in a63 and
+  // the controls suite — nothing about them is invented here:
+  //
+  //   the GAME, `layout: 'rows'` with the fc27 key art, right after the build
+  //     the reader just opened. The owner's call (2026-08-23): weeks out from
+  //     launch, the game is the ad that matters, not the pad.
+  //   the KIT, same format with the two-controller photo, at the END.
+  //
+  // Both sit below an app CTA, which is the affiliate block's approved
+  // position (MONETIZATION.md §3). The arm decides which of the two app CTAs
+  // the GAME block follows — the experiment lives inside the approved
+  // placement rather than inventing one.
+  const gameBlock = affArm(arm, {
+    heading: 'Get the game', layout: 'rows', image: 'fc27', tag: 'fc27',
+    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
+  });
+  const kitBlock = affArm('kit', {
+    heading: 'Kit worth having', layout: 'rows', image: 'controllers', tag: 'fc27',
+    items: ['controller-ps5', 'controller-xbox', 'thumb-grips'],
+  });
+  const affHere = (which) => which === arm ? gameBlock : '';
 
-  // Order inside a release section, after the owner's review: the DESCRIPTION
-  // comes before the card, and no ad appears before the build. MONETIZATION.md
-  // §3 is the slot map and it is not negotiable - A after the lead widget and
-  // its first paragraph, B on an <h2> boundary, C below the app CTA - so the
-  // ads sit between sections, never inside one.
   const section = (s, y, id) => s ? [
     kg(`<div class="${P}"><h2 id="${id}">The FC ${y} ${esc(first)} build</h2></div>`),
     s.what,
@@ -286,6 +292,7 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     AD_B,
     affHere('pageEnd'),
     AD_C,
+    kitBlock,
     faq,
     kg(`<div class="${P}"><p class="rel"><strong>More player builds:</strong> ${related}</p></div>`),
     kg(`<script>${PCHQ_JS}</script>`),

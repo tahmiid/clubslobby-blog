@@ -1,0 +1,706 @@
+{
+ "player": "Robben '14",
+ "fc26": {
+  "player": "Robben '14",
+  "year": 26,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Midfielder",
+  "traits": [],
+  "gold": [
+   "Trickster",
+   "Rapid",
+   "Inventive",
+   "Quick Step"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "Technical",
+   "Chip Shot",
+   "Gamechanger",
+   "Power Shot",
+   "Low Driven Shot",
+   "Acrobatic",
+   "Dead Ball",
+   "Tiki Taka"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Curve",
+    "v": 99
+   },
+   {
+    "attr": "Dribbling",
+    "v": 98
+   },
+   {
+    "attr": "Acceleration",
+    "v": 98
+   },
+   {
+    "attr": "Agility",
+    "v": 97
+   },
+   {
+    "attr": "Ball Control",
+    "v": 96
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 95
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 98,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Rapid flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 98,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 88,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_flair_pass_swerve",
+    "action": "Flair Pass / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 88,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Inventive flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Dribbling 98 and Ball Control 96 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 98,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 97 and Ball Control 96 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 92,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 88,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Robben '14",
+  "year": 27,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Forward",
+  "traits": [],
+  "gold": [
+   "Trickster"
+  ],
+  "regulars": [
+   "Acrobatic",
+   "Chip Shot",
+   "Technical"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Agility",
+    "v": 92
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 90
+   },
+   {
+    "attr": "Acceleration",
+    "v": 90
+   },
+   {
+    "attr": "Curve",
+    "v": 89
+   },
+   {
+    "attr": "Reactions",
+    "v": 84
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Heading Acc.",
+    "v": 50,
+    "atFloor": true
+   },
+   {
+    "attr": "Jumping",
+    "v": 55,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Crossing",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_flick_up_for_volley",
+    "action": "Flick Up for Volley",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "he wears Acrobatic, and his Agility 92 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Volleys",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Acrobatic",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 76,
+      "strong": false
+     },
+     {
+      "name": "Volleys",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 50,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Acceleration 90 and Sprint Speed 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_open_up_fake_shot_left",
+    "action": "Open Up Fake Shot Left",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "1★ — the kind of move a runner actually uses",
+    "playstyles": [
+     {
+      "id": "trickster",
+      "name": "Trickster",
+      "gold": true
+     },
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_open_up_fake_shot_right",
+    "action": "Open Up Fake Shot Right",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "1★ — the kind of move a runner actually uses",
+    "playstyles": [
+     {
+      "id": "trickster",
+      "name": "Trickster",
+      "gold": true
+     },
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_2_star_stepover_right",
+    "action": "Stepover Right",
+    "page": "2 Star Moves",
+    "group": "Skill moves",
+    "star": 2,
+    "why": "2★ — the kind of move a runner actually uses",
+    "playstyles": [
+     {
+      "id": "trickster",
+      "name": "Trickster",
+      "gold": true
+     },
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

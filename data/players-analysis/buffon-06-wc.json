@@ -1,0 +1,296 @@
+{
+ "player": "Buffon '06 WC",
+ "fc27": {
+  "player": "Buffon '06 WC",
+  "year": 27,
+  "role": "gk-shotstopper",
+  "family": "keeper",
+  "archetype": "Shot Stopper",
+  "position": "Keeper",
+  "traits": [],
+  "gold": [
+   "Far Reach"
+  ],
+  "regulars": [
+   "Far Throw",
+   "Footwork",
+   "Long Ball Pass"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "GK Diving",
+    "v": 96
+   },
+   {
+    "attr": "Strength",
+    "v": 90
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 90
+   },
+   {
+    "attr": "Vision",
+    "v": 85
+   },
+   {
+    "attr": "Long Pass",
+    "v": 80
+   },
+   {
+    "attr": "GK Kicking",
+    "v": 80
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 67,
+    "atFloor": false
+   },
+   {
+    "attr": "GK Reflexes",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Reactions",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "GK Handling",
+    "v": 76,
+    "atFloor": false
+   }
+  ],
+  "neverBought": [],
+  "neverBoughtWhy": "",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "GK Diving",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 85,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Vision",
+      "v": 85,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 40,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_drop_kick",
+    "action": "Drop Kick",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Footwork",
+    "playstyles": [
+     {
+      "id": "footwork",
+      "name": "Footwork",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_driven_kick",
+    "action": "Driven Kick",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Footwork",
+    "playstyles": [
+     {
+      "id": "footwork",
+      "name": "Footwork",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [],
+  "spent": 962,
+  "budget": 962
+ }
+}
