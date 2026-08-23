@@ -237,6 +237,95 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 92 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 92 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -473,6 +562,100 @@
      },
      {
       "name": "Sprint Speed",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
       "v": 80,
       "strong": false
      }

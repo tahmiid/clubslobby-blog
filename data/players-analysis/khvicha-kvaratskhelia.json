@@ -238,6 +238,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Finesse Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     },
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 94 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Dribbling 96 and Ball Control 96 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -500,6 +594,88 @@
      },
      {
       "name": "Composure",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Finesse Shot, and his Curve 84 backs it up",
+    "playstyles": [
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Dribbling 89 and Ball Control 89 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_stop_and_face_goal",
+    "action": "Stop and Face Goal",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Agility 84 and Balance 90 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
       "v": 89,
       "strong": true
      }

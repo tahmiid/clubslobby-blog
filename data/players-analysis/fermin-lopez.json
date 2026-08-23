@@ -249,6 +249,95 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Ball Control 94 and Agility 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -508,6 +597,90 @@
      {
       "name": "Balance",
       "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 84 and Long Pass 85 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 85,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+    "action": "Precision Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 84 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Power Shot, and his Shot Power 84 backs it up",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 80,
       "strong": false
      }
     ],

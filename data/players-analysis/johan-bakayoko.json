@@ -233,6 +233,105 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Dribbling 94 and Ball Control 94 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 94 and Ball Control 94 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Inventive, and his Curve 94 backs it up",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -497,6 +596,88 @@
       "name": "Composure",
       "v": 80,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Dribbling 87 and Ball Control 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 87,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Agility 84 and Ball Control 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
      }
     ],
     "perk": null

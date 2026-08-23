@@ -230,6 +230,110 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Ball Control 96 and Agility 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Press Proven, Technical, and his Agility 92 and Ball Control 96 backs it up",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": false
+     },
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -460,6 +564,100 @@
       "name": "Long Pass",
       "v": 85,
       "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Long Ball Pass, and his Long Pass 85 backs it up",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 65,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 85,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Def. Aware",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 72,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
      }
     ],
     "perk": null

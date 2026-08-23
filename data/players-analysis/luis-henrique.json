@@ -238,6 +238,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_swerve_ground_pass",
+    "action": "Precision Swerve Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Inventive, and his Curve 94 backs it up",
+    "playstyles": [
+     {
+      "id": "inventive",
+      "name": "Inventive",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -502,6 +596,94 @@
       "name": "Reactions",
       "v": 75,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 84 and Agility 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_stop_and_face_goal",
+    "action": "Stop and Face Goal",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Agility 84 and Ball Control 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 81,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
      }
     ],
     "perk": null

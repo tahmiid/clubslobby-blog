@@ -239,6 +239,85 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_jockey",
+    "action": "Jockey",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka, and his Reactions 94 backs it up",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_driven_throw",
+    "action": "Driven Throw",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Far Throw, and his GK Handling 94 backs it up",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "GK Handling",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -473,6 +552,51 @@
      {
       "name": "GK Reflexes",
       "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_jockey",
+    "action": "Jockey",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears 1v1 Close Down, and his GK Pos. 84 backs it up",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_quick_get_up_after_slide_tackle",
+    "action": "Quick Get Up (after slide tackle)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "no PlayStyle for it, but Agility 84 and Reactions 84 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 84,
       "strong": true
      }
     ],

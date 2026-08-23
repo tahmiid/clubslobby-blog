@@ -278,6 +278,105 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Interceptions",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -539,6 +638,100 @@
      },
      {
       "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Strength 84 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 84 and Aggression 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 84 and Aggression 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
       "v": 84,
       "strong": true
      },

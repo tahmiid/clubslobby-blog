@@ -45,7 +45,7 @@
     "worn": false
    }
   ],
-  "accelerate": "Controlled",
+  "accelerate": "Explosive",
   "strengths": [
    {
     "attr": "Volleys",
@@ -212,7 +212,7 @@
     "page": "Movement",
     "group": "With the ball",
     "star": null,
-    "why": "he wears Technical, and his Ball Control 94 backs it up",
+    "why": "he wears Technical, and his Ball Control 94 and Agility 94 backs it up",
     "playstyles": [
      {
       "id": "technical",
@@ -233,8 +233,102 @@
      },
      {
       "name": "Agility",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Sprint Speed 95 and Ball Control 94 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 94 and Ball Control 94 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Balance",
       "v": 89,
       "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 94 and Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
      }
     ],
     "perk": null
@@ -262,7 +356,7 @@
     "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
    ]
   ],
-  "spent": 3167,
+  "spent": 3162,
   "budget": 3167
  },
  "fc27": {
@@ -499,6 +593,90 @@
      {
       "name": "Ball Control",
       "v": 76,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Incisive Pass",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Short Pass",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Incisive Pass",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Incisive Pass",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
       "strong": false
      }
     ],

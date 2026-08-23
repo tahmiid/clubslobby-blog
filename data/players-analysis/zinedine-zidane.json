@@ -238,6 +238,90 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -496,6 +580,100 @@
      },
      {
       "name": "Agility",
+      "v": 88,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 88 and Ball Control 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 88,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 92 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 92 and Agility 88 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 88,
+      "strong": true
+     },
+     {
+      "name": "Composure",
       "v": 88,
       "strong": true
      }

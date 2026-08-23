@@ -45,7 +45,7 @@
     "worn": false
    }
   ],
-  "accelerate": "Controlled",
+  "accelerate": "Lengthy",
   "strengths": [
    {
     "attr": "Def. Aware",
@@ -56,20 +56,20 @@
     "v": 96
    },
    {
-    "attr": "Reactions",
-    "v": 95
+    "attr": "Strength",
+    "v": 94
+   },
+   {
+    "attr": "Short Pass",
+    "v": 94
    },
    {
     "attr": "Long Pass",
-    "v": 95
+    "v": 94
    },
    {
     "attr": "Jumping",
-    "v": 95
-   },
-   {
-    "attr": "Composure",
-    "v": 95
+    "v": 94
    }
   ],
   "weaknesses": [
@@ -111,7 +111,7 @@
      },
      {
       "name": "Long Pass",
-      "v": 95,
+      "v": 94,
       "strong": true
      }
     ],
@@ -144,7 +144,7 @@
      },
      {
       "name": "Long Pass",
-      "v": 95,
+      "v": 94,
       "strong": true
      }
     ],
@@ -167,7 +167,7 @@
     "attributes": [
      {
       "name": "Long Pass",
-      "v": 95,
+      "v": 94,
       "strong": true
      },
      {
@@ -195,7 +195,7 @@
     "attributes": [
      {
       "name": "Long Pass",
-      "v": 95,
+      "v": 94,
       "strong": true
      }
     ],
@@ -223,7 +223,101 @@
      },
      {
       "name": "Long Pass",
-      "v": 95,
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
       "strong": true
      }
     ],
@@ -252,7 +346,7 @@
     "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
    ]
   ],
-  "spent": 3166,
+  "spent": 3165,
   "budget": 3167
  },
  "fc27": {
@@ -450,6 +544,100 @@
      {
       "name": "Long Pass",
       "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_ground_pass",
+    "action": "Precision Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 84 and Composure 89 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Def. Aware 89 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Strength 84 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
       "strong": true
      }
     ],

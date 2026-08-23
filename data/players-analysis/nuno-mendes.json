@@ -245,6 +245,80 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_ground_cross",
+    "action": "Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_cross",
+    "action": "Driven Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -504,6 +578,85 @@
      {
       "name": "Balance",
       "v": 66,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_lob_pass_cross_header",
+    "action": "Lob Pass / Cross / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_lob_pass_driven_cross",
+    "action": "Driven Lob Pass / Driven Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_high_lob",
+    "action": "High Lob / Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
       "strong": false
      }
     ],

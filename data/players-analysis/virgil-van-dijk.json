@@ -228,6 +228,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 94,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 85,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -463,6 +557,105 @@
       "name": "Composure",
       "v": 84,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Def. Aware 92 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Strength 89 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 89 and Stand Tackle 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
      }
     ],
     "perk": null

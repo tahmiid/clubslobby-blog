@@ -243,6 +243,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Sprint Speed 95 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -480,6 +574,100 @@
      },
      {
       "name": "Reactions",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 86 and Agility 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 86,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 86 and Composure 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 86,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Acrobatic, and his Finishing 89 and Volleys 84 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
       "v": 84,
       "strong": true
      }

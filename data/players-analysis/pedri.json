@@ -235,6 +235,95 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": false
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -480,6 +569,95 @@
       "name": "Reactions",
       "v": 80,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 79,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Long Pass 85 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 85,
+      "strong": true
      }
     ],
     "perk": null

@@ -242,6 +242,95 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -489,6 +578,100 @@
      {
       "name": "Composure",
       "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 89 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Acrobatic, and his Finishing 89 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_flick_up_for_volley",
+    "action": "Flick Up for Volley",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "he wears Acrobatic, and his Agility 90 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Volleys",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 90,
       "strong": true
      }
     ],

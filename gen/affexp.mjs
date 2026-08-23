@@ -42,7 +42,12 @@
 import { affiliateSection } from './affiliate.mjs';
 import { kg } from './common.mjs';
 
-export const ARMS = ['lede', 'inline', 'footer'];
+// Both arms are APPROVED positions (MONETIZATION.md §3): the affiliate block
+// belongs BELOW an app CTA, never above one, and a two-release page has two
+// app CTAs. The first draft invented lede/inline/footer, which put a block
+// above the build and mid-argument - neither is in the slot map, and the
+// owner rejected them. What varies now is which CTA the block follows.
+export const ARMS = ['afterLead', 'pageEnd'];
 
 // Deterministic AND balanced. A hash of the slug is deterministic but not
 // balanced - the first run came out 8 footer / 4 inline / 3 lede, which wastes

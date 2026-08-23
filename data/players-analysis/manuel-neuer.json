@@ -239,6 +239,90 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_driven_throw",
+    "action": "Driven Throw",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Throw flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "GK Handling",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_goalkeeper_throw_pass",
+    "action": "Throw / Pass",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Throw flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Tiki Taka, and his Reactions 95 backs it up",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -473,6 +557,90 @@
       "name": "GK Diving",
       "v": 89,
       "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Deflector, and his GK Handling 84 and GK Reflexes 89 backs it up",
+    "playstyles": [
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_driven_throw",
+    "action": "Driven Throw",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Far Throw, and his GK Kicking 90 and GK Handling 84 backs it up",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Kicking",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_goalkeeper_throw_pass",
+    "action": "Throw / Pass",
+    "page": "Goalkeeper",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Far Throw, and his GK Handling 84 backs it up",
+    "playstyles": [
+     {
+      "id": "far-throw",
+      "name": "Far Throw",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 50,
+      "strong": false
      }
     ],
     "perk": null

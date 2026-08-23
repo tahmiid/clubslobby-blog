@@ -45,14 +45,14 @@
     "worn": false
    }
   ],
-  "accelerate": "Controlled",
+  "accelerate": "Explosive",
   "strengths": [
    {
-    "attr": "Dribbling",
-    "v": 96
+    "attr": "Agility",
+    "v": 99
    },
    {
-    "attr": "Curve",
+    "attr": "Dribbling",
     "v": 96
    },
    {
@@ -60,23 +60,23 @@
     "v": 96
    },
    {
-    "attr": "Volleys",
-    "v": 94
+    "attr": "Curve",
+    "v": 95
    },
    {
     "attr": "Balance",
     "v": 94
    },
    {
-    "attr": "Agility",
+    "attr": "Acceleration",
     "v": 94
    }
   ],
   "weaknesses": [
    {
     "attr": "Shot Power",
-    "v": 73,
-    "atFloor": false
+    "v": 70,
+    "atFloor": true
    }
   ],
   "neverBought": [
@@ -117,7 +117,7 @@
      },
      {
       "name": "Agility",
-      "v": 94,
+      "v": 99,
       "strong": true
      }
     ],
@@ -140,7 +140,7 @@
     "attributes": [
      {
       "name": "Agility",
-      "v": 94,
+      "v": 99,
       "strong": true
      },
      {
@@ -206,7 +206,7 @@
      },
      {
       "name": "Agility",
-      "v": 94,
+      "v": 99,
       "strong": true
      },
      {
@@ -244,6 +244,90 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Long Shots",
+      "v": 85,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 94 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -268,7 +352,7 @@
     "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
    ]
   ],
-  "spent": 3167,
+  "spent": 3164,
   "budget": 3167
  },
  "fc27": {
@@ -503,6 +587,94 @@
       "name": "Reactions",
       "v": 75,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 and Agility 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 and Composure 93 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 93,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "no PlayStyle for it, but Dribbling 89 and Ball Control 89 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
      }
     ],
     "perk": null

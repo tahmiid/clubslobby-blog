@@ -253,6 +253,105 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     },
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     },
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Ball Control 92 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -525,6 +624,100 @@
      },
      {
       "name": "Long Shots",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_skill_move_1_star_flick_up_for_volley",
+    "action": "Flick Up for Volley",
+    "page": "1 Star Moves",
+    "group": "Skill moves",
+    "star": 1,
+    "why": "he wears Acrobatic, and his Volleys 89 and Ball Control 89 backs it up",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Volleys",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 84 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 45,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 84 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
       "v": 80,
       "strong": false
      }

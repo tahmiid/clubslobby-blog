@@ -28,7 +28,7 @@ import { ARCH, BRAND, SITE, esc, kg, baseCss, appCta } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
 import { affArm, affBeacon } from './affexp.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
-import { coverUrl, ft } from './spoke.mjs';
+import { ft, psIcon } from './spoke.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const BLOG = `${SITE}/blog`;
@@ -54,7 +54,7 @@ const tidy = (h) => h.replace(/\s+([,.;:])/g, '$1').replace(/[ \t]*\n[ \t]*(?=[a
 // one, each strong attribute, and a perk that fires on it. The recommender
 // already ranks; this re-ranks the top of that list by weight of evidence and
 // keeps three.
-const byEvidence = (controls, n = 3) => [...controls]
+const byEvidence = (controls, n = 5) => [...controls]
   .map((c) => {
     const gold = (c.playstyles || []).filter((p) => p.gold).length;
     const silver = (c.playstyles || []).filter((p) => !p.gold).length;
@@ -81,13 +81,34 @@ function releaseSection({ P, cfg, build, an, year, R, isLead, first }) {
   const gold = an?.gold ?? [];
   const wornSpec = (an?.specs ?? []).find((s) => s.worn);
 
-  // What it is. Named for what it does on the pitch, with the numbers that
-  // prove it — a18's voice, not a spec sheet.
-  const what = tidy(`<p>The ${label} ${esc(first)} build is a <strong>${esc(archName)}</strong>, and it is built for
-one job: ${esc((an?.traits ?? []).slice(0, 2).map((t) => t.toLowerCase()).join(' and ') || 'the role he plays')}.
-${tops.length ? `The sheet says so plainly — ${tops.slice(0, 4).map((t) => `<strong>${esc(t.attr)} ${t.v}</strong>`).join(', ')}.` : ''}
-${gold.length ? `Its gold ${gold.length > 1 ? 'PlayStyles are' : 'PlayStyle is'} <strong>${esc(listOf(gold))}</strong>${
-  wornSpec ? `, and it wears the <strong>${esc(wornSpec.name)}</strong> specialization for the <strong>${esc(wornSpec.perk ?? wornSpec.grants)}</strong> perk — ${esc((wornSpec.perkDesc ?? '').replace(/\.$/, '').toLowerCase())}` : ''}.` : ''}</p>`);
+  // What it is — three short paragraphs, not one line. The owner's note was
+  // that the read he liked was longer and moved: what it is, how it plays,
+  // then the honest half. Written from the analysis, so it cannot drift from
+  // the build.
+  const roleLine = {
+    'st-poacher': 'a penalty-box finisher', 'st-target': 'a target man',
+    'st-complete': 'a complete forward', 'winger-pace': 'a pace winger',
+    'winger-skill': 'a dribbling winger', 'am-playmaker': 'an attacking playmaker',
+    'am-dribbler': 'a dribbling number ten', 'cm-playmaker': 'a deep playmaker',
+    'cm-boxtobox': 'a box-to-box midfielder', 'dm-deeplying': 'a deep-lying midfielder',
+    'dm-destroyer': 'a ball-winning midfielder', 'cb-stopper': 'a front-foot centre back',
+    'cb-ballplayer': 'a ball-playing centre back', 'fullback-attacking': 'an attacking full back',
+    'fullback-defensive': 'a defensive full back', 'gk-shotstopper': 'a shot stopper',
+    'gk-sweeper': 'a sweeper keeper',
+  }[an?.role] ?? 'a specialist';
+  const pace = (an?.strengths ?? []).find((t) => /Accel|Sprint/i.test(t.attr));
+  const topThree = tops.slice(0, 3);
+  const rest = tops.slice(3, 5);
+
+  const what = tidy(`<p>The ${label} ${esc(first)} build is ${esc(roleLine)} on the
+<strong>${esc(archName)}</strong> archetype${an?.accelerate ? `, and the frame computes as <strong>${esc(an.accelerate)}</strong>` : ''}.
+${topThree.length ? `What it does first is written across the top of the sheet: ${topThree.map((t) => `<strong>${esc(t.attr)} ${t.v}</strong>`).join(', ')}${rest.length ? `, with ${rest.map((t) => `${esc(t.attr)} ${t.v}`).join(' and ')} underneath` : ''}.` : ''}</p>
+
+<p>${gold.length ? `Its gold ${gold.length > 1 ? 'PlayStyles are' : 'PlayStyle is'} <strong>${esc(listOf(gold))}</strong>, which is where the build's real power sits — a gold PlayStyle flares when you press the button it belongs to, and this one is built so those buttons are the ones you press most.` : ''}
+${wornSpec ? ` It wears the <strong>${esc(wornSpec.name)}</strong> specialization for the <strong>${esc(wornSpec.perk ?? wornSpec.grants)}</strong> perk: ${esc((wornSpec.perkDesc ?? '').replace(/\.$/, ''))}.` : ''}
+${(an?.specs ?? []).length > 1 ? ` A second specialization is unlocked alongside it, so you can switch the gold between games without spending a point.` : ''}</p>
+
+${pace ? `<p>Underneath that it is ${pace.v >= 90 ? 'genuinely quick' : pace.v >= 84 ? 'quick enough to matter' : 'built for position rather than pace'} — ${esc(pace.attr)} ${pace.v} — which is what makes the rest of it playable in a real match rather than only on paper.</p>` : ''}`);
 
   // What it cannot do. The owner's note: be clear that this build does no
   // defensive work. Said once, plainly, without apology.
@@ -99,28 +120,47 @@ ${weak.length ? ` ${esc(listOf(weak.map((w) => `${w.attr} sits at ${w.v}`)))} �
   : 'those parts of the game belong to someone else in your club'}.` : ''}
 If that is the job your club needs filling, the <a href="${BLOG}/pro-clubs-${arch?.id}-build/">${esc(archName)} guide</a> spends the same points differently.</p>`) : '';
 
-  // Two or three controls, animated, through the shared renderer.
-  const picks = byEvidence(an?.controls ?? [], 3);
+  // Five controls, animated through the shared renderer. The REASON is shown,
+  // not explained (owner, 2026-08-23): a PlayStyle behind a control is its
+  // badge, an attribute behind it is its name and number. No sentence.
+  const picks = byEvidence(an?.controls ?? [], 5);
   const moves = picks.map((c) => {
-    try { return { ...R.lookup(c.action, { page: c.page }), why: c.why }; }
+    try { return { ...R.lookup(c.action, { page: c.page }), _ev: c }; }
     catch { return null; }
   }).filter(Boolean);
   let ctrlHtml = '';
   if (moves.length) {
     let list = R.moveList(moves, 'ps', 'colour');
     let i = 0;
-    list = list.replace(/<span class="cm-cap"/g, () =>
-      `<span class="cm-why">${esc(moves[i++]?.why ?? '')}</span><span class="cm-cap"`);
+    list = list.replace(/<span class="cm-cap"/g, () => {
+      const c = moves[i++]?._ev ?? {};
+      const ps = (c.playstyles ?? []).map((x) =>
+        `<span class="cm-ps${x.gold ? ' g' : ''}"><img src="${psIcon(x.id)}" alt="${esc(x.name)}"`
+        + ` title="${esc(x.name)}" width="20" height="20" loading="lazy"></span>`).join('');
+      const at = (c.attributes ?? []).filter((x) => x.strong).slice(0, 2).map((x) =>
+        `<span class="cm-at">${esc(x.name)} <b>${x.v}</b></span>`).join('');
+      return `<span class="cm-ev">${ps}${at}</span><span class="cm-cap"`;
+    });
     ctrlHtml = kg(`<div class="${P}">
-<h3>The ${moves.length} buttons this build is for</h3>
-<p>Every build is only as good as what you press with it. These are the ones the
-${label} ${esc(first)} build backs with more than one thing — a gold PlayStyle, the
-attributes underneath it, or the perk it carries.</p>
-<style>.${P} .cm-why{display:block;color:#9aa0ad;font:400 13px/1.5 system-ui,sans-serif;margin-top:4px}
+<h3>Five buttons this build is made for</h3>
+<style>.${P} .cm-ev{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px}
+.${P} .cm-ps{display:inline-flex;width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.${P} .cm-ps img{display:block;filter:grayscale(1) brightness(1.2)}
+.${P} .cm-ps.g{border-color:#E3B84E;background:rgba(227,184,78,.12)}
+.${P} .cm-ps.g img{filter:sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(1)}
+.${P} .cm-at{font:600 11.5px/1 system-ui,sans-serif;letter-spacing:.02em;color:#9aa0ad;border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:4px 7px}
+.${P} .cm-at b{color:#2DE2C5;font-variant-numeric:tabular-nums}
 ${R.CONTROL_CSS}</style>
 ${list}
 </div>`) + '\n\n' + kg(R.padSwitcher());
   }
+
+  const regulars = an?.regulars ?? [];
+  const loadout = regulars.length ? tidy(`<p><strong>Underneath the gold</strong>, the regular
+slots run ${esc(listOf(regulars.slice(0, 4)))}${regulars.length > 4 ? ` and ${regulars.length - 4} more` : ''}.
+Those are not decoration: every one of them has unlock thresholds, and this build meets them
+with attributes it was buying anyway — nothing here was bought for a badge. If you copy the
+build and respend points, check the thresholds before you drop below them.</p>`) : '';
 
   const facts = kg(`<div class="${P}">
 <table class="facts">
@@ -130,7 +170,7 @@ ${list}
 <tr><th>Stars</th><td>${build.skillMoves}★ skill moves · ${build.weakFoot}★ weak foot</td></tr>
 </table></div>`);
 
-  return { card, what, cannot, ctrlHtml, facts, archName, arch };
+  return { card, what, cannot, ctrlHtml, facts, loadout, archName, arch };
 }
 
 export function renderPlayerPage(cfg, all, { CTRL, analysisFor, ARM_OF }) {
@@ -172,12 +212,14 @@ ${PCHQ_CSS}
 .gh-content a.pchq-build:hover, .gh-content a.pchq-build:visited { color: #f2f3f7; text-decoration: none; }
 </style>`);
 
-  const hero = kg(`<figure class="kg-card kg-image-card"><img src="${coverUrl(main.arch?.id ?? 'spark')}" alt="${esc(cfg.name)} Pro Clubs build — EA FC official art" loading="eager" width="1200"></figure>`);
 
   // The jump link, so an FC 27 player never reads the FC 26 section by
   // mistake. It is the ONLY place the other release is mentioned up here.
   const jump = B && A ? kg(`<div class="${P}"><p class="jump">Playing FC ${otherYear}? <a href="#fc${otherYear}">Jump to the FC ${otherYear} ${esc(first)} build →</a></p></div>`) : '';
 
+  // Two arms, both APPROVED positions (MONETIZATION.md §3): the affiliate
+  // block belongs below an app CTA, and this page has two of them. What is
+  // being tested is which one earns the click - not a new placement.
   const affHere = (which) => which === arm ? affArm(arm, {
     heading: 'The pad you press these with',
     items: cfg.affiliate || ['controller-ps5', 'controller-xbox', 'thumb-grips'],
@@ -186,11 +228,17 @@ ${PCHQ_CSS}
     cta: 'Check price →',
   }) : '';
 
+  // Order inside a release section, after the owner's review: the DESCRIPTION
+  // comes before the card, and no ad appears before the build. MONETIZATION.md
+  // §3 is the slot map and it is not negotiable - A after the lead widget and
+  // its first paragraph, B on an <h2> boundary, C below the app CTA - so the
+  // ads sit between sections, never inside one.
   const section = (s, y, id) => s ? [
     kg(`<div class="${P}"><h2 id="${id}">The FC ${y} ${esc(first)} build</h2></div>`),
-    s.card,
     s.what,
+    s.card,
     s.facts,
+    s.loadout,
     s.cannot,
     s.ctrlHtml,
     appCta({
@@ -206,27 +254,37 @@ ${PCHQ_CSS}
   const related = others.map((p) =>
     `<a href="${BLOG}/${p.slug}-pro-clubs-build/">${esc(p.name)}</a>`).join(' · ');
 
+  const leadAn = an[`fc${leadYear}`] ?? an[`fc${otherYear}`] ?? {};
+  const leadBuild = lead ?? other;
   const faq = kg(`<div class="${P}">
 <h2 id="faq">Quick answers</h2>
-<p><strong>What archetype is the ${esc(first)} build?</strong> ${esc(main.archName)}${main.arch?.position ? `, a ${esc(main.arch.position.toLowerCase())}` : ''} — and the <a href="${BLOG}/pro-clubs-${main.arch?.id}-build/">${esc(main.archName)} guide</a> covers the AP order behind it.</p>
-<p><strong>How tall is it?</strong> ${ft((lead ?? other).height)} at ${(lead ?? other).weight} lb, which the builder computes as <strong>${esc((lead ?? other).accelerationType ?? 'Controlled')}</strong> AcceleRATE.</p>
-<p><strong>Can I change it?</strong> Yes — open it, copy it to your account, and every slider is yours. Nothing here is locked.</p>
+<p><strong>What archetype is the ${esc(first)} build?</strong> ${esc(main.archName)}${main.arch?.position ? `, a ${esc(main.arch.position.toLowerCase())}` : ''}. The <a href="${BLOG}/pro-clubs-${main.arch?.id}-build/">${esc(main.archName)} guide</a> covers the AP order behind it and thirteen more finished builds on the same archetype.</p>
+<p><strong>How tall is it, and what AcceleRATE does that give?</strong> ${ft(leadBuild.height)} at ${leadBuild.weight} lb, which the builder computes as <strong>${esc(leadBuild.accelerationType ?? 'Controlled')}</strong>. Change the frame and that can change with it — the <a href="${BLOG}/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a> has the thresholds.</p>
+${leadAn.gold?.length ? `<p><strong>Which PlayStyles does it run?</strong> Gold: ${esc(listOf(leadAn.gold))}. ${leadAn.regulars?.length ? `Regular slots: ${esc(listOf(leadAn.regulars.slice(0, 5)))}${leadAn.regulars.length > 5 ? ' and more' : ''}.` : ''} Every badge on the card above is one of those.</p>` : ''}
+${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc((leadAn.specs.find((x) => x.worn) ?? leadAn.specs[0]).name)}${leadAn.specs.length > 1 ? `, with ${esc(leadAn.specs.filter((x) => !x.worn).map((x) => x.name).join(' and '))} unlocked beside it so you can switch between games` : ''}.</p>` : ''}
+<p><strong>Can I change it?</strong> Yes. Open it, copy it to your account, and every slider is yours — the build is a starting point, not a lock. Most people move the last hundred points toward the role their club actually plays them in.</p>
+<p><strong>Is it free?</strong> Yes, and there is nothing to install: ${BRAND} runs in the browser.</p>
 </div>`);
 
   return [
     css,
-    hero,
     `<p>${esc(cfg.intro)}</p>`,
     jump,
     widgetHead,
-    affHere('lede'),
+    // The build first. No ad, no affiliate block, nothing before it - the
+    // reader came for this (owner, 2026-08-23), and MONETIZATION.md's slot A
+    // is defined as coming AFTER the lead widget, never before it.
     section(A, leadYear, `fc${leadYear}`),
+    // A: after the lead build and its paragraphs. C's rule - below the app
+    // CTA, never above - is satisfied because the section ends with one.
+    affHere('afterLead'),
     AD_A,
-    affHere('inline'),
-    AD_B,
     B ? kg(`<div class="${P}"><hr></div>`) : '',
     section(B, otherYear, `fc${otherYear}`),
-    affHere('footer'),
+    // B sits on the boundary between the two release sections; C closes the
+    // page below the last app CTA, which is the approved affiliate home too.
+    AD_B,
+    affHere('pageEnd'),
     AD_C,
     faq,
     kg(`<div class="${P}"><p class="rel"><strong>More player builds:</strong> ${related}</p></div>`),

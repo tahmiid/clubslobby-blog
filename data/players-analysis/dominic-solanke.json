@@ -253,6 +253,105 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     },
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     },
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Composure 94 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Agility",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -520,6 +619,95 @@
      },
      {
       "name": "Long Shots",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 45,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
       "v": 80,
       "strong": false
      }

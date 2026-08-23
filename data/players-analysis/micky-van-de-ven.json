@@ -262,6 +262,105 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     },
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     },
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Block flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": false
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Interceptions",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -496,6 +595,105 @@
       "name": "Balance",
       "v": 80,
       "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Block, and his Def. Aware 84 and Strength 84 backs it up",
+    "playstyles": [
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Strength 84 and Heading Acc. 84 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 81,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 84 and Def. Aware 84 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
      }
     ],
     "perk": null

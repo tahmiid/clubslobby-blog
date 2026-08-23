@@ -257,6 +257,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_slide_tackle",
+    "action": "Hard Slide Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Slide Tackle flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 92 and Sprint Speed 94 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Aerial Fortress, and his Strength 92 backs it up",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -519,6 +613,73 @@
      {
       "name": "Aggression",
       "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Aggression 84 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_high_lob",
+    "action": "High Lob / Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Crossing 89 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_ground_cross",
+    "action": "Ground Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "no PlayStyle for it, but Crossing 89 carries it anyway",
+    "playstyles": [],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
       "strong": true
      }
     ],

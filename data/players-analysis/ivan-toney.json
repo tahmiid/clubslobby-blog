@@ -251,6 +251,100 @@
      }
     ],
     "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     },
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     },
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_shot",
+    "action": "Low Driven Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Low Driven Shot, and his Finishing 94 and Shot Power 94 backs it up",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Shot Power",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
    }
   ],
   "rules": [
@@ -299,11 +393,11 @@
    "Acrobatic"
   ],
   "specs": [],
-  "accelerate": "Controlled",
+  "accelerate": "Lengthy",
   "strengths": [
    {
     "attr": "Strength",
-    "v": 89
+    "v": 94
    },
    {
     "attr": "Heading Acc.",
@@ -322,8 +416,8 @@
     "v": 84
    },
    {
-    "attr": "Composure",
-    "v": 84
+    "attr": "Sprint Speed",
+    "v": 80
    }
   ],
   "weaknesses": [
@@ -331,6 +425,11 @@
     "attr": "Crossing",
     "v": 50,
     "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 63,
+    "atFloor": false
    },
    {
     "attr": "Vision",
@@ -350,11 +449,6 @@
    {
     "attr": "Dribbling",
     "v": 70,
-    "atFloor": true
-   },
-   {
-    "attr": "Short Pass",
-    "v": 75,
     "atFloor": true
    }
   ],
@@ -389,7 +483,7 @@
      },
      {
       "name": "Strength",
-      "v": 89,
+      "v": 94,
       "strong": true
      },
      {
@@ -444,7 +538,7 @@
     "page": "Attacking - Advanced",
     "group": "Attacking",
     "star": null,
-    "why": "he wears Bruiser, and his Strength 89 and Composure 84 backs it up",
+    "why": "he wears Bruiser, and his Strength 94 backs it up",
     "playstyles": [
      {
       "id": "bruiser",
@@ -455,7 +549,7 @@
     "attributes": [
      {
       "name": "Strength",
-      "v": 89,
+      "v": 94,
       "strong": true
      },
      {
@@ -465,8 +559,8 @@
      },
      {
       "name": "Composure",
-      "v": 84,
-      "strong": true
+      "v": 74,
+      "strong": false
      }
     ],
     "perk": null
@@ -521,6 +615,95 @@
      },
      {
       "name": "Long Shots",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 94 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 45,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 94 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 94 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
       "v": 80,
       "strong": false
      }
