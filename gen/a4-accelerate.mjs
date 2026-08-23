@@ -159,7 +159,10 @@ ${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE chan
 <p>The rumors say the three AcceleRATE types return unchanged in FC 27, with the same height, agility and strength gates — but treat the exact thresholds as rumor until EA publishes them. Our FC 27 builder already computes your type live against the rumored numbers, so the fastest way to check a planned build is simply to make it.</p>
 
 ${appCta({
-  href: '/build',
+  // `/build` is `/build/:buildId` - bare, React Router matches nothing and
+  // the page renders BLANK behind nginx's 200 (found by the link sweep,
+  // 2026-08-23). `/` is the archetype landing, where Create lives.
+  href: '/',
   kicker: 'The living calculator',
   head: 'See your AcceleRATE type as you build',
   body: 'The builder computes Lengthy, Controlled or Explosive live as you set height, weight and attributes — FC 26 and FC 27 both.',

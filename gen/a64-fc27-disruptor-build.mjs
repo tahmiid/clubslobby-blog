@@ -34,11 +34,15 @@ const html = `<p><strong>Disruptor is the only new archetype in FC 27</strong> �
 ${buildGrid('d27g', disr, 'FC 27 Disruptor builds', 'Casemiro, Rice, Tchouaméni, Caicedo, Palhinha — plus Keane, Gattuso and Vieira from the legends shelf. Tap to open.')}
 
 ${appCta({
-  href: '/build?year=27&archetype=disruptor',
-  kicker: 'FC 27 in the builder',
-  head: 'Build your own Disruptor',
-  body: 'Every attribute, PlayStyle floor and specialization is in the builder now. Start from scratch or copy any build above and tune it.',
-  label: 'Open the Disruptor builder',
+  // Was `/build?year=27&archetype=disruptor` - a bare parameterised route,
+  // which renders a BLANK page (link sweep, 2026-08-23). Points at the
+  // finished Disruptor builds now, for the same reason #156 stopped sending
+  // search traffic into an empty editor: what the reader wants is a build.
+  href: '/explore?archetype=disruptor&year=27&src=guide',
+  kicker: 'FC 27 in the app',
+  head: 'Every Disruptor build, finished',
+  body: 'Open any of them, copy it to your club, and every attribute, PlayStyle and specialization is yours to move.',
+  label: 'Open the Disruptor builds',
 })}
 
 <h2>What the Disruptor is</h2>

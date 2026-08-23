@@ -30,6 +30,32 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
    catch it. A build link is verified only by
    `GET /api/builds/<id>/public` → 200. (2026-08-17: all 14 magician grid
    cards shipped pointing at `/b/undefined`; found by the owner, not a test.)
+
+   **`ops/link-sweep.mjs` is that check, for every link on every live post.**
+   Run it after any publish; it exits non-zero on the count.
+
+   ```bash
+   ~/.local/node22/bin/node ops/link-sweep.mjs          # the live blog
+   ~/.local/node22/bin/node ops/link-sweep.mjs out/a105.html
+   ```
+
+   Two more shapes it now knows about, both found on 2026-08-23 and both
+   invisible behind a 200:
+
+   - **A path that matches no route renders a BLANK PAGE.** React Router has
+     no catch-all, so `/build` (the route is `/build/:buildId`) and
+     `/archetypes` (there is no such route — `/` is the archetype page)
+     mounted nothing at all. The sweeper's route list is transcribed from
+     `frontend/src/App.js`; **re-read the router when it changes**, because a
+     route list invented here certifies dead links as live, which is worse
+     than not checking.
+   - **`appCta` takes a PATH, and used to concatenate it onto `SITE`.** Two
+     callers passed a full URL, which rendered
+     `https://proclubshq.comhttps//proclubshq.com/b/<id>` — a real 404 on 35
+     player articles and 21 guides, for a day, while every page generated,
+     published and looked perfect. It resolves through `new URL(href, SITE)`
+     now so either shape works; the sweep is the backstop for the next
+     variant of the same mistake.
 2. **Exports from Mongo must map `_id` → `id`.** The build documents' `_id`
    IS the uuid that `/b/<id>` serves; popping it for cleanliness is how the
    undefined links above happened.
@@ -51,6 +77,34 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
    flipping every row, and a link sweep (resolve every internal href, with
    `<script>` blocks stripped — the card widget's example URL reads as a
    dead link otherwise) is cheap insurance after any multi-article publish.
+
+## Player pages
+
+`gen/playerpage.mjs` renders one player, `gen/players.mjs` is the roster.
+Two things about their shape were settled by the owner on 2026-08-23:
+
+- **No per-build "Open the build" CTA.** The section already opens with the
+  build's own reel card, which links to `/b/<id>`; a second card repeating
+  that link was asking twice for one click. *"We already have the builds,
+  they can go there. We have the grids."*
+- **The page closes with a most-copied grid**, which is also its app CTA
+  (MONETIZATION.md §3 puts slot C and the affiliate block BELOW an app CTA,
+  never above). It is a RANKING, not a hand-picked list:
+  `ops/export-most-copied.mjs` asks the app for `sort=copied` per release
+  and writes `data/most-copied.json`. **Re-run it to refresh the ranking** —
+  the published HTML is a snapshot, so a stale export is a stale grid, never
+  a broken one.
+
+  House builds only, and only builds with at least one real copy. The house
+  filter is an *editorial* choice — a member's own build name would be
+  published unreviewed on 35 indexed pages while the site is mid-AdSense
+  re-review — and it does drop real builds; that file names the one it
+  dropped and says which line to change.
+
+  One release, never two: the grid follows the page's LEAD year and flips
+  with it on launch day. FC 27 had only 5 builds with any copies on
+  2026-08-23, so the exporter warns when a year is too thin and the grid
+  renders nothing rather than padding itself with zero-copy builds.
 
 ## Instrumentation rules
 

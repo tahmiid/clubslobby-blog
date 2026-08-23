@@ -1,0 +1,766 @@
+{
+ "generatedAt": "2026-08-23",
+ "fc26": [
+  {
+   "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
+   "buildName": "Lionel Messi",
+   "archetype_id": "magician",
+   "level": 100,
+   "signature": [
+    "technical",
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "playstyles": [
+    "incisive-pass",
+    "rapid",
+    "quick-step",
+    "inventive",
+    "chip-shot",
+    "tiki-taka",
+    "whipped-pass",
+    "acrobatic",
+    "low-driven-shot"
+   ],
+   "height": 67,
+   "weight": 159,
+   "accelerationType": "Explosive",
+   "copyCount": 13,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "31c84b8b-2c25-4f05-9d6f-45cb63423015",
+   "buildName": "Zinedine Zidane",
+   "archetype_id": "creator",
+   "level": 100,
+   "signature": [
+    "incisive-pass",
+    "technical",
+    "first-touch",
+    "whipped-pass"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "tiki-taka",
+    "inventive",
+    "trickster",
+    "chip-shot",
+    "pinged-pass",
+    "rapid",
+    "quick-step",
+    "power-shot"
+   ],
+   "height": 73,
+   "weight": 170,
+   "accelerationType": "Controlled",
+   "copyCount": 10,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "dd2add45-d5a2-4e53-9349-116de77dd8a4",
+   "buildName": "Cristiano Ronaldo",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "low-driven-shot",
+    "quick-step",
+    "acrobatic",
+    "chip-shot"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "first-touch",
+    "rapid",
+    "power-shot",
+    "technical",
+    "trickster",
+    "incisive-pass",
+    "game-changer",
+    "precision-header"
+   ],
+   "height": 74,
+   "weight": 183,
+   "accelerationType": "Lengthy",
+   "copyCount": 7,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "60bbdd58-4b36-4d56-98c1-6afe6ee6e8a9",
+   "buildName": "Florian Wirtz",
+   "archetype_id": "creator",
+   "level": 100,
+   "signature": [
+    "incisive-pass",
+    "technical",
+    "first-touch",
+    "whipped-pass"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "tiki-taka",
+    "inventive",
+    "trickster",
+    "chip-shot",
+    "pinged-pass",
+    "rapid",
+    "quick-step",
+    "power-shot"
+   ],
+   "height": 69,
+   "weight": 154,
+   "accelerationType": "Controlled",
+   "copyCount": 6,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "552e4e0e-1ed4-409e-a19e-d08c58448fab",
+   "buildName": "Usain Bolt",
+   "archetype_id": "spark",
+   "level": 100,
+   "signature": [
+    "trickster",
+    "quick-step",
+    "inventive",
+    "technical"
+   ],
+   "playstyles": [
+    "relentless",
+    "chip-shot",
+    "tiki-taka",
+    "rapid",
+    "first-touch"
+   ],
+   "height": 74,
+   "weight": 187,
+   "accelerationType": "Controlled",
+   "copyCount": 5,
+   "creator": "freakbuilds"
+  },
+  {
+   "id": "0477843e-acb1-4193-9c5f-223e0b06377d",
+   "buildName": "Neymar Jr",
+   "archetype_id": "magician",
+   "level": 100,
+   "signature": [
+    "technical",
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "playstyles": [
+    "incisive-pass",
+    "rapid",
+    "quick-step",
+    "inventive",
+    "chip-shot",
+    "tiki-taka",
+    "whipped-pass",
+    "acrobatic",
+    "low-driven-shot"
+   ],
+   "height": 69,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "copyCount": 5,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "862e953f-0de7-4f71-b784-e20f66926e79",
+   "buildName": "Agüero 93:20",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "low-driven-shot",
+    "game-changer",
+    "quick-step",
+    "acrobatic"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "first-touch",
+    "chip-shot",
+    "power-shot",
+    "tiki-taka",
+    "block",
+    "aerial-fortress",
+    "trickster",
+    "rapid"
+   ],
+   "height": 68,
+   "weight": 163,
+   "accelerationType": "Explosive",
+   "copyCount": 4,
+   "creator": "specialevents"
+  },
+  {
+   "id": "83ce31d4-994e-4ced-8a1c-21049a1b3415",
+   "buildName": "Suárez '14 Liverpool",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "relentless",
+    "first-touch",
+    "quick-step",
+    "acrobatic"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "press-proven",
+    "trickster",
+    "low-driven-shot",
+    "game-changer",
+    "power-shot",
+    "block",
+    "aerial-fortress",
+    "rapid"
+   ],
+   "height": 72,
+   "weight": 190,
+   "accelerationType": "Controlled",
+   "copyCount": 3,
+   "creator": "specialevents"
+  },
+  {
+   "id": "35fa6e57-0263-46f2-855d-6fc3eb068b76",
+   "buildName": "Kevin De Bruyne",
+   "archetype_id": "maestro",
+   "level": 100,
+   "signature": [
+    "incisive-pass",
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "inventive",
+    "long-ball-pass",
+    "press-proven",
+    "finesse-shot",
+    "whipped-pass",
+    "trickster",
+    "power-shot",
+    "relentless"
+   ],
+   "height": 71,
+   "weight": 154,
+   "accelerationType": "Controlled",
+   "copyCount": 3,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "307b6bce-10bd-41f7-9af5-40a7e234d12a",
+   "buildName": "Rodri '26 WC",
+   "archetype_id": "recycler",
+   "level": 100,
+   "signature": [
+    "pinged-pass",
+    "intercept",
+    "power-shot",
+    "tiki-taka"
+   ],
+   "playstyles": [
+    "long-ball-pass",
+    "bruiser",
+    "press-proven",
+    "precision-header",
+    "incisive-pass",
+    "inventive",
+    "slide-tackle",
+    "aerial-fortress",
+    "first-touch"
+   ],
+   "height": 75,
+   "weight": 181,
+   "accelerationType": "Lengthy",
+   "copyCount": 2,
+   "creator": "specialevents"
+  },
+  {
+   "id": "121122e9-ddec-4a92-8fd0-7c0263246e6d",
+   "buildName": "Felix Nmecha",
+   "archetype_id": "maestro",
+   "level": 100,
+   "signature": [
+    "press-proven",
+    "power-shot",
+    "pinged-pass",
+    "relentless"
+   ],
+   "playstyles": [
+    "first-touch",
+    "incisive-pass",
+    "anticipate",
+    "technical",
+    "long-ball-pass",
+    "intercept",
+    "tiki-taka",
+    "bruiser",
+    "finesse-shot"
+   ],
+   "height": 74,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "copyCount": 2,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "5c753090-aca5-440d-bcb1-bb7a085ef851",
+   "buildName": "Malo Gusto",
+   "archetype_id": "marauder",
+   "level": 100,
+   "signature": [
+    "quick-step",
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "playstyles": [
+    "technical",
+    "anticipate",
+    "intercept",
+    "relentless",
+    "first-touch",
+    "trickster",
+    "pinged-pass",
+    "block",
+    "incisive-pass"
+   ],
+   "height": 70,
+   "weight": 163,
+   "accelerationType": "Explosive",
+   "copyCount": 2,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "9646f83f-5785-4cd0-bbe8-875849e840c0",
+   "buildName": "Ederson",
+   "archetype_id": "sweeper-keeper",
+   "level": 100,
+   "signature": [
+    "footwork",
+    "far-throw",
+    "cross-claimer",
+    "deflector"
+   ],
+   "playstyles": [
+    "1v1-close-down",
+    "far-reach",
+    "long-ball-pass",
+    "pinged-pass",
+    "long-throw",
+    "tiki-taka",
+    "block",
+    "chip-shot",
+    "enforcer"
+   ],
+   "height": 74,
+   "weight": 190,
+   "accelerationType": "Controlled",
+   "copyCount": 2,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "5c268a2c-a617-4cf2-b7b8-37e9ab49a4db",
+   "buildName": "Pedri",
+   "archetype_id": "maestro",
+   "level": 100,
+   "signature": [
+    "incisive-pass",
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "inventive",
+    "long-ball-pass",
+    "press-proven",
+    "finesse-shot",
+    "whipped-pass",
+    "trickster",
+    "power-shot",
+    "relentless"
+   ],
+   "height": 68,
+   "weight": 143,
+   "accelerationType": "Explosive",
+   "copyCount": 2,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "dbeba030-49ca-4c0f-8384-69d43dd1ad1e",
+   "buildName": "Alexander Isak",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "power-shot",
+    "quick-step",
+    "technical",
+    "game-changer"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "first-touch",
+    "low-driven-shot",
+    "acrobatic",
+    "rapid",
+    "incisive-pass",
+    "chip-shot",
+    "trickster",
+    "precision-header"
+   ],
+   "height": 75,
+   "weight": 170,
+   "accelerationType": "Lengthy",
+   "copyCount": 2,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "71f8e5b5-6386-42ac-b622-2e66ad9bbebb",
+   "buildName": "Samu Aghehowa",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "low-driven-shot",
+    "quick-step",
+    "acrobatic",
+    "chip-shot"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "first-touch",
+    "rapid",
+    "power-shot",
+    "technical",
+    "trickster",
+    "incisive-pass",
+    "game-changer",
+    "precision-header"
+   ],
+   "height": 75,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "1769afb5-9025-4f3e-8fac-27685ec0512b",
+   "buildName": "Zlatan the Bicycle",
+   "archetype_id": "target",
+   "level": 100,
+   "signature": [
+    "acrobatic",
+    "precision-header",
+    "tiki-taka",
+    "press-proven"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "power-shot",
+    "low-driven-shot",
+    "block",
+    "aerial-fortress",
+    "rapid",
+    "long-throw"
+   ],
+   "height": 77,
+   "weight": 209,
+   "accelerationType": "Lengthy",
+   "copyCount": 1,
+   "creator": "specialevents"
+  },
+  {
+   "id": "113d760f-4e0f-4d90-a2f3-365820285797",
+   "buildName": "Robben '14",
+   "archetype_id": "spark",
+   "level": 100,
+   "signature": [
+    "trickster",
+    "rapid",
+    "inventive",
+    "quick-step"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "technical",
+    "chip-shot",
+    "game-changer",
+    "power-shot",
+    "low-driven-shot",
+    "acrobatic",
+    "dead-ball",
+    "tiki-taka"
+   ],
+   "height": 71,
+   "weight": 176,
+   "accelerationType": "Explosive",
+   "copyCount": 1,
+   "creator": "specialevents"
+  },
+  {
+   "id": "93ad6248-1570-4ab4-a7be-4864405daa8c",
+   "buildName": "Gianluigi Buffon",
+   "archetype_id": "shot-stopper",
+   "level": 100,
+   "signature": [
+    "far-reach",
+    "deflector",
+    "1v1-close-down",
+    "cross-claimer"
+   ],
+   "playstyles": [
+    "footwork",
+    "far-throw",
+    "long-throw",
+    "long-ball-pass",
+    "pinged-pass",
+    "block",
+    "chip-shot",
+    "tiki-taka",
+    "enforcer"
+   ],
+   "height": 76,
+   "weight": 181,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "f8a46c70-ed8a-4a9b-897b-fd3181af4751",
+   "buildName": "Dead Ball Demon",
+   "archetype_id": "creator",
+   "level": 100,
+   "signature": [
+    "incisive-pass",
+    "dead-ball",
+    "game-changer",
+    "quick-step"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "whipped-pass",
+    "low-driven-shot",
+    "power-shot",
+    "inventive",
+    "first-touch"
+   ],
+   "height": 70,
+   "weight": 161,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "freakbuilds"
+  },
+  {
+   "id": "cca27aff-8f65-4b80-ac4e-75262e5e118e",
+   "buildName": "Thibaut Courtois",
+   "archetype_id": "shot-stopper",
+   "level": 100,
+   "signature": [
+    "far-reach",
+    "deflector",
+    "1v1-close-down",
+    "cross-claimer"
+   ],
+   "playstyles": [
+    "footwork",
+    "far-throw",
+    "long-throw",
+    "long-ball-pass",
+    "pinged-pass",
+    "block",
+    "chip-shot",
+    "tiki-taka",
+    "enforcer"
+   ],
+   "height": 79,
+   "weight": 212,
+   "accelerationType": "Lengthy",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "0b53ea82-b0d5-4cf8-850b-f4c12b6137a8",
+   "buildName": "Khvicha Kvaratskhelia",
+   "archetype_id": "magician",
+   "level": 100,
+   "signature": [
+    "trickster",
+    "technical",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "playstyles": [
+    "rapid",
+    "quick-step",
+    "incisive-pass",
+    "inventive",
+    "chip-shot",
+    "whipped-pass",
+    "acrobatic",
+    "tiki-taka",
+    "low-driven-shot"
+   ],
+   "height": 72,
+   "weight": 154,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "2675804d-965d-4886-806a-64082da6d48a",
+   "buildName": "Manuel Neuer",
+   "archetype_id": "sweeper-keeper",
+   "level": 100,
+   "signature": [
+    "footwork",
+    "far-throw",
+    "cross-claimer",
+    "deflector"
+   ],
+   "playstyles": [
+    "1v1-close-down",
+    "far-reach",
+    "long-ball-pass",
+    "pinged-pass",
+    "long-throw",
+    "tiki-taka",
+    "block",
+    "chip-shot",
+    "enforcer"
+   ],
+   "height": 76,
+   "weight": 198,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "b47677da-f78d-43b3-918d-488485c86b2a",
+   "buildName": "Declan Rice",
+   "archetype_id": "recycler",
+   "level": 100,
+   "signature": [
+    "jockey",
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "playstyles": [
+    "block",
+    "slide-tackle",
+    "relentless",
+    "pinged-pass",
+    "enforcer",
+    "aerial-fortress",
+    "press-proven",
+    "long-ball-pass",
+    "first-touch"
+   ],
+   "height": 74,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  }
+ ],
+ "fc27": [
+  {
+   "id": "0d717109-9963-4f80-8483-e0b5dca0b670",
+   "buildName": "Gennaro Gattuso",
+   "archetype_id": "disruptor",
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 70,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "copyCount": 2,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "3f9232cf-c101-47c7-a64d-e5329a79b497",
+   "buildName": "Rodri '26 WC",
+   "archetype_id": "recycler",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "aerial-fortress",
+    "bruiser",
+    "first-touch"
+   ],
+   "height": 75,
+   "weight": 181,
+   "accelerationType": "Lengthy",
+   "copyCount": 1,
+   "creator": "specialevents"
+  },
+  {
+   "id": "85fef937-cc23-4216-9736-f9f10b9d0589",
+   "buildName": "Vidić '08 CL",
+   "archetype_id": "boss",
+   "level": 40,
+   "signature": [
+    "bruiser"
+   ],
+   "playstyles": [
+    "aerial-fortress",
+    "block",
+    "intercept"
+   ],
+   "height": 75,
+   "weight": 185,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "specialevents"
+  },
+  {
+   "id": "ea201c50-5cbd-4364-82da-584a0487afdf",
+   "buildName": "Joshua Kimmich",
+   "archetype_id": "recycler",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "pinged-pass",
+    "long-ball-pass",
+    "anticipate"
+   ],
+   "height": 70,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
+   "buildName": "Neymar Jr",
+   "archetype_id": "magician",
+   "level": 40,
+   "signature": [
+    "technical"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 69,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  }
+ ]
+}

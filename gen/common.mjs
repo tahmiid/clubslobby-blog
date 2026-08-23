@@ -38,6 +38,19 @@ export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
 // Deliberately not sprinkled inline: rewriting eight articles' prose to weave
 // links in is an authoring job with a real chance of breaking sentences that
 // already rank. One card is reversible and reads as an offer, not a trick.
+//
+// **`href` is resolved, not concatenated** (2026-08-23). It used to be
+// `${SITE}${href}`, which silently required every caller to pass a PATH — and
+// two callers passed a full URL instead. That produced
+// `https://proclubshq.comhttps//proclubshq.com/b/<id>`: a genuine 404 that
+// shipped to 35 player articles and one guide, and stayed there because the
+// pages generated, published and rendered perfectly. Only the anchor was
+// wrong, and the owner found it by clicking one.
+//
+// `new URL(href, SITE)` takes either shape and gives the same right answer,
+// so the failure cannot be reintroduced by a caller. `ops/link-sweep.mjs`
+// resolves every app link on every live post through the API and is the
+// backstop for the class of bug, not just this instance.
 export const appCta = ({ href, kicker, head, body, label }) => kg(`<div class="pchq-cta">
 <style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
 .pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
@@ -47,7 +60,7 @@ export const appCta = ({ href, kicker, head, body, label }) => kg(`<div class="p
 <p class="k">${esc(kicker)}</p>
 <h3>${esc(head)}</h3>
 <p>${esc(body)}</p>
-<a class="b" href="${SITE}${href}">${esc(label)} →</a>
+<a class="b" href="${new URL(href, SITE).href}">${esc(label)} →</a>
 </div>`);
 
 export const kg = (html) => `<!--kg-card-begin: html-->\n${html}\n<!--kg-card-end: html-->`;

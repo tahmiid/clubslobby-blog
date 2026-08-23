@@ -24,20 +24,83 @@
 // about the weaknesses, and every paragraph ends somewhere useful.
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, BRAND, SITE, esc, kg, baseCss, appCta } from './common.mjs';
+import { ARCH, BRAND, SITE, esc, kg, baseCss } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
 import { affArm, affBeacon } from './affexp.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
-import { ft, psIcon } from './spoke.mjs';
+import { ft, psIcon, psName } from './spoke.mjs';
+import { gridCss } from './fc27grid.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const BLOG = `${SITE}/blog`;
-const BUILDER = `${SITE}/archetypes`;
 const WIDGET = path.join(import.meta.dirname, '..', 'widgets', 'build-card');
 const PCHQ_CSS = readFileSync(path.join(WIDGET, 'pchq-build-card.css'), 'utf8');
 const PCHQ_JS = readFileSync(path.join(WIDGET, 'pchq-build-card.js'), 'utf8');
 
 const archOf = (id) => ARCH.find((a) => a.id === id);
+
+// ── The closing grid: what everyone else is copying ────────────────────────
+// Owner, 2026-08-23: *"if you want you can add a grid to look at other builds
+// at the end of the page for player builds, so that even if they came from
+// Davies, maybe they like something else and go from there. And instead of
+// hardcoding the grid, maybe we should do like most copied builds and it
+// should get from our database."*
+//
+// So the grid is a RANKING, not a selection: `ops/export-most-copied.mjs`
+// asks the app for `sort=copied` per release and writes `data/most-copied.json`.
+// House builds only, and only builds with at least one real copy — see that
+// file for why each exclusion is there.
+//
+// **One release, never two.** The page's two sections are kept apart on
+// purpose (owner, 2026-08-23: two game versions don't belong together), so the
+// grid follows the LEAD year and flips with the page on launch day.
+//
+// **The article's own player is dropped**, by build id and by name: a "you
+// might also like" grid whose first card is the build the reader is already
+// looking at reads as a bug.
+//
+// It also carries the page's app CTA now that the per-section ones are gone.
+// MONETIZATION.md §3 puts slot C and the closing affiliate block BELOW an app
+// CTA and never above one, and fourteen live build links is a stronger one
+// than the card it replaced.
+const MOST_COPIED = JSON.parse(readFileSync(path.join(DIR, 'most-copied.json'), 'utf8'));
+
+// The badge-row rule (CLAUDE.md publish rule 4, learned by shipping it wrong):
+// the signature loadout comes first and is ALL gold, and only the spaces left
+// over take regulars in silver. The split is the year's signature count, which
+// is why it is derived from `b.signature.length` and never written as a
+// constant — FC 26 is 4 + 0, FC 27 level 40 is 1 + 3.
+const copiedCard = (b) => {
+  const sigs = b.signature ?? [];
+  const regs = (b.playstyles ?? []).slice(0, Math.max(4 - sigs.length, 0));
+  const arch = archOf(b.archetype_id);
+  return `<a class="bc" href="${SITE}/b/${b.id}?src=grid">
+<p class="nm">${esc(b.buildName)}</p>
+<p class="ar">${esc(arch?.name ? archTitle(arch.name) : b.archetype_id)} · Lv ${b.level}</p>
+<div class="ps">
+${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
+${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
+</div>
+<p class="sg">${b.copyCount} ${b.copyCount === 1 ? 'copy' : 'copies'}</p>
+<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>
+</a>`;
+};
+
+const mostCopiedGrid = (P, year, excludeIds, excludeName) => {
+  const pool = (MOST_COPIED[`fc${year}`] ?? []).filter((b) =>
+    !excludeIds.has(b.id) &&
+    !b.buildName.toLowerCase().includes(excludeName.toLowerCase()));
+  const builds = pool.slice(0, 14);   // the card experiment's ceiling
+  if (builds.length < 3) return '';    // too thin to be worth a heading
+  return kg(`<div class="${P} mcg">
+<style>${gridCss(`${P}.mcg`)}
+.${P}.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
+.${P}.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
+<h2 id="most-copied">Most copied FC ${year} builds</h2>
+<p class="sub">Ranked by how many people have actually copied them into their own club. Every one opens in the builder, free, no install.</p>
+<div class="grid">${builds.map(copiedCard).join('\n')}</div>
+</div>`);
+};
 // The catalog carries SHOT STOPPER for the card face; a sentence wants
 // Shot Stopper (clubs27-archetype-name-casing: the data is cased for display
 // elsewhere, so cased here rather than shouted).
@@ -253,13 +316,19 @@ ${PCHQ_CSS}
     s.loadout,
     s.cannot,
     s.ctrlHtml,
-    appCta({
-      href: `${SITE}/b/${(y === leadYear ? lead : other).id}?ref=proclubshq.com`,
-      kicker: `FC ${y} · free, no install`,
-      head: `Open the ${cfg.name} build`,
-      body: `Copy it to your club in one tap, then bend the last few points toward how you actually play.`,
-      label: 'Open the build →',
-    }),
+    // **No "Open the build" CTA here.** Removed 2026-08-23 on the owner's
+    // call: "we don't need that section... we already have the builds, they
+    // can go there. We have the grids." The section already opens with the
+    // build's own card, which links to `/b/<id>`; a second card underneath
+    // repeating that link was asking twice for one click.
+    //
+    // It had also been BROKEN since the page was rebuilt, which is how it got
+    // noticed: it passed `${SITE}/b/<id>` to `appCta`, and `appCta` prefixes
+    // SITE onto whatever it is handed, so all 70 of them rendered as
+    // `https://proclubshq.comhttps//proclubshq.com/b/<id>` — a real 404 on 35
+    // live articles behind a page that looked perfect. `appCta` resolves its
+    // href through `new URL()` now so the mistake cannot render, and
+    // `ops/link-sweep.mjs` is the sweep that would have caught it.
   ].filter(Boolean).join('\n\n') : '';
 
   const others = all.filter((p) => p.n !== cfg.n).slice(0, 24);
@@ -297,6 +366,11 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     // page below the last app CTA, which is the approved affiliate home too.
     AD_B,
     affHere('pageEnd'),
+    // The closing grid, and now the page's app CTA: fourteen finished builds
+    // ranked by how many people copied them, so a reader who came for one
+    // player leaves with somewhere to go. Above AD_C and the kit block
+    // because MONETIZATION.md §3 puts both BELOW an app CTA, never above.
+    mostCopiedGrid(P, leadYear, new Set([lead?.id, other?.id].filter(Boolean)), first),
     AD_C,
     kitBlock,
     faq,
