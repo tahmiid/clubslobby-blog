@@ -27,6 +27,22 @@ async function rendererFor(year) {
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ASSETS = path.join(HERE, '..', 'assets', 'controls');
+// The app's own PlayStyle art, inlined for the same CSP reason as the buttons.
+const PS_ART = path.join(HERE, '..', '..', '..', 'Desktop', 'Claude', 'ClubsUI-main',
+  'frontend', 'public', 'assets', 'playstyles');
+const psCache = new Map();
+function psIcon(slug) {
+  if (psCache.has(slug)) return psCache.get(slug);
+  const abs = path.join(PS_ART, `${slug}.png`);
+  if (!fs.existsSync(abs)) throw new Error(`playstyle art missing: ${slug}`);
+  const uri = `data:image/png;base64,${fs.readFileSync(abs).toString('base64')}`;
+  psCache.set(slug, uri);
+  return uri;
+}
+// Gold vs silver is a filter in the app (PlayStyleDiamond.jsx); same treatment
+// here so a gold reads as gold at a glance.
+const psChip = (p) => `<span class="psx${p.gold ? ' psx-g' : ''}">`
+  + `<img src="${psIcon(p.id)}" alt="" width="18" height="18">${esc(p.name)}</span>`;
 const [, , DATA, OUT] = process.argv;
 if (!DATA || !OUT) throw new Error('usage: build-controls-preview.mjs <data.json> <out.html>');
 
@@ -64,8 +80,16 @@ const renderGroup = (rows, R) => {
   // moveList does not carry our why strings, so they are threaded back in by
   // position — the order is ours and stable.
   let i = 0;
-  return html.replace(/<span class="cm-cap"/g, () =>
-    `<span class="cm-why">${esc(moves[i++]?.why ?? '')}</span><span class="cm-cap"`);
+  return html.replace(/<span class="cm-cap"/g, () => {
+    const c = rows[i]; i += 1;
+    const ps = (c.playstyles || []).map(psChip).join('');
+    const at = (c.attributes || []).map((a) =>
+      `<span class="atx${a.strong ? ' atx-s' : ''}">${esc(a.name)}<b>${a.v}</b></span>`).join('');
+    const perk = c.perk
+      ? `<span class="perkx" title="${esc(c.perk.desc || '')}">PERK · ${esc(c.perk.name)}</span>` : '';
+    return `<span class="cm-ev">${ps}${at}${perk}</span>`
+      + `<span class="cm-why">${esc(c.why ?? '')}</span><span class="cm-cap"`;
+  });
 };
 
 const section = (b, R) => {
@@ -92,11 +116,15 @@ const section = (b, R) => {
   </header>
   <div class="loadout">
     <div><span class="lab">Gold${b.gold.length > 1 ? ` (${b.gold.length})` : ''}</span>${
-      b.gold.map((g) => `<span class="ps gold">${esc(g)}</span>`).join('')}</div>
-    <div><span class="lab">Equipped</span>${
-      b.equipped.map((g) => `<span class="ps">${esc(g)}</span>`).join('')}</div>
+      b.goldIds.map((id, n) => psChip({ id, name: b.gold[n], gold: true })).join('')}</div>
+    <div><span class="lab">Regular</span>${
+      b.equippedIds.map((id, n) => psChip({ id, name: b.equipped[n], gold: false })).join('')}</div>
     ${b.specs.length ? `<div><span class="lab">Specialisations</span>${
       b.specs.map((s) => `<span class="ps${s.worn ? ' worn' : ''}">${esc(s.name)} → ${esc(s.grants)}${s.worn ? ' · worn' : ''}</span>`).join('')}</div>` : ''}
+    ${b.wornSpecPerk ? `<div><span class="lab">Perk</span><span class="perkbig"><b>${
+      esc(b.wornSpecPerk.name)}</b> ${esc(b.wornSpecPerk.desc || '')}</span></div>` : ''}
+    <div><span class="lab">Top attributes</span>${
+      b.topAttributes.map((a) => `<span class="atx atx-s">${esc(a.name)}<b>${a.v}</b></span>`).join('')}</div>
   </div>
   <div class="attrs">${attrs}</div>
   <h3>What this build is good at <span class="n">${b.controls.length} controls</span></h3>
@@ -158,7 +186,22 @@ body{background:var(--bg);color:var(--ink);margin:0;
   padding-bottom:.5rem}
 .build h3 .n{font:500 .7rem/1 Inter,sans-serif;letter-spacing:.08em;color:var(--dim);
   text-transform:none}
-.cm-why{display:block;color:var(--ink-2);font-size:.81rem;margin-top:.35rem}
+.cm-why{display:block;color:var(--ink-2);font-size:.81rem;margin-top:.3rem}
+.cm-ev{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.45rem;align-items:center}
+.psx{display:inline-flex;align-items:center;gap:.3rem;border:1px solid var(--line-2);
+  border-radius:999px;padding:.1rem .5rem .1rem .25rem;font-size:.74rem;color:var(--ink-2)}
+.psx img{display:block;filter:grayscale(1) brightness(1.15)}
+.psx-g{border-color:var(--gold);color:var(--gold)}
+.psx-g img{filter:sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(1)}
+.atx{display:inline-flex;align-items:baseline;gap:.28rem;border:1px solid var(--line);
+  border-radius:3px;padding:.08rem .4rem;font-size:.72rem;color:var(--dim)}
+.atx b{font-variant-numeric:tabular-nums;color:var(--ink-2);font-weight:600}
+.atx-s{border-color:var(--accent);color:var(--accent)}
+.atx-s b{color:var(--accent)}
+.perkx{border:1px solid var(--gold);border-radius:3px;padding:.08rem .4rem;
+  font-size:.7rem;letter-spacing:.06em;color:var(--gold);font-weight:600}
+.perkbig{font-size:.82rem;color:var(--ink-2);max-width:38rem}
+.perkbig b{color:var(--gold);letter-spacing:.03em}
 .cgroup{margin:0 0 1.5rem}
 .cgh{display:flex;align-items:center;gap:.6rem;margin:0 0 .7rem;
   font:600 .68rem/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;
