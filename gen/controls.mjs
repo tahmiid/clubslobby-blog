@@ -28,8 +28,14 @@ import { esc } from './common.mjs';
 const escAttr = (v) => esc(v).replace(/"/g, '&quot;');
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+// FC 27 stays the default so every existing generator behaves identically.
+// The pre-launch player articles lead with the FC 26 build (see
+// LAUNCH-DAY-2026-09-18.md), and the two captures name some actions
+// differently, so those pages must render against FC 26's own dataset -
+// CONTROLS_YEAR=26 is how. Both files are exported by ops/export-controls.mjs.
+const CONTROLS_YEAR = process.env.CONTROLS_YEAR || '27';
 export const CONTROLS = JSON.parse(
-  readFileSync(join(HERE, '..', 'data', 'fc27-controls.json'), 'utf8'));
+  readFileSync(join(HERE, '..', 'data', `fc${CONTROLS_YEAR}-controls.json`), 'utf8'));
 
 const BASE = 'https://proclubshq.com/blog/content/images/2026/08/controls';
 const DEFAULT_SET = 'colour';
