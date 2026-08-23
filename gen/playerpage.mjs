@@ -229,12 +229,18 @@ ${PCHQ_CSS}
   // position (MONETIZATION.md §3). The arm decides which of the two app CTAs
   // the GAME block follows — the experiment lives inside the approved
   // placement rather than inventing one.
+  // Amazon's three existing tracking ids, one per block, so the Associates
+  // report separates them without anyone creating new ones (owner,
+  // 2026-08-23). `fc27` follows the game, `buildguide` the game when it sits
+  // at the page end, `default` the kit - the beacon still measures placement,
+  // and this is the same split visible on Amazon's side.
+  const gameTag = arm === 'afterLead' ? 'fc27' : 'buildguide';
   const gameBlock = affArm(arm, {
-    heading: 'Get the game', layout: 'rows', image: 'fc27', tag: 'fc27',
+    heading: 'Get the game', layout: 'rows', image: 'fc27', tag: gameTag,
     items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   });
   const kitBlock = affArm('kit', {
-    heading: 'Kit worth having', layout: 'rows', image: 'controllers', tag: 'fc27',
+    heading: 'Kit worth having', layout: 'rows', image: 'controllers', tag: 'default',
     items: ['controller-ps5', 'controller-xbox', 'thumb-grips'],
   });
   const affHere = (which) => which === arm ? gameBlock : '';
