@@ -98,7 +98,13 @@ export function renderSpoke(cfg) {
   const featured = BUILDS[0];
   const spec = arch.specializations.find((s) => s.id === featured.selectedSpecialization);
   const openUrl = (b) => `${SITE}/b/${b.id}`;
-  const BUILDER = `${SITE}/edit/${arch.id}`;
+  // NOT /edit/<archetype> any more (#154). That link sent a reader who had
+  // just finished a 2,000-word guide into an EMPTY editor at the archetype
+  // floor: 14% of all sessions entered the app there and 61% of them bounced,
+  // and the blog was the largest single source. It points at the feed filtered
+  // to this archetype instead - finished builds, ready to copy, which is what
+  // the guide has spent two thousand words describing.
+  const BUILDER = `${SITE}/explore?archetype=${arch.id}&src=guide`;
 
   // ── The stage engine ──────────────────────────────────────────────────────
   // Configs write stages 1..n-1; `spec: true` buys exactly the featured
@@ -198,7 +204,7 @@ ${PCHQ_CSS}
     ? JSON.parse(readFileSync(path.join(DIR, 'builds', cfg.gridFile), 'utf8')).builds
     : null;
 
-  const builderLine = `<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">Start your own ${esc(archName)} in the builder →</a></p>`;
+  const builderLine = `<p class="${P}x"><a href="${BUILDER}" target="_blank" rel="noopener">See every finished ${esc(archName)} build →</a></p>`;
 
   // The featured card IS the opener - it stands before the first paragraph -
   // and the second card lands with the section that discusses it. The script
@@ -365,8 +371,8 @@ ${JSON.stringify({
     : '';
 
   const closing = BUILDS.length > 1
-    ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
-    : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">start a fresh ${esc(archName)} from the floor</a>. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
+    ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">browse every finished ${esc(archName)}</a> and pick a different one. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
+    : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">browse every finished ${esc(archName)}</a> and pick a different one. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
 
   // Grid spokes follow the FC 27 articles' arrangement: the hook paragraph
   // first, the builds immediately under it, then the sections. No cover art -
