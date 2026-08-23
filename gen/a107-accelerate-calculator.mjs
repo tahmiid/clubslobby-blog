@@ -1,4 +1,4 @@
-// a87: Lengthy vs Controlled vs Explosive + the AcceleRATE calculator.
+// a107: Lengthy vs Controlled vs Explosive + the AcceleRATE calculator.
 //
 // Built for a ~90-impression zero-click Search Console cluster
 // (reports/player-demand-2026-08-22.md): "lengthy vs controlled vs
@@ -25,7 +25,7 @@ import { breadcrumbLd } from './jsonld.mjs';
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const RULES = JSON.parse(readFileSync(path.join(DIR, 'fc26', 'rules_progression.json'), 'utf8'));
 const ACC = RULES.accelerationRules;
-const P = 'a87';
+const P = 'a107';
 
 const byType = Object.fromEntries(ACC.map((r) => [r.acceleration_type, r]));
 const exp = byType.Explosive, len = byType.Lengthy;
@@ -138,5 +138,5 @@ ${ruleList(len)}
 ].join('\n\n');
 
 const html = body + '\n';
-writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a87.html'), html);
-console.log(`a87 -> ${html.length} bytes`);
+writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a107.html'), html);
+console.log(`a107 -> ${html.length} bytes`);

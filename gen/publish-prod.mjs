@@ -700,7 +700,7 @@ const POSTS = [
     meta_description: 'The finished Son Heung-min build for EA FC Pro Clubs — full attributes, PlayStyles, the controls it is made for, and height and weight. Free to copy in the app.',
     custom_excerpt: 'The Son Heung-min build — attributes, PlayStyles and the controls it is made for, free to copy.',
     tags: ['Guides', 'Builds', 'Players', 'FC 26'] },
-  { file: 'a87.html', slug: 'lengthy-vs-controlled-vs-explosive', status: 'draft',
+  { file: 'a107.html', slug: 'lengthy-vs-controlled-vs-explosive', status: 'published',
     title: 'Lengthy vs Controlled vs Explosive in FC 26 — AcceleRATE Calculator',
     meta_title: 'FC 26 AcceleRATE: Lengthy vs Controlled vs Explosive (+Calculator)',
     meta_description: 'The exact FC 26 thresholds for Explosive, Lengthy and Controlled acceleration — height, Agility, Strength and Acceleration — with a live calculator that applies the real rules.',
@@ -710,6 +710,29 @@ const POSTS = [
 
 // Optional filter: `node publish-prod.mjs a8 a12` publishes only those
 // articles (by file stem or slug). No args = the whole list, as before.
+// **No two rows may share a file.** On 2026-08-23 a87.html was listed twice -
+// once as the Vinicius player page and once as the AcceleRATE calculator -
+// because two generators independently write out/a87.html. A batch republish
+// then served calculator content at the Vinicius URL, live, and nothing
+// complained: both rows published "successfully".
+//
+// A file feeding two posts is always a mistake, so this refuses to run rather
+// than quietly overwriting one article with another.
+{
+  const seen = new Map();
+  const clashes = [];
+  for (const p of POSTS) {
+    if (seen.has(p.file)) clashes.push();
+    else seen.set(p.file, p.slug);
+  }
+  if (clashes.length) {
+    console.error('REFUSING TO PUBLISH - one file feeds two posts:');
+    for (const c of clashes) console.error('  ' + c);
+    console.error('Give one of them its own aNN number and renumber its generator.');
+    process.exit(2);
+  }
+}
+
 const only = new Set(process.argv.slice(2));
 
 for (const p of POSTS) {
