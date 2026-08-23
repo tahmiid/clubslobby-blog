@@ -1,0 +1,511 @@
+{
+ "player": "Ange-Yoan Bonny",
+ "fc26": {
+  "player": "Ange-Yoan Bonny",
+  "year": 26,
+  "role": "st-complete",
+  "family": "attack",
+  "archetype": "Finisher",
+  "position": "Forward",
+  "traits": [
+   "Finishing",
+   "Shot Power",
+   "Composure"
+  ],
+  "gold": [
+   "Power Shot",
+   "Quick Step",
+   "Technical",
+   "Gamechanger"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "First Touch",
+   "Low Driven Shot",
+   "Acrobatic",
+   "Rapid",
+   "Incisive Pass",
+   "Chip Shot",
+   "Trickster",
+   "Precision Header"
+  ],
+  "specs": [
+   {
+    "name": "Hunter",
+    "grants": "Gamechanger",
+    "perk": "Poacher's Instinct",
+    "perkDesc": "Rebounds and loose balls in the box are reacted to faster.",
+    "worn": true
+   },
+   {
+    "name": "Finisher+",
+    "grants": "Chip Shot",
+    "perk": "Clinical Instinct",
+    "perkDesc": "First-time shots inside the box gain a major accuracy boost.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "Finishing",
+    "v": 97
+   },
+   {
+    "attr": "Shot Power",
+    "v": 96
+   },
+   {
+    "attr": "Volleys",
+    "v": 95
+   },
+   {
+    "attr": "Reactions",
+    "v": 95
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 94
+   },
+   {
+    "attr": "Curve",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     },
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3164,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Ange-Yoan Bonny",
+  "year": 27,
+  "role": "st-complete",
+  "family": "attack",
+  "archetype": "Finisher",
+  "position": "Forward",
+  "traits": [
+   "Finishing",
+   "Shot Power",
+   "Composure"
+  ],
+  "gold": [
+   "Power Shot"
+  ],
+  "regulars": [
+   "Quick Step",
+   "Technical",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Shot Power",
+    "v": 89
+   },
+   {
+    "attr": "Finishing",
+    "v": 89
+   },
+   {
+    "attr": "Dribbling",
+    "v": 89
+   },
+   {
+    "attr": "Agility",
+    "v": 89
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 88
+   },
+   {
+    "attr": "Vision",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Crossing",
+    "v": 57,
+    "atFloor": false
+   },
+   {
+    "attr": "Short Pass",
+    "v": 70,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 60,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Sprint Speed 88 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 88,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Dribbling 89 and Ball Control 84 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Agility 89 and Ball Control 84 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

@@ -27,12 +27,36 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, BRAND, SITE, title, esc, kg, baseCss, appCta } from './common.mjs';
-import { AD_A, AD_B } from './ads.mjs';
+import { AD_A, AD_B, AD_C } from './ads.mjs';
+import { affArm, affBeacon, assign as assignArms } from './affexp.mjs';
 import { gridCss } from './fc27grid.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { coverUrl, ft, psName, psIcon } from './spoke.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
+
+// The controls renderer, once per RELEASE. The page leads with the FC 26
+// build (LAUNCH-DAY-2026-09-18.md), and the two captures name some actions
+// differently, so a FC 26 control has to be looked up in FC 26's dataset.
+process.env.CONTROLS_YEAR = '26';
+const C26 = await import('./controls.mjs?y=26');
+process.env.CONTROLS_YEAR = '27';
+const C27 = await import('./controls.mjs?y=27');
+const CTRL = { 26: C26, 27: C27 };
+
+// The build's reasoning, exported from the app repo by
+// scripts/export_player_analysis.py. Keyed by the player's full name,
+// deburred - the blog's own slugs are shorter (mbappe, isak).
+const deburr = (x) => x.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// The blog's display names and the roster's build names differ in a few
+// places ("Neymar" against "Neymar Jr"); an unmapped name silently loses the
+// whole analysis, which is how two articles came out 30KB short.
+const ANALYSIS_NAME = { Neymar: 'Neymar Jr' };
+const analysisFor = (name) => {
+  const f = path.join(DIR, 'players-analysis', `${deburr(ANALYSIS_NAME[name] ?? name)}.json`);
+  try { return JSON.parse(readFileSync(f, 'utf8')); } catch { return null; }
+};
 const BLOG = `${SITE}/blog`;
 
 // n → article number; intro is the claim-check surface: fame framing plus
@@ -104,6 +128,78 @@ const factRows = (b, year) => {
 <td>${b.weight} lbs / ${kgOf(b.weight)} kg</td><td>${esc(b.accelerationType ?? '—')}</td></tr>`;
 };
 
+// ── The four questions the owner asked every article to answer ─────────────
+// "What this build is about, what this build is NOT about, what this build is
+// good at, what you should be doing with it, and why this build is like this."
+// Every sentence below is assembled from the exported analysis - the design's
+// own stored intent and the build's own numbers - so no article can claim
+// something the build does not do.
+
+// A template that wraps across lines leaves a newline where the prose wants
+// nothing, which prints as "Chip Shot , backed by". One pass at the end is
+// cheaper than fighting the template's shape.
+const tidy = (h) => h.replace(/\s+([,.;:])/g, '$1').replace(/[ \t]*\n[ \t]*(?=[a-z(])/g, ' ');
+
+const listOf = (xs, join = 'and') => xs.length <= 1 ? (xs[0] ?? '')
+  : `${xs.slice(0, -1).join(', ')} ${join} ${xs[xs.length - 1]}`;
+
+// What it IS. Traits and gold first, then the numbers that prove them.
+const aboutSection = (P, first, a) => tidy((() => {
+  const tops = a.strengths.slice(0, 4);
+  return `<h2 id="about">What the ${esc(first)} build is</h2>
+<p>It is a <strong>${esc(a.archetype)}</strong> built around ${esc(listOf(a.traits.map((t) => t.toLowerCase())))}.
+The gold PlayStyle${a.gold.length > 1 ? 's are' : ' is'} <strong>${esc(listOf(a.gold))}</strong>${  a.regulars.length ? `, backed in the regular slots by ${esc(a.regulars.slice(0, 3).join(', '))}${a.regulars.length > 3 ? ` and ${a.regulars.length - 3} more` : ''}` : ''} — and the
+attribute sheet agrees: ${tops.map((t) => `<strong>${esc(t.attr)} ${t.v}</strong>`).join(', ')}.</p>
+${a.specs.filter((x) => x.worn && x.perk).map((x) => `<p>It wears the <strong>${esc(x.name)}</strong> specialization, which brings the <strong>${esc(x.perk)}</strong> perk: ${esc(x.perkDesc || '')}</p>`).join('')}`;
+})());
+
+// What it is NOT. The section the owner said the first drafts were missing:
+// "we couldn't be very clear this build is not going to do any defensive work."
+const notSection = (P, first, a) => tidy((() => {
+  const never = a.neverBought.slice(0, 8);
+  const weak = a.weaknesses.filter((w) => w.atFloor).slice(0, 4);
+  if (!never.length && !weak.length) return '';
+  return `<h2 id="not">What it is not</h2>
+<p>Every build at this level is a set of choices, and the honest half is what
+was <em>not</em> bought. ${never.length ? `The ${esc(first)} build spends nothing at all on
+${esc(listOf(never))}.` : ''} ${a.neverBoughtWhy ? esc(a.neverBoughtWhy) : ''}</p>
+${weak.length ? `<p>Which means, plainly: ${esc(listOf(weak.map((w) => `${w.attr} sits at ${w.v}`)))}.
+If your club needs this player to do that job, this is the wrong build to copy — take the
+archetype guide below and spend the points differently.</p>` : ''}`;
+})());
+
+// Why it is like this — answered from THE BUILD RULES, not from opinion.
+const whySection = (P, first, a) => a.rules.length ? `<h2 id="why">Why it is built this way</h2>
+<p>Nothing here is taste. Each of these is a rule the build was designed
+against, and you can apply the same ones to your own:</p>
+<ul>${a.rules.map(([id, text]) => `<li><strong>${esc(id)}</strong> — ${esc(text)}</li>`).join('')}</ul>
+<p>The whole budget is spent: <strong>${a.spent} of ${a.budget} AP</strong>. An unspent build is an unfinished one.</p>` : '';
+
+// What it is good at, in the only vocabulary that matters in a match: the
+// controls. Rendered from the controls dataset's own timeline (CONTROLS.md),
+// never a hand-written combo.
+const controlsSection = (P, first, a, R) => {
+  if (!a.controls?.length) return '';
+  const moves = a.controls.map((c) => {
+    try { return { ...R.lookup(c.action, { page: c.page }), why: c.why }; }
+    catch { return null; }
+  }).filter(Boolean);
+  if (!moves.length) return '';
+  let html = R.moveList(moves, 'ps', 'colour');
+  let i = 0;
+  html = html.replace(/<span class="cm-cap"/g, () =>
+    `<span class="cm-why">${esc(moves[i++]?.why ?? '')}</span><span class="cm-cap"`);
+  return kg(`<div class="${P}">
+<h2 id="controls">What to actually do with it</h2>
+<p>A build is only as good as the buttons you press with it. These are the
+${moves.length} the ${esc(first)} build is genuinely built for — each one either fires a
+PlayStyle it carries or leans on an attribute it bought.</p>
+<style>.${P} .cm-why{display:block;color:#9aa0ad;font:400 13px/1.5 system-ui,sans-serif;margin-top:4px}
+${R.CONTROL_CSS}</style>
+${html}
+</div>`) + '\n\n' + R.padSwitcher();
+};
+
 export function renderPlayer(cfg, all) {
   const P = `a${cfg.n}`;
   const data = JSON.parse(readFileSync(path.join(DIR, 'players', `${cfg.slug}.json`), 'utf8'));
@@ -153,18 +249,50 @@ ${fc26 ? gridCard(fc26, 'FC 26') : ''}
 <p><strong>How tall is the ${esc(first)} build?</strong> ${ft(lead.height)} (${cmOf(lead.height)} cm) at ${lead.weight} lbs (${kgOf(lead.weight)} kg) — that combination runs <strong>${esc(lead.accelerationType ?? 'Controlled')}</strong> AcceleRATE.</p>
 <p><strong>Is there an FC 27 version?</strong> ${fc27 ? `Yes — the FC 27 build above is live in the app now and carries over when the game launches on 25 September.` : `Not yet — the FC 26 build is the one to copy today.`}</p>`;
 
+  // The analysis behind the build, and the placement arm this page is in.
+  const an = analysisFor(cfg.name);
+  const a = an ? (an[`fc${lead.gameYear}`] ?? an.fc26 ?? an.fc27) : null;
+  const R = CTRL[lead.gameYear] ?? CTRL[26];
+  const arm = ARM_OF.get(cfg.slug);
+  // Same block in every arm — placement is the only variable, or the
+  // experiment measures two things at once and answers neither.
+  //
+  // Accessories rather than the game, because Amazon's cookie is ONE DAY
+  // (affiliate.mjs): a game link in an evergreen guide read three weeks
+  // before launch is dead, while a reader who has just been handed five
+  // button combinations has immediate intent for the pad they press them on.
+  // The key sellers stay pending and emit nothing; when they approve, the
+  // game belongs in a launch-window page, not here.
+  const affOpts = {
+    heading: 'The pad you press these with',
+    items: cfg.affiliate || ['controller-ps5', 'controller-xbox', 'thumb-grips'],
+    // The Amazon tag stays `buildguide` for every arm on purpose. Its tracking
+    // ids answer "which PAGE TYPE sold something" and creating three new ones
+    // needs the owner's Associates dashboard; the placement question is
+    // answered by our own beacon, which distinguishes the arms exactly. Two
+    // instruments, two questions - and affiliate.mjs rightly refuses to
+    // silently fall back to `default`, which is how this got caught.
+    tag: 'buildguide',
+    layout: arm === 'inline' ? 'rows' : 'cards',
+    cta: 'Check price \u2192',
+  };
+  const affHere = (which) => which === arm ? affArm(arm, affOpts) : '';
+
   const body = [
     hero,
     `<p>${esc(cfg.intro)} Both replica builds below are finished, published on the app, and free to copy — tap a card to open the full attribute sheet.</p>`,
     cards,
+    affHere('lede'),
     AD_A,
+    a ? kg(`<div class="${P}">${aboutSection(P, first, a)}</div>`) : '',
     glance,
-    `<h2 id="attributes">Where the points went</h2>
-<p>The FC 26 build's six highest attributes tell you how it wants to play:</p>
-<ul>${topAttributes(lead)}</ul>
-<p>PlayStyles follow the same idea — the signature set is fixed by the archetype, the regular slots are choices. ${esc(first)}'s loadout is on the cards above, gold for signature, silver for equipped.</p>`,
-    spokeLink,
+    a ? kg(`<div class="${P}">${notSection(P, first, a)}</div>`) : '',
+    affHere('inline'),
+    a ? controlsSection(P, first, a, R) : '',
     AD_B,
+    a ? kg(`<div class="${P}">${whySection(P, first, a)}</div>`) : `<h2 id="attributes">Where the points went</h2>
+<ul>${topAttributes(lead)}</ul>`,
+    spokeLink,
     appCta({
       href: `${SITE}/b/${lead.id}?ref=proclubshq.com`,
       kicker: 'Free — no install',
@@ -172,18 +300,23 @@ ${fc26 ? gridCard(fc26, 'FC 26') : ''}
       body: `Open it in the ${BRAND} builder, copy it to your club, and tweak the last few points to your role.`,
       label: 'Open the build →',
     }),
+    affHere('footer'),
+    AD_C,
     kg(`<div class="${P}">${faq}</div>`),
     kg(`<div class="${P}"><p class="rel"><strong>More player builds:</strong> ${related}</p></div>`),
     breadcrumbLd([['Blog', '/'], ['Player Builds', null], [cfg.name, null]]),
+    affBeacon(),
   ].filter(Boolean).join('\n\n');
 
   return body;
 }
 
+// One assignment for the whole batch, computed once (affexp.mjs).
+const ARM_OF = assignArms(PLAYERS.map((p) => p.slug));
 const all = PLAYERS;
 for (const cfg of PLAYERS) {
   const html = renderPlayer(cfg, all);
   const out = path.join(import.meta.dirname, '..', 'out', `a${cfg.n}.html`);
   writeFileSync(out, html);
-  console.log(`a${cfg.n} ${cfg.slug} -> ${html.length} bytes`);
+  console.log(`a${cfg.n} ${cfg.slug.padEnd(20)} arm=${ARM_OF.get(cfg.slug).padEnd(7)} ${html.length} bytes`);
 }

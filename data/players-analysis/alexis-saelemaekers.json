@@ -1,0 +1,526 @@
+{
+ "player": "Alexis Saelemaekers",
+ "fc26": {
+  "player": "Alexis Saelemaekers",
+  "year": 26,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Midfielder",
+  "traits": [
+   "Acceleration",
+   "Sprint Speed",
+   "Dribbling"
+  ],
+  "gold": [
+   "Quick Step",
+   "Rapid",
+   "First Touch",
+   "Gamechanger"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "Technical",
+   "Trickster",
+   "Whipped Pass",
+   "Low Driven Shot",
+   "Incisive Pass",
+   "Acrobatic",
+   "Chip Shot",
+   "Inventive"
+  ],
+  "specs": [
+   {
+    "name": "Spark+",
+    "grants": "Quick Step",
+    "perk": "Live Wire",
+    "perkDesc": "Beating a defender in a 1v1 grants a short boost to Crossing and Finishing.",
+    "worn": true
+   },
+   {
+    "name": "Joker",
+    "grants": "Whipped Pass",
+    "perk": "Wildcard",
+    "perkDesc": "Successful skill moves briefly boost your next shot or pass.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Acceleration",
+    "v": 97
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 95
+   },
+   {
+    "attr": "Finishing",
+    "v": 94
+   },
+   {
+    "attr": "Dribbling",
+    "v": 94
+   },
+   {
+    "attr": "Curve",
+    "v": 94
+   },
+   {
+    "attr": "Ball Control",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Rapid flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 81,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Alexis Saelemaekers",
+  "year": 27,
+  "role": "winger-pace",
+  "family": "attack",
+  "archetype": "Spark",
+  "position": "Forward",
+  "traits": [
+   "Acceleration",
+   "Sprint Speed",
+   "Dribbling"
+  ],
+  "gold": [
+   "Gamechanger"
+  ],
+  "regulars": [
+   "Quick Step",
+   "Rapid",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Sprint Speed",
+    "v": 89
+   },
+   {
+    "attr": "Acceleration",
+    "v": 89
+   },
+   {
+    "attr": "Curve",
+    "v": 88
+   },
+   {
+    "attr": "Finishing",
+    "v": 84
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   },
+   {
+    "attr": "Ball Control",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Heading Acc.",
+    "v": 51,
+    "atFloor": false
+   },
+   {
+    "attr": "Jumping",
+    "v": 55,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Vision",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_shot_outside_the_foot",
+    "action": "Flair Shot / Outside The Foot",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Gamechanger flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "game-changer",
+      "name": "Gamechanger",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Curve",
+      "v": 88,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 89 and Sprint Speed 89 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Dribbling 84 and Sprint Speed 89 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 84 and Agility 84 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

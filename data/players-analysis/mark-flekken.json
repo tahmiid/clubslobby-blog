@@ -1,0 +1,499 @@
+{
+ "player": "Mark Flekken",
+ "fc26": {
+  "player": "Mark Flekken",
+  "year": 26,
+  "role": "gk-shotstopper",
+  "family": "keeper",
+  "archetype": "Shot Stopper",
+  "position": "Keeper",
+  "traits": [
+   "GK Reflexes",
+   "GK Diving",
+   "GK Pos."
+  ],
+  "gold": [
+   "Far Reach",
+   "Deflector",
+   "1v1 Close Down",
+   "Cross Claimer"
+  ],
+  "regulars": [
+   "Footwork",
+   "Far Throw",
+   "Long Throw",
+   "Long Ball Pass",
+   "Pinged Pass",
+   "Block",
+   "Chip Shot",
+   "Tiki Taka",
+   "Enforcer"
+  ],
+  "specs": [
+   {
+    "name": "Octopus",
+    "grants": "Deflector",
+    "perk": "Rebound Killer",
+    "perkDesc": "Second saves in quick succession receive a boost to GK Reflexes.",
+    "worn": true
+   },
+   {
+    "name": "Spider",
+    "grants": "1v1 Close Down",
+    "perk": "Sticky Gloves",
+    "perkDesc": "Caught shots are held more securely, reducing rebound chances.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "GK Reflexes",
+    "v": 97
+   },
+   {
+    "attr": "GK Diving",
+    "v": 96
+   },
+   {
+    "attr": "Reactions",
+    "v": 95
+   },
+   {
+    "attr": "Jumping",
+    "v": 95
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 94
+   },
+   {
+    "attr": "GK Handling",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Acceleration",
+   "Att. Position",
+   "Crossing",
+   "Dribbling",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Slide Tackle",
+   "Sprint Speed",
+   "Stamina",
+   "Stand Tackle",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Deflector, Far Reach together",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     },
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "GK Diving",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Cross Claimer, Deflector together",
+    "playstyles": [
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": true
+     },
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_grab_ball",
+    "action": "Grab Ball",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Cross Claimer flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "GK Pos.",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_be_a_pro_goalkeeper_defending_own_box_rush",
+    "action": "Rush",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD 1v1 Close Down flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Mark Flekken",
+  "year": 27,
+  "role": "gk-shotstopper",
+  "family": "keeper",
+  "archetype": "Shot Stopper",
+  "position": "Keeper",
+  "traits": [
+   "GK Reflexes",
+   "GK Diving",
+   "GK Pos."
+  ],
+  "gold": [
+   "Far Reach"
+  ],
+  "regulars": [
+   "Deflector",
+   "1v1 Close Down",
+   "Cross Claimer"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "GK Reflexes",
+    "v": 89
+   },
+   {
+    "attr": "GK Diving",
+    "v": 89
+   },
+   {
+    "attr": "Reactions",
+    "v": 84
+   },
+   {
+    "attr": "GK Pos.",
+    "v": 84
+   },
+   {
+    "attr": "GK Handling",
+    "v": 84
+   },
+   {
+    "attr": "Agility",
+    "v": 84
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Acceleration",
+   "Att. Position",
+   "Crossing",
+   "Dribbling",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Slide Tackle",
+   "Sprint Speed",
+   "Stamina",
+   "Stand Tackle",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_dive",
+    "action": "Dive",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Diving",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_reaction_dive_on_demand",
+    "action": "Reaction Dive On Demand",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "his GOLD Far Reach flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "far-reach",
+      "name": "Far Reach",
+      "gold": true
+     },
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Reflexes",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "GK Diving",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_punch_reaction_save",
+    "action": "Punch / Reaction Save",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Cross Claimer, Deflector, and his GK Handling 84 and GK Reflexes 89 backs it up",
+    "playstyles": [
+     {
+      "id": "deflector",
+      "name": "Deflector",
+      "gold": false
+     },
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_grab_ball",
+    "action": "Grab Ball",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears Cross Claimer, and his GK Handling 84 and GK Pos. 84 backs it up",
+    "playstyles": [
+     {
+      "id": "cross-claimer",
+      "name": "Cross Claimer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Handling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "GK Pos.",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_be_a_pro_goalkeeper_defending_own_box_rush",
+    "action": "Rush",
+    "page": "Be A Pro: Goalkeeper (Defending Own Box)",
+    "group": "Goalkeeping",
+    "star": null,
+    "why": "he wears 1v1 Close Down, and his GK Pos. 84 and GK Reflexes 89 backs it up",
+    "playstyles": [
+     {
+      "id": "1v1-close-down",
+      "name": "1v1 Close Down",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "GK Pos.",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "GK Reflexes",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

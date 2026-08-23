@@ -1,0 +1,523 @@
+{
+ "player": "Zinedine Zidane",
+ "fc26": {
+  "player": "Zinedine Zidane",
+  "year": 26,
+  "role": "am-playmaker",
+  "family": "attack",
+  "archetype": "Creator",
+  "position": "Midfielder",
+  "traits": [
+   "Vision",
+   "Short Pass",
+   "Ball Control"
+  ],
+  "gold": [
+   "Incisive Pass",
+   "Technical",
+   "First Touch",
+   "Whipped Pass"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "Tiki Taka",
+   "Inventive",
+   "Trickster",
+   "Chip Shot",
+   "Pinged Pass",
+   "Rapid",
+   "Quick Step",
+   "Power Shot"
+  ],
+  "specs": [
+   {
+    "name": "Creator+",
+    "grants": "Whipped Pass",
+    "perk": "Assistant",
+    "perkDesc": "Through Passes in the opponent's half give a boost to Finishing, Balance, and Ball Control to your teammate.",
+    "worn": true
+   },
+   {
+    "name": "Sniper",
+    "grants": "Power Shot",
+    "perk": "Set Piece Wizard",
+    "perkDesc": "Set piece deliveries gain extreme curve and accuracy.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Dribbling",
+    "v": 96
+   },
+   {
+    "attr": "Ball Control",
+    "v": 96
+   },
+   {
+    "attr": "Curve",
+    "v": 95
+   },
+   {
+    "attr": "Vision",
+    "v": 94
+   },
+   {
+    "attr": "Short Pass",
+    "v": 94
+   },
+   {
+    "attr": "Composure",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Technical flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3164,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Zinedine Zidane",
+  "year": 27,
+  "role": "am-playmaker",
+  "family": "attack",
+  "archetype": "Creator",
+  "position": "Midfielder",
+  "traits": [
+   "close control under pressure",
+   "Vision",
+   "the pass that opens a game"
+  ],
+  "gold": [
+   "Incisive Pass"
+  ],
+  "regulars": [
+   "First Touch",
+   "Technical",
+   "Acrobatic"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Vision",
+    "v": 92
+   },
+   {
+    "attr": "Ball Control",
+    "v": 92
+   },
+   {
+    "attr": "Composure",
+    "v": 88
+   },
+   {
+    "attr": "Agility",
+    "v": 88
+   },
+   {
+    "attr": "Stamina",
+    "v": 84
+   },
+   {
+    "attr": "Shot Power",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Heading Acc.",
+    "v": 50,
+    "atFloor": true
+   },
+   {
+    "attr": "Jumping",
+    "v": 60,
+    "atFloor": true
+   },
+   {
+    "attr": "Finishing",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Crossing",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Crossing",
+   "Def. Aware",
+   "Finishing",
+   "Heading Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "A number ten buys no defensive work, and finishing was never his game — the shot comes from power and curve. Pace stays OFF this list: never under 80 for any outfield build.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 77,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 77,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_sprint",
+    "action": "Controlled Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Technical, and his Ball Control 92 and Agility 88 backs it up",
+    "playstyles": [
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 88,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

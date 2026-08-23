@@ -1,0 +1,552 @@
+{
+ "player": "Richarlison",
+ "fc26": {
+  "player": "Richarlison",
+  "year": 26,
+  "role": "st-target",
+  "family": "attack",
+  "archetype": "Target",
+  "position": "Forward",
+  "traits": [
+   "Heading Acc.",
+   "Strength",
+   "Finishing"
+  ],
+  "gold": [
+   "Precision Header",
+   "Power Shot",
+   "Bruiser",
+   "Acrobatic"
+  ],
+  "regulars": [
+   "First Touch",
+   "Aerial Fortress",
+   "Low Driven Shot",
+   "Enforcer",
+   "Relentless",
+   "Finesse Shot",
+   "Gamechanger",
+   "Technical",
+   "Long Throw"
+  ],
+  "specs": [
+   {
+    "name": "Target+",
+    "grants": "Acrobatic",
+    "perk": "Line Breaker",
+    "perkDesc": "Receive a line-breaking pass in the attacking third for a boost to Dribbling, Balance, and Composure.",
+    "worn": true
+   },
+   {
+    "name": "Runner",
+    "grants": "Enforcer",
+    "perk": "High Speed Shooter",
+    "perkDesc": "Shoot while at full sprint for a boost to Shot Power, Strength, and Aggression.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Heading Acc.",
+    "v": 97
+   },
+   {
+    "attr": "Strength",
+    "v": 96
+   },
+   {
+    "attr": "Jumping",
+    "v": 95
+   },
+   {
+    "attr": "Shot Power",
+    "v": 94
+   },
+   {
+    "attr": "Finishing",
+    "v": 94
+   },
+   {
+    "attr": "Composure",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Acrobatic, Precision Header together",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": true
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": false
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": false
+     },
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Power Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3165,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Richarlison",
+  "year": 27,
+  "role": "st-target",
+  "family": "attack",
+  "archetype": "Target",
+  "position": "Forward",
+  "traits": [
+   "Heading Acc.",
+   "Strength",
+   "Finishing"
+  ],
+  "gold": [
+   "Precision Header"
+  ],
+  "regulars": [
+   "Power Shot",
+   "Bruiser",
+   "Acrobatic"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 89
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 89
+   },
+   {
+    "attr": "Shot Power",
+    "v": 84
+   },
+   {
+    "attr": "Jumping",
+    "v": 84
+   },
+   {
+    "attr": "Finishing",
+    "v": 84
+   },
+   {
+    "attr": "Composure",
+    "v": 83
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Crossing",
+    "v": 50,
+    "atFloor": true
+   },
+   {
+    "attr": "Stamina",
+    "v": 64,
+    "atFloor": false
+   },
+   {
+    "attr": "Vision",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Ball Control",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Dribbling",
+    "v": 70,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Precision Header flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": false
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Bruiser, and his Strength 89 backs it up",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 83,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Power Shot, and his Shot Power 84 and Finishing 84 backs it up",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Finishing",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_power_shot",
+    "action": "Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Power Shot, and his Shot Power 84 backs it up",
+    "playstyles": [
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Long Shots",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

@@ -1,0 +1,523 @@
+{
+ "player": "Nemanja Vidić",
+ "fc26": {
+  "player": "Nemanja Vidić",
+  "year": 26,
+  "role": "cb-stopper",
+  "family": "defence",
+  "archetype": "Boss",
+  "position": "Defender",
+  "traits": [
+   "Def. Aware",
+   "Stand Tackle",
+   "Strength"
+  ],
+  "gold": [
+   "Bruiser",
+   "Anticipate",
+   "Block",
+   "Aerial Fortress"
+  ],
+  "regulars": [
+   "Intercept",
+   "Slide Tackle",
+   "Precision Header",
+   "Jockey",
+   "Relentless",
+   "Enforcer",
+   "Long Throw",
+   "Pinged Pass",
+   "First Touch"
+  ],
+  "specs": [
+   {
+    "name": "Capitano",
+    "grants": "Block",
+    "perk": "Last Line Hero",
+    "perkDesc": "Blocks and clearances inside your box boost nearby defenders' awareness.",
+    "worn": true
+   },
+   {
+    "name": "Boss+",
+    "grants": "Slide Tackle",
+    "perk": "Immovable Object",
+    "perkDesc": "Winning a physical duel grants a short boost to Strength and Balance.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 99
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 99
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 94
+   },
+   {
+    "attr": "Jumping",
+    "v": 94
+   },
+   {
+    "attr": "Interceptions",
+    "v": 94
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Block flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": false
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_jostle_ball_in_air",
+    "action": "Jostle (Ball In Air)",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Aerial Fortress flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": true
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Jumping",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 99,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     },
+     {
+      "id": "enforcer",
+      "name": "Enforcer",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_clearance",
+    "action": "Clearance",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Aerial Fortress flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "aerial-fortress",
+      "name": "Aerial Fortress",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Jumping",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3166,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Nemanja Vidić",
+  "year": 27,
+  "role": "cb-stopper",
+  "family": "defence",
+  "archetype": "Boss",
+  "position": "Defender",
+  "traits": [
+   "Def. Aware",
+   "Stand Tackle",
+   "Strength"
+  ],
+  "gold": [
+   "Bruiser"
+  ],
+  "regulars": [
+   "Anticipate",
+   "Block",
+   "Aerial Fortress"
+  ],
+  "specs": [],
+  "accelerate": "Lengthy",
+  "strengths": [
+   {
+    "attr": "Strength",
+    "v": 89
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 89
+   },
+   {
+    "attr": "Aggression",
+    "v": 89
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 84
+   },
+   {
+    "attr": "Jumping",
+    "v": 84
+   },
+   {
+    "attr": "Interceptions",
+    "v": 84
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_physical_tackle_advanced_defending_only",
+    "action": "Physical Tackle (Advanced Defending only)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Stand Tackle",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_shoulder_challenge_sealout",
+    "action": "Shoulder Challenge / Sealout",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_engage_shielding_opponent",
+    "action": "Engage Shielding Opponent",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Bruiser flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

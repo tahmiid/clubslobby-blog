@@ -1,0 +1,521 @@
+{
+ "player": "Maximilian Beier",
+ "fc26": {
+  "player": "Maximilian Beier",
+  "year": 26,
+  "role": "st-poacher",
+  "family": "attack",
+  "archetype": "Finisher",
+  "position": "Forward",
+  "traits": [
+   "Finishing",
+   "Composure",
+   "Acceleration"
+  ],
+  "gold": [
+   "Low Driven Shot",
+   "Quick Step",
+   "Acrobatic",
+   "Chip Shot"
+  ],
+  "regulars": [
+   "Finesse Shot",
+   "First Touch",
+   "Rapid",
+   "Power Shot",
+   "Technical",
+   "Trickster",
+   "Incisive Pass",
+   "Gamechanger",
+   "Precision Header"
+  ],
+  "specs": [
+   {
+    "name": "Finisher+",
+    "grants": "Chip Shot",
+    "perk": "Clinical Instinct",
+    "perkDesc": "First-time shots inside the box gain a major accuracy boost.",
+    "worn": true
+   },
+   {
+    "name": "Hunter",
+    "grants": "Gamechanger",
+    "perk": "Poacher's Instinct",
+    "perkDesc": "Rebounds and loose balls in the box are reacted to faster.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Finishing",
+    "v": 97
+   },
+   {
+    "attr": "Composure",
+    "v": 96
+   },
+   {
+    "attr": "Volleys",
+    "v": 95
+   },
+   {
+    "attr": "Reactions",
+    "v": 95
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 94
+   },
+   {
+    "attr": "Curve",
+    "v": 94
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_shoot_volley_header",
+    "action": "Shoot / Volley / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Acrobatic flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "acrobatic",
+      "name": "Acrobatic",
+      "gold": true
+     },
+     {
+      "id": "precision-header",
+      "name": "Precision Header",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Volleys",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Heading Acc.",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_shot",
+    "action": "Low Driven Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     },
+     {
+      "id": "finesse-shot",
+      "name": "Finesse Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 97,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     },
+     {
+      "id": "power-shot",
+      "name": "Power Shot",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 97,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Maximilian Beier",
+  "year": 27,
+  "role": "st-poacher",
+  "family": "attack",
+  "archetype": "Finisher",
+  "position": "Forward",
+  "traits": [
+   "Finishing",
+   "Composure",
+   "Acceleration"
+  ],
+  "gold": [
+   "Low Driven Shot"
+  ],
+  "regulars": [
+   "Quick Step",
+   "Acrobatic",
+   "First Touch"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Dribbling",
+    "v": 94
+   },
+   {
+    "attr": "Agility",
+    "v": 94
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 89
+   },
+   {
+    "attr": "Finishing",
+    "v": 89
+   },
+   {
+    "attr": "Composure",
+    "v": 89
+   },
+   {
+    "attr": "Ball Control",
+    "v": 89
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Jumping",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Vision",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Short Pass",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Strength",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Def. Aware",
+   "FK Acc.",
+   "Interceptions",
+   "Penalties",
+   "Slide Tackle",
+   "Stand Tackle"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_shot",
+    "action": "Low Driven Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Shot Power",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_finesse_shot",
+    "action": "Low Driven Finesse Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_low_driven_power_shot",
+    "action": "Low Driven Power Shot",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Low Driven Shot flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "low-driven-shot",
+      "name": "Low Driven Shot",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Shot Power",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Finishing",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Sprint Speed 89 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 84,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 85,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

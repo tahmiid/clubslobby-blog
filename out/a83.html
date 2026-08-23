@@ -78,6 +78,13 @@
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->
+<div class="a83"><h2 id="about">What the Henry build is</h2>
+<p>It is a <strong>Finisher</strong> built around finishing, shot power and composure.
+The gold PlayStyles are <strong>Finesse Shot, Quick Step, Technical and Gamechanger</strong>, backed in the regular slots by Power Shot, First Touch, Low Driven Shot and 6 more — and the attribute sheet agrees: <strong>Finishing 99</strong>, <strong>Volleys 95</strong>, <strong>Sprint Speed 95</strong>, <strong>Reactions 95</strong>.</p>
+<p>It wears the <strong>Hunter</strong> specialization, which brings the <strong>Poacher's Instinct</strong> perk: Rebounds and loose balls in the box are reacted to faster.</p></div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
 <div class="a83">
 <h2 id="at-a-glance">Henry at a glance</h2>
 <table class="facts">
@@ -91,16 +98,390 @@
 </table></div>
 <!--kg-card-end: html-->
 
-<h2 id="attributes">Where the points went</h2>
-<p>The FC 26 build's six highest attributes tell you how it wants to play:</p>
-<ul><li><strong>Att. Position</strong> 99</li><li><strong>Finishing</strong> 99</li><li><strong>Ball Control</strong> 96</li><li><strong>Curve</strong> 96</li><li><strong>Acceleration</strong> 95</li><li><strong>Sprint Speed</strong> 95</li></ul>
-<p>PlayStyles follow the same idea — the signature set is fixed by the archetype, the regular slots are choices. Henry's loadout is on the cards above, gold for signature, silver for equipped.</p>
+<!--kg-card-begin: html-->
+<div class="a83"><h2 id="not">What it is not</h2>
+<p>Every build at this level is a set of choices, and the honest half is what was <em>not</em> bought. The Henry build spends nothing at all on
+Att. Position, Def. Aware, FK Acc., Interceptions, Penalties, Slide Tackle and Stand Tackle. Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.</p>
+</div>
+<!--kg-card-end: html-->
 
-<p>Want the theory behind the archetype? The full <a href="https://proclubshq.com/blog/pro-clubs-finisher-build/">FINISHER build guide</a> covers the AP order, the specialization call and thirteen more finished builds.</p>
+<!--kg-card-begin: html-->
+<div class="a83">
+<h2 id="controls">What to actually do with it</h2>
+<p>A build is only as good as the buttons you press with it. These are the
+5 the Henry build is genuinely built for — each one either fires a
+PlayStyle it carries or leans on an attribute it bought.</p>
+<style>.a83 .cm-why{display:block;color:#9aa0ad;font:400 13px/1.5 system-ui,sans-serif;margin-top:4px}
+
+/* ── glyphs ───────────────────────────────────────────────────────────────
+   Sized in em so they track their type. A fixed px size with a negative
+   vertical-align overflowed the line box on a phone. */
+.cg{display:block;opacity:.45;transition:opacity .18s ease}
+.cgx{position:relative;display:inline-block;vertical-align:middle;margin:0 .2em;
+  width:1.5em;height:1.5em;transition:transform .18s ease}
+.cgx .cg-solo{width:1.5em;height:1.5em}
+/* THE FLICK ICONS — one shape per stick, so the two are tellable apart instantly.
+   LEFT uses the pack's own drawn glyph (lt/lb/ll/lr): the stick circle with its
+   arrowhead, already designed and unimprovable by composition.
+   RIGHT has no such asset, so it takes the direction arrow with the stick badged
+   into the corner — a different silhouette, which is the point. */
+.cgx-b{width:1.95em;height:1.95em}
+.cg-pack{position:absolute;left:50%;top:50%;width:1.95em;height:1.95em;transform:translate(-50%,-50%)}
+.cgx-d{width:1.85em;height:1.85em}
+.cg-arrow{position:absolute;left:50%;top:50%;width:1.5em;height:1.5em;transform:translate(-50%,-50%)}
+.cg-badge{position:absolute;right:-.06em;bottom:-.06em;width:.92em;height:.92em;
+  filter:drop-shadow(0 0 3px #0a1826)}
+/* ── rotation ─────────────────────────────────────────────────────────────
+   The stick stays put and readable; a dot travels the ring around it. Orbiting
+   the stick itself covered its own letter, which is the one thing it is for. */
+.cgx-spin{width:2.3em;height:2.3em;margin:0 .3em}
+.cgx-spin .cg-stick{position:absolute;left:50%;top:50%;width:1.35em;height:1.35em;
+  transform:translate(-50%,-50%)}
+.cgx-spin .cgx-ring{position:absolute;inset:0;border-radius:50%;
+  border:1.5px dashed rgba(45,226,197,.4)}
+.cgx-spin .cgx-dot{position:absolute;left:50%;top:50%;width:.42em;height:.42em;margin:-.21em;
+  border-radius:50%;background:#2DE2C5;opacity:0;
+  transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+.cgx-spin.go .cgx-dot{opacity:1;animation:cgorbit 2s linear}
+.cgx-spin.go .cgx-ring{border-color:rgba(45,226,197,.9)}
+/* Starts where the data says and travels the way the data says. It used to
+   begin at the top and go clockwise regardless of the move. */
+@keyframes cgorbit{from{transform:rotate(var(--rfrom,0deg)) translateY(-1.15em)}
+  to{transform:rotate(var(--rto,360deg)) translateY(-1.15em)}}
+/* ── a sequence ───────────────────────────────────────────────────────────
+   One line, always. If it outgrows the column the ROW scrolls; glyphs never wrap. */
+.cwrap{display:flex;align-items:center;gap:10px;width:100%}
+.cseq{flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;
+  line-height:2.6;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cseq::-webkit-scrollbar{display:none}
+.cvar{display:none;white-space:nowrap}
+.cvar.on{display:inline}
+.cread-simple{display:none}
+.simpleread .cread-auth{display:none}
+.simpleread .cread-simple{display:inline}
+/* The simple reading drops the connecting words, so the line has room to spare.
+   Spend it on the glyphs — they are the whole content in this mode. */
+.simpleread .cgx{margin:0 .45em}
+.simpleread .cseq{line-height:2.9}
+.simpleread .cgx .cg-solo{width:1.75em;height:1.75em}
+.simpleread .cgx{width:1.75em;height:1.75em}
+.simpleread .cgx-b{width:2.25em;height:2.25em}
+.simpleread .cgx-b .cg-pack{width:2.25em;height:2.25em}
+.simpleread .cgx-d{width:2.15em;height:2.15em}
+.simpleread .cgx-d .cg-arrow{width:1.75em;height:1.75em}
+.simpleread .cgx-d .cg-badge{width:1.05em;height:1.05em}
+.simpleread .cgx-spin{width:2.6em;height:2.6em}
+/* At rest everything reads at full strength; dimming is a state of the
+   animation, never how the page sits still. */
+.cwrap:not(.playing) .cg,.cwrap:not(.playing) .chev{opacity:1}
+/* THE ALTERNATIVE IS A FOOTNOTE. Dim, lowercase, no accent, detached from the
+   sequence so it never competes with the input the reader came for. */
+.cacts{flex:0 0 auto;margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.calt{padding:1px 0;border:0;background:none;cursor:pointer;color:#5c6474;
+  font:400 11.5px/1.25 system-ui,-apple-system,sans-serif;letter-spacing:.02em;
+  border-bottom:1px dotted #3a4354;white-space:nowrap}
+.calt:hover{color:#9aa0ae;border-bottom-color:#5c6474}
+.calt[aria-pressed="true"]{color:#9aa0ae}
+.calt:focus-visible{outline:2px solid #2DE2C5;outline-offset:3px;border-radius:2px}
+/* ── animation states ─────────────────────────────────────────────────────
+   A HOLD stays lit. A PRESS lights and goes dark again — Giant Fake Shot
+   presses and RELEASES Square before Cross. */
+.cgx.lit .cg{opacity:1;filter:drop-shadow(0 0 8px rgba(45,226,197,.8))}
+.cgx.tap{animation:cgtap .5s ease}
+@keyframes cgtap{0%{transform:scale(1)}40%{transform:scale(.76)}100%{transform:scale(1)}}
+.cgx.nu-up{animation:nuup .8s ease}
+.cgx.nu-down{animation:nudown .8s ease}
+.cgx.nu-left{animation:nuleft .8s ease}
+.cgx.nu-right{animation:nuright .8s ease}
+.cgx.nu-upleft{animation:nuupleft .8s ease}
+.cgx.nu-upright{animation:nuupright .8s ease}
+.cgx.nu-downleft{animation:nudownleft .8s ease}
+.cgx.nu-downright{animation:nudownright .8s ease}
+/* a held direction: move there and stay until reset */
+.cgx[class*="held-"]{transition:transform .25s ease}
+.cgx.held-up{transform:translateY(-5px)}
+.cgx.held-down{transform:translateY(5px)}
+.cgx.held-left{transform:translateX(-5px)}
+.cgx.held-right{transform:translateX(5px)}
+.cgx.held-upleft{transform:translate(-4px,-4px)}
+.cgx.held-upright{transform:translate(4px,-4px)}
+.cgx.held-downleft{transform:translate(-4px,4px)}
+.cgx.held-downright{transform:translate(4px,4px)}
+@keyframes nuup{0%,100%{transform:translateY(0)}45%{transform:translateY(-11px)}}
+@keyframes nudown{0%,100%{transform:translateY(0)}45%{transform:translateY(11px)}}
+@keyframes nuleft{0%,100%{transform:translateX(0)}45%{transform:translateX(-11px)}}
+@keyframes nuright{0%,100%{transform:translateX(0)}45%{transform:translateX(11px)}}
+@keyframes nuupleft{0%,100%{transform:translate(0,0)}45%{transform:translate(-8px,-8px)}}
+@keyframes nuupright{0%,100%{transform:translate(0,0)}45%{transform:translate(8px,-8px)}}
+@keyframes nudownleft{0%,100%{transform:translate(0,0)}45%{transform:translate(-8px,8px)}}
+@keyframes nudownright{0%,100%{transform:translate(0,0)}45%{transform:translate(8px,8px)}}
+/* ── the list ─────────────────────────────────────────────────────────────
+   The game shows moves as a list and most readers are on a phone, so the LIST
+   is the player: a row animates its own sequence where it already sits. */
+.cmoves{display:flex;flex-direction:column;gap:8px;margin:0 0 1.6em}
+.cm{position:relative;display:flex;flex-direction:column;gap:3px;padding:11px 14px;
+  border:1px solid #23364c;border-radius:11px;background:#0a1826;
+  cursor:pointer;overflow:hidden;transition:border-color .2s ease}
+.cm.active{border-color:rgba(45,226,197,.3)}
+/* Focus reads as a line filling along the TOP edge only. A ring round the whole
+   block drew more attention than the content inside it. */
+.cm-bar{position:absolute;left:0;top:0;height:2px;width:0;background:#2DE2C5;opacity:0}
+.cm.active .cm-bar{opacity:1}
+.cm-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cm-name{font:700 15.5px/1.4 system-ui,-apple-system,sans-serif;color:#2DE2C5;text-decoration:none;
+  transition:text-shadow .2s ease,color .2s ease}
+a.cm-name:hover{text-decoration:underline}
+/* The name lights first, so the reader knows which row has started before any
+   button moves. */
+.cm-name.lit{color:#7dfbe4;text-shadow:0 0 12px rgba(45,226,197,.55)}
+.cm-meta{flex:0 0 auto;font:600 11.5px/1 system-ui,-apple-system,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:#5c6474}
+.cm-cap{min-height:1.25em;font:600 12px/1.25 system-ui,-apple-system,sans-serif;color:#2DE2C5;
+  opacity:0;transition:opacity .18s ease}
+.cm.playing .cm-cap{opacity:1}
+.cspeed{margin:0 0 14px;font:600 12px/1.4 system-ui,-apple-system,sans-serif;color:#5c6474}
+/* ── the switcher ─────────────────────────────────────────────────────── */
+/* Fixed to the bottom, cleared past the browser's own bottom bar
+   (env(safe-area-inset-bottom)), and promoted to its own compositor layer —
+   an unpromoted fixed element shimmers while a phone's URL bar collapses,
+   which read as page "jitter" while scrolling (owner, 2026-08-21). */
+.padsw{position:fixed;left:50%;transform:translateX(-50%) translateZ(0);
+  bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;
+  max-width:calc(100vw - 12px);will-change:transform;
+  display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;
+  border:1px solid #33506f;background:rgba(8,16,26,.97);
+  box-shadow:0 10px 30px rgba(0,0,0,.62);font:600 14px/1 system-ui,-apple-system,sans-serif}
+.padsw-seg{display:flex;gap:4px}
+.padsw-seg button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
+  border:1px solid transparent;background:transparent;color:#9aa0ae;cursor:pointer;font:inherit}
+.padsw-seg button:hover{color:#e9edf6}
+.padsw-seg button[aria-pressed="true"]{background:rgba(45,226,197,.15);
+  border-color:rgba(45,226,197,.65);color:#2DE2C5}
+.padsw-i{width:22px;height:22px;display:block;opacity:.55}
+.padsw-seg button[aria-pressed="true"] .padsw-i{opacity:1}
+.padsw-m{flex:0 0 auto;padding:9px 13px;border-radius:999px;border:1px solid #33506f;
+  background:transparent;color:#9aa0ae;cursor:pointer;white-space:nowrap;
+  font:600 13px/1 system-ui,-apple-system,sans-serif}
+.padsw-sep{width:1px;align-self:stretch;margin:4px 2px;background:#23364c}
+.padsw-m[aria-pressed="true"]{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.13);color:#2DE2C5}
+.padsw-c{width:30px;height:30px;flex:0 0 auto;margin-right:4px;border-radius:999px;cursor:pointer;
+  border:1px solid #33506f;background:conic-gradient(#e2657a,#e0b154,#5fc97a,#56a0f0,#c98ad8,#e2657a)}
+.padsw-c[aria-pressed="false"]{background:#cfd4de}
+.padsw-c:focus-visible,.padsw-seg button:focus-visible,.padsw-m:focus-visible{outline:2px solid #2DE2C5;outline-offset:2px}
+@media(max-width:640px){
+  /* Phone dock: the logos alone, LARGE — 28px marks were invisible over a
+     phone's bottom bar (owner, 2026-08-21). The icons are the buttons now. */
+  .padsw{bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:13px;gap:4px;padding:6px}
+  .padsw-seg button span{display:none}
+  .padsw-seg button{padding:8px 11px}
+  .padsw-i{width:38px;height:38px}
+  .padsw-m{padding:10px 12px;font-size:13px}
+  .padsw-c{width:34px;height:34px}
+  .cm-name{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cg,.chev{opacity:1!important}
+  .cgx,.cgx-spin.go .cgx-dot{animation:none!important}
+}</style>
+<div class="cmoves">
+<div class="cm"><span class="cm-top"><span class="cm-name">Sprint</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R2&quot;},{&quot;t&quot;:1300,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Left Stick, any direction&quot;}],&quot;total&quot;:3100,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth">Hold <span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r2.svg" alt="R2" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span> Direction</span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r2.svg" alt="R2" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span></span></span></span><span class="cm-why">his GOLD Quick Step flares on this — the single strongest thing this build does</span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">Controlled Sprint</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R1&quot;}],&quot;total&quot;:1800,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span></span></span></span></span><span class="cm-why">his GOLD Technical flares on this — the single strongest thing this build does</span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">Strafe Dribble</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold L1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Left Stick, any direction&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="l1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l1.svg" alt="L1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="l" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/l.svg" alt="Left Stick" loading="lazy" decoding="async"></span></span></span></span></span><span class="cm-why">his GOLD Technical flares on this — the single strongest thing this build does</span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">Low Driven Finesse Shot</span><span class="cm-meta">after_power_up</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R1&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Circle&quot;},{&quot;t&quot;:2400,&quot;i&quot;:2,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Press Circle&quot;}],&quot;total&quot;:4200,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="2"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span></span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r1" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r1.svg" alt="R1" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span><span class="cgx" data-i="2"><img class="cg cg-solo" data-t="o" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/o.svg" alt="Circle" loading="lazy" decoding="async"></span></span></span></span></span><span class="cm-why">his GOLD Finesse Shot flares on this — the single strongest thing this build does</span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+<div class="cm"><span class="cm-top"><span class="cm-name">First Touch / Knock-On</span></span><span class="cwrap" data-v="1"><span class="cseq"><span class="cvar on" data-tl="{&quot;steps&quot;:[{&quot;t&quot;:0,&quot;i&quot;:0,&quot;type&quot;:&quot;hold&quot;,&quot;label&quot;:&quot;Hold R2&quot;},{&quot;t&quot;:1200,&quot;i&quot;:1,&quot;type&quot;:&quot;press&quot;,&quot;label&quot;:&quot;Right Stick, any direction&quot;}],&quot;total&quot;:3000,&quot;press&quot;:520}" data-variant="primary"><span class="cread cread-auth"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r2.svg" alt="R2" loading="lazy" decoding="async"></span> + <span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r.svg" alt="Right Stick" loading="lazy" decoding="async"></span> Direction</span><span class="cread cread-simple"><span class="cgx" data-i="0"><img class="cg cg-solo" data-t="r2" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r2.svg" alt="R2" loading="lazy" decoding="async"></span><span class="cgx" data-i="1"><img class="cg cg-solo" data-t="r" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/r.svg" alt="Right Stick" loading="lazy" decoding="async"></span></span></span></span></span><span class="cm-why">he wears Rapid, and his Sprint Speed 95 backs it up</span><span class="cm-cap" aria-live="polite"></span><span class="cm-bar" aria-hidden="true"></span></div>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<div class="padsw" hidden>
+<div class="padsw-seg" data-k="platform" role="group" aria-label="Controller">
+  <button type="button" data-v="ps">
+    <img class="padsw-i" data-p="ps" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/ps/h.svg" alt=""><span>PlayStation</span>
+  </button>
+  <button type="button" data-v="xbox">
+    <img class="padsw-i" data-p="xbox" src="https://proclubshq.com/blog/content/images/2026/08/controls/colour/xbox/h.svg" alt=""><span>Xbox</span>
+  </button>
+</div>
+<button class="padsw-c" type="button" data-k="set"
+        aria-label="Switch between colour and white buttons" title="Colour or white buttons"></button>
+<span class="padsw-sep" aria-hidden="true"></span>
+<button class="padsw-m" type="button" data-k="read" aria-pressed="false"
+        title="Show the game's own wording, or just the buttons in press order">simple</button>
+</div>
+<script>
+(function(){
+  var BASE="https://proclubshq.com/blog/content/images/2026/08/controls",K='pchq-pad',
+      // Reading default is responsive (owner, 2026-08-20): a phone gets the
+      // simplified sequence, a desktop gets the game's wording. A stored
+      // choice — made on either control — still wins on every later visit.
+      st={platform:"ps",set:"colour",
+          read:(window.innerWidth<=640?'simple':'auth')};
+  try{Object.assign(st,JSON.parse(localStorage.getItem(K)||'{}'));}catch(e){}
+  var NAME={"l2":["L2","LT"],"r2":["R2","RT"],"l1":["L1","LB"],"r1":["R1","RB"],"s":["Square","X"],"o":["Circle","B"],"x":["Cross","A"],"t":["Triangle","Y"],"l":["Left Stick","Left Stick"],"l-badge":["Left Stick","Left Stick"],"r":["Right Stick","Right Stick"],"r-badge":["Right Stick","Right Stick"],"l3":["L3","Left Stick Click"],"r3":["R3","Right Stick Click"],"st":["Options","Menu"],"tp":["Touchpad","View"],"pd":["D-Pad","D-Pad"]},
+      PNG=["racw","rbl","rbltr","rbr","rbrtl","rcw","rlbr","rlt","rrbl","rrt","rtl","rtr"];
+  function ext(t){ return PNG.indexOf(t)>=0 ? 'png' : 'svg'; }
+  function paint(){
+    document.querySelectorAll('img.cg').forEach(function(g){
+      var t=g.getAttribute('data-t');
+      g.src=BASE+'/'+st.set+'/'+st.platform+'/'+t+'.'+ext(t);
+      var n=NAME[t]; if(n) g.alt=n[st.platform==='xbox'?1:0];
+    });
+    var sw=document.querySelector('.padsw'); if(!sw) return;
+    sw.hidden=false;
+    // The platform icon states are fixed, not tied to the art setting:
+    // SELECTED wears the coloured mark (PlayStation blue, Xbox green — the
+    // pack's colour set), unselected goes monochrome (owner, 2026-08-20).
+    sw.querySelectorAll('.padsw-i').forEach(function(i){
+      var p=i.getAttribute('data-p');
+      i.src=BASE+'/'+(p===st.platform?'colour':'mono')+'/'+p+'/h.svg';});
+    sw.querySelectorAll('.padsw-seg button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-v')===st.platform));});
+    sw.querySelector('.padsw-c').setAttribute('aria-pressed', String(st.set==='colour'));
+    document.documentElement.classList.toggle('simpleread', st.read==='simple');
+    // The reading is one setting with two controls: the dock (found once, used
+    // for the whole page) and the button on each row (found where the reader is
+    // already looking). Both are painted from the same state, so neither can
+    // show the opposite of what is on screen.
+    document.querySelectorAll('.padsw-m[data-k="read"]').forEach(function(b){
+      b.setAttribute('aria-pressed', String(st.read==='simple'));
+      b.textContent = st.read==='simple' ? 'game wording' : 'simple'; });
+  }
+  function save(){try{localStorage.setItem(K,JSON.stringify(st));}catch(e){}}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.padsw-seg button');
+    if(b){st.platform=b.getAttribute('data-v'); save(); paint(); return;}
+    if(e.target.closest('.padsw-c')){st.set=st.set==='colour'?'mono':'colour'; save(); paint(); return;}
+    if(e.target.closest('.padsw-m[data-k="read"]')){
+      st.read=st.read==='simple'?'auth':'simple'; save(); paint(); return;}
+    var cmRow=e.target.closest('.cm');
+    if(cmRow&&!e.target.closest('.calt')&&!e.target.closest('a')){
+      var w=cmRow.querySelector('.cwrap'); if(!w) return;
+      pinned = (pinned===w) ? null : w;   // tap again to release it back to the queue
+      run(w); return; }
+    var a=e.target.closest('.calt');
+    if(a){var q=a.closest('.cwrap').querySelector('.cseq'),vs=q.querySelectorAll('.cvar'),c=0;
+      vs.forEach(function(v,i){if(v.classList.contains('on'))c=i;});
+      vs[c].classList.remove('on'); var n=(c+1)%vs.length; vs[n].classList.add('on');
+      a.setAttribute('aria-pressed', String(n!==0));}
+  });
+
+  // ── playback ──────────────────────────────────────────────────────────
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function bar(row, ms, on){
+    var b=row&&row.querySelector('.cm-bar'); if(!b) return;
+    b.style.transition='none'; b.style.width='0';
+    if(!on) return;
+    void b.getBoundingClientRect();          // reflow, so the fill starts at zero
+    b.style.transition='width '+ms+'ms linear'; b.style.width='100%';
+  }
+  function play(wrap, done){
+    if(!wrap||wrap.dataset.busy) return;
+    var v=wrap.querySelector('.cvar.on'); if(!v) return;
+    var tl; try{ tl=JSON.parse(v.getAttribute('data-tl')); }catch(err){ return; }
+    var LEADIN=520;                        // the name gets the first beat to itself
+    var row=wrap.closest('.cm'), cap=row&&row.querySelector('.cm-cap'),
+        nm=row&&row.querySelector('.cm-name'), gs=v.querySelectorAll('.cgx');
+    // Both readings carry the same indices, so a step lights whichever is on
+    // screen without the runtime needing to know which that is.
+    function units(i){ return v.querySelectorAll('.cgx[data-i="'+i+'"]'); }
+    function reset(){ gs.forEach(function(g){
+        g.className=g.className.replace(/s*(lit|tap|go|nu-w+|held-w+)/g,'');});
+      wrap.classList.remove('playing'); if(row) row.classList.remove('playing');
+      if(cap) cap.textContent=''; wrap.dataset.busy='';
+      if(nm) nm.classList.remove('lit');
+      if(row){ row.classList.remove('active'); } bar(row, 0, false); }
+    if(RM){ if(cap){ cap.textContent=tl.steps.map(function(s){return s.label;}).join(' → ');
+      if(row) row.classList.add('playing'); } return; }
+    var timers=[];
+    wrap._stop=function(){ timers.forEach(clearTimeout); timers.length=0; reset(); };
+    wrap.dataset.busy='1'; reset(); wrap.dataset.busy='1';
+    wrap.classList.add('playing'); if(row){ row.classList.add('playing'); row.classList.add('active'); }
+    bar(row, tl.total+LEADIN, true);
+    if(nm){ nm.classList.add('lit');
+      if(cap) cap.textContent=nm.textContent; }
+    tl.steps.forEach(function(s){
+      timers.push(setTimeout(function(){
+        var us=units(s.i); if(!us.length) return;
+        if(cap) cap.textContent=s.label;
+        us.forEach(function(g){
+          if(s.type==='hold'){ g.classList.add('lit');
+            // A held DIRECTION moves there and stays until the action ends
+            // (Telephone holds down; Hands Out ends held left).
+            if(s.dir){ g.classList.add('held-'+s.dir); } }
+          else if(s.type==='press'){ g.classList.add('lit','tap');
+            setTimeout(function(){ g.classList.remove('lit','tap'); }, tl.press); }
+          else if(s.type==='flick'){ g.classList.add('lit','nu-'+s.dir);
+            setTimeout(function(){ g.classList.remove('lit','nu-'+s.dir); }, 800); }
+          else if(s.type==='rotate'){ g.classList.add('lit','go');
+            setTimeout(function(){ g.classList.remove('go'); }, 2000); }
+        });
+      }, s.t+LEADIN));
+    });
+    timers.push(setTimeout(function(){ if(nm) nm.classList.remove('lit'); }, LEADIN+200));
+    timers.push(setTimeout(function(){ reset(); if(done) done(); }, tl.total+LEADIN));
+  }
+  // ONE AT A TIME, TOP TO BOTTOM. Thirteen rows animating at once is noise, and
+  // a reader cannot follow any of them. The list plays like a queue: whatever is
+  // on screen runs in document order, each waiting for the one before it to
+  // finish. Tapping a row takes over the queue from there.
+  var seqOn=false, current=null, pinned=null, visible=[];
+  function stop(w){ if(w&&w._stop){ w._stop(); w.dataset.busy=''; } }
+  var all=[].slice.call(document.querySelectorAll('.cwrap'));
+  function inView(){ return all.filter(function(w){ return visible.indexOf(w)>=0; }); }
+  function advance(from){
+    var list=inView(); if(!list.length){ seqOn=false; current=null; return; }
+    var i=from ? list.indexOf(from) : -1;
+    var nxt=list[i+1>=list.length ? 0 : i+1];
+    if(!nxt){ seqOn=false; current=null; return; }
+    run(nxt);
+  }
+  function run(w){
+    if(current&&current!==w) stop(current);
+    current=w; seqOn=true;
+    play(w, function(){
+      if(current!==w) return;
+      setTimeout(function(){
+        // A tapped row keeps repeating. The reader asked for that one; moving on
+        // would take it away from them mid-thought.
+        if(pinned===w && visible.indexOf(w)>=0) run(w);
+        else advance(w);
+      }, 420);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        var k=visible.indexOf(en.target);
+        if(en.isIntersecting){ if(k<0) visible.push(en.target); }
+        else if(k>=0) visible.splice(k,1);
+      });
+      visible.sort(function(a,b){ return all.indexOf(a)-all.indexOf(b); });
+      // Whatever is playing off-screen is teaching nobody: stop it, drop any pin
+      // on it, and give the time to something the reader can actually see.
+      if(current && visible.indexOf(current)<0){
+        stop(current); if(pinned===current) pinned=null;
+        current=null; seqOn=false; advance(null);
+      } else if(!seqOn) advance(null);
+    },{threshold:.55});
+    all.forEach(function(w){io.observe(w);});
+  }
+  paint();
+})();
+</script>
 
 <!--kg-card-begin: html-->
 <div class="pchq-ad" data-ad="b"></div>
 <!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="a83"><h2 id="why">Why it is built this way</h2>
+<p>Nothing here is taste. Each of these is a rule the build was designed
+against, and you can apply the same ones to your own:</p>
+<ul><li><strong>R3</strong> — Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has.</li><li><strong>R8</strong> — Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute.</li><li><strong>R5</strong> — Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player.</li><li><strong>L1</strong> — Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point.</li><li><strong>L3</strong> — The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40.</li></ul>
+<p>The whole budget is spent: <strong>3158 of 3167 AP</strong>. An unspent build is an unfinished one.</p></div>
+<!--kg-card-end: html-->
+
+<p>Want the theory behind the archetype? The full <a href="https://proclubshq.com/blog/pro-clubs-finisher-build/">FINISHER build guide</a> covers the AP order, the specialization call and thirteen more finished builds.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-cta">
@@ -116,6 +497,41 @@
 </div>
 <!--kg-card-end: html-->
 
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1" data-arm="footer">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<h3>The pad you press these with</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0CQKKHT5J?tag=proclubshq-buildguide-20" aria-label="PlayStation DualSense controller at Amazon"><span class="b">PS5</span><span class="n">DualSense controller</span><span class="g">Check price →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0B789CGGQ?tag=proclubshq-buildguide-20" aria-label="Xbox Elite Series 2 Core controller at Amazon"><span class="b">XBOX</span><span class="n">Elite Series 2 Core controller</span><span class="g">Check price →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B016P09VFS?tag=proclubshq-buildguide-20" aria-label="KontrolFreek thumbstick grips at Amazon"><span class="b">GRIPS</span><span class="n">KontrolFreek thumbsticks</span><span class="g">Check price →</span></a>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="c"></div>
+<!--kg-card-end: html-->
+
 <!--kg-card-begin: html-->
 <div class="a83"><h2 id="faq">Quick answers</h2>
 <p><strong>What archetype is Henry in FC 26 Pro Clubs?</strong> FINISHER — Forward.</p>
@@ -129,4 +545,52 @@
 
 <!--kg-card-begin: html-->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://proclubshq.com/blog/"},{"@type":"ListItem","position":2,"name":"Player Builds"},{"@type":"ListItem","position":3,"name":"Thierry Henry"}]}</script>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<script>
+(function(){
+  if (window.__pchqAff) return; window.__pchqAff = 1;
+  function sid(){
+    try{
+      var k='pchq_sid', v=sessionStorage.getItem(k);
+      if(!v){
+        var b=(window.crypto&&crypto.getRandomValues)
+          ? Array.from(crypto.getRandomValues(new Uint8Array(8)))
+          : Array.from({length:8},function(){return Math.floor(Math.random()*256);});
+        v=b.map(function(x){return x.toString(16).padStart(2,'0');}).join('');
+        sessionStorage.setItem(k,v);
+      }
+      return v;
+    }catch(e){ return null; }
+  }
+  function send(ev){
+    var s = sid(); if(!s) return;
+    try{
+      var body = JSON.stringify({ path: '/evt/' + ev, sid: s });
+      if(navigator.sendBeacon){
+        navigator.sendBeacon('/api/metrics/view', new Blob([body], {type:'application/json'}));
+      } else {
+        fetch('/api/metrics/view', {method:'POST', headers:{'Content-Type':'application/json'},
+          body: body, keepalive: true});
+      }
+    }catch(err){}
+  }
+  // The denominator: one impression per article view, on load, if a block is
+  // on the page at all. Not scroll-triggered - "was it seen" is a different
+  // and harder question than "was it served", and the arms are compared
+  // against each other, so the same simple measure on all three is enough.
+  var first = document.querySelector('.pchq-aff[data-arm]');
+  if (first) send('aff-seen-' + first.getAttribute('data-arm'));
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('.pchq-aff a[href]');
+    if(!a) return;
+    var box = a.closest('.pchq-aff');
+    var arm = box && box.getAttribute('data-arm');
+    var s = sid();
+    if(!arm) return;
+    send('aff-' + arm);
+  }, true);
+})();
+</script>
 <!--kg-card-end: html-->

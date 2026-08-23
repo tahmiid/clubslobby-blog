@@ -1,0 +1,547 @@
+{
+ "player": "Kieran Trippier",
+ "fc26": {
+  "player": "Kieran Trippier",
+  "year": 26,
+  "role": "fullback-defensive",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [
+   "Stand Tackle",
+   "Def. Aware",
+   "Sprint Speed"
+  ],
+  "gold": [
+   "Jockey",
+   "Anticipate",
+   "Block",
+   "Slide Tackle"
+  ],
+  "regulars": [
+   "Quick Step",
+   "Intercept",
+   "Relentless",
+   "Whipped Pass",
+   "Pinged Pass",
+   "Aerial Fortress",
+   "Bruiser",
+   "First Touch",
+   "Long Throw"
+  ],
+  "specs": [
+   {
+    "name": "Marauder+",
+    "grants": "Slide Tackle",
+    "perk": "Overlap Threat",
+    "perkDesc": "Overlapping runs grant a crossing accuracy boost in the final third.",
+    "worn": true
+   },
+   {
+    "name": "Athlete",
+    "grants": "Bruiser",
+    "perk": "Iron Lungs",
+    "perkDesc": "Sprint recovery is drastically improved during long attacking spells.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Crossing",
+    "v": 99
+   },
+   {
+    "attr": "FK Acc.",
+    "v": 95
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 94
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 94
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 94
+   },
+   {
+    "attr": "Strength",
+    "v": 92
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Block, Jockey together",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Block, Jockey together",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Interceptions",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "TWO of his golds fire on this one input — Block, Jockey together",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_hard_tackle",
+    "action": "Hard Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Anticipate flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 90,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_defending_sliding_tackle",
+    "action": "Sliding Tackle",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Slide Tackle flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "slide-tackle",
+      "name": "Slide Tackle",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Slide Tackle",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Reactions",
+      "v": 71,
+      "strong": false
+     },
+     {
+      "name": "Def. Aware",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Kieran Trippier",
+  "year": 27,
+  "role": "fullback-defensive",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [
+   "Stand Tackle",
+   "Def. Aware",
+   "Sprint Speed"
+  ],
+  "gold": [
+   "Jockey"
+  ],
+  "regulars": [
+   "Anticipate",
+   "Block",
+   "Quick Step"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Stand Tackle",
+    "v": 89
+   },
+   {
+    "attr": "Crossing",
+    "v": 89
+   },
+   {
+    "attr": "Stamina",
+    "v": 84
+   },
+   {
+    "attr": "Sprint Speed",
+    "v": 84
+   },
+   {
+    "attr": "Interceptions",
+    "v": 84
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Composure",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Slide Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_contain_technical_legacy_defending",
+    "action": "Contain (Technical & Legacy Defending)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Interceptions",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_sprint_jockey",
+    "action": "Sprint Jockey",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Quick Step, and his Acceleration 84 and Sprint Speed 84 backs it up",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_defending_tackle_push_or_pull_when_chasing",
+    "action": "Tackle / Push or Pull (When Chasing)",
+    "page": "Defending",
+    "group": "Defending",
+    "star": null,
+    "why": "he wears Anticipate, and his Stand Tackle 89 and Def. Aware 84 backs it up",
+    "playstyles": [
+     {
+      "id": "anticipate",
+      "name": "Anticipate",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Stand Tackle",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Def. Aware",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Aggression",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

@@ -1,0 +1,534 @@
+{
+ "player": "Weston McKennie",
+ "fc26": {
+  "player": "Weston McKennie",
+  "year": 26,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [
+   "Stamina",
+   "Short Pass",
+   "Ball Control"
+  ],
+  "gold": [
+   "Press Proven",
+   "Power Shot",
+   "Pinged Pass",
+   "Relentless"
+  ],
+  "regulars": [
+   "First Touch",
+   "Incisive Pass",
+   "Anticipate",
+   "Technical",
+   "Long Ball Pass",
+   "Intercept",
+   "Tiki Taka",
+   "Bruiser",
+   "Finesse Shot"
+  ],
+  "specs": [
+   {
+    "name": "Heartbeat",
+    "grants": "Relentless",
+    "perk": "Tempo Setter",
+    "perkDesc": "Slowing play down recovers team stamina and boosts pass accuracy.",
+    "worn": true
+   },
+   {
+    "name": "Crasher",
+    "grants": "First Touch",
+    "perk": "Late Arrival",
+    "perkDesc": "Late runs into the box grant a boost to Finishing and Long Shots.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Short Pass",
+    "v": 96
+   },
+   {
+    "attr": "Vision",
+    "v": 94
+   },
+   {
+    "attr": "Shot Power",
+    "v": 94
+   },
+   {
+    "attr": "Ball Control",
+    "v": 94
+   },
+   {
+    "attr": "Stamina",
+    "v": 92
+   },
+   {
+    "attr": "Composure",
+    "v": 92
+   }
+  ],
+  "weaknesses": [],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     },
+     {
+      "id": "technical",
+      "name": "Technical",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_move_player",
+    "action": "Move Player",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 96,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     },
+     {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 90,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Weston McKennie",
+  "year": 27,
+  "role": "cm-boxtobox",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [
+   "Stamina",
+   "Short Pass",
+   "Ball Control"
+  ],
+  "gold": [
+   "Press Proven"
+  ],
+  "regulars": [
+   "Power Shot",
+   "Pinged Pass",
+   "Relentless"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Stamina",
+    "v": 90
+   },
+   {
+    "attr": "Short Pass",
+    "v": 89
+   },
+   {
+    "attr": "Long Pass",
+    "v": 85
+   },
+   {
+    "attr": "Vision",
+    "v": 84
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 84
+   },
+   {
+    "attr": "Shot Power",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Dribbling",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Acceleration",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Composure",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_strafe_dribble",
+    "action": "Strafe Dribble",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Agility",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 66,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_move_player",
+    "action": "Move Player",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_protect_ball",
+    "action": "Protect Ball",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 75,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_shield_step_in_push_back",
+    "action": "Shield Step In / Push back",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Press Proven flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "press-proven",
+      "name": "Press Proven",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Strength",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 70,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

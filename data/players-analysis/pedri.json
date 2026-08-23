@@ -1,0 +1,509 @@
+{
+ "player": "Pedri",
+ "fc26": {
+  "player": "Pedri",
+  "year": 26,
+  "role": "cm-playmaker",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [
+   "Vision",
+   "Short Pass",
+   "Ball Control"
+  ],
+  "gold": [
+   "Incisive Pass",
+   "Tiki Taka",
+   "First Touch",
+   "Pinged Pass"
+  ],
+  "regulars": [
+   "Technical",
+   "Inventive",
+   "Long Ball Pass",
+   "Press Proven",
+   "Finesse Shot",
+   "Whipped Pass",
+   "Trickster",
+   "Power Shot",
+   "Relentless"
+  ],
+  "specs": [
+   {
+    "name": "Crasher",
+    "grants": "First Touch",
+    "perk": "Late Arrival",
+    "perkDesc": "Late runs into the box grant a boost to Finishing and Long Shots.",
+    "worn": true
+   },
+   {
+    "name": "Maestro+",
+    "grants": "Technical",
+    "perk": "Conductor",
+    "perkDesc": "Completed switches of play boost your team's attacking positioning.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Ball Control",
+    "v": 99
+   },
+   {
+    "attr": "Vision",
+    "v": 96
+   },
+   {
+    "attr": "Short Pass",
+    "v": 94
+   },
+   {
+    "attr": "Long Pass",
+    "v": 94
+   },
+   {
+    "attr": "Dribbling",
+    "v": 94
+   },
+   {
+    "attr": "Composure",
+    "v": 94
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Interceptions",
+    "v": 75,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_disguised_first_touch",
+    "action": "Disguised First Touch",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Agility",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_let_ball_run",
+    "action": "Let Ball Run",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD First Touch flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 99,
+      "strong": true
+     },
+     {
+      "name": "Composure",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_ground_pass_header",
+    "action": "Ground Pass / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Tiki Taka flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "tiki-taka",
+      "name": "Tiki Taka",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Pedri",
+  "year": 27,
+  "role": "cm-playmaker",
+  "family": "midfield",
+  "archetype": "Maestro",
+  "position": "Midfielder",
+  "traits": [
+   "Vision",
+   "Short Pass",
+   "Ball Control"
+  ],
+  "gold": [
+   "Incisive Pass"
+  ],
+  "regulars": [
+   "Tiki Taka",
+   "First Touch",
+   "Pinged Pass"
+  ],
+  "specs": [],
+  "accelerate": "Explosive",
+  "strengths": [
+   {
+    "attr": "Vision",
+    "v": 89
+   },
+   {
+    "attr": "Stamina",
+    "v": 89
+   },
+   {
+    "attr": "Ball Control",
+    "v": 89
+   },
+   {
+    "attr": "Long Pass",
+    "v": 85
+   },
+   {
+    "attr": "Short Pass",
+    "v": 84
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Strength",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Interceptions",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Shot Power",
+    "v": 70,
+    "atFloor": true
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 72,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_simple_through_pass",
+    "action": "Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_driven_through_pass",
+    "action": "Driven Through Pass",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 85,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 85,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_flair_through_swerve",
+    "action": "Flair Through / Swerve",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Incisive Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     },
+     {
+      "name": "Curve",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_controlled_first_touch_effort_touch",
+    "action": "Controlled First Touch / Effort Touch",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears First Touch, and his Ball Control 89 backs it up",
+    "playstyles": [
+     {
+      "id": "first-touch",
+      "name": "First Touch",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Ball Control",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Reactions",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

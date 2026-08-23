@@ -1,0 +1,480 @@
+{
+ "player": "Eric García",
+ "fc26": {
+  "player": "Eric García",
+  "year": 26,
+  "role": "cb-ballplayer",
+  "family": "defence",
+  "archetype": "Progressor",
+  "position": "Defender",
+  "traits": [
+   "Def. Aware",
+   "Stand Tackle",
+   "Short Pass"
+  ],
+  "gold": [
+   "Long Ball Pass",
+   "Anticipate",
+   "Intercept",
+   "Pinged Pass"
+  ],
+  "regulars": [
+   "Block",
+   "Aerial Fortress",
+   "Jockey",
+   "Precision Header",
+   "First Touch",
+   "Slide Tackle",
+   "Incisive Pass",
+   "Bruiser",
+   "Tiki Taka"
+  ],
+  "specs": [
+   {
+    "name": "Pioneer",
+    "grants": "Pinged Pass",
+    "perk": "Deep Architect",
+    "perkDesc": "Long diagonal switches gain speed and accuracy from your own half.",
+    "worn": true
+   },
+   {
+    "name": "Progressor+",
+    "grants": "Jockey",
+    "perk": "Line Splitter",
+    "perkDesc": "Successful line-breaking passes boost the receiver's first touch.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Def. Aware",
+    "v": 97
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 96
+   },
+   {
+    "attr": "Reactions",
+    "v": 95
+   },
+   {
+    "attr": "Long Pass",
+    "v": 95
+   },
+   {
+    "attr": "Jumping",
+    "v": 95
+   },
+   {
+    "attr": "Composure",
+    "v": 95
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Slide Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Pinged Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 94,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     },
+     {
+      "id": "incisive-pass",
+      "name": "Incisive Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 89,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 89,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3167,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Eric García",
+  "year": 27,
+  "role": "cb-ballplayer",
+  "family": "defence",
+  "archetype": "Progressor",
+  "position": "Defender",
+  "traits": [
+   "Def. Aware",
+   "Stand Tackle",
+   "Short Pass"
+  ],
+  "gold": [
+   "Long Ball Pass"
+  ],
+  "regulars": [
+   "Anticipate",
+   "Intercept",
+   "Pinged Pass"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Stand Tackle",
+    "v": 89
+   },
+   {
+    "attr": "Long Pass",
+    "v": 89
+   },
+   {
+    "attr": "Def. Aware",
+    "v": 89
+   },
+   {
+    "attr": "Composure",
+    "v": 89
+   },
+   {
+    "attr": "Vision",
+    "v": 84
+   },
+   {
+    "attr": "Strength",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Slide Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "Finishing",
+   "FK Acc.",
+   "Long Shots",
+   "Penalties",
+   "Volleys"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_through_pass",
+    "action": "Lofted Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lobbed_through_pass",
+    "action": "Lobbed Through Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Vision",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_lofted_ground_pass",
+    "action": "Lofted Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_precision_lob_pass",
+    "action": "Precision Lob Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Long Ball Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "long-ball-pass",
+      "name": "Long Ball Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 55,
+      "strong": false
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_ground_pass",
+    "action": "Driven Ground Pass",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Pinged Pass, and his Short Pass 84 and Long Pass 89 backs it up",
+    "playstyles": [
+     {
+      "id": "pinged-pass",
+      "name": "Pinged Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Short Pass",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Long Pass",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}

@@ -1,0 +1,509 @@
+{
+ "player": "Denzel Dumfries",
+ "fc26": {
+  "player": "Denzel Dumfries",
+  "year": 26,
+  "role": "fullback-attacking",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [
+   "Sprint Speed",
+   "Acceleration",
+   "Stamina"
+  ],
+  "gold": [
+   "Quick Step",
+   "Whipped Pass",
+   "Rapid",
+   "Jockey"
+  ],
+  "regulars": [
+   "Technical",
+   "Anticipate",
+   "Intercept",
+   "Relentless",
+   "First Touch",
+   "Trickster",
+   "Pinged Pass",
+   "Block",
+   "Incisive Pass"
+  ],
+  "specs": [
+   {
+    "name": "Speedster",
+    "grants": "Rapid",
+    "perk": "Jet Fuel",
+    "perkDesc": "Reaching top speed grants a short boost to Dribbling and Balance.",
+    "worn": true
+   },
+   {
+    "name": "Marauder+",
+    "grants": "Slide Tackle",
+    "perk": "Overlap Threat",
+    "perkDesc": "Overlapping runs grant a crossing accuracy boost in the final third.",
+    "worn": false
+   }
+  ],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Sprint Speed",
+    "v": 95
+   },
+   {
+    "attr": "Curve",
+    "v": 95
+   },
+   {
+    "attr": "Crossing",
+    "v": 95
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 94
+   },
+   {
+    "attr": "Stamina",
+    "v": 94
+   },
+   {
+    "attr": "Ball Control",
+    "v": 94
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc26_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 92,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Rapid flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 90,
+      "strong": false
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 94,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_movement_shield_jockey",
+    "action": "Shield / Jockey",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Jockey flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "jockey",
+      "name": "Jockey",
+      "gold": true
+     },
+     {
+      "id": "block",
+      "name": "Block",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Def. Aware",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Strength",
+      "v": 75,
+      "strong": false
+     },
+     {
+      "name": "Balance",
+      "v": 92,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_simple_lob_pass_cross_header",
+    "action": "Lob Pass / Cross / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc26_gameplay_attacking_advanced_driven_lob_pass_driven_cross",
+    "action": "Driven Lob Pass / Driven Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "his GOLD Whipped Pass flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 95,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 95,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ],
+   [
+    "L1",
+    "Two specializations are unlocked, not one — so the gold PlayStyle can be switched between games without respending a point."
+   ],
+   [
+    "L3",
+    "The defining attributes are pushed past the band edge toward the archetype's cap, because at level 100 the budget can afford what it cannot at level 40."
+   ]
+  ],
+  "spent": 3166,
+  "budget": 3167
+ },
+ "fc27": {
+  "player": "Denzel Dumfries",
+  "year": 27,
+  "role": "fullback-attacking",
+  "family": "defence",
+  "archetype": "Marauder",
+  "position": "Defender",
+  "traits": [
+   "Sprint Speed",
+   "Acceleration",
+   "Stamina"
+  ],
+  "gold": [
+   "Quick Step"
+  ],
+  "regulars": [
+   "Whipped Pass",
+   "Rapid",
+   "Jockey"
+  ],
+  "specs": [],
+  "accelerate": "Controlled",
+  "strengths": [
+   {
+    "attr": "Sprint Speed",
+    "v": 89
+   },
+   {
+    "attr": "Jumping",
+    "v": 89
+   },
+   {
+    "attr": "Stamina",
+    "v": 88
+   },
+   {
+    "attr": "Stand Tackle",
+    "v": 84
+   },
+   {
+    "attr": "Interceptions",
+    "v": 84
+   },
+   {
+    "attr": "Dribbling",
+    "v": 84
+   }
+  ],
+  "weaknesses": [
+   {
+    "attr": "Strength",
+    "v": 60,
+    "atFloor": true
+   },
+   {
+    "attr": "Composure",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Heading Acc.",
+    "v": 65,
+    "atFloor": true
+   },
+   {
+    "attr": "Slide Tackle",
+    "v": 75,
+    "atFloor": true
+   }
+  ],
+  "neverBought": [
+   "Att. Position",
+   "FK Acc.",
+   "Penalties"
+  ],
+  "neverBoughtWhy": "Standing rules (R5); Att. Position is AI positioning a Clubs player does manually.",
+  "controls": [
+   {
+    "actionId": "fc27_gameplay_movement_sprint",
+    "action": "Sprint",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "his GOLD Quick Step flares on this — the single strongest thing this build does",
+    "playstyles": [
+     {
+      "id": "quick-step",
+      "name": "Quick Step",
+      "gold": true
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Acceleration",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": true
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_movement_first_touch_knock_on",
+    "action": "First Touch / Knock-On",
+    "page": "Movement",
+    "group": "With the ball",
+    "star": null,
+    "why": "he wears Rapid, and his Dribbling 84 and Sprint Speed 89 backs it up",
+    "playstyles": [
+     {
+      "id": "rapid",
+      "name": "Rapid",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Dribbling",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Sprint Speed",
+      "v": 89,
+      "strong": true
+     },
+     {
+      "name": "Ball Control",
+      "v": 80,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_simple_lob_pass_cross_header",
+    "action": "Lob Pass / Cross / Header",
+    "page": "Attacking - Simple",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass, and his Crossing 84 backs it up",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 83,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_driven_lob_pass_driven_cross",
+    "action": "Driven Lob Pass / Driven Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass, and his Crossing 84 backs it up",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
+      "strong": true
+     },
+     {
+      "name": "Curve",
+      "v": 83,
+      "strong": false
+     }
+    ],
+    "perk": null
+   },
+   {
+    "actionId": "fc27_gameplay_attacking_advanced_high_lob",
+    "action": "High Lob / Cross",
+    "page": "Attacking - Advanced",
+    "group": "Attacking",
+    "star": null,
+    "why": "he wears Whipped Pass, and his Crossing 84 backs it up",
+    "playstyles": [
+     {
+      "id": "whipped-pass",
+      "name": "Whipped Pass",
+      "gold": false
+     }
+    ],
+    "attributes": [
+     {
+      "name": "Crossing",
+      "v": 84,
+      "strong": true
+     }
+    ],
+    "perk": null
+   }
+  ],
+  "rules": [
+   [
+    "R2",
+    "The gold PlayStyle is the archetype's free signature — worth around 500 AP against buying the same thing through a specialization."
+   ],
+   [
+    "R3",
+    "Acceleration and Sprint Speed never drop below 80. A build that cannot keep up with its own teammates is unplayable whatever else it has."
+   ],
+   [
+    "R8",
+    "Targets stop at 84, 89 and 94. Every cost tier steps up at 85 and again at 90, so the 85th point costs roughly double the 84th — stopping at the edge buys a second attribute."
+   ],
+   [
+    "R5",
+    "Attacking Position is never bought. It steers a player under AI control, and in Pro Clubs you are the player."
+   ]
+  ],
+  "spent": 962,
+  "budget": 962
+ }
+}
