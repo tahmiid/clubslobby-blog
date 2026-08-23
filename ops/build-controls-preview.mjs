@@ -55,17 +55,30 @@ const R = {};
 for (const y of years) R[y] = await rendererFor(y);
 const CONTROL_CSS = R[years[0]].CONTROL_CSS;
 
-const section = (b, R) => {
-  const moves = b.controls.map((c) => {
-    const m = R.lookup(c.action, { page: c.page });   // never a name map (§5)
-    return { ...m, why: c.why };
-  });
+// One list ran defending, dribbling and skill moves together and the owner
+// could not read to the end of it. The recommender groups by the dataset's own
+// page family now; this renders a heading per group.
+const renderGroup = (rows, R) => {
+  const moves = rows.map((c) => ({ ...R.lookup(c.action, { page: c.page }), why: c.why }));
   let html = R.moveList(moves, PLATFORM, SET);
   // moveList does not carry our why strings, so they are threaded back in by
   // position — the order is ours and stable.
   let i = 0;
-  html = html.replace(/<span class="cm-cap"/g, () =>
+  return html.replace(/<span class="cm-cap"/g, () =>
     `<span class="cm-why">${esc(moves[i++]?.why ?? '')}</span><span class="cm-cap"`);
+};
+
+const section = (b, R) => {
+  const order = [];
+  const byGroup = new Map();
+  for (const c of b.controls) {
+    if (!byGroup.has(c.group)) { byGroup.set(c.group, []); order.push(c.group); }
+    byGroup.get(c.group).push(c);
+  }
+  const html = order.map((g) =>
+    `<div class="cgroup"><h4 class="cgh">${esc(g)}`
+    + `<span class="cgn">${byGroup.get(g).length}</span></h4>`
+    + renderGroup(byGroup.get(g), R) + `</div>`).join('');
 
   const attrs = b.groups.map((g) => `<div class="grp"><h4>${esc(g.title)}</h4><dl>` +
     g.rows.map((r) => `<dt>${esc(r.name)}</dt><dd class="${r.cap ? 'cap' : r.floor ? 'floor' : ''}">${r.v}</dd>`).join('') +
@@ -146,6 +159,12 @@ body{background:var(--bg);color:var(--ink);margin:0;
 .build h3 .n{font:500 .7rem/1 Inter,sans-serif;letter-spacing:.08em;color:var(--dim);
   text-transform:none}
 .cm-why{display:block;color:var(--ink-2);font-size:.81rem;margin-top:.35rem}
+.cgroup{margin:0 0 1.5rem}
+.cgh{display:flex;align-items:center;gap:.6rem;margin:0 0 .7rem;
+  font:600 .68rem/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent)}
+.cgh::after{content:"";flex:1;height:1px;background:var(--line)}
+.cgn{order:3;color:var(--dim);letter-spacing:.04em;font-weight:500}
 .cmoves{overflow-x:auto}
 ${CONTROL_CSS}
 </style>
