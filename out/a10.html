@@ -21,96 +21,154 @@
 .lv27 .chip[disabled]{opacity:.32;cursor:not-allowed}
 .lv27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
 @media (max-width:600px){.lv27{padding:14px}}
-.lv27 input[type=range]{width:100%;accent-color:var(--accent);margin:4px 0 14px}
-.lv27 .top{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:12px}
-.lv27 .big{font-size:34px;font-weight:750;letter-spacing:-.02em;line-height:1}
-.lv27 .tier{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
-.lv27 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:13px}
-.lv27 .st{border:1px solid var(--grid);border-radius:9px;padding:9px 11px}
-.lv27 .st b{display:block;font-size:17px;font-variant-numeric:tabular-nums}
-.lv27 .st span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.lv27 .ld{display:grid;grid-template-columns:repeat(3,auto);gap:8px 22px;margin-bottom:14px;justify-content:start}
-.lv27 .ld .lbl{margin-bottom:3px}
-.lv27 .pips i{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--bar);margin-right:3px}
-.lv27 .pips i.on{background:var(--accent)}
-.lv27 .nx{border-left:3px solid var(--accent);padding:7px 12px;font-size:13px;color:var(--ink2);background:var(--bar);border-radius:0 8px 8px 0}
-.lv27 .nx b{color:var(--ink)}
-.lv27 .yr{display:flex;gap:6px;margin:0 0 10px}
-.lv27 .yr button{font:700 12px/1 system-ui,-apple-system,'Segoe UI',sans-serif;padding:7px 14px;
-  border-radius:999px;border:1px solid var(--ring);background:transparent;color:var(--ink2);cursor:pointer}
-.lv27 .yr button.on{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.lv27 .prov{margin:8px 0 0;font-size:12px;color:#e0b055}
-@media (max-width:600px){.lv27 .stats{grid-template-columns:1fr 1fr}.lv27 .ld{grid-template-columns:1fr;gap:8px}}
+.lv27{--s1:#0f1014;--ink:#fff;--ink2:#c3c7d1;--muted:#8d93a1;--bar:#242832;
+  --ring:rgba(255,255,255,.10);--accent:#2DE2C5;--gold:#E9C767;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);
+  background:var(--s1);border:1px solid var(--ring);border-radius:14px;padding:18px;
+  margin:0 0 1.6em;font-size:15px;line-height:1.45}
+.lv27 *{box-sizing:border-box}
+.lv27 .hd{font:800 20px/1.2 system-ui;margin:0 0 2px;letter-spacing:.01em}
+.lv27 .sub{font-size:13px;color:var(--ink2);margin:0 0 12px}
+.lv27 .yr{display:flex;gap:6px;margin:0 0 12px}
+.lv27 .yr button{font:700 12px/1 system-ui;padding:8px 15px;border-radius:999px;
+  border:1px solid var(--ring);background:transparent;color:var(--ink2);cursor:pointer}
+.lv27 .yr button.on{background:#fff;color:#12151c;border-color:#fff}
+.lv27 input[type=range]{width:100%;accent-color:var(--accent);margin:2px 0 4px}
+.lv27 .ticks{position:relative;height:9px;margin:0 0 14px}
+.lv27 .ticks i{position:absolute;top:0;width:2px;height:6px;background:var(--muted);border-radius:1px}
+.lv27 .head{display:flex;align-items:center;gap:16px}
+.lv27 .badge{width:78px;height:74px;border-radius:12px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;flex:none}
+.lv27 .badge .l{font:700 10px/1 system-ui;letter-spacing:.16em;opacity:.75}
+.lv27 .badge .n{font:800 29px/1 system-ui;margin-top:3px}
+.lv27 .apline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:4px}
+.lv27 .apline .big{font:800 20px/1 system-ui;color:var(--accent)}
+.lv27 .apline .tot{font-size:14px;color:var(--ink2)}
+.lv27 .apline .tier{font-size:13px;color:var(--muted)}
+.lv27 .grid2{margin-top:16px;padding-top:16px;border-top:1px solid var(--ring);
+  display:grid;gap:16px}
+@media(min-width:700px){.lv27 .grid2{grid-template-columns:1fr 1fr;gap:18px 34px}}
+.lv27 .gl{font:700 12px/1.3 system-ui;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin:0}
+.lv27 .gl span{margin-left:7px;font-weight:400;letter-spacing:0;text-transform:none;color:#767c8a}
+.lv27 .pips{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.lv27 .pips i{width:26px;height:26px;border-radius:7px;background:var(--bar);
+  border:1px solid var(--ring);display:block}
+.lv27 .pips i.on{background:rgba(45,226,197,.16);border-color:var(--accent)}
+.lv27 .pips i.gold{background:rgba(233,199,103,.18);border-color:var(--gold)}
+.lv27 .axp{align-self:end}
+.lv27 .axp b{font:800 23px/1 system-ui}
+.lv27 .axp span{font-size:14px;color:var(--ink2);margin-left:7px}
+.lv27 .ladder{margin-top:18px;padding-top:16px;border-top:1px solid var(--ring)}
+.lv27 .ladder ol{list-style:none;margin:10px 0 0;padding:0;max-height:250px;overflow-y:auto}
+.lv27 .ladder li{display:flex;gap:12px;padding:0 0 12px}
+.lv27 .ladder .dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--muted);flex:none;margin-top:4px}
+.lv27 .ladder li.on .dot{background:var(--accent);border-color:var(--accent)}
+.lv27 .ladder .lv{font:800 16px/1 system-ui;min-width:52px}
+.lv27 .ladder .lv i{font:700 9px/1 system-ui;font-style:normal;letter-spacing:.14em;color:var(--muted);margin-right:4px}
+.lv27 .ladder .ap{font:800 14px/1 system-ui;color:var(--accent);margin-left:2px}
+.lv27 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.lv27 .chips b{font:600 12px/1 system-ui;padding:5px 8px;border-radius:6px;
+  border:1px solid var(--ring);background:rgba(255,255,255,.04);color:var(--ink2)}
+.lv27 .chips b.m{border-color:var(--gold);color:var(--gold)}
+.lv27 .foot{font-size:12px;color:var(--muted);margin:12px 0 0}
+.lv27 .prov{color:#e0b055}
 </style>
-<p class="hd">Level rewards explorer</p>
-<p class="sub">Drag through the levels: what you hold at that level, and what unlocks next. Switch releases to compare the two ladders — FC 27 stops at 40.</p>
+<p class="hd">Progress Preview</p>
+<p class="sub">Everything a pro has earned by a given level. The marks are the levels that grant something.</p>
 <div class="yr" role="group" aria-label="Game release">
   <button type="button" data-yr="26" class="on">FC 26</button>
   <button type="button" data-yr="27">FC 27</button>
 </div>
 <input type="range" min="1" max="100" value="30" data-sl aria-label="Level">
-<div class="top"><span class="big" data-big>Level 30</span><span class="tier" data-tier>Gold 1</span></div>
-<div class="stats">
-  <div class="st"><b data-axp>17,800</b><span>match XP to get here</span></div>
-  <div class="st"><b data-ap>+63</b><span>AP at this level</span></div>
-  <div class="st"><b data-apc>674 / 3,167</b><span>AP earned so far</span></div>
+<div class="ticks" data-ticks></div>
+<div class="head">
+  <div class="badge" data-badge><span class="l">LEVEL</span><span class="n" data-big>30</span></div>
+  <div>
+    <div class="apline">
+      <span class="big" data-ap>+0</span>
+      <span class="tot" data-apc></span>
+      <span class="tier" data-tier></span>
+    </div>
+  </div>
 </div>
-<div class="ld" data-ld></div>
-<p class="nx" data-nx><b>Next: level 40</b> — Gold 2 card, 4th PlayStyle slot, 2nd signature perk (9,780 more match XP)</p>
+<div class="grid2" data-ld></div>
+<div class="ladder">
+  <p class="gl">Rewards ladder <span data-mcount></span></p>
+  <ol data-ol></ol>
+</div>
 <p class="foot" data-foot></p>
 <script>
 (function(){var R=document.querySelector('[data-lv27]');if(!R||R.dataset.on)return;R.dataset.on='1';
-// Both releases ship in the page. The ladders differ in length AND in which
-// unlock tracks exist - FC 27 has Masteries, FC 26 has no equivalent - so the
-// rows are rendered from each release's own tracks list, never hardcoded.
-var Y={"26":{"label":"FC 26","cap":100,"totalAp":3167,"tracks":[{"label":"PlayStyle slots","max":9},{"label":"Signature perks","max":2},{"label":"PlayStyle+","max":4}],"rows":[[1,0,100,100,"Bronze 1",1,1,0],[2,120,9,109,"Bronze 1",1,1,0],[3,320,9,118,"Bronze 1",1,1,0],[4,590,9,127,"Bronze 1",1,1,0],[5,910,19,146,"Bronze 1",1,1,0],[6,1290,10,156,"Bronze 1",1,1,0],[7,1710,10,166,"Bronze 1",1,1,0],[8,2160,10,176,"Bronze 1",1,1,0],[9,2640,10,186,"Bronze 1",1,1,0],[10,3150,38,224,"Bronze 2",2,1,0],[11,3690,13,237,"Bronze 2",2,1,0],[12,4250,13,250,"Bronze 2",2,1,0],[13,4840,13,263,"Bronze 2",2,1,0],[14,5450,13,276,"Bronze 2",2,1,0],[15,6080,25,301,"Silver 1",2,1,0],[16,6730,13,314,"Silver 1",2,1,0],[17,7400,13,327,"Silver 1",2,1,0],[18,8090,13,340,"Silver 1",2,1,0],[19,8800,13,353,"Silver 1",2,1,0],[20,9530,44,397,"Silver 1",3,1,0],[21,10280,19,416,"Silver 1",3,1,0],[22,11050,19,435,"Silver 1",3,1,0],[23,11840,19,454,"Silver 1",3,1,0],[24,12640,19,473,"Silver 1",3,1,0],[25,13460,38,511,"Silver 2",3,1,0],[26,14300,25,536,"Silver 2",3,1,0],[27,15150,25,561,"Silver 2",3,1,0],[28,16020,25,586,"Silver 2",3,1,0],[29,16900,25,611,"Silver 2",3,1,0],[30,17800,63,674,"Gold 1",3,1,1],[31,18710,25,699,"Gold 1",3,1,1],[32,19640,25,724,"Gold 1",3,1,1],[33,20580,25,749,"Gold 1",3,1,1],[34,21540,25,774,"Gold 1",3,1,1],[35,22510,38,812,"Gold 1",3,1,1],[36,23500,25,837,"Gold 1",3,1,1],[37,24500,25,862,"Gold 1",3,1,1],[38,25510,25,887,"Gold 1",3,1,1],[39,26540,25,912,"Gold 1",3,1,1],[40,27580,50,962,"Gold 2",4,2,1],[41,28630,25,987,"Gold 2",4,2,1],[42,29700,25,1012,"Gold 2",4,2,1],[43,30780,25,1037,"Gold 2",4,2,1],[44,31870,25,1062,"Gold 2",4,2,1],[45,32970,44,1106,"Gold 2",4,2,1],[46,34090,25,1131,"Gold 2",4,2,1],[47,35220,25,1156,"Gold 2",4,2,1],[48,36360,25,1181,"Gold 2",4,2,1],[49,37510,25,1206,"Gold 2",4,2,1],[50,38670,63,1269,"Platinum 1",4,2,2],[51,40390,25,1294,"Platinum 1",4,2,2],[52,42110,25,1319,"Platinum 1",4,2,2],[53,43830,25,1344,"Platinum 1",4,2,2],[54,45550,25,1369,"Platinum 1",4,2,2],[55,47270,50,1419,"Platinum 1",4,2,2],[56,48990,25,1444,"Platinum 1",4,2,2],[57,50710,25,1469,"Platinum 1",4,2,2],[58,52430,25,1494,"Platinum 1",4,2,2],[59,54150,25,1519,"Platinum 1",4,2,2],[60,55870,50,1569,"Platinum 1",5,2,2],[61,57590,25,1594,"Platinum 1",5,2,2],[62,59310,25,1619,"Platinum 1",5,2,2],[63,61030,25,1644,"Platinum 1",5,2,2],[64,62750,25,1669,"Platinum 1",5,2,2],[65,64470,50,1719,"Platinum 2",5,2,2],[66,66190,25,1744,"Platinum 2",5,2,2],[67,67910,25,1769,"Platinum 2",5,2,2],[68,69630,25,1794,"Platinum 2",5,2,2],[69,71350,25,1819,"Platinum 2",5,2,2],[70,73070,50,1869,"Platinum 2",6,2,2],[71,74790,25,1894,"Platinum 2",6,2,2],[72,76510,25,1919,"Platinum 2",6,2,2],[73,78230,25,1944,"Platinum 2",6,2,2],[74,79950,25,1969,"Platinum 2",6,2,2],[75,81670,75,2044,"Diamond 1",6,2,3],[76,83610,31,2075,"Diamond 1",6,2,3],[77,85550,31,2106,"Diamond 1",6,2,3],[78,87490,31,2137,"Diamond 1",6,2,3],[79,89430,31,2168,"Diamond 1",6,2,3],[80,91370,63,2231,"Diamond 2",7,2,3],[81,93310,31,2262,"Diamond 2",7,2,3],[82,95250,31,2293,"Diamond 2",7,2,3],[83,97190,31,2324,"Diamond 2",7,2,3],[84,99130,31,2355,"Diamond 2",7,2,3],[85,101070,88,2443,"Blue 1",7,2,3],[86,103320,31,2474,"Blue 1",7,2,3],[87,105570,31,2505,"Blue 1",7,2,3],[88,107820,31,2536,"Blue 1",7,2,3],[89,110070,31,2567,"Blue 1",7,2,3],[90,112320,63,2630,"Blue 2",8,2,3],[91,114570,31,2661,"Blue 2",8,2,3],[92,116820,31,2692,"Blue 2",8,2,3],[93,119070,31,2723,"Blue 2",8,2,3],[94,121320,31,2754,"Blue 2",8,2,3],[95,123570,100,2854,"Elite 1",9,2,4],[96,126310,50,2904,"Elite 1",9,2,4],[97,129050,50,2954,"Elite 1",9,2,4],[98,131790,50,3004,"Elite 1",9,2,4],[99,134530,50,3054,"Elite 1",9,2,4],[100,137270,113,3167,"Elite 2",9,2,4]],"marks":[{"level":1,"un":["Bronze 1 card","1st PlayStyle slot","1st signature perk"]},{"level":10,"un":["Bronze 2 card","2nd PlayStyle slot"]},{"level":15,"un":["Silver 1 card"]},{"level":20,"un":["3rd PlayStyle slot"]},{"level":25,"un":["Silver 2 card"]},{"level":30,"un":["Gold 1 card","1st PlayStyle+ upgrade"]},{"level":40,"un":["Gold 2 card","4th PlayStyle slot","2nd signature perk"]},{"level":50,"un":["Platinum 1 card","2nd PlayStyle+ upgrade"]},{"level":60,"un":["5th PlayStyle slot"]},{"level":65,"un":["Platinum 2 card"]},{"level":70,"un":["6th PlayStyle slot"]},{"level":75,"un":["Diamond 1 card","3rd PlayStyle+ upgrade"]},{"level":80,"un":["Diamond 2 card","7th PlayStyle slot"]},{"level":85,"un":["Blue 1 card"]},{"level":90,"un":["Blue 2 card","8th PlayStyle slot"]},{"level":95,"un":["Elite 1 card","9th PlayStyle slot","4th PlayStyle+ upgrade"]},{"level":100,"un":["Elite 2 card"]}],"provisional":false},"27":{"label":"FC 27","cap":40,"totalAp":962,"tracks":[{"label":"PlayStyle slots","max":3},{"label":"Signature perks","max":1},{"label":"PlayStyle+","max":1},{"label":"Masteries","max":2}],"rows":[[1,0,100,100,"Bronze 1",0,0,0,0],[2,80,9,109,"Bronze 1",0,0,0,0],[3,200,9,118,"Bronze 1",0,0,0,0],[4,325,9,127,"Bronze 1",0,0,0,0],[5,455,19,146,"Bronze 1",1,0,0,0],[6,590,10,156,"Bronze 1",1,0,0,0],[7,730,10,166,"Bronze 1",1,0,0,0],[8,875,10,176,"Bronze 1",1,0,0,0],[9,1025,10,186,"Bronze 1",1,0,0,0],[10,1180,38,224,"Bronze 2",1,1,0,1],[11,1350,13,237,"Bronze 2",1,1,0,1],[12,1535,13,250,"Bronze 2",1,1,0,1],[13,1735,13,263,"Bronze 2",1,1,0,1],[14,1950,13,276,"Bronze 2",1,1,0,1],[15,2180,25,301,"Bronze 2",2,1,0,1],[16,2430,13,314,"Bronze 2",2,1,0,1],[17,2700,13,327,"Bronze 2",2,1,0,1],[18,2990,13,340,"Bronze 2",2,1,0,1],[19,3300,13,353,"Bronze 2",2,1,0,1],[20,3630,44,397,"Silver 1",2,1,1,1],[21,3983,19,416,"Silver 1",2,1,1,1],[22,4359,19,435,"Silver 1",2,1,1,1],[23,4758,19,454,"Silver 1",2,1,1,1],[24,5180,19,473,"Silver 1",2,1,1,1],[25,5625,38,511,"Silver 1",2,1,1,1],[26,6095,25,536,"Silver 1",2,1,1,1],[27,6590,25,561,"Silver 1",2,1,1,1],[28,7110,25,586,"Silver 1",2,1,1,1],[29,7655,25,611,"Silver 1",2,1,1,1],[30,8225,63,674,"Silver 2",2,1,1,2],[31,8830,25,699,"Silver 2",2,1,1,2],[32,9470,25,724,"Silver 2",2,1,1,2],[33,10145,25,749,"Silver 2",2,1,1,2],[34,10855,25,774,"Silver 2",2,1,1,2],[35,11600,38,812,"Silver 2",2,1,1,2],[36,12390,25,837,"Silver 2",2,1,1,2],[37,13225,25,862,"Silver 2",2,1,1,2],[38,14105,25,887,"Silver 2",2,1,1,2],[39,15030,25,912,"Silver 2",2,1,1,2],[40,16000,50,962,"Gold 1",3,1,1,2]],"marks":[{"level":1,"un":["Bronze 1 card"]},{"level":5,"un":["1st PlayStyle slot"]},{"level":10,"un":["Bronze 2 card","signature perk","1st mastery"]},{"level":15,"un":["2nd PlayStyle slot"]},{"level":20,"un":["Silver 1 card","PlayStyle+ upgrade"]},{"level":30,"un":["Silver 2 card","2nd mastery"]},{"level":40,"un":["Gold 1 card","3rd PlayStyle slot"]}],"provisional":true}};
+var Y={"26":{"label":"FC 26","cap":100,"totalAp":3167,"tracks":[{"label":"PlayStyle Slots","max":9,"note":"open"},{"label":"Signature Perks","max":2,"note":"activated"},{"label":"Signature PlayStyles","max":4,"note":"upgraded to +","gold":true}],"rows":[[1,0,100,100,"Bronze 1",1,1,0],[2,120,9,109,"Bronze 1",1,1,0],[3,320,9,118,"Bronze 1",1,1,0],[4,590,9,127,"Bronze 1",1,1,0],[5,910,19,146,"Bronze 1",1,1,0],[6,1290,10,156,"Bronze 1",1,1,0],[7,1710,10,166,"Bronze 1",1,1,0],[8,2160,10,176,"Bronze 1",1,1,0],[9,2640,10,186,"Bronze 1",1,1,0],[10,3150,38,224,"Bronze 2",2,1,0],[11,3690,13,237,"Bronze 2",2,1,0],[12,4250,13,250,"Bronze 2",2,1,0],[13,4840,13,263,"Bronze 2",2,1,0],[14,5450,13,276,"Bronze 2",2,1,0],[15,6080,25,301,"Silver 1",2,1,0],[16,6730,13,314,"Silver 1",2,1,0],[17,7400,13,327,"Silver 1",2,1,0],[18,8090,13,340,"Silver 1",2,1,0],[19,8800,13,353,"Silver 1",2,1,0],[20,9530,44,397,"Silver 1",3,1,0],[21,10280,19,416,"Silver 1",3,1,0],[22,11050,19,435,"Silver 1",3,1,0],[23,11840,19,454,"Silver 1",3,1,0],[24,12640,19,473,"Silver 1",3,1,0],[25,13460,38,511,"Silver 2",3,1,0],[26,14300,25,536,"Silver 2",3,1,0],[27,15150,25,561,"Silver 2",3,1,0],[28,16020,25,586,"Silver 2",3,1,0],[29,16900,25,611,"Silver 2",3,1,0],[30,17800,63,674,"Gold 1",3,1,1],[31,18710,25,699,"Gold 1",3,1,1],[32,19640,25,724,"Gold 1",3,1,1],[33,20580,25,749,"Gold 1",3,1,1],[34,21540,25,774,"Gold 1",3,1,1],[35,22510,38,812,"Gold 1",3,1,1],[36,23500,25,837,"Gold 1",3,1,1],[37,24500,25,862,"Gold 1",3,1,1],[38,25510,25,887,"Gold 1",3,1,1],[39,26540,25,912,"Gold 1",3,1,1],[40,27580,50,962,"Gold 2",4,2,1],[41,28630,25,987,"Gold 2",4,2,1],[42,29700,25,1012,"Gold 2",4,2,1],[43,30780,25,1037,"Gold 2",4,2,1],[44,31870,25,1062,"Gold 2",4,2,1],[45,32970,44,1106,"Gold 2",4,2,1],[46,34090,25,1131,"Gold 2",4,2,1],[47,35220,25,1156,"Gold 2",4,2,1],[48,36360,25,1181,"Gold 2",4,2,1],[49,37510,25,1206,"Gold 2",4,2,1],[50,38670,63,1269,"Platinum 1",4,2,2],[51,40390,25,1294,"Platinum 1",4,2,2],[52,42110,25,1319,"Platinum 1",4,2,2],[53,43830,25,1344,"Platinum 1",4,2,2],[54,45550,25,1369,"Platinum 1",4,2,2],[55,47270,50,1419,"Platinum 1",4,2,2],[56,48990,25,1444,"Platinum 1",4,2,2],[57,50710,25,1469,"Platinum 1",4,2,2],[58,52430,25,1494,"Platinum 1",4,2,2],[59,54150,25,1519,"Platinum 1",4,2,2],[60,55870,50,1569,"Platinum 1",5,2,2],[61,57590,25,1594,"Platinum 1",5,2,2],[62,59310,25,1619,"Platinum 1",5,2,2],[63,61030,25,1644,"Platinum 1",5,2,2],[64,62750,25,1669,"Platinum 1",5,2,2],[65,64470,50,1719,"Platinum 2",5,2,2],[66,66190,25,1744,"Platinum 2",5,2,2],[67,67910,25,1769,"Platinum 2",5,2,2],[68,69630,25,1794,"Platinum 2",5,2,2],[69,71350,25,1819,"Platinum 2",5,2,2],[70,73070,50,1869,"Platinum 2",6,2,2],[71,74790,25,1894,"Platinum 2",6,2,2],[72,76510,25,1919,"Platinum 2",6,2,2],[73,78230,25,1944,"Platinum 2",6,2,2],[74,79950,25,1969,"Platinum 2",6,2,2],[75,81670,75,2044,"Diamond 1",6,2,3],[76,83610,31,2075,"Diamond 1",6,2,3],[77,85550,31,2106,"Diamond 1",6,2,3],[78,87490,31,2137,"Diamond 1",6,2,3],[79,89430,31,2168,"Diamond 1",6,2,3],[80,91370,63,2231,"Diamond 2",7,2,3],[81,93310,31,2262,"Diamond 2",7,2,3],[82,95250,31,2293,"Diamond 2",7,2,3],[83,97190,31,2324,"Diamond 2",7,2,3],[84,99130,31,2355,"Diamond 2",7,2,3],[85,101070,88,2443,"Blue 1",7,2,3],[86,103320,31,2474,"Blue 1",7,2,3],[87,105570,31,2505,"Blue 1",7,2,3],[88,107820,31,2536,"Blue 1",7,2,3],[89,110070,31,2567,"Blue 1",7,2,3],[90,112320,63,2630,"Blue 2",8,2,3],[91,114570,31,2661,"Blue 2",8,2,3],[92,116820,31,2692,"Blue 2",8,2,3],[93,119070,31,2723,"Blue 2",8,2,3],[94,121320,31,2754,"Blue 2",8,2,3],[95,123570,100,2854,"Elite 1",9,2,4],[96,126310,50,2904,"Elite 1",9,2,4],[97,129050,50,2954,"Elite 1",9,2,4],[98,131790,50,3004,"Elite 1",9,2,4],[99,134530,50,3054,"Elite 1",9,2,4],[100,137270,113,3167,"Elite 2",9,2,4]],"marks":[{"level":1,"un":[["PlayStyle slot 1",0],["Signature Perk",0],["Bronze 1 card",0]]},{"level":10,"un":[["PlayStyle slot 2",0],["Bronze 2 card",0]]},{"level":15,"un":[["Silver 1 card",0]]},{"level":20,"un":[["PlayStyle slot 3",0]]},{"level":25,"un":[["Silver 2 card",0]]},{"level":30,"un":[["PlayStyle+ upgrade",0],["Gold 1 card",0]]},{"level":40,"un":[["PlayStyle slot 4",0],["Signature Perk",0],["Gold 2 card",0]]},{"level":50,"un":[["PlayStyle+ upgrade",0],["Platinum 1 card",0]]},{"level":60,"un":[["PlayStyle slot 5",0]]},{"level":65,"un":[["Platinum 2 card",0]]},{"level":70,"un":[["PlayStyle slot 6",0]]},{"level":75,"un":[["PlayStyle+ upgrade",0],["Diamond 1 card",0]]},{"level":80,"un":[["PlayStyle slot 7",0],["Diamond 2 card",0]]},{"level":85,"un":[["Blue 1 card",0]]},{"level":90,"un":[["PlayStyle slot 8",0],["Blue 2 card",0]]},{"level":95,"un":[["PlayStyle slot 9",0],["PlayStyle+ upgrade",0],["Elite 1 card",0]]},{"level":100,"un":[["Elite 2 card",0]]}],"provisional":false},"27":{"label":"FC 27","cap":40,"totalAp":962,"tracks":[{"label":"PlayStyle Slots","max":3,"note":"open"},{"label":"Signature Perks","max":1,"note":"activated"},{"label":"Signature PlayStyles","max":1,"note":"upgraded to +","gold":true},{"label":"Masteries","max":2,"note":"earned","gold":true}],"rows":[[1,0,100,100,"Bronze 1",0,0,0,0],[2,80,9,109,"Bronze 1",0,0,0,0],[3,200,9,118,"Bronze 1",0,0,0,0],[4,325,9,127,"Bronze 1",0,0,0,0],[5,455,19,146,"Bronze 1",1,0,0,0],[6,590,10,156,"Bronze 1",1,0,0,0],[7,730,10,166,"Bronze 1",1,0,0,0],[8,875,10,176,"Bronze 1",1,0,0,0],[9,1025,10,186,"Bronze 1",1,0,0,0],[10,1180,38,224,"Bronze 2",1,1,0,1],[11,1350,13,237,"Bronze 2",1,1,0,1],[12,1535,13,250,"Bronze 2",1,1,0,1],[13,1735,13,263,"Bronze 2",1,1,0,1],[14,1950,13,276,"Bronze 2",1,1,0,1],[15,2180,25,301,"Bronze 2",2,1,0,1],[16,2430,13,314,"Bronze 2",2,1,0,1],[17,2700,13,327,"Bronze 2",2,1,0,1],[18,2990,13,340,"Bronze 2",2,1,0,1],[19,3300,13,353,"Bronze 2",2,1,0,1],[20,3630,44,397,"Silver 1",2,1,1,1],[21,3983,19,416,"Silver 1",2,1,1,1],[22,4359,19,435,"Silver 1",2,1,1,1],[23,4758,19,454,"Silver 1",2,1,1,1],[24,5180,19,473,"Silver 1",2,1,1,1],[25,5625,38,511,"Silver 1",2,1,1,1],[26,6095,25,536,"Silver 1",2,1,1,1],[27,6590,25,561,"Silver 1",2,1,1,1],[28,7110,25,586,"Silver 1",2,1,1,1],[29,7655,25,611,"Silver 1",2,1,1,1],[30,8225,63,674,"Silver 2",2,1,1,2],[31,8830,25,699,"Silver 2",2,1,1,2],[32,9470,25,724,"Silver 2",2,1,1,2],[33,10145,25,749,"Silver 2",2,1,1,2],[34,10855,25,774,"Silver 2",2,1,1,2],[35,11600,38,812,"Silver 2",2,1,1,2],[36,12390,25,837,"Silver 2",2,1,1,2],[37,13225,25,862,"Silver 2",2,1,1,2],[38,14105,25,887,"Silver 2",2,1,1,2],[39,15030,25,912,"Silver 2",2,1,1,2],[40,16000,50,962,"Gold 1",3,1,1,2]],"marks":[{"level":1,"un":[["Bronze 1 card",0]]},{"level":5,"un":[["PlayStyle slot 1",0]]},{"level":10,"un":[["Signature Perk",0],["Mastery point",1],["Bronze 2 card",0]]},{"level":15,"un":[["PlayStyle slot 2",0]]},{"level":20,"un":[["PlayStyle+ upgrade",0],["Silver 1 card",0]]},{"level":30,"un":[["Mastery point",1],["Silver 2 card",0]]},{"level":40,"un":[["PlayStyle slot 3",0],["Gold 1 card",0]]}],"provisional":true}},TF={"Bronze":["linear-gradient(160deg,#a8825d 0%,#6d4f33 100%)","#f7ecdf","#c8a37b"],"Silver":["linear-gradient(160deg,#dde2e9 0%,#98a1ad 100%)","#20242b","#e6ebf2"],"Gold":["linear-gradient(160deg,#f4e3b4 0%,#d0ac57 100%)","#3a2c14","#f6e9c4"],"Platinum":["linear-gradient(160deg,#d9f2ec 0%,#8fbfb6 100%)","#16302c","#e6faf5"],"Diamond":["linear-gradient(160deg,#dcf2ff 0%,#7fb6d9 100%)","#102836","#e8f7ff"],"Blue":["linear-gradient(160deg,#5f93e6 0%,#2b4fa8 100%)","#ffffff","#9dbcf5"],"Elite":["linear-gradient(160deg,#8a76e8 0%,#4a2fa8 100%)","#ffffff","#c3b6ff"]};
 var cur='26';
 var sl=R.querySelector('[data-sl]');var q=function(s){return R.querySelector(s)};
 var f=function(n){return n.toLocaleString('en-US')};
-function drawTracks(y,r){
-  var html='';
+function tierStyle(t){return TF[String(t||'').split(' ')[0]]||TF.Bronze}
+function drawTicks(y){
+  var h='';for(var i=0;i<y.marks.length;i++){
+    var pc=(y.marks[i].level-1)/(y.cap-1)*100;
+    h+='<i style="left:calc('+pc+'% - 1px)"></i>';}
+  q('[data-ticks]').innerHTML=h;
+}
+function drawGroups(y,r){
+  var h='';
   y.tracks.forEach(function(t,i){
     var n=r[5+i]||0,p='';
-    for(var j=0;j<t.max;j++)p+='<i class="'+(j<n?'on':'')+'"></i>';
-    html+='<div><span class="lbl">'+t.label+' <span>'+n+'</span>/'+t.max+'</span>'+
-          '<span class="pips">'+p+'</span></div>';
+    for(var j=0;j<t.max;j++)p+='<i class="'+(j<n?(t.gold?'gold':'on'):'')+'"></i>';
+    h+='<div><p class="gl">'+t.label+' <span>'+n+' of '+t.max+' '+t.note+'</span></p>'+
+       '<div class="pips">'+p+'</div></div>';
   });
-  q('[data-ld]').innerHTML=html;
+  h+='<div class="axp"><b>'+f(r[1])+'</b><span>'+(r[0]===1
+      ? 'Level 1 is where every pro starts'
+      : 'AXP needed to reach this level')+'</span></div>';
+  q('[data-ld]').innerHTML=h;
+}
+function drawLadder(y,lvl){
+  var h='';
+  for(var i=0;i<y.marks.length;i++){
+    var m=y.marks[i],row=y.rows[m.level-1];
+    var chips=m.un.map(function(u){return '<b class="'+(u[1]?'m':'')+'">'+u[0]+'</b>'}).join('');
+    h+='<li class="'+(m.level<=lvl?'on':'')+'"><span class="dot"></span><div>'+
+       '<span class="lv"><i>LVL</i>'+m.level+'</span>'+
+       '<span class="ap">+'+row[2]+' AP</span>'+
+       '<div class="chips">'+chips+'</div></div></li>';
+  }
+  q('[data-ol]').innerHTML=h;
+  q('[data-mcount]').textContent=y.marks.length+' of '+y.cap+' levels grant something';
 }
 function go(){
-  var y=Y[cur],r=y.rows[Math.min(+sl.value,y.cap)-1];
-  q('[data-big]').textContent='Level '+r[0];q('[data-tier]').textContent=r[4];
-  q('[data-axp]').textContent=f(r[1]);q('[data-ap]').textContent='+'+r[2];
-  q('[data-apc]').textContent=f(r[3])+' / '+f(y.totalAp);
-  drawTracks(y,r);
-  var m=null;for(var i=0;i<y.marks.length;i++)if(y.marks[i].level>r[0]){m=y.marks[i];break}
-  q('[data-nx]').innerHTML=m
-    ? '<b>Next: level '+m.level+'</b> — '+m.un.join(', ')+' ('+f(y.rows[m.level-1][1]-r[1])+' more match XP)'
-    : '<b>Level '+y.cap+'.</b> Everything is unlocked — '+f(y.totalAp)+' AP earned in total.';
+  var y=Y[cur],lvl=Math.min(+sl.value,y.cap),r=y.rows[lvl-1];
+  var st=tierStyle(r[4]);
+  var b=q('[data-badge]');b.style.background=st[0];b.style.border='2px solid '+st[2];
+  b.querySelector('.l').style.color=st[1];b.querySelector('.n').style.color=st[1];
+  q('[data-big]').textContent=r[0];
+  q('[data-ap]').textContent='+'+r[2];
+  q('[data-apc]').textContent='('+f(r[3])+' AP total)';
+  q('[data-tier]').textContent=r[4];
+  drawGroups(y,r);drawLadder(y,lvl);
   q('[data-foot]').innerHTML=y.provisional
-    ? 'FC 27 figures are read from the closed beta and are <b>provisional</b> — EA can retune them before release. FC 26 is community-derived and reproduces three independent sources exactly.'
+    ? '<span class="prov">FC 27 figures are read from the closed beta and are provisional</span> — EA can retune them before release. FC 26 is community-derived and reproduces three independent sources exactly.'
     : 'EA publishes none of this. Figures are community-derived and reproduce three independent sources’ totals exactly; the Pro Clubs HQ builder runs on the same table.';
 }
 R.querySelectorAll('[data-yr]').forEach(function(b){
   b.addEventListener('click',function(){
     cur=b.getAttribute('data-yr');
     R.querySelectorAll('[data-yr]').forEach(function(x){x.className=x===b?'on':''});
-    var y=Y[cur];
-    sl.max=y.cap;
-    if(+sl.value>y.cap)sl.value=y.cap;
-    go();
+    var y=Y[cur];sl.max=y.cap;if(+sl.value>y.cap)sl.value=y.cap;
+    drawTicks(y);go();
   });
 });
-sl.addEventListener('input',go);go();})();
+sl.addEventListener('input',go);drawTicks(Y['26']);go();})();
 </script>
 </div>
 <!--kg-card-end: html-->
 
 <h2>What the FC 27 ladder does differently</h2>
-<p>Flip the explorer above to FC 27 and the shape of the climb changes. The cap is <strong>40</strong>, not 100, and the whole run is worth <strong>962 AP</strong> against FC 26's 3,167 — so a finished FC 27 pro is roughly a third of an FC 26 one, and every point is fought over. You get three PlayStyle slots instead of nine, one signature perk instead of two, and one PlayStyle+ upgrade instead of four.</p>
-<p>The surprise is that the early climb is <em>identical</em>. AP earned by level 10, 20, 30 and 40 is exactly the same in both games — 224, 397, 674 and 962. FC 27 is not a slower ladder or a faster one; it is the same ladder, stopped at 40.</p>
-<p>The genuinely new thing has no FC 26 equivalent at all: <a href="/blog/fc27-masteries-explained/"><strong>Masteries</strong></a>, at levels 10 and 30, are a permanent progression layer that pays out across every build on your account rather than only the one you are levelling. That is the fourth row in the explorer, and it is why levelling a second archetype in FC 27 is worth doing even if you never play it.</p>
-<p>FC 27 numbers are read from the closed beta and can still be retuned before release. <a href="/blog/fc27-level-40-builds/">Finished level-40 builds</a> and <a href="/blog/fc27-archetype-changes/">what changed for your archetype</a> go further.</p>
+<p>Flip the explorer to FC 27 and almost every line changes. The cap is <strong>40</strong>, not 100. By that cap you have three PlayStyle slots instead of nine, one Signature Perk instead of two, one PlayStyle+ upgrade instead of four, and a Gold 1 card where an FC 26 pro at the same level holds Gold 2.</p>
+<p>One column does not change, and it is the interesting one. <strong>AP is identical at every level in both games</strong> — 224 banked by level 10, 397 by 20, 674 by 30, 962 by 40, the same in FC 26 and FC 27. What changes is how long that takes. Level 40 costs <strong>16,000 match XP in FC 27 against 27,580 in FC 26</strong>, and the discount is not flat: around level 10 an FC 27 pro is roughly a third of the way up the FC 26 curve, and by 40 it is closer to three fifths. FC 27 hands you the same spending power much sooner — and gives you fewer slots to spend it into.</p>
+<p>That is the whole shape of the new game in one sentence: a shorter climb to the same budget, spent into a tighter frame. It is why an FC 27 build is a set of hard choices rather than a shopping list, and why the <a href="/blog/fc27-level-40-builds/">finished level-40 builds</a> look nothing like their FC 26 counterparts.</p>
+<p>The genuinely new reward has no FC 26 equivalent at all. <a href="/blog/fc27-masteries-explained/"><strong>Masteries</strong></a>, at levels 10 and 30, are permanent and account-wide: they pay out across every build you own rather than only the one you are levelling. They are the fourth row in the explorer and the gold chips in the ladder, and they are the reason levelling a second archetype in FC 27 is worth doing even if you never play it.</p>
+<p>Every FC 27 figure here is read from the closed beta and can still be retuned before release. <a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> covers the rest.</p>
 
 
 <h2>The grind is heavily back-loaded</h2>
