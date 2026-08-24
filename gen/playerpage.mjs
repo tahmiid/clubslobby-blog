@@ -331,7 +331,18 @@ ${PCHQ_CSS}
     // `ops/link-sweep.mjs` is the sweep that would have caught it.
   ].filter(Boolean).join('\n\n') : '';
 
-  const others = all.filter((p) => p.n !== cfg.n).slice(0, 24);
+  // **A ROTATING window, not the first 24.** `filter(...).slice(0, 24)` on a
+  // 35-player roster always dropped the same eleven names - the array order is
+  // stable, so the tail was never linked from anywhere. The 2026-08-23 link
+  // audit found exactly that: ten player articles with ZERO inbound internal
+  // links, and Google reporting them "unknown". A page nothing links to is a
+  // page Google has little reason to fetch.
+  //
+  // Rotating from each article's own position gives every player the same
+  // number of inbound links and keeps the list stable between regenerations.
+  const idx = all.findIndex((p) => p.n === cfg.n);
+  const rotated = [...all.slice(idx + 1), ...all.slice(0, idx)];
+  const others = rotated.slice(0, 24);
   const related = others.map((p) =>
     `<a href="${BLOG}/${p.slug}-pro-clubs-build/">${esc(p.name)}</a>`).join(' · ');
 

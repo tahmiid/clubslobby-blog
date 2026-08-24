@@ -15,7 +15,7 @@
 //   long cells overlap the next column.
 // - AP prices use the exact a9/a11 cost model, and the stage plan must sum to
 //   the featured build's exact price — asserted, not hoped.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
@@ -60,6 +60,64 @@ const PCHQ_JS = readFileSync(path.join(WIDGET_DIR, 'pchq-build-card.js'), 'utf8'
 // are Cloudflare-cached for a year, so a same-name replacement serves stale
 // art more or less forever.
 const COVER_VERSION = '-v7';
+// **Varied anchor text into the FC 27 hub.** All thirteen spokes carried the
+// identical "See all FC 27 archetypes", which is thirteen links saying one
+// thing - a weak and slightly unnatural signal, and it missed the query
+// variants the page actually ranks for ("fc27 archetypes", "ea fc 27
+// archetypes", both at position ~7 while converting at 23%).
+//
+// Rotating by archetype id keeps it deterministic: the same spoke always
+// emits the same anchor, so a regeneration never reshuffles the graph.
+const FC27_ANCHORS = [
+  'See every FC 27 archetype',
+  'Compare the FC 27 archetypes',
+  'The full FC 27 archetype list',
+  'How the FC 27 archetypes changed',
+  'EA FC 27 archetypes, explained',
+];
+export const fc27Anchor = (archId) => {
+  const i = [...archId].reduce((n, c) => n + c.charCodeAt(0), 0) % FC27_ANCHORS.length;
+  return `<a href="/blog/fc27-archetypes/" style="color:#7fb0ff">${FC27_ANCHORS[i]}</a>`;
+};
+
+// **The players built on this archetype.** Two jobs at once, and the second is
+// why it exists (2026-08-23):
+//
+//   · For a reader, "who actually plays like this" is the obvious next
+//     question after reading what an archetype does.
+//   · For Google, it is the inbound link the player articles never had. The
+//     spokes are the pages that rank and get crawled; the player pages were
+//     ORPHANS, and Search Console reported them "unknown". A page nothing
+//     links to is a page Google has little reason to fetch.
+//
+// Read from data/players/, so a new player article joins the right spoke by
+// existing - no second list to keep in step with the roster.
+const PLAYER_INDEX = (() => {
+  const dir = path.join(import.meta.dirname, '..', 'data', 'players');
+  const byArchetype = {};
+  let files = [];
+  try { files = readdirSync(dir).filter((f) => f.endsWith('.json')); } catch { return {}; }
+  for (const f of files) {
+    const d = JSON.parse(readFileSync(path.join(dir, f), 'utf8'));
+    for (const year of ['fc26', 'fc27']) {
+      const b = d[year];
+      if (!b) continue;
+      (byArchetype[b.archetype_id] ??= new Map()).set(d.slug, d.player);
+    }
+  }
+  return byArchetype;
+})();
+
+export const playersOnArchetype = (archId, archName) => {
+  const found = PLAYER_INDEX[archId];
+  if (!found || found.size === 0) return '';
+  const links = [...found.entries()].sort((a, b) => a[1].localeCompare(b[1]))
+    .map(([slug, name]) =>
+      `<a href="/blog/${slug}-pro-clubs-build/">${esc(name)}</a>`).join(' · ');
+  return `<h2>Real players built on the ${esc(archName)}</h2>
+<p>Each one is a finished build you can open and copy, with the attributes, PlayStyles and the controls it is made for: ${links}.</p>`;
+};
+
 export const coverUrl = (archId) =>
   `https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-spoke-${archId}${COVER_VERSION}.jpg`;
 export const ft = (inches) => `${Math.floor(inches / 12)}'${inches % 12}"`;
@@ -437,8 +495,10 @@ ${cfg.physiquePara(ctx)}
 
 ${kg(`<div class="fc27-callout" style="margin:2em 0;padding:16px 20px;border:1px solid rgba(201,162,39,.45);border-radius:12px;background:rgba(58,47,16,.35)">
 <p style="margin:0 0 4px;font:700 11.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9a227">FC 27 is here</p>
-<p style="margin:0;font:400 14px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3">The ${esc(archName)} returns in FC 27 — and the FC 27 builder is live with ready-made level-40 builds. <a href="/blog/fc27-archetypes/" style="color:#7fb0ff">See all FC 27 archetypes</a> or <a href="${SITE}/explore?year=27" style="color:#7fb0ff">open FC 27 in the app</a>.</p>
+<p style="margin:0;font:400 14px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3">The ${esc(archName)} returns in FC 27. ${fc27Anchor(arch.id)} and see <a href="/blog/fc27-level-40-builds/" style="color:#7fb0ff">the finished FC 27 level 40 builds</a>, or <a href="/blog/fc27-best-specializations/" style="color:#7fb0ff">which FC 27 specializations are worth unlocking</a>. You can also <a href="${SITE}/explore?year=27&src=guide" style="color:#7fb0ff">open FC 27 in the app</a>.</p>
 </div>`)}
+
+${playersOnArchetype(arch.id, archName)}
 
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}

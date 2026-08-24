@@ -100,6 +100,7 @@ ${widget}
 
 <h2>The full build guide for every archetype</h2>
 <p>Each archetype has its own complete guide — the finished level-100 build, the AP spending order, the specialization call, and real builds you can open in the builder:</p>
+<p>Prefer the numbers side by side? <a href="/blog/pro-clubs-archetypes-compared/">Every outfield ceiling in one grid</a>.</p>
 <ul>
 ${ARCH.map((a) => {
   const n = title(a.name);

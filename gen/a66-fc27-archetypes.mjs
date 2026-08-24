@@ -49,6 +49,8 @@ ${buildGrid('a27f', featuredUnique, 'Start with one of these', 'One flagship bui
 <h2>The 13 archetypes</h2>
 ${rows}
 
+<p>Before you plan anything, check the hardware: <a href="/blog/fc27-clubs-platforms-ps4-xbox-one-switch/">FC 27 Clubs does not run on PS4, Xbox One or the original Switch</a>, and The Grounds is new-generation only.</p>
+
 ${appCta({
   href: '/?year=27',
   kicker: 'FC 27 in the app',

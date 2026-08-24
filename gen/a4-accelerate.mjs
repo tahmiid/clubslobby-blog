@@ -152,6 +152,8 @@ ${widget}
 <li><strong>Re-check after every upgrade.</strong> One point in the wrong attribute can flip you from Explosive to Mostly Explosive, silently.</li>
 </ol>
 
+<p>Want to check a specific set of numbers without opening the builder? The <a href="/blog/lengthy-vs-controlled-vs-explosive/">AcceleRATE calculator</a> runs the same three checklists against any height, Agility, Strength and Acceleration you type in.</p>
+
 ${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE change as you build', body: 'Height, agility and strength decide which curve you get. The planner recomputes it live while you move the sliders.', label: 'Open the builder' })}
 
 
