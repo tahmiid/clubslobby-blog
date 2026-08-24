@@ -96,6 +96,9 @@ const verify = async (href) => {
   let u;
   try { u = new URL(href); } catch { return { ok: false, why: 'unparseable' }; }
 
+  const badYear = checkYear(u);
+  if (badYear) return badYear;
+
   const build = u.pathname.match(/^\/b\/([0-9a-f-]{36})$/i);
   if (build) {
     const r = await get(`${API}/builds/${build[1]}/public`);
@@ -131,6 +134,22 @@ const verify = async (href) => {
 
   if (KNOWN_PATHS.has(u.pathname)) return { ok: true };
   return { ok: false, why: `unknown app path "${u.pathname}" - SPA answers 200 to anything, so this is unverified` };
+};
+
+// **`?year=` is load-bearing on an app link, not decoration** (2026-08-24).
+// Eleven blog links said "open FC 27 in the app" and pointed at
+// `/explore?year=27`; the app ignored the parameter and served FC 26 to every
+// reader whose stored year was FC 26 - the default. The URL resolved, the
+// status was 200, the page rendered perfectly, and only the contents were
+// wrong. The app honours it now; this asserts the value is one the app can
+// actually serve, so a typo like `?year=2027` is caught here rather than by a
+// reader landing in the wrong release.
+const SERVED_YEARS = new Set(['26', '27']);
+const checkYear = (u) => {
+  const y = u.searchParams.get('year');
+  if (y == null) return null;
+  return SERVED_YEARS.has(y) ? null
+    : { ok: false, why: `?year=${y} is not a release this server serves` };
 };
 
 const main = async () => {

@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { appCta, BRAND, esc, kg, baseCss } from './common.mjs';
+import { appCta, BRAND, SITE, esc, kg, baseCss } from './common.mjs';
 
 const P = 'lv27';
 
@@ -301,6 +301,30 @@ sl.addEventListener('input',go);drawTicks(Y['26']);go();})();
 </script>
 </div>`);
 
+// The widget above is a teaser, and deliberately stops being one here.
+//
+// The owner, 2026-08-24: *"the experience of this tool in the app is better.
+// To have the same experience we'd need to store archetypes and selection and
+// load that data - I wouldn't do that. I'd rather direct them to the app."*
+// Right call twice over: it avoids rebuilding archetype state in a static
+// page, and app traffic is where native ads will run once AdSense is
+// approved, so a crossing is worth more than a pageview.
+//
+// So this names what the app version does that this one cannot - your own
+// archetype's Signature PlayStyles and Perks by name, and your own build's
+// level - rather than being a generic "open the app" button.
+const appHandoff = kg(`<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">The full version</p>
+<h3>Run this against your own pro</h3>
+<p>The explorer above is release-wide. In the app it is <strong>your</strong> pro: pick an archetype and the same slider names that archetype's four Signature PlayStyles and both of its Perks, shows which are already unlocked at your build's current level, and ticks off the rungs you have passed. Free, no install.</p>
+<a class="b" href="${SITE}/level-rewards?src=guide">Open Progress Preview →</a>
+</div>`);
+
 const fc27Note = `<h2>What the FC 27 ladder does differently</h2>
 <p>Flip the explorer to FC 27 and almost every line changes. The cap is <strong>40</strong>, not 100. By that cap you have three PlayStyle slots instead of nine, one Signature Perk instead of two, one PlayStyle+ upgrade instead of four, and a Gold 1 card where an FC 26 pro at the same level holds Gold 2.</p>
 <p>One column does not change, and it is the interesting one. <strong>AP is identical at every level in both games</strong> — 224 banked by level 10, 397 by 20, 674 by 30, 962 by 40, the same in FC 26 and FC 27. What changes is how long that takes. Level 40 costs <strong>16,000 match XP in FC 27 against 27,580 in FC 26</strong>, and the discount is not flat: around level 10 an FC 27 pro is roughly a third of the way up the FC 26 curve, and by 40 it is closer to three fifths. FC 27 hands you the same spending power much sooner — and gives you fewer slots to spend it into.</p>
@@ -320,6 +344,8 @@ const html = `<p>Pro Clubs levelling runs to 100, and every reward on the way �
 
 ${widget}
 
+${appHandoff}
+
 ${fc27Note}
 <h2>The grind is heavily back-loaded</h2>
 <p>The match-XP curve steepens hard: level 2 costs ${fmt(L[1].axp_required_cumulative)} AXP, while the single step from 99 to 100 costs ${fmt(L[99].axp_required_cumulative - L[98].axp_required_cumulative)} — ${Math.round((L[99].axp_required_cumulative - L[98].axp_required_cumulative) / L[1].axp_required_cumulative)}× as much. Half of the total ${fmt(TOTAL_AXP)} AXP is spent getting past level ${halfAxp}, which means the last third of the bar costs as much as everything before it.</p>
@@ -333,7 +359,7 @@ ${fc27Note}
 </table>
 <p>${triple.length ? `Note the stacked levels: ${triple.map((m) => `<strong>level ${m.level}</strong> alone brings ${m.un.join(', ').replace(/, ([^,]*)$/, ' and $1')}` ).join('; ')}.` : ''} The 9th and final PlayStyle slot lands at level 95 — pair the schedule with our <a href="/blog/pro-clubs-playstyle-requirements/">PlayStyle requirements explorer</a> to see what you will actually be able to put in those slots.</p>
 
-${appCta({ href: '/level-rewards', kicker: 'Try it yourself', head: 'The full level table, live', body: 'Every level from 1 to 100 with its AXP, AP and unlocks — the same data as above, kept current with the game.', label: 'Open level rewards' })}
+${appCta({ href: '/level-rewards?year=27&src=guide', kicker: 'Planning for FC 27', head: 'The FC 27 ladder, against your own archetype', body: 'The same tool set to FC 27: forty levels, 962 AP, and the two Mastery points — with your archetype\u2019s own PlayStyles and Perks named.', label: 'Open Progress Preview in FC 27' })}
 
 <h2>Frequently asked questions</h2>
 <h3>What is the level cap in Pro Clubs?</h3>
