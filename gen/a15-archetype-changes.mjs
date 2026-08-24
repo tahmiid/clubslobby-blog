@@ -7,6 +7,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'ac27';
 
@@ -87,6 +88,8 @@ ${widget}
 <li>The level cap, and whether progression carries over from FC 26 (assume it doesn't).</li>
 </ul>
 
+
+${fc27Rail('fc27-archetype-changes')}
 
 ${appCta({
   href: '/explore?year=27',

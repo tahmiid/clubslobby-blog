@@ -5,6 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'pl27';
 
@@ -82,6 +83,8 @@ ${widget}
 </ol>
 <p>The one thing worth avoiding is pre-ordering a last-gen copy expecting Clubs to work as it does now. That's the mistake this page exists to prevent.</p>
 
+
+${fc27Rail('fc27-clubs-platforms-ps4-xbox-one-switch')}
 
 ${appCta({
   href: '/explore?year=27',

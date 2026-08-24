@@ -9,6 +9,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, appCta, archIcon } from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, FC27_PROG, buildGrid } from './fc27grid.mjs';
 
@@ -31,6 +32,8 @@ const html = `<p><strong>${FC27_BUILDS.length} ready-made FC 27 builds, every on
 
 <h2>Every build, by archetype</h2>
 ${sections}
+
+${fc27Rail('fc27-level-40-builds')}
 
 ${appCta({
   href: '/explore?year=27',

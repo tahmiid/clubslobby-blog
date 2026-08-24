@@ -9,6 +9,7 @@ import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { ARCH, BRAND, SITE, title, esc, kg, baseCss, appCta, archIcon } from './common.mjs';
 import { AD_A, AD_C } from './ads.mjs';
+import { fc26ToFc27 } from './fc27bridge.mjs';
 
 const META = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'meta-season3.json'), 'utf8'));
 const P = 'a31';
@@ -144,6 +145,8 @@ ${tierWidget}
 <p>The meta engine scores builds, not reputations: an admin declares the season (formation, level cap, one meta attribute per group), imports a reference build per position, and every published build is measured against it. Scores cluster in the 70s because a perfect 100 is structurally unreachable — no build can max every component at once. Two things this list deliberately is not: it is not a "worst to best" of the archetypes' design (a B tier archetype can be the right pick for your club's system), and it is not frozen — boards move with every published build, and the <a href="${SITE}/meta">live board</a> is always ahead of this page.</p>
 
 ${coverFig}
+
+${fc26ToFc27()}
 
 ${AD_A}
 

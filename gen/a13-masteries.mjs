@@ -7,6 +7,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'ms27';
 
@@ -109,6 +110,8 @@ ${widget}
 </ul>
 <p>When the game is out we'll rebuild the numbers the way we always do — from verified data, not launch-week guesses.</p>
 
+
+${fc27Rail('fc27-masteries-explained')}
 
 ${appCta({
   href: '/explore?year=27',

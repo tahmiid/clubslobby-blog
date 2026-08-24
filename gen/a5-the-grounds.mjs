@@ -5,6 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'gr27';
 
@@ -126,6 +127,8 @@ ${widget}
 <p>We rebuild the catalog from scratch every year — attribute ceilings, AP costs, PlayStyle requirements, AcceleRATE thresholds — and we don't publish numbers we haven't verified against more than one source.</p>
 <p>That means our FC 27 build tools land when there's real data to put in them, not on reveal day. Until then this page gets updated claim by claim, and everything else on this site is FC 26 content, tagged as such, and stays accurate for the game it describes.</p>
 
+
+${fc27Rail('fc27-the-grounds-pro-clubs-explained')}
 
 ${appCta({
   href: '/explore?year=27',

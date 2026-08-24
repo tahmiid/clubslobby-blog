@@ -5,6 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'co27';
 
@@ -78,6 +79,8 @@ ${widget}
 <li>Whether Elite status (and Elite Objectives access) resets each season.</li>
 </ul>
 
+
+${fc27Rail('fc27-club-objectives')}
 
 ${appCta({
   href: '/explore?year=27',

@@ -7,6 +7,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, archIcon } from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 import { FC27_BUILDS, FC27_ARCH, psName, buildCard, gridCss } from './fc27grid.mjs';
 
 const wearerOf = (arcId, specId) =>
@@ -38,6 +39,8 @@ const html = `<p><strong>Every FC 27 archetype carries three specializations, an
 
 <h2>How specializations work</h2>
 <p>Meet a specialization's attribute criteria and it unlocks; select it and its PlayStyle+ becomes available in your signature slot. You don't have to take it — keeping the archetype's original signature is a real choice, and some of the best builds do exactly that (Mbappé keeps Low Driven Shot over Game Changer+). The criteria below are as they appear in our builder; treat exact numbers as rumor until EA publishes them.</p>
+
+${fc27Rail('fc27-best-specializations')}
 
 ${appCta({
   href: '/explore?year=27',

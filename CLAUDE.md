@@ -106,6 +106,56 @@ Two things about their shape were settled by the owner on 2026-08-23:
   2026-08-23, so the exporter warns when a year is too thin and the grid
   renders nothing rather than padding itself with zero-copy builds.
 
+## Watching how readers move
+
+Three tools, three different questions. Reaching for the wrong one wastes a
+day:
+
+| Question | Tool |
+|---|---|
+| How do people ARRIVE? | Search Console (`adsense_readiness.py` shares its auth) |
+| Which links EXIST, and with what anchor? | `ops/link-graph.mjs` |
+| Which links are actually USED? | `ops/flow-report.py` |
+
+```bash
+ssh clubs "cd /root/publish && python3 flow-report.py --days 14"
+```
+
+`flow-report.py` reconstructs article-to-article movement from nginx's
+referrer column, and its parsing is **deliberately identical to
+`funnel-report.py`** — same line regex, same bot pattern, same internal-traffic
+rules. They are twinned; a judgement that differs between them makes both
+untrustworthy.
+
+**The 24 Aug baseline, to compare against later.** The owner's rule was that
+readers move FC 26 → FC 27 but never back. The direction is right; the volume
+was the surprise:
+
+    FC 26 -> FC 26  155      FC 26 -> FC 27   2
+    FC 27 -> FC 27    9      FC 27 -> FC 26   2
+
+Cross-release movement was not one-directional, it was **absent** — and not
+for want of a link: all thirteen spokes had carried an FC 27 callout since
+16 Aug and it produced two clicks in a fortnight. Two things the data settled:
+
+- **Hub pages are the engine.** Every meaningful transition starts at a
+  roundup; `best-pro-clubs-archetypes` alone sent ~74 readers onward. A
+  roundup reader is still choosing, a spoke reader has already chosen — so
+  the FC 27 bridge belongs on roundups, high, not in a box below the fold.
+- **FC 27 pages were terminal.** `fc27-club-objectives` took 95 entries and
+  sent 0 onward, `fc27-skill-moves` 69 and 0. Search was already delivering
+  ~380 FC 27 entries a fortnight and every one left from where it landed.
+
+`gen/fc27bridge.mjs` is the fix for both directions and holds the ordering
+rationale: an existing player wants to know what is DIFFERENT, so Disruptor
+(the only new archetype) leads, then Masteries, then what changed for their
+archetype.
+
+**Still missing: an FC 27 level-progression article.** The owner named it as
+the strongest draw for an FC 26 player and there is no such page —
+`pro-clubs-level-rewards` is FC 26 and `fc27-level-40-builds` is about builds,
+not about how progression works.
+
 ## Instrumentation rules
 
 - **`ops/funnel-report.py` is twinned with the app repo's

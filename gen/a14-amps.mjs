@@ -6,6 +6,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'am27';
 
@@ -84,6 +85,8 @@ ${widget}
 <li><strong>Pricing.</strong> Nothing on Store cost, in Coins or otherwise.</li>
 </ul>
 
+
+${fc27Rail('fc27-amps-explained')}
 
 ${appCta({
   href: '/explore?year=27',

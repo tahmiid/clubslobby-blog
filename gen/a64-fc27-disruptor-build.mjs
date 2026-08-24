@@ -10,6 +10,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta } from './common.mjs';
+import { fc27Rail } from './fc27bridge.mjs';
 import { FC27_BUILDS, FC27_ARCH, buildGrid, psName } from './fc27grid.mjs';
 
 const disr = FC27_BUILDS.filter((b) => b.archetype === 'disruptor')
@@ -32,6 +33,8 @@ ${specs.map((s) => `<div class="r"><b>${esc(s.name)}</b><span class="ps">${esc(p
 const html = `<p><strong>Disruptor is the only new archetype in FC 27</strong> — EA's own reveal names it, models it on Roy Keane, and hands it the central-midfield destroyer job: win the ball, set the tempo, let someone else take the bow. Here are eight Disruptor builds you can open, copy and play with right now.</p>
 
 ${buildGrid('d27g', disr, 'FC 27 Disruptor builds', 'Casemiro, Rice, Tchouaméni, Caicedo, Palhinha — plus Keane, Gattuso and Vieira from the legends shelf. Tap to open.')}
+
+${fc27Rail('fc27-disruptor-build')}
 
 ${appCta({
   // Was `/build?year=27&archetype=disruptor` - a bare parameterised route,

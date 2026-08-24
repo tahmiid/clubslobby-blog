@@ -13,6 +13,7 @@ import path from 'node:path';
 import { ARCH, BRAND, SITE, CATS, title, esc, kg, baseCss, appCta, archIcon, ceiling } from './common.mjs';
 import { ft, psName, psIcon } from './spoke.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
+import { fc26ToFc27 } from './fc27bridge.mjs';
 
 const META = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'meta-season3.json'), 'utf8'));
 
@@ -154,6 +155,8 @@ ${grid}
 
 ${cfg.afterGrid ? cfg.afterGrid({ archs }) : ''}
 ${coverFig}
+
+${fc26ToFc27()}
 
 ${AD_A}
 
