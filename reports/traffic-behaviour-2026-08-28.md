@@ -1,5 +1,5 @@
 # Blog traffic, reading patterns, and what we can measure
-**proclubshq.com · prepared 2026-08-27 · from committed files only**
+**proclubshq.com · prepared 2026-08-28 · from committed files only**
 
 ---
 
@@ -9,7 +9,7 @@ The production box is **unreachable from this environment** — no ssh, so no li
 
 **The committed hard-traffic record is six tables, not five.** Five are `reports/funnel/*.txt` (2026-08-11, -12, -14, -21, -22). The sixth is embedded in `reports/affiliate/2026-08-20-baseline.txt:41-56` — a full `funnel-report.py` run covering 2026-08-14 → 2026-08-20, and the *only* pre-internal-filter run of the 14–19 Aug days. Its own header says why it exists: "It cannot be reconstructed later: nginx keeps ~14 days" (`reports/affiliate/2026-08-20-baseline.txt:15`).
 
-**The record is frozen and already has a hole.** `ops/funnel-report.py:24` and `ops/funnel-snapshot.sh:8-10` both note ~14-day nginx rotation. Today is 2026-08-27; the last commit in this repo is `bcd780b`, 2026-08-23 23:07:45 -0400. **2026-08-24 through 2026-08-27 exist only on the box and in no committed file**, and 2026-08-23 is a partial day that can never be completed.
+**The record is frozen and already has a hole.** `ops/funnel-report.py:24` and `ops/funnel-snapshot.sh:8-10` both note ~14-day nginx rotation. Today is 2026-08-28; the last commit in this repo is `bcd780b`, 2026-08-23 23:07:45 -0400. **2026-08-24 through 2026-08-28 exist only on the box and in no committed file**, and 2026-08-23 is a partial day that can never be completed.
 
 ---
 
@@ -312,7 +312,7 @@ The last figure lands on the doc's 32% to two significant figures. It is one day
 ## 7. The three things I'd do next
 
 **1. Take a snapshot today — funnel and flow — before 08-14 rotates off the box.**
-Today is 2026-08-27 and the last committed table ends 2026-08-23. A `funnel-snapshot.sh` run right now still captures 08-14 onward and closes the four-day hole in the permanent record; wait a week and it cannot. In the same sitting, run `flow-report.py --days 14` and commit the output into a new `reports/flow/` — there is **no committed flow output at all**, and the 24 Aug baseline the entire FC 27 bridge was built on rotates away around 7 September. Also due today by the repo's own calendar: the affiliate cannibalisation re-run set for "~27 Aug" (`MONETIZATION.md:378-392`), against a baseline whose header says it cannot be reconstructed. Three captures, one session, and the alternative is losing all three permanently.
+Today is 2026-08-28 and the last committed table ends 2026-08-23. **2026-08-14 is at or past the edge of the ~14-day rotation window right now** — a `funnel-snapshot.sh` run today may already have lost it, and every further day loses another. It still closes the five-day hole (08-24..08-28) in the permanent record; wait a week and it cannot. In the same sitting, run `flow-report.py --days 14` and commit the output into a new `reports/flow/` — there is **no committed flow output at all**, and the 24 Aug baseline the entire FC 27 bridge was built on rotates away around 7 September. Also due today by the repo's own calendar: the affiliate cannibalisation re-run set for "~27 Aug" (`MONETIZATION.md:378-392`), against a baseline whose header says it cannot be reconstructed. Three captures, one session, and the alternative is losing all three permanently.
 
 **2. Join `?src=` to the referring article in `funnel-report.py`, and make `appCta()` require a tag.**
 These are the same fix from two ends, and together they cost maybe forty lines. Right now the single number the grid rollout was decided on — grid 32% vs card 10% — **cannot be recomputed by any tool in this repo**, and my independent recount of the same days disagrees with the doc by 29–45%. Meanwhile 24 of 26 `appCta` call sites are untagged, 182 app links in `out/` carry no tag, `src=grid` means three different surfaces, `src=digest` has no emitter, and every FC 27 grid click goes to a footnote instead of a column. The next layout decision currently has no reproducible instrument. Teach both parsers in the same change — `CLAUDE.md:164-166` records exactly what happens when only one learns a tag.
