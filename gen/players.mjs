@@ -28,7 +28,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, BRAND, SITE, title, esc, kg, baseCss, appCta } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
-import { affArm, affBeacon, assign as assignArms } from './affexp.mjs';
+import { affArm, affBeacon, assign as assignArms, ARMS, EVENT } from './affexp.mjs';
 import { gridCss } from './fc27grid.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { coverUrl, ft, psName, psIcon } from './spoke.mjs';
@@ -179,9 +179,112 @@ const factRows = (b, year) => {
 // One arm assignment for the whole batch (gen/affexp.mjs).
 const ARM_OF = assignArms(PLAYERS.map((p) => p.slug));
 const all = PLAYERS;
+
+// data/affiliate-arms.json — the assignment, written for the reader.
+//
+// `ops/affiliate-experiment.py` used to keep its own copy of all of this: the
+// arm names (the rejected lede/inline/footer) and a fifteen-slug roster. Both
+// were true when they were typed and both were wrong from 2026-08-23, so the
+// report printed empty rows for arms nothing emits and never showed the real
+// afterLead/pageEnd numbers sitting in the same query. It reads this file now.
+//
+// Nothing here is transcribed. ARMS and EVENT come from affexp.mjs; which
+// blocks each article actually carries is read back OUT of the HTML this run
+// just wrote, so the fixed `kit` block (playerpage.mjs stamps it directly, it
+// is not an arm) cannot drift from what the pages do.
+const ARMS_FILE = path.join(DIR, 'affiliate-arms.json');
+const TODAY = new Date().toISOString().slice(0, 10);
+
+const writeArms = (blocksOf) => {
+  const slugs = [...ARM_OF.keys()].sort();
+  const articles = {};
+  for (const s of slugs) {
+    articles[s] = { n: PLAYERS.find((p) => p.slug === s).n, arm: ARM_OF.get(s), blocks: blocksOf[s] };
+  }
+  const rendered = [...new Set(slugs.flatMap((s) => blocksOf[s]))];
+  // The beacon reports ONE impression per page view - the FIRST block in
+  // document order (affexp.mjs, `querySelector`). Everything after it on the
+  // page has clicks and no denominator, which the report has to say rather
+  // than divide by another arm's impressions.
+  const measured = [...new Set(slugs.map((s) => blocksOf[s][0]).filter(Boolean))];
+
+  // The window the report defaults to. `startedAt` is the day the CURRENT
+  // assignment came into force, not the day this file was written: a
+  // regeneration that moves nobody between arms must not restart the
+  // comparison, and one that DOES move somebody must (affexp.mjs: adding an
+  // article reshuffles from its insertion point).
+  let startedAt = TODAY;
+  try {
+    const prev = JSON.parse(readFileSync(ARMS_FILE, 'utf8'));
+    // The RENDERED blocks are part of the comparison, not just the arm map.
+    // A merchant flip changes what every page emits while moving nobody
+    // between arms: cdkeys and fanatical are pending review right now, and
+    // the day one is approved the blocks start rendering for the first time
+    // on that side. Comparing arms alone, startedAt would carry forward and
+    // the report would average the days that emitted nothing with the days
+    // that did — the same silent-window error as the 30-day default this
+    // file replaced. A pending merchant emits no block at all (affexp.mjs),
+    // so `blocks` is where that shows up.
+    const same = prev.experiment?.join() === ARMS.join()
+      && Object.keys(prev.articles ?? {}).length === slugs.length
+      && slugs.every((s) => prev.articles[s]?.arm === ARM_OF.get(s)
+        && (prev.articles[s]?.blocks ?? []).join() === blocksOf[s].join());
+    if (same && prev.startedAt) startedAt = prev.startedAt;
+    else console.warn(`   !! the assignment or the rendered blocks changed — the comparison window restarts at ${TODAY}`);
+  } catch { /* first write */ }
+
+  writeFileSync(ARMS_FILE, `${JSON.stringify({
+    _comment: [
+      'The affiliate placement experiment: which arm each article carries.',
+      'gen/players.mjs writes this file, ops/affiliate-experiment.py reads it.',
+      'A regeneration overwrites everything here, so do not hand-edit it - the',
+      'one exception is noted under startedAt.',
+      '',
+      'startedAt   the day the CURRENT assignment came into force. Carried',
+      '            forward across regenerations, reset the moment any slug',
+      '            changes arm. It is the window the report defaults to,',
+      '            because a 30-day default counted 20 days in which these',
+      '            pages did not exist. The first write (2026-08-28) was',
+      '            seeded BY HAND to 2026-08-23 - the pages had carried these',
+      '            arms since the 23rd and only started recording it on the',
+      '            28th - and a regeneration keeps whatever it finds here.',
+      'experiment  the arms being compared (gen/affexp.mjs ARMS).',
+      'fixed       arms that are not in the experiment. `kit` is the fixed',
+      '            accessories block every page carries; playerpage.mjs stamps',
+      '            it directly. Derived from the rendered HTML, never typed.',
+      'measured    the arms the impression beacon reports. It sends ONE',
+      '            impression per page view, for the FIRST .pchq-aff[data-arm]',
+      '            block on the page, and the game block always precedes the',
+      '            kit block — so kit has clicks and no denominator, and no',
+      '            clicks-per-view rate can honestly be printed for it.',
+      'events      the beacon path shapes, so the reader does not transcribe',
+      '            them either: a click is <path><click><arm>, an impression',
+      '            <path><impression><arm>, and the impression prefix starts',
+      '            with the click prefix — test the longer one first.',
+      'blocks      what each article actually rendered, in document order. A',
+      '            pending merchant emits nothing at all, so an empty list is',
+      '            the honest record of an article with no affiliate block.',
+    ],
+    startedAt,
+    generatedAt: TODAY,
+    experiment: ARMS,
+    fixed: rendered.filter((a) => !ARMS.includes(a)),
+    measured,
+    events: EVENT,
+    articles,
+  }, null, 1)}\n`);
+  console.log(`-> ${ARMS_FILE} (assignment in force since ${startedAt})`);
+};
+
+const blocksOf = {};
 for (const cfg of PLAYERS) {
   const html = renderPlayerPage(cfg, all, { CTRL, analysisFor, ARM_OF });
   const out = path.join(import.meta.dirname, '..', 'out', `a${cfg.n}.html`);
   writeFileSync(out, html);
+  // Read back what shipped rather than what we meant to ship: `data-arm` is
+  // stamped by affArm() and by nothing else, and a pending merchant emits no
+  // block at all.
+  blocksOf[cfg.slug] = [...html.matchAll(/data-arm="([^"]+)"/g)].map((m) => m[1]);
   console.log(`a${cfg.n} ${cfg.slug.padEnd(20)} arm=${ARM_OF.get(cfg.slug).padEnd(7)} ${html.length} bytes`);
 }
+writeArms(blocksOf);

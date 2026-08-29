@@ -49,6 +49,16 @@ import { kg } from './common.mjs';
 // owner rejected them. What varies now is which CTA the block follows.
 export const ARMS = ['afterLead', 'pageEnd'];
 
+// The beacon's event vocabulary, named once because the READER kept a second
+// copy of it. `ops/affiliate-experiment.py` transcribed the arm names AND the
+// `/evt/aff-` shape; the names were the rejected lede/inline/footer, so from
+// 2026-08-23 the report printed three empty rows for arms nothing emits while
+// every real click sat in the same query, undisplayed. The report loads both
+// out of data/affiliate-arms.json now, which gen/players.mjs writes from these
+// exact constants — so renaming an event reaches the report on the next
+// generation instead of silencing it.
+export const EVENT = { path: '/evt/', click: 'aff-', impression: 'aff-seen-' };
+
 // Deterministic AND balanced. A hash of the slug is deterministic but not
 // balanced - the first run came out 8 footer / 4 inline / 3 lede, which wastes
 // the smaller arms' statistical power for no reason. Round-robin over the
@@ -85,7 +95,7 @@ export const affBeacon = () => kg(`<script>
   function send(ev){
     var s = sid(); if(!s) return;
     try{
-      var body = JSON.stringify({ path: '/evt/' + ev, sid: s });
+      var body = JSON.stringify({ path: '${EVENT.path}' + ev, sid: s });
       if(navigator.sendBeacon){
         navigator.sendBeacon('/api/metrics/view', new Blob([body], {type:'application/json'}));
       } else {
@@ -99,7 +109,7 @@ export const affBeacon = () => kg(`<script>
   // and harder question than "was it served", and the arms are compared
   // against each other, so the same simple measure on all three is enough.
   var first = document.querySelector('.pchq-aff[data-arm]');
-  if (first) send('aff-seen-' + first.getAttribute('data-arm'));
+  if (first) send('${EVENT.impression}' + first.getAttribute('data-arm'));
   document.addEventListener('click', function(e){
     var a = e.target && e.target.closest && e.target.closest('.pchq-aff a[href]');
     if(!a) return;
@@ -107,7 +117,7 @@ export const affBeacon = () => kg(`<script>
     var arm = box && box.getAttribute('data-arm');
     var s = sid();
     if(!arm) return;
-    send('aff-' + arm);
+    send('${EVENT.click}' + arm);
   }, true);
 })();
 </script>`);

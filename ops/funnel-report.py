@@ -4,6 +4,16 @@
 #   Run ON THE BOX:   funnel-report.py            # everything the logs hold
 #                     funnel-report.py --days 7
 #
+# EDITING THIS FILE IS HALF THE CHANGE. The copy that runs is
+# /usr/local/bin/funnel-report.py and it is NOT synced from the repo
+# (DEPLOYMENT.md's funnel section, same rule as the watchdog). ops/funnel-
+# snapshot.sh runs the DEPLOYED copy, so a snapshot taken after editing here
+# and before the scp below is the old report wearing today's date — it does
+# not error, it just silently lacks whatever you added:
+#
+#   scp -i ~/.ssh/proclubslobby_ed25519 ops/funnel-report.py \
+#       root@91.99.52.207:/usr/local/bin/
+#
 # Why logs and not a tracker: the app deliberately ships no telemetry, and
 # the answer to "how many readers cross to the app" is already recorded —
 # every click from a /blog/ page to an app page carries a Referer, and the
@@ -50,6 +60,30 @@
 # "1" (a browser gets that cookie by ever holding an admin session). The
 # dropped count is printed on the report, so a run where the filter had
 # nothing to bite on is visibly different from a run where it worked.
+#
+# Three OUTPUT changes on 2026-08-28, all from the traffic-behaviour audit
+# (reports/traffic-behaviour-2026-08-28.md §5). None of them touches a parsing
+# judgement — those are twinned with the app collector and move in one sitting:
+#
+# - **The tables below the day rows ignored `--days`.** They were accumulated
+#   over every parsed line while `--days` sliced `all_days` at print time, so
+#   `--days 7` printed seven day rows above a fortnight of article totals and
+#   said "(whole range)" over both. They are keyed by day now, aggregated over
+#   the selected window, and every title names the window it covers.
+# - **`?src=` was never joined to the referring article.** The tag counters are
+#   site-wide-per-day and the article table has no tag split, so the number the
+#   grid rollout was decided on — grid 32% vs card 10% of article views, the
+#   comparison CLAUDE.md requires because a baked grid never hydrates — could
+#   not be recomputed by anything in this repo. Both halves were already in
+#   scope at the same point in the loop; they are joined now.
+# - **A tag can fail in two opposite directions and both were silent.** Emitted
+#   but not counted is the reel card reading dead for three days (see `src=card`
+#   below). Counted but not emitted is `src=digest`: nothing in this repo emits
+#   it (grepped 2026-08-28, gen/ widgets/ data/ out/ — zero hits outside this
+#   file), so `dgst` reads 0 by construction and a reader cannot tell that from
+#   "the digest sent no traffic". The report censuses the `src=` values actually
+#   present and names both directions instead of leaving either to be read as a
+#   measurement.
 import argparse
 import gzip
 import os
@@ -105,6 +139,19 @@ BLOG_NOT_ARTICLE = ('/blog/content/', '/blog/assets/', '/blog/ghost/',
                     '/blog/robots', '/blog/favicon', '/blog/rss',
                     '/blog/tag/', '/blog/author/', '/blog/page/')
 
+# Read for the census and the per-article join only. The day-row columns keep
+# their own substring tests below, each with the incident that taught it — that
+# is the judgement twinned with the app collector and it is not restated here.
+SRC_TAG = re.compile(r'[?&]src=([^&]*)')
+UNTAGGED = '(none)'
+
+# `src=` value -> the day-counter key that already has a column, so the
+# vocabulary check can tell a tag that measured zero from a tag nothing emits.
+# A counter added below without a row here shows up in the check as a tag with
+# no column, which is the safe direction to be wrong in.
+SRC_COLUMNS = {'card': 'card_clicks', 'grid': 'grid_clicks',
+               'guide': 'guide_clicks', 'digest': 'digest_clicks'}
+
 
 def app_entry(path):
     """Bucket an app page path for the entry-point table."""
@@ -127,12 +174,17 @@ def main():
     ap.add_argument('--glob', default=LOG_GLOB, help=argparse.SUPPRESS)
     args = ap.parse_args()
 
+    # Everything here is keyed by DAY, including the three that were not until
+    # 2026-08-28 — a counter that is not day-keyed cannot honour --days, and
+    # nothing on the report said which of the two ranges it was showing.
     days = defaultdict(Counter)          # day -> metric counts
-    ref_articles = Counter()             # blog article -> crossings
-    entries = Counter()                  # app entry bucket -> crossings
+    ref_articles = defaultdict(Counter)  # day -> blog article -> crossings
+    entries = defaultdict(Counter)       # day -> app entry bucket -> crossings
     blog_visitors = defaultdict(set)     # day -> {(ip, ua)}
     app_visitors = defaultdict(set)
-    top_articles = Counter()             # article -> human views
+    top_articles = defaultdict(Counter)  # day -> article -> human views
+    article_tags = defaultdict(Counter)  # day -> (article, src tag) -> crossings
+    src_seen = defaultdict(Counter)      # day -> src= value -> tagged app hits
     own_ips = internal_ips()
     internal_dropped = 0
 
@@ -205,12 +257,21 @@ def main():
                     if (path.startswith('/blog/') and path != '/blog/'
                             and not path.startswith(BLOG_NOT_ARTICLE)):
                         days[day]['blog_views'] += 1
-                        top_articles[path] += 1
+                        top_articles[day][path] += 1
                     continue
 
                 # -- app page views -----------------------------------------
                 app_visitors[day].add(key)
                 days[day]['app_views'] += 1
+                # The census: every `src=` value actually present, whether or
+                # not a column below knows the name. Read strictly (`[?&]src=`)
+                # and kept apart from the columns on purpose — the columns'
+                # substring tests are the twinned judgement and stay as they
+                # are; this only exists so neither failure direction is silent.
+                hit = SRC_TAG.search(path_q)
+                src_tag = hit.group(1) if hit else UNTAGGED
+                if hit:
+                    src_seen[day][src_tag] += 1
                 if 'ref=proclubshq.com' in path_q:
                     days[day]['ref_tagged'] += 1
                 # The spokes' reel card tags its links `?src=card` (blog repo
@@ -232,8 +293,13 @@ def main():
                 if blog_ref:
                     days[day]['crossings'] += 1
                     ref_path = ref.split(HOST, 1)[1].split('?', 1)[0]
-                    ref_articles[ref_path] += 1
-                    entries[app_entry(path)] += 1
+                    ref_articles[day][ref_path] += 1
+                    entries[day][app_entry(path)] += 1
+                    # The tag and the article that sent it have always been in
+                    # scope on the same line and were never joined, which is
+                    # why grid 32% vs card 10% (CLAUDE.md, 18-21 Aug) could not
+                    # be recomputed from this report a week later.
+                    article_tags[day][(ref_path, src_tag)] += 1
 
     if not days:
         sys.exit('no parseable log lines found')
@@ -241,6 +307,15 @@ def main():
     all_days = sorted(days)
     if args.days:
         all_days = all_days[-args.days:]
+    window = (f'{all_days[0]} → {all_days[-1]}' if len(all_days) > 1
+              else all_days[0])
+
+    def over_days(by_day):
+        """One counter for the SELECTED days, and nothing outside them."""
+        c = Counter()
+        for d in all_days:
+            c.update(by_day.get(d, ()))
+        return c
 
     print(f'Blog→app funnel — {HOST}  ({all_days[0]} → {all_days[-1]}, '
           f'bots excluded)')
@@ -282,10 +357,109 @@ def main():
         for path, count in counter.most_common(n):
             print(f'  {count:>5}  {path}')
 
-    table('Blog articles sending readers to the app (whole range):',
-          ref_articles)
-    table('Where they land in the app:', entries)
-    table('Most-read articles (human views, whole range):', top_articles, 10)
+    views = over_days(top_articles)
+    table(f'Blog articles sending readers to the app ({window}):',
+          over_days(ref_articles))
+    table(f'Where they land in the app ({window}):', over_days(entries))
+    table(f'Most-read articles (human views, {window}):', views, 10)
+
+    def article_views(art):
+        """Views of a referring article. The referrer string and the request
+        path are two spellings of one page — Ghost canonicalises to a trailing
+        slash, a referrer can arrive without one — so try both rather than
+        print a confident 0 into the ratio column."""
+        if art in views:
+            return views[art]
+        return views.get(art[:-1] if art.endswith('/') else art + '/', 0)
+
+    # -- which surface earned the click, per article --------------------------
+    art_tags = over_days(article_tags)
+    if art_tags:
+        per_article, per_tag = Counter(), Counter()
+        for (art, tag), n in art_tags.items():
+            per_article[art] += n
+            per_tag[tag] += n
+        cols = [t for t in SRC_COLUMNS if per_tag[t]]
+        cols += [t for t, _ in per_tag.most_common()
+                 if t not in SRC_COLUMNS and t != UNTAGGED][:4]
+        cols.append(UNTAGGED)
+
+        print(f'\nCrossings by referring article × ?src= tag ({window}):')
+        print('  The tag columns in the day rows are site-wide; these are the '
+              'same clicks split by')
+        print('  the page that sent them. Only a crossing carries a referrer, '
+              'and referer-less')
+        print('  clients arrive untagged, so every cell is a floor.')
+        hdr2 = ('  ' + f'{"article":<42}' + ''.join(f'{t[:7]:>8}' for t in cols)
+                + f'{"total":>7}{"views":>7}{"clk/vw":>8}')
+        print(hdr2)
+        print('  ' + '-' * (len(hdr2) - 2))
+        for art, total in per_article.most_common(12):
+            v = article_views(art)
+            rate = f'{100 * total / v:>7.1f}%' if v else f'{"—":>8}'
+            print('  ' + f'{art[:42]:<42}'
+                  + ''.join(f'{art_tags[(art, t)]:>8}' for t in cols)
+                  + f'{total:>7}{v:>7}{rate}')
+
+        # Clicks per ARTICLE VIEW, not per hydration: the grid is baked HTML
+        # and calls nothing, so its hydrations went to 0 the day it shipped
+        # while clicks tripled and the ratio read 306% (2026-08-18). This is
+        # the one denominator both layouts have.
+        # The denominator is the articles that PRODUCED a click with this tag
+        # in the window — not the articles carrying the layout, which a log
+        # cannot know: a baked grid that nobody clicked is indistinguishable
+        # from a page with no grid on it. So a quiet page carrying the tag is
+        # missing from both halves and every rate here reads high. Treat these
+        # as an upper bound and a comparison BETWEEN tags, never as a layout's
+        # true conversion rate.
+        print('\n  Per tag, over the articles that PRODUCED a click with it — '
+              'clicks per ARTICLE VIEW:')
+        for tag in cols:
+            if not per_tag[tag]:
+                continue
+            arts = {a for (a, t) in art_tags if t == tag}
+            v = sum(article_views(a) for a in arts)
+            rate = f'{100 * per_tag[tag] / v:.1f}%' if v else '—'
+            where = f'{len(arts)} page' + ('' if len(arts) == 1 else 's')
+            print(f'    {tag[:9]:<10}{per_tag[tag]:>6} clicks  {v:>6} views '
+                  f'of {where:<10}{rate:>7}')
+        print('    An article emitting two tags has its views counted in both '
+              'rows; where one')
+        print('    layout owns a page the row is the layout, which is how the '
+              'grid was judged.')
+        print('    A page carrying the tag that drew no click in the window is '
+              'in neither half,')
+        print('    so these rates are upper bounds — compare tags against each '
+              'other, not to 100%.')
+
+    # -- does the vocabulary match what the pages actually emit? --------------
+    seen = over_days(src_seen)
+    unknown = sorted(((n, t) for t, n in seen.items() if t not in SRC_COLUMNS),
+                     reverse=True)
+    dead = [t for t in SRC_COLUMNS if not seen.get(t)]
+    print(f'\n?src= vocabulary check ({window}):')
+    for n, t in unknown:
+        print(f'  {n:>5}  src={t} — in the logs, counted by no column here. A '
+              f'tag has to reach BOTH')
+        print('         parsers in the same change or it reads as zero forever '
+              '(the reel card).')
+    for t in dead:
+        print(f'  {"0":>5}  src={t} ({SRC_COLUMNS[t]}) — a column with no hits: '
+              f'NO EMITTER SEEN.')
+    if dead:
+        print('         A log cannot tell a tag nothing emits from a tag nobody '
+              'clicked — both')
+        print('         read 0 — so a flagged column is unmeasured, never '
+              'measured-zero.')
+    if 'digest' in dead:
+        print('         Nothing in this repo has ever emitted src=digest '
+              '(grepped 2026-08-28);')
+        print('         the column stays because dropping a shared tag on one '
+              'side only is the')
+        print('         twin drift CLAUDE.md forbids. It announces itself '
+              'instead.')
+    if not unknown and not dead:
+        print('  every tag seen has a column, and every column had hits.')
 
 
 if __name__ == '__main__':

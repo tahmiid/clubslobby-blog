@@ -1,0 +1,333 @@
+{
+ "_comment": [
+  "The affiliate placement experiment: which arm each article carries.",
+  "gen/players.mjs writes this file, ops/affiliate-experiment.py reads it.",
+  "A regeneration overwrites everything here, so do not hand-edit it - the",
+  "one exception is noted under startedAt.",
+  "",
+  "startedAt   the day the CURRENT assignment came into force. Carried",
+  "            forward across regenerations, reset the moment any slug",
+  "            changes arm. It is the window the report defaults to,",
+  "            because a 30-day default counted 20 days in which these",
+  "            pages did not exist. The first write (2026-08-28) was",
+  "            seeded BY HAND to 2026-08-23 - the pages had carried these",
+  "            arms since the 23rd and only started recording it on the",
+  "            28th - and a regeneration keeps whatever it finds here.",
+  "experiment  the arms being compared (gen/affexp.mjs ARMS).",
+  "fixed       arms that are not in the experiment. `kit` is the fixed",
+  "            accessories block every page carries; playerpage.mjs stamps",
+  "            it directly. Derived from the rendered HTML, never typed.",
+  "measured    the arms the impression beacon reports. It sends ONE",
+  "            impression per page view, for the FIRST .pchq-aff[data-arm]",
+  "            block on the page, and the game block always precedes the",
+  "            kit block — so kit has clicks and no denominator, and no",
+  "            clicks-per-view rate can honestly be printed for it.",
+  "events      the beacon path shapes, so the reader does not transcribe",
+  "            them either: a click is <path><click><arm>, an impression",
+  "            <path><impression><arm>, and the impression prefix starts",
+  "            with the click prefix — test the longer one first.",
+  "blocks      what each article actually rendered, in document order. A",
+  "            pending merchant emits nothing at all, so an empty list is",
+  "            the honest record of an article with no affiliate block."
+ ],
+ "startedAt": "2026-08-23",
+ "generatedAt": "2026-08-29",
+ "experiment": [
+  "afterLead",
+  "pageEnd"
+ ],
+ "fixed": [
+  "kit"
+ ],
+ "measured": [
+  "afterLead",
+  "pageEnd"
+ ],
+ "events": {
+  "path": "/evt/",
+  "click": "aff-",
+  "impression": "aff-seen-"
+ },
+ "articles": {
+  "bellingham": {
+   "n": 86,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "bruno-fernandes": {
+   "n": 103,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "cristiano-ronaldo": {
+   "n": 76,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "davies": {
+   "n": 105,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "de-bruyne": {
+   "n": 88,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "foden": {
+   "n": 99,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "haaland": {
+   "n": 73,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "harry-kane": {
+   "n": 89,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "ibrahimovic": {
+   "n": 97,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "isak": {
+   "n": 82,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "kaka": {
+   "n": 96,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "kroos": {
+   "n": 92,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "lamine-yamal": {
+   "n": 85,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "leao": {
+   "n": 102,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "lewandowski": {
+   "n": 90,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "maradona": {
+   "n": 84,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "mbappe": {
+   "n": 79,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "messi": {
+   "n": 77,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "modric": {
+   "n": 91,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "musiala": {
+   "n": 100,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "neuer": {
+   "n": 104,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "neymar": {
+   "n": 78,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "pele": {
+   "n": 94,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "roberto-carlos": {
+   "n": 95,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "ronaldinho": {
+   "n": 72,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "ronaldo-r9": {
+   "n": 93,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "saka": {
+   "n": 98,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "salah": {
+   "n": 80,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "son": {
+   "n": 106,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "thierry-henry": {
+   "n": 83,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "usain-bolt": {
+   "n": 75,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "van-dijk": {
+   "n": 81,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "vinicius": {
+   "n": 87,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  },
+  "wirtz": {
+   "n": 101,
+   "arm": "pageEnd",
+   "blocks": [
+    "pageEnd",
+    "kit"
+   ]
+  },
+  "zidane": {
+   "n": 74,
+   "arm": "afterLead",
+   "blocks": [
+    "afterLead",
+    "kit"
+   ]
+  }
+ }
+}

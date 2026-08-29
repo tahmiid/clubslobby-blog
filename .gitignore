@@ -5,3 +5,5 @@ out-cardonly/
 # macOS duplicate-copy artifacts
 * 2/
 * 2.*
+__pycache__/
+*.pyc

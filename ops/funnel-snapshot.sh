@@ -19,7 +19,13 @@ mkdir -p "$REPO/reports/funnel"
 # moved there on 2026-08-19, which broke this script silently — snapshots just
 # stopped, and nothing said so until the next run a week later. The alias is
 # the one maintained place that knows where the key is.
-ssh clubs "funnel-report.py $*" > "$OUT"
+# Temp file, then mv: `> "$OUT"` truncates before ssh runs, so a dropped
+# connection or a failed remote command replaced a good snapshot of the same
+# date with a short one that still looks like a report. Found 2026-08-29
+# while adding flow-snapshot.sh, which inherited the flaw by being modelled
+# on this file. The dated path now only ever changes on a complete run.
+ssh clubs "funnel-report.py $*" > "$OUT.tmp"
+mv "$OUT.tmp" "$OUT"
 
 echo "wrote $OUT"
 echo "commit it:  cd $REPO && git add reports/funnel && git commit -m 'Funnel snapshot $(date +%Y-%m-%d)'"
