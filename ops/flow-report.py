@@ -46,7 +46,11 @@ REQ = re.compile(r'(?P<method>[A-Z]+) (?P<path>\S+) HTTP/')
 BOT_UA = re.compile(
     r'bot|crawl|spider|slurp|preview|externalhit|whatsapp|telegram|discord|'
     r'python|curl|wget|go-http|httpx|okhttp|scrapy|scan|monitor|uptime|'
-    r'headless|lighthouse|pingdom|dataprovider|semrush|ahrefs|mj12|petal',
+    r'headless|lighthouse|pingdom|dataprovider|semrush|ahrefs|mj12|petal|'
+    # mediapartners (the AdSense crawler) and google-inspectiontool carry no
+    # generic bot word, so every earlier version of this pattern counted them
+    # as people. Taught to all FOUR copies together, 2026-09-02 (app #185).
+    r'mediapartners|google-inspectiontool',
     re.I)
 POST = re.compile(r'^/blog/([a-z0-9][a-z0-9-]*)/?$')
 
