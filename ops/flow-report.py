@@ -50,7 +50,16 @@ BOT_UA = re.compile(
     # mediapartners (the AdSense crawler) and google-inspectiontool carry no
     # generic bot word, so every earlier version of this pattern counted them
     # as people. Taught to all FOUR copies together, 2026-09-02 (app #185).
-    r'mediapartners|google-inspectiontool',
+    r'mediapartners|google-inspectiontool|'
+    # Our own tooling (app #189): 14,954 lines, 7.1% of everything logged,
+    # `node` alone 11,268. Of the 354 UA strings this newly catches, only two
+    # do not name Claude-User - bare `node` and bare `Mozilla/5.0`. No real
+    # browser matches: `^mozilla/5\.0$` is exact-anchored.
+    # `linksweep` is ours too (ops/link-sweep.mjs). Zero lines in the current
+    # window - it has rotated out since the 25 Aug audit counted 416 - but it
+    # runs after every publish, so catch it before it comes back rather than
+    # rediscovering it in a month.
+    r'^node$|^node/|claude-user|linksweep|^mozilla/5\.0$',
     re.I)
 POST = re.compile(r'^/blog/([a-z0-9][a-z0-9-]*)/?$')
 
