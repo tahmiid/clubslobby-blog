@@ -345,10 +345,20 @@ const POSTS = [
   // 16th, which 404'd the hub link in every one of them until the owner flipped
   // it too (2026-08-17, found by the all-articles link sweep).
   { file: 'a49.html', slug: 'fc27-new-skill-moves', status: 'published',
-    title: 'Every New Skill Move in EA FC 27 (Confirmed From the Beta)',
+    // The word "beta" appears nowhere on this site (owner rule, 2026-08-16) and
+    // it was in the LIVE H1 here until 2026-09-02 - visible to every reader,
+    // not just crawlers. The provenance claim survives without naming it: the
+    // inputs really were read off the game's own screen.
+    //
+    // "Fifteen" was also wrong, and the page said so itself: the body reads
+    // "13 new skill moves" and carries a section headed "Two that are not new
+    // — but were missing". Fifteen was the ROW count, not the new count. This
+    // corrects metadata to match the body; it does not inherit a gameplay
+    // claim from copy.
+    title: 'Every New Skill Move in EA FC 27, With Every Input',
     meta_title: 'All New FC 27 Skill Moves — Inputs for PS5 and Xbox',
-    meta_description: 'Every skill move new to EA FC 27, with the exact input for PlayStation and Xbox — read off the game\'s own screen during the closed beta, not copied from a list.',
-    custom_excerpt: 'Fifteen new skill moves, every input, taken from the game itself.',
+    meta_description: 'Every skill move new to EA FC 27, with the exact input for PlayStation and Xbox — read off the game\'s own screen, not copied from a list.',
+    custom_excerpt: '13 new skill moves, every input, taken from the game itself.',
     tags: ['Guides', 'Skill Moves', 'FC 27'] },
   { file: 'a50.html', slug: 'fc27-how-to-giant-fake-shot', status: 'published',
     title: 'How to Do the Giant Fake Shot in EA FC 27',
