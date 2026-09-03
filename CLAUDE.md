@@ -104,7 +104,25 @@ Two things about their shape were settled by the owner on 2026-08-23:
   One release, never two: the grid follows the page's LEAD year and flips
   with it on launch day. FC 27 had only 5 builds with any copies on
   2026-08-23, so the exporter warns when a year is too thin and the grid
-  renders nothing rather than padding itself with zero-copy builds.
+  renders nothing rather than padding itself with zero-copy builds. (It was
+  **11** by 2026-09-02 — the thin-year warning is temporary, not permanent.)
+
+  **Ten days of drift makes the heading false.** Measured 2026-09-02 against a
+  23 Aug export: **21 of FC 26's 24 positions had changed**, five builds had
+  dropped out of the ranking entirely and five had earned their way in, and all
+  five FC 27 positions had moved. The heading says *"Ranked by how many people
+  have actually copied them into their own club"*, so a stale export is not
+  merely out of date — it is a claim on the page that has stopped being true.
+  **Re-export before any republish that touches a player page**, and treat it
+  as a standalone chore every week or two regardless.
+
+  **Scope is 35 pages, and `grep most-copied` overstates it.** The grep also
+  lists `spoke.mjs` and eight spoke files; those hits are comments. Only
+  `gen/playerpage.mjs` reads the data — confirmed by regenerating all eight
+  spokes and getting byte-identical output. Regenerate with
+  `node gen/players.mjs` (emits all 35), rsync the changed files in ONE
+  connection (35 sequential `scp` calls times out), then
+  `node publish-prod.mjs a72 a73 …` — it takes a list.
 
 ## Watching how readers move
 
