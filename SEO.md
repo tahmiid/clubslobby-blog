@@ -5,7 +5,9 @@ rejected by AdSense once already, and SEO mistakes are the slow kind: a bad
 signal takes days to reach the index and weeks to leave it. Every rule below
 carries the date it was learned, the number that proved it, and the file or
 test that now enforces it — so nothing here has to be taken on trust, and
-nothing here needs re-deriving.
+nothing here needs re-deriving. Every number was re-measured from source on
+3 Sep except those marked *(… analysis; not re-derived)*, which came from the
+2 Sep adversarial reviews and are labelled so you know their provenance.
 
 Two repositories serve one domain. **This file is the index; the enforcement
 lives at the point of work.** App SEO (sitemap, crawler HTML, indexability)
@@ -40,9 +42,9 @@ Three consequences that each cost us:
 ## 1. What is allowed into the index
 
 **The rejection (2026-08-22, MONETIZATION.md).** AdSense: "low value content".
-The app's sitemap advertised ~480 URLs, of which 432 were ~174-word templated
+The app's sitemap advertised 484 URLs, of which 432 were ~174-word templated
 build pages and 46 creator pages — 90% of the domain's indexable surface read
-as auto-generated, drowning ~57 real articles.
+as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
 
 **Rules, and where they live (app repo):**
 
@@ -69,14 +71,17 @@ as auto-generated, drowning ~57 real articles.
      crosses it once FC 27 takes launch traffic — the 480-URL shape again.
    - **Raising `CURATED_BUILDS_PER_YEAR` past 78 makes the cap, not the
      constant, size the index.** Move the two together.
-4. **Never re-admit `/b/` pages to the index for traffic.** 139 non-sitemap
-   `/b/` URLs still draw ~10,000 impressions from the pre-#141 index. They are
+4. **Never re-admit `/b/` pages to the index for traffic.** ~130 non-sitemap
+   `/b/` URLs still draw ~10,000 impressions a month from the pre-#141 index
+   (127 URLs / 9,896 impressions on 3 Sep). They are
    the rejection. Let them fall out.
 5. **Tag and author archives are `noindex`** and were sitemapped anyway; Google
-   honours the noindex, and `tag/fc-26` fell 330 → 8 impressions on its own.
+   honours the noindex, and `tag/fc-26` fell 330 → 19 impressions week-on-week
+   on its own (measured 3 Sep).
    Not worth a slot.
 6. **`?ref=` variants are separate rows in Search Console** and the same page
-   to us (17 of 176 `/b/` rows carried one). Strip the query before matching.
+   to us (17 of 213 `/b/` rows carried one on 3 Sep). Strip the query before
+   matching.
 
 ---
 
@@ -213,21 +218,23 @@ indexing; ~10–12/day quota, exceeding it fails silently).
 Every one of these produced a wrong conclusion this month.
 
 - **Search Console lags three days.** Build it into every re-check date.
-- **Page-filtered query breakdowns are suppressed to ~1%.** For a 1,524-
-  impression page, `dimensions=[query]` with a page filter returns **12**.
-  Never conclude "this page ranks for nothing" from that view. Site-wide,
-  named queries cover ~4% of impressions.
+- **Page-filtered query breakdowns are suppressed to ~1%.** For
+  `fc27-the-grounds` — 1,576 impressions by the page dimension —
+  `dimensions=[query]` with a page filter returns **14**. Never conclude
+  "this page ranks for nothing" from that view. Site-wide, named queries cover
+  only ~6% of impressions (3,105 of 48,758 on 3 Sep).
 - **Check publish and crawl dates before reading a zero.** Two of three
   reviews built headline findings on pages that were six days old or had
   never been crawled. The 35 player articles were crawled for the first time
   on 2 Sep — every prior "they are invisible" was measuring pages Google had
   not read.
-- **A desktop-only impression bubble ended 20 Aug** (desktop 479 → 2,534 →
-  819; mobile never dropped; Googlebot volume did not fall). **No 28-day
+- **A desktop-only impression bubble ended 20 Aug** (desktop impressions/day:
+  2,534 on 19 Aug → 998 on the 20th → ~800 from the 21st; mobile never
+  dropped; Googlebot volume did not fall). **No 28-day
   impression or position comparison spanning it is a regression.** Use
   matched-page position and FC 27-segment clicks/week.
-- **nginx retains ~14.6 days**, not 28. Anything "per 28d" from the logs is
-  per 14.6.
+- **nginx retains ~14 days**, not 28 (oldest line 20 Aug on 3 Sep). Anything
+  "per 28d" from the logs is really per fortnight.
 - **`BOT_UA` lives in FOUR copies** — app `metrics.py`,
   `scripts/analytics_collect.py`, blog `ops/funnel-report.py`,
   `ops/flow-report.py` — and moves in one sitting (a test pins the two in the
@@ -238,7 +245,8 @@ Every one of these produced a wrong conclusion this month.
   never by reasoning**: of 354 newly-caught strings, 352 wore full browser
   UAs.
 - **A proxy pool corrupts per-page metrics** (#190, open): 735 hits from 734
-  IPs, one each, 72% on magician and maestro, every UA passing. Cleaned,
+  IPs, one each, 72% on magician and maestro, every UA passing *(2 Sep
+  analysis; not re-derived)*. Cleaned,
   magician is the best spoke (53.7%), not an underperformer. No regex reaches
   it.
 - **`viewCount` and `page_views` are different counters** — the first had no
@@ -247,10 +255,11 @@ Every one of these produced a wrong conclusion this month.
 - **Google's ad crawler perturbed the very ranking it was judging**:
   Mediapartners called `/view` 256 times on 21 Aug. `record_view` filters bots
   and the internal cookie now.
-- **`analytics_daily` 2026-08-01 and 08-02 are permanently false zeros** —
-  written by a backfill after rotation had forgotten those days. The collector
-  returns `None` for a no-evidence day now; **ship that guard before any
-  backfill**.
+- **`analytics_daily` 2026-08-01 and 08-02 are false zeros and still present**
+  (checked 3 Sep) — written by a backfill after rotation had forgotten those
+  days. The collector returns `None` for a no-evidence day now; **ship that
+  guard before any backfill**. Deleting the two rows is a write to production
+  history and remains open.
 - **`ref=proclubshq.com` on blog→app links is Ghost's `outbound_link_tagging`
   (on), added at render time.** The stored HTML has `?src=grid`; the served
   page has `?src=grid&ref=…`. A probe anchored on `src=grid"` reads six cards
@@ -261,8 +270,9 @@ Every one of these produced a wrong conclusion this month.
 ## 7. Titles, descriptions, snippets
 
 - **A title-only pass cannot be measured at this traffic.** `bdc38ff` (12
-  Aug) changed four `meta_title`s across 2,356 impressions: p = 0.39 / 0.56 /
-  1.00 / 1.00. Not "it failed" — **this property cannot resolve a snippet
+  Aug) changed four `meta_title` rows and no body copy (verified in git);
+  across 2,356 impressions the per-page result was p = 0.39 / 0.56 / 1.00 /
+  1.00 *(2 Sep analysis; not re-derived)*. Not "it failed" — **this property cannot resolve a snippet
   change**, which is a stronger reason not to run a third one. "Position 2–4
   with ~0% CTR" was mostly the desktop bubble plus anonymised queries, not a
   snippet problem.
@@ -272,7 +282,8 @@ Every one of these produced a wrong conclusion this month.
   field in `gen/publish-prod.mjs`. Change both, and know which one Google
   reads for the snippet.
 - **Build-page descriptions carried "0 loves · 0 copies"** on 80 of 98
-  curated pages, and 51 of 98 titles ran over 60 characters with the
+  curated pages fetched, and 51 of 98 titles ran over 60 characters *(25 Aug
+  audit; not re-derived)* with the
   `" — Pro Clubs HQ"` suffix (`og:site_name` carries the brand already). Emit
   the social-proof clause only when non-zero; drop the suffix. *(Open; not yet
   shipped.)*
@@ -304,7 +315,8 @@ Every one of these produced a wrong conclusion this month.
   shape does not exist yet and arrives at launch: be ranking for it on the
   18th rather than three weeks after.
 - **Do not write new player articles from thin demand.** The implied backlog
-  was seven queries, 12 impressions, 0 clicks.
+  was seven queries, 12 impressions, 0 clicks *(2 Sep analysis; not
+  re-derived)*.
 - **Head terms are not winnable in a fortnight** — page 1 for "fc 27
   archetypes" is EA's own pitch notes, FIFPlay, YouTube, Sportskeeda. Play for
   3–4 there and 1–3 on the long tail.
@@ -318,7 +330,9 @@ Every one of these produced a wrong conclusion this month.
   the player pages (490 card slots for one click). The format effect at equal
   depth is **×1.27** (difference-in-differences on the 21 Aug rollout) — **not
   "33.7% vs 1.1%"**, which was grid-vs-nothing, and not "32% vs 10%", which
-  absorbed a common time trend.
+  absorbed a common time trend. *(The 792/1, ×1.27 and 47.5%-vs-2.0% figures
+  are from the 2 Sep adversarial analysis of nginx and were not re-derived;
+  the depths, card counts and 21-of-24 drift were measured directly.)*
 - **Move, don't add.** The player-page grid went 66% → 15% and 14 → 6 cards
   on 2 Sep. `fc27-archetypes` converts at 51% with seven cards at 9%.
 - **Six cards, one shared module** (`gen/mostcopied.mjs`). Five pages read
@@ -331,7 +345,8 @@ Every one of these produced a wrong conclusion this month.
   h2.
 - **Where grids do NOT go:** the 13 skill how-tos (82 views, 2 crossings
   between all of them), `best-pro-clubs-archetypes` (the site's one real
-  router: 83% onward), striker/midfielder roundups (marginal).
+  router: 83% onward), striker/midfielder roundups (marginal) *(2 Sep
+  analysis; not re-derived)*.
 - **A stale most-copied export is a false claim on the page.** The heading
   says "ranked by how many people have actually copied them"; after ten days
   **21 of 24 positions had moved**. Re-run `ops/export-most-copied.mjs` before
