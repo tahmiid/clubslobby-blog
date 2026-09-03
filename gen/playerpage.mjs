@@ -59,10 +59,31 @@ const archOf = (id) => ARCH.find((a) => a.id === id);
 // might also like" grid whose first card is the build the reader is already
 // looking at reads as a bug.
 //
-// It also carries the page's app CTA now that the per-section ones are gone.
-// MONETIZATION.md §3 puts slot C and the closing affiliate block BELOW an app
-// CTA and never above one, and fourteen live build links is a stronger one
-// than the card it replaced.
+// **It sits INSIDE the lead section, between the build and its controls,
+// since 2026-09-02.** It closed the page until then, at ~66% depth, and the
+// numbers on that were unambiguous: the same 14-card grid earned 792 clicks a
+// fortnight at 3% depth on the spokes and ONE click a fortnight at 66% on
+// these pages - 490 published card slots for one click. Position beat format
+// by roughly 17x, measured within a single page shape with intent held
+// constant. So it moved, and nothing was added: the page carries no more
+// build blocks than before, just the one it had, higher.
+//
+// **Six cards, not fourteen.** fc27-archetypes - the best-converting page on
+// the site at 51% - does it with seven cards at 9% depth; across pages card
+// count barely predicts clicks-per-view and depth does. Halving the cards
+// costs ~10% of the clicks and halves the templated-block surface on 35
+// pages that Googlebot first crawled mid-AdSense-recrawl. Both halves of
+// that trade point the same way.
+//
+// **Its heading is an h3 here, not an h2.** The section's own h2 ("The FC 26
+// X build") is followed by the controls block under an h3; an h2 between them
+// would end the section in the outline and leave the controls looking like
+// they belong to "Most copied". Same level as its neighbour, so the outline
+// reads: build > most copied > controls.
+//
+// MONETIZATION.md §3 still holds: slot A, slot C and both affiliate blocks
+// all sit BELOW this grid and below both sections' own build cards, never
+// above an app CTA.
 const MOST_COPIED = JSON.parse(readFileSync(path.join(DIR, 'most-copied.json'), 'utf8'));
 
 // The badge-row rule (CLAUDE.md publish rule 4, learned by shipping it wrong):
@@ -90,13 +111,13 @@ const mostCopiedGrid = (P, year, excludeIds, excludeName) => {
   const pool = (MOST_COPIED[`fc${year}`] ?? []).filter((b) =>
     !excludeIds.has(b.id) &&
     !b.buildName.toLowerCase().includes(excludeName.toLowerCase()));
-  const builds = pool.slice(0, 14);   // the card experiment's ceiling
+  const builds = pool.slice(0, 6);    // see the note above MOST_COPIED
   if (builds.length < 3) return '';    // too thin to be worth a heading
   return kg(`<div class="${P} mcg">
 <style>${gridCss(`${P}.mcg`)}
 .${P}.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
 .${P}.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
-<h2 id="most-copied">Most copied FC ${year} builds</h2>
+<h3 id="most-copied">Most copied FC ${year} builds</h3>
 <p class="sub">Ranked by how many people have actually copied them into their own club. Every one opens in the builder, free, no install.</p>
 <div class="grid">${builds.map(copiedCard).join('\n')}</div>
 </div>`);
@@ -308,13 +329,19 @@ ${PCHQ_CSS}
   });
   const affHere = (which) => which === arm ? gameBlock : '';
 
-  const section = (s, y, id) => s ? [
+  // `grid` is only ever passed for the LEAD section - one release, never two,
+  // and the other section is not where a reader is deciding what to do next.
+  const section = (s, y, id, grid = '') => s ? [
     kg(`<div class="${P}"><h2 id="${id}">The FC ${y} ${esc(first)} build</h2></div>`),
     s.what,
     s.card,
     s.facts,
     s.loadout,
     s.cannot,
+    // The most-copied grid lands here, at the seam between "the build" and
+    // "how to play it" - ~14% depth, where the same block earns clicks. See
+    // the note above MOST_COPIED for why it moved up from the page's end.
+    grid,
     s.ctrlHtml,
     // **No "Open the build" CTA here.** Removed 2026-08-23 on the owner's
     // call: "we don't need that section... we already have the builds, they
@@ -358,6 +385,8 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
 <p><strong>Is it free?</strong> Yes, and there is nothing to install: ${BRAND} runs in the browser.</p>
 </div>`);
 
+  const grid = mostCopiedGrid(P, leadYear, new Set([lead?.id, other?.id].filter(Boolean)), first);
+
   return [
     css,
     `<p>${esc(cfg.intro)}</p>`,
@@ -365,8 +394,9 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     widgetHead,
     // The build first. No ad, no affiliate block, nothing before it - the
     // reader came for this (owner, 2026-08-23), and MONETIZATION.md's slot A
-    // is defined as coming AFTER the lead widget, never before it.
-    section(A, leadYear, `fc${leadYear}`),
+    // is defined as coming AFTER the lead widget, never before it. The
+    // most-copied grid rides inside this section, after the build's facts.
+    section(A, leadYear, `fc${leadYear}`, grid),
     // A: after the lead build and its paragraphs. C's rule - below the app
     // CTA, never above - is satisfied because the section ends with one.
     affHere('afterLead'),
@@ -377,11 +407,9 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     // page below the last app CTA, which is the approved affiliate home too.
     AD_B,
     affHere('pageEnd'),
-    // The closing grid, and now the page's app CTA: fourteen finished builds
-    // ranked by how many people copied them, so a reader who came for one
-    // player leaves with somewhere to go. Above AD_C and the kit block
-    // because MONETIZATION.md §3 puts both BELOW an app CTA, never above.
-    mostCopiedGrid(P, leadYear, new Set([lead?.id, other?.id].filter(Boolean)), first),
+    // The most-copied grid used to close the page here. It moved into the
+    // lead section on 2026-09-02 (note above MOST_COPIED); AD_C and the kit
+    // block still sit below both sections' build cards, so §3 is intact.
     AD_C,
     kitBlock,
     faq,
