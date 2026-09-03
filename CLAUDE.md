@@ -227,6 +227,15 @@ not about how progression works.
   invents a link tag (`?src=card`, `?src=grid`, `ref=`), teach it to BOTH in
   the same change — the reel card read as dead for three days because only
   `ref=` was counted while the card tagged `?src=card`.
+- **`ref=proclubshq.com` on every blog→app link is GHOST's doing, not ours.**
+  The Ghost setting `outbound_link_tagging` is `true` (confirmed via the Admin
+  API, 2026-09-02): it appends `?ref=<site>` to outbound links at RENDER time,
+  so the served page carries `?src=grid&ref=proclubshq.com` while the stored
+  HTML and `out/` carry only `?src=grid`. Two consequences. A probe that
+  requires a closing quote right after `src=grid` reports zero cards on a live
+  page that has six. And the funnel's `refTagged` column depends on that one
+  Ghost toggle: switch it off and the column goes silent with no failing
+  test — the same silence the Google-SSO status code produced in August.
 - Registrations are counted from `/auth/google`'s status code (**201 create,
   200 sign-in**) — that contract lives in the app repo and breaking it
   silences the funnel's headline number with no failing test.
