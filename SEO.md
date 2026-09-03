@@ -68,7 +68,7 @@ as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
    still `noindex`.
    - **A rank cap, never a demand threshold.** `viewCount`/`copyCount` are
      `$inc`-only, so any threshold is monotone and the whole 928-build catalog
-     crosses it once FC 27 takes launch traffic — the 480-URL shape again.
+     crosses it once FC 27 takes launch traffic — the 484-URL shape again.
    - **Raising `CURATED_BUILDS_PER_YEAR` past 78 makes the cap, not the
      constant, size the index.** Move the two together.
 4. **Never re-admit `/b/` pages to the index for traffic.** ~130 non-sitemap
