@@ -87,8 +87,18 @@ Two things about their shape were settled by the owner on 2026-08-23:
   build's own reel card, which links to `/b/<id>`; a second card repeating
   that link was asking twice for one click. *"We already have the builds,
   they can go there. We have the grids."*
-- **The most-copied grid sits INSIDE the lead section, between the build's
-  facts and its controls, at ~15% depth — six cards under an h3.** It closed
+- **The grid and its card live in `gen/mostcopied.mjs`** (since 2026-09-02,
+  when four more pages gained one): `mostCopiedGrid(P, year, opts)` for the
+  ranked-by-copies set and `archetypeGrid(P, ids, opts)` for a position
+  group. Five pages read it; do not copy the markup into a sixth. Two rules
+  it enforces: an EMPTY `excludeName` means exclude nobody (`includes('')`
+  is true for every string and once emptied a whole grid silently), and a
+  grid's heading must be true of its ranking — `archetypeGrid` ranks by
+  VIEWS and says so, because every defender in the spokes' grid files sits at
+  zero copies and "most copied" there would be a false claim over six
+  "0 copies" cards.
+- **On the player pages the grid sits INSIDE the lead section, between the
+  build's facts and its controls, at ~15% depth — six cards under an h3.** It closed
   the page at ~66% until 2026-09-02, and the numbers on that were unambiguous:
   the same grid earned 792 clicks a fortnight at 3% depth on the spokes and
   ONE click a fortnight at 66% here. Position beat format ~17x. It moved;
@@ -131,6 +141,33 @@ Two things about their shape were settled by the owner on 2026-08-23:
   `node gen/players.mjs` (emits all 35), rsync the changed files in ONE
   connection (35 sequential `scp` calls times out), then
   `node publish-prod.mjs a72 a73 …` — it takes a list.
+
+## The four promotion targets (2026-09-02)
+
+`pro-clubs-archetypes-explained`, `fc27-club-objectives`,
+`pro-clubs-level-rewards` and `pro-clubs-defender-archetypes` each carry a
+six-card grid at their first section break, as an h2 (it is a section of its
+own there). `group.mjs` has an optional `buildGrid` hook before slot A for
+this; **only a34 passes one** — a32/a33 measured marginal and a31 is the
+site's one real router, where a grid competes with the thing that works.
+
+Two of the seams are deep and that is deliberate: archetypes-explained's
+first break is ~70% and level-rewards' ~55%, because each opens with a large
+interactive widget and the widget is what the reader came for. Builds above
+it would break the rule that keeps ads off the top of player pages. They are
+on the plan's 14-day gate; if measurement says they are dead, the alternative
+is above the widget, and that is an owner call.
+
+**`ops/link-sweep.mjs` now reports pages with NO app link.** The class was
+invisible to a sweep that resolves links — archetypes-explained carried zero
+for weeks. It reports rather than fails; the count on 2026-09-02 was zero.
+
+Two shell traps that each cost a commit this day, both silent: **BSD `sed`
+has no `\|`** — a `git add` fed by `sed -n '/^a\(7[2-9]\|8[0-9]\)$/p'`
+staged nothing and a commit that said "published all 35" held one file; and
+**zsh does not word-split an unquoted `$files`**, so git received one
+35-name pathspec. Use brace expansion, and read `git show --stat` back
+before believing any multi-file commit.
 
 ## Watching how readers move
 
