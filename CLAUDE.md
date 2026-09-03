@@ -87,9 +87,17 @@ Two things about their shape were settled by the owner on 2026-08-23:
   build's own reel card, which links to `/b/<id>`; a second card repeating
   that link was asking twice for one click. *"We already have the builds,
   they can go there. We have the grids."*
-- **The page closes with a most-copied grid**, which is also its app CTA
-  (MONETIZATION.md §3 puts slot C and the affiliate block BELOW an app CTA,
-  never above). It is a RANKING, not a hand-picked list:
+- **The most-copied grid sits INSIDE the lead section, between the build's
+  facts and its controls, at ~15% depth — six cards under an h3.** It closed
+  the page at ~66% until 2026-09-02, and the numbers on that were unambiguous:
+  the same grid earned 792 clicks a fortnight at 3% depth on the spokes and
+  ONE click a fortnight at 66% here. Position beat format ~17x. It moved;
+  nothing was added. Six cards because fc27-archetypes converts at 51% with
+  seven at 9% depth and card count barely predicts clicks — halving it also
+  halves the templated surface mid-recrawl. h3, not h2, or the outline ends the
+  section there and orphans the controls block. §3 still holds: slots A and C
+  and both affiliate blocks are below it and below both build cards.
+  It is a RANKING, not a hand-picked list:
   `ops/export-most-copied.mjs` asks the app for `sort=copied` per release
   and writes `data/most-copied.json`. **Re-run it to refresh the ranking** —
   the published HTML is a snapshot, so a stale export is a stale grid, never
