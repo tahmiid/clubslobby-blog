@@ -16,6 +16,7 @@ Python bits run on the box or with system python3.
 | `DEPLOYMENT.md` | The box: access, services, nginx, TLS, backups, Ghost, publishing. The server runbook for BOTH repos. |
 | `ROADMAP-FC27.md` | **"What should I work on"** — the consolidated plan to FC 27 launch (25 Sep 2026), with dated update sections. |
 | `MONETIZATION.md` | Ads + affiliate: slot map, AdSense state, `ads-switch.sh`. A journal — read the dated blocks newest-first. |
+| **`SEO.md`** | **Every SEO rule with the date and number it was learned from, and where it is enforced — across BOTH repos. Read before any change to what Google sees.** |
 | `gen/*.mjs` headers | Each generator documents its own article's rules. `spoke.mjs` and `fc27grid.mjs` carry the badge-row rule. |
 
 ## Publishing — the checklist that exists because each line failed once

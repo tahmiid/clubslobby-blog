@@ -7,6 +7,33 @@ nothing has to be retrofitted into a design that never left room for it.
 Nothing here is live. No ad script, affiliate link or consent banner is in
 production as of this date.
 
+> ### 2026-09-02 — the ad crawler never saw the fix; recrawl at 60%; do not request yet
+>
+> **#187.** nginx's `$og_crawler` map named Googlebot and the social bots and
+> not `Mediapartners-Google` or `AdsBot-Google`. So the crawler AdSense
+> actually sends received the raw React shell — **29 words and the site-wide
+> title "Pro Clubs HQ" on every build page** — while Googlebot got the
+> 198-word rendered page. Every part of the 22 Aug fix below was invisible on
+> the fetch path that judged the site. The logs show it executing the SPA
+> (256 `/b/` GETs + 256 `/view` POSTs on 21 Aug, one per page). Fixed 2 Sep;
+> verified all three agents now get the rendered page; a real browser still
+> gets the app. Backup `clubs27.com-ssl.conf.bak-20260902-og`; the file is
+> Ghost-generated, so re-check after any Ghost work (`SEO.md` §2).
+>
+> **Recrawl state.** 50% of the curated set was fresh on 1 Sep (17 of a
+> 34-URL random sample — never sample the sitemap in file order; the head is
+> the freshest). Eleven hand-submitted URLs were crawled the same day: **60
+> fresh / 28 stale** on 2 Sep. The daily queue (`reindex_queue.py`, 18:40 UTC,
+> emailed) hands over the next twelve.
+>
+> **The gate now has two halves**: the watcher email as before, AND enough
+> days since 2 Sep that the ad crawler's own fetches have seen the rendered
+> page. A request before that is judged against the same shell that failed.
+> Also shipped this fortnight and relevant here: `lastmod` covers the
+> template (#184), leaving the sitemap is a demotion not a deletion (#185),
+> and `record_view` ignores bots — Mediapartners had been reshuffling the
+> curated set it was judging.
+
 > ### 2026-08-22 — AdSense rejects: "Low value content", and the fix ships
 >
 > The review verdict arrived by email. Diagnosis was arithmetic, not

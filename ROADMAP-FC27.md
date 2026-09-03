@@ -114,6 +114,40 @@ off** — now the oldest deadline-shaped item on the list.
 
 ---
 
+
+### Update — 2 Sep, the audit fortnight
+
+| Measure | 17 Aug | 2 Sep | |
+|---|---|---|---|
+| Search clicks, weekly | ~400–500 | **401** (from 635) | FC 26 winding down (−35% named-query impressions); FC 27 flat at ~200 impr/wk — the rotation has not started |
+| Blog→app crossing | 12–18% | **21.0%** | the old 13.1% denominator carried our own `node` tooling; crossings themselves were never contaminated |
+| Accounts | 30 | **86** | ~3.5/day; 107 user-created builds in 14 days |
+| Curated build pages fresh in Google's index | — | **60 / 100** (28 STALE) | 50% on 1 Sep; eleven manual requests were crawled the same day |
+| In-app searches returning nothing | — | **27% → fixed** | the archetype chip ANDed with the search box (#181); accents (#180) |
+
+What changed under the numbers, newest first — every item has a dated lesson
+in a `CLAUDE.md` and is indexed in **`SEO.md`**:
+
+- **The AdSense crawler never saw the fix (#187).** `Mediapartners-Google`
+  and `AdsBot-Google` were absent from nginx's `$og_crawler` map and received
+  the 29-word React shell on every build page while Googlebot got the 198-word
+  rendered one. Fixed 2 Sep. **The re-review waits for the watcher email AND
+  for STALE to clear** — every crawl before 2 Sep judged the shell.
+- **The index stopped de-indexing itself (#185)** and **`lastmod` stopped
+  lying about 13 pages (#184)**; the daily reindex queue emails the twelve URLs
+  worth hand-submitting (#188).
+- **Measurement is honest now (#189):** `BOT_UA` learned our own tooling in
+  all four copies (−8.9% blog views), the collector no longer writes a
+  rotated-away day as zero, and the grid format effect is **×1.27**, not the
+  32-vs-10 above — depth is the lever (17×). The player-page grid moved
+  66% → 15%; four promotion targets gained a six-card grid.
+- **Search works for humans again:** accents (#180), the chip trap (#181);
+  vocabulary (#182) still open.
+- Left alone on purpose: bare "X fc 27" player queries (Ultimate Team intent,
+  0/70 clicks), new player articles (12 impressions of demand), a third
+  title-only pass (statistically unmeasurable here), grids on the 13 skill
+  how-tos and the roundup router.
+
 ## 2. Scorecard against the 5 Aug reviews
 
 **Blog review — 6 of 8 done or mostly done:**
