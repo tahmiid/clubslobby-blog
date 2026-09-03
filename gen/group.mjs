@@ -158,7 +158,11 @@ ${coverFig}
 
 ${fc26ToFc27()}
 
-${AD_A}
+${/* An optional build grid at the first section break, BEFORE slot A so
+   MONETIZATION.md s3 (an ad sits below an app CTA, never above) holds on the
+   pages that pass one. Only a34 does, on 2026-09-02: a32/a33 were measured as
+   marginal and a31 is the site's one real router - a grid there competes with
+   the thing that works. Not a default. */ ''}${cfg.buildGrid ? cfg.buildGrid({ P }) + '\n\n' : ''}${AD_A}
 
 ${sectionsHtml}
 

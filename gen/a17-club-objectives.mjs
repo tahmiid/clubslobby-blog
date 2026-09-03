@@ -6,6 +6,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
+import { mostCopiedGrid } from './mostcopied.mjs';
 
 const P = 'co27';
 
@@ -62,6 +63,10 @@ R.addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)ret
 const html = `<p>Club Objectives are FC 27's new shared progression layer: goals your whole club works toward, in three confirmed categories — <strong>Club Milestones</strong> (Bronze/Silver/Gold, earning fans that raise your Club reputation), <strong>Club Weeklies and Seasonals</strong> (paying Amps, Consumables, and Coins), and <strong>Elite Objectives</strong> reserved for Elite Division clubs. Confirmed in EA's official Grounds &amp; Clubs deep dive.</p>
 
 ${widget}
+
+${/* The page's first section break (2026-09-02). FC 27 page, FC 27 grid: the
+   most-copied export holds 11 FC 27 builds with real copies now, so the heading
+   is honest. The bridge rail and the Browse-FC-27 CTA further down stay. */ ''}${mostCopiedGrid(P, 27)}
 
 <h2>Contribution without coordination</h2>
 <p>The design detail that matters most for real clubs: some objectives track your club's <em>combined</em> progress across different experiences — EA's example is collectively winning 50 1v1 matches. A clubmate grinding <a href="/blog/fc27-the-grounds-pro-clubs-explained/">small-sided matches in The Grounds</a> on a Tuesday night is still moving the club forward. For clubs whose members can't all be online together — which is most clubs — that's the first time solo play feeds club progress.</p>

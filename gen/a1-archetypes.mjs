@@ -1,6 +1,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { mostCopiedGrid } from './mostcopied.mjs';
 
 const P = 'ab27';
 const data = ARCH.map((a) => ({
@@ -82,6 +83,14 @@ R.addEventListener('click',function(e){
 const html = `<p>There are <strong>13 archetypes</strong> in EA FC Pro Clubs — 2 keeper, 4 defender, 4 midfielder, 3 forward. Your pick sets your starting attributes, your two perks, and which three specializations you can unlock later. Browse all of them here:</p>
 
 ${widget}
+
+${/* This page had NO app link at all until 2026-09-02 - 1,567 impressions, 76
+   human views a fortnight, zero crossings, and ops/link-sweep.mjs could not flag
+   a page with nothing to sweep. The grid goes after the archetype browser, at
+   the first section break: the reader has just browsed thirteen archetypes and
+   "here are finished builds" is the natural next step. That break is deep
+   (~75% by character count, most of it the browser's CSS and script), which is
+   why it is measured rather than assumed - the plan's 14-day gate. */ ''}${mostCopiedGrid(P, 26)}
 
 <h2>What you're actually choosing</h2>
 <p>An archetype is three decisions in one:</p>

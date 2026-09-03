@@ -2,6 +2,7 @@
 // no page. Four Defender archetypes; the Marauder's two-board season (no. 1
 // FB and no. 1 CDM) is the page's most interesting fact and gets said early.
 import { renderGroup } from './group.mjs';
+import { archetypeGrid } from './mostcopied.mjs';
 
 renderGroup({
   n: 34,
@@ -9,6 +10,16 @@ renderGroup({
   cats: ['Pace', 'Ball Control', 'Passing', 'Scoring', 'Defending', 'Physical'],
   gridTitle: 'The four defender archetypes, side by side',
   coverStem: 'feat-a34',
+
+  // Six defender builds at the first section break (2026-09-02). NOT the
+  // most-copied set - that pool has one defender in it - and NOT headed "most
+  // copied": every build in the four defender spokes' grid files sits at zero
+  // copies, so the honest ranking is by views and the heading says so.
+  buildGrid: ({ P }) => archetypeGrid(P, ['progressor', 'boss', 'marauder', 'engine'], {
+    id: 'defender-builds',
+    heading: 'Defender builds worth opening',
+    sub: 'The most-viewed finished Progressor, Boss, Marauder and Engine builds. Every one opens in the builder, free, no install.',
+  }),
   coverAlt: 'Official EA SPORTS FC 26 defenders art with DEFENDERS in large type',
 
   intro: () => `<p>Pro Clubs has <strong>four defender archetypes</strong>, split two and two: the Progressor and the Boss are centre-backs — one plays out, one clears out — and the Marauder and the Engine are fullbacks — one attacks, one runs forever. This page compares all four and tells you which back-line job is yours. Worth knowing before you start: the highest-scored build in the entire meta XI right now is a <strong>Progressor (79.8)</strong>, and the <strong>Marauder tops two boards at once</strong> — fullback and CDM.</p>`,

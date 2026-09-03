@@ -30,6 +30,7 @@ import { affArm, affBeacon } from './affexp.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss } from './fc27grid.mjs';
+import { archOf, archTitle, mostCopiedGrid } from './mostcopied.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const BLOG = `${SITE}/blog`;
@@ -37,7 +38,6 @@ const WIDGET = path.join(import.meta.dirname, '..', 'widgets', 'build-card');
 const PCHQ_CSS = readFileSync(path.join(WIDGET, 'pchq-build-card.css'), 'utf8');
 const PCHQ_JS = readFileSync(path.join(WIDGET, 'pchq-build-card.js'), 'utf8');
 
-const archOf = (id) => ARCH.find((a) => a.id === id);
 
 // ── The closing grid: what everyone else is copying ────────────────────────
 // Owner, 2026-08-23: *"if you want you can add a grid to look at other builds
@@ -51,82 +51,17 @@ const archOf = (id) => ARCH.find((a) => a.id === id);
 // House builds only, and only builds with at least one real copy — see that
 // file for why each exclusion is there.
 //
-// **One release, never two.** The page's two sections are kept apart on
-// purpose (owner, 2026-08-23: two game versions don't belong together), so the
-// grid follows the LEAD year and flips with the page on launch day.
-//
-// **The article's own player is dropped**, by build id and by name: a "you
-// might also like" grid whose first card is the build the reader is already
-// looking at reads as a bug.
-//
-// **It sits INSIDE the lead section, between the build and its controls,
-// since 2026-09-02.** It closed the page until then, at ~66% depth, and the
-// numbers on that were unambiguous: the same 14-card grid earned 792 clicks a
-// fortnight at 3% depth on the spokes and ONE click a fortnight at 66% on
-// these pages - 490 published card slots for one click. Position beat format
-// by roughly 17x, measured within a single page shape with intent held
-// constant. So it moved, and nothing was added: the page carries no more
-// build blocks than before, just the one it had, higher.
-//
-// **Six cards, not fourteen.** fc27-archetypes - the best-converting page on
-// the site at 51% - does it with seven cards at 9% depth; across pages card
-// count barely predicts clicks-per-view and depth does. Halving the cards
-// costs ~10% of the clicks and halves the templated-block surface on 35
-// pages that Googlebot first crawled mid-AdSense-recrawl. Both halves of
-// that trade point the same way.
-//
-// **Its heading is an h3 here, not an h2.** The section's own h2 ("The FC 26
-// X build") is followed by the controls block under an h3; an h2 between them
-// would end the section in the outline and leave the controls looking like
-// they belong to "Most copied". Same level as its neighbour, so the outline
-// reads: build > most copied > controls.
-//
-// MONETIZATION.md §3 still holds: slot A, slot C and both affiliate blocks
-// all sit BELOW this grid and below both sections' own build cards, never
-// above an app CTA.
-const MOST_COPIED = JSON.parse(readFileSync(path.join(DIR, 'most-copied.json'), 'utf8'));
+// The most-copied grid, its card, and the placement rationale moved to
+// gen/mostcopied.mjs on 2026-09-02, when four more pages gained a grid.
 
 // The badge-row rule (CLAUDE.md publish rule 4, learned by shipping it wrong):
 // the signature loadout comes first and is ALL gold, and only the spaces left
 // over take regulars in silver. The split is the year's signature count, which
 // is why it is derived from `b.signature.length` and never written as a
 // constant — FC 26 is 4 + 0, FC 27 level 40 is 1 + 3.
-const copiedCard = (b) => {
-  const sigs = b.signature ?? [];
-  const regs = (b.playstyles ?? []).slice(0, Math.max(4 - sigs.length, 0));
-  const arch = archOf(b.archetype_id);
-  return `<a class="bc" href="${SITE}/b/${b.id}?src=grid">
-<p class="nm">${esc(b.buildName)}</p>
-<p class="ar">${esc(arch?.name ? archTitle(arch.name) : b.archetype_id)} · Lv ${b.level}</p>
-<div class="ps">
-${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
-${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
-</div>
-<p class="sg">${b.copyCount} ${b.copyCount === 1 ? 'copy' : 'copies'}</p>
-<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>
-</a>`;
-};
-
-const mostCopiedGrid = (P, year, excludeIds, excludeName) => {
-  const pool = (MOST_COPIED[`fc${year}`] ?? []).filter((b) =>
-    !excludeIds.has(b.id) &&
-    !b.buildName.toLowerCase().includes(excludeName.toLowerCase()));
-  const builds = pool.slice(0, 6);    // see the note above MOST_COPIED
-  if (builds.length < 3) return '';    // too thin to be worth a heading
-  return kg(`<div class="${P} mcg">
-<style>${gridCss(`${P}.mcg`)}
-.${P}.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
-.${P}.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
-<h3 id="most-copied">Most copied FC ${year} builds</h3>
-<p class="sub">Ranked by how many people have actually copied them into their own club. Every one opens in the builder, free, no install.</p>
-<div class="grid">${builds.map(copiedCard).join('\n')}</div>
-</div>`);
-};
 // The catalog carries SHOT STOPPER for the card face; a sentence wants
 // Shot Stopper (clubs27-archetype-name-casing: the data is cased for display
 // elsewhere, so cased here rather than shouted).
-const archTitle = (n) => String(n ?? '').toLowerCase()
-  .replace(/\b[a-z]/g, (c) => c.toUpperCase());
 const listOf = (xs, j = 'and') => xs.length <= 1 ? (xs[0] ?? '')
   : `${xs.slice(0, -1).join(', ')} ${j} ${xs[xs.length - 1]}`;
 const tidy = (h) => h.replace(/\s+([,.;:])/g, '$1').replace(/[ \t]*\n[ \t]*(?=[a-z(])/g, ' ');
@@ -340,7 +275,7 @@ ${PCHQ_CSS}
     s.cannot,
     // The most-copied grid lands here, at the seam between "the build" and
     // "how to play it" - ~14% depth, where the same block earns clicks. See
-    // the note above MOST_COPIED for why it moved up from the page's end.
+    // gen/mostcopied.mjs for why it moved up from the page's end.
     grid,
     s.ctrlHtml,
     // **No "Open the build" CTA here.** Removed 2026-08-23 on the owner's
@@ -385,7 +320,9 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
 <p><strong>Is it free?</strong> Yes, and there is nothing to install: ${BRAND} runs in the browser.</p>
 </div>`);
 
-  const grid = mostCopiedGrid(P, leadYear, new Set([lead?.id, other?.id].filter(Boolean)), first);
+  const grid = mostCopiedGrid(P, leadYear, {
+    exclude: new Set([lead?.id, other?.id].filter(Boolean)), excludeName: first, level: 'h3',
+  });
 
   return [
     css,
@@ -408,7 +345,7 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     AD_B,
     affHere('pageEnd'),
     // The most-copied grid used to close the page here. It moved into the
-    // lead section on 2026-09-02 (note above MOST_COPIED); AD_C and the kit
+    // lead section on 2026-09-02 (see gen/mostcopied.mjs); AD_C and the kit
     // block still sit below both sections' build cards, so §3 is intact.
     AD_C,
     kitBlock,

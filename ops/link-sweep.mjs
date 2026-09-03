@@ -159,11 +159,14 @@ const main = async () => {
     : await Promise.all((await postUrls()).map(async (url) => ({ url, html: (await get(url)).body })));
 
   let checked = 0, broken = 0;
+  const orphans = [];
   const seen = new Map();
   for (const { url, html } of pages) {
     const bad = [];
+    let n = 0;
     for (const href of appLinks(html)) {
       checked += 1;
+      n += 1;
       if (!seen.has(href)) seen.set(href, await verify(href));
       const v = seen.get(href);
       if (!v.ok) bad.push(`${href}\n        ${v.why}`);
@@ -173,6 +176,17 @@ const main = async () => {
       console.log(`\n${url}`);
       for (const b of bad) console.log(`   ✗ ${b}`);
     }
+    if (n === 0) orphans.push(url);
+  }
+  // **A page with NO app link is invisible to a sweep that resolves links.**
+  // pro-clubs-archetypes-explained - 1,567 impressions, the blog's second-
+  // biggest page - carried zero for weeks and nothing here could say so,
+  // because there was nothing to resolve. Reported, not (yet) failed: the
+  // first run establishes how many such pages exist; tighten to a non-zero
+  // exit once the count is what it should be.
+  if (orphans.length) {
+    console.log(`\n${orphans.length} page(s) with NO app link at all:`);
+    for (const u of orphans) console.log(`   ∅ ${u}`);
   }
   console.log(`\n${pages.length} pages, ${checked} app links checked, ${broken} broken.`);
   process.exit(broken ? 1 : 0);

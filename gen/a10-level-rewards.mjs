@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { appCta, BRAND, SITE, esc, kg, baseCss } from './common.mjs';
+import { mostCopiedGrid } from './mostcopied.mjs';
 
 const P = 'lv27';
 
@@ -345,6 +346,11 @@ const html = `<p>Pro Clubs levelling runs to 100, and every reward on the way â€
 ${widget}
 
 ${appHandoff}
+
+${/* After the ladder and its own app handoff, before the FC 27 note - the
+   first section break (2026-09-02). This page was the site's #1 dead end in
+   ops/flow-report.py: 84 entries, 0 onward, 2 to the app. Deep (~60%) because
+   the ladder explorer comes first, and the ladder is what the reader came for. */ ''}${mostCopiedGrid(P, 26)}
 
 ${fc27Note}
 <h2>The grind is heavily back-loaded</h2>
