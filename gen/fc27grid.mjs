@@ -52,7 +52,12 @@ export const buildCard = (b) => {
   const sig = (b.signature || [])[0];
   const regs = (b.playstyles || []).slice(0, 3);
   const isOriginal = FC27_ARCH.find((a) => a.id === b.archetype)?.signature?.[0] === sig;
-  return `<a class="bc" href="${SITE}/b/${b.id}?ref=proclubshq.com">
+  // `src=grid` so the click lands in the grid column that BOTH log parsers
+  // already count (a spoke grid card carries exactly this pair). Until
+  // 2026-09-02 this emitted only `ref=`, so every click from a64, a65 and a66
+  // was tallied as a bare referral and the grid column undercounted by these
+  // three pages. `ref=` stays, so that column does not step either.
+  return `<a class="bc" href="${SITE}/b/${b.id}?src=grid&ref=proclubshq.com">
 <p class="nm">${esc(b.name)}</p>
 <p class="ar">${esc(arcName(b.archetype))} · Lv ${b.level}</p>
 <div class="ps">
