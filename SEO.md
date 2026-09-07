@@ -168,6 +168,9 @@ them the next day).
   rejection is much harder to come back from than a first.
 - **The trigger is the watcher email**, never a calendar date:
   `/root/adsense_watch.py`, daily 09:10 UTC, emails ONCE on transition to ready.
+  **It went READY on 2026-09-03** (app repo, #196) — off the three-URL sample
+  below, so it opens half the gate; the pre-click list is the 2026-09-07
+  block in `MONETIZATION.md`.
 - **`adsense_readiness.py` samples ONE hard-coded build page.** It said NOT
   READY on 1 Sep for the right reason, but it can equally say ready off one
   lucky URL. **Never trust a green from it alone**; the reindex queue
@@ -396,6 +399,7 @@ Every one of these produced a wrong conclusion this month.
   of `funnel-report.py`. Above ~15% clicks-per-view → the remaining five
   targets; the runtime layer stays last.
 - **12 Sep** — decide the player-title flip with data; **18 Sep** — the flip.
-- **The AdSense re-review** — on the watcher email, after STALE clears.
+- **The AdSense re-review** — watcher READY since 3 Sep; request once the
+  reindex tally shows STALE cleared (`MONETIZATION.md`, 2026-09-07).
 - `main` is 40 commits behind `dev` in the app repo; `dev` is what production
   runs. Left alone by owner decision.

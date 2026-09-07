@@ -7,6 +7,66 @@ nothing has to be retrofitted into a design that never left room for it.
 Nothing here is live. No ad script, affiliate link or consent banner is in
 production as of this date.
 
+> ### 2026-09-07 — watcher READY since 3 Sep; the queue is handed over; request on the 8 Sep tally, not today
+>
+> **Half one of the gate is met.** `/root/adsense_watch.py` flipped to READY
+> on **2026-09-03** and emailed once (recorded in the app repo, #196;
+> `/admin/monetization` shows the verdict and its `checked` time). That
+> verdict is `adsense_readiness.py`'s three-URL sample, and the build page it
+> samples (`a07d0193…`) is one of the eleven hand-submitted on 2 Sep — the
+> "one lucky URL" `SEO.md` §4 warns about. The measure behind it is the
+> reindex queue's tally across all 100.
+>
+> **Recrawl.** 59 FRESH / 29 STALE / 6 DISCOVERED / 6 UNKNOWN on 3 Sep — the
+> last record in either repo; the box's `/var/lib/clubs27/reindex/` holds
+> 4–7 Sep and `rsync` pulls it (app `DEPLOYMENT.md`). The queue handed over
+> eleven a day from 3 Sep and **today's batch was two**, both submitted by the
+> owner. What that does and does not mean: every page in the needs-work set
+> has now been requested at least once; but a URL requested in the last four
+> days is suppressed by the cool-off whether or not Google acted, so **read
+> the tally's "N of 100 still need a refresh", never the batch size.** The
+> 2 Sep hand-submissions were crawled the same day; expect today's two to be
+> FRESH by the 8 Sep run (18:40 UTC, emailed).
+>
+> **Half two — the ad crawler's own fetches** — is five days on 7 Sep and the
+> owner's call. The evidence is nginx, on the box (`clubs` format: `$7` is the
+> path, `$10` the bytes; the rendered page was 3,519 bytes and the shell
+> 33,949 when measured in `SEO.md` §2):
+>
+> ```bash
+> zgrep -hE 'Mediapartners-Google|AdsBot-Google' /var/log/nginx/access.log* \
+>   | awk '$7 ~ /^\/b\// { d=substr($4,2,11); n[d]++
+>            if (!(d in lo) || $10 < lo[d]) lo[d] = $10; if ($10 > hi[d]) hi[d] = $10 }
+>          END { for (d in n) print d, n[d] " fetches, bytes " lo[d] "-" hi[d] }' \
+>   | sort -t/ -k2M -k1n
+> ```
+>
+> Rows from 3 Sep on should be small; a shell-sized day after 2 Sep means
+> the `$og_crawler` map regressed (`SEO.md` §2). No ad-crawler fetch of
+> `/b/` since 2 Sep at all means the review would still be judged on the
+> shell, and the answer is wait, not click.
+>
+> **Before the click, in this order** — one command each, each has failed once:
+>
+> 1. `curl -s -A "Mediapartners-Google" https://proclubshq.com/b/a07d0193-30cf-42c7-8dad-6f9f887f8778 | grep -c "<title>Pro Clubs HQ</title>"` → **0**.
+> 2. `curl -s -o /dev/null -w '%{http_code}\n' http://proclubshq.com/ads.txt` → **301**;
+>    `curl -sI https://proclubshq.com/ads.txt | grep -i content-type` → **text/plain**.
+> 3. `ads-switch.sh status` → **on** (the review has to find the loader; slot A
+>    has carried it since 13 Aug).
+> 4. The 8 Sep tally: **STALE at or near zero** — the rule is "after STALE
+>    clears" (`SEO.md` §11). The six UNKNOWN orphans (#186) are not the
+>    rejection's shape and do not block.
+>
+> Then **Sites → proclubshq.com → Request review**, note the date here, and
+> check Auto ads is still off when the verdict lands.
+>
+> **Why not today.** Google's own guidance: a review typically answers within
+> a week, sometimes longer; a site "reviewed and rejected several times
+> recently" gets an inactive review button and a date before it may ask
+> again. Early access is 18 Sep. Requesting on the 8 Sep tally costs one day;
+> a request judged on pre-fix crawls risks a cooldown that puts the next
+> attempt past the launch window.
+
 > ### 2026-09-02 — the ad crawler never saw the fix; recrawl at 60%; do not request yet
 >
 > **#187.** nginx's `$og_crawler` map named Googlebot and the social bots and
