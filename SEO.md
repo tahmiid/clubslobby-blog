@@ -82,6 +82,25 @@ as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
 6. **`?ref=` variants are separate rows in Search Console** and the same page
    to us (17 of 213 `/b/` rows carried one on 3 Sep). Strip the query before
    matching.
+7. **`/edit/<archetype>` is noindexed by an HTTP header, and robots.txt must
+   keep allowing the fetch** (verified live 2026-09-09). The
+   `location ~ ^/edit/[^/]+$` block in `clubs27.com-ssl.conf` sends
+   `X-Robots-Tag: noindex, follow` to every agent.
+   - **Never add `Disallow: /edit/`.** robots.txt stops the FETCH, so the
+     header would never be read, and already-indexed `/edit` URLs would
+     freeze in the index with no snippet instead of dropping out. It is the
+     same principle the app's own robots.txt states under `/admin`.
+   - The stanza's stated reason is **stale** — it calls `/edit` "the natural
+     target of the best-`<archetype>` landing pages", which stopped being
+     true when #154 repointed those pages to `/explore?archetype=…` and #156
+     began bridging cold arrivals away. The conclusion is still right, for
+     the reason above. App repo #198 tracks fixing the comment; no directive
+     changes.
+   - `/edit` is **not** in the `$og_crawler` set (§0), so a crawler receives
+     the 29-word shell there against `/explore`'s 402. Harmless for search
+     because of the noindex — but **Mediapartners-Google fetched `/edit` 13
+     times in the fortnight to 9 Sep, more than Googlebot's 11**, so it is
+     the AdSense re-review, not the index, that this could still touch.
 
 ---
 
