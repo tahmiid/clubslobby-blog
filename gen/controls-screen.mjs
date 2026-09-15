@@ -8,7 +8,16 @@
 //     idx: true,                  // per-row "p14 · 3" locator (check pages)
 //     hrefFor: (m) => url|null,   // link a row's name (spoke pages)
 //     newSet: Set<suffix>,        // badge rows new to FC 27 (controls-diff)
+//     introFor: (page) => html|null, // a paragraph above the page's rows
 //   })
+//
+// `introFor` (2026-09-14): the three public lists carried 126–261 words of
+// prose against 300+ KB of rows, and Search Console showed them ranking on
+// the head terms with nothing to say. One paragraph per tab — the game's
+// page title, what it covers, a few entries by name — is indexable text that
+// the rows already justify. The names an intro cites are asserted against
+// the page at build time in the caller (fc27-controls-suite.mjs), the same
+// guardrail a63 uses, so the copy cannot drift from the list under it.
 //
 // Returns the tabs + sections + the tab-switching script. Pair with
 // SCREEN_CSS. Rows reuse the .cm/.cwrap classes so padSwitcher()'s runtime
@@ -43,8 +52,9 @@ export const screenList = (screen, opts = {}) => {
     `<button class="gk-tab${i ? '' : ' on'}" data-p="${i}" type="button">${esc(p)}</button>`).join('');
   const sections = pages.map((p, i) => {
     const rows = moves.filter((m) => m.page === p);
+    const intro = opts.introFor && opts.introFor(p);
     return `<section class="gk-page${i ? '' : ' on'}" data-p="${i}">
-<p class="gk-count">${rows.length} actions — the game's order</p>
+${intro ? `<p class="gk-intro">${intro}</p>\n` : ''}<p class="gk-count">${rows.length} actions — the game's order</p>
 ${rows.map((m, ri) => rowHtml(m, ri, opts)).join('\n')}
 </section>`;
   }).join('\n');
@@ -79,6 +89,7 @@ export const SCREEN_CSS = `
 .gk-tab.on{color:#2DE2C5;border-bottom-color:#2DE2C5}
 .gk-page{display:none}
 .gk-page.on{display:block}
+.gk-intro{font:400 15px/1.55 -apple-system,system-ui,sans-serif;color:#c9ced8;margin:14px 2px 4px}
 .gk-count{font:600 12px/1.4 -apple-system,system-ui,sans-serif;color:#5c6474;margin:10px 2px}
 /* Desktop reads name FIRST, input second (owner, 2026-08-21) — the game's
    button-first columns made sense pad-in-hand, but a reader scans for the

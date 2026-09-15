@@ -52,7 +52,7 @@ ${appCta({
 <p>A ball-winner first. Its signature PlayStyle is <strong>Jockey</strong>, its stat spine is aggression, interceptions and stamina, and its ceilings reward the player who reads passes rather than chases them. The rumors have it as a rework of FC 26's Engine — same slot in the midfield group, a much nastier job description — with shooting kept deliberately modest. If that holds, Engine mains will feel at home in the shape and surprised by the teeth.</p>
 
 <h2>The three specializations</h2>
-<p>As they appear in our builder — treat the exact numbers as rumor until EA publishes them:</p>
+<p>As they appear in our builder — treat the exact numbers as rumor until EA publishes them. The job is winning the ball, so the buttons that matter are on the <a href="/blog/fc27-basic-controls/">Defending page of the FC 27 controls</a>, animated:</p>
 ${specRows}
 <p>Across the eight builds you'll find every loadout worn: most run <em>Disruptor+</em> with Intercept+, Gattuso wears <em>Destroyer</em> with Slide Tackle+, Vieira anchors with <em>Anchor</em>'s Bruiser+ — and Declan Rice keeps the original Jockey signature, the loadout for players who'd rather contain than commit.</p>
 

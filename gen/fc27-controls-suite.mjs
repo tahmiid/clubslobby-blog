@@ -21,14 +21,56 @@ import { CONTROLS, padSwitcher, CONTROL_CSS } from './controls.mjs';
 import { screenList, SCREEN_CSS } from './controls-screen.mjs';
 import { breadcrumbLd, itemListLd } from './jsonld.mjs';
 import { newSfx, added, renames, sfx } from './controls-diff.mjs';
+import { ALL as HOWTOS, hrefForMove } from './howto-index.mjs';
+import { existsSync } from 'node:fs';
 
 const DIR = path.join(import.meta.dirname, '..');
 const SKILLS = JSON.parse(readFileSync(path.join(DIR, 'data', 'fc27-skills.json'), 'utf8'));
 const BUILDER = `${SITE}/`;
 
-const spokeByName = new Map(SKILLS.moves.map((m) => [
-  m.name === 'Giant Fake Shot' ? 'Giant Fake Shot (Standing)' : m.name,
-  `/blog/fc27-how-to-${m.slug}/`]));
+// Row names link to the move's own guide — the 13 new-move pages and, since
+// 2026-09-14, the carried-over moves and the celebrations, all through
+// gen/howto-index.mjs (published pages only; a draft would be a dead link).
+const guides = (kind) => HOWTOS.filter((p) => p.kind === kind && p.published).length;
+
+// Per-tab intros (data/fc27-list-intros.json, written 2026-09-14): one
+// paragraph above each of the game's pages. Every dataset name the paragraph
+// cites is linked to its guide where one exists, and the paragraph is
+// REFUSED at build time if it cites an entry that is not on that page or
+// cites fewer than three that are — the same guardrail a63 uses, so the copy
+// cannot drift from the rows under it.
+const INTROS_FILE = path.join(DIR, 'data', 'fc27-list-intros.json');
+const INTROS = existsSync(INTROS_FILE) ? JSON.parse(readFileSync(INTROS_FILE, 'utf8')) : {};
+const introFor = (screen) => (page) => {
+  const text = INTROS[screen]?.[page];
+  if (!text) return null;
+  if (/\bbeta\b/i.test(text)) throw new Error(`intro for ${page}: the word that appears nowhere`);
+  const onPage = CONTROLS.moves.filter((m) => m.screen === screen && m.page === page);
+  const elsewhere = CONTROLS.moves.filter((m) => m.screen === screen && m.page !== page);
+  const byLen = (a, b) => b.name.length - a.name.length;
+  const escRe = (x) => x.replace(/[.*+?^$()|[\]\\{}]/g, '\\$&');
+  let html = esc(text);
+  let hits = 0;
+  const taken = [];
+  for (const m of [...onPage].sort(byLen)) {
+    const re = new RegExp(`(?<![\\w<])${escRe(esc(m.name))}(?![\\w>])`);
+    const at = html.search(re);
+    if (at < 0) continue;
+    hits += 1;
+    const href = hrefForMove(m);
+    html = html.replace(re, href ? `<a href="${href}">${esc(m.name)}</a>` : `<strong>${esc(m.name)}</strong>`);
+    taken.push(m.name);
+  }
+  for (const m of elsewhere.sort(byLen)) {
+    if (taken.some((t) => t.includes(m.name))) continue;
+    if (new RegExp(`(?<![\\w<>])${escRe(esc(m.name))}(?![\\w<])`).test(html)
+        && !onPage.some((o) => o.name === m.name)) {
+      throw new Error(`intro for ${page} cites "${m.name}", which is on another page`);
+    }
+  }
+  if (hits < 3) throw new Error(`intro for ${page} names only ${hits} entries from the page (need 3)`);
+  return html;
+};
 
 const SCREENS = {
   basic: { screen: 'BUTTON HELP', slug: 'fc27-basic-controls', label: 'Basic Controls',
@@ -118,7 +160,8 @@ ${tri(s.slug)}
 ${intro(s.noun, s.screen)}
 ${kg(screenList(s.screen, {
     newSet: newSfx,
-    hrefFor: key === 'skills' ? (m) => spokeByName.get(m.name) || null : null,
+    hrefFor: key === 'basic' ? null : hrefForMove,
+    introFor: introFor(s.screen),
   }))}
 ${AD_A}
 ${gameBlock}
@@ -203,6 +246,8 @@ and the chest flick, performed while juggling.</p>
 They wear a badge above, and each has its own guide with when to use it and
 which builds suit it — start from
 <a href="/blog/fc27-new-skill-moves/">every new skill move in FC 27</a>.
+${guides('skill') - SKILLS.moves.length} carried-over moves have a guide too —
+tap a linked name in the list above to open it.
 Inputs for moves carried over from FC 26 are unchanged — every move you could
 already do works identically, so nothing you drilled last year is wasted.</p>
 <p>The other two lists cover
@@ -230,7 +275,9 @@ so nothing in your routine breaks.</p>
 <p>Most celebrations follow one grammar: hold a modifier (L1, L2, R1 or R2)
 and make a right-stick gesture — a flick, a double flick or a rotation. The
 animations above play each one at half speed, and the dock at the bottom
-switches PlayStation and Xbox. The other two lists cover
+switches PlayStation and Xbox. ${guides('celebration')} celebrations have
+their own guide — a linked name in the list opens it, starting with
+<a href="/blog/fc27-cancel-celebration/">how to cancel a celebration</a>. The other two lists cover
 <a href="/blog/fc27-basic-controls/">every basic control</a> and
 <a href="/blog/fc27-skill-moves/">every skill move</a> — and
 <a href="/blog/fc27-control-changes/">what changed in FC 27's controls</a> has
@@ -250,7 +297,12 @@ a single carried-over input changed, so everything your hands learned in FC 26
 still works. The highlights:</p>
 <ul>
 <li><a href="/blog/fc27-new-skill-moves/">${SKILLS.moves.length} new skill moves</a>,
-each with its own guide</li>
+each with its own guide — and ${guides('skill')} skill moves in all have one, from the
+<a href="/blog/fc27-how-to-rainbow-flick/">rainbow flick</a> to the
+<a href="/blog/fc27-how-to-elastico/">elastico</a></li>
+<li>${guides('celebration')} celebration guides, from
+<a href="/blog/fc27-knee-slide-celebration/">the knee slide</a> to
+<a href="/blog/fc27-cancel-celebration/">how to cancel one</a></li>
 <li>A <a href="/blog/fc27-control-changes/">set-piece tactics system</a> on
 D-pad up, two new throw-in controls, and ${newCount('Celebrations')} new
 celebrations</li>

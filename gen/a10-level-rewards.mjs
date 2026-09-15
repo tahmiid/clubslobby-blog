@@ -216,8 +216,8 @@ const widget = kg(`<div class="${P}" data-${P}>
 <p class="hd">Progress Preview</p>
 <p class="sub">Everything a pro has earned by a given level. The marks are the levels that grant something.</p>
 <div class="yr" role="group" aria-label="Game release">
-  <button type="button" data-yr="26" class="on">FC 26</button>
-  <button type="button" data-yr="27">FC 27</button>
+  <button type="button" data-yr="27" class="on">FC 27</button>
+  <button type="button" data-yr="26">FC 26</button>
 </div>
 <input type="range" min="1" max="100" value="${DEF}" data-sl aria-label="Level">
 <div class="ticks" data-ticks></div>
@@ -240,7 +240,7 @@ const widget = kg(`<div class="${P}" data-${P}>
 <script>
 (function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
 var Y=${YEARS_JSON},TF=${TIER_JSON};
-var cur='26';
+var cur='27';
 var sl=R.querySelector('[data-sl]');var q=function(s){return R.querySelector(s)};
 var f=function(n){return n.toLocaleString('en-US')};
 function tierStyle(t){return TF[String(t||'').split(' ')[0]]||TF.Bronze}
@@ -298,7 +298,7 @@ R.querySelectorAll('[data-yr]').forEach(function(b){
     drawTicks(y);go();
   });
 });
-sl.addEventListener('input',go);drawTicks(Y['26']);go();})();
+sl.addEventListener('input',go);sl.max=Y[cur].cap;drawTicks(Y[cur]);go();})();
 </script>
 </div>`);
 
@@ -350,7 +350,7 @@ ${appHandoff}
 ${/* After the ladder and its own app handoff, before the FC 27 note - the
    first section break (2026-09-02). This page was the site's #1 dead end in
    ops/flow-report.py: 84 entries, 0 onward, 2 to the app. Deep (~60%) because
-   the ladder explorer comes first, and the ladder is what the reader came for. */ ''}${mostCopiedGrid(P, 26)}
+   the ladder explorer comes first, and the ladder is what the reader came for. */ ''}${mostCopiedGrid(P, 27)}
 
 ${fc27Note}
 <h2>The grind is heavily back-loaded</h2>

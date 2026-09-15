@@ -148,6 +148,79 @@ in a `CLAUDE.md` and is indexed in **`SEO.md`**:
   title-only pass (statistically unmeasurable here), grids on the 13 skill
   how-tos and the roundup router.
 
+### Update — 15 Sep, three days before early access
+
+The owner's brief on 14 Sep: check the blog, get traffic into the controls
+cluster ("the biggest thing we have, and no other application does it as
+well"), make those articles top-notch, and promote FC 27 first everywhere —
+with the level cap assumed at 40 and the current builds, republish if the cap
+turns out to be 50 after the 18th.
+
+| Measure | 2 Sep | 15 Sep | |
+|---|---|---|---|
+| Blog posts live | 93 | **143** (+50) | 50 how-to pages published, 30 more staged as drafts |
+| Controls cluster, 28d | — | 3,006 impr · 58 clicks · pos ~6 | 6.1% of impressions, 3.3% of clicks; **135 impr in the last 7d** |
+| Pages leading with FC 27 | 7 hubs + 13 how-tos | **+35 player pages, +12 spokes, level rewards** | the launch-day flip, run four days early |
+| Inbound links to `fc27-controls` | 3 | nav item on every page + hubs + 35 player pages | |
+
+What was found:
+
+- **The controls cluster is indexed and holding position ~6 on every page;
+  what fell was impressions** — 414/day on 22 Aug to ~15/day by 1 Sep. The
+  first read was "the closed beta ended 25 Aug and demand went with it". An
+  adversarial pass showed the same curve fits a new-page freshness boost
+  expiring (the spike is the list pages' publish day, 21 Aug). A second
+  pull separated what it could: named and anonymised impressions fell
+  together, head terms still show at page-1 positions, a control group (the
+  spokes) rose — consistent with demand, not proof. **The 18 Sep test
+  settles it, readable ~21–22 Sep.** `reports/controls-cluster-gsc-2026-09-14.md`.
+- **We covered 13 of 98 skill moves and 0 of 128 celebrations.** The long
+  tail ("how to do a rainbow flick fc 27") is where sites our size rank; the
+  list pages compete with FIFPlay/EA on head terms nobody clicks pre-launch
+  (`fc 27 controls`: 35 impressions, 0 clicks).
+- **The pillar had three inbound links and no nav item.** No spoke, player
+  page or FC 27 hub linked the cluster.
+
+What shipped (all live 15 Sep, `SEO.md` §6/§9, blog `CLAUDE.md`):
+
+- **80 how-to pages** from a factory (`gen/fc27-howtos.mjs`) over the
+  controls dataset: 50 carried-over skill moves and 30 celebrations, inputs
+  from the dataset, prose written against it and adversarially verified
+  (34 of 80 records tightened), every claim on one review sheet for the
+  owner (`reports/howto-review-2026-09-14.md`). **Wave 1 (50, proven-demand
+  names) is published; wave 2 (30) is drafted in Ghost** — one constant
+  flips it. Covers composed and assigned.
+- **Per-tab intros on the three list pages** (24 paragraphs, build-time
+  assertion that every cited name is on that tab), every list row linked to
+  its guide, the pillar linking both guide families.
+- **Links**: `Controls` in the nav; the 35 player pages' "Five buttons" rows
+  link guides where one exists; every spoke's FC 27 block links the
+  skill-move list; the three FC 27 hubs carry one sentence into the cluster.
+- **FC 27 first**: the 35 player pages lead with the FC 27 build (titles,
+  descriptions and excerpts flipped with them); the 12 returning archetypes'
+  spokes open with the FC 27 level-40 grid above the unchanged FC 26 guide
+  (Engine, which does not return, says so instead); `pro-clubs-level-rewards`
+  opens on the FC 27 ladder. Run before the 18th on purpose — the FC 27
+  titles need to be crawled before the query shape arrives.
+
+Left open, dated:
+
+- **Level cap.** Every FC 27 page still says 40 and "rumor"; if the retail
+  build says 50, the 470 builds and the level-rewards ladder are wrong the
+  same day (`SEO.md` §8 already carries this).
+- **The 13-vs-4 new-moves conflict.** The external lists say four new skill
+  moves (Fake Turn, Ball Roll Spin, Stepover Combo, Kneel Header), our
+  capture says thirteen with zero overlap. Verify against the retail
+  Skill Moves screen on the 18th before anyone cites either number.
+- **`lengthy-vs-controlled-vs-explosive` (a107) has no feature image** —
+  published 23 Aug, found by the cover audit today. Not touched.
+- **Wave 2 drafts** wait on the owner's read and the AdSense timing; the
+  watcher has read "ready" since 3 Sep and no re-review has been requested.
+- **Measure on 21–22 Sep**: cluster impressions/day against 22 Aug (414),
+  the 50 new pages' first impressions, and the player pages' FC 27 titles.
+
+---
+
 ## 2. Scorecard against the 5 Aug reviews
 
 **Blog review — 6 of 8 done or mostly done:**

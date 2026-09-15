@@ -36,9 +36,10 @@ import { renderPlayerPage } from './playerpage.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 
-// The controls renderer, once per RELEASE. The page leads with the FC 26
-// build (LAUNCH-DAY-2026-09-18.md), and the two captures name some actions
-// differently, so a FC 26 control has to be looked up in FC 26's dataset.
+// The controls renderer, once per RELEASE. The page leads with the FC 27
+// build since 2026-09-14 (LAUNCH-DAY-2026-09-18.md, run early), and the two
+// captures name some actions differently, so a FC 26 control has to be
+// looked up in FC 26's dataset.
 process.env.CONTROLS_YEAR = '26';
 const C26 = await import('./controls.mjs?y=26');
 process.env.CONTROLS_YEAR = '27';

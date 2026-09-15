@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-03",
+ "generatedAt": "2026-09-14",
  "fc26": [
   {
    "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
@@ -26,7 +26,7 @@
    "height": 67,
    "weight": 159,
    "accelerationType": "Explosive",
-   "copyCount": 15,
+   "copyCount": 19,
    "creator": "buildmaster"
   },
   {
@@ -54,7 +54,7 @@
    "height": 73,
    "weight": 170,
    "accelerationType": "Controlled",
-   "copyCount": 11,
+   "copyCount": 12,
    "creator": "throwbackfc"
   },
   {
@@ -82,7 +82,7 @@
    "height": 69,
    "weight": 150,
    "accelerationType": "Explosive",
-   "copyCount": 8,
+   "copyCount": 10,
    "creator": "buildmaster"
   },
   {
@@ -110,7 +110,7 @@
    "height": 74,
    "weight": 183,
    "accelerationType": "Lengthy",
-   "copyCount": 8,
+   "copyCount": 10,
    "creator": "buildmaster"
   },
   {
@@ -194,34 +194,6 @@
    "creator": "freakbuilds"
   },
   {
-   "id": "83ce31d4-994e-4ced-8a1c-21049a1b3415",
-   "buildName": "Suárez '14 Liverpool",
-   "archetype_id": "finisher",
-   "level": 100,
-   "signature": [
-    "relentless",
-    "first-touch",
-    "quick-step",
-    "acrobatic"
-   ],
-   "playstyles": [
-    "finesse-shot",
-    "press-proven",
-    "trickster",
-    "low-driven-shot",
-    "game-changer",
-    "power-shot",
-    "block",
-    "aerial-fortress",
-    "rapid"
-   ],
-   "height": 72,
-   "weight": 190,
-   "accelerationType": "Controlled",
-   "copyCount": 3,
-   "creator": "specialevents"
-  },
-  {
    "id": "f555318c-dbec-4cde-a620-98bb209bc233",
    "buildName": "Messi '22 WC",
    "archetype_id": "magician",
@@ -246,6 +218,34 @@
    "height": 67,
    "weight": 159,
    "accelerationType": "Explosive",
+   "copyCount": 4,
+   "creator": "specialevents"
+  },
+  {
+   "id": "83ce31d4-994e-4ced-8a1c-21049a1b3415",
+   "buildName": "Suárez '14 Liverpool",
+   "archetype_id": "finisher",
+   "level": 100,
+   "signature": [
+    "relentless",
+    "first-touch",
+    "quick-step",
+    "acrobatic"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "press-proven",
+    "trickster",
+    "low-driven-shot",
+    "game-changer",
+    "power-shot",
+    "block",
+    "aerial-fortress",
+    "rapid"
+   ],
+   "height": 72,
+   "weight": 190,
+   "accelerationType": "Controlled",
    "copyCount": 3,
    "creator": "specialevents"
   },
@@ -276,6 +276,62 @@
    "accelerationType": "Controlled",
    "copyCount": 3,
    "creator": "buildmaster"
+  },
+  {
+   "id": "99cf50e2-716b-4d51-bb12-6430334283fb",
+   "buildName": "Fernando Hierro",
+   "archetype_id": "progressor",
+   "level": 100,
+   "signature": [
+    "long-ball-pass",
+    "anticipate",
+    "intercept",
+    "pinged-pass"
+   ],
+   "playstyles": [
+    "block",
+    "aerial-fortress",
+    "jockey",
+    "precision-header",
+    "first-touch",
+    "slide-tackle",
+    "incisive-pass",
+    "bruiser",
+    "tiki-taka"
+   ],
+   "height": 74,
+   "weight": 185,
+   "accelerationType": "Lengthy",
+   "copyCount": 2,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "ec66aa62-f00f-4d6a-bf29-3ed131250e5d",
+   "buildName": "Iniesta '10",
+   "archetype_id": "maestro",
+   "level": 100,
+   "signature": [
+    "pinged-pass",
+    "tiki-taka",
+    "first-touch",
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "inventive",
+    "long-ball-pass",
+    "chip-shot",
+    "acrobatic",
+    "finesse-shot",
+    "game-changer",
+    "whipped-pass",
+    "trickster"
+   ],
+   "height": 67,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "copyCount": 2,
+   "creator": "specialevents"
   },
   {
    "id": "307b6bce-10bd-41f7-9af5-40a7e234d12a",
@@ -558,6 +614,34 @@
    "creator": "buildmaster"
   },
   {
+   "id": "3b06061f-de4c-4174-8949-e58269a13175",
+   "buildName": "Aymeric Laporte",
+   "archetype_id": "progressor",
+   "level": 100,
+   "signature": [
+    "long-ball-pass",
+    "anticipate",
+    "intercept",
+    "pinged-pass"
+   ],
+   "playstyles": [
+    "block",
+    "aerial-fortress",
+    "jockey",
+    "precision-header",
+    "first-touch",
+    "slide-tackle",
+    "incisive-pass",
+    "bruiser",
+    "tiki-taka"
+   ],
+   "height": 75,
+   "weight": 187,
+   "accelerationType": "Lengthy",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
    "id": "1769afb5-9025-4f3e-8fac-27685ec0512b",
    "buildName": "Zlatan the Bicycle",
    "archetype_id": "target",
@@ -583,93 +667,28 @@
    "accelerationType": "Lengthy",
    "copyCount": 1,
    "creator": "specialevents"
-  },
-  {
-   "id": "113d760f-4e0f-4d90-a2f3-365820285797",
-   "buildName": "Robben '14",
-   "archetype_id": "spark",
-   "level": 100,
-   "signature": [
-    "trickster",
-    "rapid",
-    "inventive",
-    "quick-step"
-   ],
-   "playstyles": [
-    "finesse-shot",
-    "technical",
-    "chip-shot",
-    "game-changer",
-    "power-shot",
-    "low-driven-shot",
-    "acrobatic",
-    "dead-ball",
-    "tiki-taka"
-   ],
-   "height": 71,
-   "weight": 176,
-   "accelerationType": "Explosive",
-   "copyCount": 1,
-   "creator": "specialevents"
-  },
-  {
-   "id": "ec66aa62-f00f-4d6a-bf29-3ed131250e5d",
-   "buildName": "Iniesta '10",
-   "archetype_id": "maestro",
-   "level": 100,
-   "signature": [
-    "pinged-pass",
-    "tiki-taka",
-    "first-touch",
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "inventive",
-    "long-ball-pass",
-    "chip-shot",
-    "acrobatic",
-    "finesse-shot",
-    "game-changer",
-    "whipped-pass",
-    "trickster"
-   ],
-   "height": 67,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "copyCount": 1,
-   "creator": "specialevents"
-  },
-  {
-   "id": "fce2b056-5cb4-47d7-85e1-72e5dad45b1f",
-   "buildName": "Diego Maradona",
-   "archetype_id": "magician",
-   "level": 100,
-   "signature": [
-    "technical",
-    "trickster",
-    "first-touch",
-    "power-shot"
-   ],
-   "playstyles": [
-    "finesse-shot",
-    "incisive-pass",
-    "rapid",
-    "quick-step",
-    "inventive",
-    "chip-shot",
-    "tiki-taka",
-    "whipped-pass",
-    "acrobatic"
-   ],
-   "height": 65,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "copyCount": 1,
-   "creator": "throwbackfc"
   }
  ],
  "fc27": [
+  {
+   "id": "72b66470-67d9-454b-b694-fc59798bb05e",
+   "buildName": "Vitinha",
+   "archetype_id": "maestro",
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 68,
+   "weight": 143,
+   "accelerationType": "Explosive",
+   "copyCount": 6,
+   "creator": "buildmaster"
+  },
   {
    "id": "ade67fd3-e40e-47c8-aa75-a5a1d5ea5331",
    "buildName": "Mbappé '26 WC",
@@ -705,8 +724,46 @@
    "height": 70,
    "weight": 165,
    "accelerationType": "Controlled",
+   "copyCount": 4,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "7cf7127e-77a8-4095-806a-ae7afaae9767",
+   "buildName": "Thierry Henry",
+   "archetype_id": "finisher",
+   "level": 40,
+   "signature": [
+    "finesse-shot"
+   ],
+   "playstyles": [
+    "quick-step",
+    "technical",
+    "first-touch"
+   ],
+   "height": 74,
+   "weight": 183,
+   "accelerationType": "Controlled",
    "copyCount": 2,
    "creator": "throwbackfc"
+  },
+  {
+   "id": "36a632f0-6e71-4592-8fc5-60391e6a5137",
+   "buildName": "Aurélien Tchouaméni",
+   "archetype_id": "disruptor",
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 74,
+   "weight": 181,
+   "accelerationType": "Lengthy",
+   "copyCount": 2,
+   "creator": "buildmaster"
   },
   {
    "id": "d6dc3938-eef2-4331-a957-0af63bf68b3a",
@@ -747,25 +804,6 @@
    "creator": "specialevents"
   },
   {
-   "id": "7cf7127e-77a8-4095-806a-ae7afaae9767",
-   "buildName": "Thierry Henry",
-   "archetype_id": "finisher",
-   "level": 40,
-   "signature": [
-    "finesse-shot"
-   ],
-   "playstyles": [
-    "quick-step",
-    "technical",
-    "first-touch"
-   ],
-   "height": 74,
-   "weight": 183,
-   "accelerationType": "Controlled",
-   "copyCount": 1,
-   "creator": "throwbackfc"
-  },
-  {
    "id": "e3bd756c-a9e1-4683-bf3e-630f3431dc19",
    "buildName": "Martin Ødegaard",
    "archetype_id": "creator",
@@ -781,6 +819,44 @@
    "height": 70,
    "weight": 150,
    "accelerationType": "Explosive",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "41360286-a695-478d-aa9f-b2622d4c6075",
+   "buildName": "Kobbie Mainoo",
+   "archetype_id": "maestro",
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 71,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "27cd05bc-83ac-4aa6-8018-8397eb051568",
+   "buildName": "James Maddison",
+   "archetype_id": "creator",
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "first-touch",
+    "tiki-taka"
+   ],
+   "height": 71,
+   "weight": 165,
+   "accelerationType": "Controlled",
    "copyCount": 1,
    "creator": "buildmaster"
   },
@@ -840,6 +916,44 @@
    "accelerationType": "Controlled",
    "copyCount": 1,
    "creator": "buildmaster"
+  },
+  {
+   "id": "283ce795-bf32-4ae7-850d-b702ed6ee106",
+   "buildName": "Moisés Caicedo",
+   "archetype_id": "disruptor",
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 70,
+   "weight": 161,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "b0f71219-007c-44e7-820e-308e6921be06",
+   "buildName": "Claude Makélélé",
+   "archetype_id": "disruptor",
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 69,
+   "weight": 146,
+   "accelerationType": "Controlled",
+   "copyCount": 1,
+   "creator": "throwbackfc"
   },
   {
    "id": "7b174e48-9d09-4e23-94f1-326babe7640c",

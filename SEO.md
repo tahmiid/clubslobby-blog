@@ -237,6 +237,25 @@ indexing; ~10–12/day quota, exceeding it fails silently).
 Every one of these produced a wrong conclusion this month.
 
 - **Search Console lags three days.** Build it into every re-check date.
+- **Average position cannot tell "fewer searches" from "dropped off the
+  long tail" — and a new cluster's curve looks the same either way.** The
+  FC 27 controls cluster (19 pages) went 29 → 414 → 14 impressions/day
+  between 17 Aug and 1 Sep while every page held position 5.5–7.5 and
+  stayed "Submitted and indexed". The first read was "the closed beta
+  (5–25 Aug) ended, demand went with it"; an adversarial pass pointed out
+  that the spike is the day the four list pages went live (21 Aug), the
+  decay starts before the beta closes, and position is averaged only over
+  impressions that still happen — a freshness boost expiring fits just as
+  well. What the data CAN say (14 Sep): named and anonymised impressions
+  fell together (distinct queries per week 34 → 11 → 4, named share 8% →
+  4%), the head terms still show at page-1 positions on the days they show
+  at all, and a control group (the 13 spokes) rose over the same weeks — all
+  consistent with demand, none proof of it. **The test is 18 Sep**: readable
+  around 21–22 Sep with the lag, hundreds of impressions/day at position ~6
+  means demand; competitors surging while we sit at 10–30/day means lost
+  visibility. Do not write either conclusion before then. (Series, per-page
+  table, query list and the settle-it pull are in
+  `reports/controls-cluster-gsc-2026-09-14.md`.)
 - **Page-filtered query breakdowns are suppressed to ~1%.** For
   `fc27-the-grounds` — 1,576 impressions by the page dimension —
   `dimensions=[query]` with a page filter returns **14**. Never conclude
@@ -372,6 +391,26 @@ Every one of these produced a wrong conclusion this month.
   any republish of a player page. (The spokes' `data/builds/*-grid.json` have
   no refresher at all — a runtime layer is the eventual fix and is
   deliberately last.)
+- **The controls cluster's inbound links were the nav item it did not have.**
+  On 14 Sep the pillar `fc27-controls` had THREE inbound links site-wide
+  and no page that ranks linked any list. Fixed as chrome, not copy: a
+  `Controls` item in Ghost's navigation (every page links the pillar), the
+  35 player pages' "Five buttons" rows link each control's guide where one
+  exists (`gen/howto-index.mjs`), every spoke's FC 27-first block links the
+  skill-move list, and the FC 27 hubs (a64/a65/a66) each carry one sentence
+  into the cluster. Link a guide only through the index — it returns null
+  for a draft, and a slug guessed from an action name is a 200 that renders
+  "not found".
+- **FC 27 first, on the same URL (2026-09-14/15).** The 35 player pages
+  lead with the FC 27 build (a two-constant reorder in `playerpage.mjs`,
+  plus the roster's three metadata layers), the 13 spokes open with the
+  archetype's FC 27 level-40 grid above the unchanged FC 26 guide (the
+  bottom callout that earned two clicks a fortnight is retired — move,
+  don't add), and `pro-clubs-level-rewards` opens on the FC 27 ladder. Run
+  four days before early access on purpose: the FC 27 titles need to be
+  crawled BEFORE the query shape arrives, and the 12 Sep decision date had
+  passed with the owner away. Engine has no FC 27 grid — it does not
+  return — so its spoke stays an FC 26 guide with a pointer.
 - **Spoke anchor rotation is deliberate** (`gen/spoke.mjs:63-77`, 2026-08-23).
   Do not collapse to one exact-match phrase.
 - **Do not add 13 spoke → roundup links**: it moves readers from 28–45%
@@ -414,7 +453,19 @@ Every one of these produced a wrong conclusion this month.
   moved player grid on clean data; re-check **~16 Sep** on the `grid` column
   of `funnel-report.py`. Above ~15% clicks-per-view → the remaining five
   targets; the runtime layer stays last.
-- **12 Sep** — decide the player-title flip with data; **18 Sep** — the flip.
+- ~~**12 Sep** — decide the player-title flip with data; **18 Sep** — the flip.~~
+  **Done 15 Sep** (§9): player pages, spokes and level rewards lead with FC 27.
+- **21–22 Sep** — read the 18 Sep test on the controls cluster (§6): demand
+  or visibility; the 50 new how-to pages' first impressions; the player
+  pages' FC 27 titles. Write no conclusion about the August collapse before.
+- **Wave 2 of the how-to pages** (30 Ghost drafts) — the owner's read of
+  `reports/howto-review-2026-09-14.md`, then `PUBLISHED_WAVE = 2`.
+- **`lengthy-vs-controlled-vs-explosive` has no feature image** (published
+  23 Aug; the only published post besides `about` without one on 15 Sep).
+- **13 vs 4 new skill moves** — external lists name Fake Turn, Ball Roll
+  Spin, Stepover Combo and Kneel Header; our capture has 13 with zero
+  overlap. Verify on the retail Skill Moves screen on the 18th before either
+  number is cited again.
 - **The AdSense re-review** — on the watcher email, after STALE clears.
 - `main` is 40 commits behind `dev` in the app repo; `dev` is what production
   runs. Left alone by owner decision.

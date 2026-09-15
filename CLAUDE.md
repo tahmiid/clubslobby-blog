@@ -215,10 +215,11 @@ rationale: an existing player wants to know what is DIFFERENT, so Disruptor
 (the only new archetype) leads, then Masteries, then what changed for their
 archetype.
 
-**Still missing: an FC 27 level-progression article.** The owner named it as
-the strongest draw for an FC 26 player and there is no such page —
-`pro-clubs-level-rewards` is FC 26 and `fc27-level-40-builds` is about builds,
-not about how progression works.
+**The FC 27 level-progression page is `pro-clubs-level-rewards`** — a10 carries
+both ladders in one widget since 24 Aug (the owner's call: same page, switch by
+year) and opens on FC 27 since 2026-09-14, with the roster title naming both
+releases. An earlier version of this note said the page was missing; it was
+the note that was stale.
 
 ## Instrumentation rules
 
@@ -304,6 +305,59 @@ of something the dataset already held.
 light band on a dark page that reads as a rendering bug. Wrap it in
 `.pchq-sk` (skills hub, a63) or a widget prefix; `common.mjs` explains why the
 `th`/`td` `!important` guards are load-bearing.
+
+## The how-to pages (skill moves and celebrations)
+
+Two generators, one shape, one index — since 2026-09-14:
+
+| Pages | Generator | Data |
+|---|---|---|
+| the 13 moves NEW in FC 27 (a49 hub + a50–a62) | `gen/fc27-skills.mjs` | `data/fc27-skills.json` |
+| the carried-over skill moves and the celebrations (a108+) | `gen/fc27-howtos.mjs` | `data/fc27-howtos.json` |
+
+Both render the input card from `gen/howto-common.mjs`, and **`gen/howto-index.mjs`
+is the only map from an action to its guide** — keyed by actionId with the year
+prefix stripped, so the player pages' FC 26 legacy section, the three "All FC 27
+…" lists and the spokes all link the same page through `hrefForAction()`. A
+page can carry several actions (Roulette Left + Right; the three rainbows;
+Knee Slide's three menu entries); guessing a slug from an action name would miss
+every one of those. The index throws if two pages claim one action.
+
+- **Records are appended, never inserted.** File numbers follow array
+  position (`FIRST_FILE` = 108); an insert renumbers everything after it and
+  orphans the old files in Ghost.
+- **`wave` decides `status`.** `PUBLISHED_WAVE` in `howto-index.mjs` is the
+  one switch: wave ≤ it publishes, above it stays a Ghost draft, and
+  `hrefForAction` returns null for a draft so nothing links a 404. Wave 1 (50
+  pages: the names with proven search demand) went live 2026-09-15; wave 2
+  (30) waits for the owner and the AdSense timing. Flip the constant,
+  `node gen/fc27-howtos.mjs`, regenerate the lists and player pages, publish.
+- **The roster rows and the feature-image map are generated blocks** in
+  `gen/publish-prod.mjs` and `gen/set-feature-images.mjs`, between
+  `BEGIN/END generated` markers the generator rewrites. Do not edit inside
+  them; edit the data and re-run.
+- **Every claim is on one sheet**: `reports/howto-review-<date>.md` lists the
+  actions, inputs and every editorial field per page for the owner's read.
+  Prose was written against the dataset and adversarially verified before
+  publishing; "what" describes the visible move, "when" is tactics, "who"
+  names archetypes (linked to the spokes on first mention). Nothing in a
+  record restates an input — the card shows it — and the words "new this
+  year" / "same input as FC 26" are computed from `controls-diff.mjs`, never
+  written.
+- **Covers**: `gen/make-howto-feats.py` reads the record's `cover` word
+  (one or two words, three only for names that are three short ones) and
+  composes `assets/feat-howto-<slug>.jpg` in the new-move pages' style.
+- **Per-tab intros on the three lists** live in `data/fc27-list-intros.json`
+  and go through `screenList({ introFor })`. The suite REFUSES an intro at
+  build time that names an entry from another page or fewer than three from
+  its own; every cited name that has a guide becomes a link to it.
+
+Why the pages exist, in one line: on 14 Sep the controls cluster was indexed
+at position ~6 and its impressions tracked the closed-beta window (5–25 Aug)
+almost exactly — ~400/day at the peak, ~15/day two weeks after — so the
+problem was never ranking, it was that we covered 13 of 98 moves and none of
+128 celebrations while the long tail ("how to do a rainbow flick fc 27") is
+where the small sites win. SEO.md §6 has the numbers.
 
 ## Feature images
 

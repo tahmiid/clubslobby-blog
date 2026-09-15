@@ -14,8 +14,8 @@ import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
-import { renderMove as renderInputs, moveList, padSwitcher, CONTROL_CSS,
-         lookup } from './controls.mjs';
+import { moveList, padSwitcher, lookup } from './controls.mjs';
+import { inputCard as sharedCard, HOWTO_STYLE, comboWords } from './howto-common.mjs';
 import { breadcrumbLd, howToLd, itemListLd, plainCombo } from './jsonld.mjs';
 
 // The inputs come from the controls dataset (data/fc27-controls.json, exported
@@ -35,32 +35,13 @@ const BUILDER = `${SITE}/`;
 const HUB = '/blog/fc27-new-skill-moves/';
 
 
-// The input is the reason someone is on the page, so it gets its own block
-// rather than sitting inside a paragraph.
-// One platform at a time (owner, 2026-08-20): a reader plays on one pad and
-// the other column is noise. The floating switcher changes it anywhere on the
-// page and remembers the choice.
-const inputCard = (m) => kg(`<div class="pchq-input">
-  <div class="pchq-input-combo">${renderInputs(CTRL(m.name))}</div>
-  <div class="pchq-input-meta">${m.star}-star move${
-    m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}</div>
-</div>`);
-
-// The PS->Xbox mapping moved to controls.mjs when inputs became glyphs, so
-// there is still exactly one place that knows X is a different button on each
-// platform. The dataset stores the PlayStation string; Xbox stays computed.
-
-const STYLE = kg(`<style>
-.pchq-input{border:1px solid #23364c;border-radius:12px;padding:16px 18px;margin:22px 0;
-  background:#0a1826;color:#e9edf6;font-size:17px}
-.pchq-input-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:#2DE2C5;font-weight:700}
-.pchq-input-combo{font-weight:650;overflow-x:auto;overflow-y:hidden;padding-bottom:2px}
-.pchq-input-meta{border-top:1px solid #23364c;padding-top:10px;
-  margin-top:4px;font-size:13px;color:#9aa0ae}
-.pchq-src{font-size:13px;color:#6b7488;border-left:2px solid #2DE2C5;padding-left:12px;margin:26px 0}
-${CONTROL_CSS}
-</style>`);
+// The input card and its styles live in gen/howto-common.mjs since
+// 2026-09-14, shared with gen/fc27-howtos.mjs (the carried-over moves and the
+// celebrations) so the two page families render one product. This wrapper
+// keeps the call sites below unchanged.
+const inputCard = (m) => sharedCard(CTRL(m.name), `${m.star}-star move${
+    m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}`);
+const STYLE = HOWTO_STYLE;
 
 // The game block: readers of a skill page own a controller already; the game
 // is the purchase in front of them (owner, 2026-08-20). Every page carries it.
@@ -113,7 +94,7 @@ ${breadcrumbLd([['Blog', '/'], ['New FC 27 Skill Moves', HUB], [m.name, null]])}
 ${howToLd({
   name: `How to do ${m.name} in EA FC 27`,
   description: `${m.star}-star skill move — PlayStation inputs; the page renders Xbox too.`,
-  steps: [plainCombo(CTRL(m.name).guidedCombo)],
+  steps: [comboWords(CTRL(m.name).guidedCombo)],
 })}`;
   writeFileSync(path.join(DIR, 'out', `a${50 + i}.html`), html);
   return { file: `a${50 + i}.html`, slug: `fc27-how-to-${m.slug}`, move: m };

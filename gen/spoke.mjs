@@ -20,7 +20,7 @@ import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
 import { affiliateSection } from './affiliate.mjs';
-import { gridCss } from './fc27grid.mjs';
+import { gridCss, buildGrid, FC27_BUILDS, FC27_ARCH } from './fc27grid.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const LEVELS = JSON.parse(readFileSync(path.join(DIR, 'fc26', 'levels.json'), 'utf8'));
@@ -428,6 +428,32 @@ ${JSON.stringify({
                          layout: 'cards', cta: 'Pre-order \u2192' })
     : '';
 
+  // ── FC 27 first (2026-09-14) ─────────────────────────────────────────────
+  // The owner's brief four days before early access: every article promotes
+  // FC 27 content first. On the spokes that means the archetype's finished
+  // FC 27 level-40 builds at the TOP, in the same grid the FC 27 articles
+  // use, and the FC 26 guide — which still carries the ranking — unchanged
+  // below it. "Move, don't add" (SEO.md §9): the old bottom callout, which
+  // earned two clicks a fortnight at ~90% depth, is retired in the same
+  // change rather than kept as a second copy.
+  //
+  // Engine does not return in FC 27 (a66: "Engine is out, Disruptor is in"),
+  // so that spoke gets a short note pointing at the nearest FC 27 archetypes
+  // instead of an empty grid.
+  const fc27Builds = FC27_BUILDS.filter((b) => b.archetype === arch.id);
+  const fc27Arch = FC27_ARCH.find((a) => a.id === arch.id);
+  const fc27Names = fc27Builds.slice(0, 4).map((b) => b.name);
+  const fc27Lead = fc27Builds.length ? `${kg(`<div class="${P}f27" style="margin:0 0 6px;padding:14px 18px;border:1px solid rgba(201,162,39,.45);border-radius:12px;background:rgba(58,47,16,.35)">
+<p style="margin:0 0 4px;font:700 11.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9a227">FC 27 first</p>
+<p style="margin:0;font:400 14.5px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3"><strong>${fc27Builds.length} finished FC 27 level-40 ${esc(archName)} builds</strong> — ${esc(fc27Names.join(', '))}${fc27Builds.length > 4 ? ' and more' : ''} — ready to open and copy. ${fc27Anchor(arch.id)}, see <a href="/blog/fc27-level-40-builds/" style="color:#7fb0ff">every FC 27 level 40 build</a> and <a href="/blog/fc27-best-specializations/" style="color:#7fb0ff">which FC 27 specializations are worth unlocking</a>, or learn <a href="/blog/fc27-skill-moves/" style="color:#7fb0ff">every FC 27 skill move</a> the builds below are made for. The complete FC 26 level-100 guide follows.</p>
+</div>`)}
+${buildGrid(`${P}f`, fc27Builds, `FC 27: ${fc27Builds.length} ${archName} build${fc27Builds.length === 1 ? '' : 's'} at level 40`,
+  `${fc27Arch?.signature?.[0] ? `Signature PlayStyle ${psName(fc27Arch.signature[0])} in gold, three regular slots in silver. ` : ''}Tap any card to open it in the app.`)}`
+  : kg(`<div class="${P}f27" style="margin:0 0 1.2em;padding:14px 18px;border:1px solid rgba(201,162,39,.45);border-radius:12px;background:rgba(58,47,16,.35)">
+<p style="margin:0 0 4px;font:700 11.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9a227">FC 27</p>
+<p style="margin:0;font:400 14.5px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3">The ${esc(archName)} does not return in FC 27 — its job splits between the <a href="/blog/pro-clubs-marauder-build/" style="color:#7fb0ff">Marauder</a> and the <a href="/blog/pro-clubs-progressor-build/" style="color:#7fb0ff">Progressor</a>, and the new <a href="/blog/fc27-disruptor-build/" style="color:#7fb0ff">Disruptor</a> takes the ball-winning half. ${fc27Anchor(arch.id)} for what changed. This guide stays the FC 26 ${esc(archName)} reference.</p>
+</div>`);
+
   const closing = BUILDS.length > 1
     ? `<p>The fastest way to use this guide is to not rebuild it: ${BUILDS.map((b, i) => `<a href="${openUrl(b)}">open the ${esc(cfg.shortNames[i])} build</a>`).join(' or ')}, save a copy, and bend it to your game — or <a href="${BUILDER}">browse every finished ${esc(archName)}</a> and pick a different one. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`
     : `<p>The fastest way to use this guide is to not rebuild it: <a href="${openUrl(featured)}">open the ${esc(cfg.shortNames[0])} build</a>, save a copy, and bend it to your game — or <a href="${BUILDER}">browse every finished ${esc(archName)}</a> and pick a different one. All 13 archetypes have finished builds on <a href="${SITE}/u/buildmaster">@buildmaster</a>, and the <a href="${SITE}/explore">explore feed</a> has the community's.</p>`;
@@ -442,7 +468,8 @@ ${JSON.stringify({
   // path down is shared - splitting the whole template instead of just its
   // head is how the first attempt silently dropped five of the seven sections
   // and 4,700 words from the page.
-  const opening = gridBuilds ? `${cfg.intro(ctx)}
+  const opening = gridBuilds ? `${fc27Lead}
+${cfg.intro(ctx)}
 ${buildGridBlock}
 
 ${AD_A}
@@ -452,7 +479,8 @@ ${whyParas.join('\n')}
 
 <h2>${esc(cfg.buildsH2)}</h2>
 ${cfg.buildsParas(ctx).join('\n')}
-${builderLine}` : `${widgetTop}
+${builderLine}` : `${fc27Lead}
+${widgetTop}
 ${cfg.intro(ctx)}
 
 <h2>Why the ${esc(archName)}</h2>
@@ -492,11 +520,6 @@ ${sigCard}
 <h2>${isKeeper ? 'Height and weight' : 'Height, weight and AcceleRATE'}</h2>
 ${cfg.physiquePara(ctx)}
 
-
-${kg(`<div class="fc27-callout" style="margin:2em 0;padding:16px 20px;border:1px solid rgba(201,162,39,.45);border-radius:12px;background:rgba(58,47,16,.35)">
-<p style="margin:0 0 4px;font:700 11.5px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9a227">FC 27 is here</p>
-<p style="margin:0;font:400 14px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:#d9dce3">The ${esc(archName)} returns in FC 27. ${fc27Anchor(arch.id)} and see <a href="/blog/fc27-level-40-builds/" style="color:#7fb0ff">the finished FC 27 level 40 builds</a>, or <a href="/blog/fc27-best-specializations/" style="color:#7fb0ff">which FC 27 specializations are worth unlocking</a>. You can also <a href="${SITE}/explore?year=27&src=guide" style="color:#7fb0ff">open FC 27 in the app</a>.</p>
-</div>`)}
 
 ${playersOnArchetype(arch.id, archName)}
 

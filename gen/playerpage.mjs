@@ -31,6 +31,7 @@ import { breadcrumbLd } from './jsonld.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss } from './fc27grid.mjs';
 import { archOf, archTitle, mostCopiedGrid } from './mostcopied.mjs';
+import { hrefForAction } from './howto-index.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const BLOG = `${SITE}/blog`;
@@ -143,8 +144,14 @@ If that is the job your club needs filling, the <a href="${BLOG}/pro-clubs-${arc
   // not explained (owner, 2026-08-23): a PlayStyle behind a control is its
   // badge, an attribute behind it is its name and number. No sentence.
   const picks = byEvidence(an?.controls ?? [], 5);
+  // Each row's name links to the move's own how-to page where one is
+  // published (gen/howto-index.mjs, 2026-09-14) — the 35 player pages are
+  // the controls cluster's only inbound links from pages that rank, and a
+  // reader who liked the build is the reader who wants to learn its buttons.
+  // Keyed by actionId with the year stripped, so the FC 26 legacy section
+  // links the same guide (the inputs did not change between the years).
   const moves = picks.map((c) => {
-    try { return { ...R.lookup(c.action, { page: c.page }), _ev: c }; }
+    try { return { ...R.lookup(c.action, { page: c.page }), _ev: c, href: hrefForAction(c.actionId) }; }
     catch { return null; }
   }).filter(Boolean);
   let ctrlHtml = '';
@@ -199,8 +206,13 @@ export function renderPlayerPage(cfg, all, { CTRL, analysisFor, ARM_OF }) {
   const first = cfg.name.split(' ').pop();
   const arm = ARM_OF.get(cfg.slug);
 
-  // FC 26 leads until the launch-day flip; FC 27 is the second section.
-  const leadYear = 26, otherYear = 27;
+  // FC 27 leads since 2026-09-14 (the launch flip from LAUNCH-DAY-2026-09-18.md,
+  // run four days early so Google recrawls the FC 27 titles before early
+  // access opens on the 18th); FC 26 is the second, anchored legacy section.
+  // Nothing else about the page knows which year leads: the roster's titles
+  // and descriptions in publish-prod.mjs are the other two layers that must
+  // agree (publishing rule 3).
+  const leadYear = 27, otherYear = 26;
   const lead = data[`fc${leadYear}`], other = data[`fc${otherYear}`];
   if (!lead && !other) throw new Error(`${cfg.slug}: no build for either release`);
 

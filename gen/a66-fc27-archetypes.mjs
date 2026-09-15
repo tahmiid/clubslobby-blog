@@ -60,7 +60,7 @@ ${appCta({
 })}
 
 <h2>What changed from FC 26</h2>
-<p>The rumor mill and EA's own statements agree on the shape: Engine is out, Disruptor is in, and there are "tuning updates across all existing archetypes" that EA hasn't detailed. All 13 are unlocked from the start and resets are free. For the full new-vs-already-true breakdown, see <a href="/blog/fc27-archetype-changes/">FC 27 archetype changes</a>; for the two new progression systems, <a href="/blog/fc27-masteries-explained/">Masteries</a> and <a href="/blog/fc27-amps-explained/">Amps</a>.</p>
+<p>The rumor mill and EA's own statements agree on the shape: Engine is out, Disruptor is in, and there are "tuning updates across all existing archetypes" that EA hasn't detailed. All 13 are unlocked from the start and resets are free. For the full new-vs-already-true breakdown, see <a href="/blog/fc27-archetype-changes/">FC 27 archetype changes</a>; for the two new progression systems, <a href="/blog/fc27-masteries-explained/">Masteries</a> and <a href="/blog/fc27-amps-explained/">Amps</a>. The controls changed too — a set-piece tactics system and 13 new skill moves — and <a href="/blog/fc27-controls/">every FC 27 control, skill move and celebration is animated here</a>, PlayStation and Xbox.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>How many archetypes are in FC 27?</h3>
