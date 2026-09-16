@@ -12,9 +12,9 @@ trial). Full launch **Thu 25 Sep**. The traffic window is 18 Sep – early Oct.
 
 ## Before 18 Sep (do in advance, any session)
 
-- [x] **Launch content published and indexing.** *15 Sep: 50 how-to pages
-      (skill moves + celebrations) live, 30 more drafted; the FC 27-first flip
-      done across player pages, spokes and level rewards. See ROADMAP 15 Sep.*
+- [x] **Launch content published and indexing.** *15 Sep: the FC 27-first flip done across player pages, spokes and
+      level rewards; list pages gained per-tab prose. Per-move how-to pages
+      were tried and withdrawn the same day. See ROADMAP 15 Sep.*
 - [ ] ~~Launch content published and indexing.~~ Articles need 2–4 weeks in
   the index to rank for launch-week searches — publish by early September,
   not launch week. The set and status live in `ROADMAP-FC27.md`; gameplay

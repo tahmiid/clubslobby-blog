@@ -158,7 +158,7 @@ turns out to be 50 after the 18th.
 
 | Measure | 2 Sep | 15 Sep | |
 |---|---|---|---|
-| Blog posts live | 93 | **143** (+50) | 50 how-to pages published, 30 more staged as drafts |
+| Blog posts live | 93 | **93** | 50 per-move how-to pages went live and were withdrawn the same day (owner); all 80 are Ghost drafts |
 | Controls cluster, 28d | — | 3,006 impr · 58 clicks · pos ~6 | 6.1% of impressions, 3.3% of clicks; **135 impr in the last 7d** |
 | Pages leading with FC 27 | 7 hubs + 13 how-tos | **+35 player pages, +12 spokes, level rewards** | the launch-day flip, run four days early |
 | Inbound links to `fc27-controls` | 3 | nav item on every page + hubs + 35 player pages | |
@@ -183,18 +183,20 @@ What was found:
 
 What shipped (all live 15 Sep, `SEO.md` §6/§9, blog `CLAUDE.md`):
 
-- **80 how-to pages** from a factory (`gen/fc27-howtos.mjs`) over the
-  controls dataset: 50 carried-over skill moves and 30 celebrations, inputs
-  from the dataset, prose written against it and adversarially verified
-  (34 of 80 records tightened), every claim on one review sheet for the
-  owner (`reports/howto-review-2026-09-14.md`). **Wave 1 (50, proven-demand
-  names) is published; wave 2 (30) is drafted in Ghost** — one constant
-  flips it. Covers composed and assigned.
+- **80 per-move how-to pages were built and then withdrawn.** A factory
+  (`gen/fc27-howtos.mjs`) rendered 50 carried-over skill moves and 30
+  celebrations from the controls dataset, prose adversarially verified, 50
+  published — and the owner's call the same day was that **people do not
+  search moves by name**: they search "new skill moves", "all skill moves",
+  "all 5 star moves", "new celebrations", "all celebrations", "all
+  controls". All 80 are Ghost drafts, unlinked; the list pages are the
+  product. The review sheet stays as raw material
+  (`reports/howto-review-2026-09-14.md`).
 - **Per-tab intros on the three list pages** (24 paragraphs, build-time
-  assertion that every cited name is on that tab), every list row linked to
-  its guide, the pillar linking both guide families.
-- **Links**: `Controls` in the nav; the 35 player pages' "Five buttons" rows
-  link guides where one exists; every spoke's FC 27 block links the
+  assertion that every cited name is on that tab) — the list pages are what
+  the owner wants ranking, and they had 126–261 words of prose each. Rows
+  for the 13 new moves link their guides; nothing else does.
+- **Links**: `Controls` in the nav; every spoke's FC 27 block links the
   skill-move list; the three FC 27 hubs carry one sentence into the cluster.
 - **FC 27 first**: the 35 player pages lead with the FC 27 build (titles,
   descriptions and excerpts flipped with them); the 12 returning archetypes'
@@ -214,10 +216,10 @@ Left open, dated:
   Skill Moves screen on the 18th before anyone cites either number.
 - **`lengthy-vs-controlled-vs-explosive` (a107) has no feature image** —
   published 23 Aug, found by the cover audit today. Not touched.
-- **Wave 2 drafts** wait on the owner's read and the AdSense timing; the
-  watcher has read "ready" since 3 Sep and no re-review has been requested.
+- **AdSense**: the watcher has read "ready" since 3 Sep and no re-review has
+  been requested — the owner's click.
 - **Measure on 21–22 Sep**: cluster impressions/day against 22 Aug (414),
-  the 50 new pages' first impressions, and the player pages' FC 27 titles.
+  and the player pages' FC 27 titles.
 
 ---
 

@@ -30,9 +30,16 @@ const DIR = path.join(import.meta.dirname, '..', 'data');
 const NEW13 = JSON.parse(readFileSync(path.join(DIR, 'fc27-skills.json'), 'utf8')).moves;
 const HOWTO = JSON.parse(readFileSync(path.join(DIR, 'fc27-howtos.json'), 'utf8'));
 
-// Wave 1 is live; wave 2 waits for the owner (AdSense timing — see the data
-// file's `_waves` note). Bumping this is the whole switch.
-export const PUBLISHED_WAVE = 1;
+// 0 = none of the generated pages is public. Wave 1 (50 pages) was live for a
+// few hours on 2026-09-15 and withdrawn on the owner's call the same day:
+// people do not search skill moves or celebrations by NAME — they search
+// "new skill moves", "all skill moves", "all 5 star moves", "new
+// celebrations", "all celebrations", "all controls". The list pages are the
+// product; one article per move is not how readers want it. The pages stay
+// as Ghost drafts (nothing deleted) and every link to them resolves to null
+// through hrefForAction, so the lists and the player pages carry no dead
+// link. Do not raise this without the owner.
+export const PUBLISHED_WAVE = 0;
 // a108 is the first free article number after a107; records are numbered by
 // array position, so APPEND to the data file, never insert — a renumbered
 // page would publish under a new file and leave its old one orphaned.

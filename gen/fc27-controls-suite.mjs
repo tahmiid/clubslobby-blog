@@ -245,9 +245,10 @@ and the chest flick, performed while juggling.</p>
 <p><strong>${SKILLS.moves.length} of these moves are new to FC 27.</strong>
 They wear a badge above, and each has its own guide with when to use it and
 which builds suit it — start from
-<a href="/blog/fc27-new-skill-moves/">every new skill move in FC 27</a>.
+<a href="/blog/fc27-new-skill-moves/">every new skill move in FC 27</a>.${
+guides('skill') > SKILLS.moves.length ? `
 ${guides('skill') - SKILLS.moves.length} carried-over moves have a guide too —
-tap a linked name in the list above to open it.
+tap a linked name in the list above to open it.` : ''}
 Inputs for moves carried over from FC 26 are unchanged — every move you could
 already do works identically, so nothing you drilled last year is wasted.</p>
 <p>The other two lists cover
@@ -275,9 +276,8 @@ so nothing in your routine breaks.</p>
 <p>Most celebrations follow one grammar: hold a modifier (L1, L2, R1 or R2)
 and make a right-stick gesture — a flick, a double flick or a rotation. The
 animations above play each one at half speed, and the dock at the bottom
-switches PlayStation and Xbox. ${guides('celebration')} celebrations have
-their own guide — a linked name in the list opens it, starting with
-<a href="/blog/fc27-cancel-celebration/">how to cancel a celebration</a>. The other two lists cover
+switches PlayStation and Xbox.${guides('celebration') ? ` ${guides('celebration')} celebrations have
+their own guide — a linked name in the list opens it.` : ''} The other two lists cover
 <a href="/blog/fc27-basic-controls/">every basic control</a> and
 <a href="/blog/fc27-skill-moves/">every skill move</a> — and
 <a href="/blog/fc27-control-changes/">what changed in FC 27's controls</a> has
@@ -297,12 +297,10 @@ a single carried-over input changed, so everything your hands learned in FC 26
 still works. The highlights:</p>
 <ul>
 <li><a href="/blog/fc27-new-skill-moves/">${SKILLS.moves.length} new skill moves</a>,
-each with its own guide — and ${guides('skill')} skill moves in all have one, from the
-<a href="/blog/fc27-how-to-rainbow-flick/">rainbow flick</a> to the
-<a href="/blog/fc27-how-to-elastico/">elastico</a></li>
-<li>${guides('celebration')} celebration guides, from
-<a href="/blog/fc27-knee-slide-celebration/">the knee slide</a> to
-<a href="/blog/fc27-cancel-celebration/">how to cancel one</a></li>
+each with its own guide${guides('skill') > SKILLS.moves.length
+  ? ` — ${guides('skill')} skill moves in all have one; tap a linked name in the list` : ''}</li>${
+guides('celebration') ? `
+<li>${guides('celebration')} celebration guides — tap a linked name in the list</li>` : ''}
 <li>A <a href="/blog/fc27-control-changes/">set-piece tactics system</a> on
 D-pad up, two new throw-in controls, and ${newCount('Celebrations')} new
 celebrations</li>

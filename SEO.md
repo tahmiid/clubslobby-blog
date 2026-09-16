@@ -391,16 +391,20 @@ Every one of these produced a wrong conclusion this month.
   any republish of a player page. (The spokes' `data/builds/*-grid.json` have
   no refresher at all — a runtime layer is the eventual fix and is
   deliberately last.)
+- **List-shaped queries, not move names (owner, 2026-09-15).** Readers
+  search "new skill moves", "all skill moves", "all 5 star moves", "new
+  celebrations", "all celebrations", "all controls". Fifty per-move how-to
+  pages were published on 15 Sep and withdrawn the same day on that call;
+  they stay as Ghost drafts, unlinked (`PUBLISHED_WAVE = 0`). Invest in the
+  list pages and the new-moves hub, not in one URL per action.
 - **The controls cluster's inbound links were the nav item it did not have.**
   On 14 Sep the pillar `fc27-controls` had THREE inbound links site-wide
   and no page that ranks linked any list. Fixed as chrome, not copy: a
-  `Controls` item in Ghost's navigation (every page links the pillar), the
-  35 player pages' "Five buttons" rows link each control's guide where one
-  exists (`gen/howto-index.mjs`), every spoke's FC 27-first block links the
-  skill-move list, and the FC 27 hubs (a64/a65/a66) each carry one sentence
-  into the cluster. Link a guide only through the index — it returns null
-  for a draft, and a slug guessed from an action name is a 200 that renders
-  "not found".
+  `Controls` item in Ghost's navigation (every page links the pillar), every
+  spoke's FC 27-first block links the skill-move list, and the FC 27 hubs
+  (a64/a65/a66) each carry one sentence into the cluster. Guide links go
+  through `gen/howto-index.mjs` only — it returns null for a draft, and a
+  slug guessed from an action name is a 200 that renders "not found".
 - **FC 27 first, on the same URL (2026-09-14/15).** The 35 player pages
   lead with the FC 27 build (a two-constant reorder in `playerpage.mjs`,
   plus the roster's three metadata layers), the 13 spokes open with the
@@ -456,10 +460,10 @@ Every one of these produced a wrong conclusion this month.
 - ~~**12 Sep** — decide the player-title flip with data; **18 Sep** — the flip.~~
   **Done 15 Sep** (§9): player pages, spokes and level rewards lead with FC 27.
 - **21–22 Sep** — read the 18 Sep test on the controls cluster (§6): demand
-  or visibility; the 50 new how-to pages' first impressions; the player
-  pages' FC 27 titles. Write no conclusion about the August collapse before.
-- **Wave 2 of the how-to pages** (30 Ghost drafts) — the owner's read of
-  `reports/howto-review-2026-09-14.md`, then `PUBLISHED_WAVE = 2`.
+  or visibility; the player pages' FC 27 titles and the lists' per-tab intros. Write no conclusion about the August collapse before.
+- **The 80 per-move how-to drafts** stay drafts (owner, 15 Sep — see §9).
+  Nothing to do unless the owner asks for tier pages or a roundup, in which
+  case the copy in `data/fc27-howtos.json` is raw material.
 - **`lengthy-vs-controlled-vs-explosive` has no feature image** (published
   23 Aug; the only published post besides `about` without one on 15 Sep).
 - **13 vs 4 new skill moves** — external lists name Fake Turn, Ball Roll
