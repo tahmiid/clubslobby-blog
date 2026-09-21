@@ -250,10 +250,15 @@ Every one of these produced a wrong conclusion this month.
   fell together (distinct queries per week 34 → 11 → 4, named share 8% →
   4%), the head terms still show at page-1 positions on the days they show
   at all, and a control group (the 13 spokes) rose over the same weeks — all
-  consistent with demand, none proof of it. **The test is 18 Sep**: readable
-  around 21–22 Sep with the lag, hundreds of impressions/day at position ~6
-  means demand; competitors surging while we sit at 10–30/day means lost
-  visibility. Do not write either conclusion before then. (Series, per-page
+  consistent with demand, none proof of it. **The 18 Sep test answered: demand.**
+  Read 2026-09-21: the cluster went 21 → 37 → 66 → **958 → 1,822**
+  impressions/day on 14–18 Sep (early access opened the 18th) with the list
+  pages at position 5–8 and the two how-tos Google favours at 5.0–5.6. It
+  was never visibility. What the same read added: **clicks did not follow
+  impressions** — 24 on 1,822 (1.3%); `fc27-how-to-giant-fake-shot` took
+  854 impressions for 8 clicks on the query "fc27 fake shot", which wants
+  the ordinary fake shot on the basic-controls page, not the Giant one.
+  Position 4–6 on a controls query in launch week is a video SERP. (Series, per-page
   table, query list and the settle-it pull are in
   `reports/controls-cluster-gsc-2026-09-14.md`.)
 - **Page-filtered query breakdowns are suppressed to ~1%.** For
@@ -459,8 +464,11 @@ Every one of these produced a wrong conclusion this month.
   targets; the runtime layer stays last.
 - ~~**12 Sep** — decide the player-title flip with data; **18 Sep** — the flip.~~
   **Done 15 Sep** (§9): player pages, spokes and level rewards lead with FC 27.
-- **21–22 Sep** — read the 18 Sep test on the controls cluster (§6): demand
-  or visibility; the player pages' FC 27 titles and the lists' per-tab intros. Write no conclusion about the August collapse before.
+- ~~**21–22 Sep** — read the 18 Sep test on the controls cluster (§6).~~
+  **Read 21 Sep: demand** (§6). Still to read once the lag clears: the
+  player pages' FC 27 titles, and the FC 27-first spokes against their
+  FC 26 head queries ("best stats fc 26 pro clubs magician": 471
+  impressions, 0 clicks, position 9.4 in launch week).
 - **The 80 per-move how-to drafts** stay drafts (owner, 15 Sep — see §9).
   Nothing to do unless the owner asks for tier pages or a roundup, in which
   case the copy in `data/fc27-howtos.json` is raw material.
