@@ -97,6 +97,52 @@ switches because they are nearly free.
 
 ---
 
+> ### 2026-09-21 — AdSense rejects a second time; the answer is Raptive and Journey, and GA4 goes in
+>
+> The owner's call after the second rejection ("it's time to consider our
+> other options") and a re-check of every door against the last 30 days:
+> 72,600 Cloudflare pageviews (3,800/day in launch week), ~42k visitors,
+> **62% from US/UK/CA/AU**, 18,300 human blog article views, 7,440 app
+> sessions, affiliate blocks 511 shown / 1 clicked.
+>
+> | Network | Bar (re-verified 21 Sep) | Us |
+> |---|---|---|
+> | Raptive | 25k pageviews/month, 50% tier-1 under 100k | clear both |
+> | Journey by Mediavine | 1,000 tier-1 sessions/30d; full tier now revenue-based | clear |
+> | Media.net | no minimum; prefers 3–6-month-old domains | domain is 7 weeks |
+> | Nitro | 100k visitors or 300k pageviews | not yet |
+> | Ezoic | 250k users since Feb 2026 | no |
+>
+> **Decision: apply to Raptive and Journey (both), take Raptive if both say
+> yes.** Both are exclusive for display; affiliate and direct sponsorship stay
+> carved out. Honest sizing at $4–10 RPM (gaming, 62% tier-1, 80% mobile):
+> blog only $90–230/month at trailing traffic, $240–600 at launch pace,
+> +$80–200 with the reserved feed slot in the app; steady state after the
+> spike $150–400. Timelines: Journey decides in days to two weeks, live
+> 2–4 weeks after; Raptive reviews 1–3 weeks, onboards 1–2 more.
+>
+> **Both verify traffic through Google Analytics 4, so GA4 is live from
+> 21 Sep 21:12 UTC** — property G-GF5G82EH7X on the owner's Gmail, tag in the
+> app's `public/index.html` and in Ghost's `codeinjection_foot` (source of
+> truth `ops/injections/codeinjection_foot.html`, applied with
+> `ops/ghost-setting.sh`; **no backslashes in an injected value — the MySQL
+> string eats them and the script's checksum then refuses the write**). This
+> spends part of §4's "no telemetry" asset, deliberately: consent mode
+> denies advertising storage everywhere and analytics storage in the UK, EEA
+> and CH until a cookie bar (app `ConsentBanner.jsx`, blog inline twin) hears
+> yes; the choice is one localStorage key for the origin; our own browsers
+> never load the tag. `/privacy` was rewritten in the same change and the
+> blog footer links it. **The app's per-route page views count in GA4**
+> (Enhanced measurement history events), so GA4 pageviews run well above
+> Cloudflare's — Raptive's easier 40% tier-1 band starts at 100k.
+>
+> Next: Journey application once ~2 days of GA4 data exist (~23 Sep), Raptive
+> once GA4 shows 25k pageviews in the trailing 30 days (~1 Oct at current
+> pace). Both are the owner's accounts and identity; each asks for Viewer
+> access to the GA4 property (Admin → Property access management). When one
+> goes live, name it in /privacy's Display-ads paragraph and let its CMP
+> replace the cookie bar's advertising half.
+
 ## 1. The numbers this plan is sized against
 
 From `reports/funnel/2026-08-11.txt` and the first Search Console exports —

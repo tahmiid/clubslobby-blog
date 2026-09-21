@@ -1,0 +1,56 @@
+<!-- Google Analytics 4 with consent mode (2026-09-21) — twin of the app's
+     public/index.html: advertising storage denied everywhere (no ads yet),
+     analytics denied in the UK/EEA/CH until the bar hears a yes, granted
+     elsewhere; the choice is one localStorage key for the whole origin, so a
+     yes here covers the app. Our own browsers (pchq_internal / pchq_int)
+     never load the tag. Applied with ops/ghost-setting.sh codeinjection_foot;
+     the source of truth is ops/injections/codeinjection_foot.html. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  region: ['GB','AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','CH']
+});
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'granted'
+});
+(function () {
+  var KEY = 'pchq_consent';
+  var internal = false, choice = null;
+  try { internal = !!localStorage.getItem('pchq_internal') || document.cookie.indexOf('pchq_int=') !== -1; } catch (e) {}
+  try { choice = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  if (choice && choice.choice === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  if (!internal) {
+    gtag('js', new Date());
+    gtag('config', 'G-GF5G82EH7X');
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GF5G82EH7X';
+    document.head.appendChild(s);
+  }
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var ATL = ['Atlantic/Canary','Atlantic/Madeira','Atlantic/Reykjavik','Atlantic/Faroe','Atlantic/Faeroe','Atlantic/Azores'];
+  var needs = tz.indexOf('Europe/') === 0 || ATL.indexOf(tz) !== -1 || tz === 'UTC' || tz === 'GMT' || tz === 'Etc/UTC' || tz === 'Etc/GMT';
+  var chosen = choice && (choice.choice === 'granted' || choice.choice === 'denied');
+  if (!needs || chosen) return;
+  var bar = document.createElement('div');
+  bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookie choice'); bar.id = 'pchq-consent';
+  bar.style.cssText = 'position:fixed;left:12px;right:12px;bottom:16px;z-index:9999;max-width:440px;margin-left:auto;padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(12,12,20,.96);color:rgba(255,255,255,.82);font:13.5px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.5)';
+  bar.innerHTML = '<p style="margin:0"><strong style="color:#fff">Cookies for visitor counts.</strong> We use Google Analytics to see which pages get read, and nothing else — no ads, no selling data. <a href="https://proclubshq.com/privacy" style="color:#2DE2C5">Privacy</a></p>'
+    + '<div style="display:flex;gap:8px;margin-top:12px">'
+    + '<button type="button" data-c="granted" style="flex:1;border:0;border-radius:999px;padding:9px 16px;background:#2DE2C5;color:#04120d;font:700 13.5px system-ui,sans-serif;cursor:pointer">OK</button>'
+    + '<button type="button" data-c="denied" style="flex:1;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:9px 16px;background:transparent;color:rgba(255,255,255,.85);font:700 13.5px system-ui,sans-serif;cursor:pointer">No thanks</button>'
+    + '</div>';
+  bar.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-c]'); if (!b) return;
+    var c = b.getAttribute('data-c');
+    try { localStorage.setItem(KEY, JSON.stringify({ choice: c, at: new Date().toISOString() })); } catch (err) {}
+    gtag('consent', 'update', { analytics_storage: c === 'granted' ? 'granted' : 'denied' });
+    bar.remove();
+  });
+  document.body.appendChild(bar);
+})();
+</script>
