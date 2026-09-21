@@ -65,10 +65,9 @@ launching):
 
 ## 25 Sep — Launch day
 
-- [ ] **Default year flip**: `ACTIVE_GAME_YEAR=27` in the box's `.env` +
-  `systemctl restart clubs27-api` — deliberate second step, separate from
-  "live"; rollback is setting it back. **Built and verified on the
-  integration lane 2026-09-21 (app #202)** — and it is NOT one line: the app
+- [x] **Default year flip** — **LIVE 2026-09-21** (app deploy 425c95b, #202):
+  `ACTIVE_GAME_YEAR=27` in the box's `.env` + restart, AFTER the frontend.
+  It was NOT one line: the app
   persisted a year on every build-page visit, so the frontend that stops
   doing that (tab-scoped link/build years, a stamped switch preference that
   is discarded when the default moves) must deploy BEFORE the `.env` line,
