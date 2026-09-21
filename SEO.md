@@ -395,6 +395,28 @@ all PASS). Findings and the rules each one turned into:
    the 1,540-impression, zero-click "best stats fc 26 pro clubs magician" is
    not a title problem: that SERP is entirely YouTube, Reddit and TikTok, and
    our page sits at p9 on it. Leave it.
+9. **The app's own pages must be titled for their queries too** (owner, 21 Sep:
+   "pro clubs builder" showed our explore page as "Explore FC 26 builds").
+   Two facts: the crawler pages (`crawl.py`) had said FC 27 since that
+   morning's default flip — Google was showing its cached copy — and none of
+   the four static pages said "builder" anywhere, while every competitor on
+   that SERP is titled "…Pro Clubs Builder" (all still FC 26). Search
+   Console, 28 days: `/` 28 impressions (all our name), `/explore` 15, `/meta`
+   2, `/level-rewards` 5; "fc 27 pro clubs builder" was served the author
+   archive. Rules since 21 Sep: the home crawler page is "FC {year} Pro Clubs
+   Builder — Plan, Price & Share Builds" with ~120 words of what the builder
+   does, a `WebApplication` JSON-LD block and links to the other three; the
+   explore page is "FC {year} Pro Clubs Builds — Find, Copy and Edit" with the
+   public-build count; **the meta title never prints the season's admin
+   label** (it read "Beta" for four weeks); the level-rewards page reads its
+   cap from the release (it said "1–100" for FC 27). The SPA sets the same
+   titles client-side (`hooks/usePageTitle.js`) — the two are kept in step by
+   hand — and `public/index.html` is "Pro Clubs Builder for EA FC 27 & FC 26".
+   The four static sitemap entries carry `lastmod` = `STATIC_PAGE_REVISED`
+   (crawl.py), dated at the deploy like `BUILD_PAGE_REVISED`; until then a
+   retitle never asked Google to come back. After a deploy that changes what
+   these pages say, press **Request indexing** in Search Console for the four
+   URLs — the reindex queue only knows build pages.
 
 ## 8. Content rules that are also SEO rules
 

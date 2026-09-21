@@ -8,7 +8,7 @@
 // out and the catalog is confirmed on the retail build.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { esc, kg, appCta, archIcon, updatedLine } from './common.mjs';
+import { esc, kg, appCta, archIcon, updatedLine, SITE } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, buildGrid, psName } from './fc27grid.mjs';
 
@@ -63,7 +63,7 @@ ${appCta({
 
 <h2>What changed from FC 26</h2>
 <p>Engine is out, Disruptor is in, and every returning archetype was retuned: FC 27 is a 40-level, 962-AP game with new ceilings, costs and specialization criteria, all of it in the builder. All 13 are unlocked from the start and resets are free. For the full new-vs-already-true breakdown, see <a href="/blog/fc27-archetype-changes/">FC 27 archetype changes</a>; for the two new progression systems, <a href="/blog/fc27-masteries-explained/">Masteries</a> and <a href="/blog/fc27-amps-explained/">Amps</a>. The controls changed too — a set-piece tactics system and 13 new skill moves — and <a href="/blog/fc27-controls/">every FC 27 control, skill move and celebration is animated here</a>, PlayStation and Xbox.</p>
-<p>Each of those has its own page, with the game's numbers: <a href="/blog/fc27-masteries-explained/">FC 27 Masteries</a> (every archetype's boosts at level 10 and 30), <a href="/blog/fc27-amps-explained/">FC 27 Amps</a>, <a href="/blog/fc27-best-specializations/">FC 27 specializations</a> (all 40), <a href="/blog/fc27-disruptor-build/">the FC 27 Disruptor build</a>, <a href="/blog/pro-clubs-level-rewards/">the level-40 ladder</a> and <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a> ready to copy.</p>
+<p>Each of those has its own page, with the game's numbers: <a href="/blog/fc27-masteries-explained/">FC 27 Masteries</a> (every archetype's boosts at level 10 and 30), <a href="/blog/fc27-amps-explained/">FC 27 Amps</a>, <a href="/blog/fc27-best-specializations/">FC 27 specializations</a> (all 40), <a href="/blog/fc27-disruptor-build/">the FC 27 Disruptor build</a>, <a href="/blog/pro-clubs-level-rewards/">the level-40 ladder</a> and <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a> ready to copy — or open the <a href="${SITE}/?ref=proclubshq.com">FC 27 Pro Clubs Builder</a> and price your own.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>How many archetypes are in FC 27?</h3>

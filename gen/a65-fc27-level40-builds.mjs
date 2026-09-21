@@ -8,7 +8,7 @@
 // owner confirmed the catalog on the retail build.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { esc, appCta, archIcon, updatedLine } from './common.mjs';
+import { esc, appCta, archIcon, updatedLine, SITE } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, FC27_PROG, buildGrid } from './fc27grid.mjs';
@@ -29,7 +29,7 @@ ${buildGrid(`l40-${id}`, builds, `${arc.name} builds`,
 }).join('\n');
 
 const html = `${updatedLine('2026-09-21', 'every build priced against the retail catalog')}
-<p><strong>${FC27_BUILDS.length} ready-made FC 27 Pro Clubs builds, every one at level 40</strong> — Mbappé, Messi, Haaland and Yamal at their current best; the thirteen players the archetypes are famously modeled on, Buffon to Zlatan; World Cup editions of Messi and Mbappé from 2022 and 2026; and eight for Disruptor, the new archetype. Tap any card to open the build, copy it, and make it yours.</p>
+<p><strong>${FC27_BUILDS.length} ready-made FC 27 Pro Clubs builds, every one at level 40</strong> from the <a href="${SITE}/?ref=proclubshq.com">FC 27 Pro Clubs Builder</a> — Mbappé, Messi, Haaland and Yamal at their current best; the thirteen players the archetypes are famously modeled on, Buffon to Zlatan; World Cup editions of Messi and Mbappé from 2022 and 2026; and eight for Disruptor, the new archetype. Tap any card to open the build, copy it, and make it yours.</p>
 
 <h2>Every build, by archetype</h2>
 ${sections}
