@@ -5,7 +5,7 @@
 // AXP), so the article states it and stops there.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'am27';
@@ -61,7 +61,8 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `<p>Amps are a new item type coming to Clubs in FC 27: equip one and it adds benefits to your active archetype <strong>for a limited time</strong> — a set number of matches, after which it expires. Attribute boosts at the low end; PlayStyles, Perks, and at the top tier <strong>PlayStyles+</strong> at the high end. This comes from EA's official Grounds &amp; Clubs deep dive, and it is the biggest change to how a Clubs build performs on the pitch since archetypes arrived.</p>
+const html = `${updatedLine('2026-09-21', 'the game is out; every number here is the game’s own')}
+<p>Amps are a new item type in Clubs in FC 27: equip one and it adds benefits to your active archetype <strong>for a limited time</strong> — a set number of matches, after which it expires. Attribute boosts at the low end; PlayStyles, Perks, and at the top tier <strong>PlayStyles+</strong> at the high end. This comes from EA's official Grounds &amp; Clubs deep dive, and it is the biggest change to how a Clubs build performs on the pitch since archetypes arrived.</p>
 
 ${widget}
 

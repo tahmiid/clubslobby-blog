@@ -4,7 +4,7 @@
 // exactly that structure rather than padding it.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { mostCopiedGrid } from './mostcopied.mjs';
 
@@ -60,7 +60,8 @@ R.addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)ret
 </script>
 </div>`);
 
-const html = `<p>Club Objectives are FC 27's new shared progression layer: goals your whole club works toward, in three confirmed categories — <strong>Club Milestones</strong> (Bronze/Silver/Gold, earning fans that raise your Club reputation), <strong>Club Weeklies and Seasonals</strong> (paying Amps, Consumables, and Coins), and <strong>Elite Objectives</strong> reserved for Elite Division clubs. Confirmed in EA's official Grounds &amp; Clubs deep dive.</p>
+const html = `${updatedLine('2026-09-21', 'checked against the retail game')}
+<p>Club Objectives are FC 27's new shared progression layer: goals your whole club works toward, in three confirmed categories — <strong>Club Milestones</strong> (Bronze/Silver/Gold, earning fans that raise your Club reputation), <strong>Club Weeklies and Seasonals</strong> (paying Amps, Consumables, and Coins), and <strong>Elite Objectives</strong> reserved for Elite Division clubs. Confirmed in EA's official Grounds &amp; Clubs deep dive.</p>
 
 ${widget}
 

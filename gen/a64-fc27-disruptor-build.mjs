@@ -9,7 +9,7 @@
 // confirmed fact now — never reintroduce the hedge.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { esc, kg, appCta } from './common.mjs';
+import { esc, kg, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { FC27_BUILDS, FC27_ARCH, buildGrid, psName } from './fc27grid.mjs';
 
@@ -30,7 +30,8 @@ ${specs.map((s) => `<div class="r"><b>${esc(s.name)}</b><span class="ps">${esc(p
 <p>${esc(s.criteria.map(([n, v]) => `${n} ${v}`).join(' · '))}</p></div>`).join('')}
 </div>`);
 
-const html = `<p><strong>Disruptor is the only new archetype in FC 27</strong> — EA's own reveal names it, models it on Roy Keane, and hands it the central-midfield destroyer job: win the ball, set the tempo, let someone else take the bow. Here are eight Disruptor builds you can open, copy and play with right now.</p>
+const html = `${updatedLine('2026-09-21', 'every number confirmed on the retail game')}
+<p><strong>Disruptor is the only new archetype in FC 27</strong> — EA's own reveal names it, models it on Roy Keane, and hands it the central-midfield destroyer job: win the ball, set the tempo, let someone else take the bow. Here are eight Disruptor builds you can open, copy and play with right now.</p>
 
 ${buildGrid('d27g', disr, 'FC 27 Disruptor builds', 'Casemiro, Rice, Tchouaméni, Caicedo, Palhinha — plus Keane, Gattuso and Vieira from the legends shelf. Tap to open.')}
 

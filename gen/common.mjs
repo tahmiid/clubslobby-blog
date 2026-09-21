@@ -65,6 +65,20 @@ export const appCta = ({ href, kicker, head, body, label }) => kg(`<div class="p
 
 export const kg = (html) => `<!--kg-card-begin: html-->\n${html}\n<!--kg-card-end: html-->`;
 
+// A visible "Updated <date>" line at the top of an article body (2026-09-21).
+// Google prints the byline's PUBLISHED date in the snippet ("16 Aug 2026 —")
+// while every launch-week competitor shows "3 days ago"; the theme's byline
+// is the publish date, and Ghost's updated_at moves on any save (a tag, a
+// feature image), so the honest signal is this line — written by the
+// generator on the day the copy itself changed, beside the dateModified that
+// ghost_head already emits. Pass the day the CONTENT changed, never today's
+// date by reflex: a line that lies is worse than no line.
+export const updatedLine = (iso, note) => {
+  const label = new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-GB',
+    { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  return kg(`<p class="pchq-updated" style="margin:0 0 1.2em;font:600 13px/1.45 -apple-system,system-ui,'Segoe UI',sans-serif;color:#2DE2C5">Updated <time datetime="${iso}">${label}</time><span style="color:#898781;font-weight:400"> — ${esc(note)}</span></p>`);
+};
+
 // The app's archetype icon, beside the archetype's name (user's call
 // 2026-08-11: a page discussing several archetypes reads better when each
 // carries its mark). Hotlinked from the app like the PlayStyle glyphs — same

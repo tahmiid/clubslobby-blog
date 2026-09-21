@@ -429,13 +429,17 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
    `{{ghost_head}}`:
 
    ```hbs
-   {{#is "tag"}}<meta name="robots" content="noindex, follow" />{{/is}}
+   {{#is "tag, author"}}<meta name="robots" content="noindex, follow" />{{/is}}
    ```
 
-   Added 2026-08-12. Tag archives were ranking *against* the articles they
-   list — `/blog/tag/fc-26/` alone had **214 impressions and zero clicks** in
-   GSC, `/blog/tag/archetypes/` another 70. `noindex, follow` drops them from
-   results while still passing link equity to the posts.
+   Added 2026-08-12 for tags, widened to author archives 2026-09-21. Tag
+   archives were ranking *against* the articles they list — `/blog/tag/fc-26/`
+   alone had **214 impressions and zero clicks** in GSC, `/blog/tag/archetypes/`
+   another 70 — and the author archive took the click for "fc 27 pro clubs
+   builder" and landed it on a listing. `noindex, follow` drops them from
+   results while still passing link equity to the posts. The live author
+   archive is `/blog/author/pro-clubs-hq/` (the only user's slug);
+   `/blog/author/buildmaster/` 404s and Google will drop it on its own.
 
    This is a stock Casper file, so **any theme or Ghost upgrade silently
    removes it.** A timestamped `.bak-*` sits beside it. After any upgrade,

@@ -6,7 +6,7 @@
 // limited to the one fact verified in-game: free switching, no reset on switch.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'ac27';
@@ -59,7 +59,8 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `<p>EA's Grounds &amp; Clubs deep dive confirmed four changes to how archetypes work in FC 27: <strong>every archetype is unlocked from the start, resets are free, you can respec individual attributes instead of wiping the whole build, and you can do all of it from inside a lobby.</strong> None of those four is the change most coverage leads with — so here's what's actually new, what was already true, and what's still open.</p>
+const html = `${updatedLine('2026-09-21', 'what the game settled: cap 40, retuned trees, free resets')}
+<p>EA's Grounds &amp; Clubs deep dive confirmed four changes to how archetypes work in FC 27: <strong>every archetype is unlocked from the start, resets are free, you can respec individual attributes instead of wiping the whole build, and you can do all of it from inside a lobby.</strong> None of those four is the change most coverage leads with — so here's what's actually new, what was already true, and what's still open.</p>
 
 ${widget}
 

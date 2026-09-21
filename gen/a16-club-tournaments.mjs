@@ -6,7 +6,7 @@
 // article's honesty mechanism, same as a5's evidence tiers.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 
 const P = 'ct27';
 
@@ -50,7 +50,8 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `<p>EA calls this "one of the biggest additions to Clubs in EA SPORTS FC 27": <strong>Club Tournaments</strong> — live 11v11 tournament events where your club competes against other clubs, running alongside the returning Leagues and Playoffs rather than replacing them. Different events can carry different round counts, match rules, and rewards, and six house rules are confirmed by name.</p>
+const html = `${updatedLine('2026-09-21', 'the six house rules, in FC 27’s rotation')}
+<p>EA calls this "one of the biggest additions to Clubs in EA SPORTS FC 27": <strong>Club Tournaments</strong> — live 11v11 tournament events where your club competes against other clubs, running alongside the returning Leagues and Playoffs rather than replacing them. Different events can carry different round counts, match rules, and rewards, and six house rules are confirmed by name.</p>
 
 ${widget}
 

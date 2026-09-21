@@ -160,3 +160,21 @@ beta or rumored."*
 - **A trap for the next pass**: the shared CTA `body:` strings are
   single-quoted JS — an apostrophe in the copy crashed seven generators
   silently (each printed only the Node version). Use ’ (U+2019).
+
+## 21 Sep — the CTR pass (done)
+
+The owner's read: search CTR is poor and the wrong article answers some
+queries ("fc27 masteries" → the archetypes hub). Tested with Search Console
+query→page (6–19 Sep) and 17 exact-term searches on a neutral SERP; the full
+findings and the rules are `SEO.md` §7a. Shipped the same day:
+
+- a visible "Updated 21 September 2026" line on the 15 rewritten FC 27 pages;
+- retitles: masteries, specializations, the builds hub, The Grounds, Amps,
+  level rewards (+ answer-first openings and "Where is Pro Clubs" on The
+  Grounds; exact-anchor links to every FC 27 page from the hub and The Grounds);
+- the tier list FC 27-first from the live FC 27 boards, FC 26 kept below;
+- a "How to do a fake shot in FC 27" heading, row and FAQ on basic controls,
+  linked from the Giant Fake Shot guide;
+- author archives noindexed in the theme (tag + author).
+
+Check GSC per query family from ~28 Sep: position first, CTR second.

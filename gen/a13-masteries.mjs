@@ -7,7 +7,7 @@
 // the "unannounced"/"hasn't said" framing went with the launch.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'ms27';
@@ -88,7 +88,9 @@ R.addEventListener('click',function(e){
 </script>
 </div>`);
 
-const html = `<p>Masteries are FC 27's answer to a question Clubs has never had a good answer for: <strong>why level an archetype you don't main?</strong> The answer now is that every archetype you develop leaves a permanent mark on your pro — reach its milestones and you unlock attribute boosts that apply to <em>every build you use</em>, not just the one you levelled. This is from EA's official Grounds &amp; Clubs deep dive, so unlike most of what's written about FC 27 right now, none of it is speculation.</p>
+const html = `${updatedLine('2026-09-21', 'the full schedule and every value, read from the game')}
+<p><strong>FC 27 Masteries are permanent attribute boosts your pro earns by levelling an archetype: +1 to two attributes at level 10 and +1 more to the second at level 30, kept on every build you own.</strong> All thirteen pairs and their values are in the planner below.</p>
+<p>Masteries are FC 27's answer to a question Clubs has never had a good answer for: <strong>why level an archetype you don't main?</strong> The answer now is that every archetype you develop leaves a permanent mark on your pro — reach its milestones and you unlock attribute boosts that apply to <em>every build you use</em>, not just the one you levelled. This is from EA's official Grounds &amp; Clubs deep dive, so unlike most of what's written about FC 27 right now, none of it is speculation.</p>
 
 ${widget}
 

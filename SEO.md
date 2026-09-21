@@ -338,6 +338,64 @@ Every one of these produced a wrong conclusion this month.
 
 ---
 
+### 7a. The 21 Sep SERP test — what Google showed for the exact terms, and the rules it bought
+
+Method: Search Console query→page for 6–19 Sep (which page Google actually
+served per query, with position and CTR) plus 17 exact-term searches on a
+neutral, signed-out UK SERP. Every FC 27 article was indexed (URL inspection,
+all PASS). Findings and the rules each one turned into:
+
+1. **The visible date is the snippet's date.** Ghost's byline prints
+   `published_at` (masteries: "04 Aug 2026", the hub: "16 Aug 2026") and
+   Google printed exactly that, while every launch-week competitor showed
+   "3 days ago". `dateModified` in ghost_head was already 21 Sep and did not
+   help. Rule: a rewritten article carries `updatedLine(iso, note)` from
+   `gen/common.mjs` as its first body element — the day the COPY changed,
+   never today's date by reflex. 15 pages carry it since 21 Sep.
+2. **A title's first noun phrase is the query family it will be served for.**
+   "Best Specialization for Every Archetype in FC 27" took "best archetype
+   fc27" (45 impressions, 0 clicks) away from any page that could answer it;
+   "FC 27 Level 40 Builds" never said "Pro Clubs" and "fc27 pro clubs builds"
+   scattered across five pages including the author archive. Retitled 21 Sep:
+   masteries (leads with "FC 27 Masteries", says "Full List" — the "People
+   also search for" box asks for a list), specializations, the builds hub
+   ("FC 27 Pro Clubs Builds"), The Grounds ("Is Pro Clubs in FC 27? Yes…" —
+   the question people type, answered in the title), Amps (no more "Coming"),
+   level rewards (leads with "FC 27 Level Cap Is 40").
+3. **A question query wants the answer in the first sentence.** The Grounds
+   page opened "Short answer: no" to "Is Pro Clubs gone?"; the queries are "is
+   pro clubs in fc 27" and "where is pro clubs fc 27" (250 impressions, 3
+   clicks at p7–10). It now opens "Short answer: yes… inside The Grounds" and
+   carries a "Where is Pro Clubs in FC 27?" heading and FAQ.
+4. **A query with no page of its own lands on the nearest wrong one.** "fc27
+   fake shot" (~170 impressions a fortnight) was served the Giant Fake Shot
+   how-to, a 3-star skill move. The ordinary fake shot has a heading, its own
+   animated row and a FAQ on the basic-controls page since 21 Sep, and the
+   Giant page links back to it. Never a per-move page (owner rule, 15 Sep);
+   a heading on the list page is the unit.
+5. **The tier list follows the release the searcher plays.** "best archetype
+   fc27" had only an FC 26 tier list to land on. `a31` is FC 27-first since
+   21 Sep, computed from the live FC 27 boards (`data/meta-fc27-season1.json`,
+   refreshed from `/api/meta/current?year=27`), with the FC 26 list intact
+   below an anchored heading — the player-page flip pattern. The FC 27
+   season's admin label is never printed (it is "Beta"); only its number is.
+6. **Author archives are noindex, like tags** (`default.hbs`,
+   `{{#is "tag, author"}}`). The live archive is `/blog/author/pro-clubs-hq/`;
+   `/blog/author/buildmaster/` has 404'd for weeks and Google was still
+   serving it for "fc 27 pro clubs builder" — a 404 drops it, nothing else to do.
+7. **What titles cannot fix.** For masteries, amps, specializations, level cap,
+   controls, skill moves and celebrations we are not on page one of a neutral
+   SERP at all — page one is EA's help pages, FIFPlay, FIFA U Team, Destructoid
+   and video. The levers there are the date line, exact-anchor internal links
+   from the three strongest pages (The Grounds 4,147 impressions, the
+   archetypes hub 3,480, the builds hub 1,580 — all three now link every FC 27
+   page by its head term) and the answer-first opening. Re-read GSC per query
+   family after 7–10 days; a position move is the signal, CTR alone is not.
+8. **Spoke titles already carry both years** ("… FC 27 and FC 26 Setups"), so
+   the 1,540-impression, zero-click "best stats fc 26 pro clubs magician" is
+   not a title problem: that SERP is entirely YouTube, Reddit and TikTok, and
+   our page sits at p9 on it. Leave it.
+
 ## 8. Content rules that are also SEO rules
 
 - **FC 27 numbers are rumor until EA publishes, and the word "beta" appears

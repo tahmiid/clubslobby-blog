@@ -18,7 +18,7 @@
 // dated section, updated when early-access data lands.
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { SITE, BRAND, esc, kg, appCta } from './common.mjs';
+import { SITE, BRAND, esc, kg, appCta, updatedLine } from './common.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 
@@ -109,6 +109,7 @@ upd();})();
 </div>`);
 
 const body = [
+  updatedLine('2026-09-21', 'FC 27 keeps FC 26’s thresholds, confirmed on the retail game'),
   `<p>Every Pro Clubs build runs one of three acceleration styles — <strong>Explosive</strong>, <strong>Lengthy</strong> or <strong>Controlled</strong> — and the game decides which from exactly four numbers: height, Agility, Strength and Acceleration. The thresholds below are the actual FC 26 rules (the same data the ${esc(BRAND)} builder computes from), and the calculator applies them live.</p>`,
   calculator,
   AD_A,

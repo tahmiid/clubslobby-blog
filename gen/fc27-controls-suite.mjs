@@ -17,7 +17,7 @@ import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
-import { CONTROLS, padSwitcher, CONTROL_CSS } from './controls.mjs';
+import { CONTROLS, padSwitcher, CONTROL_CSS, lookup, renderMove } from './controls.mjs';
 import { screenList, SCREEN_CSS } from './controls-screen.mjs';
 import { breadcrumbLd, itemListLd } from './jsonld.mjs';
 import { newSfx, added, renames, sfx } from './controls-diff.mjs';
@@ -183,7 +183,35 @@ ${itemListLd({
   console.log(`${file}  ${s.slug}`);
 }
 
-listArticle('basic', `<h2>FC 27's basic controls, page by page</h2>
+// The single most-searched basic control (GSC, 6–19 Sep 2026: "fc27 fake
+// shot" and its spellings, ~170 impressions a fortnight) was landing on the
+// Giant Fake Shot how-to, a 3-star skill move — because the ordinary fake
+// shot had no heading of its own anywhere. One row, rendered from the
+// dataset by the same renderer as the list above, under a heading Google can
+// jump to; the Giant page links back here.
+const fakeShot = lookup('Fake Shot', { page: 'Attacking - Simple' });
+const fakeShotRow = kg(`<div class="gk"><section class="gk-page on"><div class="cm gk-row">
+  <span class="gk-inputs"><span class="gk-line">${renderMove(fakeShot)}</span><span class="cm-cap" aria-live="polite"></span></span>
+  <span class="gk-action"><span class="gk-name">${esc(fakeShot.name)}</span><span class="gk-meta">${esc(fakeShot.page)}</span></span>
+  <span class="cm-bar" aria-hidden="true"></span>
+</div></section></div>`);
+const fakeShotSection = `${kg('<h2 id="fake-shot">How to do a fake shot in FC 27</h2>')}
+${fakeShotRow}
+<p>The fake shot is a basic control, not a skill move — it sits on the
+<strong>Attacking&nbsp;–&nbsp;Simple</strong> page of the Button Help menu:
+<strong>press Circle, then Cross while pushing the left stick in any
+direction</strong> on PlayStation, <strong>B then A</strong> on Xbox. The row
+above plays it; the dock switches platform. The
+<a href="/blog/fc27-how-to-giant-fake-shot/">Giant Fake Shot</a> on the
+skill-move pages is a different thing: the 3-star flair version.</p>
+<h3>Is the fake shot a skill move in FC 27?</h3>
+<p>No. It needs no skill stars — every pro can do it from level 1. Only the
+Giant Fake Shot and the other flair fakes on the
+<a href="/blog/fc27-skill-moves/">skill-moves list</a> are star-gated.</p>
+
+`;
+
+listArticle('basic', `${fakeShotSection}<h2>FC 27's basic controls, page by page</h2>
 <p>The Button Help menu splits FC 27's basic controls across thirteen pages,
 and the tabs above follow them exactly. <strong>Attacking&nbsp;–&nbsp;Simple</strong>
 (${nOf('Attacking - Simple')} entries) is the bread and butter — ground pass,

@@ -4,7 +4,7 @@
 // can be updated claim-by-claim as EA confirms things rather than rewritten.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
+import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 
 const P = 'gr27';
@@ -87,11 +87,16 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `<p>Short answer: <strong>no</strong>. Clubs is still in FC 27, still 11-a-side, still your pro. What changed is everything around it — and one thing most coverage is calling a change isn't one at all.</p>
+const html = `${updatedLine('2026-09-21', 'rewritten for the retail game: 25 of 27 facts now confirmed')}
+<p>Short answer: <strong>yes</strong>. Pro Clubs is in FC 27 — it is called Clubs now and it lives inside The Grounds: open The Grounds from the main menu and the Clubhouse is where Leagues, Playoffs and the new Club Tournaments are. Still 11-a-side, still your pro. What changed is everything around it — and one thing most coverage called a change isn't one at all.</p>
 
-<p>A lot of what's circulating right now is one site quoting another. So every claim below is marked by where it came from, and you can filter by how solid it is:</p>
+<p>Every claim below is marked by where it came from — EA's own words, the game itself, or preview coverage — and you can filter by how solid it is:</p>
 
 ${widget}
+
+<h2 id="where">Where is Pro Clubs in FC 27?</h2>
+<p>Inside The Grounds. From the main menu, enter The Grounds; the Clubhouse is the door to Clubs — Leagues, Playoffs and the new <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a> — and Drop-in and Rush matches run from the same hub. Your Virtual Pro is one player everywhere in it, so the <a href="/blog/fc27-archetypes/">FC 27 archetype</a> you build for 11-a-side is the one that walks around Parkside.</p>
+<p>Everything new in FC 27 Clubs, each on its own page: <a href="/blog/fc27-archetypes/">FC 27 archetypes</a> · <a href="/blog/fc27-masteries-explained/">FC 27 Masteries</a> · <a href="/blog/fc27-amps-explained/">FC 27 Amps</a> · <a href="/blog/fc27-best-specializations/">FC 27 specializations</a> · <a href="/blog/pro-clubs-level-rewards/">the level-40 ladder</a> · <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a>.</p>
 
 <h2>Clubs isn't leaving. It's moving in somewhere bigger</h2>
 <p>The Grounds is a new social football hub built around your created pro — a place where you move around as your own avatar, play Kickabouts and 1v1s, and get into Clubs matches. A space wrapped around the football, not a replacement for it.</p>
@@ -139,8 +144,10 @@ ${appCta({
 })}
 
 <h2>Frequently asked questions</h2>
-<h3>Is Pro Clubs gone in FC 27?</h3>
-<p>No. Clubs is still in the game. It now sits inside The Grounds, a social hub built around your created pro, rather than being a separate menu item.</p>
+<h3>Is Pro Clubs in FC 27?</h3>
+<p>Yes. Clubs is still in the game — 11-a-side, your own pro, leagues and playoffs — and it now sits inside The Grounds, a social hub built around your created pro, rather than being a separate menu item.</p>
+<h3>Where is Pro Clubs in FC 27?</h3>
+<p>Inside The Grounds: enter it from the main menu and open the Clubhouse for Leagues, Playoffs and Club Tournaments. Drop-in and Rush run from the same hub, and the pro is the same one everywhere.</p>
 <h3>What is The Grounds in FC 27?</h3>
 <p>A social football hub with three districts — Parkside, Montclair and Zeiza — where you move around as your own avatar, play Kickabouts and 1v1s, take on mentor challenges, and enter Clubs matches. XP earned there feeds the same Virtual Pro.</p>
 <h3>Can you still play 11-a-side Clubs in FC 27?</h3>

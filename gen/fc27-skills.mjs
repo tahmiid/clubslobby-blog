@@ -55,6 +55,7 @@ function renderMove(m, i) {
 <p>${esc(m.name)} is one of the 13 skill moves new to EA FC 27. It is a
 <strong>${m.star}-star move</strong>, so any pro with
 ${m.star} skill star${m.star === 1 ? '' : 's'} or more can perform it.</p>
+${m.slug === 'giant-fake-shot' ? `<p>Looking for the ordinary <strong>fake shot</strong> — Circle then Cross on PlayStation, B then A on Xbox? That one is a basic control, not a skill move: <a href="/blog/fc27-basic-controls/#fake-shot">here it is on the basic controls page</a>, animated. This page is the ${m.star}-star flair version.</p>` : ''}
 
 ${inputCard(m)}
 

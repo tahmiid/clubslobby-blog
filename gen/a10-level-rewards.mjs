@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { appCta, BRAND, SITE, esc, kg, baseCss } from './common.mjs';
+import { appCta, BRAND, SITE, esc, kg, baseCss, updatedLine } from './common.mjs';
 import { mostCopiedGrid } from './mostcopied.mjs';
 
 const P = 'lv27';
@@ -343,7 +343,8 @@ const halfAxp = L.find((r) => r.axp_required_cumulative >= TOTAL_AXP / 2).level;
 const late = L[99].ap_cumulative - L[74].ap_cumulative;
 const triple = marks.filter((m) => m.un.length >= 3 && m.level > 1);
 
-const html = `<p>Pro Clubs levelling runs to 100, and every reward on the way — AP, PlayStyle slots, signature perks, PlayStyle+ upgrades, card tiers — lands on a fixed schedule that EA has never published. Drag through it:</p>
+const html = `${updatedLine('2026-09-21', 'FC 27 figures confirmed on the retail game, level cap 40')}
+<p><strong>FC 27’s level cap is 40</strong>, worth 962 AP all-in; FC 26 ran to 100. Every reward on the way — AP, PlayStyle slots, signature perks, PlayStyle+ upgrades, Masteries, card tiers — lands on a fixed schedule that EA has never published. Drag through either ladder:</p>
 
 ${widget}
 

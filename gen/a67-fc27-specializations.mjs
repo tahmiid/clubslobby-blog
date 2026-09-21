@@ -7,7 +7,7 @@
 // framing ended 2026-09-21 - the game is out and the catalog is confirmed.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { esc, kg, appCta, archIcon } from './common.mjs';
+import { esc, kg, appCta, archIcon, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { FC27_BUILDS, FC27_ARCH, psName, buildCard, gridCss } from './fc27grid.mjs';
 
@@ -36,7 +36,8 @@ ${rows}
 </div>`)}`;
 }).join('\n');
 
-const html = `<p><strong>Every FC 27 archetype carries three specializations, and each one changes your signature PlayStyle.</strong> That's the real reason to pick one: the specialization's PlayStyle+ replaces your archetype's default signature — if you want it. Below are all 40, with their unlock criteria and, for each one, a live build actually wearing it that you can open and copy.</p>
+const html = `${updatedLine('2026-09-21', 'criteria and PlayStyle+ rewards confirmed on the retail game')}
+<p><strong>Every FC 27 archetype carries three specializations, and each one changes your signature PlayStyle.</strong> That's the real reason to pick one: the specialization's PlayStyle+ replaces your archetype's default signature — if you want it. Below are all 40, with their unlock criteria and, for each one, a live build actually wearing it that you can open and copy.</p>
 
 <h2>How specializations work</h2>
 <p>Meet a specialization's attribute criteria and it unlocks; select it and its PlayStyle+ becomes available in your signature slot. You don't have to take it — keeping the archetype's original signature is a real choice, and some of the best builds do exactly that (Mbappé keeps Low Driven Shot over Game Changer+). The criteria below are as they appear in our builder; treat exact numbers as rumor until EA publishes them.</p>

@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { appCta, ARCH, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { appCta, ARCH, BRAND, title, esc, kg, baseCss, updatedLine } from './common.mjs';
 
 const P = 'ac27';
 
@@ -127,7 +127,8 @@ const noExp = data.filter((a) => !a.reach.includes('explosive')).map((a) => a.na
 const noLen = data.filter((a) => !a.reach.includes('lengthy')).map((a) => a.name);
 const list = (xs) => xs.length > 1 ? xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1] : (xs[0] || 'none');
 
-const html = `<p>Set your height and drag the two sliders — the acceleration type updates live, with the exact rule that decided it:</p>
+const html = `${updatedLine('2026-09-21', 'FC 27 keeps FC 26’s AcceleRATE thresholds, confirmed on the retail game')}
+<p>Set your height and drag the two sliders — the acceleration type updates live, with the exact rule that decided it:</p>
 
 ${widget}
 
