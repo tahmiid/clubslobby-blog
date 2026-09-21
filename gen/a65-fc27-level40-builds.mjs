@@ -3,9 +3,9 @@
 // 70+ Ready-Made Builds for Every Archetype" · slug: fc27-level-40-builds.
 //
 // Content rules (owner, 2026-08-16): no launch-day announcement framing;
-// the builds lead the read; unpublished numbers are RUMOR and "beta"
-// appears nowhere. Experience: builds to play with, rumored info around
-// them.
+// the builds lead the read; "beta" appears nowhere. The RUMOR framing that
+// wrapped every number until 2026-09-21 is gone: the game is out and the
+// owner confirmed the catalog on the retail build.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, appCta, archIcon } from './common.mjs';
@@ -48,16 +48,16 @@ ${appCta({
 <p>One loadout detail worth knowing: at level 40 a pro carries <strong>one signature PlayStyle and three regular slots</strong>. Most builds here wear their specialization's PlayStyle+ in the signature slot — that's mostly why you pick a spec — but where the archetype's own signature <em>is</em> the player, they keep the original: all three Mbappés wear Low Driven Shot, Vinícius wears Trickster, Kroos wears Pinged Pass.</p>
 
 <h2>About the numbers</h2>
-<p>FC 27 hasn't released, so every number behind these builds — attribute caps, AP costs, specialization criteria, the level-40 cap itself — is rumored until EA publishes the real thing. If the numbers move at launch, the builder re-prices everything automatically and any build you've copied stays yours.</p>
+<p>Every number behind these builds — attribute caps, AP costs, specialization criteria, the level-40 cap itself — is read from the game and priced in the builder. If EA retunes anything in a title update, the builder re-prices everything automatically and any build you've copied stays yours.</p>
 <p>A build is only half of it. The skill stars each one buys decide which of <a href="/blog/fc27-skill-moves/">the game's skill moves</a> it can perform — every tier is animated there, and most moves have their own guide.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>Can I use these builds now?</h3>
-<p>You can open, copy and tune all of them in our builder today. In the game itself, FC 27 launches 25 September, with early access from 18 September.</p>
+<p>Yes. Open, copy and tune any of them in our builder, then build the same pro in the game — FC 27 has been playable in early access since 18 September, with the worldwide release on 25 September.</p>
 <h3>Why level 40?</h3>
-<p>Forty is the rumored pre-release cap, worth ${AP} AP all-in. When the cap rises, the builds have room to grow — copying one now is a head start, not a throwaway.</p>
+<p>Forty is FC 27's level cap, worth ${AP} AP all-in. If EA raises it in a title update, the builds have room to grow — copying one is a head start, not a throwaway.</p>
 <h3>Can I copy a build and change it?</h3>
-<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Pre-order EA SPORTS FC 27',
+<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Get EA SPORTS FC 27',
   layout: 'cards', cta: 'Pre-order \u2192', image: 'fc27', tag: 'fc27',
   items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
 

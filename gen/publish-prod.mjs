@@ -449,11 +449,13 @@ const POSTS = [
     meta_description: 'Every FC 27 menu entry compared against FC 26: the new set-piece tactics, the corner menu\'s move to D-pad up, new skill moves and celebrations — every input animated.',
     custom_excerpt: 'Every FC 27 menu entry compared against last year\'s — what moved, what was renamed, what is new. Every input animated.',
     tags: ['Guides', 'Controls', 'FC 27'] },
-  // The FC 27 wave (2026-08-16): rumor framing throughout (owner rule).
+  // The FC 27 wave (2026-08-16): rumor framing throughout until the game
+  // shipped; confirmed framing since 2026-09-21 (owner: "everything is
+  // confirmed now").
   { file: 'a64.html', slug: 'fc27-disruptor-build', status: 'published',
     title: 'FC 27 Disruptor Build: The New Archetype Explained (8 Best Builds)',
     meta_title: 'FC 27 Disruptor Build — The New Archetype (8 Builds)',
-    meta_description: 'The only new FC 27 archetype: what Disruptor is, the rumored specializations, and 8 ready-made builds — Casemiro, Rice, Tchouaméni, Gattuso, Vieira and more.',
+    meta_description: 'The only new FC 27 archetype: what Disruptor is, its three specializations, and 8 ready-made builds — Casemiro, Rice, Tchouaméni, Gattuso, Vieira and more.',
     custom_excerpt: 'The new midfield destroyer, explained — with eight builds you can open and copy now.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   { file: 'a65.html', slug: 'fc27-level-40-builds', status: 'published',
@@ -471,7 +473,7 @@ const POSTS = [
   { file: 'a67.html', slug: 'fc27-best-specializations', status: 'published',
     title: 'Best Specialization for Every Archetype in FC 27 (All 40 Compared)',
     meta_title: 'FC 27 Best Specializations — All 40 Compared',
-    meta_description: 'All 40 FC 27 specializations with their rumored unlock criteria and PlayStyle+ rewards — and a live build wearing every single one.',
+    meta_description: 'All 40 FC 27 specializations with their unlock criteria and PlayStyle+ rewards — and a live build wearing every single one.',
     custom_excerpt: 'Every specialization, its PlayStyle+, its criteria — and a real build wearing it.',
     tags: ['Guides', 'Archetypes', 'FC 27'] },
   // The controls suite (2026-08-20): the pillar + three full lists, mirroring

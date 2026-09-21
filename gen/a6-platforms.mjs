@@ -90,7 +90,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 

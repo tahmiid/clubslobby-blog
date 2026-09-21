@@ -29,16 +29,16 @@ const FACTS = [
   [1, 'Club Tournaments', '11v11 live tournament events beyond the returning Leagues and Playoffs, with six house rules confirmed by name.'],
   [1, 'Club Objectives', 'Milestones (fans and Club reputation), Weeklies and Seasonals (Amps, Consumables, Coins), and Elite Objectives for Elite Division clubs.'],
   [1, 'AXP and PlayStyles return', 'Consumables still apply AXP — including new archetype-targeted variants — and PlayStyles/PlayStyles+ appear throughout the deep dive.'],
-  [2, 'Specialization branches', 'The three-branch specialization structure is reported to return but was not mentioned in the Grounds & Clubs deep dive.'],
+  [1, 'Specialization branches', 'Three per archetype, each with its own PlayStyle+ — all 40 are in the specializations guide and priced in the builder.'],
   [2, 'Saveable loadouts', 'Multiple build loadouts can be saved and swapped between in-game.'],
-  [2, 'One pro everywhere', 'XP earned anywhere in The Grounds feeds the same Virtual Pro you take into an 11-a-side match.'],
-  [2, 'Closed beta', 'Reported as 5–25 August, invite-only, with no public sign-up page.'],
-  [3, 'The level cap', 'FC 26 launched at 50 and moved to 100 in a title update. A "global maximum level cap" is referenced for FC 27 without a number.'],
-  [3, 'The AP cost curve', 'Whether the four cost tiers survive, and what a point costs at the top end.'],
-  [3, 'AcceleRATE thresholds', 'The height, Agility and Strength values that decide Controlled, Explosive and Lengthy.'],
-  [3, 'Mastery milestone schedule', 'Level 10 is the only named milestone and +1/+1 the only published magnitude. The full schedule is unknown.'],
-  [3, 'Grounds XP rates', 'New earning surfaces could change levelling speed sharply without the level table moving at all.'],
-  [3, 'Carry-over from FC 26', 'Whether any progression follows you. Assume none does.'],
+  [1, 'One pro everywhere', 'XP earned anywhere in The Grounds feeds the same Virtual Pro you take into an 11-a-side match.'],
+  [1, 'Closed beta', 'Ran 5–25 August, invite-only, with no public sign-up page.'],
+  [1, 'The level cap', 'Forty, worth 962 AP — the same AP budget FC 26 spread over 100 levels, reached on a much shorter climb of 16,000 match XP.'],
+  [1, 'The AP cost curve', 'The four cost tiers survive; every attribute is priced value by value in the builder, live as you move a slider.'],
+  [1, 'AcceleRATE thresholds', 'Unchanged from FC 26: the same height, Agility and Strength gates decide Controlled, Explosive and Lengthy, and the builder shows the menu reading and the in-match one.'],
+  [1, 'Mastery milestone schedule', 'Two milestones per archetype: level 10 grants +1 to both attributes of its pair, level 30 grants +1 more to the second.'],
+  [3, 'Grounds XP rates', 'How fast the new earning surfaces move a pro up the 16,000-XP climb to 40 — the one figure we are still measuring.'],
+  [1, 'Carry-over from FC 26', 'None. An FC 27 pro starts at level 1; nothing from your FC 26 pro follows you.'],
 ];
 
 const LABEL = { 1: 'Confirmed', 2: 'Reported', 3: 'Not known' };
@@ -104,7 +104,7 @@ ${widget}
 <h2>The "big change" that isn't one</h2>
 <p>A lot of FC 27 coverage has led on the same line: <strong>archetypes can be swapped at any time.</strong> It's usually presented as the headline change for anyone who builds a pro.</p>
 <p>It isn't a change. <strong>Archetypes already work like that in FC 26.</strong> You can move between any of the 13 whenever you like, and switching doesn't reset your progression. If you build pros today, this is simply the game you're already playing.</p>
-<p>So the practical answer is reassuring rather than dramatic: how you think about archetype choice carries over intact. It was already closer to picking a loadout than choosing a career, and nothing reported so far changes that.</p>
+<p>So the practical answer is reassuring rather than dramatic: how you think about archetype choice carries over intact. It was already closer to picking a loadout than choosing a career, and nothing in the game changes that.</p>
 <p>EA's Grounds &amp; Clubs deep dive has since answered the question actually worth asking — and in the player's favour. Not only does switching stay free: <strong>resets are now free too</strong> ("no longer cost Coins or a reset consumable"), they work per-attribute instead of wiping the whole build, and every archetype is unlocked from the start. <a href="/blog/fc27-archetype-changes/">We've broken down what's genuinely new versus what was already true here.</a></p>
 
 <h2>What's staying the same — mostly</h2>
@@ -134,7 +134,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 

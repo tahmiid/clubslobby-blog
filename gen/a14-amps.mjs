@@ -75,7 +75,7 @@ ${widget}
 
 <h2>Where Amps come from</h2>
 <p>EA lists five sources: Objectives, Live Events, Campaigns, season progression — and <strong>the Store</strong>. The dedicated Menu Store in The Grounds carries Amps and Consumables specifically.</p>
-<p>Worth being precise about what's new here. Consumables, which also return in FC 27, accelerate <em>progression</em> — they apply AXP. Amps are different in kind: they change how your player <em>performs in a match</em>, and EA has confirmed they'll be purchasable. Whether earn rates make the Store route irrelevant is unknowable until launch; we'll report what drop rates actually look like once we can measure them.</p>
+<p>Worth being precise about what's new here. Consumables, which also return in FC 27, accelerate <em>progression</em> — they apply AXP. Amps are different in kind: they change how your player <em>performs in a match</em>, and EA has confirmed they'll be purchasable. Whether earn rates make the Store route irrelevant comes down to drop rates, which we are measuring now that the game is out; the numbers land on this page as they settle.</p>
 
 <h2>What EA hasn't said</h2>
 <ul>
@@ -92,7 +92,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 

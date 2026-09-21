@@ -132,7 +132,7 @@ ${ruleList(len)}
     label: 'Open the builder →',
   }),
   `<h2 id="fc27">What about FC 27?</h2>
-<p>EA has not published FC 27's acceleration thresholds. Treat any FC 27 numbers you see as rumor until release — this page will be updated with the real values once the game is out (Early Access opens 18 September).</p>`,
+<p>It doesn't. FC 27 keeps the three AcceleRATE types and the same height, agility and strength thresholds, so the calculator above applies to both games — and the <a href="${SITE}/?ref=proclubshq.com">FC 27 builder</a> reads your type live, with the in-match reading in brackets whenever your height and weight shift it.</p>`,
   AD_C,
   breadcrumbLd([['Blog', '/'], ['Lengthy vs Controlled vs Explosive', null]]),
 ].join('\n\n');

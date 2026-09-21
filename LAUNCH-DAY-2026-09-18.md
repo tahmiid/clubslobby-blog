@@ -128,3 +128,33 @@ of post-crawl data**, then execute it here on the 18th as planned; do not run
 it early as a title-only change (`SEO.md` §7). The FC 27 "X build" query
 shape does not exist yet and arrives at launch — these pages are the answer
 to it, which is the reason to have them indexed and linked before, not after.
+
+## 21 Sep — the confirmed-framing pass (done)
+
+The game is out (early access since 18 Sep) and the owner confirmed the FC 27
+catalog on the retail build — level cap 40, the data unchanged from the beta
+capture, Disruptor's masteries +1 Stamina / +1 Interceptions at 10 and +1
+Interceptions at 30. Owner, 21 Sep: *"everything is confirmed now. Nothing is
+beta or rumored."*
+
+- **Every rumor/beta/provisional/"unannounced"/"until launch" hedge is gone
+  from the public text of 15 articles** (a4, a5, a6, a10, a13, a14, a15, a16,
+  a17, a64, a65, a66, a67, a107 + the shared CTA body), regenerated and
+  republished; the link sweep read 93 pages, 870 app links, 0 broken. The
+  masteries article now states the schedule and shows per-archetype totals in
+  its planner; the level-rewards explorer marks FC 27 as read from the game
+  (`provisional: false`); a15's "what EA hasn't said" became "what the game
+  settled"; The Grounds tracker resolved to 25 confirmed, 1 reported
+  (saveable loadouts) and 1 still measured (Grounds XP rates).
+- **Two open questions were left honest rather than invented**: a6's Clubs
+  crossplay rules and a17's fan/reputation and Elite Objective rewards — we
+  have no first-hand reading of either.
+- **Announcement bar** (Ghost setting, written with `ops/ghost-setting.sh`
+  because the Admin API refuses settings writes from integration keys):
+  *"FC 27 is out. New skill moves · All celebrations · Every control — straight
+  from the game →"*, linking `fc27-new-skill-moves`, `fc27-celebrations`,
+  `fc27-controls`. Backup and rollback under
+  `/var/backups/clubs27/*announcement_content-20260921-0840*`.
+- **A trap for the next pass**: the shared CTA `body:` strings are
+  single-quoted JS — an apostrophe in the copy crashed seven generators
+  silently (each printed only the Node version). Use ’ (U+2019).

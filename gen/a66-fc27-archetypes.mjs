@@ -3,8 +3,9 @@
 // changes article at position 5-6). Title: "FC 27 Archetypes: All 13
 // Explained — Builds, Changes & Specializations" · slug: fc27-archetypes.
 //
-// Content rules (owner, 2026-08-16): builds early, rumor framing for
-// anything EA hasn't published, "beta" appears nowhere.
+// Content rules (owner, 2026-08-16): builds early, "beta" appears nowhere.
+// The rumor framing for unpublished numbers ended 2026-09-21: the game is
+// out and the catalog is confirmed on the retail build.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, archIcon } from './common.mjs';
@@ -60,7 +61,7 @@ ${appCta({
 })}
 
 <h2>What changed from FC 26</h2>
-<p>The rumor mill and EA's own statements agree on the shape: Engine is out, Disruptor is in, and there are "tuning updates across all existing archetypes" that EA hasn't detailed. All 13 are unlocked from the start and resets are free. For the full new-vs-already-true breakdown, see <a href="/blog/fc27-archetype-changes/">FC 27 archetype changes</a>; for the two new progression systems, <a href="/blog/fc27-masteries-explained/">Masteries</a> and <a href="/blog/fc27-amps-explained/">Amps</a>. The controls changed too — a set-piece tactics system and 13 new skill moves — and <a href="/blog/fc27-controls/">every FC 27 control, skill move and celebration is animated here</a>, PlayStation and Xbox.</p>
+<p>Engine is out, Disruptor is in, and every returning archetype was retuned: FC 27 is a 40-level, 962-AP game with new ceilings, costs and specialization criteria, all of it in the builder. All 13 are unlocked from the start and resets are free. For the full new-vs-already-true breakdown, see <a href="/blog/fc27-archetype-changes/">FC 27 archetype changes</a>; for the two new progression systems, <a href="/blog/fc27-masteries-explained/">Masteries</a> and <a href="/blog/fc27-amps-explained/">Amps</a>. The controls changed too — a set-piece tactics system and 13 new skill moves — and <a href="/blog/fc27-controls/">every FC 27 control, skill move and celebration is animated here</a>, PlayStation and Xbox.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>How many archetypes are in FC 27?</h3>
@@ -68,10 +69,10 @@ ${appCta({
 <h3>Are all archetypes unlocked in FC 27?</h3>
 <p>Yes — EA confirmed every archetype is unlocked by default, with free resets.</p>
 <h3>Which FC 27 archetype should I play?</h3>
-<p>Position first: Finisher or Target up top, Maestro or Creator in midfield, Boss or Progressor at the back. Then open a few builds above and see whose PlayStyles fit how you actually play — that's a better guide than any tier list before launch.</p>
+<p>Position first: Finisher or Target up top, Maestro or Creator in midfield, Boss or Progressor at the back. Then open a few builds above and see whose PlayStyles fit how you actually play — that's a better guide than any tier list.</p>
 <h3>Are the FC 27 numbers final?</h3>
-<p>No — everything beyond EA's official statements is rumor until release, and the builder re-prices automatically if the numbers move.</p>${affiliateSection({ heading: 'Pre-order EA SPORTS FC 27',
-  layout: 'cards', cta: 'Pre-order \u2192', image: 'fc27', tag: 'fc27',
+<p>Yes — every number in the builder is read from the game. If EA retunes anything in a title update, the builder re-prices automatically.</p>${affiliateSection({ heading: 'Get EA SPORTS FC 27',
+  layout: 'cards', cta: 'Buy \u2192', image: 'fc27', tag: 'fc27',
   items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a66.html'), html);

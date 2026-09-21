@@ -19,8 +19,8 @@ const ROWS = [
   [1, 'Respec one attribute at a time', 'You can fine-tune individual attributes instead of being forced to reset the entire build at once.'],
   [1, 'Edit your build from inside lobbies', 'Adjustments can be made on the fly from the in-world menu, the Clubhouse, or directly inside Clubs and Rush lobbies.'],
   [2, 'Switching archetypes freely', 'Already how FC 26 works: you can move between archetypes whenever you like and switching resets nothing. Plenty of FC 27 coverage still presents this as new. It is not.'],
-  [3, 'Whether respecs refund AP one-for-one', 'Free reset and full refund are not automatically the same thing. EA has not described the refund mechanics.'],
-  [3, 'Whether the trees themselves changed', 'EA confirmed "tuning updates across all existing Archetypes" without saying what moved. Ceilings, AP costs, and thresholds are all unverified until launch.'],
+  [1, 'Respecs are free and attribute-level', 'Take points back out of an attribute and spend them elsewhere, with no fee — a reset costs nothing.'],
+  [1, 'The trees themselves changed', 'FC 27 is a 40-level, 962-AP game: ceilings, AP costs and specialization criteria all moved, and every number is in the builder and the FC 27 archetypes guide.'],
 ];
 
 const LABEL = { 1: 'New in FC 27', 2: 'Already true', 3: 'Not known' };
@@ -79,13 +79,13 @@ ${widget}
 
 <h2>Why EA wants friction gone</h2>
 <p>These changes don't exist in isolation. FC 27 also introduces <a href="/blog/fc27-masteries-explained/">Masteries</a> — permanent cross-build boosts for levelling many archetypes — and <a href="/blog/fc27-amps-explained/">Amps</a>, expiring items that modify your active build. Both systems want you experimenting constantly, and paid, all-or-nothing respecs were the friction standing in the way. Remove them and the whole loop points the same direction: try everything, all the time.</p>
-<p>The honest flip side: when everyone can chase the optimal build for free, the gap between a well-planned pro and a copied one shrinks. What's left is knowing <em>which</em> build to run — which is a numbers question, and the numbers don't exist until launch.</p>
+<p>The honest flip side: when everyone can chase the optimal build for free, the gap between a well-planned pro and a copied one shrinks. What's left is knowing <em>which</em> build to run — which is a numbers question, and the numbers are in the builder.</p>
 
-<h2>What EA hasn't said</h2>
+<h2>What the game settled</h2>
 <ul>
-<li>Whether a respec refunds spent points one-for-one, or something less clean.</li>
-<li>What "tuning updates across all existing Archetypes" actually moved — ceilings, AP costs, and PlayStyle thresholds are all unverified for FC 27.</li>
-<li>The level cap, and whether progression carries over from FC 26 (assume it doesn't).</li>
+<li><strong>The level cap is 40</strong>, worth 962 AP all-in — the same AP budget FC 26 spread over 100 levels, on a much shorter climb. The <a href="/blog/pro-clubs-level-rewards/">level rewards explorer</a> has both ladders.</li>
+<li><strong>Every archetype was retuned.</strong> Ceilings, AP costs and specialization criteria all moved; the <a href="/blog/fc27-archetypes/">FC 27 archetypes guide</a> walks through all thirteen with builds.</li>
+<li><strong>Resets are free and attribute-level.</strong> Points come back out of an attribute and go wherever you like, at no cost.</li>
 </ul>
 
 
@@ -95,7 +95,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 

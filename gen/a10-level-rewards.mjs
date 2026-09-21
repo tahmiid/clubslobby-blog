@@ -7,8 +7,10 @@ const P = 'lv27';
 
 // EA publishes no level table; the FC 26 one is community-derived and
 // cross-checked against three independent sources (AP anchors reproduced
-// exactly). The FC 27 one is the closed-beta capture and is PROVISIONAL -
-// see the note the widget prints, and `provisional: true` in the data.
+// exactly). The FC 27 one is read from the game - captured on the beta
+// build, confirmed on the retail build (owner, 2026-09-21: level cap 40,
+// the data is the same) - so `provisional` is false since that day and the
+// widget's footer says where the figures come from.
 const L = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'fc26', 'levels.json'), 'utf8'));
 const TOTAL_AP = L[99].ap_cumulative, TOTAL_AXP = L[99].axp_required_cumulative;
 
@@ -97,7 +99,7 @@ const norm27 = () => {
     if (r.cardTier) prevTier = r.cardTier;
   }
   return { label: 'FC 27', cap: lv.length, totalAp: lv[lv.length - 1].apCumulative,
-           tracks, rows, marks: mk, provisional: true };
+           tracks, rows, marks: mk, provisional: false };
 };
 
 const YEARS = { 26: norm26(), 27: norm27() };
@@ -286,8 +288,8 @@ function go(){
   q('[data-apc]').textContent='('+f(r[3])+' AP total)';
   q('[data-tier]').textContent=r[4];
   drawGroups(y,r);drawLadder(y,lvl);
-  q('[data-foot]').innerHTML=y.provisional
-    ? '<span class="prov">FC 27 figures are read from the closed beta and are provisional</span> — EA can retune them before release. FC 26 is community-derived and reproduces three independent sources exactly.'
+  q('[data-foot]').innerHTML=y.label==='FC 27'
+    ? 'FC 27 figures are read from the game itself, and the ${BRAND} builder runs on the same table.'
     : 'EA publishes none of this. Figures are community-derived and reproduce three independent sources\u2019 totals exactly; the ${BRAND} builder runs on the same table.';
 }
 R.querySelectorAll('[data-yr]').forEach(function(b){
@@ -330,8 +332,8 @@ const fc27Note = `<h2>What the FC 27 ladder does differently</h2>
 <p>Flip the explorer to FC 27 and almost every line changes. The cap is <strong>40</strong>, not 100. By that cap you have three PlayStyle slots instead of nine, one Signature Perk instead of two, one PlayStyle+ upgrade instead of four, and a Gold 1 card where an FC 26 pro at the same level holds Gold 2.</p>
 <p>One column does not change, and it is the interesting one. <strong>AP is identical at every level in both games</strong> — 224 banked by level 10, 397 by 20, 674 by 30, 962 by 40, the same in FC 26 and FC 27. What changes is how long that takes. Level 40 costs <strong>16,000 match XP in FC 27 against 27,580 in FC 26</strong>, and the discount is not flat: around level 10 an FC 27 pro is roughly a third of the way up the FC 26 curve, and by 40 it is closer to three fifths. FC 27 hands you the same spending power much sooner — and gives you fewer slots to spend it into.</p>
 <p>That is the whole shape of the new game in one sentence: a shorter climb to the same budget, spent into a tighter frame. It is why an FC 27 build is a set of hard choices rather than a shopping list, and why the <a href="/blog/fc27-level-40-builds/">finished level-40 builds</a> look nothing like their FC 26 counterparts.</p>
-<p>The genuinely new reward has no FC 26 equivalent at all. <a href="/blog/fc27-masteries-explained/"><strong>Masteries</strong></a>, at levels 10 and 30, are permanent and account-wide: they pay out across every build you own rather than only the one you are levelling. They are the fourth row in the explorer and the gold chips in the ladder, and they are the reason levelling a second archetype in FC 27 is worth doing even if you never play it.</p>
-<p>Every FC 27 figure here is read from the closed beta and can still be retuned before release. <a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> covers the rest.</p>
+<p>The genuinely new reward has no FC 26 equivalent at all. <a href="/blog/fc27-masteries-explained/"><strong>Masteries</strong></a>, at levels 10 (+1 to two attributes) and 30 (+1 more to one of them), are permanent and account-wide: they pay out across every build you own rather than only the one you are levelling. They are the fourth row in the explorer and the gold chips in the ladder, and they are the reason levelling a second archetype in FC 27 is worth doing even if you never play it.</p>
+<p>Every FC 27 figure here is read from the game itself, and the builder runs on the same table. <a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> covers the rest.</p>
 
 `;
 

@@ -3,7 +3,8 @@
 // the 40 specs. Title: "Best Specialization for Every Archetype in FC 27
 // (All 40 Compared)" · slug: fc27-best-specializations.
 //
-// Content rules (owner, 2026-08-16): rumor framing, no "beta", builds early.
+// Content rules (owner, 2026-08-16): no "beta", builds early. The rumor
+// framing ended 2026-09-21 - the game is out and the catalog is confirmed.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, archIcon } from './common.mjs';
@@ -35,7 +36,7 @@ ${rows}
 </div>`)}`;
 }).join('\n');
 
-const html = `<p><strong>Every FC 27 archetype carries three specializations, and each one changes your signature PlayStyle.</strong> That's the real reason to pick one: the specialization's PlayStyle+ replaces your archetype's default signature — if you want it. Below are all 40, with their rumored unlock criteria and, for each one, a live build actually wearing it that you can open and copy.</p>
+const html = `<p><strong>Every FC 27 archetype carries three specializations, and each one changes your signature PlayStyle.</strong> That's the real reason to pick one: the specialization's PlayStyle+ replaces your archetype's default signature — if you want it. Below are all 40, with their unlock criteria and, for each one, a live build actually wearing it that you can open and copy.</p>
 
 <h2>How specializations work</h2>
 <p>Meet a specialization's attribute criteria and it unlocks; select it and its PlayStyle+ becomes available in your signature slot. You don't have to take it — keeping the archetype's original signature is a real choice, and some of the best builds do exactly that (Mbappé keeps Low Driven Shot over Game Changer+). The criteria below are as they appear in our builder; treat exact numbers as rumor until EA publishes them.</p>
@@ -62,7 +63,7 @@ ${sections}
 <h3>How do I unlock a specialization?</h3>
 <p>Raise the three listed attributes to their criteria. Unlocks happen automatically the moment you qualify.</p>
 <h3>Are these numbers final?</h3>
-<p>No — FC 27 hasn't released, so criteria and costs are rumored until launch. The builder re-prices automatically if they move.</p>`;
+<p>Yes — the criteria and costs are read from the game. If EA retunes anything in a title update, the builder re-prices automatically.</p>`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a67.html'), html);
 console.log('a67: fc27 specializations | archetypes', FC27_ARCH.length, '| bytes', html.length);

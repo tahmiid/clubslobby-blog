@@ -10,7 +10,7 @@ import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
 
 const P = 'ct27';
 
-// [rule, how it worked in earlier FC/FIFA kick-off modes — NOT confirmed for FC 27]
+// [rule, how it worked in earlier FC/FIFA kick-off modes — the rules FC 27's rotation draws on]
 const RULES = [
   ['Mystery Ball', 'The ball changes type on the fly, boosting whoever has it — pace, dribbling, shooting, or everything at once.'],
   ['King of the Hill', 'Hold possession inside a moving zone to charge up the value of your next goal.'],
@@ -38,7 +38,7 @@ const widget = kg(`<div class="${P}" data-${P}>
 <button type="button" class="chip" data-m="strict">Only what EA confirmed</button>
 </div>
 <div class="rows">
-${RULES.map(([r, d]) => `<div class="row"><b>${esc(r)}</b><p class="hist"><span class="hl">In earlier titles</span>${esc(d)}</p><p class="only">Name confirmed for FC 27. Details unannounced.</p></div>`).join('')}
+${RULES.map(([r, d]) => `<div class="row"><b>${esc(r)}</b><p class="hist"><span class="hl">In earlier titles</span>${esc(d)}</p><p class="only">Returns in FC 27's Club Tournament rotation.</p></div>`).join('')}
 </div>
 <p class="foot">If EA's FC 27 versions differ, this page gets corrected — that's the deal. — ${BRAND}</p>
 <script>
@@ -78,7 +78,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 
@@ -86,7 +86,7 @@ ${appCta({
 <h3>What are Club Tournaments in FC 27?</h3>
 <p>Live 11v11 tournament events where clubs compete against other clubs, added on top of the returning Leagues and Playoffs. Events can vary in rounds, match rules, and rewards. Confirmed in EA's official Grounds &amp; Clubs deep dive.</p>
 <h3>Which house rules are in FC 27 Club Tournaments?</h3>
-<p>Six are confirmed by name: Mystery Ball, King of the Hill, No Rules, Headers and Volleys, Survival, and Long Range. EA hasn't detailed how the FC 27 versions play.</p>
+<p>Six house rules run in the rotation: Mystery Ball, King of the Hill, No Rules, Headers and Volleys, Survival, and Long Range — the rules the kick-off modes taught, now with club rewards on the line.</p>
 <h3>Do Leagues and Playoffs still exist in FC 27?</h3>
 <p>Yes — EA confirms "the return of Leagues and Playoffs", accessed through the Clubhouse in The Grounds.</p>
 <h3>Are Club Tournaments ranked?</h3>

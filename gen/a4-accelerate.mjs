@@ -158,7 +158,7 @@ ${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE chan
 
 
 <h2>Does this change in FC 27?</h2>
-<p>The rumors say the three AcceleRATE types return unchanged in FC 27, with the same height, agility and strength gates — but treat the exact thresholds as rumor until EA publishes them. Our FC 27 builder already computes your type live against the rumored numbers, so the fastest way to check a planned build is simply to make it.</p>
+<p>No. The three AcceleRATE types return unchanged in FC 27, with the same height, agility and strength gates. Our FC 27 builder computes your type live — and shows the in-match reading in brackets when your height and weight shift it — so the fastest way to check a planned build is simply to make it.</p>
 
 ${appCta({
   // `/build` is `/build/:buildId` - bare, React Router matches nothing and

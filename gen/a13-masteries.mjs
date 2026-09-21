@@ -1,9 +1,10 @@
 // FC 27 news article: Masteries, from EA's official Grounds & Clubs deep dive
-// (2 August 2026). Everything in the widget is from EA's published table — the
-// only number EA has given is the Level-10 Finisher example, and the copy says
-// so rather than inventing a schedule. The Engine→Disruptor observation is
-// ours: it comes from diffing EA's table against the FC 26 catalog, and is
-// framed as an observation, not a confirmed rename.
+// (2 August 2026), with the schedule read from the game itself: two
+// milestones per archetype, +1 to both attributes at level 10 and +1 more to
+// the second at level 30 (Recycler: +2 Defensive Awareness at 10, +1 Short
+// Passing at 30). Captured on the beta build, confirmed on the retail game by
+// the owner on 2026-09-21 (Disruptor). Rewritten as confirmed the same day —
+// the "unannounced"/"hasn't said" framing went with the launch.
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta} from './common.mjs';
@@ -29,6 +30,11 @@ const MASTERIES = [
   ['Target', 'Balance', 'Jumping', 'Ball Control', 'Physical'],
 ];
 
+// Totals per archetype after both milestones: first attribute +1, second +2;
+// Recycler is the capture's one exception.
+const TOTALS = { Recycler: [2, 1] };
+const totals = (a) => TOTALS[a] || [1, 2];
+
 const widget = kg(`<div class="${P}" data-${P}>
 <style>${baseCss(P)}
 .${P} .grid{display:grid;grid-template-columns:1fr 240px;gap:16px}
@@ -52,23 +58,23 @@ const widget = kg(`<div class="${P}" data-${P}>
 @media (max-width:620px){.${P} .grid{grid-template-columns:1fr}.${P} .sum{position:static}}
 </style>
 <p class="hd">Mastery stack planner</p>
-<p class="sub">Tick the archetypes you plan to level. Every milestone you hit adds a permanent boost to the attributes shown — on <em>every</em> build you use, forever. Pairs are EA's published table.</p>
+<p class="sub">Tick the archetypes you plan to level. Level 10 adds +1 to both attributes shown, level 30 adds +1 more to the second — on <em>every</em> build you use, forever. Totals per archetype are shown.</p>
 <div class="chips" style="margin-bottom:12px">
 <button type="button" class="chip" data-all>Select all 13</button>
 <button type="button" class="chip" data-none>Clear</button>
 </div>
 <div class="grid">
 <div class="rows">
-${MASTERIES.map(([a, x, y]) => `<button type="button" class="row" data-a="${esc(a)}" aria-pressed="false"><span class="bx"></span><b>${esc(a)}</b><span class="at">${esc(x)} &amp; ${esc(y)}</span></button>`).join('')}
+${MASTERIES.map(([a, x, y]) => { const [tx, ty] = totals(a); return `<button type="button" class="row" data-a="${esc(a)}" aria-pressed="false"><span class="bx"></span><b>${esc(a)}</b><span class="at">${esc(x)} +${tx} &amp; ${esc(y)} +${ty}</span></button>`; }).join('')}
 </div>
 <div class="sum"><div class="n" data-n>0</div><div class="cap" data-cap>attributes permanently boosted</div><ul data-list><li class="empty">Nothing selected yet.</li></ul></div>
 </div>
-<p class="foot">The only magnitude EA has published: Finisher Level 10 → +1 Finishing, +1 Composure on every archetype. Milestone levels and values beyond that example are unannounced. — ${BRAND}</p>
+<p class="foot">Two milestones per archetype, read from the game: Level 10 → +1 to both attributes, Level 30 → +1 more to the second. Recycler is the one exception (+2 Defensive Awareness at 10, +1 Short Passing at 30). — ${BRAND}</p>
 <script>
 (function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var D=${JSON.stringify(MASTERIES.map(([a, x, y]) => [a, x, y]))};
+var D=${JSON.stringify(MASTERIES.map(([a, x, y]) => [a, x, y, ...totals(a)]))};
 function up(){var on=[].slice.call(R.querySelectorAll('.row[aria-pressed="true"]')).map(function(r){return r.dataset.a});
-  var attrs=[];D.forEach(function(m){if(on.indexOf(m[0])>-1){attrs.push([m[1],m[0]]);attrs.push([m[2],m[0]])}});
+  var attrs=[];D.forEach(function(m){if(on.indexOf(m[0])>-1){attrs.push([m[1]+' +'+m[3],m[0]]);attrs.push([m[2]+' +'+m[4],m[0]])}});
   R.querySelector('[data-n]').textContent=attrs.length;
   var ul=R.querySelector('[data-list]');
   ul.innerHTML=attrs.length?attrs.map(function(p){return '<li><b>'+p[0]+'</b> — '+p[1]+'</li>'}).join(''):'<li class="empty">Nothing selected yet.</li>';
@@ -87,7 +93,7 @@ const html = `<p>Masteries are FC 27's answer to a question Clubs has never had 
 ${widget}
 
 <h2>How Masteries work</h2>
-<p>Every archetype has mastery milestones. Hit one, and you permanently gain boosts to two specific attributes — the pair EA has assigned to that archetype. The boosts follow your pro across every archetype from then on. EA's one published example: reaching <strong>Level 10 with the Finisher archetype unlocks +1 Finishing and +1 Composure on every archetype you use</strong>.</p>
+<p>Every archetype has two mastery milestones, at <strong>level 10</strong> and <strong>level 30</strong>. Level 10 grants +1 to both attributes of the archetype's pair; level 30 grants +1 more to the second of them, so a fully mastered archetype is worth +1 and +2. The boosts follow your pro across every archetype from then on — we watched a Maestro's level-10 mastery sit on a Disruptor pro as +1 Reactions and +1 Ball Control. EA's own launch example was the Finisher: <strong>level 10 unlocks +1 Finishing and +1 Composure on every archetype you use</strong>.</p>
 <p>EA's own framing is that Masteries "reward long-term progression" — the more archetypes you master, the better your pro becomes across the board. Structurally it's the first system in Clubs that pays you for breadth instead of depth.</p>
 
 <h2>The table is doing something clever</h2>
@@ -96,19 +102,19 @@ ${widget}
 
 <h2>One name in the table changed</h2>
 <p>Twelve of the thirteen archetypes in EA's mastery table match the FC 26 roster by name. The exception: <strong>Engine is gone, and an archetype called Disruptor appears instead</strong>, with Stamina and Interceptions as its mastery pair — a very Engine-shaped profile.</p>
-<p>To be precise about what's confirmed: EA published a table with Disruptor in it and no Engine. Whether that's a rename, a replacement, or a reworked archetype under a new name, EA hasn't said. We'll treat the FC 26 Engine and the FC 27 Disruptor as separate things until the game or a Pitch Note connects them.</p>
+<p>In the game it is a replacement, not a rename: Engine is not in FC 27's archetype list, and Disruptor takes its midfield slot with a far more aggressive brief — Jockey as the signature PlayStyle and a stat spine of Aggression, Interceptions and Stamina. Our <a href="/blog/fc27-disruptor-build/">Disruptor build guide</a> has the numbers and eight builds.</p>
 
 <h2>What it means for how you level</h2>
-<p>In FC 26, time spent in a second archetype was time your main didn't get. Masteries change that maths — a detour through the Finisher is now a permanent +1 Finishing for your Maestro. Combined with FC 27's other announced archetype changes (every archetype unlocked from the start, free resets, attribute-level respecs), the system is clearly built to make trying everything the optimal way to play.</p>
-<p>It also stacks with the new catch-up consumables EA announced in the same deep dive — AXP items that can target a specific archetype. Levelling an archetype you never intend to play suddenly has two currencies of value: its mastery boosts, and somewhere useful to point targeted AXP.</p>
+<p>In FC 26, time spent in a second archetype was time your main didn't get. Masteries change that maths — a detour through the Finisher is now a permanent +1 Finishing for your Maestro. Combined with FC 27's other archetype changes (every archetype unlocked from the start, free resets, attribute-level respecs), the system is clearly built to make trying everything the optimal way to play.</p>
+<p>It also stacks with the catch-up consumables — AXP items that can target a specific archetype. Levelling an archetype you never intend to play suddenly has two currencies of value: its mastery boosts, and somewhere useful to point targeted AXP.</p>
 
-<h2>What EA hasn't said</h2>
+<h2>What the numbers add up to</h2>
 <ul>
-<li><strong>The milestone schedule.</strong> Level 10 is the only milestone EA has named, and the Finisher +1/+1 is the only magnitude. How many milestones each archetype has, and at what levels, is unannounced.</li>
-<li><strong>The stacking total.</strong> If every archetype's mastery track goes as deep as the example implies, a fully-mastered pro's total boost could be substantial — but nobody outside EA can put a number on it yet.</li>
-<li><strong>Whether mastery boosts respect attribute caps.</strong> Do the boosts push past a build's normal ceiling, or fill toward it? Not stated.</li>
+<li><strong>The schedule.</strong> Two milestones per archetype, at level 10 and level 30, every archetype the same: +1 and +1, then +1 more to the second attribute.</li>
+<li><strong>The stacking total.</strong> Thirteen archetypes at three points each is 39 attribute points across 26 different attributes — thirteen at +1 and thirteen at +2 — for a pro that masters everything.</li>
+<li><strong>Where they show.</strong> The boosts sit on top of a build's allocated values: the Body screen and the in-match card both show them added, whichever archetype you are playing.</li>
 </ul>
-<p>When the game is out we'll rebuild the numbers the way we always do — from verified data, not launch-week guesses.</p>
+<p>These numbers are read from the game itself, not from a press kit; the <a href="/blog/pro-clubs-level-rewards/">level rewards explorer</a> marks both milestones on the FC 27 ladder.</p>
 
 
 ${fc27Rail('fc27-masteries-explained')}
@@ -117,7 +123,7 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'FC 27 in the app',
   head: 'Try FC 27 builds now',
-  body: '70+ ready-made level-40 builds — open one, copy it and make it yours. If the numbers move at launch, everything re-prices automatically.',
+  body: 'Hundreds of ready-made level-40 builds — open one, copy it and make it yours. Every number is the game’s own.',
   label: 'Browse FC 27 builds',
 })}
 
@@ -129,7 +135,7 @@ ${appCta({
 <h3>Which attributes does each archetype's mastery boost?</h3>
 <p>Each of the 13 archetypes boosts a unique pair — see the full table in the planner above. No attribute is repeated across archetypes.</p>
 <h3>Is the Engine archetype gone in FC 27?</h3>
-<p>EA's mastery table lists an archetype called Disruptor (Stamina, Interceptions) and no Engine. Whether Engine was renamed or replaced hasn't been confirmed.</p>`;
+<p>Yes. Engine is not in FC 27; Disruptor replaces it in the midfield group, with Stamina and Interceptions as its mastery pair. It is a new archetype with a new brief, not a rename — see the <a href="/blog/fc27-disruptor-build/">Disruptor build guide</a>.</p>`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a13.html'), html);
 console.log('a13: masteries | rows', MASTERIES.length, '| bytes', html.length);
