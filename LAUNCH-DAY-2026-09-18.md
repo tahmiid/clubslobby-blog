@@ -52,10 +52,12 @@ launching):
   `~/Desktop/fc26-clubs-data`-style capture log. Remember the two key traps:
   capture `starCosts` are keyed by star-AT (loader shifts +1), and
   criteria names normalize at load.
-- [ ] **Re-run the loader**: `migrate.py --rerun 0028_load_fc27_catalog`
-  against the new `catalog/fc27.json` marked `source: early-access` — dev
-  first, verify, then production per `DEPLOYMENT.md` (deploy code first if
-  the loader changed; backup first, always).
+- [x] **Re-run the loader** — *done 21 Sep (app commit 697415e): the beta
+  capture was confirmed unchanged on the retail build by the owner, so the
+  same file went `source: launch`, `provisional: false` and 0028 was re-run
+  on the lane and in production. `catalogProvisional` reads false. Still
+  null and admitted: cardStats, specialization descriptions, four keeper cost
+  tiers — a recapture fills them, nothing else does.*
 - [ ] **Re-verify captured numbers in the app**: open the editor on 2–3
   archetypes, buy attribute points and stars, check costs against the game.
 - [ ] **Publish the day's content**: early-access article(s) go live, hub
