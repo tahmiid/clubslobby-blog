@@ -67,10 +67,17 @@ launching):
 
 - [ ] **Default year flip**: `ACTIVE_GAME_YEAR=27` in the box's `.env` +
   `systemctl restart clubs27-api` — deliberate second step, separate from
-  "live"; rollback is setting it back. (Owner may choose 18 Sep instead if
-  Early Access adoption is strong — it's one line either way.)
-- [ ] **Declare the FC 27 meta season** from the admin panel using the
-  pre-decided parameters; dry-run first, then activate.
+  "live"; rollback is setting it back. **Built and verified on the
+  integration lane 2026-09-21 (app #202)** — and it is NOT one line: the app
+  persisted a year on every build-page visit, so the frontend that stops
+  doing that (tab-scoped link/build years, a stamped switch preference that
+  is discarded when the default moves) must deploy BEFORE the `.env` line,
+  or returning visitors stay in FC 26. Blog side needs nothing: `/b/<id>`
+  links render the build's own year, `?year=27` links become no-ops, and
+  the 39 `/explore?archetype=…` links in the FC 26 guide sections now open
+  FC 27 builds by design (FC 27 first).
+- [x] **Declare the FC 27 meta season** — an FC 27 season is `active` in
+  `clubs_prod` (checked 2026-09-21).
 - [ ] **House content wave**: the FC 27 house builds (73 live already) get
   their launch top-up if the catalog changed anything material — house-build
   state changes ship as migrations, never API passes.
