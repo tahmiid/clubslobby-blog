@@ -71,17 +71,27 @@ ${AD_A}
 <p>${esc(m.who)}</p>
 ${m.note ? `<h2>Worth knowing</h2>\n<p>${esc(m.note)}</p>` : ''}
 
-${appCta({
+${m.star >= 3 ? appCta({
   // A search, not the blank planner (2026-09-22): the 13 how-tos sent 0 of
   // 677 readers into the app in a fortnight. "N star" is a facet the search
-  // understands (skill-move stars), so the button lands on finished builds
-  // that can perform this move, most copied first.
+  // understands (skill-move stars, EXACT), so the button lands on finished
+  // builds rated for this move, most copied first. Below three stars the
+  // exact-star search is keepers and starter builds ("1 star" answered 46
+  // builds, nearly all goalkeepers), so those moves offer the whole FC 27
+  // feed instead — most outfield builds clear two stars.
   href: `/explore?q=${m.star}+star&year=27`,
   kicker: `${m.star}-star requirement`,
   head: `See the builds that can do it`,
   body: `Every finished level-40 FC 27 build with ${m.star}-star skill moves, most
     copied first — open one and copy it, or price the jump to ${m.star} stars on your own.`,
   label: `Builds with ${m.star}★ skill moves`,
+}) : appCta({
+  href: '/explore?year=27',
+  kicker: `${m.star}-star requirement`,
+  head: `No special build needed`,
+  body: `Most finished level-40 FC 27 outfield builds carry the ${m.star === 1 ? 'one star' : 'two stars'} this
+    move needs — open one, copy it, and it is yours from the first match.`,
+  label: 'Browse FC 27 builds',
 })}
 
 <h2>The rest of the new moves</h2>
