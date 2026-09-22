@@ -55,12 +55,17 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, SITE, esc, kg } from './common.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
-import { gridCss } from './fc27grid.mjs';
+import { gridCss, FC27_ARCH } from './fc27grid.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const MOST_COPIED = JSON.parse(readFileSync(path.join(DIR, 'most-copied.json'), 'utf8'));
 
-export const archOf = (id) => ARCH.find((a) => a.id === id);
+// FC 26's catalog first, FC 27's second: the Disruptor exists only in FC 27,
+// and a card that cannot name its archetype printed the raw id ("disruptor ·
+// Lv 40") — four of the most-copied FC 27 builds are Disruptors (found
+// 2026-09-22 while building the role pages), so every player page's FC 27
+// grid was showing it.
+export const archOf = (id) => ARCH.find((a) => a.id === id) ?? FC27_ARCH.find((a) => a.id === id);
 export const archTitle = (n) => String(n ?? '').toLowerCase()
   .replace(/\b[a-z]/g, (c) => c.toUpperCase());
 
