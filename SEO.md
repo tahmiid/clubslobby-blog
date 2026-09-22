@@ -21,7 +21,7 @@ lessons in full. Blog SEO (articles, links, grids, Ghost) is this repo.
 | surface | what a crawler receives | why |
 |---|---|---|
 | `/blog/*` (Ghost) | server-rendered HTML, always | Ghost renders every page. **`/blog` is NOT in the dynamic-rendering path** — nginx has no `$og_crawler` branch on it. |
-| `/b/<id>`, `/`, `/meta`, `/explore`, `/level-rewards`, `/u/<handle>` (app) | for a UA in nginx's `$og_crawler` map: `crawl.py`'s rendered HTML (~200 words of prose, real title, canonical, robots meta). For everyone else: the React shell (**29 words, title "Pro Clubs HQ"**). | the SPA renders client-side; crawlers get a twin. |
+| `/b/<id>`, `/`, `/meta`, `/explore`, `/level-rewards`, `/controls`, `/controls/skill-moves`, `/controls/celebrations`, `/u/<handle>` (app) | for a UA in nginx's `$og_crawler` map: `crawl.py`'s rendered HTML (~200 words of prose, real title, canonical, robots meta). For everyone else: the React shell (**29 words, title "Pro Clubs HQ"**). | the SPA renders client-side; crawlers get a twin. |
 | everything else under `/` | the React shell | an unknown route renders a **BLANK PAGE** and answers 200. |
 
 Three consequences that each cost us:
@@ -417,6 +417,50 @@ all PASS). Findings and the rules each one turned into:
    retitle never asked Google to come back. After a deploy that changes what
    these pages say, press **Request indexing** in Search Console for the four
    URLs — the reindex queue only knows build pages.
+10. **The app's Controls pages are the landing pages for the "new X" queries
+   (owner, 22 Sep).** `/controls`, `/controls/skill-moves` and
+   `/controls/celebrations` (app repo #206) are titled "FC 27 New Controls /
+   Skill Moves / Celebrations — All N, Animated for PS5 & Xbox", carry a
+   visible updated line, the release's additions first, the whole dataset as
+   text for both pads in the crawler twin, copy under the list written once
+   in `backend/app/controls_seo.py` for the SPA and the twin, and sitemap
+   entries dated from the data or the template. They target the same family
+   as this repo's `fc27-new-skill-moves` (a49); the owner chose the app page,
+   so a49 should link it and stop competing — an open blog task, not done.
+   nginx's `$crawl_path` regex must name the three paths or they get the
+   shell (app `DEPLOYMENT.md` rule 5).
+
+### 7b. Thumbnails — a share image is not a search thumbnail (2026-09-22)
+
+The owner shared the Controls page and got the HQ ball; Google showed no
+thumbnail for any app page. Two mechanisms, two fixes, both in the app repo's
+`crawl.py`:
+
+1. **Share cards read `og:image`.** Every static page now names a real
+   screenshot of itself — `frontend/public/og/og-{builder,builds,meta,
+   level-rewards,controls,skill-moves,celebrations}.jpg`, captured headless
+   from the live site and composed with the FC 27 lockup in ITS OWN STRIP
+   (`gen/make-og-shots.mjs`, `gen/make-og-cards.py` here; the owner reviewed
+   all seven before they shipped). Build pages name the JPEG twin of their
+   card (`/api/og/b/{id}/card`, ~72 KB; the PNG stays for old caches). The
+   SPA shell's image is the builder's, since any non-crawler fetch of any
+   route gets the shell.
+2. **Google takes a search thumbnail from an image IN the page** — the body
+   or the structured data — and shows it large only where
+   `max-image-preview:large` allows. `_page` emits all three whenever a page
+   has an image: the directive, a `<figure><img>` before the body, and a
+   `WebPage` JSON-LD with `primaryImageOfPage`. Member text inside that
+   script tag is JSON-escaped (`<`, `>`, `&`) — a build name must not be able
+   to close the tag. Creator pages keep the default and no body image: the
+   HQ mark is not a thumbnail of anything.
+
+Rules: a new static page gets a row in `STATIC_IMAGES` and a shot recipe, or
+it shares as a logo; the three template dates moved at the deploy
+(19:17:03Z) and both crawl pins were re-hashed, because the rendered output
+changed on every page; **there is no report that says "thumbnail shown"** —
+the Traffic tab's `NOTES` marks 22 Sep and search CTR by page family is the
+instrument. The blog side (the calculator's cover, the directive in Ghost's
+head injection) is issue #7 here.
 
 ## 8. Content rules that are also SEO rules
 

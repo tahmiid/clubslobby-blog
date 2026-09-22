@@ -370,6 +370,21 @@ and `upload-image-jpg.mjs` are broken against it — a FormData body is silently
 dropped and Ghost answers 422 "Please select an image". Install images directly:
 `install -o ghost -g ghost -m 644 <file> /var/www/proclubslobby/content/images/YYYY/MM/`.
 
+## Share images for the app's static pages
+
+The seven images the app serves as `og:image` for its static pages
+(`frontend/public/og/` in the app repo) are MADE here: `gen/make-og-shots.mjs`
+drives headless Chrome over the DevTools protocol with nothing but Node 22
+(no Playwright, no Puppeteer) and captures each page at 1200×630 with its
+header, dock and account cluster hidden — the editor on a real build (lane,
+`OG_TOKEN` + `OG_BUILD`), the copied-builds grid, the meta pitch, the
+rewards slider, the three controls lists — into `assets/og-raw/` (ignored);
+`gen/make-og-cards.py` puts the FC 27 lockup in its own strip under each
+(`assets/og/`). The owner reviews before they ship; then copy them into the
+app repo and deploy. Re-run when the UI changes rather than retouching. A
+page whose DOM changes needs its recipe's test ids re-probed
+(`gen/og-probe.mjs <url>`). SEO.md §7b is the rule set.
+
 ## Affiliate links
 
 State lives in `data/affiliate-merchants.json`, never in code. Four commands:
