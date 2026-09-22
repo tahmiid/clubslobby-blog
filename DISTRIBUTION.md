@@ -200,3 +200,77 @@ if the 6 Oct read says double down.
 **Decisions needed:** (1) the five position pages + hub, yes or no; (2) the
 per-move Shorts shape; (3) the TikTok handle and whether YouTube/Instagram
 accounts exist.
+
+## 8. Decisions and what shipped — 22 Sep, evening
+
+The owner's reading matched the numbers ("I don't read the explainers
+either"). Decisions, in their words where it matters:
+
+- **Five position pages: yes, and by role** — *"usually we make a build and
+  take a role in the team and play like that"* — titled for Pro Clubs so
+  nobody arrives for Ultimate Team. **Live the same evening:**
+  `fc27-best-striker-builds`, `-winger-`, `-midfielder-`, `-defender-`,
+  `-goalkeeper-builds` (a188–a192). `ops/export-role-builds.mjs` exports every
+  house build with its roster role and refreshes the meta snapshot;
+  `gen/fc27-role-builds.mjs` renders the pages; `gen/positions-nav.mjs` is the
+  shared nav, also on the level-40 hub. Re-export before any republish.
+- **Fix the non-converting pages: yes.** "Search-targeted buttons" means a
+  button that opens the builder already searched for what the page was about:
+  the AcceleRATE page offers the Lengthy, Controlled and Explosive builds
+  (`appLinks` in common.mjs), the how-tos and the skill-move list offer builds
+  with the move's star rating (**"N star" is an EXACT facet — "1 star" is 46
+  goalkeepers — so moves under three stars offer the whole FC 27 feed**), and
+  the Grounds, level-rewards and masteries pages carry the position nav high.
+  All live.
+- **Launch-day hub: on hold** (what it is, and when it would index, unclear).
+- **No more how-tos.** Confirmed.
+- **Reel recordings need a clean frame** → capture mode (#207, app repo, on
+  `dev`, undeployed): `/b/:id?capture=1` for an admin hides the header, dock,
+  rail, pill, chip and nudge. Toggle in the full-build sheet's admin block;
+  back is the way out.
+- **One Short per skill move: on hold** ("too much in one go").
+- **Paid TikTok: no.** TikTok to be switched to Business by the owner; TikTok,
+  Instagram and YouTube handles exist.
+- **Reddit: undecided** — the draft below is what a post would look like.
+
+Also that evening, as housekeeping the pages needed anyway: the 35 player
+pages regenerated on a fresh most-copied export (the 14 Sep ranking was eight
+days stale and printed "disruptor" in lowercase on four cards).
+
+### The Reddit data post, drafted (r/ProClubs; text post, link in a comment)
+
+**Title:** We track 470 house-made FC 27 Pro Clubs builds. Here's what people
+actually copied in launch week
+
+**Body:**
+
+> Since early access, about 1,400 people a day have been planning FC 27 Pro
+> Clubs builds in a free builder we run (link in a comment — mods, remove if
+> that's not allowed here). Every build is priced against the real level-40
+> budget, 962 AP. This is the launch-week copy leaderboard: the builds people
+> took into their own club, not just looked at.
+>
+> 1. Mbappé '26 WC — Finisher, Hunter, Low Driven Shot+ · 21 copies
+> 2. Gennaro Gattuso — Disruptor (the new archetype), Jockey+ · 13
+> 3. Thierry Henry — Finisher, complete forward, Finesse Shot+ · 9
+> 4. Vitinha — Maestro, central playmaker, Incisive Pass+ · 8
+> 5. Rafael Leão — Spark, pace winger, Quick Step+ · 8
+> 6. Lamine Yamal — Magician, skill winger, Trickster+ · 6
+> 7. The Wall — Boss, Boss+, Bruiser+ · 6
+> 8. Toni Kroos — Maestro, Incisive Pass+ · 5
+> 9. Aurélien Tchouaméni — Disruptor, Jockey+ · 5
+> 10. Rodri '26 WC — Recycler, Recycler+, Intercept+ · 5
+>
+> Three things I didn't expect: the new Disruptor is already second, everyone
+> wants a Gattuso; complete forwards mostly land on Controlled (86% of ours)
+> while target men are Lengthy (94%); and almost nobody copies goalkeepers.
+>
+> What role are you building this year? Happy to paste the full attribute
+> sheet for any of these.
+
+**Image:** the Find Builds feed on a phone (most copied first), or the share
+image of Mbappé '26 WC's build page. **First comment:** the link to the
+striker page, not the app root, so the click lands on a list that converts.
+**Rules first:** the two subreddits' rule pages are the owner's read before
+posting; if self-promotion is banned outright, post the numbers without the
+link and let people ask.
