@@ -136,6 +136,17 @@ const kitBlock = affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] });
 
+// The skill-move list gets a search, not the blank planner (2026-09-22): its
+// readers want builds that can perform what they just watched, and "5 star"
+// is a facet the search understands.
+const ctaSkills = appCta({
+  href: '/explore?q=5+star&year=27',
+  kicker: 'Five stars does every move on this page',
+  head: 'See the builds that can do all of them',
+  body: `Every finished level-40 FC 27 build with five-star skill moves, most
+    copied first — open one and copy it, or price the stars on your own build.`,
+  label: 'Builds with 5★ skill moves',
+});
 const cta = appCta({
   href: BUILDER,
   kicker: 'FC 27 is in the builder',
@@ -166,7 +177,7 @@ ${kg(screenList(s.screen, {
 ${AD_A}
 ${gameBlock}
 ${writing}
-${cta}
+${key === 'skills' ? ctaSkills : cta}
 ${AD_C}
 ${kitBlock}
 ${kg(padSwitcher())}

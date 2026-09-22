@@ -9,6 +9,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
+import { positionsNav } from './positions-nav.mjs';
 
 const P = 'ms27';
 
@@ -97,6 +98,8 @@ ${widget}
 <h2>How Masteries work</h2>
 <p>Every archetype has two mastery milestones, at <strong>level 10</strong> and <strong>level 30</strong>. Level 10 grants +1 to both attributes of the archetype's pair; level 30 grants +1 more to the second of them, so a fully mastered archetype is worth +1 and +2. The boosts follow your pro across every archetype from then on — we watched a Maestro's level-10 mastery sit on a Disruptor pro as +1 Reactions and +1 Ball Control. EA's own launch example was the Finisher: <strong>level 10 unlocks +1 Finishing and +1 Composure on every archetype you use</strong>.</p>
 <p>EA's own framing is that Masteries "reward long-term progression" — the more archetypes you master, the better your pro becomes across the board. Structurally it's the first system in Clubs that pays you for breadth instead of depth.</p>
+
+${positionsNav('fc27-masteries-explained')}
 
 <h2>The table is doing something clever</h2>
 <p>Look at the pairs in the planner above: across all 13 archetypes, <strong>no attribute appears twice</strong>. Twenty-six mastery slots, twenty-six different attributes. Every archetype's mastery touches a pair nothing else touches, which means there is no redundant grind — each archetype you master adds something the others can't.</p>

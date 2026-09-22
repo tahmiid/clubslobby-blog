@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { appCta, ARCH, BRAND, title, esc, kg, baseCss, updatedLine } from './common.mjs';
+import { appCta, appLinks, ARCH, BRAND, title, esc, kg, baseCss, updatedLine } from './common.mjs';
 
 const P = 'ac27';
 
@@ -155,7 +155,16 @@ ${widget}
 
 <p>Want to check a specific set of numbers without opening the builder? The <a href="/blog/lengthy-vs-controlled-vs-explosive/">AcceleRATE calculator</a> runs the same three checklists against any height, Agility, Strength and Acceleration you type in.</p>
 
-${appCta({ href: '/', kicker: 'Try it yourself', head: 'See your AcceleRATE change as you build', body: 'Height, agility and strength decide which curve you get. The planner recomputes it live while you move the sliders.', label: 'Open the builder' })}
+${appLinks({
+  kicker: 'Builds by AcceleRATE type',
+  head: 'See the Lengthy, Controlled and Explosive builds',
+  body: 'The builder’s search understands the three types. Every result is a finished level-40 FC 27 build you can open and copy.',
+  links: [
+    { href: '/explore?q=lengthy&year=27', label: 'Lengthy builds' },
+    { href: '/explore?q=controlled&year=27', label: 'Controlled builds' },
+    { href: '/explore?q=explosive&year=27', label: 'Explosive builds' },
+  ],
+})}
 
 
 <h2>Does this change in FC 27?</h2>

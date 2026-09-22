@@ -63,6 +63,27 @@ export const appCta = ({ href, kicker, head, body, label }) => kg(`<div class="p
 <a class="b" href="${new URL(href, SITE).href}">${esc(label)} →</a>
 </div>`);
 
+// The same card with several buttons, each a SEARCH the builder understands
+// (`/explore?q=lengthy&year=27`): for a page whose reader wants builds of a
+// kind the page just explained, not "the builder" in general (2026-09-22).
+// Why: the seven explainer pages with the most traffic sent 0–4% of readers
+// into the app while the build lists sent 36–79% — a reader on the AcceleRATE
+// page wants the Lengthy builds, not a blank planner. Every href is a path
+// the link sweep resolves; a `q` must be a facet the search recognises (probe
+// it with the internal cookie before shipping a new word).
+export const appLinks = ({ kicker, head, body, links }) => kg(`<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta .row{display:flex;flex-wrap:wrap;gap:8px}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">${esc(kicker)}</p>
+<h3>${esc(head)}</h3>
+<p>${esc(body)}</p>
+<div class="row">${links.map(({ href, label }) => `<a class="b" href="${new URL(href, SITE).href}">${esc(label)} →</a>`).join('')}</div>
+</div>`);
+
 export const kg = (html) => `<!--kg-card-begin: html-->\n${html}\n<!--kg-card-end: html-->`;
 
 // A visible "Updated <date>" line at the top of an article body (2026-09-21).

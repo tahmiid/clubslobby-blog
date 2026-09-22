@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { appCta, BRAND, SITE, esc, kg, baseCss, updatedLine } from './common.mjs';
 import { mostCopiedGrid } from './mostcopied.mjs';
+import { positionsNav } from './positions-nav.mjs';
 
 const P = 'lv27';
 
@@ -356,6 +357,8 @@ ${/* After the ladder and its own app handoff, before the FC 27 note - the
    the ladder explorer comes first, and the ladder is what the reader came for. */ ''}${mostCopiedGrid(P, 27)}
 
 ${fc27Note}
+${positionsNav('pro-clubs-level-rewards')}
+
 <h2>The grind is heavily back-loaded</h2>
 <p>The match-XP curve steepens hard: level 2 costs ${fmt(L[1].axp_required_cumulative)} AXP, while the single step from 99 to 100 costs ${fmt(L[99].axp_required_cumulative - L[98].axp_required_cumulative)} — ${Math.round((L[99].axp_required_cumulative - L[98].axp_required_cumulative) / L[1].axp_required_cumulative)}× as much. Half of the total ${fmt(TOTAL_AXP)} AXP is spent getting past level ${halfAxp}, which means the last third of the bar costs as much as everything before it.</p>
 <p>The AP payout leans the same way: you cross half of the ${fmt(TOTAL_AP)} lifetime AP at level ${halfAp}, and the final 25 levels pay out ${fmt(late)} AP — ${Math.round(100 * late / TOTAL_AP)}% of everything you will ever earn. A build that needs deep tier-3 attribute runs simply is not finished at level 60, whatever it looks like on paper — what those runs cost is in our <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP price guide</a>.</p>

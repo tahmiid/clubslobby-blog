@@ -6,6 +6,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
+import { positionsNav } from './positions-nav.mjs';
 
 const P = 'gr27';
 
@@ -97,6 +98,8 @@ ${widget}
 <h2 id="where">Where is Pro Clubs in FC 27?</h2>
 <p>Inside The Grounds. From the main menu, enter The Grounds; the Clubhouse is the door to Clubs — Leagues, Playoffs and the new <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a> — and Drop-in and Rush matches run from the same hub. Your Virtual Pro is one player everywhere in it, so the <a href="/blog/fc27-archetypes/">FC 27 archetype</a> you build for 11-a-side is the one that walks around Parkside.</p>
 <p>Everything new in FC 27 Clubs, each on its own page: <a href="/blog/fc27-archetypes/">FC 27 archetypes</a> · <a href="/blog/fc27-masteries-explained/">FC 27 Masteries</a> · <a href="/blog/fc27-amps-explained/">FC 27 Amps</a> · <a href="/blog/fc27-best-specializations/">FC 27 specializations</a> · <a href="/blog/pro-clubs-level-rewards/">the level-40 ladder</a> · <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a>.</p>
+
+${positionsNav('fc27-the-grounds-pro-clubs-explained')}
 
 <h2>Clubs isn't leaving. It's moving in somewhere bigger</h2>
 <p>The Grounds is a new social football hub built around your created pro — a place where you move around as your own avatar, play Kickabouts and 1v1s, and get into Clubs matches. A space wrapped around the football, not a replacement for it.</p>

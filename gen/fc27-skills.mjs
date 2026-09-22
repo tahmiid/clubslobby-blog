@@ -72,12 +72,16 @@ ${AD_A}
 ${m.note ? `<h2>Worth knowing</h2>\n<p>${esc(m.note)}</p>` : ''}
 
 ${appCta({
-  href: BUILDER,
+  // A search, not the blank planner (2026-09-22): the 13 how-tos sent 0 of
+  // 677 readers into the app in a fortnight. "N star" is a facet the search
+  // understands (skill-move stars), so the button lands on finished builds
+  // that can perform this move, most copied first.
+  href: `/explore?q=${m.star}+star&year=27`,
   kicker: `${m.star}-star requirement`,
-  head: `Can your pro do this?`,
-  body: `Skill stars are an attribute you buy with AP like any other. Price the
-    jump to ${m.star} stars on your own build before you commit to it.`,
-  label: 'Open the builder',
+  head: `See the builds that can do it`,
+  body: `Every finished level-40 FC 27 build with ${m.star}-star skill moves, most
+    copied first — open one and copy it, or price the jump to ${m.star} stars on your own.`,
+  label: `Builds with ${m.star}★ skill moves`,
 })}
 
 <h2>The rest of the new moves</h2>
@@ -123,12 +127,12 @@ ${AD_A}
 ${gameBlock}
 
 ${appCta({
-  href: BUILDER,
+  href: '/explore?q=5+star&year=27',
   kicker: 'Skill stars cost AP',
-  head: 'Work out which of these you can actually do',
-  body: `Most of this list needs four stars or more. Price the upgrade against
-    your own build before you spend the AP on it.`,
-  label: 'Open the builder',
+  head: 'See the builds that can do all of these',
+  body: `Most of this list needs four stars or more. These are the finished
+    level-40 FC 27 builds with five-star skill moves, most copied first — open one and copy it.`,
+  label: 'Builds with 5★ skill moves',
 })}
 
 <h2>Two that are not new — but were missing</h2>
