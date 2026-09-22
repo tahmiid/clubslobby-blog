@@ -143,6 +143,92 @@ switches because they are nearly free.
 > goes live, name it in /privacy's Display-ads paragraph and let its CMP
 > replace the cookie bar's advertising half.
 
+> ### 2026-09-22 — readiness audit: Raptive is closed to us until February, Journey is the plan, and three gaps were fixed the same night
+>
+> Re-read against each network's own help centre the evening GA4 went live,
+> because "check and recheck" was the brief:
+>
+> - **Raptive requires the domain to be at least six months old.** Its
+>   eligibility page (updated 19 Sep 2026) lists 25k pageviews/30d, 50% from
+>   US/UK/CA/AU/NZ under 100k, long-form content on most pages, "meaningful
+>   human involvement", GA4 correctly set up — and **"Domain is at least 6
+>   months old."** `proclubshq.com` was registered 2026-08-05 (WHOIS), so the
+>   earliest application is **2027-02-05**; traffic cannot shorten that. The
+>   "Raptive ~1 Oct" line in the 21 Sep block above is withdrawn. Raptive
+>   also supports single-page apps (its code watches URL changes), needs a
+>   Google Ad Manager account per creator (the fixed-country AdSense account
+>   in §7 becomes relevant then — its "How to create or link a GAM account"
+>   page says to tell them if an AdSense account exists under another email),
+>   reviews in "a day or so", pays Net 45 at a 75% share.
+> - **Journey needs no Google MCM approval.** Its onboarding page says so in
+>   as many words: Stripe identity verification (photo ID + selfie) stands in
+>   for it. So the two AdSense rejections and the account-country problem do
+>   not gate Journey at all. One unified form at publishers.mediavine.com/join
+>   routes a site to Journey or Mediavine by traffic; GA4 is connected inside
+>   the form; the bar is **1,000 sessions from US/UK/CA/AU in 30 days**;
+>   automatic disqualifiers are an incompatible CMS (Wix, Blogspot), extreme
+>   brand-safety concerns or "excessive use of AI", and under 1,000 premium
+>   sessions. Ghost is fine: the site-specific script is pasted into `<head>`
+>   (Ghost code injection AND the app's `public/index.html`, because their
+>   installer checks the root URL) and their ads.txt is uploaded to the domain
+>   root by hand (`frontend/public/ads.txt` in the app repo, deployed, checked
+>   by `content-type: text/plain`). 70% share, Net 65 (third-party figure —
+>   read the agreement).
+> - **A Journey rejection starts a 60-day reapply countdown**, and their
+>   rejection page says a domain "generally needs some time to establish a
+>   track record" and that too little traffic data blocks the evaluation. Two
+>   days of GA4 is asking to be told "not enough data". Recommended filing
+>   date: **~1 Oct, with ten days of GA4 behind it**; the numbers to read
+>   first are Reports → Demographics → Countries, sessions, US+UK+CA+AU ≥
+>   1,000 since 21 Sep (should be true by 23 Sep) and an organic-search share
+>   that looks like a real site.
+> - **What their reviewers look for that we lacked** ("Why was my site
+>   rejected?"): an About page linked from the footer or main nav, content
+>   easy to find from the home page, a privacy policy. Fixed the same night:
+>   `/blog/about/` rewritten — it had said "Pro Clubs Lobby" for six weeks
+>   after the rename because its only copy lived in Ghost; `ops/about-page.mjs`
+>   is now its source of truth and the previous page is in
+>   `/var/backups/clubs27/about-page-20260922T011915.json` — and the app's
+>   home footer gained About · Guides · Contact beside Privacy · Terms
+>   (frontend deploy 22 Sep, recorded in the app repo's CLAUDE.md). Their
+>   other named risks — "content that leans heavily on templates rather than
+>   original writing", "AI-generated images", "auto-generated content" — are
+>   the ones this blog should expect questions about and cannot fix in a week.
+> - **AdSense is switched OFF on the blog** (`ads-switch.sh off`, backup
+>   `ghost-db-pre-codeinjection_head-20260922-0117.sql.gz`). The rejected
+>   account was still loading `adsbygoogle.js` on every article, which
+>   contradicted the new /privacy ("until a partner is live, no ad script
+>   runs") and would break Journey's exclusivity at launch. `ads-switch.sh on`
+>   restores it in one command. `/ads.txt` keeps the Google line until
+>   Journey's file replaces it; a file with no valid record is worse than none
+>   (§7), so it is not blanked.
+> - **GA4 verified from the page side, app and blog**: the tag loads, a
+>   `page_view` goes out with `gcs=G101` (analytics on, ads off) outside
+>   Europe, `_ga` cookies are set, and **an SPA route change sends its
+>   page_view about six seconds after the navigation** — a check that waits
+>   five seconds concludes it never fires (it did, twice, before the timing was
+>   measured). The receiving side (Realtime) is the owner's screen; no browser
+>   of theirs is connected to this machine. Expect GA4 pageviews well under
+>   Cloudflare's: ad blockers and UK/EEA visitors who do not press OK are
+>   invisible to it by design.
+>
+> **Journey application, filled in advance** (the owner files it; nothing
+> here needs a deploy): site https://proclubshq.com · name Pro Clubs HQ ·
+> category Gaming · CMS "other" (Ghost blog at /blog, custom app at /) ·
+> description "Free player builder and 90+ long-form guides for EA SPORTS FC
+> Pro Clubs, FC 27 and FC 26: archetypes, builds, masteries, level rewards,
+> every control" · GA4: sign in with the Gmail that owns G-GF5G82EH7X ·
+> other display networks: none (AdSense never approved, code removed 22 Sep)
+> · affiliate: Amazon Associates · privacy https://proclubshq.com/privacy ·
+> about https://proclubshq.com/blog/about/ · contact hello@proclubshq.com.
+> Onboarding then asks for the Terms of Service, the privacy link, the script
+> (send it here), their ads.txt (send it here), Stripe ID verification and
+> payment/tax details. Go-live work on our side, same day: script into Ghost's
+> `codeinjection_head` via `ghost-setting.sh` and into `public/index.html`;
+> ads.txt deployed; their privacy paragraph added to /privacy naming
+> Mediavine; their CMP replaces the cookie bar's advertising half; remove the
+> inert `.pchq-ad` slot CSS only if their script complains.
+
 ## 1. The numbers this plan is sized against
 
 From `reports/funnel/2026-08-11.txt` and the first Search Console exports —
