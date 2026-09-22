@@ -4,11 +4,11 @@
 import { esc, kg } from './common.mjs';
 
 export const PAGES = [
-  { key: 'strikers',    n: 188, slug: 'fc27-best-striker-builds',    label: 'Strikers' },
-  { key: 'wingers',     n: 189, slug: 'fc27-best-winger-builds',     label: 'Wingers' },
-  { key: 'midfielders', n: 190, slug: 'fc27-best-midfielder-builds', label: 'Midfielders' },
-  { key: 'defenders',   n: 191, slug: 'fc27-best-defender-builds',   label: 'Defenders' },
-  { key: 'keepers',     n: 192, slug: 'fc27-best-goalkeeper-builds', label: 'Goalkeepers' },
+  { key: 'strikers',    n: 188, slug: 'best-pro-clubs-striker-builds',    label: 'Strikers' },
+  { key: 'wingers',     n: 189, slug: 'best-pro-clubs-winger-builds',     label: 'Wingers' },
+  { key: 'midfielders', n: 190, slug: 'best-pro-clubs-midfielder-builds', label: 'Midfielders' },
+  { key: 'defenders',   n: 191, slug: 'best-pro-clubs-defender-builds',   label: 'Defenders' },
+  { key: 'keepers',     n: 192, slug: 'best-pro-clubs-goalkeeper-builds', label: 'Goalkeepers' },
 ];
 
 // One line, high on the page: a reader who landed on the wrong position is

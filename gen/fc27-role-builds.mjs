@@ -24,7 +24,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, BRAND, ATTRS, esc, kg, appCta, updatedLine } from './common.mjs';
-import { cardsGrid, copiesLine, viewsLine } from './mostcopied.mjs';
+import { cardsGrid } from './mostcopied.mjs';
 import { FC27_ARCH, FC27_PROG, psName } from './fc27grid.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { affiliateSection } from './affiliate.mjs';
@@ -100,40 +100,40 @@ const CONFIG = {
     h1: 'Best FC 27 Pro Clubs Striker Builds: Poacher, Complete Forward or Target Man',
     singular: 'striker', plural: 'strikers', q: 'striker', perRole: 6,
     roles: ['st-poacher', 'st-complete', 'st-target'], boards: ['ST'],
-    intro: `Every striker in Pro Clubs plays one of three jobs, and the job decides the build before the archetype does. The <strong>poacher</strong> lives on the last defender's shoulder, the <strong>complete forward</strong> does a bit of everything and still scores the most, and the <strong>target man</strong> is the reference point the whole attack plays off. Below: the FC 27 level-${CAP} striker builds for each job, ranked by how many players have copied them into their own club, with the launch-week meta board's pick alongside. Every card opens in the builder; copy it and change what you like.`,
+    intro: `Every striker in Pro Clubs plays one of three jobs, and the job decides the build before the archetype does. The <strong>poacher</strong> lives on the last defender's shoulder, the <strong>complete forward</strong> does a bit of everything and still scores the most, and the <strong>target man</strong> is the reference point the whole attack plays off. Above, the strikers people copy most; below, the FC 27 level-${CAP} builds for each job, ranked by how many players have copied them into their own club, with the launch-week meta board's pick alongside. Every card opens in the builder; copy it and change what you like.`,
   },
   wingers: {
     h1: 'Best FC 27 Pro Clubs Winger Builds: Pace Winger or Skill Winger',
     singular: 'winger', plural: 'wingers', q: 'winger', perRole: 6,
     roles: ['winger-pace', 'winger-skill'], boards: ['WM'],
-    intro: `A Pro Clubs winger either goes outside or comes inside, and that choice is the build. The <strong>pace winger</strong> beats the full-back to the byline; the <strong>skill winger</strong> cuts in onto his strong foot and shoots. Both jobs are stocked here at level ${CAP}, ranked by how many players have copied each build, with the meta board's wide pick alongside. Tap a card to open it in the builder and make it yours.`,
+    intro: `A Pro Clubs winger either goes outside or comes inside, and that choice is the build. The <strong>pace winger</strong> beats the full-back to the byline; the <strong>skill winger</strong> cuts in onto his strong foot and shoots. Above, the wingers people copy most; below, both jobs at level ${CAP}, ranked by how many players have copied each build, with the meta board's wide pick alongside. Tap a card to open it in the builder and make it yours.`,
   },
   midfielders: {
     h1: 'Best FC 27 Pro Clubs Midfielder Builds: CDM, CM and CAM by Role',
     singular: 'midfielder', plural: 'midfielders', q: 'midfielder', perRole: 4,
     roles: ['dm-destroyer', 'dm-deeplying', 'cm-boxtobox', 'cm-playmaker', 'am-playmaker', 'am-dribbler'], boards: ['CDM', 'CAM'],
-    intro: `Midfield has more jobs than any other line — six in this catalog. Two in front of the back four (the <strong>destroyer</strong> and the <strong>deep-lying playmaker</strong>), two in the centre (<strong>box-to-box</strong> and the <strong>central playmaker</strong>) and two at the 10 (the <strong>attacking playmaker</strong> and the <strong>dribbler</strong>). Pick the job your club needs, then the build: each one below is a level-${CAP} FC 27 build ranked by how many players have copied it, with the meta board's picks for both midfield slots.`,
+    intro: `Midfield has more jobs than any other line — six in this catalog. Two in front of the back four (the <strong>destroyer</strong> and the <strong>deep-lying playmaker</strong>), two in the centre (<strong>box-to-box</strong> and the <strong>central playmaker</strong>) and two at the 10 (the <strong>attacking playmaker</strong> and the <strong>dribbler</strong>). Above, the midfielders people copy most; below, pick the job your club needs, then the build: each one is a level-${CAP} FC 27 build ranked by how many players have copied it, with the meta board's picks for both midfield slots.`,
   },
   defenders: {
     h1: 'Best FC 27 Pro Clubs Defender Builds: Centre-Back and Full-Back by Role',
     singular: 'defender', plural: 'defenders', q: 'defender', perRole: 6,
     roles: ['cb-stopper', 'cb-ballplayer', 'fullback-attacking', 'fullback-defensive'], boards: ['CB', 'FB'],
-    intro: `A back four is four jobs, not one position. The <strong>stopper</strong> wins the duel, the <strong>ball-playing centre-back</strong> starts the attack, the <strong>attacking full-back</strong> is a winger with a defensive job and the <strong>defensive full-back</strong> stays home. The level-${CAP} FC 27 builds for each are below, ranked by how many players have copied them, with the meta board's picks for centre-back and full-back. Every card opens in the builder.`,
+    intro: `A back four is four jobs, not one position. The <strong>stopper</strong> wins the duel, the <strong>ball-playing centre-back</strong> starts the attack, the <strong>attacking full-back</strong> is a winger with a defensive job and the <strong>defensive full-back</strong> stays home. Above, the defenders people copy most; below, the level-${CAP} FC 27 builds for each job, ranked by how many players have copied them, with the meta board's picks for centre-back and full-back. Every card opens in the builder.`,
   },
   keepers: {
     h1: 'Best FC 27 Pro Clubs Goalkeeper Builds: Shot-Stopper or Sweeper Keeper',
     singular: 'goalkeeper', plural: 'goalkeepers', q: 'goalkeeper', perRole: 6,
     roles: ['gk-shotstopper', 'gk-sweeper'], boards: ['GK'],
-    intro: `There are two ways to keep goal in Pro Clubs. The <strong>shot-stopper</strong> stays on his line and makes the save; the <strong>sweeper keeper</strong> plays high, comes for the through ball and starts attacks with his feet. The level-${CAP} FC 27 builds for both are below, ranked by how many players have copied them, with the meta board's goalkeeper alongside. Tap a card to open it in the builder.`,
+    intro: `There are two ways to keep goal in Pro Clubs. The <strong>shot-stopper</strong> stays on his line and makes the save; the <strong>sweeper keeper</strong> plays high, comes for the through ball and starts attacks with his feet. Above, the goalkeepers people copy most; below, the level-${CAP} FC 27 builds for both, ranked by how many players have copied them, with the meta board's goalkeeper alongside. Tap a card to open it in the builder.`,
   },
 };
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const rank = (x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount) || x.buildName.localeCompare(y.buildName);
-// "0 copies" under a card is anti-social-proof; a build nobody has copied yet
-// shows its views instead. The grid's sub-line says the order is copies then
-// views, so both readings are honest.
-const stat = (b) => (b.copyCount > 0 ? copiesLine(b) : viewsLine(b));
+// A label, never a small number (owner, 22 Sep: *"three copies, three views —
+// don't say like that; say most copied and most viewed"*). The order is still
+// copies then views, so the label is true of the card's place in it.
+const stat = (b) => (b.copyCount > 0 ? 'Most copied' : 'Most viewed');
 const archName = (id) => FC27_ARCH.find((a) => a.id === id)?.name ?? id;
 const attrName = (k) => ATTRS[k]?.name ?? k;
 const list = (xs) => xs.join(', ').replace(/, ([^,]*)$/, ' and $1');
@@ -182,14 +182,16 @@ const render = (page) => {
     if (pool.length < 3) { console.warn(`  !! ${page.slug}: ${roleId} has ${pool.length} builds — section skipped`); return ''; }
     const shown = pool.slice(0, cfg.perRole);
     shownAll.push(...shown);
+    // Grid first, words after (owner, 22 Sep: "people don't like to read…
+    // start right away with the grid").
     return `<h2 id="${roleId}">${esc(role.name)} — ${esc(role.job)}</h2>
-<p>${role.blurb}</p>
-${facts(pool)}
 ${cardsGrid(`${P}-${roleId}`, {
     builds: shown, id: `${roleId}-builds`, level: 'h3', stat,
     heading: `Best ${role.name.toLowerCase()} builds`,
-    sub: `${pool.length} ${role.name.toLowerCase()} builds in the catalog — the ${shown.length} most copied first, then most viewed. Tap a card to open it in the builder.`,
-  })}`;
+    sub: `${pool.length} ${role.name.toLowerCase()} builds in the catalog, most copied first, then most viewed. Tap a card to open it in the builder.`,
+  })}
+<p>${role.blurb}</p>
+${facts(pool)}`;
   }).filter(Boolean);
 
   const loosePool = BUILDS.filter((b) => !b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key).sort(rank);
@@ -198,16 +200,30 @@ ${cardsGrid(`${P}-${roleId}`, {
     const shown = loosePool.slice(0, cfg.perRole);
     shownAll.push(...shown);
     loose = `<h2 id="special-editions">Special editions and concept builds</h2>
-<p>World Cup editions, throwbacks and concept builds from the house accounts. They were not written for one role, so they sit here under their archetype's position.</p>
 ${cardsGrid(`${P}-loose`, {
       builds: shown, id: 'special-builds', level: 'h3', stat,
       heading: `Special ${cfg.plural}`,
-      sub: `${loosePool.length} in the catalog — most copied first, then most viewed.`,
-    })}`;
+      sub: `${loosePool.length} in the catalog, most copied first, then most viewed.`,
+    })}
+<p>World Cup editions, throwbacks and concept builds from the house accounts. They were not written for one role, so they sit here under their archetype's position.</p>`;
   }
 
   // Slot A after the first role: below a grid of app links, never above one.
   const body = [sections[0], AD_A, ...sections.slice(1), loose].filter(Boolean).join('\n\n');
+
+  // The page OPENS with a grid (owner, 22 Sep: "especially on phone they will
+  // have to scroll a lot to get to the grid — start right away with the
+  // grid"): the position's most-copied builds across every role, before a
+  // word of prose. Same ranking as the sections, so nothing is claimed twice
+  // differently.
+  const topPool = BUILDS.filter((b) => cfg.roles.includes(b.playerRole) || (!b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key)).sort(rank);
+  const topShown = topPool.slice(0, 6);
+  for (const b of topShown) if (!shownAll.some((x) => x.id === b.id)) shownAll.unshift(b);
+  const topGrid = cardsGrid(`${P}-top`, {
+    builds: topShown, id: 'most-copied', level: 'h2', stat,
+    heading: `Most copied FC 27 ${cfg.plural}`,
+    sub: `The ${cfg.plural} people copy most, then the most viewed. Tap a card to open it in the builder; every role has its own list below.`,
+  });
 
   const totalInRoles = cfg.roles.reduce((s, r) => s + BUILDS.filter((b) => b.playerRole === r).length, 0);
   const archUsed = count(BUILDS.filter((b) => cfg.roles.includes(b.playerRole)), (b) => b.archetype_id)
@@ -228,9 +244,12 @@ ${cardsGrid(`${P}-loose`, {
 ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
     mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }, null, 1)}
 </script>`);
-  const listLd = kg(itemListLd({ name: cfg.h1, items: shownAll.map((b) => ({ name: b.buildName, url: `${SITE}/b/${b.id}` })) }));
+  const uniq = shownAll.filter((b, i, a) => a.findIndex((x) => x.id === b.id) === i);
+  const listLd = kg(itemListLd({ name: cfg.h1, items: uniq.map((b) => ({ name: b.buildName, url: `${SITE}/b/${b.id}` })) }));
 
   const html = `${updatedLine(UPDATED, 'ranked from the live builds and the launch-week meta board')}
+${topGrid}
+
 <p>${cfg.intro}</p>
 
 ${positionsNav(page.slug)}
@@ -262,7 +281,7 @@ ${AD_C}`;
 
   const out = path.join(import.meta.dirname, '..', 'out', `${P}.html`);
   writeFileSync(out, html);
-  console.log(`${P} ${page.slug}: ${sections.length} roles, ${shownAll.length} cards (${loosePool.length >= 3 ? 'with' : 'no'} special section) | bytes ${html.length}`);
+  console.log(`${P} ${page.slug}: ${sections.length} roles, ${shownAll.length} cards incl. the opening ${topShown.length} (${loosePool.length >= 3 ? 'with' : 'no'} special section) | bytes ${html.length}`);
   return { shown: shownAll.length, roles: sections.length, cards: shownAll.map((b) => b.buildName) };
 };
 

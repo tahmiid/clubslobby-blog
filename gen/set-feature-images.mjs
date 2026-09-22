@@ -208,11 +208,11 @@ const MAP = [
   ['feat-skill-alternate-elastico-chop.jpg', 'fc27-how-to-alternate-elastico-chop', "EA SPORTS FC 27 key art with ELASTICO CHOP across it"],
   ['feat-skill-running-fake-drag.jpg', 'fc27-how-to-running-fake-drag', "EA SPORTS FC 27 key art with FAKE DRAG across it"],
   // The five "best builds by position" pages (gen/make-fc27-role-feats.py, 2026-09-22).
-  ['feat-fc27-strikers.jpg', 'fc27-best-striker-builds', "EA SPORTS FC 27 key art with STRIKERS across it"],
-  ['feat-fc27-wingers.jpg', 'fc27-best-winger-builds', "EA SPORTS FC 27 key art with WINGERS across it"],
-  ['feat-fc27-midfield.jpg', 'fc27-best-midfielder-builds', "EA SPORTS FC 27 key art with MIDFIELD across it"],
-  ['feat-fc27-defenders.jpg', 'fc27-best-defender-builds', "EA SPORTS FC 27 key art with DEFENDERS across it"],
-  ['feat-fc27-keepers.jpg', 'fc27-best-goalkeeper-builds', "EA SPORTS FC 27 key art with KEEPERS across it"],
+  ['feat-fc27-strikers.jpg', 'best-pro-clubs-striker-builds', "EA SPORTS FC 27 key art with STRIKERS across it"],
+  ['feat-fc27-wingers.jpg', 'best-pro-clubs-winger-builds', "EA SPORTS FC 27 key art with WINGERS across it"],
+  ['feat-fc27-midfield.jpg', 'best-pro-clubs-midfielder-builds', "EA SPORTS FC 27 key art with MIDFIELD across it"],
+  ['feat-fc27-defenders.jpg', 'best-pro-clubs-defender-builds', "EA SPORTS FC 27 key art with DEFENDERS across it"],
+  ['feat-fc27-keepers.jpg', 'best-pro-clubs-goalkeeper-builds', "EA SPORTS FC 27 key art with KEEPERS across it"],
 ];
 
 // Optional filter: `node set-feature-images.mjs a8 a12` assigns only those.

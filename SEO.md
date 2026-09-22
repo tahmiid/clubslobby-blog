@@ -440,6 +440,15 @@ all PASS). Findings and the rules each one turned into:
 - **Do not write new player articles from thin demand.** The implied backlog
   was seven queries, 12 impressions, 0 clicks *(2 Sep analysis; not
   re-derived)*.
+- **An evergreen page's slug carries no year** (owner, 22 Sep 2026: *"don't
+  make the link year dependent… we will update it once FC 28 comes, so our
+  link should be available and mature at that time"*). The title says the
+  year, the URL never does: `best-pro-clubs-striker-builds`, not
+  `fc27-best-striker-builds`. The five position pages went out year-named
+  for a few hours and were renamed in Ghost (`ops/rename-slug.mjs`, same post
+  and feature image) with 301s in nginx (`CLUBS27-BLOG-REDIRECTS`,
+  DEPLOYMENT.md). The existing `fc27-*` cluster predates the rule and ranks;
+  renaming it is a separate decision, not a tidy-up.
 - **Head terms are not winnable in a fortnight** — page 1 for "fc 27
   archetypes" is EA's own pitch notes, FIFPlay, YouTube, Sportskeeda. Play for
   3–4 there and 1–3 on the long tail.

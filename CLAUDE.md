@@ -416,6 +416,14 @@ node ops/affiliate-test.mjs                                       # after editin
   verify with the owner (archetypes switch freely in FC 26, etc.).
 - FC 27 numbers are presented as **rumor** until EA publishes; the word
   "beta" appears nowhere (owner rule 2026-08-16).
+- **Evergreen slugs carry no year** (owner, 2026-09-22): titles say FC 27,
+  URLs never do, so the same address can hold FC 28. `ops/rename-slug.mjs`
+  renames a post in place; the 301 is yours to add (DEPLOYMENT.md, the
+  `CLUBS27-BLOG-REDIRECTS` block).
+- **Build-list pages open with a grid and label cards, never small counts**
+  (owner, 2026-09-22, on the position pages): "people don't like to read"
+  — the grid comes before the prose, on the page and inside each section —
+  and a card says *Most copied* / *Most viewed*, not "3 copies".
 - Covers are official EA art + one or two keywords via `coverkit.py`;
   widgets are dark-only; blog CSS mirrors the app's.
 - Ads: unfilled slots must collapse (`:has(ins[data-ad-status="unfilled"])`)

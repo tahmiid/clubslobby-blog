@@ -753,3 +753,22 @@ configs are editorial, everything numeric is derived.
   spoke set's position stills (one visual language per position), the tier
   list takes the FC 26 studio key art — a posed lineup for a lineup page.
   The Van Dijk still stays rejected.
+
+
+## Blog redirects — the `CLUBS27-BLOG-REDIRECTS` nginx block (2026-09-22)
+
+Ghost renames a slug without redirecting the old address, and it has no
+`redirects.yaml` on this box. A renamed post therefore gets an exact-match
+location in `/etc/nginx/sites-available/clubs27.com-ssl.conf`, inside the
+marked block just above `location ^~ /blog` (an `=` location wins over the
+`^~` prefix):
+
+```nginx
+location = /blog/fc27-best-striker-builds/ { return 301 /blog/best-pro-clubs-striker-builds/; }
+```
+
+Add a line per rename, `nginx -t`, `systemctl reload nginx`, then
+`curl -sI https://proclubshq.com/blog/<old>/` must say 301 with the new
+`location`. The conf is backed up beside itself first
+(`*.bak-<date>-redirects`). The first five lines are the position pages,
+renamed year-free on the owner's rule the day they shipped.
