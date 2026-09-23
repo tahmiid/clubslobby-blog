@@ -294,44 +294,42 @@ least"), with the text below as the FIRST comment — galleries take no body.
 Where the subreddit's editor allows images inline in a text post, post it as
 a text post with the two images between the paragraphs instead.
 
-**Title:** FC 27 Pro Clubs archetypes: what each one is cheap to raise, and
-who pays least for a 90 (retail cost tiers, checked in-game)
+**Title:** FC 27 archetypes: what's cheap to upgrade on each one, and who
+gets to 90 for the least AP
 
-**Text (body or first comment):**
+**Text (body or first comment)** — player voice, per the owner 23 Sep
+("sounds more like a player than a statistician"):
 
-> Two charts from the FC 27 retail catalog.
+> Made two charts for anyone planning their FC 27 pro.
 >
-> **Image 1** — every attribute sits in one of four AP price tiers per
-> archetype. Green is that archetype's cheapest tier, red its dearest. It is
-> the fastest way to see what an archetype is built to do: a Finisher raises
-> Agility, Dribbling, Sprint Speed and Vision cheaply and pays top price for
-> Finishing itself; a Maestro gets Def. Awareness, Interceptions, Short Pass
-> and Strength cheap; a Boss gets Aggression, Heading, Jumping and Strength.
+> First one: every stat on an archetype sits in one of four price tiers.
+> Green = cheap on that archetype, red = expensive. So a Finisher gets
+> Agility, Dribbling, Sprint Speed and Vision cheap but pays the most for
+> Finishing. A Maestro gets Def. Awareness, Interceptions, Short Pass and
+> Strength cheap. A Boss gets Aggression, Heading, Jumping and Strength cheap.
 >
-> **Image 2** — for the attributes people ask about, the AP from the
-> archetype's starting value to 90: the three cheapest archetypes and the
-> dearest. Archetypes that cannot reach 90 in that attribute are left out of
-> the row. The gaps are big: 90 Sprint Speed is 76 AP on a Disruptor or a
-> Finisher and 234 on a Target; 90 Finishing is 143 on a Target, 177 on a
-> Finisher, 271 on a Disruptor.
+> Second one: how much AP it takes to get a stat from where it starts to 90.
+> The three cheapest archetypes for it, and the most expensive one. If an
+> archetype can't reach 90 in that stat, it's not in the row. The difference
+> is huge. 90 Sprint Speed is 76 AP on a Disruptor or a Finisher but 234 on
+> a Target. 90 Finishing is 143 on a Target, 177 on a Finisher and 271 on a
+> Disruptor.
 >
-> Where the numbers come from: the retail catalog's cost tiers and starting
-> values, with every disputed value read on the in-game upgrade screen
-> yesterday — including the top band, which is steeper than the beta-era
-> tables (95 to 99 costs 15/20/25/30/35 a point on the cheapest tier, and
-> 93–94 is its own band). We also cross-checked the tier sheet that went
-> round Reddit yesterday: the game agreed with it on every price and cap, and
-> with our in-game reads on the per-archetype tiers (its Recycler column is a
-> copy of its Disruptor column). 962 AP at level 40.
+> All the prices are from the game. We read every upgrade cost on the actual
+> upgrade screen yesterday, including 93 to 99, which costs way more than the
+> old beta tables said (on the cheapest tier, 95 to 99 is 15, 20, 25, 30, 35
+> AP a point). We also checked the tier sheet someone posted yesterday. The
+> game matched it on prices and caps, but its Recycler column is just a copy
+> of the Disruptor one. You get 962 AP at level 40.
 >
-> Happy to paste the full tier map for any archetype.
+> Want the full tier list for one archetype? Ask and I'll paste it.
 
 **First comment (or second, when the text is the first):**
 
-> The builder prices every archetype live against these tiers, and the
-> archetype guide carries the tier map per archetype:
-> https://proclubshq.com/blog/fc27-archetypes/ — mods, remove if links
-> aren't allowed here.
+> If you want to price your own build, our builder uses these exact tiers,
+> and the archetype guide has the full tier list per archetype:
+> https://proclubshq.com/blog/fc27-archetypes/ (mods, delete this if links
+> aren't allowed).
 
 **Rules:** no owner name or handle anywhere; the post is by the account the
 owner posts from, in the first person plural. If self-promotion is banned
