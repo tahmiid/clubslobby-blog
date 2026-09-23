@@ -326,10 +326,12 @@ gets to 90 for the least AP
 
 **First comment (or second, when the text is the first):**
 
-> If you want to price your own build, our builder uses these exact tiers,
-> and the archetype guide has the full tier list per archetype:
-> https://proclubshq.com/blog/fc27-archetypes/ (mods, delete this if links
-> aren't allowed).
+> If you want to price your own build with these tiers, that's the tool we
+> made: https://proclubshq.com
+
+(Owner, 23 Sep: the comment links the APP, never the blog, and stays small
+and personal. Posted as an *Images* post — a text post with pictures inside
+shows as text in the feed.)
 
 **Rules:** no owner name or handle anywhere; the post is by the account the
 owner posts from, in the first person plural. If self-promotion is banned
