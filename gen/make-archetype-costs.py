@@ -101,7 +101,7 @@ def cheap_to_raise():
     d.line([(PAD, y), (W - PAD, y)], fill=TEAL, width=2)
     tracked(d, (PAD, y + 20), 'PROCLUBSHQ.COM', font('manrope-700', 20), TEAL, 6)
     ex = cost_to('finisher', 'finishing', 90)[0], cost_to('boss', 'finishing', 90)
-    d.text((PAD, y + 50), f'Tiers from the retail catalog · the price gap is real: 90 Finishing costs {ex[0]} AP on a Finisher and {ex[1][0]} AP on a Boss (which caps at {ex[1][1]}) · 962 AP at level 40',
+    d.text((PAD, y + 50), f'Tiers from the retail catalog, re-read in-game 22 Sep · the gap is real: 90 Finishing is {ex[0]} AP on a Finisher; a Boss stops at {ex[1][1]}, and that alone is {ex[1][0]} AP · 962 AP at level 40',
            font=font('manrope-700', 15), fill=MUTED)
     out = os.path.join(OUT, 'fc27-cheap-to-raise.png')
     img.save(out, optimize=True)
