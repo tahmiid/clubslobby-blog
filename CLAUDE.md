@@ -114,6 +114,18 @@ Two things about their shape were settled by the owner on 2026-08-23:
   the published HTML is a snapshot, so a stale export is a stale grid, never
   a broken one.
 
+  **The blog's copy of the FC 27 catalog is an export too.**
+  `ops/export-fc27-catalog.mjs` writes `data/fc27/rules_progression.json` and
+  `data/fc27/archetypes.json` verbatim from the live API — the cost bands, the
+  per-archetype tiers, every base and cap — and prints what moved. Re-run it
+  after ANY catalog migration reaches production (22 Sep 2026: the cost table
+  above 92 and four base/max cells were corrected from in-game reads, app repo
+  `catalog/README.md`), then regenerate what reads the two files: the cost
+  images (`gen/make-archetype-costs.py`), the FC 27 spokes and a66/a65, and
+  the role pages after `ops/export-role-builds.mjs`. Until 22 Sep these files
+  were a one-off hand fetch from August; a stale copy is a wrong number on a
+  published page, never a broken one.
+
   House builds only, and only builds with at least one real copy. The house
   filter is an *editorial* choice — a member's own build name would be
   published unreviewed on 35 indexed pages while the site is mid-AdSense

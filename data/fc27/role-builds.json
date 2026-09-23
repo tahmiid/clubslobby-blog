@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-22",
+ "generatedAt": "2026-09-23",
  "year": 27,
  "builds": [
   {
@@ -26,7 +26,7 @@
    "nation": "France",
    "club": null,
    "copyCount": 21,
-   "viewCount": 613,
+   "viewCount": 708,
    "creator": "specialevents",
    "top": [
     {
@@ -46,8 +46,8 @@
      "v": 84
     },
     {
-     "k": "sprintSpeed",
-     "v": 84
+     "k": "composure",
+     "v": 83
     }
    ]
   },
@@ -75,7 +75,7 @@
    "nation": "Italy",
    "club": null,
    "copyCount": 13,
-   "viewCount": 292,
+   "viewCount": 316,
    "creator": "throwbackfc",
    "top": [
     {
@@ -96,6 +96,55 @@
     },
     {
      "k": "defAware",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "72b66470-67d9-454b-b694-fc59798bb05e",
+   "buildName": "Vitinha",
+   "archetype_id": "maestro",
+   "playerRole": "cm-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 68,
+   "weight": 143,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Portugal",
+   "club": "PSG",
+   "copyCount": 9,
+   "viewCount": 258,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
      "v": 84
     }
    ]
@@ -124,7 +173,7 @@
    "nation": "France",
    "club": null,
    "copyCount": 9,
-   "viewCount": 142,
+   "viewCount": 168,
    "creator": "throwbackfc",
    "top": [
     {
@@ -142,55 +191,6 @@
     {
      "k": "sprintSpeed",
      "v": 89
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "72b66470-67d9-454b-b694-fc59798bb05e",
-   "buildName": "Vitinha",
-   "archetype_id": "maestro",
-   "playerRole": "cm-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 68,
-   "weight": 143,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Portugal",
-   "club": "PSG",
-   "copyCount": 8,
-   "viewCount": 231,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
     },
     {
      "k": "ballControl",
@@ -222,7 +222,7 @@
    "nation": "Portugal",
    "club": "Milan",
    "copyCount": 8,
-   "viewCount": 70,
+   "viewCount": 84,
    "creator": "buildmaster",
    "top": [
     {
@@ -271,12 +271,12 @@
    "nation": "Spain",
    "club": "Barcelona",
    "copyCount": 6,
-   "viewCount": 236,
+   "viewCount": 281,
    "creator": "buildmaster",
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -292,7 +292,7 @@
     },
     {
      "k": "ballControl",
-     "v": 85
+     "v": 87
     }
    ]
   },
@@ -320,7 +320,7 @@
    "nation": null,
    "club": null,
    "copyCount": 6,
-   "viewCount": 152,
+   "viewCount": 165,
    "creator": "freakbuilds",
    "top": [
     {
@@ -369,7 +369,7 @@
    "nation": "Germany",
    "club": null,
    "copyCount": 5,
-   "viewCount": 262,
+   "viewCount": 287,
    "creator": "throwbackfc",
    "top": [
     {
@@ -418,7 +418,7 @@
    "nation": "France",
    "club": "Real Madrid",
    "copyCount": 5,
-   "viewCount": 199,
+   "viewCount": 209,
    "creator": "buildmaster",
    "top": [
     {
@@ -467,7 +467,7 @@
    "nation": "Spain",
    "club": null,
    "copyCount": 5,
-   "viewCount": 159,
+   "viewCount": 176,
    "creator": "specialevents",
    "top": [
     {
@@ -516,7 +516,7 @@
    "nation": "Argentina",
    "club": null,
    "copyCount": 4,
-   "viewCount": 385,
+   "viewCount": 438,
    "creator": "specialevents",
    "top": [
     {
@@ -537,7 +537,56 @@
     },
     {
      "k": "curve",
+     "v": 87
+    }
+   ]
+  },
+  {
+   "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
+   "buildName": "Neymar Jr",
+   "archetype_id": "magician",
+   "playerRole": "am-dribbler",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "technical"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 69,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 5,
+   "nation": "Brazil",
+   "club": "Santos",
+   "copyCount": 4,
+   "viewCount": 279,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "balance",
      "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
     }
    ]
   },
@@ -565,7 +614,7 @@
    "nation": "France",
    "club": "Real Madrid",
    "copyCount": 3,
-   "viewCount": 354,
+   "viewCount": 380,
    "creator": "buildmaster",
    "top": [
     {
@@ -586,55 +635,6 @@
     },
     {
      "k": "agility",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
-   "buildName": "Neymar Jr",
-   "archetype_id": "magician",
-   "playerRole": "am-dribbler",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "technical"
-   ],
-   "playstyles": [
-    "trickster",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 69,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 5,
-   "nation": "Brazil",
-   "club": "Santos",
-   "copyCount": 3,
-   "viewCount": 255,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "balance",
-     "v": 89
-    },
-    {
-     "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
      "v": 84
     }
    ]
@@ -663,7 +663,7 @@
    "nation": "Ireland",
    "club": null,
    "copyCount": 3,
-   "viewCount": 226,
+   "viewCount": 233,
    "creator": "throwbackfc",
    "top": [
     {
@@ -712,7 +712,7 @@
    "nation": "Portugal",
    "club": "Al-Nassr",
    "copyCount": 3,
-   "viewCount": 172,
+   "viewCount": 184,
    "creator": "buildmaster",
    "top": [
     {
@@ -761,7 +761,7 @@
    "nation": "France",
    "club": null,
    "copyCount": 3,
-   "viewCount": 122,
+   "viewCount": 137,
    "creator": "throwbackfc",
    "top": [
     {
@@ -782,6 +782,55 @@
     },
     {
      "k": "curve",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "b0f71219-007c-44e7-820e-308e6921be06",
+   "buildName": "Claude Makélélé",
+   "archetype_id": "disruptor",
+   "playerRole": "dm-destroyer",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 69,
+   "weight": 146,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 2,
+   "weakFoot": 3,
+   "nation": "France",
+   "club": null,
+   "copyCount": 3,
+   "viewCount": 124,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "defAware",
      "v": 84
     }
    ]
@@ -810,7 +859,7 @@
    "nation": "Germany",
    "club": "Bayern",
    "copyCount": 3,
-   "viewCount": 75,
+   "viewCount": 84,
    "creator": "buildmaster",
    "top": [
     {
@@ -859,7 +908,7 @@
    "nation": "Croatia",
    "club": "Milan",
    "copyCount": 3,
-   "viewCount": 53,
+   "viewCount": 56,
    "creator": "buildmaster",
    "top": [
     {
@@ -885,51 +934,51 @@
    ]
   },
   {
-   "id": "b0f71219-007c-44e7-820e-308e6921be06",
-   "buildName": "Claude Makélélé",
-   "archetype_id": "disruptor",
-   "playerRole": "dm-destroyer",
-   "selectedSpecialization": null,
+   "id": "6739abc0-c880-4848-9228-58d6d15eeef5",
+   "buildName": "Cannavaro '06 WC",
+   "archetype_id": "progressor",
+   "playerRole": null,
+   "selectedSpecialization": "janitor",
    "level": 40,
    "signature": [
-    "jockey"
+    "quick-step"
    ],
    "playstyles": [
-    "anticipate",
+    "jockey",
     "bruiser",
-    "intercept"
+    "aerial-fortress"
    ],
-   "height": 69,
-   "weight": 146,
+   "height": 71,
+   "weight": 176,
    "accelerationType": "Controlled",
    "inGameAccelerationType": "Controlled",
    "skillMoves": 2,
    "weakFoot": 3,
-   "nation": "France",
+   "nation": "Italy",
    "club": null,
-   "copyCount": 2,
-   "viewCount": 105,
-   "creator": "throwbackfc",
+   "copyCount": 3,
+   "viewCount": 35,
+   "creator": "specialevents",
    "top": [
     {
+     "k": "jumping",
+     "v": 98
+    },
+    {
+     "k": "acceleration",
+     "v": 92
+    },
+    {
+     "k": "slideTackle",
+     "v": 90
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 90
+    },
+    {
      "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "interceptions",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "defAware",
-     "v": 84
+     "v": 80
     }
    ]
   },
@@ -957,7 +1006,7 @@
    "nation": null,
    "club": null,
    "copyCount": 2,
-   "viewCount": 90,
+   "viewCount": 97,
    "creator": "freakbuilds",
    "top": [
     {
@@ -1006,7 +1055,7 @@
    "nation": "Türkiye",
    "club": "Real Madrid",
    "copyCount": 2,
-   "viewCount": 72,
+   "viewCount": 79,
    "creator": "buildmaster",
    "top": [
     {
@@ -1055,7 +1104,7 @@
    "nation": "Portugal",
    "club": null,
    "copyCount": 2,
-   "viewCount": 64,
+   "viewCount": 71,
    "creator": "specialevents",
    "top": [
     {
@@ -1077,55 +1126,6 @@
     {
      "k": "headingAcc",
      "v": 89
-    }
-   ]
-  },
-  {
-   "id": "283ce795-bf32-4ae7-850d-b702ed6ee106",
-   "buildName": "Moisés Caicedo",
-   "archetype_id": "disruptor",
-   "playerRole": "dm-destroyer",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 70,
-   "weight": 161,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Ecuador",
-   "club": "Chelsea",
-   "copyCount": 2,
-   "viewCount": 61,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "interceptions",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "defAware",
-     "v": 84
     }
    ]
   },
@@ -1153,7 +1153,7 @@
    "nation": null,
    "club": null,
    "copyCount": 2,
-   "viewCount": 61,
+   "viewCount": 69,
    "creator": "freakbuilds",
    "top": [
     {
@@ -1174,6 +1174,55 @@
     },
     {
      "k": "gkKicking",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "283ce795-bf32-4ae7-850d-b702ed6ee106",
+   "buildName": "Moisés Caicedo",
+   "archetype_id": "disruptor",
+   "playerRole": "dm-destroyer",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 70,
+   "weight": 161,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Ecuador",
+   "club": "Chelsea",
+   "copyCount": 2,
+   "viewCount": 67,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "defAware",
      "v": 84
     }
    ]
@@ -1202,7 +1251,7 @@
    "nation": null,
    "club": null,
    "copyCount": 2,
-   "viewCount": 59,
+   "viewCount": 66,
    "creator": "freakbuilds",
    "top": [
     {
@@ -1211,7 +1260,7 @@
     },
     {
      "k": "fkAcc",
-     "v": 99
+     "v": 98
     },
     {
      "k": "crossing",
@@ -1222,57 +1271,8 @@
      "v": 90
     },
     {
-     "k": "acceleration",
+     "k": "attPosition",
      "v": 80
-    }
-   ]
-  },
-  {
-   "id": "6739abc0-c880-4848-9228-58d6d15eeef5",
-   "buildName": "Cannavaro '06 WC",
-   "archetype_id": "progressor",
-   "playerRole": null,
-   "selectedSpecialization": "janitor",
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "jockey",
-    "bruiser",
-    "aerial-fortress"
-   ],
-   "height": 71,
-   "weight": 176,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 2,
-   "weakFoot": 3,
-   "nation": "Italy",
-   "club": null,
-   "copyCount": 2,
-   "viewCount": 31,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "jumping",
-     "v": 99
-    },
-    {
-     "k": "acceleration",
-     "v": 92
-    },
-    {
-     "k": "slideTackle",
-     "v": 90
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 90
-    },
-    {
-     "k": "defAware",
-     "v": 84
     }
    ]
   },
@@ -1300,7 +1300,7 @@
    "nation": "Norway",
    "club": "Man City",
    "copyCount": 1,
-   "viewCount": 250,
+   "viewCount": 284,
    "creator": "buildmaster",
    "top": [
     {
@@ -1349,7 +1349,7 @@
    "nation": "Spain",
    "club": "Man City",
    "copyCount": 1,
-   "viewCount": 140,
+   "viewCount": 159,
    "creator": "buildmaster",
    "top": [
     {
@@ -1370,55 +1370,6 @@
     },
     {
      "k": "acceleration",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "41360286-a695-478d-aa9f-b2622d4c6075",
-   "buildName": "Kobbie Mainoo",
-   "archetype_id": "maestro",
-   "playerRole": "cm-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 71,
-   "weight": 176,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "England",
-   "club": "Man United",
-   "copyCount": 1,
-   "viewCount": 114,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
      "v": 84
     }
    ]
@@ -1447,7 +1398,7 @@
    "nation": "Spain",
    "club": null,
    "copyCount": 1,
-   "viewCount": 113,
+   "viewCount": 129,
    "creator": "throwbackfc",
    "top": [
     {
@@ -1496,7 +1447,7 @@
    "nation": "Serbia",
    "club": null,
    "copyCount": 1,
-   "viewCount": 107,
+   "viewCount": 126,
    "creator": "specialevents",
    "top": [
     {
@@ -1518,6 +1469,104 @@
     {
      "k": "standTackle",
      "v": 89
+    }
+   ]
+  },
+  {
+   "id": "41360286-a695-478d-aa9f-b2622d4c6075",
+   "buildName": "Kobbie Mainoo",
+   "archetype_id": "maestro",
+   "playerRole": "cm-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 71,
+   "weight": 176,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "England",
+   "club": "Man United",
+   "copyCount": 1,
+   "viewCount": 115,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "0aa08154-cb43-4af0-a342-1e9cceb69a99",
+   "buildName": "Ronaldinho",
+   "archetype_id": "magician",
+   "playerRole": "am-dribbler",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "technical"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 71,
+   "weight": 172,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "Brazil",
+   "club": null,
+   "copyCount": 1,
+   "viewCount": 110,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "balance",
+     "v": 92
+    },
+    {
+     "k": "composure",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
     }
    ]
   },
@@ -1545,7 +1594,7 @@
    "nation": "Netherlands",
    "club": "Liverpool",
    "copyCount": 1,
-   "viewCount": 98,
+   "viewCount": 105,
    "creator": "buildmaster",
    "top": [
     {
@@ -1594,7 +1643,7 @@
    "nation": "Netherlands",
    "club": "Liverpool",
    "copyCount": 1,
-   "viewCount": 97,
+   "viewCount": 101,
    "creator": "buildmaster",
    "top": [
     {
@@ -1615,104 +1664,6 @@
     },
     {
      "k": "strength",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "0aa08154-cb43-4af0-a342-1e9cceb69a99",
-   "buildName": "Ronaldinho",
-   "archetype_id": "magician",
-   "playerRole": "am-dribbler",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "technical"
-   ],
-   "playstyles": [
-    "trickster",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 71,
-   "weight": 172,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 4,
-   "nation": "Brazil",
-   "club": null,
-   "copyCount": 1,
-   "viewCount": 93,
-   "creator": "throwbackfc",
-   "top": [
-    {
-     "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "f127e69f-b3ed-420e-b905-8afc66ec015b",
-   "buildName": "Corner Specialist",
-   "archetype_id": "spark",
-   "playerRole": null,
-   "selectedSpecialization": "ace",
-   "level": 40,
-   "signature": [
-    "whipped-pass"
-   ],
-   "playstyles": [
-    "aerial-fortress",
-    "dead-ball",
-    "finesse-shot"
-   ],
-   "height": 72,
-   "weight": 172,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 4,
-   "nation": null,
-   "club": null,
-   "copyCount": 1,
-   "viewCount": 90,
-   "creator": "freakbuilds",
-   "top": [
-    {
-     "k": "finishing",
-     "v": 92
-    },
-    {
-     "k": "ballControl",
-     "v": 90
-    },
-    {
-     "k": "reactions",
-     "v": 90
-    },
-    {
-     "k": "crossing",
-     "v": 89
-    },
-    {
-     "k": "curve",
      "v": 89
     }
    ]
@@ -1741,7 +1692,7 @@
    "nation": "Brazil",
    "club": null,
    "copyCount": 1,
-   "viewCount": 90,
+   "viewCount": 98,
    "creator": "throwbackfc",
    "top": [
     {
@@ -1767,51 +1718,51 @@
    ]
   },
   {
-   "id": "da83ca75-e8fb-446a-9b47-c09fff211081",
-   "buildName": "Xavi Simons",
-   "archetype_id": "creator",
-   "playerRole": "am-playmaker",
-   "selectedSpecialization": null,
+   "id": "f127e69f-b3ed-420e-b905-8afc66ec015b",
+   "buildName": "Corner Specialist",
+   "archetype_id": "spark",
+   "playerRole": null,
+   "selectedSpecialization": "ace",
    "level": 40,
    "signature": [
-    "incisive-pass"
+    "whipped-pass"
    ],
    "playstyles": [
-    "technical",
-    "first-touch",
-    "tiki-taka"
+    "aerial-fortress",
+    "dead-ball",
+    "finesse-shot"
    ],
-   "height": 69,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 3,
-   "nation": "Netherlands",
-   "club": "Tottenham",
+   "height": 72,
+   "weight": 172,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 4,
+   "nation": null,
+   "club": null,
    "copyCount": 1,
-   "viewCount": 87,
-   "creator": "buildmaster",
+   "viewCount": 96,
+   "creator": "freakbuilds",
    "top": [
     {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
+     "k": "finishing",
+     "v": 92
     },
     {
      "k": "ballControl",
-     "v": 84
+     "v": 90
     },
     {
-     "k": "composure",
-     "v": 84
+     "k": "reactions",
+     "v": 90
+    },
+    {
+     "k": "crossing",
+     "v": 89
     },
     {
      "k": "curve",
-     "v": 84
+     "v": 89
     }
    ]
   },
@@ -1839,7 +1790,7 @@
    "nation": "USA",
    "club": null,
    "copyCount": 1,
-   "viewCount": 83,
+   "viewCount": 93,
    "creator": "throwbackfc",
    "top": [
     {
@@ -1861,6 +1812,104 @@
     {
      "k": "finishing",
      "v": 89
+    }
+   ]
+  },
+  {
+   "id": "da83ca75-e8fb-446a-9b47-c09fff211081",
+   "buildName": "Xavi Simons",
+   "archetype_id": "creator",
+   "playerRole": "am-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "first-touch",
+    "tiki-taka"
+   ],
+   "height": 69,
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 3,
+   "nation": "Netherlands",
+   "club": "Tottenham",
+   "copyCount": 1,
+   "viewCount": 88,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
+    },
+    {
+     "k": "curve",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "a398d01f-da73-451f-8036-bbfcb08bb576",
+   "buildName": "Kaká '07 Milan",
+   "archetype_id": "magician",
+   "playerRole": null,
+   "selectedSpecialization": "hotshot",
+   "level": 40,
+   "signature": [
+    "power-shot"
+   ],
+   "playstyles": [
+    "rapid",
+    "technical",
+    "pinged-pass"
+   ],
+   "height": 73,
+   "weight": 172,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "Brazil",
+   "club": null,
+   "copyCount": 1,
+   "viewCount": 85,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "composure",
+     "v": 96
+    },
+    {
+     "k": "shotPower",
+     "v": 92
+    },
+    {
+     "k": "finishing",
+     "v": 90
+    },
+    {
+     "k": "longShots",
+     "v": 90
+    },
+    {
+     "k": "longPass",
+     "v": 85
     }
    ]
   },
@@ -1888,7 +1937,7 @@
    "nation": "Brazil",
    "club": null,
    "copyCount": 1,
-   "viewCount": 67,
+   "viewCount": 76,
    "creator": "throwbackfc",
    "top": [
     {
@@ -1937,7 +1986,7 @@
    "nation": "England",
    "club": "Bayern",
    "copyCount": 1,
-   "viewCount": 63,
+   "viewCount": 70,
    "creator": "buildmaster",
    "top": [
     {
@@ -1986,7 +2035,7 @@
    "nation": "France",
    "club": null,
    "copyCount": 1,
-   "viewCount": 63,
+   "viewCount": 70,
    "creator": "throwbackfc",
    "top": [
     {
@@ -2035,7 +2084,7 @@
    "nation": "Serbia",
    "club": null,
    "copyCount": 1,
-   "viewCount": 60,
+   "viewCount": 68,
    "creator": "throwbackfc",
    "top": [
     {
@@ -2056,55 +2105,6 @@
     },
     {
      "k": "interceptions",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "e3bd756c-a9e1-4683-bf3e-630f3431dc19",
-   "buildName": "Martin Ødegaard",
-   "archetype_id": "creator",
-   "playerRole": "am-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "first-touch",
-    "tiki-taka"
-   ],
-   "height": 70,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Norway",
-   "club": "Arsenal",
-   "copyCount": 1,
-   "viewCount": 52,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    },
-    {
-     "k": "composure",
      "v": 84
     }
    ]
@@ -2133,7 +2133,7 @@
    "nation": "Uruguay",
    "club": null,
    "copyCount": 1,
-   "viewCount": 52,
+   "viewCount": 61,
    "creator": "specialevents",
    "top": [
     {
@@ -2153,8 +2153,57 @@
      "v": 90
     },
     {
-     "k": "dribbling",
-     "v": 81
+     "k": "acceleration",
+     "v": 80
+    }
+   ]
+  },
+  {
+   "id": "e3bd756c-a9e1-4683-bf3e-630f3431dc19",
+   "buildName": "Martin Ødegaard",
+   "archetype_id": "creator",
+   "playerRole": "am-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "first-touch",
+    "tiki-taka"
+   ],
+   "height": 70,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Norway",
+   "club": "Arsenal",
+   "copyCount": 1,
+   "viewCount": 54,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
     }
    ]
   },
@@ -2182,7 +2231,7 @@
    "nation": "Germany",
    "club": "Real Madrid",
    "copyCount": 1,
-   "viewCount": 44,
+   "viewCount": 50,
    "creator": "buildmaster",
    "top": [
     {
@@ -2231,7 +2280,7 @@
    "nation": "Egypt",
    "club": "Liverpool",
    "copyCount": 1,
-   "viewCount": 37,
+   "viewCount": 49,
    "creator": "buildmaster",
    "top": [
     {
@@ -2280,7 +2329,7 @@
    "nation": "Sweden",
    "club": null,
    "copyCount": 1,
-   "viewCount": 34,
+   "viewCount": 35,
    "creator": "specialevents",
    "top": [
     {
@@ -2329,7 +2378,7 @@
    "nation": "England",
    "club": "Tottenham",
    "copyCount": 1,
-   "viewCount": 32,
+   "viewCount": 33,
    "creator": "buildmaster",
    "top": [
     {
@@ -2350,6 +2399,55 @@
     },
     {
      "k": "composure",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "cc961f79-c91b-4037-abf0-02f7649b1939",
+   "buildName": "Dominik Szoboszlai",
+   "archetype_id": "maestro",
+   "playerRole": "cm-boxtobox",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "press-proven"
+   ],
+   "playstyles": [
+    "power-shot",
+    "pinged-pass",
+    "relentless"
+   ],
+   "height": 73,
+   "weight": 163,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Hungary",
+   "club": "Liverpool",
+   "copyCount": 1,
+   "viewCount": 17,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "stamina",
+     "v": 90
+    },
+    {
+     "k": "shotPower",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "shortPass",
      "v": 84
     }
    ]
@@ -2404,55 +2502,6 @@
    ]
   },
   {
-   "id": "cc961f79-c91b-4037-abf0-02f7649b1939",
-   "buildName": "Dominik Szoboszlai",
-   "archetype_id": "maestro",
-   "playerRole": "cm-boxtobox",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "press-proven"
-   ],
-   "playstyles": [
-    "power-shot",
-    "pinged-pass",
-    "relentless"
-   ],
-   "height": 73,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Hungary",
-   "club": "Liverpool",
-   "copyCount": 1,
-   "viewCount": 14,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "stamina",
-     "v": 90
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    },
-    {
-     "k": "shortPass",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "e793c2c3-01c7-4af7-a591-51e5a48c1e26",
    "buildName": "Sweeper Libero",
    "archetype_id": "sweeper-keeper",
@@ -2476,7 +2525,7 @@
    "nation": null,
    "club": null,
    "copyCount": 1,
-   "viewCount": 8,
+   "viewCount": 9,
    "creator": "freakbuilds",
    "top": [
     {
@@ -2525,16 +2574,16 @@
    "nation": "Argentina",
    "club": "Inter Miami",
    "copyCount": 0,
-   "viewCount": 227,
+   "viewCount": 237,
    "creator": "buildmaster",
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -2545,8 +2594,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -2574,7 +2623,7 @@
    "nation": "Brazil",
    "club": "Real Madrid",
    "copyCount": 0,
-   "viewCount": 155,
+   "viewCount": 159,
    "creator": "buildmaster",
    "top": [
     {
@@ -2595,6 +2644,55 @@
     },
     {
      "k": "agility",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "87518094-01f9-4d6a-9b29-03359bbd0d28",
+   "buildName": "Zlatan Ibrahimović",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 77,
+   "weight": 209,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "Sweden",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 125,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "volleys",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "headingAcc",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
      "v": 84
     }
    ]
@@ -2623,7 +2721,7 @@
    "nation": "England",
    "club": "Real Madrid",
    "copyCount": 0,
-   "viewCount": 109,
+   "viewCount": 120,
    "creator": "buildmaster",
    "top": [
     {
@@ -2644,55 +2742,6 @@
     },
     {
      "k": "shortPass",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "4c78709a-f8d3-4304-bf4e-46c63f683c8c",
-   "buildName": "Kevin De Bruyne",
-   "archetype_id": "maestro",
-   "playerRole": "cm-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 71,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Belgium",
-   "club": "Napoli",
-   "copyCount": 0,
-   "viewCount": 105,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "crossing",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
      "v": 84
     }
    ]
@@ -2721,7 +2770,7 @@
    "nation": null,
    "club": null,
    "copyCount": 0,
-   "viewCount": 105,
+   "viewCount": 118,
    "creator": "freakbuilds",
    "top": [
     {
@@ -2741,56 +2790,56 @@
      "v": 90
     },
     {
-     "k": "reactions",
-     "v": 88
+     "k": "attPosition",
+     "v": 80
     }
    ]
   },
   {
-   "id": "87518094-01f9-4d6a-9b29-03359bbd0d28",
-   "buildName": "Zlatan Ibrahimović",
-   "archetype_id": "target",
-   "playerRole": "st-target",
+   "id": "4c78709a-f8d3-4304-bf4e-46c63f683c8c",
+   "buildName": "Kevin De Bruyne",
+   "archetype_id": "maestro",
+   "playerRole": "cm-playmaker",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "precision-header"
+    "incisive-pass"
    ],
    "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
    ],
-   "height": 77,
-   "weight": 209,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 5,
-   "weakFoot": 4,
-   "nation": "Sweden",
-   "club": null,
+   "height": 71,
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Belgium",
+   "club": "Napoli",
    "copyCount": 0,
-   "viewCount": 102,
-   "creator": "throwbackfc",
+   "viewCount": 109,
+   "creator": "buildmaster",
    "top": [
     {
+     "k": "crossing",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
      "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "volleys",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 84
-    },
-    {
-     "k": "headingAcc",
-     "v": 84
-    },
-    {
-     "k": "shotPower",
      "v": 84
     }
    ]
@@ -2819,7 +2868,7 @@
    "nation": "England",
    "club": "Arsenal",
    "copyCount": 0,
-   "viewCount": 100,
+   "viewCount": 106,
    "creator": "buildmaster",
    "top": [
     {
@@ -2868,7 +2917,7 @@
    "nation": "Sweden",
    "club": "Liverpool",
    "copyCount": 0,
-   "viewCount": 86,
+   "viewCount": 92,
    "creator": "buildmaster",
    "top": [
     {
@@ -2889,55 +2938,6 @@
     },
     {
      "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "c8823f78-ee20-4dd2-959e-783358f43296",
-   "buildName": "Casemiro",
-   "archetype_id": "disruptor",
-   "playerRole": "dm-destroyer",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 73,
-   "weight": 185,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 2,
-   "weakFoot": 3,
-   "nation": "Brazil",
-   "club": "Man United",
-   "copyCount": 0,
-   "viewCount": 81,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "headingAcc",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "defAware",
      "v": 84
     }
    ]
@@ -2966,16 +2966,16 @@
    "nation": "England",
    "club": "Arsenal",
    "copyCount": 0,
-   "viewCount": 79,
+   "viewCount": 90,
    "creator": "buildmaster",
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -2986,57 +2986,57 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
   {
-   "id": "a398d01f-da73-451f-8036-bbfcb08bb576",
-   "buildName": "Kaká '07 Milan",
-   "archetype_id": "magician",
-   "playerRole": null,
-   "selectedSpecialization": "hotshot",
+   "id": "c8823f78-ee20-4dd2-959e-783358f43296",
+   "buildName": "Casemiro",
+   "archetype_id": "disruptor",
+   "playerRole": "dm-destroyer",
+   "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "power-shot"
+    "jockey"
    ],
    "playstyles": [
-    "rapid",
-    "technical",
-    "pinged-pass"
+    "anticipate",
+    "bruiser",
+    "intercept"
    ],
    "height": 73,
-   "weight": 172,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 5,
-   "weakFoot": 4,
+   "weight": 185,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 2,
+   "weakFoot": 3,
    "nation": "Brazil",
-   "club": null,
+   "club": "Man United",
    "copyCount": 0,
-   "viewCount": 74,
-   "creator": "specialevents",
+   "viewCount": 86,
+   "creator": "buildmaster",
    "top": [
     {
-     "k": "composure",
-     "v": 96
+     "k": "aggression",
+     "v": 89
     },
     {
-     "k": "shotPower",
-     "v": 92
+     "k": "headingAcc",
+     "v": 89
     },
     {
-     "k": "finishing",
-     "v": 90
+     "k": "standTackle",
+     "v": 89
     },
     {
-     "k": "longShots",
-     "v": 90
+     "k": "stamina",
+     "v": 88
     },
     {
-     "k": "longPass",
-     "v": 86
+     "k": "defAware",
+     "v": 84
     }
    ]
   },
@@ -3064,12 +3064,12 @@
    "nation": "Argentina",
    "club": null,
    "copyCount": 0,
-   "viewCount": 70,
+   "viewCount": 77,
    "creator": "throwbackfc",
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -3084,8 +3084,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 86
     }
    ]
   },
@@ -3113,7 +3113,7 @@
    "nation": "Spain",
    "club": "Barcelona",
    "copyCount": 0,
-   "viewCount": 70,
+   "viewCount": 76,
    "creator": "buildmaster",
    "top": [
     {
@@ -3162,7 +3162,7 @@
    "nation": "France",
    "club": null,
    "copyCount": 0,
-   "viewCount": 66,
+   "viewCount": 73,
    "creator": "specialevents",
    "top": [
     {
@@ -3183,55 +3183,6 @@
     },
     {
      "k": "dribbling",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "b686413c-8899-48e8-9045-047b01162592",
-   "buildName": "Federico Valverde",
-   "archetype_id": "maestro",
-   "playerRole": "cm-boxtobox",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "press-proven"
-   ],
-   "playstyles": [
-    "power-shot",
-    "pinged-pass",
-    "relentless"
-   ],
-   "height": 72,
-   "weight": 172,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Uruguay",
-   "club": "Real Madrid",
-   "copyCount": 0,
-   "viewCount": 65,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "stamina",
-     "v": 90
-    },
-    {
-     "k": "longShots",
-     "v": 89
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
      "v": 84
     }
    ]
@@ -3260,7 +3211,7 @@
    "nation": "England",
    "club": null,
    "copyCount": 0,
-   "viewCount": 64,
+   "viewCount": 69,
    "creator": "throwbackfc",
    "top": [
     {
@@ -3281,6 +3232,55 @@
     },
     {
      "k": "composure",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "b686413c-8899-48e8-9045-047b01162592",
+   "buildName": "Federico Valverde",
+   "archetype_id": "maestro",
+   "playerRole": "cm-boxtobox",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "press-proven"
+   ],
+   "playstyles": [
+    "power-shot",
+    "pinged-pass",
+    "relentless"
+   ],
+   "height": 72,
+   "weight": 172,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Uruguay",
+   "club": "Real Madrid",
+   "copyCount": 0,
+   "viewCount": 68,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "stamina",
+     "v": 90
+    },
+    {
+     "k": "longShots",
+     "v": 89
+    },
+    {
+     "k": "shotPower",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
      "v": 84
     }
    ]
@@ -3309,7 +3309,7 @@
    "nation": null,
    "club": null,
    "copyCount": 0,
-   "viewCount": 56,
+   "viewCount": 62,
    "creator": "freakbuilds",
    "top": [
     {
@@ -3318,7 +3318,7 @@
     },
     {
      "k": "agility",
-     "v": 95
+     "v": 93
     },
     {
      "k": "sprintSpeed",
@@ -3326,7 +3326,7 @@
     },
     {
      "k": "dribbling",
-     "v": 82
+     "v": 84
     },
     {
      "k": "attPosition",
@@ -3358,7 +3358,7 @@
    "nation": "Argentina",
    "club": null,
    "copyCount": 0,
-   "viewCount": 55,
+   "viewCount": 59,
    "creator": "specialevents",
    "top": [
     {
@@ -3384,51 +3384,51 @@
    ]
   },
   {
-   "id": "fa7f82c2-9950-4906-a7d2-4e8e4fe8a44b",
-   "buildName": "Mbappé '22 WC",
-   "archetype_id": "finisher",
+   "id": "86bdae63-9989-4a36-a374-e1cc18b2f5c8",
+   "buildName": "Roberto Carlos '02 WC",
+   "archetype_id": "marauder",
    "playerRole": null,
-   "selectedSpecialization": "hunter",
+   "selectedSpecialization": "athlete",
    "level": 40,
    "signature": [
-    "low-driven-shot"
+    "bruiser"
    ],
    "playstyles": [
-    "finesse-shot",
-    "rapid",
-    "trickster"
+    "dead-ball",
+    "power-shot",
+    "rapid"
    ],
-   "height": 70,
-   "weight": 161,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 4,
-   "nation": "France",
+   "height": 66,
+   "weight": 152,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Brazil",
    "club": null,
    "copyCount": 0,
-   "viewCount": 52,
+   "viewCount": 59,
    "creator": "specialevents",
    "top": [
     {
-     "k": "dribbling",
-     "v": 96
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 95
-    },
-    {
-     "k": "curve",
+     "k": "strength",
      "v": 92
     },
     {
-     "k": "attPosition",
+     "k": "aggression",
      "v": 90
     },
     {
-     "k": "finishing",
+     "k": "defAware",
      "v": 90
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "crossing",
+     "v": 80
     }
    ]
   },
@@ -3456,7 +3456,7 @@
    "nation": "Germany",
    "club": "Liverpool",
    "copyCount": 0,
-   "viewCount": 51,
+   "viewCount": 55,
    "creator": "buildmaster",
    "top": [
     {
@@ -3505,7 +3505,7 @@
    "nation": "Germany",
    "club": "Bayern",
    "copyCount": 0,
-   "viewCount": 48,
+   "viewCount": 53,
    "creator": "buildmaster",
    "top": [
     {
@@ -3527,6 +3527,55 @@
     {
      "k": "acceleration",
      "v": 84
+    }
+   ]
+  },
+  {
+   "id": "fa7f82c2-9950-4906-a7d2-4e8e4fe8a44b",
+   "buildName": "Mbappé '22 WC",
+   "archetype_id": "finisher",
+   "playerRole": null,
+   "selectedSpecialization": "hunter",
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
+   ],
+   "playstyles": [
+    "finesse-shot",
+    "rapid",
+    "trickster"
+   ],
+   "height": 70,
+   "weight": 161,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "France",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 53,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 95
+    },
+    {
+     "k": "curve",
+     "v": 92
+    },
+    {
+     "k": "attPosition",
+     "v": 90
+    },
+    {
+     "k": "finishing",
+     "v": 90
     }
    ]
   },
@@ -3554,7 +3603,7 @@
    "nation": "England",
    "club": "Chelsea",
    "copyCount": 0,
-   "viewCount": 47,
+   "viewCount": 51,
    "creator": "buildmaster",
    "top": [
     {
@@ -3575,6 +3624,104 @@
     },
     {
      "k": "curve",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "b01b4d28-7d53-4b48-b409-6d16982a8d06",
+   "buildName": "Raphinha",
+   "archetype_id": "spark",
+   "playerRole": "winger-pace",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "rapid",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 69,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Brazil",
+   "club": "Barcelona",
+   "copyCount": 0,
+   "viewCount": 51,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "28c0801d-d651-4a20-910e-a5416ed08d09",
+   "buildName": "Martín Zubimendi",
+   "archetype_id": "recycler",
+   "playerRole": "dm-deeplying",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "pinged-pass",
+    "long-ball-pass",
+    "anticipate"
+   ],
+   "height": 71,
+   "weight": 163,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Spain",
+   "club": "Arsenal",
+   "copyCount": 0,
+   "viewCount": 49,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 85
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "composure",
      "v": 84
     }
    ]
@@ -3629,153 +3776,6 @@
    ]
   },
   {
-   "id": "86bdae63-9989-4a36-a374-e1cc18b2f5c8",
-   "buildName": "Roberto Carlos '02 WC",
-   "archetype_id": "marauder",
-   "playerRole": null,
-   "selectedSpecialization": "athlete",
-   "level": 40,
-   "signature": [
-    "bruiser"
-   ],
-   "playstyles": [
-    "dead-ball",
-    "power-shot",
-    "rapid"
-   ],
-   "height": 66,
-   "weight": 152,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Brazil",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 47,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "strength",
-     "v": 92
-    },
-    {
-     "k": "aggression",
-     "v": 90
-    },
-    {
-     "k": "defAware",
-     "v": 90
-    },
-    {
-     "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "crossing",
-     "v": 80
-    }
-   ]
-  },
-  {
-   "id": "28c0801d-d651-4a20-910e-a5416ed08d09",
-   "buildName": "Martín Zubimendi",
-   "archetype_id": "recycler",
-   "playerRole": "dm-deeplying",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "pinged-pass",
-    "long-ball-pass",
-    "anticipate"
-   ],
-   "height": 71,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": "Arsenal",
-   "copyCount": 0,
-   "viewCount": 46,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 85
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "composure",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "b01b4d28-7d53-4b48-b409-6d16982a8d06",
-   "buildName": "Raphinha",
-   "archetype_id": "spark",
-   "playerRole": "winger-pace",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "rapid",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 69,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Brazil",
-   "club": "Barcelona",
-   "copyCount": 0,
-   "viewCount": 38,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "0cb9555f-f82c-40bf-bb8d-5745ef06dffd",
    "buildName": "Cannonball",
    "archetype_id": "marauder",
@@ -3799,7 +3799,7 @@
    "nation": null,
    "club": null,
    "copyCount": 0,
-   "viewCount": 37,
+   "viewCount": 40,
    "creator": "freakbuilds",
    "top": [
     {
@@ -3821,6 +3821,104 @@
     {
      "k": "balance",
      "v": 89
+    }
+   ]
+  },
+  {
+   "id": "80b98f05-67a2-4483-9c80-23df2f2f713f",
+   "buildName": "Petar Sučić",
+   "archetype_id": "maestro",
+   "playerRole": "cm-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 72,
+   "weight": 168,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Croatia",
+   "club": "Inter",
+   "copyCount": 0,
+   "viewCount": 39,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "14715e68-6c08-40c1-a1cf-07efa850a26e",
+   "buildName": "Manuel Neuer",
+   "archetype_id": "sweeper-keeper",
+   "playerRole": "gk-sweeper",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "footwork"
+   ],
+   "playstyles": [
+    "far-throw",
+    "aerial-fortress",
+    "deflector"
+   ],
+   "height": 76,
+   "weight": 203,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 2,
+   "weakFoot": 2,
+   "nation": "Germany",
+   "club": "Bayern",
+   "copyCount": 0,
+   "viewCount": 37,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "gkKicking",
+     "v": 90
+    },
+    {
+     "k": "gkDiving",
+     "v": 89
+    },
+    {
+     "k": "gkReflexes",
+     "v": 89
+    },
+    {
+     "k": "reactions",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
     }
    ]
   },
@@ -3848,7 +3946,7 @@
    "nation": "Wales",
    "club": null,
    "copyCount": 0,
-   "viewCount": 28,
+   "viewCount": 30,
    "creator": "specialevents",
    "top": [
     {
@@ -3897,7 +3995,7 @@
    "nation": "Portugal",
    "club": "Tottenham",
    "copyCount": 0,
-   "viewCount": 28,
+   "viewCount": 30,
    "creator": "buildmaster",
    "top": [
     {
@@ -3919,6 +4017,55 @@
     {
      "k": "defAware",
      "v": 84
+    }
+   ]
+  },
+  {
+   "id": "2f3f13c6-1413-4e53-98ee-3929b8673767",
+   "buildName": "Alphonso Davies",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 72,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Canada",
+   "club": "Bayern",
+   "copyCount": 0,
+   "viewCount": 28,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "interceptions",
+     "v": 87
     }
    ]
   },
@@ -3972,106 +4119,8 @@
    ]
   },
   {
-   "id": "14715e68-6c08-40c1-a1cf-07efa850a26e",
-   "buildName": "Manuel Neuer",
-   "archetype_id": "sweeper-keeper",
-   "playerRole": "gk-sweeper",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "footwork"
-   ],
-   "playstyles": [
-    "far-throw",
-    "aerial-fortress",
-    "deflector"
-   ],
-   "height": 76,
-   "weight": 203,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 2,
-   "weakFoot": 2,
-   "nation": "Germany",
-   "club": "Bayern",
-   "copyCount": 0,
-   "viewCount": 25,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "gkKicking",
-     "v": 90
-    },
-    {
-     "k": "gkDiving",
-     "v": 89
-    },
-    {
-     "k": "gkReflexes",
-     "v": 89
-    },
-    {
-     "k": "reactions",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "80b98f05-67a2-4483-9c80-23df2f2f713f",
-   "buildName": "Petar Sučić",
-   "archetype_id": "maestro",
-   "playerRole": "cm-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 72,
-   "weight": 168,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Croatia",
-   "club": "Inter",
-   "copyCount": 0,
-   "viewCount": 25,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "2f3f13c6-1413-4e53-98ee-3929b8673767",
-   "buildName": "Alphonso Davies",
+   "id": "aee8c603-4083-4c68-a9d6-b6293d273294",
+   "buildName": "Theo Hernández",
    "archetype_id": "marauder",
    "playerRole": "fullback-attacking",
    "selectedSpecialization": null,
@@ -4085,15 +4134,15 @@
     "jockey"
    ],
    "height": 72,
-   "weight": 165,
+   "weight": 179,
    "accelerationType": "Controlled",
    "inGameAccelerationType": "Controlled",
    "skillMoves": 4,
    "weakFoot": 3,
-   "nation": "Canada",
-   "club": "Bayern",
+   "nation": "France",
+   "club": "Al-Hilal",
    "copyCount": 0,
-   "viewCount": 23,
+   "viewCount": 25,
    "creator": "buildmaster",
    "top": [
     {
@@ -4115,6 +4164,104 @@
     {
      "k": "interceptions",
      "v": 87
+    }
+   ]
+  },
+  {
+   "id": "7165eb54-415e-4c0b-84e9-0cbca2348df1",
+   "buildName": "Crossing Machine",
+   "archetype_id": "marauder",
+   "playerRole": null,
+   "selectedSpecialization": "speedster",
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "acrobatic",
+    "finesse-shot",
+    "incisive-pass"
+   ],
+   "height": 70,
+   "weight": 159,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": null,
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 24,
+   "creator": "freakbuilds",
+   "top": [
+    {
+     "k": "sprintSpeed",
+     "v": 92
+    },
+    {
+     "k": "acceleration",
+     "v": 90
+    },
+    {
+     "k": "dribbling",
+     "v": 90
+    },
+    {
+     "k": "crossing",
+     "v": 89
+    },
+    {
+     "k": "reactions",
+     "v": 89
+    }
+   ]
+  },
+  {
+   "id": "05e4c9a9-5d29-4a0a-8ac7-f8dda5f8b894",
+   "buildName": "N'Golo Kanté",
+   "archetype_id": "disruptor",
+   "playerRole": "dm-destroyer",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 66,
+   "weight": 150,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "France",
+   "club": "Al-Ittihad",
+   "copyCount": 0,
+   "viewCount": 24,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "defAware",
+     "v": 84
     }
    ]
   },
@@ -4142,7 +4289,7 @@
    "nation": null,
    "club": null,
    "copyCount": 0,
-   "viewCount": 23,
+   "viewCount": 24,
    "creator": "freakbuilds",
    "top": [
     {
@@ -4163,6 +4310,55 @@
     },
     {
      "k": "shortPass",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "54df43e4-3bc8-44e7-bfd6-4ca82110b2cf",
+   "buildName": "Luís Figo",
+   "archetype_id": "magician",
+   "playerRole": "winger-skill",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "game-changer"
+   ],
+   "playstyles": [
+    "trickster",
+    "technical",
+    "first-touch"
+   ],
+   "height": 71,
+   "weight": 165,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Portugal",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 22,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "balance",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "crossing",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "agility",
      "v": 84
     }
    ]
@@ -4266,99 +4462,50 @@
    ]
   },
   {
-   "id": "7165eb54-415e-4c0b-84e9-0cbca2348df1",
-   "buildName": "Crossing Machine",
-   "archetype_id": "marauder",
-   "playerRole": null,
-   "selectedSpecialization": "speedster",
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "acrobatic",
-    "finesse-shot",
-    "incisive-pass"
-   ],
-   "height": 70,
-   "weight": 159,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": null,
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 21,
-   "creator": "freakbuilds",
-   "top": [
-    {
-     "k": "sprintSpeed",
-     "v": 92
-    },
-    {
-     "k": "acceleration",
-     "v": 90
-    },
-    {
-     "k": "dribbling",
-     "v": 90
-    },
-    {
-     "k": "crossing",
-     "v": 89
-    },
-    {
-     "k": "reactions",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "54df43e4-3bc8-44e7-bfd6-4ca82110b2cf",
-   "buildName": "Luís Figo",
-   "archetype_id": "magician",
-   "playerRole": "winger-skill",
+   "id": "9a14e96e-cdfc-460f-9f54-283132145bcc",
+   "buildName": "Bruno Fernandes",
+   "archetype_id": "creator",
+   "playerRole": "am-playmaker",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "game-changer"
+    "incisive-pass"
    ],
    "playstyles": [
-    "trickster",
     "technical",
-    "first-touch"
+    "first-touch",
+    "tiki-taka"
    ],
-   "height": 71,
-   "weight": 165,
+   "height": 70,
+   "weight": 152,
    "accelerationType": "Explosive",
-   "inGameAccelerationType": "Controlled",
+   "inGameAccelerationType": "Explosive",
    "skillMoves": 4,
-   "weakFoot": 4,
+   "weakFoot": 3,
    "nation": "Portugal",
-   "club": null,
+   "club": "Man United",
    "copyCount": 0,
    "viewCount": 21,
-   "creator": "throwbackfc",
+   "creator": "buildmaster",
    "top": [
     {
-     "k": "balance",
-     "v": 90
-    },
-    {
-     "k": "composure",
+     "k": "shortPass",
      "v": 89
     },
     {
-     "k": "crossing",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
+     "k": "vision",
      "v": 89
     },
     {
      "k": "agility",
+     "v": 84
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "composure",
      "v": 84
     }
    ]
@@ -4413,55 +4560,6 @@
    ]
   },
   {
-   "id": "9a14e96e-cdfc-460f-9f54-283132145bcc",
-   "buildName": "Bruno Fernandes",
-   "archetype_id": "creator",
-   "playerRole": "am-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "first-touch",
-    "tiki-taka"
-   ],
-   "height": 70,
-   "weight": 152,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Portugal",
-   "club": "Man United",
-   "copyCount": 0,
-   "viewCount": 20,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    },
-    {
-     "k": "composure",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "928da371-896c-4ca7-948b-aca03c0c2512",
    "buildName": "Glass Cannon",
    "archetype_id": "finisher",
@@ -4511,104 +4609,6 @@
    ]
   },
   {
-   "id": "aee8c603-4083-4c68-a9d6-b6293d273294",
-   "buildName": "Theo Hernández",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
-   ],
-   "height": 72,
-   "weight": 179,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "France",
-   "club": "Al-Hilal",
-   "copyCount": 0,
-   "viewCount": 20,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "interceptions",
-     "v": 87
-    }
-   ]
-  },
-  {
-   "id": "05e4c9a9-5d29-4a0a-8ac7-f8dda5f8b894",
-   "buildName": "N'Golo Kanté",
-   "archetype_id": "disruptor",
-   "playerRole": "dm-destroyer",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 66,
-   "weight": 150,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "France",
-   "club": "Al-Ittihad",
-   "copyCount": 0,
-   "viewCount": 19,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "interceptions",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "defAware",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "982dfc2a-f75f-433b-b04c-05b5ef467bd8",
    "buildName": "Pocket Playmaker",
    "archetype_id": "magician",
@@ -4632,12 +4632,12 @@
    "nation": null,
    "club": null,
    "copyCount": 0,
-   "viewCount": 18,
+   "viewCount": 19,
    "creator": "freakbuilds",
    "top": [
     {
      "k": "agility",
-     "v": 99
+     "v": 98
     },
     {
      "k": "ballControl",
@@ -4653,7 +4653,7 @@
     },
     {
      "k": "balance",
-     "v": 86
+     "v": 88
     }
    ]
   },
@@ -4681,16 +4681,16 @@
    "nation": "France",
    "club": "Bayern",
    "copyCount": 0,
-   "viewCount": 17,
+   "viewCount": 18,
    "creator": "buildmaster",
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -4703,6 +4703,104 @@
     {
      "k": "dribbling",
      "v": 89
+    }
+   ]
+  },
+  {
+   "id": "c23ba7e1-c6a7-4cc1-92a9-5518e4c049a5",
+   "buildName": "The Engine Room",
+   "archetype_id": "recycler",
+   "playerRole": null,
+   "selectedSpecialization": "thief",
+   "level": 40,
+   "signature": [
+    "press-proven"
+   ],
+   "playstyles": [
+    "block",
+    "acrobatic",
+    "first-touch"
+   ],
+   "height": 71,
+   "weight": 168,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": null,
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 18,
+   "creator": "freakbuilds",
+   "top": [
+    {
+     "k": "standTackle",
+     "v": 92
+    },
+    {
+     "k": "defAware",
+     "v": 90
+    },
+    {
+     "k": "interceptions",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "08a462f7-8c8e-4dcb-af7e-ba50047fe8ac",
+   "buildName": "Mbappé Golden Boot '26",
+   "archetype_id": "finisher",
+   "playerRole": null,
+   "selectedSpecialization": "finisher-plus",
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
+   ],
+   "playstyles": [
+    "acrobatic",
+    "chip-shot",
+    "rapid"
+   ],
+   "height": 70,
+   "weight": 161,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "France",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 17,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "composure",
+     "v": 92
+    },
+    {
+     "k": "ballControl",
+     "v": 90
+    },
+    {
+     "k": "reactions",
+     "v": 90
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
     }
    ]
   },
@@ -4751,6 +4849,55 @@
     },
     {
      "k": "gkPositioning",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "f72df60b-b676-4e6e-bc68-cf6a4b884eb2",
+   "buildName": "Trent Alexander-Arnold",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 71,
+   "weight": 172,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "England",
+   "club": "Real Madrid",
+   "copyCount": 0,
+   "viewCount": 17,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "crossing",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "dribbling",
      "v": 84
     }
    ]
@@ -4903,50 +5050,50 @@
    ]
   },
   {
-   "id": "08a462f7-8c8e-4dcb-af7e-ba50047fe8ac",
-   "buildName": "Mbappé Golden Boot '26",
-   "archetype_id": "finisher",
+   "id": "c5cd11e3-0d8e-45cd-aa5c-fd05c995d3b4",
+   "buildName": "Iniesta '10",
+   "archetype_id": "maestro",
    "playerRole": null,
-   "selectedSpecialization": "finisher-plus",
+   "selectedSpecialization": "maestro-plus",
    "level": 40,
    "signature": [
-    "low-driven-shot"
+    "pinged-pass"
    ],
    "playstyles": [
     "acrobatic",
     "chip-shot",
-    "rapid"
+    "inventive"
    ],
-   "height": 70,
-   "weight": 161,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 4,
-   "nation": "France",
+   "height": 67,
+   "weight": 150,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Spain",
    "club": null,
    "copyCount": 0,
    "viewCount": 15,
    "creator": "specialevents",
    "top": [
     {
-     "k": "composure",
+     "k": "vision",
      "v": 92
     },
     {
+     "k": "balance",
+     "v": 90
+    },
+    {
+     "k": "dribbling",
+     "v": 90
+    },
+    {
      "k": "ballControl",
-     "v": 90
-    },
-    {
-     "k": "reactions",
-     "v": 90
-    },
-    {
-     "k": "finishing",
      "v": 89
     },
     {
-     "k": "acceleration",
+     "k": "agility",
      "v": 84
     }
    ]
@@ -5001,104 +5148,6 @@
    ]
   },
   {
-   "id": "c23ba7e1-c6a7-4cc1-92a9-5518e4c049a5",
-   "buildName": "The Engine Room",
-   "archetype_id": "recycler",
-   "playerRole": null,
-   "selectedSpecialization": "thief",
-   "level": 40,
-   "signature": [
-    "press-proven"
-   ],
-   "playstyles": [
-    "block",
-    "acrobatic",
-    "first-touch"
-   ],
-   "height": 71,
-   "weight": 168,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": null,
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 15,
-   "creator": "freakbuilds",
-   "top": [
-    {
-     "k": "standTackle",
-     "v": 92
-    },
-    {
-     "k": "defAware",
-     "v": 90
-    },
-    {
-     "k": "interceptions",
-     "v": 90
-    },
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "c5cd11e3-0d8e-45cd-aa5c-fd05c995d3b4",
-   "buildName": "Iniesta '10",
-   "archetype_id": "maestro",
-   "playerRole": null,
-   "selectedSpecialization": "maestro-plus",
-   "level": 40,
-   "signature": [
-    "pinged-pass"
-   ],
-   "playstyles": [
-    "acrobatic",
-    "chip-shot",
-    "inventive"
-   ],
-   "height": 67,
-   "weight": 150,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 14,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "vision",
-     "v": 92
-    },
-    {
-     "k": "balance",
-     "v": 90
-    },
-    {
-     "k": "dribbling",
-     "v": 90
-    },
-    {
-     "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "6a807683-c260-483b-87fc-2536f1a1e44d",
    "buildName": "Koke",
    "archetype_id": "maestro",
@@ -5148,8 +5197,8 @@
    ]
   },
   {
-   "id": "f72df60b-b676-4e6e-bc68-cf6a4b884eb2",
-   "buildName": "Trent Alexander-Arnold",
+   "id": "3bbfdfd3-91e6-411f-98c5-38db77752294",
+   "buildName": "Roberto Carlos",
    "archetype_id": "marauder",
    "playerRole": "fullback-attacking",
    "selectedSpecialization": null,
@@ -5162,24 +5211,24 @@
     "rapid",
     "jockey"
    ],
-   "height": 71,
-   "weight": 172,
+   "height": 66,
+   "weight": 152,
    "accelerationType": "Explosive",
    "inGameAccelerationType": "Explosive",
    "skillMoves": 3,
    "weakFoot": 3,
-   "nation": "England",
-   "club": "Real Madrid",
+   "nation": "Brazil",
+   "club": null,
    "copyCount": 0,
-   "viewCount": 13,
-   "creator": "buildmaster",
+   "viewCount": 14,
+   "creator": "throwbackfc",
    "top": [
     {
-     "k": "crossing",
+     "k": "shotPower",
      "v": 89
     },
     {
-     "k": "longPass",
+     "k": "sprintSpeed",
      "v": 89
     },
     {
@@ -5191,7 +5240,7 @@
      "v": 84
     },
     {
-     "k": "dribbling",
+     "k": "crossing",
      "v": 84
     }
    ]
@@ -5220,7 +5269,7 @@
    "nation": "Netherlands",
    "club": null,
    "copyCount": 0,
-   "viewCount": 12,
+   "viewCount": 13,
    "creator": "throwbackfc",
    "top": [
     {
@@ -5246,51 +5295,149 @@
    ]
   },
   {
-   "id": "3bbfdfd3-91e6-411f-98c5-38db77752294",
-   "buildName": "Roberto Carlos",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
+   "id": "9229223b-282e-4704-803d-8ed922a0579b",
+   "buildName": "Rough Messi '26",
+   "archetype_id": "magician",
+   "playerRole": null,
+   "selectedSpecialization": "magician-plus",
    "level": 40,
    "signature": [
-    "quick-step"
+    "technical"
    ],
    "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
+    "block",
+    "bruiser",
+    "game-changer"
    ],
-   "height": 66,
-   "weight": 152,
-   "accelerationType": "Explosive",
+   "height": 67,
+   "weight": 159,
+   "accelerationType": "Controlled",
    "inGameAccelerationType": "Explosive",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Brazil",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Argentina",
    "club": null,
    "copyCount": 0,
-   "viewCount": 12,
-   "creator": "throwbackfc",
+   "viewCount": 13,
+   "creator": "specialevents",
    "top": [
     {
-     "k": "shotPower",
+     "k": "ballControl",
+     "v": 92
+    },
+    {
+     "k": "acceleration",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 90
+    },
+    {
+     "k": "balance",
      "v": 89
     },
     {
-     "k": "sprintSpeed",
+     "k": "agility",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "bc63402b-4070-4217-aea6-47a19617192d",
+   "buildName": "The Interceptor",
+   "archetype_id": "recycler",
+   "playerRole": null,
+   "selectedSpecialization": "thief",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "jockey",
+    "whipped-pass",
+    "pinged-pass"
+   ],
+   "height": 72,
+   "weight": 172,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 2,
+   "weakFoot": 3,
+   "nation": null,
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 13,
+   "creator": "freakbuilds",
+   "top": [
+    {
+     "k": "standTackle",
+     "v": 92
+    },
+    {
+     "k": "defAware",
+     "v": 90
+    },
+    {
+     "k": "interceptions",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    }
+   ]
+  },
+  {
+   "id": "e4650a32-4550-495e-ac0b-4f4fe790d76c",
+   "buildName": "Cucurella '26 WC",
+   "archetype_id": "marauder",
+   "playerRole": null,
+   "selectedSpecialization": "athlete",
+   "level": 40,
+   "signature": [
+    "relentless"
+   ],
+   "playstyles": [
+    "block",
+    "chip-shot",
+    "incisive-pass"
+   ],
+   "height": 69,
+   "weight": 157,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Spain",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 12,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "strength",
+     "v": 92
+    },
+    {
+     "k": "aggression",
+     "v": 90
+    },
+    {
+     "k": "defAware",
+     "v": 90
+    },
+    {
+     "k": "reactions",
      "v": 89
     },
     {
      "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "crossing",
-     "v": 84
+     "v": 86
     }
    ]
   },
@@ -5344,55 +5491,6 @@
    ]
   },
   {
-   "id": "9229223b-282e-4704-803d-8ed922a0579b",
-   "buildName": "Rough Messi '26",
-   "archetype_id": "magician",
-   "playerRole": null,
-   "selectedSpecialization": "magician-plus",
-   "level": 40,
-   "signature": [
-    "technical"
-   ],
-   "playstyles": [
-    "block",
-    "bruiser",
-    "game-changer"
-   ],
-   "height": 67,
-   "weight": 159,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Argentina",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 12,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "ballControl",
-     "v": 92
-    },
-    {
-     "k": "acceleration",
-     "v": 90
-    },
-    {
-     "k": "composure",
-     "v": 90
-    },
-    {
-     "k": "balance",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "4da68f1f-4166-43df-ac77-0015b2bd721f",
    "buildName": "Serhou Guirassy",
    "archetype_id": "target",
@@ -5438,55 +5536,6 @@
     {
      "k": "shotPower",
      "v": 84
-    }
-   ]
-  },
-  {
-   "id": "bc63402b-4070-4217-aea6-47a19617192d",
-   "buildName": "The Interceptor",
-   "archetype_id": "recycler",
-   "playerRole": null,
-   "selectedSpecialization": "thief",
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "jockey",
-    "whipped-pass",
-    "pinged-pass"
-   ],
-   "height": 72,
-   "weight": 172,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 2,
-   "weakFoot": 3,
-   "nation": null,
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 12,
-   "creator": "freakbuilds",
-   "top": [
-    {
-     "k": "standTackle",
-     "v": 92
-    },
-    {
-     "k": "defAware",
-     "v": 90
-    },
-    {
-     "k": "interceptions",
-     "v": 90
-    },
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
     }
    ]
   },
@@ -5568,7 +5617,7 @@
    "top": [
     {
      "k": "gkDiving",
-     "v": 96
+     "v": 95
     },
     {
      "k": "gkPositioning",
@@ -5580,7 +5629,7 @@
     },
     {
      "k": "vision",
-     "v": 85
+     "v": 86
     },
     {
      "k": "agility",
@@ -5638,6 +5687,55 @@
    ]
   },
   {
+   "id": "f69c566a-803a-4f7a-82c3-a9d6ae8335f9",
+   "buildName": "Neuer '14 WC",
+   "archetype_id": "sweeper-keeper",
+   "playerRole": null,
+   "selectedSpecialization": "extra",
+   "level": 40,
+   "signature": [
+    "press-proven"
+   ],
+   "playstyles": [
+    "pinged-pass",
+    "long-ball-pass",
+    "far-throw"
+   ],
+   "height": 76,
+   "weight": 198,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 1,
+   "weakFoot": 2,
+   "nation": "Germany",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 11,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "gkPositioning",
+     "v": 92
+    },
+    {
+     "k": "composure",
+     "v": 90
+    },
+    {
+     "k": "shortPass",
+     "v": 90
+    },
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    }
+   ]
+  },
+  {
    "id": "0a86d6a2-1028-461d-8c7a-ee544a5c3fce",
    "buildName": "The Magnet",
    "archetype_id": "maestro",
@@ -5683,55 +5781,6 @@
     {
      "k": "reactions",
      "v": 84
-    }
-   ]
-  },
-  {
-   "id": "e4650a32-4550-495e-ac0b-4f4fe790d76c",
-   "buildName": "Cucurella '26 WC",
-   "archetype_id": "marauder",
-   "playerRole": null,
-   "selectedSpecialization": "athlete",
-   "level": 40,
-   "signature": [
-    "relentless"
-   ],
-   "playstyles": [
-    "block",
-    "chip-shot",
-    "incisive-pass"
-   ],
-   "height": 69,
-   "weight": 157,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 10,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "strength",
-     "v": 92
-    },
-    {
-     "k": "aggression",
-     "v": 90
-    },
-    {
-     "k": "defAware",
-     "v": 90
-    },
-    {
-     "k": "reactions",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 86
     }
    ]
   },
@@ -5785,6 +5834,55 @@
    ]
   },
   {
+   "id": "40710cae-9963-47d1-8827-ff5e1174339c",
+   "buildName": "Álvaro Morata",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 74,
+   "weight": 187,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 4,
+   "nation": "Spain",
+   "club": "Como",
+   "copyCount": 0,
+   "viewCount": 9,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "strength",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 84
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    }
+   ]
+  },
+  {
    "id": "7461edfe-23b0-4ea9-8011-bbcddc501e9e",
    "buildName": "Dean Huijsen",
    "archetype_id": "progressor",
@@ -5829,6 +5927,55 @@
     },
     {
      "k": "aggression",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "ca2977c2-8535-4bbf-92a6-140bf797138b",
+   "buildName": "Fabio Cannavaro",
+   "archetype_id": "boss",
+   "playerRole": "cb-stopper",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "bruiser"
+   ],
+   "playstyles": [
+    "anticipate",
+    "block",
+    "aerial-fortress"
+   ],
+   "height": 71,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 2,
+   "weakFoot": 2,
+   "nation": "Italy",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 9,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "headingAcc",
+     "v": 84
+    },
+    {
+     "k": "interceptions",
      "v": 84
     }
    ]
@@ -5932,55 +6079,6 @@
    ]
   },
   {
-   "id": "f69c566a-803a-4f7a-82c3-a9d6ae8335f9",
-   "buildName": "Neuer '14 WC",
-   "archetype_id": "sweeper-keeper",
-   "playerRole": null,
-   "selectedSpecialization": "extra",
-   "level": 40,
-   "signature": [
-    "press-proven"
-   ],
-   "playstyles": [
-    "pinged-pass",
-    "long-ball-pass",
-    "far-throw"
-   ],
-   "height": 76,
-   "weight": 198,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 1,
-   "weakFoot": 2,
-   "nation": "Germany",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 9,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "gkPositioning",
-     "v": 92
-    },
-    {
-     "k": "composure",
-     "v": 90
-    },
-    {
-     "k": "shortPass",
-     "v": 90
-    },
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    }
-   ]
-  },
-  {
    "id": "eca8ba2a-ca39-4b69-9a55-adec7988df2d",
    "buildName": "Rivaldo",
    "archetype_id": "magician",
@@ -6074,55 +6172,55 @@
     },
     {
      "k": "shortPass",
-     "v": 81
+     "v": 83
     }
    ]
   },
   {
-   "id": "ca2977c2-8535-4bbf-92a6-140bf797138b",
-   "buildName": "Fabio Cannavaro",
-   "archetype_id": "boss",
-   "playerRole": "cb-stopper",
-   "selectedSpecialization": null,
+   "id": "bfd0a307-7749-491f-ab8e-fbdb98fa6773",
+   "buildName": "Marathon Man",
+   "archetype_id": "marauder",
+   "playerRole": null,
+   "selectedSpecialization": "athlete",
    "level": 40,
    "signature": [
-    "bruiser"
+    "relentless"
    ],
    "playstyles": [
-    "anticipate",
-    "block",
-    "aerial-fortress"
+    "intercept",
+    "bruiser",
+    "first-touch"
    ],
    "height": 71,
-   "weight": 176,
+   "weight": 163,
    "accelerationType": "Controlled",
    "inGameAccelerationType": "Controlled",
-   "skillMoves": 2,
-   "weakFoot": 2,
-   "nation": "Italy",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": null,
    "club": null,
    "copyCount": 0,
    "viewCount": 8,
-   "creator": "throwbackfc",
+   "creator": "freakbuilds",
    "top": [
     {
+     "k": "strength",
+     "v": 92
+    },
+    {
      "k": "aggression",
-     "v": 89
+     "v": 90
     },
     {
      "k": "defAware",
+     "v": 90
+    },
+    {
+     "k": "reactions",
      "v": 89
     },
     {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "headingAcc",
-     "v": 84
-    },
-    {
-     "k": "interceptions",
+     "k": "crossing",
      "v": 84
     }
    ]
@@ -6177,6 +6275,104 @@
    ]
   },
   {
+   "id": "1a7cabff-2ba8-4b1b-ad59-051781acd3ad",
+   "buildName": "Savinho",
+   "archetype_id": "magician",
+   "playerRole": "winger-skill",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "game-changer"
+   ],
+   "playstyles": [
+    "trickster",
+    "technical",
+    "first-touch"
+   ],
+   "height": 68,
+   "weight": 141,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 3,
+   "nation": "Brazil",
+   "club": "Man City",
+   "copyCount": 0,
+   "viewCount": 8,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "balance",
+     "v": 92
+    },
+    {
+     "k": "composure",
+     "v": 92
+    },
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 87
+    }
+   ]
+  },
+  {
+   "id": "7f86cf6e-acf1-4b65-bae0-8f8ee5761cb0",
+   "buildName": "Steven Gerrard",
+   "archetype_id": "maestro",
+   "playerRole": "cm-boxtobox",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "press-proven"
+   ],
+   "playstyles": [
+    "power-shot",
+    "pinged-pass",
+    "relentless"
+   ],
+   "height": 72,
+   "weight": 183,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "England",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 8,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "stamina",
+     "v": 90
+    },
+    {
+     "k": "longShots",
+     "v": 89
+    },
+    {
+     "k": "shotPower",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ]
+  },
+  {
    "id": "b47857b1-a938-4eed-9235-57804bba2a16",
    "buildName": "William Saliba",
    "archetype_id": "progressor",
@@ -6226,55 +6422,6 @@
    ]
   },
   {
-   "id": "40710cae-9963-47d1-8827-ff5e1174339c",
-   "buildName": "Álvaro Morata",
-   "archetype_id": "target",
-   "playerRole": "st-target",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "precision-header"
-   ],
-   "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
-   ],
-   "height": 74,
-   "weight": 187,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
-   "weakFoot": 4,
-   "nation": "Spain",
-   "club": "Como",
-   "copyCount": 0,
-   "viewCount": 7,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "headingAcc",
-     "v": 89
-    },
-    {
-     "k": "strength",
-     "v": 89
-    },
-    {
-     "k": "composure",
-     "v": 84
-    },
-    {
-     "k": "finishing",
-     "v": 84
-    },
-    {
-     "k": "jumping",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "3bf49656-a5fd-481b-b23f-65922ed429bf",
    "buildName": "Benjamin Šeško",
    "archetype_id": "target",
@@ -6319,6 +6466,104 @@
     },
     {
      "k": "jumping",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "757819a4-14e9-4554-ab0f-38314ccde3fb",
+   "buildName": "Dominic Solanke",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 74,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 2,
+   "nation": "England",
+   "club": "Tottenham",
+   "copyCount": 0,
+   "viewCount": 7,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "strength",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 84
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "50161da0-52ee-4a7b-96fa-77e4542c3aad",
+   "buildName": "Fernando Hierro",
+   "archetype_id": "progressor",
+   "playerRole": "cb-ballplayer",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "long-ball-pass"
+   ],
+   "playstyles": [
+    "anticipate",
+    "intercept",
+    "pinged-pass"
+   ],
+   "height": 74,
+   "weight": 185,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 2,
+   "weakFoot": 3,
+   "nation": "Spain",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 7,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "aggression",
      "v": 84
     }
    ]
@@ -6422,6 +6667,55 @@
    ]
   },
   {
+   "id": "dfdfc9bf-66a5-4ff2-952b-f3e91a48d277",
+   "buildName": "Ivan Toney",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 73,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 4,
+   "nation": "England",
+   "club": "Al-Ahli",
+   "copyCount": 0,
+   "viewCount": 7,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "strength",
+     "v": 94
+    },
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
+     "v": 84
+    }
+   ]
+  },
+  {
    "id": "5eef587d-2c9b-401a-9f0e-a17dd7db0068",
    "buildName": "Karim Adeyemi",
    "archetype_id": "spark",
@@ -6520,51 +6814,51 @@
    ]
   },
   {
-   "id": "bfd0a307-7749-491f-ab8e-fbdb98fa6773",
-   "buildName": "Marathon Man",
+   "id": "b8f80a18-6e1c-4834-adc8-c32d41cda77c",
+   "buildName": "Nuno Mendes",
    "archetype_id": "marauder",
-   "playerRole": null,
-   "selectedSpecialization": "athlete",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "relentless"
+    "quick-step"
    ],
    "playstyles": [
-    "intercept",
-    "bruiser",
-    "first-touch"
+    "whipped-pass",
+    "rapid",
+    "jockey"
    ],
    "height": 71,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
    "skillMoves": 3,
    "weakFoot": 3,
-   "nation": null,
-   "club": null,
+   "nation": "Portugal",
+   "club": "PSG",
    "copyCount": 0,
    "viewCount": 7,
-   "creator": "freakbuilds",
+   "creator": "buildmaster",
    "top": [
     {
-     "k": "strength",
-     "v": 92
-    },
-    {
-     "k": "aggression",
-     "v": 90
-    },
-    {
-     "k": "defAware",
-     "v": 90
-    },
-    {
-     "k": "reactions",
+     "k": "acceleration",
      "v": 89
     },
     {
-     "k": "crossing",
-     "v": 84
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
     }
    ]
   },
@@ -6597,14 +6891,108 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    }
+   ]
+  },
+  {
+   "id": "cb20c647-aad5-49c2-a0ab-c6209fb624c9",
+   "buildName": "Pelé",
+   "archetype_id": "finisher",
+   "playerRole": "st-complete",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "power-shot"
+   ],
+   "playstyles": [
+    "quick-step",
+    "technical",
+    "first-touch"
+   ],
+   "height": 68,
+   "weight": 154,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 4,
+   "nation": "Brazil",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 7,
+   "creator": "throwbackfc",
+   "top": [
+    {
+     "k": "agility",
+     "v": 91
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    }
+   ]
+  },
+  {
+   "id": "a77dfce5-8bcf-4eba-999f-008cf3d1a091",
+   "buildName": "Rayan Cherki",
+   "archetype_id": "magician",
+   "playerRole": "am-dribbler",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "power-shot"
+   ],
+   "playstyles": [
+    "technical",
+    "trickster",
+    "first-touch"
+   ],
+   "height": 70,
+   "weight": 157,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 5,
+   "weakFoot": 5,
+   "nation": "France",
+   "club": "Man City",
+   "copyCount": 0,
+   "viewCount": 7,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "balance",
+     "v": 89
+    },
+    {
+     "k": "composure",
      "v": 89
     },
     {
@@ -6612,8 +7000,12 @@
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 86
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
     }
    ]
   },
@@ -6662,55 +7054,6 @@
     },
     {
      "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "1a7cabff-2ba8-4b1b-ad59-051781acd3ad",
-   "buildName": "Savinho",
-   "archetype_id": "magician",
-   "playerRole": "winger-skill",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "game-changer"
-   ],
-   "playstyles": [
-    "trickster",
-    "technical",
-    "first-touch"
-   ],
-   "height": 68,
-   "weight": 141,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 3,
-   "nation": "Brazil",
-   "club": "Man City",
-   "copyCount": 0,
-   "viewCount": 7,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "composure",
-     "v": 93
-    },
-    {
-     "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
      "v": 84
     }
    ]
@@ -6863,87 +7206,34 @@
    ]
   },
   {
-   "id": "757819a4-14e9-4554-ab0f-38314ccde3fb",
-   "buildName": "Dominic Solanke",
-   "archetype_id": "target",
-   "playerRole": "st-target",
+   "id": "1238fb68-5776-41e0-a8e5-72b7bb63f9f8",
+   "buildName": "Ederson",
+   "archetype_id": "sweeper-keeper",
+   "playerRole": "gk-sweeper",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "precision-header"
+    "footwork"
    ],
    "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
+    "far-throw",
+    "cross-claimer",
+    "deflector"
    ],
    "height": 74,
-   "weight": 176,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
+   "weight": 190,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 1,
    "weakFoot": 2,
-   "nation": "England",
-   "club": "Tottenham",
+   "nation": "Brazil",
+   "club": "Fenerbahçe",
    "copyCount": 0,
    "viewCount": 6,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "headingAcc",
-     "v": 89
-    },
-    {
-     "k": "strength",
-     "v": 89
-    },
-    {
-     "k": "composure",
-     "v": 84
-    },
-    {
-     "k": "finishing",
-     "v": 84
-    },
-    {
-     "k": "jumping",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "50161da0-52ee-4a7b-96fa-77e4542c3aad",
-   "buildName": "Fernando Hierro",
-   "archetype_id": "progressor",
-   "playerRole": "cb-ballplayer",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "long-ball-pass"
-   ],
-   "playstyles": [
-    "anticipate",
-    "intercept",
-    "pinged-pass"
-   ],
-   "height": 74,
-   "weight": 185,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 2,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 6,
-   "creator": "throwbackfc",
-   "top": [
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "defAware",
+     "k": "gkKicking",
      "v": 89
     },
     {
@@ -6951,60 +7241,64 @@
      "v": 89
     },
     {
-     "k": "standTackle",
-     "v": 89
+     "k": "ballControl",
+     "v": 88
     },
     {
-     "k": "aggression",
+     "k": "gkDiving",
+     "v": 84
+    },
+    {
+     "k": "gkHandling",
      "v": 84
     }
    ]
   },
   {
-   "id": "dfdfc9bf-66a5-4ff2-952b-f3e91a48d277",
-   "buildName": "Ivan Toney",
-   "archetype_id": "target",
-   "playerRole": "st-target",
+   "id": "ad842e56-be64-47f3-a09e-4c4019964a61",
+   "buildName": "Federico Chiesa",
+   "archetype_id": "spark",
+   "playerRole": "winger-pace",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "precision-header"
+    "game-changer"
    ],
    "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
+    "quick-step",
+    "rapid",
+    "first-touch"
    ],
-   "height": 73,
-   "weight": 176,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
+   "height": 69,
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
    "weakFoot": 4,
-   "nation": "England",
-   "club": "Al-Ahli",
+   "nation": "Italy",
+   "club": "Liverpool",
    "copyCount": 0,
    "viewCount": 6,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "strength",
-     "v": 94
-    },
-    {
-     "k": "headingAcc",
+     "k": "acceleration",
      "v": 89
     },
     {
-     "k": "finishing",
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 88
+    },
+    {
+     "k": "agility",
      "v": 84
     },
     {
-     "k": "jumping",
-     "v": 84
-    },
-    {
-     "k": "shotPower",
+     "k": "ballControl",
      "v": 84
     }
    ]
@@ -7059,35 +7353,137 @@
    ]
   },
   {
-   "id": "cb20c647-aad5-49c2-a0ab-c6209fb624c9",
-   "buildName": "Pelé",
-   "archetype_id": "finisher",
-   "playerRole": "st-complete",
+   "id": "f78c4782-17fa-4cdc-aacc-751d50ce29ba",
+   "buildName": "Mason Mount",
+   "archetype_id": "creator",
+   "playerRole": "am-playmaker",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "power-shot"
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "first-touch",
+    "tiki-taka"
+   ],
+   "height": 69,
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "England",
+   "club": "Man United",
+   "copyCount": 0,
+   "viewCount": 6,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "351dce2b-9d8f-4031-a056-1144a784b786",
+   "buildName": "Nick Woltemade",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 77,
+   "weight": 187,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 2,
+   "nation": "Germany",
+   "club": "Newcastle",
+   "copyCount": 0,
+   "viewCount": 6,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "strength",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 84
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "8658cdb4-6a01-4a81-93e6-526a3419426f",
+   "buildName": "Patrik Schick",
+   "archetype_id": "finisher",
+   "playerRole": "st-poacher",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
    ],
    "playstyles": [
     "quick-step",
-    "technical",
+    "acrobatic",
     "first-touch"
    ],
-   "height": 68,
-   "weight": 154,
+   "height": 75,
+   "weight": 192,
    "accelerationType": "Controlled",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 4,
-   "nation": "Brazil",
-   "club": null,
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Czechia",
+   "club": "Leverkusen",
    "copyCount": 0,
    "viewCount": 6,
-   "creator": "throwbackfc",
+   "creator": "buildmaster",
    "top": [
     {
      "k": "agility",
-     "v": 91
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 89
     },
     {
      "k": "dribbling",
@@ -7100,58 +7496,103 @@
     {
      "k": "sprintSpeed",
      "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
     }
    ]
   },
   {
-   "id": "a77dfce5-8bcf-4eba-999f-008cf3d1a091",
-   "buildName": "Rayan Cherki",
-   "archetype_id": "magician",
-   "playerRole": "am-dribbler",
+   "id": "59dad962-d115-4f7c-b45e-5d2b81116e45",
+   "buildName": "Richarlison",
+   "archetype_id": "target",
+   "playerRole": "st-target",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "power-shot"
+    "precision-header"
    ],
    "playstyles": [
-    "technical",
-    "trickster",
-    "first-touch"
+    "power-shot",
+    "bruiser",
+    "acrobatic"
    ],
-   "height": 70,
-   "weight": 157,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 5,
-   "nation": "France",
-   "club": "Man City",
+   "height": 72,
+   "weight": 183,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Brazil",
+   "club": "Tottenham",
    "copyCount": 0,
    "viewCount": 6,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "balance",
+     "k": "headingAcc",
      "v": 89
     },
     {
-     "k": "composure",
+     "k": "strength",
      "v": 89
     },
     {
-     "k": "dribbling",
-     "v": 89
+     "k": "finishing",
+     "v": 84
     },
     {
-     "k": "vision",
-     "v": 89
+     "k": "jumping",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "cd0cd20b-ef6e-432a-9bd6-0bcabee8a9ca",
+   "buildName": "Robben '14",
+   "archetype_id": "spark",
+   "playerRole": null,
+   "selectedSpecialization": "spark-plus",
+   "level": 40,
+   "signature": [
+    "trickster"
+   ],
+   "playstyles": [
+    "acrobatic",
+    "chip-shot",
+    "technical"
+   ],
+   "height": 71,
+   "weight": 176,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Netherlands",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 6,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "agility",
+     "v": 92
     },
     {
      "k": "acceleration",
+     "v": 90
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 90
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
      "v": 84
     }
    ]
@@ -7185,11 +7626,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -7200,8 +7641,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -7304,77 +7745,28 @@
    ]
   },
   {
-   "id": "1238fb68-5776-41e0-a8e5-72b7bb63f9f8",
-   "buildName": "Ederson",
-   "archetype_id": "sweeper-keeper",
-   "playerRole": "gk-sweeper",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "footwork"
-   ],
-   "playstyles": [
-    "far-throw",
-    "cross-claimer",
-    "deflector"
-   ],
-   "height": 74,
-   "weight": 190,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 1,
-   "weakFoot": 2,
-   "nation": "Brazil",
-   "club": "Fenerbahçe",
-   "copyCount": 0,
-   "viewCount": 5,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "gkKicking",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "ballControl",
-     "v": 88
-    },
-    {
-     "k": "gkDiving",
-     "v": 84
-    },
-    {
-     "k": "gkHandling",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "ad842e56-be64-47f3-a09e-4c4019964a61",
-   "buildName": "Federico Chiesa",
+   "id": "d87a3977-df52-4d15-a2c1-13830d20f5a6",
+   "buildName": "Anthony Gordon",
    "archetype_id": "spark",
    "playerRole": "winger-pace",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "game-changer"
+    "quick-step"
    ],
    "playstyles": [
-    "quick-step",
     "rapid",
-    "first-touch"
+    "first-touch",
+    "finesse-shot"
    ],
-   "height": 69,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Italy",
-   "club": "Liverpool",
+   "height": 72,
+   "weight": 159,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "England",
+   "club": "Newcastle",
    "copyCount": 0,
    "viewCount": 5,
    "creator": "buildmaster",
@@ -7384,19 +7776,19 @@
      "v": 89
     },
     {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
      "k": "sprintSpeed",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 88
-    },
-    {
      "k": "agility",
-     "v": 84
-    },
-    {
-     "k": "ballControl",
      "v": 84
     }
    ]
@@ -7446,6 +7838,55 @@
     },
     {
      "k": "aggression",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "c99cc0ff-a707-4d93-9beb-e3e003ce75a7",
+   "buildName": "Liam Delap",
+   "archetype_id": "target",
+   "playerRole": "st-target",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 73,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 2,
+   "nation": "England",
+   "club": "Chelsea",
+   "copyCount": 0,
+   "viewCount": 5,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "strength",
+     "v": 94
+    },
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
      "v": 84
     }
    ]
@@ -7528,7 +7969,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -7543,8 +7984,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 86
     }
    ]
   },
@@ -7598,57 +8039,8 @@
    ]
   },
   {
-   "id": "f78c4782-17fa-4cdc-aacc-751d50ce29ba",
-   "buildName": "Mason Mount",
-   "archetype_id": "creator",
-   "playerRole": "am-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "first-touch",
-    "tiki-taka"
-   ],
-   "height": 69,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "England",
-   "club": "Man United",
-   "copyCount": 0,
-   "viewCount": 5,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "agility",
-     "v": 84
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    },
-    {
-     "k": "composure",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "351dce2b-9d8f-4031-a056-1144a784b786",
-   "buildName": "Nick Woltemade",
+   "id": "6339e9f4-5f81-4644-92a0-00439e42f482",
+   "buildName": "Marcus Thuram",
    "archetype_id": "target",
    "playerRole": "st-target",
    "selectedSpecialization": null,
@@ -7661,14 +8053,14 @@
     "bruiser",
     "acrobatic"
    ],
-   "height": 77,
-   "weight": 187,
+   "height": 76,
+   "weight": 198,
    "accelerationType": "Lengthy",
    "inGameAccelerationType": "Lengthy",
    "skillMoves": 3,
-   "weakFoot": 2,
-   "nation": "Germany",
-   "club": "Newcastle",
+   "weakFoot": 4,
+   "nation": "France",
+   "club": "Inter",
    "copyCount": 0,
    "viewCount": 5,
    "creator": "buildmaster",
@@ -7678,12 +8070,8 @@
      "v": 89
     },
     {
-     "k": "strength",
+     "k": "sprintSpeed",
      "v": 89
-    },
-    {
-     "k": "composure",
-     "v": 84
     },
     {
      "k": "finishing",
@@ -7691,6 +8079,59 @@
     },
     {
      "k": "jumping",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "5e58f4a9-a49d-4dcf-b87b-3cdfbdc39ff8",
+   "buildName": "Micky van de Ven",
+   "archetype_id": "boss",
+   "playerRole": "cb-stopper",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "bruiser"
+   ],
+   "playstyles": [
+    "anticipate",
+    "block",
+    "aerial-fortress"
+   ],
+   "height": 76,
+   "weight": 190,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 3,
+   "weakFoot": 2,
+   "nation": "Netherlands",
+   "club": "Tottenham",
+   "copyCount": 0,
+   "viewCount": 5,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    },
+    {
+     "k": "headingAcc",
      "v": 84
     }
    ]
@@ -7745,34 +8186,83 @@
    ]
   },
   {
-   "id": "b8f80a18-6e1c-4834-adc8-c32d41cda77c",
-   "buildName": "Nuno Mendes",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
+   "id": "2dc34eb7-deec-443e-bc62-cb334f7f001a",
+   "buildName": "Paredes '26 Fighter",
+   "archetype_id": "recycler",
+   "playerRole": null,
+   "selectedSpecialization": "recycler-plus",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "first-touch"
+   ],
+   "height": 71,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Argentina",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 5,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 92
+    },
+    {
+     "k": "longPass",
+     "v": 90
+    },
+    {
+     "k": "strength",
+     "v": 90
+    },
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "shotPower",
+     "v": 89
+    }
+   ]
+  },
+  {
+   "id": "b25afa6e-9f5e-4a1f-9a18-cb47b49a6417",
+   "buildName": "Robert Lewandowski",
+   "archetype_id": "finisher",
+   "playerRole": "st-complete",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "quick-step"
+    "power-shot"
    ],
    "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
+    "quick-step",
+    "technical",
+    "first-touch"
    ],
-   "height": 71,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Portugal",
-   "club": "PSG",
+   "height": 72,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Poland",
+   "club": "Barcelona",
    "copyCount": 0,
    "viewCount": 5,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "acceleration",
+     "k": "agility",
      "v": 89
     },
     {
@@ -7780,163 +8270,163 @@
      "v": 89
     },
     {
-     "k": "interceptions",
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "shotPower",
      "v": 89
     },
     {
      "k": "sprintSpeed",
      "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
     }
    ]
   },
   {
-   "id": "59dad962-d115-4f7c-b45e-5d2b81116e45",
-   "buildName": "Richarlison",
-   "archetype_id": "target",
-   "playerRole": "st-target",
+   "id": "d6033b82-c616-4669-a0e1-871d905eacf3",
+   "buildName": "Rúben Neves",
+   "archetype_id": "recycler",
+   "playerRole": "dm-deeplying",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "precision-header"
+    "intercept"
    ],
    "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
+    "pinged-pass",
+    "long-ball-pass",
+    "anticipate"
    ],
-   "height": 72,
-   "weight": 183,
+   "height": 71,
+   "weight": 176,
    "accelerationType": "Controlled",
    "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Brazil",
-   "club": "Tottenham",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Portugal",
+   "club": "Al-Hilal",
    "copyCount": 0,
    "viewCount": 5,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "headingAcc",
+     "k": "longPass",
      "v": 89
     },
     {
-     "k": "strength",
+     "k": "shortPass",
      "v": 89
     },
     {
-     "k": "finishing",
+     "k": "vision",
+     "v": 85
+    },
+    {
+     "k": "acceleration",
      "v": 84
     },
     {
-     "k": "jumping",
-     "v": 84
-    },
-    {
-     "k": "shotPower",
+     "k": "composure",
      "v": 84
     }
    ]
   },
   {
-   "id": "cd0cd20b-ef6e-432a-9bd6-0bcabee8a9ca",
-   "buildName": "Robben '14",
-   "archetype_id": "spark",
+   "id": "fb181722-83ae-4dc7-babe-f17be0842dc5",
+   "buildName": "Agüero 93:20",
+   "archetype_id": "finisher",
    "playerRole": null,
-   "selectedSpecialization": "spark-plus",
+   "selectedSpecialization": "finisher-plus",
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
+   ],
+   "playstyles": [
+    "aerial-fortress",
+    "block",
+    "chip-shot"
+   ],
+   "height": 68,
+   "weight": 163,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 4,
+   "nation": "Argentina",
+   "club": null,
+   "copyCount": 0,
+   "viewCount": 4,
+   "creator": "specialevents",
+   "top": [
+    {
+     "k": "composure",
+     "v": 92
+    },
+    {
+     "k": "ballControl",
+     "v": 90
+    },
+    {
+     "k": "reactions",
+     "v": 90
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "d2e4e2ca-9ae6-4930-97e6-9a1b18005424",
+   "buildName": "Antony",
+   "archetype_id": "magician",
+   "playerRole": "winger-skill",
+   "selectedSpecialization": null,
    "level": 40,
    "signature": [
     "trickster"
    ],
    "playstyles": [
-    "acrobatic",
-    "chip-shot",
-    "technical"
+    "technical",
+    "first-touch",
+    "finesse-shot"
    ],
-   "height": 71,
-   "weight": 176,
+   "height": 69,
+   "weight": 141,
    "accelerationType": "Explosive",
    "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
+   "skillMoves": 5,
    "weakFoot": 3,
-   "nation": "Netherlands",
-   "club": null,
+   "nation": "Brazil",
+   "club": "Betis",
    "copyCount": 0,
-   "viewCount": 5,
-   "creator": "specialevents",
+   "viewCount": 4,
+   "creator": "buildmaster",
    "top": [
     {
-     "k": "agility",
+     "k": "balance",
      "v": 92
     },
     {
-     "k": "acceleration",
-     "v": 90
+     "k": "composure",
+     "v": 92
     },
     {
-     "k": "sprintSpeed",
-     "v": 90
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
     },
     {
      "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "ballControl",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "7f86cf6e-acf1-4b65-bae0-8f8ee5761cb0",
-   "buildName": "Steven Gerrard",
-   "archetype_id": "maestro",
-   "playerRole": "cm-boxtobox",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "press-proven"
-   ],
-   "playstyles": [
-    "power-shot",
-    "pinged-pass",
-    "relentless"
-   ],
-   "height": 72,
-   "weight": 183,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "England",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 5,
-   "creator": "throwbackfc",
-   "top": [
-    {
-     "k": "stamina",
-     "v": 90
-    },
-    {
-     "k": "longShots",
-     "v": 89
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
-     "v": 84
+     "v": 87
     }
    ]
   },
@@ -8088,55 +8578,6 @@
    ]
   },
   {
-   "id": "c99cc0ff-a707-4d93-9beb-e3e003ce75a7",
-   "buildName": "Liam Delap",
-   "archetype_id": "target",
-   "playerRole": "st-target",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "precision-header"
-   ],
-   "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
-   ],
-   "height": 73,
-   "weight": 176,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
-   "weakFoot": 2,
-   "nation": "England",
-   "club": "Chelsea",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "strength",
-     "v": 94
-    },
-    {
-     "k": "headingAcc",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 84
-    },
-    {
-     "k": "jumping",
-     "v": 84
-    },
-    {
-     "k": "shotPower",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "8449dccd-58a1-45c9-85fb-3e8e771ddef6",
    "buildName": "Marc Cucurella",
    "archetype_id": "marauder",
@@ -8186,55 +8627,6 @@
    ]
   },
   {
-   "id": "6339e9f4-5f81-4644-92a0-00439e42f482",
-   "buildName": "Marcus Thuram",
-   "archetype_id": "target",
-   "playerRole": "st-target",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "precision-header"
-   ],
-   "playstyles": [
-    "power-shot",
-    "bruiser",
-    "acrobatic"
-   ],
-   "height": 76,
-   "weight": 198,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
-   "weakFoot": 4,
-   "nation": "France",
-   "club": "Inter",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "headingAcc",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 84
-    },
-    {
-     "k": "jumping",
-     "v": 84
-    },
-    {
-     "k": "shotPower",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "fde98f71-53a6-4452-8b6c-9cfec0916cb1",
    "buildName": "Matheus Cunha",
    "archetype_id": "finisher",
@@ -8263,7 +8655,7 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
@@ -8312,11 +8704,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -8327,57 +8719,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "5e58f4a9-a49d-4dcf-b87b-3cdfbdc39ff8",
-   "buildName": "Micky van de Ven",
-   "archetype_id": "boss",
-   "playerRole": "cb-stopper",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "bruiser"
-   ],
-   "playstyles": [
-    "anticipate",
-    "block",
-    "aerial-fortress"
-   ],
-   "height": 76,
-   "weight": 190,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 3,
-   "weakFoot": 2,
-   "nation": "Netherlands",
-   "club": "Tottenham",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "defAware",
-     "v": 84
-    },
-    {
-     "k": "headingAcc",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -8410,218 +8753,120 @@
    "top": [
     {
      "k": "agility",
-     "v": 91
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 89
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "2dc34eb7-deec-443e-bc62-cb334f7f001a",
-   "buildName": "Paredes '26 Fighter",
-   "archetype_id": "recycler",
-   "playerRole": null,
-   "selectedSpecialization": "recycler-plus",
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "first-touch"
-   ],
-   "height": 71,
-   "weight": 165,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Argentina",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "shortPass",
      "v": 92
     },
     {
-     "k": "longPass",
-     "v": 90
+     "k": "dribbling",
+     "v": 89
     },
     {
-     "k": "strength",
-     "v": 90
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "shotPower",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    }
+   ]
+  },
+  {
+   "id": "dfad9056-b1ec-4558-957f-c9c00d4cea16",
+   "buildName": "Milos Kerkez",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 69,
+   "weight": 154,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Hungary",
+   "club": "Liverpool",
+   "copyCount": 0,
+   "viewCount": 4,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    }
+   ]
+  },
+  {
+   "id": "58c6ca5f-53ba-4a34-a7ca-1cd27e7361fa",
+   "buildName": "Robin Le Normand",
+   "archetype_id": "progressor",
+   "playerRole": "cb-ballplayer",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "long-ball-pass"
+   ],
+   "playstyles": [
+    "anticipate",
+    "intercept",
+    "pinged-pass"
+   ],
+   "height": 74,
+   "weight": 176,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "skillMoves": 2,
+   "weakFoot": 3,
+   "nation": "Spain",
+   "club": "Atlético",
+   "copyCount": 0,
+   "viewCount": 4,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
     },
     {
      "k": "aggression",
-     "v": 89
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "8658cdb4-6a01-4a81-93e6-526a3419426f",
-   "buildName": "Patrik Schick",
-   "archetype_id": "finisher",
-   "playerRole": "st-poacher",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "low-driven-shot"
-   ],
-   "playstyles": [
-    "quick-step",
-    "acrobatic",
-    "first-touch"
-   ],
-   "height": 75,
-   "weight": 192,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Czechia",
-   "club": "Leverkusen",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "agility",
-     "v": 90
-    },
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "b25afa6e-9f5e-4a1f-9a18-cb47b49a6417",
-   "buildName": "Robert Lewandowski",
-   "archetype_id": "finisher",
-   "playerRole": "st-complete",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "power-shot"
-   ],
-   "playstyles": [
-    "quick-step",
-    "technical",
-    "first-touch"
-   ],
-   "height": 72,
-   "weight": 176,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Poland",
-   "club": "Barcelona",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "agility",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "finishing",
-     "v": 89
-    },
-    {
-     "k": "shotPower",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    }
-   ]
-  },
-  {
-   "id": "d6033b82-c616-4669-a0e1-871d905eacf3",
-   "buildName": "Rúben Neves",
-   "archetype_id": "recycler",
-   "playerRole": "dm-deeplying",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "pinged-pass",
-    "long-ball-pass",
-    "anticipate"
-   ],
-   "height": 71,
-   "weight": 176,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Portugal",
-   "club": "Al-Hilal",
-   "copyCount": 0,
-   "viewCount": 4,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 85
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "composure",
      "v": 84
     }
    ]
@@ -8725,55 +8970,6 @@
    ]
   },
   {
-   "id": "fb181722-83ae-4dc7-babe-f17be0842dc5",
-   "buildName": "Agüero 93:20",
-   "archetype_id": "finisher",
-   "playerRole": null,
-   "selectedSpecialization": "finisher-plus",
-   "level": 40,
-   "signature": [
-    "low-driven-shot"
-   ],
-   "playstyles": [
-    "aerial-fortress",
-    "block",
-    "chip-shot"
-   ],
-   "height": 68,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 4,
-   "nation": "Argentina",
-   "club": null,
-   "copyCount": 0,
-   "viewCount": 3,
-   "creator": "specialevents",
-   "top": [
-    {
-     "k": "composure",
-     "v": 92
-    },
-    {
-     "k": "ballControl",
-     "v": 90
-    },
-    {
-     "k": "reactions",
-     "v": 90
-    },
-    {
-     "k": "finishing",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "1b2f8c66-50aa-4de6-a989-9f29eda12609",
    "buildName": "Alexander Sørloth",
    "archetype_id": "target",
@@ -8818,55 +9014,6 @@
     },
     {
      "k": "jumping",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "d87a3977-df52-4d15-a2c1-13830d20f5a6",
-   "buildName": "Anthony Gordon",
-   "archetype_id": "spark",
-   "playerRole": "winger-pace",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "rapid",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 72,
-   "weight": 159,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "England",
-   "club": "Newcastle",
-   "copyCount": 0,
-   "viewCount": 3,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "agility",
      "v": 84
     }
    ]
@@ -9243,7 +9390,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
+    },
+    {
+     "k": "dribbling",
+     "v": 91
     },
     {
      "k": "ballControl",
@@ -9251,10 +9402,6 @@
     },
     {
      "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
      "v": 89
     },
     {
@@ -9411,55 +9558,6 @@
    ]
   },
   {
-   "id": "dfad9056-b1ec-4558-957f-c9c00d4cea16",
-   "buildName": "Milos Kerkez",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
-   ],
-   "height": 69,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Hungary",
-   "club": "Liverpool",
-   "copyCount": 0,
-   "viewCount": 3,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "interceptions",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    }
-   ]
-  },
-  {
    "id": "63c96fc5-1103-4354-981f-1603932ad430",
    "buildName": "Nicolò Barella",
    "archetype_id": "maestro",
@@ -9549,6 +9647,55 @@
     },
     {
      "k": "headingAcc",
+     "v": 84
+    },
+    {
+     "k": "interceptions",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "0d2a301a-3671-4dd6-a980-4bca7323c7c2",
+   "buildName": "Noussair Mazraoui",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-defensive",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "block",
+    "quick-step"
+   ],
+   "height": 72,
+   "weight": 161,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Morocco",
+   "club": "Man United",
+   "copyCount": 0,
+   "viewCount": 3,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "defAware",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "aggression",
      "v": 84
     },
     {
@@ -9700,7 +9847,7 @@
     },
     {
      "k": "vision",
-     "v": 86
+     "v": 87
     }
    ]
   },
@@ -9782,11 +9929,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -9797,57 +9944,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "58c6ca5f-53ba-4a34-a7ca-1cd27e7361fa",
-   "buildName": "Robin Le Normand",
-   "archetype_id": "progressor",
-   "playerRole": "cb-ballplayer",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "long-ball-pass"
-   ],
-   "playstyles": [
-    "anticipate",
-    "intercept",
-    "pinged-pass"
-   ],
-   "height": 74,
-   "weight": 176,
-   "accelerationType": "Lengthy",
-   "inGameAccelerationType": "Lengthy",
-   "skillMoves": 2,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": "Atlético",
-   "copyCount": 0,
-   "viewCount": 3,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "defAware",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "aggression",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -10125,11 +10223,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -10140,8 +10238,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -10272,7 +10370,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -10287,8 +10385,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 86
     }
    ]
   },
@@ -10370,23 +10468,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 86
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -10419,11 +10517,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -10517,11 +10615,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -10532,7 +10630,56 @@
      "v": 89
     },
     {
+     "k": "curve",
+     "v": 87
+    }
+   ]
+  },
+  {
+   "id": "c9ee620a-66b1-4a81-9e6b-54a6b4639f81",
+   "buildName": "Gabriel Martinelli",
+   "archetype_id": "spark",
+   "playerRole": "winger-pace",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "rapid",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 69,
+   "weight": 165,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Brazil",
+   "club": "Arsenal",
+   "copyCount": 0,
+   "viewCount": 2,
+   "creator": "buildmaster",
+   "top": [
+    {
      "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 88
+    },
+    {
+     "k": "agility",
      "v": 84
     }
    ]
@@ -10582,6 +10729,55 @@
     },
     {
      "k": "composure",
+     "v": 84
+    }
+   ]
+  },
+  {
+   "id": "2bc95dfc-dc9b-479f-9b01-e6f41c3c19f1",
+   "buildName": "Giovanni Di Lorenzo",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-defensive",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "block",
+    "quick-step"
+   ],
+   "height": 71,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Italy",
+   "club": "Napoli",
+   "copyCount": 0,
+   "viewCount": 2,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "defAware",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "aggression",
+     "v": 84
+    },
+    {
+     "k": "interceptions",
      "v": 84
     }
    ]
@@ -10713,7 +10909,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "acceleration",
@@ -10729,7 +10925,7 @@
     },
     {
      "k": "ballControl",
-     "v": 85
+     "v": 87
     }
    ]
   },
@@ -10958,14 +11154,14 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "ballControl",
-     "v": 89
+     "v": 92
     },
     {
      "k": "composure",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
      "v": 89
     },
     {
@@ -11056,11 +11252,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 91
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -11203,11 +11399,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -11218,8 +11414,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -11644,11 +11840,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -11659,8 +11855,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -11710,6 +11906,55 @@
     {
      "k": "stamina",
      "v": 88
+    }
+   ]
+  },
+  {
+   "id": "bf8b66f4-fc95-4fee-a3f2-0ddda7e06f8b",
+   "buildName": "Nico Williams",
+   "archetype_id": "spark",
+   "playerRole": "winger-pace",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "rapid",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 72,
+   "weight": 154,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Spain",
+   "club": "Athletic Club",
+   "copyCount": 0,
+   "viewCount": 2,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 88
+    },
+    {
+     "k": "agility",
+     "v": 84
     }
    ]
   },
@@ -11812,19 +12057,19 @@
    ]
   },
   {
-   "id": "0d2a301a-3671-4dd6-a980-4bca7323c7c2",
-   "buildName": "Noussair Mazraoui",
+   "id": "d8884aa7-1b74-4b51-8b1c-aee1d6dc57c3",
+   "buildName": "Patrick Dorgu",
    "archetype_id": "marauder",
-   "playerRole": "fullback-defensive",
+   "playerRole": "fullback-attacking",
    "selectedSpecialization": null,
    "level": 40,
    "signature": [
-    "jockey"
+    "quick-step"
    ],
    "playstyles": [
-    "anticipate",
-    "block",
-    "quick-step"
+    "whipped-pass",
+    "rapid",
+    "jockey"
    ],
    "height": 72,
    "weight": 161,
@@ -11832,30 +12077,79 @@
    "inGameAccelerationType": "Controlled",
    "skillMoves": 3,
    "weakFoot": 3,
-   "nation": "Morocco",
+   "nation": "Denmark",
    "club": "Man United",
    "copyCount": 0,
    "viewCount": 2,
    "creator": "buildmaster",
    "top": [
     {
-     "k": "defAware",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
      "k": "acceleration",
-     "v": 84
+     "v": 89
     },
     {
-     "k": "aggression",
-     "v": 84
+     "k": "dribbling",
+     "v": 89
     },
     {
      "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    }
+   ]
+  },
+  {
+   "id": "d2cde9e5-bc16-4be7-8587-ccbdd47a1501",
+   "buildName": "Piotr Zieliński",
+   "archetype_id": "maestro",
+   "playerRole": "cm-playmaker",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
+   ],
+   "height": 70,
+   "weight": 143,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Poland",
+   "club": "Inter",
+   "copyCount": 0,
+   "viewCount": 2,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
      "v": 84
     }
    ]
@@ -12673,11 +12967,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -12688,8 +12982,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -12771,23 +13065,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 88
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -12836,55 +13130,6 @@
     },
     {
      "k": "gkPositioning",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "d2e4e2ca-9ae6-4930-97e6-9a1b18005424",
-   "buildName": "Antony",
-   "archetype_id": "magician",
-   "playerRole": "winger-skill",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "trickster"
-   ],
-   "playstyles": [
-    "technical",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 69,
-   "weight": 141,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 5,
-   "weakFoot": 3,
-   "nation": "Brazil",
-   "club": "Betis",
-   "copyCount": 0,
-   "viewCount": 1,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "composure",
-     "v": 93
-    },
-    {
-     "k": "ballControl",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
      "v": 84
     }
    ]
@@ -13261,11 +13506,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -13276,8 +13521,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -13522,7 +13767,7 @@
     },
     {
      "k": "sprintSpeed",
-     "v": 85
+     "v": 86
     }
    ]
   },
@@ -13555,7 +13800,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
+    },
+    {
+     "k": "dribbling",
+     "v": 91
     },
     {
      "k": "ballControl",
@@ -13563,10 +13812,6 @@
     },
     {
      "k": "composure",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
      "v": 89
     },
     {
@@ -13620,55 +13865,6 @@
     },
     {
      "k": "gkPositioning",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "c9ee620a-66b1-4a81-9e6b-54a6b4639f81",
-   "buildName": "Gabriel Martinelli",
-   "archetype_id": "spark",
-   "playerRole": "winger-pace",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "rapid",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 69,
-   "weight": 165,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Brazil",
-   "club": "Arsenal",
-   "copyCount": 0,
-   "viewCount": 1,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 88
-    },
-    {
-     "k": "agility",
      "v": 84
     }
    ]
@@ -14066,6 +14262,55 @@
    ]
   },
   {
+   "id": "adf3cdfe-41e5-4615-8b75-dfe142d454da",
+   "buildName": "Jeremie Frimpong",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 67,
+   "weight": 143,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Netherlands",
+   "club": "Liverpool",
+   "copyCount": 0,
+   "viewCount": 1,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "interceptions",
+     "v": 87
+    }
+   ]
+  },
+  {
    "id": "4ecd2279-5dff-4f86-b567-5205acc1c4c8",
    "buildName": "Joan García",
    "archetype_id": "shot-stopper",
@@ -14115,6 +14360,55 @@
    ]
   },
   {
+   "id": "af1e0788-4a73-46fc-83d2-9bdcfe3c6a24",
+   "buildName": "João Cancelo",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-attacking",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 72,
+   "weight": 163,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 4,
+   "weakFoot": 3,
+   "nation": "Portugal",
+   "club": "Al-Hilal",
+   "copyCount": 0,
+   "viewCount": 1,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "crossing",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "interceptions",
+     "v": 87
+    }
+   ]
+  },
+  {
    "id": "727cfb41-76eb-4cfb-a0b6-57cae93a4edb",
    "buildName": "João Félix",
    "archetype_id": "magician",
@@ -14143,14 +14437,14 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "ballControl",
-     "v": 89
+     "v": 92
     },
     {
      "k": "composure",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
      "v": 89
     },
     {
@@ -14241,7 +14535,7 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -14409,6 +14703,55 @@
    ]
   },
   {
+   "id": "cbdd111a-8c51-4fe2-8f92-b5a4152df4d9",
+   "buildName": "Jules Koundé",
+   "archetype_id": "marauder",
+   "playerRole": "fullback-defensive",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "block",
+    "quick-step"
+   ],
+   "height": 71,
+   "weight": 185,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "France",
+   "club": "Barcelona",
+   "copyCount": 0,
+   "viewCount": 1,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "jumping",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "aggression",
+     "v": 84
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    }
+   ]
+  },
+  {
    "id": "053833eb-2739-429d-90d5-8361c523b9d3",
    "buildName": "Kaoru Mitoma",
    "archetype_id": "magician",
@@ -14437,23 +14780,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 88
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -14486,7 +14829,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -14501,8 +14844,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 86
     }
    ]
   },
@@ -15046,55 +15389,6 @@
    ]
   },
   {
-   "id": "bf8b66f4-fc95-4fee-a3f2-0ddda7e06f8b",
-   "buildName": "Nico Williams",
-   "archetype_id": "spark",
-   "playerRole": "winger-pace",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "rapid",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 72,
-   "weight": 154,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Spain",
-   "club": "Athletic Club",
-   "copyCount": 0,
-   "viewCount": 1,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "curve",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 88
-    },
-    {
-     "k": "agility",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "289db0da-c94e-4f51-926e-c1bef0aca72f",
    "buildName": "Noa Lang",
    "archetype_id": "magician",
@@ -15123,11 +15417,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -15138,8 +15432,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -15172,11 +15466,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -15187,8 +15481,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -15238,55 +15532,6 @@
     {
      "k": "shotPower",
      "v": 84
-    }
-   ]
-  },
-  {
-   "id": "d8884aa7-1b74-4b51-8b1c-aee1d6dc57c3",
-   "buildName": "Patrick Dorgu",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
-   ],
-   "height": 72,
-   "weight": 161,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Denmark",
-   "club": "Man United",
-   "copyCount": 0,
-   "viewCount": 1,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "interceptions",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
     }
    ]
   },
@@ -15417,14 +15662,14 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
-    },
-    {
-     "k": "ballControl",
-     "v": 89
+     "v": 92
     },
     {
      "k": "composure",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
      "v": 89
     },
     {
@@ -15531,55 +15776,6 @@
     },
     {
      "k": "interceptions",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "d2cde9e5-bc16-4be7-8587-ccbdd47a1501",
-   "buildName": "Piotr Zieliński",
-   "archetype_id": "maestro",
-   "playerRole": "cm-playmaker",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 70,
-   "weight": 143,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Poland",
-   "club": "Inter",
-   "copyCount": 0,
-   "viewCount": 1,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 89
-    },
-    {
-     "k": "longPass",
-     "v": 85
-    },
-    {
-     "k": "ballControl",
      "v": 84
     }
    ]
@@ -15879,6 +16075,55 @@
    ]
   },
   {
+   "id": "bc6a2c0c-bf81-43b9-9d6d-9e5c1f4a5076",
+   "buildName": "Romeo Lavia",
+   "archetype_id": "recycler",
+   "playerRole": "dm-deeplying",
+   "selectedSpecialization": null,
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "pinged-pass",
+    "long-ball-pass",
+    "anticipate"
+   ],
+   "height": 71,
+   "weight": 161,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "skillMoves": 3,
+   "weakFoot": 3,
+   "nation": "Belgium",
+   "club": "Chelsea",
+   "copyCount": 0,
+   "viewCount": 1,
+   "creator": "buildmaster",
+   "top": [
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 85
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
+    }
+   ]
+  },
+  {
    "id": "91e6ebca-85dd-4866-858b-346b20171433",
    "buildName": "Ronald Araújo",
    "archetype_id": "boss",
@@ -15956,23 +16201,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 88
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -16397,11 +16642,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -16412,8 +16657,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 88
     }
    ]
   },
@@ -16642,11 +16887,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -16657,8 +16902,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -17218,7 +17463,7 @@
    ],
    "height": 69,
    "weight": 161,
-   "accelerationType": "Explosive",
+   "accelerationType": "Controlled",
    "inGameAccelerationType": "Explosive",
    "skillMoves": 4,
    "weakFoot": 3,
@@ -17230,10 +17475,14 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
      "v": 89
     },
     {
@@ -17242,10 +17491,6 @@
     },
     {
      "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "vision",
      "v": 89
     }
    ]
@@ -17708,7 +17953,7 @@
    ],
    "height": 70,
    "weight": 165,
-   "accelerationType": "Explosive",
+   "accelerationType": "Controlled",
    "inGameAccelerationType": "Explosive",
    "skillMoves": 5,
    "weakFoot": 3,
@@ -17720,7 +17965,7 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
@@ -17769,7 +18014,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
@@ -17784,8 +18029,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 86
     }
    ]
   },
@@ -18516,7 +18761,7 @@
     },
     {
      "k": "dribbling",
-     "v": 87
+     "v": 88
     },
     {
      "k": "ballControl",
@@ -18553,7 +18798,7 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "agility",
@@ -18568,8 +18813,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "ballControl",
+     "v": 86
     }
    ]
   },
@@ -18749,23 +18994,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 86
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -18847,11 +19092,11 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 93
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -18862,8 +19107,8 @@
      "v": 89
     },
     {
-     "k": "acceleration",
-     "v": 84
+     "k": "curve",
+     "v": 87
     }
    ]
   },
@@ -18896,23 +19141,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 86
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -19239,23 +19484,23 @@
    "top": [
     {
      "k": "balance",
-     "v": 94
+     "v": 92
     },
     {
      "k": "composure",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
      "v": 89
     },
     {
-     "k": "dribbling",
+     "k": "curve",
      "v": 89
     },
     {
-     "k": "curve",
-     "v": 86
+     "k": "dribbling",
+     "v": 89
     }
    ]
   },
@@ -19353,55 +19598,6 @@
     },
     {
      "k": "jumping",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "2bc95dfc-dc9b-479f-9b01-e6f41c3c19f1",
-   "buildName": "Giovanni Di Lorenzo",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-defensive",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "block",
-    "quick-step"
-   ],
-   "height": 71,
-   "weight": 165,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Italy",
-   "club": "Napoli",
-   "copyCount": 0,
-   "viewCount": 0,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "defAware",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "aggression",
-     "v": 84
-    },
-    {
-     "k": "interceptions",
      "v": 84
     }
    ]
@@ -19946,104 +20142,6 @@
    ]
   },
   {
-   "id": "adf3cdfe-41e5-4615-8b75-dfe142d454da",
-   "buildName": "Jeremie Frimpong",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
-   ],
-   "height": 67,
-   "weight": 143,
-   "accelerationType": "Explosive",
-   "inGameAccelerationType": "Explosive",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Netherlands",
-   "club": "Liverpool",
-   "copyCount": 0,
-   "viewCount": 0,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "sprintSpeed",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "interceptions",
-     "v": 87
-    }
-   ]
-  },
-  {
-   "id": "af1e0788-4a73-46fc-83d2-9bdcfe3c6a24",
-   "buildName": "João Cancelo",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-attacking",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "quick-step"
-   ],
-   "playstyles": [
-    "whipped-pass",
-    "rapid",
-    "jockey"
-   ],
-   "height": 72,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 4,
-   "weakFoot": 3,
-   "nation": "Portugal",
-   "club": "Al-Hilal",
-   "copyCount": 0,
-   "viewCount": 0,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "acceleration",
-     "v": 89
-    },
-    {
-     "k": "crossing",
-     "v": 89
-    },
-    {
-     "k": "dribbling",
-     "v": 89
-    },
-    {
-     "k": "stamina",
-     "v": 88
-    },
-    {
-     "k": "interceptions",
-     "v": 87
-    }
-   ]
-  },
-  {
    "id": "d924ae62-ef1b-43d3-8cf5-86dd0dc2a88e",
    "buildName": "Joe Gomez",
    "archetype_id": "boss",
@@ -20387,55 +20485,6 @@
    ]
   },
   {
-   "id": "cbdd111a-8c51-4fe2-8f92-b5a4152df4d9",
-   "buildName": "Jules Koundé",
-   "archetype_id": "marauder",
-   "playerRole": "fullback-defensive",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "block",
-    "quick-step"
-   ],
-   "height": 71,
-   "weight": 185,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "France",
-   "club": "Barcelona",
-   "copyCount": 0,
-   "viewCount": 0,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "jumping",
-     "v": 89
-    },
-    {
-     "k": "standTackle",
-     "v": 89
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "aggression",
-     "v": 84
-    },
-    {
-     "k": "defAware",
-     "v": 84
-    }
-   ]
-  },
-  {
    "id": "286cddf6-0fe8-4ca9-b671-2f00bd62121f",
    "buildName": "Julián Álvarez",
    "archetype_id": "finisher",
@@ -20623,7 +20672,7 @@
     },
     {
      "k": "dribbling",
-     "v": 87
+     "v": 88
     },
     {
      "k": "ballControl",
@@ -21787,11 +21836,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -21934,11 +21983,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -22179,11 +22228,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
@@ -22277,7 +22326,7 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
@@ -22293,7 +22342,7 @@
     },
     {
      "k": "ballControl",
-     "v": 86
+     "v": 88
     }
    ]
   },
@@ -22320,55 +22369,6 @@
    "weakFoot": 3,
    "nation": "Uruguay",
    "club": "Tottenham",
-   "copyCount": 0,
-   "viewCount": 0,
-   "creator": "buildmaster",
-   "top": [
-    {
-     "k": "longPass",
-     "v": 89
-    },
-    {
-     "k": "shortPass",
-     "v": 89
-    },
-    {
-     "k": "vision",
-     "v": 85
-    },
-    {
-     "k": "acceleration",
-     "v": 84
-    },
-    {
-     "k": "composure",
-     "v": 84
-    }
-   ]
-  },
-  {
-   "id": "bc6a2c0c-bf81-43b9-9d6d-9e5c1f4a5076",
-   "buildName": "Romeo Lavia",
-   "archetype_id": "recycler",
-   "playerRole": "dm-deeplying",
-   "selectedSpecialization": null,
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "pinged-pass",
-    "long-ball-pass",
-    "anticipate"
-   ],
-   "height": 71,
-   "weight": 161,
-   "accelerationType": "Controlled",
-   "inGameAccelerationType": "Controlled",
-   "skillMoves": 3,
-   "weakFoot": 3,
-   "nation": "Belgium",
-   "club": "Chelsea",
    "copyCount": 0,
    "viewCount": 0,
    "creator": "buildmaster",
@@ -22963,11 +22963,11 @@
    "top": [
     {
      "k": "agility",
-     "v": 94
+     "v": 92
     },
     {
      "k": "dribbling",
-     "v": 94
+     "v": 92
     },
     {
      "k": "ballControl",
