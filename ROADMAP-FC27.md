@@ -223,6 +223,22 @@ Left open, dated:
 
 ---
 
+### Update — 23 Sep, sign-off after the launch-week correction
+
+Everything on both repos is deployed and the branches are one commit
+(app repo `main` = `dev` = `lane/a`, production at migration 0076). Done
+this week: FC 27 catalog corrected from the owner's in-game reads (the cost
+table above 92, four caps and bases), 250 house builds re-priced and 41
+unmodified user copies made to follow them; the Creator Loop (achievements,
+creator level and rank, top charts, house accounts unranked) live; the five
+role-first build pages, the search thumbnails, the Controls page and the
+Reddit cost post out. **The immediate next work is Creator Loop Phase 2 in
+the app repo** (epic #209 — digest v2 counting views and level-ups, implicit
+follows, Charted / Starting XI from the meta boards), on the integration
+lane. Blog side after that: the 6 Oct GA4 read of Reddit, the Journey by
+Mediavine application ~1 Oct (`MONETIZATION.md`), and the Search Console
+re-read from ~28 Sep (`SEO.md`).
+
 ## 2. Scorecard against the 5 Aug reviews
 
 **Blog review — 6 of 8 done or mostly done:**

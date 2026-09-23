@@ -337,3 +337,9 @@ shows as text in the feed.)
 owner posts from, in the first person plural. If self-promotion is banned
 outright, post the images without the link and let people ask. Measure on
 6 Oct in GA4 → Acquisition (reddit.com) and in the app's Traffic tab.
+
+**Posted 23 Sep 2026** by the owner on r/ProClubs as an Images post (a text
+post with the pictures inside showed as text in the feed and was replaced),
+the text as the first comment, the app link as its own one-line comment.
+Reply to every comment; r/EASportsFC no sooner than a week later; read the
+result on 6 Oct.
