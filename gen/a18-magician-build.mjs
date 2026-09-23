@@ -1,75 +1,8 @@
-// a18: the Magician spoke — the first of the 13 and the template the factory
-// (spoke.mjs) was extracted from. Editorial content lives here; everything
-// structural is the factory's.
-import { renderSpoke } from './spoke.mjs';
+// a18: the Magician build page, FC 27 only since 2026-09-23.
+// Rendered by gen/spoke27.mjs (all twelve at once: gen/spokes27.mjs). The FC 26
+// guide this file used to configure (editorial pairs, AP-path stages, FAQ) is
+// in git history (before 2026-09-23).
+import { renderSpoke27 } from './spoke27.mjs';
+import { SPOKES } from './spokes27.mjs';
 
-renderSpoke({
-  n: 18,
-  archId: 'magician',
-  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
-  // Emits nothing while amazon-us is pending.
-  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
-  // Featured pair since 2026-08-14: the two most-copied public Magicians.
-  // The Messi was already both featured and most-copied; the Neymar (#2 by
-  // copies) replaces the Dembélé, per the most-copied-everywhere policy.
-  tabs: ['Messi — the Invader', 'Neymar — the Magician+'],
-  shortNames: ['Messi', 'Neymar'],
-  blurbs: [
-    'The central 10. Elite touch, elite vision, and the Invader specialization — runs between the lines that defenders lose, then a finish or the killer pass.',
-    'The flair Magician. Agility and Balance at 97, a 96 touch, Curve 95 — and Magician+ boosting all of it on the ball. Beats his man for fun, then picks the finish.',
-  ],
-  buildsH2: 'The two builds, in full',
-
-  // The grid layout (owner, 2026-08-17), tested here against the twelve spokes
-  // still on the reel card. The grid shows all fourteen house Magicians; the
-  // guide below still analyses two of them in depth, which is why the prose
-  // says "fourteen to open, two taken apart" rather than claiming only two
-  // exist. Real player names in the grid are also the cheapest coverage of the
-  // real-player query cluster (ROADMAP §5).
-  gridFile: 'magician-grid.json',
-  gridHead: 'Fourteen Magician builds, ready to copy',
-  gridSub: 'Messi, Neymar, Dembélé, Yamal, Cherki, Kvaratskhelia — plus Pelé, Maradona, Ronaldinho and Rivaldo from the legends shelf. Tap any card to open it.',
-
-  intro: () => `<p>The Magician is EA FC Pro Clubs' chance-creation forward — the best dribbling ceilings in the game with genuinely elite finishing behind them. Here are fourteen finished level-100 Magician builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
-
-  whyParas: ({ arch, esc }) => [
-    `<p>${esc(arch.description)} That is the catalog's own description, and the numbers back it up: Agility, Balance, Ball Control, Curve, Finishing and Reactions all cap at <strong>99</strong> — no other forward archetype puts that six together. The catch is everything else. Standing Tackle stops at 80, Defensive Awareness at 82, Heading Accuracy at 85, and Shot Power at 92: you will not win headers, you will not track back well, and your goals come from placement and curve, not raw power.</p>`,
-    `<p>Both archetype perks amplify the same job. <strong>${esc(arch.perks[0].name)}</strong> — ${esc(arch.perks[0].desc).toLowerCase()} <strong>${esc(arch.perks[1].name)}</strong> — ${esc(arch.perks[1].desc).toLowerCase()} If you don't dribble at defenders, pick a different archetype — the <a href="/blog/pro-clubs-archetypes-explained/">full archetype guide</a> covers all 13, and the <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head tool</a> will show you exactly what you'd trade against a Spark or a Creator.</p>`,
-  ],
-
-  buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
-    `<p><strong>The Messi</strong> is the central 10: Ball Control 97, Dribbling 96, Vision 96, Short Pass 95 and Long Pass 92, with the <strong>Invader</strong> specialization — its Ghost Runner perk makes runs between the lines harder to track, and it upgrades Incisive Pass to its PlayStyle+ version. You create for the whole team and arrive unmarked in the box.</p>`,
-    `<p><strong>The Neymar</strong> is the flair Magician: Agility 97 and Balance 97 under a 96 touch, Acceleration 95 to get moving, Curve 95 on everything that leaves the boot, and <strong>Magician+</strong> boosting the on-ball game. Same touch as the Messi, different geometry — you start wide, invite the fullback, and disappear inside.</p>`,
-    `<p>These two are the ones this guide takes apart, and the rest of the grid above is built the same way. Pick by where you actually play. Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either in the builder gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the Messi</a>, <a href="${openUrl(builds[1])}">the Neymar</a>.</p>`,
-  ],
-
-  stages: [
-    { name: 'Make the touch elite', why: 'Your identity. Everything else waits.',
-      buys: [['ballControl', 92], ['dribbling', 90], ['agility', 88], ['balance', 90]] },
-    { name: 'Unlock Invader', why: 'The three specialization criteria, nothing more.', spec: true },
-    { name: 'Add the end product', why: 'Now the chances you create become goals.',
-      buys: [['finishing', 94], ['curve', 96], ['longShots', 93], ['acceleration', 92], ['sprintSpeed', 88]] },
-    { name: 'Finish the build', why: 'Push the core to its ceilings, then polish.', remainder: true },
-  ],
-
-  apPathOutro: ({ stages, specStage, fmt, BUILDER }) => `<p>The touch comes first because it is why you picked the archetype — a Magician with 90 Dribbling at level ${stages[0].level} already wins games. The Invader push lands next: all three criteria — Att. Position 90, Vision 90, Long Pass 92 — are met after ${fmt(specStage.cum)} AP, around <strong>level ${specStage.level}</strong>, unlocking the specialization with two thirds of the game still ahead. Per-point prices for anything you'd do differently are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="${BUILDER}">drag the sliders in the builder</a>, which prices every change live.</p>`,
-
-  specOutro: ({ specs }) => `<p>The honest ranking: <strong>Invader</strong> for central players, <strong>Magician+</strong> for wide ones, <strong>Hotshot</strong> only if edge-of-the-box shooting is genuinely your game — it needs Shot Power 92, which is this archetype's exact cap on a stat the build otherwise ignores. Note the overlap: finish the Messi build and Magician+'s criteria are already met too, so the second specialization is a switch, not a second grind. How unlock criteria are priced across all 39 specializations is its own article — <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>`,
-
-  playstylesPara: () => `<p>The four gold badges on each card in the grid above are that build's signature PlayStyles — a level-100 pro carries four, and they come with the archetype. The nine regular slots ride on top of those, and both featured builds run them full. Every regular badge is earned: its unlock thresholds sit inside attributes the build buys anyway; nothing is bought for a badge. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
-
-  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. Both builds stay short and light — ${ft(builds[0].height)} / ${builds[0].weight} lb and ${ft(builds[1].height)} / ${builds[1].weight} lb — and the builder computes both as <strong>Explosive</strong>. Going taller trades exactly the acceleration profile this archetype lives on; run your own numbers in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a> before you add inches.</p>`,
-
-  faq: ({ arch, fmt, featuredCost, TOTAL_AP, specs, specStage }) => [
-    ['What is the Magician archetype in EA FC Pro Clubs?',
-     `The Magician is one of the three forward archetypes, inspired by ${arch.inspiredBy}. It carries the game's best dribbling ceilings — Agility, Balance, Ball Control and Curve all reach 99 — with Finishing at 99 behind them, and its perks (${arch.perks.map((p) => p.name).join(' and ')}) reward beating defenders one against one.`],
-    ['What is the best Magician build?',
-     `A touch-first build: Ball Control 97, Dribbling 96, Agility 95 and Balance 96, then Finishing 94 and Curve 96 for the end product. The full level-100 build costs ${fmt(featuredCost)} AP of the ${fmt(TOTAL_AP)} available, and you can open it directly in the Pro Clubs HQ builder.`],
-    ['Which Magician specialization should I take?',
-     `Invader if you play centrally — its Ghost Runner perk makes runs between the lines harder to track, and it grants Incisive Pass+. Magician+ if you stay wide and on the ball. Hotshot only if your game is shooting from the edge of the box; it is also the most expensive of the three to reach (${specs.find((s) => s.id === 'hotshot').ap} AP from the archetype floor).`],
-    ['How much AP does a full Magician build cost?',
-     `${fmt(featuredCost)} AP for the complete level-100 build — inside the ${fmt(TOTAL_AP)} AP a pro earns reaching level 100, with ${fmt(TOTAL_AP - featuredCost)} left over. The three Invader criteria alone cost ${specStage.ap} AP from the floor.`],
-    ['Can a Magician be Explosive?',
-     `Yes. Keep the frame short and light and the acceleration high — both builds in this guide (5'7" and 5'9") come out Explosive in the builder's AcceleRATE calculation.`],
-  ],
-});
+renderSpoke27(SPOKES.find((s) => s.n === 18));

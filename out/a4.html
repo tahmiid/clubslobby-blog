@@ -1,131 +1,251 @@
 <!--kg-card-begin: html-->
-<p class="pchq-updated" style="margin:0 0 1.2em;font:600 13px/1.45 -apple-system,system-ui,'Segoe UI',sans-serif;color:#2DE2C5">Updated <time datetime="2026-09-21">21 September 2026</time><span style="color:#898781;font-weight:400"> — FC 27 keeps FC 26’s AcceleRATE thresholds, confirmed on the retail game</span></p>
-<!--kg-card-end: html-->
-<p>Set your height and drag the two sliders — the acceleration type updates live, with the exact rule that decided it:</p>
-
-<!--kg-card-begin: html-->
-<div class="ac27" data-ac27>
 <style>
-.ac27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--good:#0ca30c;--bad:#e66767;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-.ac27 *{box-sizing:border-box}
-.ac27 table th{background:transparent!important;color:var(--muted)!important}
-.ac27 table td{color:var(--ct,inherit)!important}
-.ac27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.ac27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.ac27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.ac27 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.ac27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.ac27 .chip:hover{border-color:var(--muted)}
-.ac27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.ac27 .chip[disabled]{opacity:.32;cursor:not-allowed}
-.ac27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.ac27{padding:14px}}
-.ac27 .warn{font-size:12px;color:var(--ink2);background:rgba(250,178,25,.13);border:1px solid rgba(250,178,25,.4);
-  border-radius:7px;padding:8px 11px;margin:0 0 15px}
-.ac27 .warn b{color:var(--ink)}
-.ac27 select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--ring);
-  background:var(--s1);color:var(--ink);width:100%;max-width:290px;margin-bottom:15px}
-.ac27 .sl{display:grid;grid-template-columns:82px 1fr 88px;align-items:center;gap:12px;margin-bottom:10px}
-.ac27 .sl label{font-size:13px;color:var(--ink2)}
-.ac27 .sl input{width:100%;accent-color:var(--accent)}
-.ac27 .v{font-size:13px;font-variant-numeric:tabular-nums;text-align:right}
-.ac27 .v small{color:var(--muted);font-size:11.5px}
-.ac27 .out{margin-top:17px;padding-top:15px;border-top:1px solid var(--grid)}
-.ac27 .type{font-size:29px;font-weight:700;letter-spacing:-.02em;margin:0 0 2px;color:var(--accent)}
-.ac27 .bc{font-size:13px;color:var(--ink2);margin:0 0 13px}
-.ac27 .ck{display:flex;gap:8px;align-items:baseline;font-size:13px;color:var(--ink2);margin-bottom:5px}
-.ac27 .mk{font-weight:700;width:14px;flex:none}
-.ac27 .ck.ok .mk{color:var(--good)}
-.ac27 .ck.no .mk{color:var(--bad)}
-.ac27 .rch{margin-top:15px;font-size:12.5px}
-.ac27 .rch h5{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.ac27 .pill{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;margin:0 4px 5px 0;
-  border:1px solid var(--ring);color:var(--muted)}
-.ac27 .pill.on{border-color:var(--accent);color:var(--accent);font-weight:600}
-@media (max-width:600px){.ac27 .sl{grid-template-columns:70px 1fr 78px;gap:8px}}
+.pcs{--bg:#0e0f19;--ink:#f2f3f7;--ink2:#b9bec9;--mut:#8a90a0;--line:rgba(255,255,255,.09);
+  --t0:#2DE2C5;
+  --t1:#24A08F;
+  --t2:#A8435B;
+  --t3:#FF6B8A;
+  font:400 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px 14px;margin:1.6em 0}
+.pcs *{box-sizing:border-box}
+.pcs,.pcs *{word-break:normal;overflow-wrap:normal;hyphens:none}
+.pcs p{margin:0}
+.pcs .kk{margin:0 0 4px;font:700 11px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)}
+.pcs .tl{margin:0 0 3px;font:800 21px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.pcs .sb{margin:0 0 12px;font-size:13px;color:var(--ink2)}
+.pcs .ctl{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 10px;align-items:center}
+.pcs .ctl .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-right:2px}
+.pcs .grp2{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.pcs button.ch{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:transparent;color:var(--ink2);cursor:pointer;min-height:30px}
+.pcs button.ch:hover{border-color:var(--mut)}
+.pcs button.ch[aria-pressed="true"]{background:var(--ink);color:#0e0f19;border-color:var(--ink);font-weight:700}
+.pcs .sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px}
+.pcs .t0{background:var(--t0)}
+.pcs .k0{background:rgba(45,226,197,.32)}
+.pcs .t1{background:var(--t1)}
+.pcs .k1{background:rgba(36,160,143,.15)}
+.pcs .t2{background:var(--t2)}
+.pcs .k2{background:rgba(168,67,91,.24)}
+.pcs .t3{background:var(--t3)}
+.pcs .k3{background:rgba(255,107,138,.32)}
+.pcs .lg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 6px;font-size:12px;color:var(--ink2)}
+.pcs .lg span{display:inline-flex;align-items:center;gap:6px}
+.pcs .ft{margin:12px 0 0;font-size:11.5px;color:var(--mut)}
+.pcs .ft b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){.pcs{padding:14px 12px 12px}.pcs .tl{font-size:19px}}</style>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pcs a4t" data-a4t data-pos="all" data-rd="m">
+<style>
+.a4t .ty{display:inline-block;font-size:12px;font-weight:800;line-height:1;padding:5px 8px;border-radius:6px;color:#0e0f19}
+.a4t .ty.Explosive{background:#2DE2C5}
+.a4t .ty.Lengthy{background:#E3B84E}
+.a4t .ty.Controlled{background:rgba(255,255,255,.14);color:var(--ink)}
+.a4t .rus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 14px}
+.a4t .ru{padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.a4t .ru p{margin:7px 0 0;font-size:12.5px;line-height:1.45;color:var(--ink2)}
+.a4t .tr{display:grid;grid-template-columns:minmax(98px,1.1fr) minmax(78px,.7fr) 1.2fr 1.2fr;gap:8px;align-items:center;padding:9px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.a4t .tr.hd{border-top:0;padding:0 2px 4px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a4t .nm b{display:block;font:800 15px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.a4t small{display:block;font-size:11px;font-weight:400;line-height:1.3;color:var(--mut);margin-top:2px}
+.a4t .ap{font-size:15px;font-weight:800;color:var(--ink)}
+.a4t .ap small.u{display:inline;font-size:10.5px;font-weight:600}
+.a4t .no{font-size:15px;color:var(--mut)}
+.a4t[data-rd="m"] .g,.a4t[data-rd="g"] .m{display:none}
+.a4t .dm{display:none}
+.a4t[data-pos="Forward"] .tr[data-pos]:not([data-pos="Forward"]){display:none}
+.a4t[data-pos="Midfielder"] .tr[data-pos]:not([data-pos="Midfielder"]){display:none}
+.a4t[data-pos="Defender"] .tr[data-pos]:not([data-pos="Defender"]){display:none}
+.a4t[data-pos="Keeper"] .tr[data-pos]:not([data-pos="Keeper"]){display:none}
+@media (max-width:560px){.a4t .rus{grid-template-columns:1fr}.a4t .tr{grid-template-columns:minmax(84px,1fr) 1.1fr 1.1fr}.a4t .tr>span:nth-child(2){display:none}.a4t .dm{display:block;color:var(--ink2)}}
 </style>
-<p class="hd">AcceleRATE calculator</p>
-<p class="sub">Height, Agility and Strength decide how your pro accelerates. Nothing else — not Pace.</p>
-<p class="warn"><b>Thresholds unverified for FC 26.</b> EA has never published them; these are community-documented values that have held since FIFA 23. The height and attribute limits below <em>are</em> from the Pro Clubs HQ catalog. Spot-check in-game before trusting exact boundaries.</p>
-<span class="lbl">Archetype</span>
-<select data-arch><option value="shot-stopper">Shot Stopper · Keeper</option><option value="sweeper-keeper">Sweeper Keeper · Keeper</option><option value="progressor">Progressor · Defender</option><option value="boss" selected>Boss · Defender</option><option value="engine">Engine · Defender</option><option value="marauder">Marauder · Defender</option><option value="recycler">Recycler · Midfielder</option><option value="maestro">Maestro · Midfielder</option><option value="creator">Creator · Midfielder</option><option value="spark">Spark · Midfielder</option><option value="magician">Magician · Forward</option><option value="finisher">Finisher · Forward</option><option value="target">Target · Forward</option></select>
-<div class="sl"><label for="ac27h">Height</label><input id="ac27h" type="range" data-s="h"><span class="v" data-v="h"></span></div>
-<div class="sl"><label for="ac27a">Agility</label><input id="ac27a" type="range" data-s="a"><span class="v" data-v="a"></span></div>
-<div class="sl"><label for="ac27s">Strength</label><input id="ac27s" type="range" data-s="s"><span class="v" data-v="s"></span></div>
-<div class="out">
-  <p class="type" data-type>—</p><p class="bc" data-bc></p>
-  <div data-ck></div>
-  <div class="rch"><h5>Reachable by this archetype</h5><div data-rch></div></div>
+<p class="kk">FC 27 · <time datetime="2026-09-23">Updated 23 September 2026</time></p>
+<p class="tl">Explosive, Lengthy or Controlled: how FC 27 decides</p>
+<p class="sb">Checked in this order. A pro that passes neither of the first two is Controlled.</p>
+<div class="rus"><div class="ru"><span class="ty Explosive">Explosive</span><p>182 cm or shorter · Agility 65+ · Agility 10+ over Strength · Acceleration 80+</p></div><div class="ru"><span class="ty Lengthy">Lengthy</span><p>183 cm or taller · Strength 65+ · Strength 4+ over Agility · Acceleration 40+</p></div><div class="ru"><span class="ty Controlled">Controlled</span><p>everything else</p></div></div>
+<p class="tl" style="font-size:18px">Who can be which, and the cheapest way there</p>
+<p class="sb">AP from a new pro’s starting values, raising only what the rule asks for. <b>In the menu</b> reads the attributes you bought; <b>in a match</b> adds what height and weight shift for free.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Reading"><span class="lb">Reading</span><button type="button" class="ch" data-rd="m" aria-pressed="true">In the menu</button><button type="button" class="ch" data-rd="g" aria-pressed="false">In a match</button></span>
+  <span class="grp2" role="group" aria-label="Position"><span class="lb">Show</span><button type="button" class="ch" data-pos="all" aria-pressed="true">All</button><button type="button" class="ch" data-pos="Forward" aria-pressed="false">Forwards</button><button type="button" class="ch" data-pos="Midfielder" aria-pressed="false">Midfielders</button><button type="button" class="ch" data-pos="Defender" aria-pressed="false">Defenders</button><button type="button" class="ch" data-pos="Keeper" aria-pressed="false">Keepers</button></span>
 </div>
-<p class="foot">Height and attribute limits from the Pro Clubs HQ catalog. Threshold rules are community-sourced.</p>
+<div role="table" aria-label="AcceleRATE by archetype">
+<div class="tr hd" role="row"><span role="columnheader">Archetype</span><span role="columnheader">New pro</span><span role="columnheader">Explosive</span><span role="columnheader">Lengthy</span></div>
+<div class="tr" role="row" data-pos="Forward"><span class="nm" role="rowheader"><b>Finisher</b><small>Forward · 5'5"–6'3"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">53 <small class="u">AP</small><small>Agility 80, Acceleration 80 · 5'5"–5'11"</small></span></span><span class="g"><span class="ap">Free<small>at 5'5", 154 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">28 <small class="u">AP</small><small>Strength 76 · 6'1"–6'3"</small></span></span><span class="g"><span class="ap">Free<small>at 6'3", 198 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Forward"><span class="nm" role="rowheader"><b>Magician</b><small>Forward · 5'4"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">62 <small class="u">AP</small><small>Agility 75, Acceleration 80 · 5'4"–5'11"</small></span></span><span class="g"><span class="ap">Free<small>at 5'4", 132 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">44 <small class="u">AP</small><small>Strength 76 · 6'1"–6'2"</small></span></span><span class="g"><span class="ap">Free<small>at 6'2", 176 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Forward"><span class="nm" role="rowheader"><b>Spark</b><small>Forward · 5'4"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">42 <small class="u">AP</small><small>Acceleration 80 · 5'4"–5'11"</small></span></span><span class="g"><span class="ap">Free<small>at 5'4", 132 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">62 <small class="u">AP</small><small>Strength 79 · 6'1"–6'2"</small></span></span><span class="g"><span class="ap">6 <small class="u">AP</small><small>Strength 67 · at 6'2", 176 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Forward"><span class="nm" role="rowheader"><b>Target</b><small>Forward · 5'10"–6'5"</small><small class="dm">Starts Lengthy</small></span><span role="cell"><span class="ty Lengthy">Lengthy</span></span><span role="cell" class="c"><span class="m"><span class="ap">155 <small class="u">AP</small><small>Agility 85, Acceleration 80 · 5'10"–5'11"</small></span></span><span class="g"><span class="ap">26 <small class="u">AP</small><small>Agility 73, Acceleration 74 · at 5'10", 176 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'5"</small></span></span><span class="g"><span class="ap">Free<small>at 6'5", 220 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Midfielder"><span class="nm" role="rowheader"><b>Creator</b><small>Midfielder · 5'4"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">81 <small class="u">AP</small><small>Agility 75, Acceleration 80 · 5'4"–5'11"</small></span></span><span class="g"><span class="ap">24 <small class="u">AP</small><small>Acceleration 74 · at 5'4", 143 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">44 <small class="u">AP</small><small>Strength 76 · 6'1"–6'2"</small></span></span><span class="g"><span class="ap">Free<small>at 6'2", 187 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Midfielder"><span class="nm" role="rowheader"><b>Disruptor</b><small>Midfielder · 5'6"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">171 <small class="u">AP</small><small>Agility 85, Acceleration 80 · 5'6"–5'11"</small></span></span><span class="g"><span class="ap">43 <small class="u">AP</small><small>Agility 75 · at 5'6", 143 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'2"</small></span></span><span class="g"><span class="ap">Free<small>at 6'2", 187 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Midfielder"><span class="nm" role="rowheader"><b>Maestro</b><small>Midfielder · 5'4"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">74 <small class="u">AP</small><small>Acceleration 80 · 5'4"–5'11"</small></span></span><span class="g"><span class="ap">24 <small class="u">AP</small><small>Acceleration 74 · at 5'4", 143 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">29 <small class="u">AP</small><small>Strength 79 · 6'1"–6'2"</small></span></span><span class="g"><span class="ap">2 <small class="u">AP</small><small>Strength 67 · at 6'2", 187 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Midfielder"><span class="nm" role="rowheader"><b>Recycler</b><small>Midfielder · 5'8"–6'4"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">131 <small class="u">AP</small><small>Agility 82, Acceleration 80 · 5'8"–5'11"</small></span></span><span class="g"><span class="ap">34 <small class="u">AP</small><small>Agility 72, Acceleration 75 · at 5'8", 143 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'4"</small></span></span><span class="g"><span class="ap">Free<small>at 6'4", 187 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Defender"><span class="nm" role="rowheader"><b>Boss</b><small>Defender · 5'11"–6'5"</small><small class="dm">Starts Lengthy</small></span><span role="cell"><span class="ty Lengthy">Lengthy</span></span><span role="cell" class="c"><span class="m"><span class="ap">228 <small class="u">AP</small><small>Agility 85, Acceleration 80 · at 5'11"</small></span></span><span class="g"><span class="ap">113 <small class="u">AP</small><small>Agility 77, Acceleration 76 · at 5'11", 176 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'5"</small></span></span><span class="g"><span class="ap">Free<small>at 6'5", 220 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Defender"><span class="nm" role="rowheader"><b>Marauder</b><small>Defender · 5'6"–6'2"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">15 <small class="u">AP</small><small>Acceleration 80 · 5'6"–5'11"</small></span></span><span class="g"><span class="ap">Free<small>at 5'6", 143 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">44 <small class="u">AP</small><small>Strength 74 · 6'1"–6'2"</small></span></span><span class="g"><span class="ap">9 <small class="u">AP</small><small>Strength 64 · at 6'2", 187 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Defender"><span class="nm" role="rowheader"><b>Progressor</b><small>Defender · 5'10"–6'5"</small><small class="dm">Starts Controlled</small></span><span role="cell"><span class="ty Controlled">Controlled</span></span><span role="cell" class="c"><span class="m"><span class="ap">148 <small class="u">AP</small><small>Agility 80, Acceleration 80 · 5'10"–5'11"</small></span></span><span class="g"><span class="ap">24 <small class="u">AP</small><small>Acceleration 74 · at 5'10", 165 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">16 <small class="u">AP</small><small>Strength 74 · 6'1"–6'5"</small></span></span><span class="g"><span class="ap">Free<small>at 6'5", 209 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Keeper"><span class="nm" role="rowheader"><b>Shot Stopper</b><small>Keeper · 5'10"–6'6"</small><small class="dm">Starts Lengthy</small></span><span role="cell"><span class="ty Lengthy">Lengthy</span></span><span role="cell" class="c"><span class="m"><span class="ap">109 <small class="u">AP</small><small>Agility 75, Acceleration 80 · 5'10"–5'11"</small></span></span><span class="g"><span class="ap">62 <small class="u">AP</small><small>Agility 70 · at 5'10", 176 lb</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'6"</small></span></span><span class="g"><span class="ap">Free<small>at 6'6", 220 lb</small></span></span></span></div>
+<div class="tr" role="row" data-pos="Keeper"><span class="nm" role="rowheader"><b>Sweeper Keeper</b><small>Keeper · 6'0"–6'7"</small><small class="dm">Starts Lengthy</small></span><span role="cell"><span class="ty Lengthy">Lengthy</span></span><span role="cell" class="c"><span class="m"><span class="no">—<small>shortest is 6'0"</small></span></span><span class="g"><span class="no">—<small>shortest is 6'0"</small></span></span></span><span role="cell" class="c"><span class="m"><span class="ap">Free<small>6'1"–6'7"</small></span></span><span class="g"><span class="ap">Free<small>at 6'7", 220 lb</small></span></span></span></div>
+</div>
+<p class="ft">New pro: starting values at the middle of the archetype’s height and weight range, the type FC 27’s menu shows. In a match, the cheapest height and weight is picked for you. Try your own numbers in the <a href="/blog/lengthy-vs-controlled-vs-explosive/" style="color:var(--t0)">AcceleRATE calculator</a>.</p>
 <script>
-(function(){var R=document.querySelector('[data-ac27]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var D=[{"id":"shot-stopper","name":"Shot Stopper","position":"Keeper","by":"Oliver Kahn","hMin":183,"hMax":201,"ag":[50,90],"st":[50,96],"reach":["lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"sweeper-keeper","name":"Sweeper Keeper","position":"Keeper","by":"Lev Yashin","hMin":178,"hMax":198,"ag":[65,90],"st":[65,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"progressor","name":"Progressor","position":"Defender","by":"Fernando Hierro","hMin":178,"hMax":196,"ag":[70,90],"st":[70,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"boss","name":"Boss","position":"Defender","by":"Nemanja Vidić","hMin":180,"hMax":196,"ag":[65,90],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"engine","name":"Engine","position":"Defender","by":"Park Ji Sung","hMin":168,"hMax":188,"ag":[70,92],"st":[65,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"marauder","name":"Marauder","position":"Defender","by":"Cafu","hMin":168,"hMax":188,"ag":[70,95],"st":[60,96],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"recycler","name":"Recycler","position":"Midfielder","by":"Michaël Essien","hMin":173,"hMax":193,"ag":[70,92],"st":[75,96],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"maestro","name":"Maestro","position":"Midfielder","by":"Toni Kroos","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"creator","name":"Creator","position":"Midfielder","by":"Andrés Iniesta","hMin":163,"hMax":188,"ag":[72,99],"st":[65,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"spark","name":"Spark","position":"Midfielder","by":"Luís Figo","hMin":163,"hMax":188,"ag":[75,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"magician","name":"Magician","position":"Forward","by":"Ronaldinho","hMin":163,"hMax":188,"ag":[72,99],"st":[65,90],"reach":["explosive","mostly-explosive","controlled-explosive","mostly-lengthy","controlled-lengthy"]},{"id":"finisher","name":"Finisher","position":"Forward","by":"Alex Morgan","hMin":165,"hMax":191,"ag":[72,99],"st":[70,92],"reach":["explosive","mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]},{"id":"target","name":"Target","position":"Forward","by":"Zlatan Ibrahimović","hMin":178,"hMax":196,"ag":[70,92],"st":[75,99],"reach":["mostly-explosive","controlled-explosive","lengthy","mostly-lengthy","controlled-lengthy"]}],RULES=[{"id":"explosive","name":"Explosive","h":[null,175],"stat":"agility","min":65,"diff":20},{"id":"mostly-explosive","name":"Mostly Explosive","h":[null,182],"stat":"agility","min":65,"diff":12},{"id":"controlled-explosive","name":"Controlled Explosive","h":[null,182],"stat":"agility","min":65,"diff":4},{"id":"lengthy","name":"Lengthy","h":[188,null],"stat":"strength","min":65,"diff":20},{"id":"mostly-lengthy","name":"Mostly Lengthy","h":[183,null],"stat":"strength","min":65,"diff":12},{"id":"controlled-lengthy","name":"Controlled Lengthy","h":[181,null],"stat":"strength","min":65,"diff":4}];
-var sel=R.querySelector('[data-arch]'),cur=null;
-var el={h:R.querySelector('[data-s="h"]'),a:R.querySelector('[data-s="a"]'),s:R.querySelector('[data-s="s"]')};
-var ov={h:R.querySelector('[data-v="h"]'),a:R.querySelector('[data-v="a"]'),s:R.querySelector('[data-v="s"]')};
-function classify(h,a,s){for(var i=0;i<RULES.length;i++){var r=RULES[i];
- var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
- var okH=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
- if(okH&&d>=r.min&&(d-o)>=r.diff)return r;}return null;}
-function checks(r,h,a,s){if(!r)return[];
- var d=(r.stat==='agility')?a:s,o=(r.stat==='agility')?s:a;
- var dn=r.stat==='agility'?'Agility':'Strength',on=r.stat==='agility'?'Strength':'Agility';
- var ht=r.h[0]!=null?('Height ≥ '+r.h[0]+'cm'):('Height ≤ '+r.h[1]+'cm');
- var ok=(r.h[0]==null||h>=r.h[0])&&(r.h[1]==null||h<=r.h[1]);
- return [[ok,ht+' — you are '+h+'cm'],[d>=r.min,dn+' ≥ '+r.min+' — you are '+d],
-         [(d-o)>=r.diff,dn+' − '+on+' ≥ '+r.diff+' — you are '+(d-o)]];}
-function load(id){cur=D.filter(function(x){return x.id===id})[0];
- el.h.min=cur.hMin;el.h.max=cur.hMax;el.h.value=Math.round((cur.hMin+cur.hMax)/2);
- el.a.min=cur.ag[0];el.a.max=cur.ag[1];el.a.value=cur.ag[0];
- el.s.min=cur.st[0];el.s.max=cur.st[1];el.s.value=cur.st[0];render();}
-function render(){var h=+el.h.value,a=+el.a.value,s=+el.s.value;
- ov.h.innerHTML=h+'cm <small>'+Math.floor(h/2.54/12)+"'"+Math.round(h/2.54%12)+'"</small>';
- ov.a.textContent=a;ov.s.textContent=s;
- var r=classify(h,a,s);
- R.querySelector('[data-type]').textContent=r?r.name:'Controlled';
- R.querySelector('[data-bc]').textContent=r?'The first rule your pro satisfies.':'No Explosive or Lengthy rule is satisfied, so it falls through to Controlled.';
- var rows=r?checks(r,h,a,s):[];
- if(!rows.length){var best=RULES.map(function(x){var d=(x.stat==='agility')?(a-s):(s-a);return{r:x,gap:x.diff-d};})
-   .filter(function(x){return x.gap>0}).sort(function(x,y){return x.gap-y.gap})[0];
-  rows=best?[[false,'Nearest: '+best.r.name+' needs '+best.gap+' more '+(best.r.stat==='agility'?'Agility over Strength':'Strength over Agility')]]:[];}
- R.querySelector('[data-ck]').innerHTML=rows.map(function(c){
-  return '<div class="ck '+(c[0]?'ok':'no')+'"><span class="mk">'+(c[0]?'✓':'✗')+'</span><span>'+c[1]+'</span></div>';}).join('');
- R.querySelector('[data-rch]').innerHTML=RULES.map(function(x){
-  return '<span class="pill'+(cur.reach.indexOf(x.id)>=0?' on':'')+'">'+x.name+'</span>';}).join('')+'<span class="pill on">Controlled</span>';}
-sel.addEventListener('change',function(){load(sel.value)});
-['h','a','s'].forEach(function(k){el[k].addEventListener('input',render)});
-load(sel.value);})();
+(function(){var R=document.querySelector('[data-a4t]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.pos)R.dataset.pos=b.dataset.pos;else if(b.dataset.rd)R.dataset.rd=b.dataset.rd;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.pos!==undefined&&R.dataset.pos===x.dataset.pos)||(x.dataset.rd!==undefined&&R.dataset.rd===x.dataset.rd);x.setAttribute('aria-pressed',on)})});
+})();
 </script>
 </div>
 <!--kg-card-end: html-->
 
-<h2>The one thing to understand</h2>
-<p><strong>It's the gap that matters, not the raw numbers.</strong> Pushing Agility to 99 does nothing if you also pushed Strength to 95. Players chasing Explosive routinely ruin it by levelling Strength "because it seemed useful".</p>
-<p>Explosive wants you <em>short</em>, with Agility well clear of Strength. Lengthy wants you <em>tall</em>, with Strength well clear of Agility. Controlled is the fallback when neither gap is wide enough — which is where most players land by accident.</p>
-<p>Explosive players hit top speed over the first few yards and fade. Lengthy players start slowly and keep accelerating past the point everyone else has topped out. There are also half-steps — Mostly and Controlled variants — that relax the height limit and the required gap.</p>
+<p><strong>FC 27 gives every pro one of three acceleration types, and four numbers decide which: height, Agility, Strength and Acceleration.</strong> Explosive is for short pros with Agility well clear of Strength; Lengthy is for tall ones with Strength clear of Agility; everything else is Controlled. 12 of the 13 archetypes can be Explosive and all 13 can be Lengthy. To check your own numbers, use the <a href="/blog/lengthy-vs-controlled-vs-explosive/">AcceleRATE calculator</a>.</p>
 
-<h2>Which archetypes can reach which type</h2>
-<p>Your archetype constrains height and caps both attributes, so not every type is available to every archetype. Computed from the Pro Clubs HQ catalog's own ranges:</p>
-<table>
-<thead><tr><th>Archetype</th><th>Height</th><th>Agility</th><th>Strength</th><th>Best Explosive</th><th>Best Lengthy</th></tr></thead>
-<tbody><tr><td>Shot Stopper</td><td>183–201cm</td><td>50–90</td><td>50–96</td><td>—</td><td>Lengthy</td></tr><tr><td>Sweeper Keeper</td><td>178–198cm</td><td>65–90</td><td>65–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Progressor</td><td>178–196cm</td><td>70–90</td><td>70–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Boss</td><td>180–196cm</td><td>65–90</td><td>75–99</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Engine</td><td>168–188cm</td><td>70–92</td><td>65–96</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Marauder</td><td>168–188cm</td><td>70–95</td><td>60–96</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Recycler</td><td>173–193cm</td><td>70–92</td><td>75–96</td><td>Mostly Explosive</td><td>Lengthy</td></tr><tr><td>Maestro</td><td>163–188cm</td><td>72–99</td><td>65–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Creator</td><td>163–188cm</td><td>72–99</td><td>65–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Spark</td><td>163–188cm</td><td>75–99</td><td>65–90</td><td>Explosive</td><td>Mostly Lengthy</td></tr><tr><td>Magician</td><td>163–188cm</td><td>72–99</td><td>65–90</td><td>Explosive</td><td>Mostly Lengthy</td></tr><tr><td>Finisher</td><td>165–191cm</td><td>72–99</td><td>70–92</td><td>Explosive</td><td>Lengthy</td></tr><tr><td>Target</td><td>178–196cm</td><td>70–92</td><td>75–99</td><td>Mostly Explosive</td><td>Lengthy</td></tr></tbody>
-</table>
-<p><strong>7 of the 13 can reach full Explosive</strong> — Engine, Marauder, Maestro, Creator, Spark, Magician and Finisher — all sharing a low minimum height with a high Agility ceiling. The 6 that cannot (Shot Stopper, Sweeper Keeper, Progressor, Boss, Recycler and Target) are blocked by height alone: their shortest legal build is still taller than the Explosive limit.</p>
-<p>Full Lengthy is easier — only Spark and Magician cannot reach it, clearing the height bar but keeping a Strength ceiling too close to their Agility floor to open a 20-point gap. Every archetype can reach at least the Controlled Lengthy half-step.</p>
+<!--kg-card-begin: html-->
+<div class="a4-g mcg">
+<style>
+.a4-g.mcg .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px}
+.a4-g.mcg .bc{display:block;background:var(--s1);border:1px solid var(--ring);border-radius:11px;
+  padding:11px 12px;text-decoration:none;transition:border-color .15s}
+.a4-g.mcg .bc:hover{border-color:#c9a227}
+.a4-g.mcg .bc .nm{font-size:14.5px;font-weight:700;color:var(--ink);margin:0}
+.a4-g.mcg .bc .ar{font-size:11px;font-weight:600;color:#2DE2C5;margin:1px 0 8px}
+.a4-g.mcg .bc .ps{display:flex;align-items:center;gap:5px}
+.a4-g.mcg .bc .sb{width:30px;height:30px;border-radius:8px;background:#3a2f10;border:1.5px solid #c9a227;
+  display:flex;align-items:center;justify-content:center}
+.a4-g.mcg .bc .sb img{width:21px;height:21px}
+.a4-g.mcg .bc .rb{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
+.a4-g.mcg .bc .rb img{width:18px;height:18px}
+.a4-g.mcg .bc .sg{font-size:10px;color:var(--ink2);margin:7px 0 0}
+.a4-g.mcg .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}
+.a4-g.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
+.a4-g.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
+<h2 id="builds-by-type">Most copied Explosive, Lengthy and Controlled builds</h2>
+<p class="sub">Two of each type, most copied first. Each card shows its type; tap one to open it in the builder.</p>
+<div class="grid"><a class="bc" href="https://proclubshq.com/b/72b66470-67d9-454b-b694-fc59798bb05e?src=grid">
+<p class="nm">Vitinha</p>
+<p class="ar">Maestro · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Incisive Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/incisive-pass.png" alt="Incisive Pass PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Tiki Taka"><img src="https://proclubshq.com/assets/playstyles/tiki-taka.png" alt="Tiki Taka PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Pinged Pass"><img src="https://proclubshq.com/assets/playstyles/pinged-pass.png" alt="Pinged Pass PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'8" · 143 lbs · Explosive</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf?src=grid">
+<p class="nm">Lamine Yamal</p>
+<p class="ar">Magician · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Trickster (signature)"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="Trickster PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Technical"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'11" · 143 lbs · Explosive</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/896e72c7-453e-45e0-b7ec-8d197b14f2d6?src=grid">
+<p class="nm">The Wall</p>
+<p class="ar">Boss · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Bruiser (signature)"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Acrobatic"><img src="https://proclubshq.com/assets/playstyles/acrobatic.png" alt="Acrobatic PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Jockey"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'4" · 198 lbs · Lengthy</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/36a632f0-6e71-4592-8fc5-60391e6a5137?src=grid">
+<p class="nm">Aurélien Tchouaméni</p>
+<p class="ar">Disruptor · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Jockey (signature)"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'2" · 181 lbs · Lengthy</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/ade67fd3-e40e-47c8-aa75-a5a1d5ea5331?src=grid">
+<p class="nm">Mbappé '26 WC</p>
+<p class="ar">Finisher · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Low Driven Shot (signature)"><img src="https://proclubshq.com/assets/playstyles/low-driven-shot.png" alt="Low Driven Shot PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Rapid"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'10" · 161 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/0d717109-9963-4f80-8483-e0b5dca0b670?src=grid">
+<p class="nm">Gennaro Gattuso</p>
+<p class="ar">Disruptor · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Jockey (signature)"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'10" · 165 lbs · Controlled</p>
+</a></div>
+</div>
+<!--kg-card-end: html-->
 
-<h2>Getting the type you want</h2>
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<h2 id="rules">How FC 27 decides your type</h2>
+<p>The game checks the rules in order and stops at the first one your pro passes:</p>
 <ol>
-<li><strong>Set height first.</strong> It's the only input you can't change later, and it gates everything — above the Explosive height limit, you can never be Explosive regardless of attributes.</li>
-<li><strong>Then protect the gap.</strong> Chasing Explosive means treating Strength as something to leave alone.</li>
-<li><strong>Re-check after every upgrade.</strong> One point in the wrong attribute can flip you from Explosive to Mostly Explosive, silently.</li>
+<li><strong>Explosive</strong>: 182 cm or shorter, Agility 65+, Agility 10+ over Strength, Acceleration 80+.</li>
+<li><strong>Lengthy</strong>: 183 cm or taller, Strength 65+, Strength 4+ over Agility, Acceleration 40+.</li>
+<li><strong>Controlled</strong>: every pro that fails both.</li>
 </ol>
+<p><strong>The gap matters more than the numbers.</strong> Agility 95 is not Explosive if Strength is 86; the rule wants Agility at least 10 higher. Lengthy asks for a smaller gap, 4 points of Strength over Agility. Sprint Speed plays no part in either rule.</p>
+<p><strong>Height is a hard line.</strong> In feet and inches, 5'11" (180.3 cm) is the tallest Explosive height and 6'1" (185.4 cm) the shortest Lengthy one. 6'0" (182.9 cm) passes neither height check, so a 6'0" pro is Controlled whatever its attributes. The Sweeper Keeper starts at 6'0", so it can never be Explosive.</p>
+<p>These thresholds are the ones FC 26 used, carried into FC 27. All 13 archetypes’ default types in FC 27, read in the game, agree with them: Target, Boss, Shot Stopper and Sweeper Keeper start Lengthy, the other nine Controlled.</p>
 
-<p>Want to check a specific set of numbers without opening the builder? The <a href="/blog/lengthy-vs-controlled-vs-explosive/">AcceleRATE calculator</a> runs the same three checklists against any height, Agility, Strength and Acceleration you type in.</p>
+<h2 id="cheapest">The cheapest way to each type</h2>
+<p>Explosive is cheapest on the Marauder, 15 AP (Acceleration 80), and dearest on the Boss, 228 AP, because the Boss starts with Strength 75 and needs Agility 85 to clear it by 10. Lengthy costs nothing on six archetypes and at most 62 AP (the Spark). You have 962 AP at level 40, so neither type is out of reach on cost; height is what rules one out.</p>
+
+<h2 id="menu-vs-match">In the menu vs in a match</h2>
+<p>FC 27 reads your type twice. <strong>The menu</strong> uses the attributes you bought. <strong>In a match</strong>, your height and weight shift Acceleration, Agility and Strength (on a keeper, Acceleration and Strength) for free, along with a few attributes the rules do not read, and the type is read again from the shifted values. On an outfield player, shorter and lighter adds Acceleration and Agility and takes away Strength, which is the Explosive direction; taller and heavier does the opposite.</p>
+<p>So the two can disagree. A new Marauder at 5'6" and 143 lb has Agility 70, Strength 60 and Acceleration 75: Controlled in the menu, because Explosive needs Acceleration 80. Its body adds 5 Agility and 5 Acceleration and takes 5 Strength, so in a match it is Agility 75 against Strength 55 with Acceleration 80: Explosive. Four archetypes play Explosive for free that way at their shortest and lightest: Finisher, Magician, Spark and Marauder.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a4b">
+<style>
+.a4b .tr{display:grid;grid-template-columns:minmax(110px,1.4fr) 1fr 1fr;gap:8px;align-items:center;padding:7px 2px;border-top:1px solid var(--line);font-size:14px}
+.a4b .tr.hd{border-top:0;padding-top:0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a4b .tr>span:not(:first-child){text-align:center;font-weight:800;font-size:16px}
+.a4b .tr.hd>span:not(:first-child){font-size:11px;font-weight:700}
+.a4b .up{color:#35d576}.a4b .dn{color:#ff8a6b}
+.a4b .gh{margin:14px 0 2px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.a4b .bd{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;font-size:12.5px;color:var(--ink2)}
+.a4b .bd b{color:var(--ink)}
+.a4b .bd i{font-style:normal;color:var(--mut);flex-basis:100%;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+</style>
+<p class="kk">Free, and only in a match</p>
+<p class="tl">What a taller or heavier body shifts</p>
+<p class="sb">Measured from the middle of your archetype’s height and weight range. + means the attribute goes up as you go taller or heavier; shorter or lighter reverses it.</p>
+<p class="gh">Outfield</p>
+<div role="table" aria-label="Outfield: body shifts">
+<div class="tr hd" role="row"><span role="columnheader">Attribute</span><span role="columnheader">Taller</span><span role="columnheader">Heavier</span></div>
+<div class="tr" role="row"><span role="rowheader">Acceleration</span><span role="cell"><span class="dn">−</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Agility</span><span role="cell"><span class="dn">−</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Balance</span><span role="cell"><span class="dn">−</span></span><span role="cell"><span class="up">+</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Jumping</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="up">+</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Sprint Speed</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Strength</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="up">+</span></span></div>
+</div>
+<p class="gh">Keepers</p>
+<div role="table" aria-label="Keepers: body shifts">
+<div class="tr hd" role="row"><span role="columnheader">Attribute</span><span role="columnheader">Taller</span><span role="columnheader">Heavier</span></div>
+<div class="tr" role="row"><span role="rowheader">GK Diving</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">GK Handling</span><span role="cell"><span class="dn">−</span></span><span role="cell"><span class="up">+</span></span></div>
+<div class="tr" role="row"><span role="rowheader">GK Reflexes</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Acceleration</span><span role="cell"><span class="dn">−</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Sprint Speed</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="dn">−</span></span></div>
+<div class="tr" role="row"><span role="rowheader">Strength</span><span role="cell"><span class="up">+</span></span><span role="cell"><span class="up">+</span></span></div>
+</div>
+<div class="bd"><i>Points per attribute, by distance from the middle</i><span>1–4 cm <b>1</b></span><span>5–8 cm <b>2</b></span><span>9–12 cm <b>3</b></span><span>13–16 cm <b>4</b></span></div>
+<div class="bd"><span>1–8 kg <b>1</b></span><span>9–16 kg <b>2</b></span></div>
+</div>
+<!--kg-card-end: html-->
+<p>Of the 470 FC 27 builds on our house accounts, 27 play a different type in a match from the one the menu shows. The builder prints both when they differ, as “Controlled (in-game Explosive)”, and the <a href="/blog/lengthy-vs-controlled-vs-explosive/">calculator</a> does the same for any numbers you enter.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-cta">
@@ -137,14 +257,72 @@ load(sel.value);})();
 .pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
 <p class="k">Builds by AcceleRATE type</p>
 <h3>See the Lengthy, Controlled and Explosive builds</h3>
-<p>The builder’s search understands the three types. Every result is a finished level-40 FC 27 build you can open and copy.</p>
+<p>The builder’s search understands the three types. Every result is a finished FC 27 build you can open and copy.</p>
 <div class="row"><a class="b" href="https://proclubshq.com/explore?q=lengthy&year=27">Lengthy builds →</a><a class="b" href="https://proclubshq.com/explore?q=controlled&year=27">Controlled builds →</a><a class="b" href="https://proclubshq.com/explore?q=explosive&year=27">Explosive builds →</a></div>
 </div>
 <!--kg-card-end: html-->
 
-
-<h2>Does this change in FC 27?</h2>
-<p>No. The three AcceleRATE types return unchanged in FC 27, with the same height, agility and strength gates. Our FC 27 builder computes your type live — and shows the in-match reading in brackets when your height and weight shift it — so the fastest way to check a planned build is simply to make it.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What is AcceleRATE in FC 27 Pro Clubs?</h3>
+<p>How your pro gets up to speed. There are three types: Explosive (short bursts of speed; accelerates fastest over the first few metres), Lengthy (slow to start but very hard to catch once at top speed) and Controlled, the default for any pro that meets neither. The game decides from four numbers: height, Agility, Strength and Acceleration.</p>
+<h3>How do you get Explosive in FC 27 Pro Clubs?</h3>
+<p>Be 182 cm or shorter (5'11" and under), with Agility 65+, Agility at least 10 above Strength, and Acceleration 80+. The cheapest archetype to make Explosive is the Marauder: 15 AP (Acceleration 80).</p>
+<h3>How do you get Lengthy in FC 27 Pro Clubs?</h3>
+<p>Be 183 cm or taller (6'1" and up), with Strength 65+, Strength at least 4 above Agility, and Acceleration 40+. Four archetypes are Lengthy from the start (Target, Boss, Shot Stopper and Sweeper Keeper); the dearest to convert is the Spark, 62 AP.</p>
+<h3>Which archetypes cannot be Explosive?</h3>
+<p>Only the Sweeper Keeper: its shortest height, 6'0", is above the 182 cm limit. Every other archetype can be Explosive with the right attributes, and every archetype can be Lengthy.</p>
+<h3>Why does my pro say Controlled in the menu but play Explosive?</h3>
+<p>The menu reads the attributes you bought. In a match, your height and weight shift Acceleration, Agility and Strength (on a keeper, Acceleration and Strength) for free, measured from the middle of your archetype’s range, and the type is read again. A new Marauder at 5'6" and 143 lb is Controlled in the menu and Explosive in a match. The builder shows both, as “Controlled (in-game Explosive)”.</p>
+<!--kg-card-begin: html-->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is AcceleRATE in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "How your pro gets up to speed. There are three types: Explosive (short bursts of speed; accelerates fastest over the first few metres), Lengthy (slow to start but very hard to catch once at top speed) and Controlled, the default for any pro that meets neither. The game decides from four numbers: height, Agility, Strength and Acceleration."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do you get Explosive in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Be 182 cm or shorter (5'11\" and under), with Agility 65+, Agility at least 10 above Strength, and Acceleration 80+. The cheapest archetype to make Explosive is the Marauder: 15 AP (Acceleration 80)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do you get Lengthy in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Be 183 cm or taller (6'1\" and up), with Strength 65+, Strength at least 4 above Agility, and Acceleration 40+. Four archetypes are Lengthy from the start (Target, Boss, Shot Stopper and Sweeper Keeper); the dearest to convert is the Spark, 62 AP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which archetypes cannot be Explosive?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Only the Sweeper Keeper: its shortest height, 6'0\", is above the 182 cm limit. Every other archetype can be Explosive with the right attributes, and every archetype can be Lengthy."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does my pro say Controlled in the menu but play Explosive?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The menu reads the attributes you bought. In a match, your height and weight shift Acceleration, Agility and Strength (on a keeper, Acceleration and Strength) for free, measured from the middle of your archetype’s range, and the type is read again. A new Marauder at 5'6\" and 143 lb is Controlled in the menu and Explosive in a match. The builder shows both, as “Controlled (in-game Explosive)”."
+   }
+  }
+ ]
+}
+</script>
+<!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->
 <div class="pchq-cta">
@@ -153,17 +331,45 @@ load(sel.value);})();
 .pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
 .pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
 .pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
-<p class="k">The living calculator</p>
-<h3>See your AcceleRATE type as you build</h3>
-<p>The builder computes Lengthy, Controlled or Explosive live as you set height, weight and attributes — FC 26 and FC 27 both.</p>
+<p class="k">FC 27 in the app</p>
+<h3>See your type as you build</h3>
+<p>The builder reads your AcceleRATE live as you set height, weight and attributes, in the menu and in a match.</p>
 <a class="b" href="https://proclubshq.com/">Open the builder →</a>
 </div>
 <!--kg-card-end: html-->
 
-<h2>Frequently asked questions</h2>
-<h3>Does Pace affect AcceleRATE?</h3>
-<p>No. Acceleration and Sprint Speed change how fast you end up going; they play no part in which profile you get. Only height, Agility and Strength do.</p>
-<h3>Is Explosive better than Lengthy?</h3>
-<p>Neither. Explosive wins the first few yards, suiting wingers and tight spaces. Lengthy wins longer runs, suiting centre-backs and strikers running in behind.</p>
-<h3>Can I change my acceleration type later?</h3>
-<p>The attribute half, yes — the Agility/Strength gap moves as you spend points. Height is fixed at creation, so if height rules a type out, it's out permanently.</p>
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get EA SPORTS FC 27</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">PlayStation 5</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Xbox Series X</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">PC (EA App)</span><span class="g">Buy now →</span></a>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="c"></div>
+<!--kg-card-end: html-->

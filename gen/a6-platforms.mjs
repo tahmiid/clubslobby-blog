@@ -77,7 +77,7 @@ ${widget}
 
 <h2>If you're on last-gen, your options</h2>
 <ol>
-<li><strong>Stay on FC 26.</strong> It keeps working, and the Clubs in it is the Clubs you already know. Our archetype guides and build tools are FC 26 data and stay accurate for it.</li>
+<li><strong>Stay on FC 26.</strong> It keeps working, and the Clubs in it is the Clubs you already know. Our guides and tools now cover FC 27, but the builder still carries every FC 26 archetype and build: switch the year in the app.</li>
 <li><strong>Upgrade the hardware.</strong> Any of PS5, Series X|S, Switch 2 or a PC gets you the full mode.</li>
 <li><strong>Buy FC 27 on last-gen anyway</strong> — reasonable if you mainly play Ultimate Team or Career, much less so if Clubs is the reason you buy the game at all.</li>
 </ol>

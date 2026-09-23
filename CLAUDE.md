@@ -157,6 +157,11 @@ Two things about their shape were settled by the owner on 2026-08-23:
 
 ## The four promotion targets (2026-09-02)
 
+> **2026-09-23:** `pro-clubs-archetypes-explained` is retired (draft; its URL
+> 301s to `fc27-archetypes`), and `group.mjs` was rewritten for FC 27 — its
+> grid is now an on/off option that only a34 sets. The rest of this section is
+> history.
+
 `pro-clubs-archetypes-explained`, `fc27-club-objectives`,
 `pro-clubs-level-rewards` and `pro-clubs-defender-archetypes` each carry a
 six-card grid at their first section break, as an h2 (it is a section of its
@@ -465,8 +470,15 @@ node ops/affiliate-test.mjs                                       # after editin
   public surface (DEPLOYMENT.md §7c).
 - Gameplay mechanics: never inherit a claim from existing article copy;
   verify with the owner (archetypes switch freely in FC 26, etc.).
-- FC 27 numbers are presented as **rumor** until EA publishes; the word
-  "beta" appears nowhere (owner rule 2026-08-16).
+- FC 27 numbers are **confirmed** since 2026-09-21 (owner: "everything is
+  confirmed now, nothing is beta or rumored"); never write "rumor", and the
+  word "beta" appears nowhere (owner rule 2026-08-16).
+- **The blog is FC 27 only since 2026-09-23** (owner: "FC 26 data is, to be
+  honest, irrelevant right now"). No page presents FC 26 data; FC 26 appears
+  only as the "what changed" comparison. Tools and roundups were rewritten in
+  place on FC 27 data; the build and player pages lost their FC 26 halves
+  (`gen/spoke27.mjs`, `gen/playerpage.mjs`); Archetypes Explained, the
+  Specializations Planner and the Engine page 301 to their FC 27 equivalents.
 - **Evergreen slugs carry no year** (owner, 2026-09-22): titles say FC 27,
   URLs never do, so the same address can hold FC 28. `ops/rename-slug.mjs`
   renames a post in place; the 301 is yours to add (DEPLOYMENT.md, the

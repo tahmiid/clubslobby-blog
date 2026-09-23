@@ -1,67 +1,418 @@
-<p>Pro Clubs has <strong>four defender archetypes</strong>, split two and two: the Progressor and the Boss are centre-backs — one plays out, one clears out — and the Marauder and the Engine are fullbacks — one attacks, one runs forever. This page compares all four and tells you which back-line job is yours. Worth knowing before you start: the highest-scored build in the entire meta XI right now is a <strong>Progressor (79.8)</strong>, and the <strong>Marauder tops two boards at once</strong> — fullback and CDM.</p>
-
 <!--kg-card-begin: html-->
-<div class="a34g">
 <style>
-.a34g{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--good:#0ca30c;--bad:#e66767;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-.a34g *{box-sizing:border-box}
-.a34g table th{background:transparent!important;color:var(--muted)!important}
-.a34g table td{color:var(--ct,inherit)!important}
-.a34g .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.a34g .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.a34g .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.a34g .chips{display:flex;flex-wrap:wrap;gap:6px}
-.a34g .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.a34g .chip:hover{border-color:var(--muted)}
-.a34g .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.a34g .chip[disabled]{opacity:.32;cursor:not-allowed}
-.a34g .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.a34g{padding:14px}}
-.a34g{overflow-x:auto}
-.a34g .g{display:grid;grid-template-columns:minmax(110px,1.2fr) repeat(4,minmax(86px,1fr));min-width:540px;font-size:13.5px}
-.a34g .h{padding:8px 10px;font-weight:650}
-.a34g .h a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--muted)}
-.a34g .h small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
-.a34g .h .aico{display:block;width:22px;height:22px;margin-bottom:4px;color:var(--muted)}
-.a34h .aico{width:30px;height:30px;vertical-align:-5px;margin-right:10px}
-.a34g .c{padding:7px 10px;border-top:1px solid var(--grid);font-variant-numeric:tabular-nums}
-.a34g .r{color:var(--ink2)}
-.a34g .b{font-weight:700;color:var(--accent)}
-.a34g .meta{font-size:12px;font-variant-numeric:normal}
+.pcs{--bg:#0e0f19;--ink:#f2f3f7;--ink2:#b9bec9;--mut:#8a90a0;--line:rgba(255,255,255,.09);
+  --t0:#2DE2C5;
+  --t1:#24A08F;
+  --t2:#A8435B;
+  --t3:#FF6B8A;
+  font:400 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px 14px;margin:1.6em 0}
+.pcs *{box-sizing:border-box}
+.pcs,.pcs *{word-break:normal;overflow-wrap:normal;hyphens:none}
+.pcs p{margin:0}
+.pcs .kk{margin:0 0 4px;font:700 11px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)}
+.pcs .tl{margin:0 0 3px;font:800 21px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.pcs .sb{margin:0 0 12px;font-size:13px;color:var(--ink2)}
+.pcs .ctl{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 10px;align-items:center}
+.pcs .ctl .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-right:2px}
+.pcs .grp2{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.pcs button.ch{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:transparent;color:var(--ink2);cursor:pointer;min-height:30px}
+.pcs button.ch:hover{border-color:var(--mut)}
+.pcs button.ch[aria-pressed="true"]{background:var(--ink);color:#0e0f19;border-color:var(--ink);font-weight:700}
+.pcs .sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px}
+.pcs .t0{background:var(--t0)}
+.pcs .k0{background:rgba(45,226,197,.32)}
+.pcs .t1{background:var(--t1)}
+.pcs .k1{background:rgba(36,160,143,.15)}
+.pcs .t2{background:var(--t2)}
+.pcs .k2{background:rgba(168,67,91,.24)}
+.pcs .t3{background:var(--t3)}
+.pcs .k3{background:rgba(255,107,138,.32)}
+.pcs .lg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 6px;font-size:12px;color:var(--ink2)}
+.pcs .lg span{display:inline-flex;align-items:center;gap:6px}
+.pcs .ft{margin:12px 0 0;font-size:11.5px;color:var(--mut)}
+.pcs .ft b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){.pcs{padding:14px 12px 12px}.pcs .tl{font-size:19px}}</style>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pcs a34x" data-a34x data-v="max" data-all="0">
+<style>
+.a34x .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 14px}
+.a34x .tabs .tb{font-size:12.5px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  color:var(--ink2)!important;text-decoration:none!important;background:transparent}
+.a34x .tabs a.tb:hover{border-color:var(--t0);color:var(--ink)!important}
+.a34x .tabs .tb.cur{background:var(--t0);border-color:var(--t0);color:#062a24!important}
+.a34x .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a34x .g{min-width:288px}
+.a34x .tr{display:grid;grid-template-columns:minmax(96px,1.3fr) repeat(3,minmax(60px,1fr));gap:2px;margin-top:2px}
+.a34x .tr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 4px;font-size:13.5px;font-variant-numeric:tabular-nums;border-radius:4px;text-align:center}
+.a34x .tr .rh{justify-content:flex-start;text-align:left;font-weight:600;color:var(--ink)}
+.a34x .hd>span{flex-direction:column;gap:3px;min-height:0;padding:0 2px 6px;font-size:12.5px;font-weight:700;line-height:1.15}
+.a34x .hd a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a34x .hd small{font-size:10.5px;font-weight:400;color:var(--mut)}
+.a34x .hd img{width:22px;height:22px}
+.a34x .cr .cl{background:rgba(255,255,255,.05)}
+.a34x .cr .rh{font-weight:700}
+.a34x .at>span{min-height:24px;font-size:12.5px;color:var(--ink2)}
+.a34x .at .rh{padding-left:12px;font-weight:400;color:var(--ink2)}
+.a34x[data-all="0"] .at{display:none}
+.a34x[data-v="max"] .n,.a34x[data-v="min"] .x{display:none}
+.a34x .cl b{font-weight:600}
+.a34x[data-v="max"] .bx,.a34x[data-v="min"] .bn{box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+.a34x[data-v="max"] .bx .x,.a34x[data-v="min"] .bn .n{font-weight:800;color:var(--ink)}
+.a34x .fx{border-top:1px solid var(--line);padding-top:2px}
+.a34x .fx>span{font-size:12px;line-height:1.3;color:var(--ink2)}
+.a34x .fx .rh{font-size:12.5px;color:var(--ink)}
+.a34x .fx img{width:22px;height:22px;display:block;margin:0 auto 2px}
+.a34x .fx .ps{flex-direction:column}
+.a34x .sh{margin:12px 0 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a34x .lg .bx{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+@media (max-width:520px){.a34x .tr>span{font-size:12.5px}.a34x .hd small{display:none}}
 </style>
-<p class="hd">The four defender archetypes, side by side</p>
-<p class="sub">Attribute-category ceilings — the highest each archetype can average, not where it starts. Best of the group in blue.</p>
-<div class="g" role="table" aria-label="The four defender archetypes, side by side">
-<span class="h"></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/progressor.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-progressor-build/">Progressor</a><small>Fernando Hierro</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/boss.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-boss-build/">Boss</a><small>Nemanja Vidić</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/marauder.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-marauder-build/">Marauder</a><small>Cafu</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/engine.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-engine-build/">Engine</a><small>Park Ji Sung</small></span>
-<span class="c r">Pace</span><span class="c">90</span><span class="c">90</span><span class="c b">94</span><span class="c">92</span>
-<span class="c r">Ball Control</span><span class="c">95</span><span class="c">92</span><span class="c b">96</span><span class="c">93</span>
-<span class="c r">Passing</span><span class="c">92</span><span class="c">89</span><span class="c b">94</span><span class="c b">94</span>
-<span class="c r">Scoring</span><span class="c">87</span><span class="c">87</span><span class="c b">92</span><span class="c">87</span>
-<span class="c r">Defending</span><span class="c">97</span><span class="c b">98</span><span class="c">95</span><span class="c">93</span>
-<span class="c r">Physical</span><span class="c">96</span><span class="c b">97</span><span class="c">95</span><span class="c">96</span>
-<span class="c r">Height</span><span class="c">5'10"–6'5"</span><span class="c">5'11"–6'5"</span><span class="c">5'6"–6'2"</span><span class="c">5'6"–6'2"</span>
-<span class="c r">Meta board</span><span class="c meta">no. 1 on the CB board (79.8)</span><span class="c meta">2nd on the CB board (77.2)</span><span class="c meta">no. 1 on the CDM board (77.4)</span><span class="c meta">2nd on the FB board (74.2)</span>
+<p class="kk">FC 27 · <time datetime="2026-09-23">Updated 23 September 2026</time></p>
+<nav class="tabs" aria-label="FC 27 archetypes by position"><a class="tb" href="/blog/best-pro-clubs-archetypes/">Tier list</a><a class="tb" href="/blog/pro-clubs-striker-archetypes/">Forwards</a><a class="tb" href="/blog/pro-clubs-midfielder-archetypes/">Midfielders</a><span class="tb cur" aria-current="page">Defenders</span><a class="tb" href="/blog/pro-clubs-goalkeeper-archetypes/">Keepers</a></nav>
+<p class="tl">The three FC 27 defender archetypes, side by side</p>
+<p class="sb">Attribute averages by category: the highest each archetype can reach, or where a new one starts. Tap a name for its section.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Values"><span class="lb">Show</span><button type="button" class="ch" data-v="max" aria-pressed="true">Ceiling</button><button type="button" class="ch" data-v="min" aria-pressed="false">Start</button></span>
+  <span class="grp2" role="group" aria-label="Rows"><span class="lb">Rows</span><button type="button" class="ch" data-all="0" aria-pressed="true">Categories</button><button type="button" class="ch" data-all="1" aria-pressed="false">Every attribute</button></span>
 </div>
-<p class="foot">Ceilings from the Pro Clubs HQ catalog; board standings from the live meta season (Spain &amp; Portugal 2030, 4-3-3).</p>
+<div class="lg" aria-hidden="true"><span><i class="bx"></i>Best of the three</span></div>
+<div class="scroll"><div class="g" role="table" aria-label="The three FC 27 defender archetypes, side by side">
+<div class="tr hd" role="row"><span role="columnheader" class="rh"></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/boss.svg" alt="" loading="lazy" width="26" height="26"><a href="#boss">Boss</a><small>Nemanja Vidic</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/marauder.svg" alt="" loading="lazy" width="26" height="26"><a href="#marauder">Marauder</a><small>Cafu</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/progressor.svg" alt="" loading="lazy" width="26" height="26"><a href="#progressor">Progressor</a><small>Fernando Hierro</small></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Defending</span><span role="cell" class="cl bx bn"><b class="x">97</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">95</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">97</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Physical</span><span role="cell" class="cl bx bn"><b class="x">97</b><b class="n">74</b></span><span role="cell" class="cl"><b class="x">94</b><b class="n">67</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">69</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">60</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">65</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Pace</span><span role="cell" class="cl"><b class="x">90</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">71</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl"><b class="x">90</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl"><b class="x">90</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">72</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">94</b><b class="n">68</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">69</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">70</b></span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl bn"><b class="x">90</b><b class="n">75</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">70</b></span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl"><b class="x">88</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">70</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Passing</span><span role="cell" class="cl"><b class="x">88</b><b class="n">55</b></span><span role="cell" class="cl bx bn"><b class="x">94</b><b class="n">67</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">62</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl"><b class="x">90</b><b class="n">55</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl"><b class="x">90</b><b class="n">45</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl"><b class="x">90</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">60</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">45</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl"><b class="x">75</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">50</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Scoring</span><span role="cell" class="cl bn"><b class="x">88</b><b class="n">63</b></span><span role="cell" class="cl bx bn"><b class="x">93</b><b class="n">63</b></span><span role="cell" class="cl"><b class="x">87</b><b class="n">58</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl bn"><b class="x">90</b><b class="n">75</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl"><b class="x">82</b><b class="n">45</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Shots</span><span role="cell" class="cl bn"><b class="x">85</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">60</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Volleys</span><span role="cell" class="cl"><b class="x">80</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">75</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">65</b></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Height</span><span role="cell" class="cl">5'11"–6'5"</span><span role="cell" class="cl">5'6"–6'2"</span><span role="cell" class="cl">5'10"–6'5"</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Skill moves</span><span role="cell" class="cl">2–3★</span><span role="cell" class="cl">2–5★</span><span role="cell" class="cl">2–4★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Weak foot</span><span role="cell" class="cl">2–4★</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">3–4★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Signature PlayStyle</span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="" loading="lazy" width="22" height="22">Bruiser</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="" loading="lazy" width="22" height="22">Quick Step</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="" loading="lazy" width="22" height="22">Long Ball Pass</span></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Meta board</span><span role="cell" class="cl">No. 1 at centre back (71.6)</span><span role="cell" class="cl">No. 1 at fullback (70.9)</span><span role="cell" class="cl">9th at centre back (69.2)</span></div>
+</div></div>
+<p class="ft">Level 40 is the FC 27 cap: <b>962 AP</b> to spend on the way from the start to the ceiling. Meta board: the best placing on the FC 27 season 1 boards (4-2-3-1), each a top ten.</p>
+<script>
+(function(){var R=document.querySelector('[data-a34x]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.v)R.dataset.v=b.dataset.v;else if(b.dataset.all)R.dataset.all=b.dataset.all;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.v!==undefined&&R.dataset.v===x.dataset.v)||(x.dataset.all!==undefined&&R.dataset.all===x.dataset.all);x.setAttribute('aria-pressed',on)})});
+})();
+</script>
 </div>
 <!--kg-card-end: html-->
 
-<p>The grid splits exactly where the jobs do: the centre-back pair wins the Defending and Physical columns, the fullback pair wins Pace and Ball Control. Nobody here is slow — 90 is the group's floor on pace ceilings, which is what modern lobby football demands of a back line.</p>
+<p><strong>FC 27 has three defender archetypes: the Boss, the Marauder and the Progressor.</strong> The Engine is not in FC 27. Highest ceilings: the Boss for Physical (97), the Marauder for Pace (95), Passing (94) and Scoring (93) and the Progressor for Ball Control (95); Defending is shared at the top. You have 962 AP to spend at level 40, and each archetype prices every attribute on its own four tiers, so the same upgrade costs a different amount on each.</p>
+<p>The same prices for all thirteen archetypes: <a href="/blog/pro-clubs-attribute-upgrade-costs/">FC 27 AP costs, every archetype compared</a>.</p>
+
+<h2 id="costs">What each one costs to upgrade</h2>
+<p>Every archetype has four attributes in its cheapest price tier, and they differ:</p>
+<ul>
+<li><strong>Boss:</strong> Aggression, Heading Acc., Jumping and Strength.</li>
+<li><strong>Marauder:</strong> Acceleration, Dribbling, Interceptions and Balance.</li>
+<li><strong>Progressor:</strong> Composure, Def. Aware, Long Pass and Stand Tackle.</li>
+</ul>
+<p>The widest gap between the three: 90 Acceleration costs 65 AP on a Marauder and 209 on a Boss or a Progressor, each from its own starting value. Raised to 90, the Boss is the outright cheapest in six of the 29 attributes all three carry, the Marauder in nine and the Progressor in six; in four the lowest price is shared; and in four at most one of them can reach 90.</p>
 <!--kg-card-begin: html-->
-<figure class="a34c">
-<style>.a34c{margin:0 0 1.6em}.a34c img{width:100%;height:auto;border-radius:12px;display:block}
-.a34c figcaption{margin-top:8px;font-size:12.5px;color:#898781;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}</style>
-<img src="https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-a34-v7.jpg" alt="Official EA SPORTS FC 26 defenders art with DEFENDERS in large type" loading="lazy" width="1200" height="675">
-<figcaption>EA SPORTS FC 26 — the game these archetypes live in.</figcaption>
-</figure>
+<div class="pcs a34m" data-a34m>
+<style>
+.a34m .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a34m .mx{min-width:260px}
+.a34m .mr{display:grid;grid-template-columns:minmax(96px,1.6fr) repeat(3,minmax(44px,1fr));gap:2px;margin-top:2px}
+.a34m .mr abbr{display:none;text-decoration:none;border:0}
+.a34m .mr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 2px;font-size:13px;font-variant-numeric:tabular-nums;border-radius:4px}
+.a34m .mr .rh{justify-content:flex-start;padding-left:2px;font-weight:600;color:var(--ink)}
+.a34m .mr.hd .rh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a34m .mr.hd .ch{font-size:11.5px;font-weight:700;line-height:1.15;text-align:center}
+.a34m .mr.hd .ch a{color:var(--ink2)!important;text-decoration:none}
+.a34m .mr.hd .ch a:hover{color:var(--t0)!important;text-decoration:underline}
+.a34m .mr.cg span{grid-column:1/-1;justify-content:flex-start;min-height:0;padding:10px 2px 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a34m .cl{color:var(--ink)}
+.a34m .cl.lo{font-weight:800;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+.a34m .cl.cap{font-size:10.5px;color:var(--mut);background:rgba(255,255,255,.03)}
+.a34m .lg .lo{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+@media (max-width:520px){.a34m .mr .fn{display:none}.a34m .mr abbr{display:inline}.a34m .mr>span{font-size:12.5px}.a34m .cl.cap{font-size:10px;letter-spacing:-.01em}}
+</style>
+<p class="kk">Same upgrade, three archetypes</p>
+<p class="tl">What it costs to raise each attribute</p>
+<p class="sb">AP from each archetype’s own starting value, tinted by its price tier for that attribute. The outlined cell is the cheapest of the three.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Raise to"><span class="lb">Raise to</span><button type="button" class="ch" data-to="80" aria-pressed="false">80</button><button type="button" class="ch" data-to="85" aria-pressed="false">85</button><button type="button" class="ch" data-to="90" aria-pressed="true">90</button></span>
+  <span class="grp2" role="group" aria-label="Attributes"><span class="lb">Show</span><button type="button" class="ch" data-cat="all" aria-pressed="true">All</button><button type="button" class="ch" data-cat="Defending" aria-pressed="false">Defending</button><button type="button" class="ch" data-cat="Physical" aria-pressed="false">Physical</button><button type="button" class="ch" data-cat="Pace" aria-pressed="false">Pace</button><button type="button" class="ch" data-cat="Ball Control" aria-pressed="false">Ball Control</button><button type="button" class="ch" data-cat="Passing" aria-pressed="false">Passing</button><button type="button" class="ch" data-cat="Scoring" aria-pressed="false">Scoring</button></span>
+</div>
+<div class="lg" aria-hidden="true"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span><span><i class="lo"></i>Cheapest of the three</span><span>max = can’t reach it</span></div>
+<div class="scroll"><div class="mx" role="table" aria-label="AP to raise each attribute on Boss, Marauder and Progressor" data-mx><div class="mr hd" role="row"><span role="columnheader" class="rh">To 90</span><span role="columnheader" class="ch"><a href="#boss"><span class="fn">Boss</span><abbr title="Boss">BOS</abbr></a></span><span role="columnheader" class="ch"><a href="#marauder"><span class="fn">Marauder</span><abbr title="Marauder">MAR</abbr></a></span><span role="columnheader" class="ch"><a href="#progressor"><span class="fn">Progressor</span><abbr title="Progressor">PRO</abbr></a></span></div><div class="mr cg" role="row"><span role="rowheader">Defending</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k0 lo">76</span><span role="cell" class="cl k3">177</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k2">151</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">209</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k2">129</span></div><div class="mr cg" role="row"><span role="rowheader">Physical</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k1">126</span><span role="cell" class="cl k1">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k2">179</span><span role="cell" class="cl k2">151</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl k1">108</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1">119</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k1">102</span><span role="cell" class="cl k1">119</span></div><div class="mr cg" role="row"><span role="rowheader">Pace</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl k3">209</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k3">209</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl k3">209</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl k3">197</span></div><div class="mr cg" role="row"><span role="rowheader">Ball Control</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k3 lo">209</span><span role="cell" class="cl k3 lo">209</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">82</span><span role="cell" class="cl k2">151</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl k1">126</span><span role="cell" class="cl k1 lo">108</span><span role="cell" class="cl k1">119</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2 lo">151</span><span role="cell" class="cl k2 lo">151</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl cap">max 88</span><span role="cell" class="cl k0 lo">76</span><span role="cell" class="cl k3">234</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr cg" role="row"><span role="rowheader">Passing</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl k2">184</span><span role="cell" class="cl k2">179</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl k2">194</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl k2">189</span></div><div class="mr" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl k1">136</span><span role="cell" class="cl k1 lo">126</span><span role="cell" class="cl k1">141</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k3 lo">177</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl cap">max 85</span></div><div class="mr cg" role="row"><span role="rowheader">Scoring</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1">119</span><span role="cell" class="cl k1">108</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl cap">max 82</span><span role="cell" class="cl k3 lo">261</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl k2 lo">151</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">167</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Long Shots</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl k2 lo">179</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Volleys</span><span role="cell" class="cl cap">max 80</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span></div></div></div>
+
+<script>
+(function(){var R=document.querySelector('[data-a34m]');if(!R||R.dataset.on)return;R.dataset.on='1';
+
+function ppt(B,t,v){var r=B[t];for(var i=0;i<r.length;i++)if(v>=r[i].min&&v<=r[i].max)return r[i].cost;throw new Error('no cost band '+t+' '+v)}
+function apTo(B,t,a,b){var s=0;for(var v=a+1;v<=b;v++)s+=ppt(B,t,v);return s}
+function steps(B,t,a,b){var o=[];for(var v=a+1;v<=b;v++){var c=ppt(B,t,v),l=o[o.length-1];if(l&&l.c===c)l.b=v;else o.push({a:v,b:v,c:c})}return o}
+function costRow(B,T,t,a,b,to){var top=to==='max'?b:Math.min(to,b);return {top:top,ap:top>a?apTo(B,T[t],a,top):0,capped:to!=='max'&&b<to,have:a>=top}}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+function matrix(D,S){
+var h='<div class="mr hd" role="row"><span role="columnheader" class="rh">To '+S.to+'</span>'
++D.cols.map(function(c){var n='<span class="fn">'+esc(c.name)+'</span><abbr title="'+esc(c.name)+'">'+esc(c.code)+'</abbr>';return '<span role="columnheader" class="ch'+(c.cur?' cur':'')+'">'+(c.href?'<a href="'+c.href+'">'+n+'</a>':n)+'</span>'}).join('')+'</div>';
+D.groups.forEach(function(g){
+if(S.cat!=='all'&&S.cat!==g[0])return;
+h+='<div class="mr cg" role="row"><span role="rowheader">'+esc(g[0])+'</span></div>';
+g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],S.to);r.t=x[0];return r});
+var ok=cs.filter(function(r){return !r.capped}).map(function(r){return r.ap});
+var lo=ok.length?Math.min.apply(null,ok):-1;
+h+='<div class="mr" role="row"><span role="rowheader" class="rh">'+esc(D.names[k])+'</span>'+cs.map(function(r,i){
+var cur=D.cols[i].cur?' cur':'';
+if(r.capped)return '<span role="cell" class="cl cap'+cur+'">max '+r.top+'</span>';
+return '<span role="cell" class="cl k'+r.t+(r.ap===lo?' lo':'')+cur+'">'+fmt(r.ap)+'</span>';
+}).join('')+'</div>';
+});
+});
+return h;
+}
+function wins(D,to){
+var cur=D.cols.filter(function(c){return c.cur})[0],only=[],tie=[];
+D.groups.forEach(function(g){g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],to);r.id=c.id;return r}).filter(function(r){return !r.capped});
+var me=cs.filter(function(r){return r.id===cur.id})[0];if(!me)return;
+var lo=Math.min.apply(null,cs.map(function(r){return r.ap}));if(me.ap!==lo)return;
+(cs.filter(function(r){return r.ap===lo}).length>1?tie:only).push(D.names[k]);
+})});
+var and=function(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]};
+var s=only.length?'cheapest of the five for <b>'+and(only)+'</b>':'never the outright cheapest of the five';
+if(tie.length)s+='; level cheapest for '+and(tie);
+return s+' (to '+to+').';
+}
+
+var D={"B":{"tier0":[{"min":1,"max":69,"cost":1},{"min":70,"max":74,"cost":2},{"min":75,"max":84,"cost":3},{"min":85,"max":89,"cost":6},{"min":90,"max":92,"cost":8},{"min":93,"max":94,"cost":10},{"min":95,"max":95,"cost":15},{"min":96,"max":96,"cost":20},{"min":97,"max":97,"cost":25},{"min":98,"max":98,"cost":30},{"min":99,"max":99,"cost":35}],"tier1":[{"min":1,"max":63,"cost":1},{"min":64,"max":69,"cost":2},{"min":70,"max":74,"cost":3},{"min":75,"max":79,"cost":4},{"min":80,"max":84,"cost":5},{"min":85,"max":89,"cost":8},{"min":90,"max":92,"cost":11},{"min":93,"max":94,"cost":15},{"min":95,"max":95,"cost":20},{"min":96,"max":96,"cost":25},{"min":97,"max":97,"cost":30},{"min":98,"max":98,"cost":35},{"min":99,"max":99,"cost":40}],"tier2":[{"min":1,"max":60,"cost":1},{"min":61,"max":63,"cost":2},{"min":64,"max":69,"cost":3},{"min":70,"max":74,"cost":4},{"min":75,"max":79,"cost":6},{"min":80,"max":84,"cost":7},{"min":85,"max":89,"cost":11},{"min":90,"max":92,"cost":15},{"min":93,"max":94,"cost":20},{"min":95,"max":95,"cost":25},{"min":96,"max":96,"cost":30},{"min":97,"max":97,"cost":35},{"min":98,"max":98,"cost":40},{"min":99,"max":99,"cost":45}],"tier3":[{"min":1,"max":60,"cost":2},{"min":61,"max":63,"cost":3},{"min":64,"max":66,"cost":4},{"min":67,"max":69,"cost":5},{"min":70,"max":74,"cost":6},{"min":75,"max":79,"cost":8},{"min":80,"max":84,"cost":10},{"min":85,"max":89,"cost":15},{"min":90,"max":92,"cost":20},{"min":93,"max":94,"cost":25},{"min":95,"max":95,"cost":30},{"min":96,"max":96,"cost":35},{"min":97,"max":97,"cost":40},{"min":98,"max":98,"cost":45},{"min":99,"max":99,"cost":50}]},"T":["tier0","tier1","tier2","tier3"],"cols":[{"id":"boss","name":"Boss","code":"BOS","href":"#boss","cur":false},{"id":"marauder","name":"Marauder","code":"MAR","href":"#marauder","cur":false},{"id":"progressor","name":"Progressor","code":"PRO","href":"#progressor","cur":false}],"groups":[["Defending",["interceptions","headingAcc","defAware","standTackle","slideTackle"]],["Physical",["jumping","strength","stamina","aggression"]],["Pace",["acceleration","sprintSpeed"]],["Ball Control",["agility","balance","reactions","ballControl","dribbling","composure"]],["Passing",["vision","crossing","fkAcc","shortPass","longPass","curve"]],["Scoring",["attPosition","finishing","shotPower","longShots","volleys","penalties"]]],"names":{"acceleration":"Acceleration","sprintSpeed":"Sprint Speed","agility":"Agility","balance":"Balance","reactions":"Reactions","ballControl":"Ball Control","dribbling":"Dribbling","composure":"Composure","vision":"Vision","crossing":"Crossing","fkAcc":"FK Acc.","shortPass":"Short Pass","longPass":"Long Pass","curve":"Curve","attPosition":"Att. Position","finishing":"Finishing","shotPower":"Shot Power","longShots":"Long Shots","volleys":"Volleys","penalties":"Penalties","interceptions":"Interceptions","headingAcc":"Heading Acc.","defAware":"Def. Aware","standTackle":"Stand Tackle","slideTackle":"Slide Tackle","jumping":"Jumping","strength":"Strength","stamina":"Stamina","aggression":"Aggression"},"cells":{"boss":{"acceleration":[3,70,90],"sprintSpeed":[3,70,90],"agility":[3,65,90],"balance":[2,75,90],"reactions":[1,60,99],"ballControl":[2,65,92],"dribbling":[3,60,88],"composure":[2,65,92],"vision":[2,55,90],"crossing":[2,45,90],"fkAcc":[1,50,90],"shortPass":[3,65,92],"longPass":[2,65,90],"curve":[1,50,75],"attPosition":[1,75,90],"finishing":[3,45,82],"shotPower":[2,70,96],"longShots":[2,60,85],"volleys":[1,60,80],"penalties":[1,65,92],"interceptions":[3,75,96],"headingAcc":[0,75,99],"defAware":[2,75,96],"standTackle":[3,75,96],"slideTackle":[1,75,99],"jumping":[0,75,99],"strength":[0,75,99],"stamina":[1,70,92],"aggression":[0,75,99]},"marauder":{"acceleration":[0,75,95],"sprintSpeed":[2,75,95],"agility":[3,70,95],"balance":[0,65,92],"reactions":[1,70,99],"ballControl":[2,70,96],"dribbling":[0,70,92],"composure":[2,65,92],"vision":[2,60,92],"crossing":[2,75,99],"fkAcc":[1,60,95],"shortPass":[3,65,92],"longPass":[2,65,92],"curve":[1,75,96],"attPosition":[1,65,92],"finishing":[3,55,90],"shotPower":[2,65,92],"longShots":[2,60,90],"volleys":[1,65,96],"penalties":[1,65,96],"interceptions":[0,70,96],"headingAcc":[2,65,90],"defAware":[2,70,96],"standTackle":[3,70,96],"slideTackle":[1,75,96],"jumping":[1,60,92],"strength":[2,60,92],"stamina":[1,75,96],"aggression":[1,72,96]},"progressor":{"acceleration":[3,70,92],"sprintSpeed":[3,72,92],"agility":[3,70,92],"balance":[2,70,92],"reactions":[1,65,99],"ballControl":[2,70,96],"dribbling":[3,65,92],"composure":[0,75,96],"vision":[2,75,92],"crossing":[2,50,92],"fkAcc":[1,45,90],"shortPass":[3,75,96],"longPass":[0,75,96],"curve":[1,50,85],"attPosition":[1,70,90],"finishing":[3,50,85],"shotPower":[2,65,92],"longShots":[2,50,85],"volleys":[1,50,75],"penalties":[1,65,92],"interceptions":[3,75,96],"headingAcc":[2,75,96],"defAware":[0,75,99],"standTackle":[0,75,99],"slideTackle":[2,75,96],"jumping":[1,75,99],"strength":[2,70,96],"stamina":[1,65,92],"aggression":[1,65,96]}}};
+var S={to:90,cat:'all'},X=R.querySelector('[data-mx]');
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.to)S.to=+b.dataset.to;else if(b.dataset.cat)S.cat=b.dataset.cat;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.to!==undefined&&String(S.to)===x.dataset.to)||(x.dataset.cat!==undefined&&S.cat===x.dataset.cat);x.setAttribute('aria-pressed',on)});
+ X.innerHTML=matrix(D,S)});
+})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="a34-g mcg">
+<style>
+.a34-g.mcg .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px}
+.a34-g.mcg .bc{display:block;background:var(--s1);border:1px solid var(--ring);border-radius:11px;
+  padding:11px 12px;text-decoration:none;transition:border-color .15s}
+.a34-g.mcg .bc:hover{border-color:#c9a227}
+.a34-g.mcg .bc .nm{font-size:14.5px;font-weight:700;color:var(--ink);margin:0}
+.a34-g.mcg .bc .ar{font-size:11px;font-weight:600;color:#2DE2C5;margin:1px 0 8px}
+.a34-g.mcg .bc .ps{display:flex;align-items:center;gap:5px}
+.a34-g.mcg .bc .sb{width:30px;height:30px;border-radius:8px;background:#3a2f10;border:1.5px solid #c9a227;
+  display:flex;align-items:center;justify-content:center}
+.a34-g.mcg .bc .sb img{width:21px;height:21px}
+.a34-g.mcg .bc .rb{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
+.a34-g.mcg .bc .rb img{width:18px;height:18px}
+.a34-g.mcg .bc .sg{font-size:10px;color:var(--ink2);margin:7px 0 0}
+.a34-g.mcg .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}
+.a34-g.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
+.a34-g.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
+<h2 id="defender-builds">Most copied FC 27 defender builds</h2>
+<p class="sub">The Boss, Marauder and Progressor builds people copy most. Tap a card to open it in the builder and see where its 962 AP went.</p>
+<div class="grid"><a class="bc" href="https://proclubshq.com/b/896e72c7-453e-45e0-b7ec-8d197b14f2d6?src=grid">
+<p class="nm">The Wall</p>
+<p class="ar">Boss · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Bruiser (signature)"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Acrobatic"><img src="https://proclubshq.com/assets/playstyles/acrobatic.png" alt="Acrobatic PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Jockey"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'4" · 198 lbs · Lengthy</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/6739abc0-c880-4848-9228-58d6d15eeef5?src=grid">
+<p class="nm">Cannavaro '06 WC</p>
+<p class="ar">Progressor · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Quick Step (signature)"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Jockey"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Aerial Fortress"><img src="https://proclubshq.com/assets/playstyles/aerial-fortress.png" alt="Aerial Fortress PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'11" · 176 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/04c0509c-292f-4f0b-a212-a9490e7713c0?src=grid">
+<p class="nm">The Shadow</p>
+<p class="ar">Marauder · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Relentless (signature)"><img src="https://proclubshq.com/assets/playstyles/relentless.png" alt="Relentless PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Aerial Fortress"><img src="https://proclubshq.com/assets/playstyles/aerial-fortress.png" alt="Aerial Fortress PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Quick Step"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Slide Tackle"><img src="https://proclubshq.com/assets/playstyles/slide-tackle.png" alt="Slide Tackle PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'0" · 165 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/85fef937-cc23-4216-9736-f9f10b9d0589?src=grid">
+<p class="nm">Vidić '08 CL</p>
+<p class="ar">Boss · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Bruiser (signature)"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Aerial Fortress"><img src="https://proclubshq.com/assets/playstyles/aerial-fortress.png" alt="Aerial Fortress PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Block"><img src="https://proclubshq.com/assets/playstyles/block.png" alt="Block PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'3" · 185 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/a45e3f25-48f4-4cc6-a329-6ad51eec9fcd?src=grid">
+<p class="nm">Virgil van Dijk</p>
+<p class="ar">Progressor · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Long Ball Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="Long Ball Pass PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'4" · 203 lbs · Lengthy</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/cd3dda86-a328-4419-91fb-f6d6e4effd2c?src=grid">
+<p class="nm">Cafu</p>
+<p class="ar">Marauder · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Quick Step (signature)"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Whipped Pass"><img src="https://proclubshq.com/assets/playstyles/whipped-pass.png" alt="Whipped Pass PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Rapid"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Jockey"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'9" · 165 lbs · Explosive</p>
+</a></div>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<h2 id="boss" class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/boss.svg" alt="" loading="lazy" width="26" height="26">Boss</h2>
+<!--kg-card-end: html-->
+<p>The Boss has the group’s highest Physical ceiling and shares the top Defending ceiling. Its four cheapest attributes to raise are Aggression, Heading Acc., Jumping and Strength; its most expensive tier holds Finishing, Interceptions, Stand Tackle, Acceleration, Sprint Speed, Dribbling, Agility and Short Pass. Raised to 90, it is the outright cheapest of the three for Att. Position, Shot Power, Heading Acc., Jumping, Strength and Aggression.</p>
+<ul>
+<li><strong>Inspired by:</strong> Nemanja Vidic. <strong>Height:</strong> 5'11" to 6'5".</li>
+<li><strong>Signature PlayStyle:</strong> Bruiser. <strong>Perks:</strong> Shuffler and Box Controller.</li>
+<li><strong>Stars:</strong> 2★ to 3★ skill moves (10 AP), 2★ to 4★ weak foot (55 AP).</li>
+<li><strong>Cheapest specialization:</strong> Boss+, 244 AP (Strength 90, Aggression 90 and Slide Tackle 92).</li>
+<li><strong>Recommended roles:</strong> Fullback, Defender, Stopper, Centre-Half and Holding.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at centre back (71.6).</li>
+<li><strong>Most copied Boss build:</strong> <a href="https://proclubshq.com/b/896e72c7-453e-45e0-b7ec-8d197b14f2d6?src=guide">The Wall</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=boss&year=27&src=guide">all FC 27 Boss builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="marauder" class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/marauder.svg" alt="" loading="lazy" width="26" height="26">Marauder</h2>
+<!--kg-card-end: html-->
+<p>The Marauder has the group’s highest Pace, Passing and Scoring ceilings. Its four cheapest attributes to raise are Acceleration, Dribbling, Interceptions and Balance; its most expensive tier holds Agility, Stand Tackle, Short Pass and Finishing. Raised to 90, it is the outright cheapest of the three for Acceleration, Sprint Speed, Balance, Reactions, Dribbling, Crossing, FK Acc., Interceptions and Stamina.</p>
+<ul>
+<li><strong>Inspired by:</strong> Cafu. <strong>Height:</strong> 5'6" to 6'2".</li>
+<li><strong>Signature PlayStyle:</strong> Quick Step. <strong>Perks:</strong> High Speed Crosser and Tackle and Run.</li>
+<li><strong>Stars:</strong> 2★ to 5★ skill moves (65 AP), 3★ to 5★ weak foot (65 AP).</li>
+<li><strong>Cheapest specialization:</strong> Speedster, 300 AP (Dribbling 90, Sprint Speed 92 and Acceleration 90).</li>
+<li><strong>Recommended roles:</strong> Fullback, Wingback, Falseback, Attacking Wingback, Winger, Wide Playmaker, Wide Midfielder and Wide Half.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at fullback (70.9).</li>
+<li><strong>Most copied Marauder build:</strong> <a href="https://proclubshq.com/b/04c0509c-292f-4f0b-a212-a9490e7713c0?src=guide">The Shadow</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=marauder&year=27&src=guide">all FC 27 Marauder builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="progressor" class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/progressor.svg" alt="" loading="lazy" width="26" height="26">Progressor</h2>
+<!--kg-card-end: html-->
+<p>The Progressor has the group’s highest Ball Control ceiling and shares the top Defending ceiling. Its four cheapest attributes to raise are Composure, Def. Aware, Long Pass and Stand Tackle; its most expensive tier holds Interceptions, Short Pass, Finishing, Sprint Speed, Acceleration, Agility and Dribbling. Raised to 90, it is the outright cheapest of the three for Composure, Vision, Short Pass, Long Pass, Def. Aware and Stand Tackle.</p>
+<ul>
+<li><strong>Inspired by:</strong> Fernando Hierro. <strong>Height:</strong> 5'10" to 6'5".</li>
+<li><strong>Signature PlayStyle:</strong> Long Ball Pass. <strong>Perks:</strong> Restarter and Goalkeepers Favourite.</li>
+<li><strong>Stars:</strong> 2★ to 4★ skill moves (30 AP), 3★ to 4★ weak foot (25 AP).</li>
+<li><strong>Cheapest specialization:</strong> Progressor+, 211 AP (Long Pass 90, Def. Aware 90 and Stand Tackle 92).</li>
+<li><strong>Recommended roles:</strong> Fullback, Falseback, Defender, Stopper, Ball-Playing Defender, Centre-Half, Holding and Deep-Lying Playmaker.</li>
+<li><strong>FC 27 meta boards:</strong> 9th at centre back (69.2).</li>
+<li><strong>Most copied Progressor build:</strong> <a href="https://proclubshq.com/b/6739abc0-c880-4848-9228-58d6d15eeef5?src=guide">Cannavaro '06 WC</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=progressor&year=27&src=guide">all FC 27 Progressor builds in the app</a>.</p>
+
+<h2 id="specializations">The specializations, priced</h2>
+<p>Each specialization asks for three attributes at 90 or 92. Bought from a new pro’s starting values, the cheapest of the 9 in the group is Progressor+ on the Progressor, 211 AP (22% of your 962); the dearest is Janitor on the Progressor, 575 AP.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a34s">
+<style>
+.a34s .ag{padding:10px 0 6px;border-top:1px solid var(--line)}
+.a34s .ag:first-of-type{border-top:0;padding-top:2px}
+.a34s .an{margin:0 0 6px;font:800 15px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.a34s .an a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a34s .sr{display:grid;grid-template-columns:minmax(120px,1.1fr) 1.4fr 70px;gap:10px;align-items:center;padding:4px 0}
+.a34s .sr .nm{font-size:13.5px;font-weight:600;line-height:1.25}
+.a34s .sr .nm small{display:block;font-size:11.5px;font-weight:600;color:#c9a227}
+.a34s .sr .br{display:flex;gap:2px;height:10px;background:rgba(255,255,255,.05);border-radius:0 4px 4px 0;overflow:hidden}
+.a34s .sr .br i{display:block;height:10px}
+.a34s .sr .v{text-align:right;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.a34s .sr .v small{display:block;font-size:10.5px;font-weight:600;color:var(--mut)}
+@media (max-width:520px){.a34s .sr{grid-template-columns:minmax(104px,1fr) 1fr 60px;gap:8px}}
+</style>
+<p class="kk">Specializations</p>
+<p class="tl">What each one costs to unlock</p>
+<p class="sb">Its three criteria bought from a new pro’s starting values. The bar is your 962 AP, split by the three criteria’s price tiers.</p>
+<div class="ag"><p class="an">Boss</p>
+<div class="sr"><span class="nm">Boss+<small>Slide Tackle+</small></span><span class="br" role="img" aria-label="Strength 90: 65 AP, Aggression 90: 65 AP, Slide Tackle 92: 114 AP"><i class="t0" style="width:6.76%"></i><i class="t0" style="width:6.76%"></i><i class="t1" style="width:11.85%"></i></span><span class="v">244<small>25% of AP</small></span></div>
+<div class="sr"><span class="nm">Capitano<small>Block+</small></span><span class="br" role="img" aria-label="Def. Aware 92: 159 AP, Reactions 90: 126 AP, Agility 90: 234 AP"><i class="t2" style="width:16.53%"></i><i class="t1" style="width:13.10%"></i><i class="t3" style="width:24.32%"></i></span><span class="v">519<small>54% of AP</small></span></div>
+<div class="sr"><span class="nm">Enforcer<small>Press Proven+</small></span><span class="br" role="img" aria-label="Composure 92: 197 AP, Vision 90: 184 AP, Ball Control 90: 167 AP"><i class="t2" style="width:20.48%"></i><i class="t2" style="width:19.13%"></i><i class="t2" style="width:17.36%"></i></span><span class="v">548<small>57% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an">Marauder</p>
+<div class="sr"><span class="nm">Speedster<small>Rapid+</small></span><span class="br" role="img" aria-label="Dribbling 90: 76 AP, Sprint Speed 92: 159 AP, Acceleration 90: 65 AP"><i class="t0" style="width:7.90%"></i><i class="t2" style="width:16.53%"></i><i class="t0" style="width:6.76%"></i></span><span class="v">300<small>31% of AP</small></span></div>
+<div class="sr"><span class="nm">Marauder+<small>Slide Tackle+</small></span><span class="br" role="img" aria-label="Sprint Speed 92: 159 AP, Aggression 90: 102 AP, Slide Tackle 90: 92 AP"><i class="t2" style="width:16.53%"></i><i class="t1" style="width:10.60%"></i><i class="t1" style="width:9.56%"></i></span><span class="v">353<small>37% of AP</small></span></div>
+<div class="sr"><span class="nm">Athlete<small>Bruiser+</small></span><span class="br" role="img" aria-label="Strength 92: 209 AP, Aggression 90: 102 AP, Def. Aware 90: 151 AP"><i class="t2" style="width:21.73%"></i><i class="t1" style="width:10.60%"></i><i class="t2" style="width:15.70%"></i></span><span class="v">462<small>48% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an">Progressor</p>
+<div class="sr"><span class="nm">Progressor+<small>Jockey+</small></span><span class="br" role="img" aria-label="Long Pass 90: 65 AP, Def. Aware 90: 65 AP, Stand Tackle 92: 81 AP"><i class="t0" style="width:6.76%"></i><i class="t0" style="width:6.76%"></i><i class="t0" style="width:8.42%"></i></span><span class="v">211<small>22% of AP</small></span></div>
+<div class="sr"><span class="nm">Pioneer<small>Pinged Pass+</small></span><span class="br" role="img" aria-label="Dribbling 92: 274 AP, Long Pass 90: 65 AP, Short Pass 90: 177 AP"><i class="t3" style="width:28.48%"></i><i class="t0" style="width:6.76%"></i><i class="t3" style="width:18.40%"></i></span><span class="v">516<small>54% of AP</small></span></div>
+<div class="sr"><span class="nm">Janitor<small>Quick Step+</small></span><span class="br" role="img" aria-label="Acceleration 92: 249 AP, Sprint Speed 90: 197 AP, Slide Tackle 90: 129 AP"><i class="t3" style="width:25.88%"></i><i class="t3" style="width:20.48%"></i><i class="t2" style="width:13.41%"></i></span><span class="v">575<small>60% of AP</small></span></div>
+</div>
+<div class="lg" aria-hidden="true" style="margin-top:10px"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span></div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="stars">Skill moves and weak foot</h2>
+<p>The Marauder reaches 5★ skill moves (the Boss stops at 3★ and the Progressor stops at 4★), for 65 AP from 2★. The Marauder reaches 5★ weak foot (the Boss and the Progressor stop at 4★), for 65 AP from 3★.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a34k">
+<style>
+.a34k .tr{display:grid;grid-template-columns:minmax(96px,1fr) 1.2fr 1.2fr;gap:8px;align-items:center;padding:8px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.a34k .tr.hd{border-top:0;padding-top:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.a34k .tr>span{font-size:14px}
+.a34k .tr>span small{display:block;font-size:11.5px;color:var(--mut)}
+.a34k .tr .nm{font-weight:600}
+.a34k .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+<p class="kk">Stars cost AP too</p>
+<p class="tl">Skill moves and weak foot</p>
+<p class="sb">From each archetype’s starting stars to its maximum, paid out of the same 962 AP.</p>
+<div role="table" aria-label="Skill move and weak foot costs">
+<div class="tr hd" role="row"><span role="columnheader"><span class="vh">Archetype</span></span><span role="columnheader">Skill moves</span><span role="columnheader">Weak foot</span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Boss</span><span role="cell">2★ → 3★<small>10 AP</small></span><span role="cell">2★ → 4★<small>20 + 35 = 55 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Marauder</span><span role="cell">2★ → 5★<small>10 + 20 + 35 = 65 AP</small></span><span role="cell">3★ → 5★<small>25 + 40 = 65 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Progressor</span><span role="cell">2★ → 4★<small>10 + 20 = 30 AP</small></span><span role="cell">3★ → 4★<small>25 AP</small></span></div>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="meta">Which is best? The meta boards</h2>
+<p>The Boss is no. 1 at centre back (71.6), the Marauder is no. 1 at fullback (70.9) and the Progressor is 9th at centre back (69.2). The boards score every published FC 27 build against the season’s reference XI and move as new builds publish; the <a href="/blog/best-pro-clubs-archetypes/">FC 27 archetype tier list</a> ranks all thirteen by them.</p>
+
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta .row{display:flex;flex-wrap:wrap;gap:8px}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">FC 27 in the app</p>
+<h3>Open a finished defender build</h3>
+<p>Every build in the builder is priced against your 962 AP as you move a slider. Open one, copy it, and make it yours.</p>
+<div class="row"><a class="b" href="https://proclubshq.com/explore?archetype=boss&year=27&src=guide">Boss builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=marauder&year=27&src=guide">Marauder builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=progressor&year=27&src=guide">Progressor builds →</a></div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->
@@ -77,254 +428,30 @@
 .f27b li:last-child{margin-bottom:0}
 .f27b a{color:#7fb0ff;font-weight:700;text-decoration:none}
 .f27b a:hover{text-decoration:underline}</style>
-<p class="k">Playing FC 27 next</p>
-<h3>What actually changes in FC 27</h3>
+<p class="k">More on FC 27</p>
+<h3>The rest of what is new</h3>
 <ul>
 <li><a href="/blog/fc27-disruptor-build/">The Disruptor</a> — The only brand-new archetype in FC 27 — a ball-winning midfielder built on Roy Keane, with a finished level-40 build.</li>
 <li><a href="/blog/fc27-masteries-explained/">Masteries</a> — A permanent progression layer FC 26 does not have: every archetype you level grants attribute points to every build on your account.</li>
 <li><a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> — One signature PlayStyle instead of four, level-gated perks, and a different specialization structure.</li>
+<li><a href="/blog/fc27-level-40-builds/">Level 40 builds</a> — FC 27 starts you at a 40-level cap with a far tighter budget, so the whole spending order changes.</li>
 </ul>
 </div>
 <!--kg-card-end: html-->
 
-<!--kg-card-begin: html-->
-<div class="a34 mcg">
-<style>
-.a34.mcg .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px}
-.a34.mcg .bc{display:block;background:var(--s1);border:1px solid var(--ring);border-radius:11px;
-  padding:11px 12px;text-decoration:none;transition:border-color .15s}
-.a34.mcg .bc:hover{border-color:#c9a227}
-.a34.mcg .bc .nm{font-size:14.5px;font-weight:700;color:var(--ink);margin:0}
-.a34.mcg .bc .ar{font-size:11px;font-weight:600;color:#2DE2C5;margin:1px 0 8px}
-.a34.mcg .bc .ps{display:flex;align-items:center;gap:5px}
-.a34.mcg .bc .sb{width:30px;height:30px;border-radius:8px;background:#3a2f10;border:1.5px solid #c9a227;
-  display:flex;align-items:center;justify-content:center}
-.a34.mcg .bc .sb img{width:21px;height:21px}
-.a34.mcg .bc .rb{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
-.a34.mcg .bc .rb img{width:18px;height:18px}
-.a34.mcg .bc .sg{font-size:10px;color:var(--ink2);margin:7px 0 0}
-.a34.mcg .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}
-.a34.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
-.a34.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
-<h2 id="defender-builds">Defender builds worth opening</h2>
-<p class="sub">The most-viewed finished Progressor, Boss, Marauder and Engine builds. Every one opens in the builder, free, no install.</p>
-<div class="grid"><a class="bc" href="https://proclubshq.com/b/a9abae81-84f7-4604-8997-790da3be76f6?src=grid">
-<p class="nm">Virgil van Dijk</p>
-<p class="ar">Boss · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Bruiser (signature)"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Aerial Fortress (signature)"><img src="https://proclubshq.com/assets/playstyles/aerial-fortress.png" alt="Aerial Fortress PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Precision Header (signature)"><img src="https://proclubshq.com/assets/playstyles/precision-header.png" alt="Precision Header PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Block (signature)"><img src="https://proclubshq.com/assets/playstyles/block.png" alt="Block PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">30 views</p>
-<p class="hw">6'5" · 203 lbs · Lengthy</p>
-</a>
-<a class="bc" href="https://proclubshq.com/b/d75cdf98-04d1-42de-a07e-6d1f8718c0be?src=grid">
-<p class="nm">William Saliba</p>
-<p class="ar">Progressor · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Long Ball Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="Long Ball Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Quick Step (signature)"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Incisive Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/incisive-pass.png" alt="Incisive Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Intercept (signature)"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">20 views</p>
-<p class="hw">6'4" · 205 lbs · Lengthy</p>
-</a>
-<a class="bc" href="https://proclubshq.com/b/881749e8-f0ce-46d1-b0b5-9d2a675cc642?src=grid">
-<p class="nm">Marc Cucurella</p>
-<p class="ar">Engine · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Relentless (signature)"><img src="https://proclubshq.com/assets/playstyles/relentless.png" alt="Relentless PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Jockey (signature)"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Intercept (signature)"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Rapid (signature)"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">18 views</p>
-<p class="hw">5'8" · 146 lbs · Explosive</p>
-</a>
-<a class="bc" href="https://proclubshq.com/b/a0fec84a-a420-4d9f-a7cc-ec6d9cfea25a?src=grid">
-<p class="nm">Nuno Mendes</p>
-<p class="ar">Marauder · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Rapid (signature)"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Whipped Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/whipped-pass.png" alt="Whipped Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Technical (signature)"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Trickster (signature)"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="Trickster PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">13 views</p>
-<p class="hw">5'11" · 154 lbs · Explosive</p>
-</a>
-<a class="bc" href="https://proclubshq.com/b/3d7dfb8f-e2e5-4a4e-a14b-f95d503feb9e?src=grid">
-<p class="nm">Trent Alexander-Arnold</p>
-<p class="ar">Marauder · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Quick Step (signature)"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Whipped Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/whipped-pass.png" alt="Whipped Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Slide Tackle (signature)"><img src="https://proclubshq.com/assets/playstyles/slide-tackle.png" alt="Slide Tackle PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Trickster (signature)"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="Trickster PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">12 views</p>
-<p class="hw">5'11" · 172 lbs · Controlled</p>
-</a>
-<a class="bc" href="https://proclubshq.com/b/e2947dac-941e-4f40-9959-fe478bbac1f6?src=grid">
-<p class="nm">Pau Cubarsí</p>
-<p class="ar">Progressor · Lv 100</p>
-<div class="ps">
-<span class="sb" title="Pinged Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/pinged-pass.png" alt="Pinged Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Anticipate (signature)"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Incisive Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/incisive-pass.png" alt="Incisive Pass PlayStyle" loading="lazy" width="21" height="21"></span><span class="sb" title="Intercept (signature)"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="21" height="21"></span>
-
-</div>
-<p class="sg">10 views</p>
-<p class="hw">6'0" · 174 lbs · Controlled</p>
-</a></div>
-</div>
-<!--kg-card-end: html-->
-
-<!--kg-card-begin: html-->
-<div class="pchq-ad" data-ad="a"></div>
-<!--kg-card-end: html-->
-
-<!--kg-card-begin: html-->
-<h2 class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/progressor.svg" alt="" loading="lazy" width="26" height="26">Progressor — the ball-playing centre-back</h2>
-<!--kg-card-end: html-->
-<p>A 97 Defending ceiling next to <strong>95 Ball Control and 92 Passing</strong> — the Progressor defends first and then starts the attack the other centre-back would have kicked into the stands. The signature set is a deep-lying playmaker's (Long Ball Pass, Incisive Pass, Anticipate, Intercept), Restarter speeds up your goal kicks, and Goalkeepers Favourite makes you the safe outlet all game.</p>
-<p>It carries the <strong>highest score on any meta board (79.8, no. 1 CB)</strong> this season. The scoring engine rewards defenders who add value on the ball, and no defender adds more. The <a href="/blog/pro-clubs-progressor-build/">build guide</a>'s featured builds are a Saliba and a Cubarsí — the Cubarsí is the board's no. 1.</p>
-<!--kg-card-begin: html-->
-<div class="a34f">
-<style>.a34f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a34f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a34f p{margin:0 0 8px;color:#c3c2b7}
-.a34f p b{color:inherit}
-.a34f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a34f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a34f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Long Ball Pass"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="Long Ball Pass PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Incisive Pass"><img src="https://proclubshq.com/assets/playstyles/incisive-pass.png" alt="Incisive Pass PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Restarter</b> — quick restarts after winning the ball launch immediate attacks. <b>Goalkeepers Favourite</b> — improved link-up with your keeper for safe build-up play.</p>
-<p><b>Specializations:</b> Progressor+, Pioneer and Janitor. <b>Meta board:</b> no. 1 on the CB board (79.8).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Progressor if:</strong></p>
-<ul>
-<li>Your club builds from the back and needs the defender who makes that safe.</li>
-<li>You read the game a pass early — Anticipate and Intercept are your badges.</li>
-<li>You want the single highest-scored archetype on the current meta board.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-progressor-build/">the complete Progressor build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<h2 class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/boss.svg" alt="" loading="lazy" width="26" height="26">Boss — the enforcer</h2>
-<!--kg-card-end: html-->
-<p>The best pure Defending ceiling in the game — <strong>98</strong>, with 97 Physical behind it — and a signature set that reads like a warning: Bruiser, Aerial Fortress, Precision Header, Anticipate. The Boss wins the duel, the header, the second ball and the set piece at both ends. Shuffler keeps you in front of dribblers; Box Controller makes your penalty area yours.</p>
-<p>On the board it fills <strong>three of the CB top four</strong> (best 77.2) behind the Progressor. The gap is the ball-playing columns, and it's honest: the Boss trades the first pass for the last word in every physical contest. Paired with a Progressor, you have both — which is exactly the meta XI's centre-back pairing.</p>
-<!--kg-card-begin: html-->
-<div class="a34f">
-<style>.a34f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a34f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a34f p{margin:0 0 8px;color:#c3c2b7}
-.a34f p b{color:inherit}
-.a34f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a34f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a34f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Aerial Fortress"><img src="https://proclubshq.com/assets/playstyles/aerial-fortress.png" alt="Aerial Fortress PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Precision Header"><img src="https://proclubshq.com/assets/playstyles/precision-header.png" alt="Precision Header PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Shuffler</b> — improved lateral movement when jockeying and containing attackers. <b>Box Controller</b> — dominates the penalty area, boosting clearances and aerial duels.</p>
-<p><b>Specializations:</b> Boss+, Enforcer and Capitano. <b>Meta board:</b> 2nd on the CB board (77.2).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Boss if:</strong></p>
-<ul>
-<li>You defend the box like it's personal — headers, blocks, last-man tackles.</li>
-<li>Your club concedes from crosses and corners; you end that.</li>
-<li>You're the second centre-back next to a Progressor — the meta pairing.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-boss-build/">the complete Boss build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<div class="pchq-ad" data-ad="b"></div>
-<!--kg-card-end: html-->
-
-<!--kg-card-begin: html-->
-<h2 class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/marauder.svg" alt="" loading="lazy" width="26" height="26">Marauder — the two-board fullback</h2>
-<!--kg-card-end: html-->
-<p>The athletic all-rounder of the back line: <strong>94 pace, 96 Ball Control</strong>, and no column below 92. The Marauder overlaps, whips the cross (High Speed Crosser), and wins the ball back at full sprint (Tackle and Run). The signature set — Quick Step, Whipped Pass, Technical, Trickster — belongs to a winger, attached to a defender's tackling numbers.</p>
-<p>This season it tops <strong>two boards at once: no. 1 fullback (74.7) and no. 1 CDM (77.4)</strong> — the only archetype leading two positions. Played as a six it defends the width of the pitch; played as a fullback it is the meta pick on both flanks. The <a href="/blog/pro-clubs-marauder-build/">build guide</a> covers both jobs.</p>
-<!--kg-card-begin: html-->
-<div class="a34f">
-<style>.a34f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a34f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a34f p{margin:0 0 8px;color:#c3c2b7}
-.a34f p b{color:inherit}
-.a34f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a34f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a34f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Quick Step"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Whipped Pass"><img src="https://proclubshq.com/assets/playstyles/whipped-pass.png" alt="Whipped Pass PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Technical"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Trickster"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="Trickster PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>High Speed Crosser</b> — deliver accurate crosses while sprinting at full speed. <b>Tackle and Run</b> — win the ball and immediately burst forward with a speed boost.</p>
-<p><b>Specializations:</b> Marauder+, Speedster and Athlete. <b>Meta board:</b> no. 1 on the CDM board (77.4).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Marauder if:</strong></p>
-<ul>
-<li>You play fullback as a second winger — overlap, cross, recover, repeat.</li>
-<li>Your club needs a CDM who can defend grass, not just zones: the board agrees.</li>
-<li>You want one build that stays meta across two positions.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-marauder-build/">the complete Marauder build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<h2 class="a34h"><img class="aico" src="https://proclubshq.com/assets/archetypes/engine.svg" alt="" loading="lazy" width="26" height="26">Engine — the perpetual motion machine</h2>
-<!--kg-card-end: html-->
-<p>Stamina is the Engine's headline key attribute, and the whole archetype is built around never stopping: Relentless and Rapid in the signature set, Tracker and Presser as perks — one for chasing your winger back, one for hunting the ball high. A <strong>94 Passing ceiling</strong> (best of the four) makes all that running useful when the ball arrives.</p>
-<p>It sits <strong>2nd on the fullback board (74.2)</strong>, a half-point behind the Marauder. The honest difference: the Marauder attacks better, the Engine defends longer. In a 90-minute club match where your winger doesn't track back, the Engine is the fullback who never gets caught resting. Both builds are in the <a href="/blog/pro-clubs-engine-build/">full guide</a>.</p>
-<!--kg-card-begin: html-->
-<div class="a34f">
-<style>.a34f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a34f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a34f p{margin:0 0 8px;color:#c3c2b7}
-.a34f p b{color:inherit}
-.a34f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a34f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a34f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Relentless"><img src="https://proclubshq.com/assets/playstyles/relentless.png" alt="Relentless PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Jockey"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Rapid"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Tracker</b> — tracks runners tirelessly, gaining defensive positioning boosts. <b>Presser</b> — pressing opponents drains their stamina faster.</p>
-<p><b>Specializations:</b> Engine+, Everywhere and Gadget. <b>Meta board:</b> 2nd on the FB board (74.2).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Engine if:</strong></p>
-<ul>
-<li>You press for ninety minutes and want the archetype built for it.</li>
-<li>Your flank gets doubled — you cover two players' grass a game.</li>
-<li>You'd take positional discipline over highlight-reel overlaps.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-engine-build/">the complete Engine build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<p>Any two of the four can go <a href="/blog/pro-clubs-archetypes-head-to-head/">head to head, ceiling by ceiling</a>, and if you're torn between defending and midfield entirely, the <a href="/blog/which-pro-clubs-archetype-should-i-play/">quiz</a> scores you against all 13 archetypes at once.</p>
-
-<!--kg-card-begin: html-->
-<div class="pchq-cta">
-<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
-.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
-.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
-.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
-.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
-<p class="k">Finished builds, ready to copy</p>
-<h3>Every defender archetype has builds in the app</h3>
-<p>Open a finished Progressor, Boss, Marauder or Engine from the explore feed, save a copy, and bend it to your game — every attribute priced live.</p>
-<a class="b" href="https://proclubshq.com/explore">Browse defender builds →</a>
-</div>
-<!--kg-card-end: html-->
-
-<h2>Frequently asked questions</h2>
-<h3>How many defender archetypes are there in Pro Clubs?</h3>
-<p>Four — the Progressor and Boss at centre-back, the Marauder and Engine at fullback. The Marauder also currently tops the CDM meta board.</p>
-<h3>What is the best defender archetype in FC 26?</h3>
-<p>The Progressor holds the highest score on any meta board this season (79.8 at CB). At fullback the Marauder leads (74.7) with the Engine half a point behind.</p>
-<h3>Should a centre-back pick Progressor or Boss?</h3>
-<p>Both, ideally — the meta XI pairs them. The Progressor plays out and starts attacks; the Boss wins the box and the duels. If your club only takes one, match it to how your team concedes.</p>
-<h3>Do the defender archetypes carry over to FC 27?</h3>
-<p>Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a defender you build now is a head start, not a throwaway.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>How many defender archetypes are there in FC 27 Pro Clubs?</h3>
+<p>Three: the Boss, the Marauder and the Progressor. The Engine is not in FC 27.</p>
+<h3>Which defender archetype has the highest ceilings in FC 27?</h3>
+<p>Highest ceilings in the group: the Boss for Physical (97), the Marauder for Pace (95), Passing (94) and Scoring (93) and the Progressor for Ball Control (95). The Boss and the Progressor share the top Defending ceiling (97).</p>
+<h3>Which defender archetype is cheapest to upgrade?</h3>
+<p>It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Boss: Aggression, Heading Acc., Jumping and Strength. The Marauder: Acceleration, Dribbling, Interceptions and Balance. The Progressor: Composure, Def. Aware, Long Pass and Stand Tackle. The widest gap: 90 Acceleration costs 65 AP on a Marauder and 209 on a Boss or a Progressor.</p>
+<h3>Which defender specialization is cheapest to unlock?</h3>
+<p>Progressor+ on the Progressor: 211 AP from a new Progressor’s starting values (Long Pass 90, Def. Aware 90 and Stand Tackle 92). The dearest in the group is Janitor on the Progressor, 575 AP.</p>
+<h3>What is the best defender archetype in FC 27?</h3>
+<p>By the FC 27 season 1 meta boards: the Boss no. 1 at centre back (71.6); the Marauder no. 1 at fullback (70.9); the Progressor 9th at centre back (69.2). The boards rank published builds and move as new ones publish.</p>
+<h3>How many AP do you get in FC 27 Pro Clubs?</h3>
+<p>962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget.</p>
 <!--kg-card-begin: html-->
 <script type="application/ld+json">
 {
@@ -333,39 +460,86 @@
  "mainEntity": [
   {
    "@type": "Question",
-   "name": "How many defender archetypes are there in Pro Clubs?",
+   "name": "How many defender archetypes are there in FC 27 Pro Clubs?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Four — the Progressor and Boss at centre-back, the Marauder and Engine at fullback. The Marauder also currently tops the CDM meta board."
+    "text": "Three: the Boss, the Marauder and the Progressor. The Engine is not in FC 27."
    }
   },
   {
    "@type": "Question",
-   "name": "What is the best defender archetype in FC 26?",
+   "name": "Which defender archetype has the highest ceilings in FC 27?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "The Progressor holds the highest score on any meta board this season (79.8 at CB). At fullback the Marauder leads (74.7) with the Engine half a point behind."
+    "text": "Highest ceilings in the group: the Boss for Physical (97), the Marauder for Pace (95), Passing (94) and Scoring (93) and the Progressor for Ball Control (95). The Boss and the Progressor share the top Defending ceiling (97)."
    }
   },
   {
    "@type": "Question",
-   "name": "Should a centre-back pick Progressor or Boss?",
+   "name": "Which defender archetype is cheapest to upgrade?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Both, ideally — the meta XI pairs them. The Progressor plays out and starts attacks; the Boss wins the box and the duels. If your club only takes one, match it to how your team concedes."
+    "text": "It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Boss: Aggression, Heading Acc., Jumping and Strength. The Marauder: Acceleration, Dribbling, Interceptions and Balance. The Progressor: Composure, Def. Aware, Long Pass and Stand Tackle. The widest gap: 90 Acceleration costs 65 AP on a Marauder and 209 on a Boss or a Progressor."
    }
   },
   {
    "@type": "Question",
-   "name": "Do the defender archetypes carry over to FC 27?",
+   "name": "Which defender specialization is cheapest to unlock?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a defender you build now is a head start, not a throwaway."
+    "text": "Progressor+ on the Progressor: 211 AP from a new Progressor’s starting values (Long Pass 90, Def. Aware 90 and Stand Tackle 92). The dearest in the group is Janitor on the Progressor, 575 AP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the best defender archetype in FC 27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "By the FC 27 season 1 meta boards: the Boss no. 1 at centre back (71.6); the Marauder no. 1 at fullback (70.9); the Progressor 9th at centre back (69.2). The boards rank published builds and move as new ones publish."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many AP do you get in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget."
    }
   }
  ]
 }
 </script>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get EA SPORTS FC 27</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">PlayStation 5</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Xbox Series X</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">PC (EA App)</span><span class="g">Buy now →</span></a>
+</div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->

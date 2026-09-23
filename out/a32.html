@@ -1,66 +1,355 @@
-<p>EA FC Pro Clubs has <strong>three striker archetypes</strong> — the Finisher, the Target and the Magician — and they are three different answers to the same question: how does your team score? The Finisher is the pure goalscorer with the game's only 99 Scoring ceiling, the Target is the physical reference point who finishes with his head as well as his feet, and the Magician is the inventive second striker who creates the chance before taking it. This page compares all three and tells you which to pick; each has <a href="/blog/pro-clubs-finisher-build/">its</a> <a href="/blog/pro-clubs-target-build/">own</a> <a href="/blog/pro-clubs-magician-build/">complete build guide</a> when you've chosen.</p>
-
 <!--kg-card-begin: html-->
-<div class="a32g">
 <style>
-.a32g{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--good:#0ca30c;--bad:#e66767;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-.a32g *{box-sizing:border-box}
-.a32g table th{background:transparent!important;color:var(--muted)!important}
-.a32g table td{color:var(--ct,inherit)!important}
-.a32g .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.a32g .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.a32g .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.a32g .chips{display:flex;flex-wrap:wrap;gap:6px}
-.a32g .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.a32g .chip:hover{border-color:var(--muted)}
-.a32g .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.a32g .chip[disabled]{opacity:.32;cursor:not-allowed}
-.a32g .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.a32g{padding:14px}}
-.a32g{overflow-x:auto}
-.a32g .g{display:grid;grid-template-columns:minmax(110px,1.2fr) repeat(3,minmax(86px,1fr));min-width:440px;font-size:13.5px}
-.a32g .h{padding:8px 10px;font-weight:650}
-.a32g .h a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--muted)}
-.a32g .h small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
-.a32g .h .aico{display:block;width:22px;height:22px;margin-bottom:4px;color:var(--muted)}
-.a32h .aico{width:30px;height:30px;vertical-align:-5px;margin-right:10px}
-.a32g .c{padding:7px 10px;border-top:1px solid var(--grid);font-variant-numeric:tabular-nums}
-.a32g .r{color:var(--ink2)}
-.a32g .b{font-weight:700;color:var(--accent)}
-.a32g .meta{font-size:12px;font-variant-numeric:normal}
+.pcs{--bg:#0e0f19;--ink:#f2f3f7;--ink2:#b9bec9;--mut:#8a90a0;--line:rgba(255,255,255,.09);
+  --t0:#2DE2C5;
+  --t1:#24A08F;
+  --t2:#A8435B;
+  --t3:#FF6B8A;
+  font:400 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px 14px;margin:1.6em 0}
+.pcs *{box-sizing:border-box}
+.pcs,.pcs *{word-break:normal;overflow-wrap:normal;hyphens:none}
+.pcs p{margin:0}
+.pcs .kk{margin:0 0 4px;font:700 11px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)}
+.pcs .tl{margin:0 0 3px;font:800 21px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.pcs .sb{margin:0 0 12px;font-size:13px;color:var(--ink2)}
+.pcs .ctl{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 10px;align-items:center}
+.pcs .ctl .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-right:2px}
+.pcs .grp2{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.pcs button.ch{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:transparent;color:var(--ink2);cursor:pointer;min-height:30px}
+.pcs button.ch:hover{border-color:var(--mut)}
+.pcs button.ch[aria-pressed="true"]{background:var(--ink);color:#0e0f19;border-color:var(--ink);font-weight:700}
+.pcs .sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px}
+.pcs .t0{background:var(--t0)}
+.pcs .k0{background:rgba(45,226,197,.32)}
+.pcs .t1{background:var(--t1)}
+.pcs .k1{background:rgba(36,160,143,.15)}
+.pcs .t2{background:var(--t2)}
+.pcs .k2{background:rgba(168,67,91,.24)}
+.pcs .t3{background:var(--t3)}
+.pcs .k3{background:rgba(255,107,138,.32)}
+.pcs .lg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 6px;font-size:12px;color:var(--ink2)}
+.pcs .lg span{display:inline-flex;align-items:center;gap:6px}
+.pcs .ft{margin:12px 0 0;font-size:11.5px;color:var(--mut)}
+.pcs .ft b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){.pcs{padding:14px 12px 12px}.pcs .tl{font-size:19px}}</style>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pcs a32x" data-a32x data-v="max" data-all="0">
+<style>
+.a32x .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 14px}
+.a32x .tabs .tb{font-size:12.5px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  color:var(--ink2)!important;text-decoration:none!important;background:transparent}
+.a32x .tabs a.tb:hover{border-color:var(--t0);color:var(--ink)!important}
+.a32x .tabs .tb.cur{background:var(--t0);border-color:var(--t0);color:#062a24!important}
+.a32x .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a32x .g{min-width:352px}
+.a32x .tr{display:grid;grid-template-columns:minmax(96px,1.3fr) repeat(4,minmax(60px,1fr));gap:2px;margin-top:2px}
+.a32x .tr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 4px;font-size:13.5px;font-variant-numeric:tabular-nums;border-radius:4px;text-align:center}
+.a32x .tr .rh{justify-content:flex-start;text-align:left;font-weight:600;color:var(--ink)}
+.a32x .hd>span{flex-direction:column;gap:3px;min-height:0;padding:0 2px 6px;font-size:12.5px;font-weight:700;line-height:1.15}
+.a32x .hd a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a32x .hd small{font-size:10.5px;font-weight:400;color:var(--mut)}
+.a32x .hd img{width:22px;height:22px}
+.a32x .cr .cl{background:rgba(255,255,255,.05)}
+.a32x .cr .rh{font-weight:700}
+.a32x .at>span{min-height:24px;font-size:12.5px;color:var(--ink2)}
+.a32x .at .rh{padding-left:12px;font-weight:400;color:var(--ink2)}
+.a32x[data-all="0"] .at{display:none}
+.a32x[data-v="max"] .n,.a32x[data-v="min"] .x{display:none}
+.a32x .cl b{font-weight:600}
+.a32x[data-v="max"] .bx,.a32x[data-v="min"] .bn{box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+.a32x[data-v="max"] .bx .x,.a32x[data-v="min"] .bn .n{font-weight:800;color:var(--ink)}
+.a32x .fx{border-top:1px solid var(--line);padding-top:2px}
+.a32x .fx>span{font-size:12px;line-height:1.3;color:var(--ink2)}
+.a32x .fx .rh{font-size:12.5px;color:var(--ink)}
+.a32x .fx img{width:22px;height:22px;display:block;margin:0 auto 2px}
+.a32x .fx .ps{flex-direction:column}
+.a32x .sh{margin:12px 0 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a32x .lg .bx{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+@media (max-width:520px){.a32x .tr>span{font-size:12.5px}.a32x .hd small{display:none}}
 </style>
-<p class="hd">The three striker archetypes, side by side</p>
-<p class="sub">Attribute-category ceilings — the highest each archetype can average, not where it starts. Best of the group in blue.</p>
-<div class="g" role="table" aria-label="The three striker archetypes, side by side">
-<span class="h"></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/finisher.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-finisher-build/">Finisher</a><small>Alex Morgan</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/target.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-target-build/">Target</a><small>Zlatan Ibrahimović</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/magician.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-magician-build/">Magician</a><small>Ronaldinho</small></span>
-<span class="c r">Pace</span><span class="c b">95</span><span class="c">91</span><span class="c b">95</span>
-<span class="c r">Ball Control</span><span class="c b">98</span><span class="c">94</span><span class="c b">98</span>
-<span class="c r">Passing</span><span class="c">94</span><span class="c">93</span><span class="c b">96</span>
-<span class="c r">Scoring</span><span class="c b">99</span><span class="c">97</span><span class="c">96</span>
-<span class="c r">Defending</span><span class="c b">83</span><span class="c b">83</span><span class="c">81</span>
-<span class="c r">Physical</span><span class="c">93</span><span class="c b">95</span><span class="c">90</span>
-<span class="c r">Height</span><span class="c">5'5"–6'3"</span><span class="c">5'10"–6'5"</span><span class="c">5'4"–6'2"</span>
-<span class="c r">Meta board</span><span class="c meta">no. 1 on the W board (79.9)</span><span class="c meta">no. 1 on the ST board (79.1)</span><span class="c meta">3rd on the W board (78.0)</span>
+<p class="kk">FC 27 · <time datetime="2026-09-23">Updated 23 September 2026</time></p>
+<nav class="tabs" aria-label="FC 27 archetypes by position"><a class="tb" href="/blog/best-pro-clubs-archetypes/">Tier list</a><span class="tb cur" aria-current="page">Forwards</span><a class="tb" href="/blog/pro-clubs-midfielder-archetypes/">Midfielders</a><a class="tb" href="/blog/pro-clubs-defender-archetypes/">Defenders</a><a class="tb" href="/blog/pro-clubs-goalkeeper-archetypes/">Keepers</a></nav>
+<p class="tl">The four FC 27 forward archetypes, side by side</p>
+<p class="sb">Attribute averages by category: the highest each archetype can reach, or where a new one starts. Tap a name for its section.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Values"><span class="lb">Show</span><button type="button" class="ch" data-v="max" aria-pressed="true">Ceiling</button><button type="button" class="ch" data-v="min" aria-pressed="false">Start</button></span>
+  <span class="grp2" role="group" aria-label="Rows"><span class="lb">Rows</span><button type="button" class="ch" data-all="0" aria-pressed="true">Categories</button><button type="button" class="ch" data-all="1" aria-pressed="false">Every attribute</button></span>
 </div>
-<p class="foot">Ceilings from the Pro Clubs HQ catalog; board standings from the live meta season (Spain &amp; Portugal 2030, 4-3-3).</p>
+<div class="lg" aria-hidden="true"><span><i class="bx"></i>Best of the four</span></div>
+<div class="scroll"><div class="g" role="table" aria-label="The four FC 27 forward archetypes, side by side">
+<div class="tr hd" role="row"><span role="columnheader" class="rh"></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/finisher.svg" alt="" loading="lazy" width="26" height="26"><a href="#finisher">Finisher</a><small>Alex Morgan</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/magician.svg" alt="" loading="lazy" width="26" height="26"><a href="#magician">Magician</a><small>Ronaldinho</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/spark.svg" alt="" loading="lazy" width="26" height="26"><a href="#spark">Spark</a><small>Luis Figo</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/target.svg" alt="" loading="lazy" width="26" height="26"><a href="#target">Target</a><small>Zlatan Ibrahimovic</small></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Pace</span><span role="cell" class="cl"><b class="x">95</b><b class="n">73</b></span><span role="cell" class="cl"><b class="x">95</b><b class="n">73</b></span><span role="cell" class="cl bx bn"><b class="x">97</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">91</b><b class="n">68</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl bx"><b class="x">95</b><b class="n">70</b></span><span role="cell" class="cl bx"><b class="x">95</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl bx"><b class="x">98</b><b class="n">74</b></span><span role="cell" class="cl bx"><b class="x">98</b><b class="n">74</b></span><span role="cell" class="cl bx bn"><b class="x">98</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">94</b><b class="n">72</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">72</b></span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">72</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Scoring</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">73</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">73</b></span><span role="cell" class="cl"><b class="x">95</b><b class="n">70</b></span><span role="cell" class="cl bn"><b class="x">97</b><b class="n">73</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">80</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">80</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">80</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">80</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Shots</span><span role="cell" class="cl bx"><b class="x">96</b><b class="n">60</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Volleys</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">96</b><b class="n">72</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Passing</span><span role="cell" class="cl"><b class="x">94</b><b class="n">63</b></span><span role="cell" class="cl bx"><b class="x">96</b><b class="n">68</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">72</b></span><span role="cell" class="cl"><b class="x">93</b><b class="n">60</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl"><b class="x">92</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">50</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl"><b class="x">96</b><b class="n">70</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">55</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Physical</span><span role="cell" class="cl"><b class="x">93</b><b class="n">66</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">61</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">59</b></span><span role="cell" class="cl bx bn"><b class="x">95</b><b class="n">69</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">60</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">55</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl"><b class="x">92</b><b class="n">70</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">60</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">92</b><b class="n">50</b></span><span role="cell" class="cl bn"><b class="x">92</b><b class="n">65</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Defending</span><span role="cell" class="cl bx bn"><b class="x">83</b><b class="n">56</b></span><span role="cell" class="cl"><b class="x">80</b><b class="n">48</b></span><span role="cell" class="cl"><b class="x">82</b><b class="n">51</b></span><span role="cell" class="cl bx"><b class="x">83</b><b class="n">52</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">60</b></span><span role="cell" class="cl"><b class="x">82</b><b class="n">50</b></span><span role="cell" class="cl bx"><b class="x">85</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">82</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">65</b></span><span role="cell" class="cl"><b class="x">85</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">82</b><b class="n">45</b></span><span role="cell" class="cl bx"><b class="x">85</b><b class="n">50</b></span><span role="cell" class="cl"><b class="x">82</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl"><b class="x">75</b><b class="n">50</b></span><span role="cell" class="cl"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">80</b><b class="n">55</b></span><span role="cell" class="cl"><b class="x">75</b><b class="n">45</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl bx"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">45</b></span><span role="cell" class="cl bx"><b class="x">75</b><b class="n">40</b></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Height</span><span role="cell" class="cl">5'5"–6'3"</span><span role="cell" class="cl">5'4"–6'2"</span><span role="cell" class="cl">5'4"–6'2"</span><span role="cell" class="cl">5'10"–6'5"</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Skill moves</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">2–5★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Weak foot</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">3–5★</span><span role="cell" class="cl">2–5★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Signature PlayStyle</span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/low-driven-shot.png" alt="" loading="lazy" width="22" height="22">Low Driven Shot</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="" loading="lazy" width="22" height="22">Technical</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="" loading="lazy" width="22" height="22">Trickster</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/precision-header.png" alt="" loading="lazy" width="22" height="22">Precision Header</span></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Meta board</span><span role="cell" class="cl">No. 1 at striker (73.7)</span><span role="cell" class="cl">No. 1 at attacking mid (73.8)</span><span role="cell" class="cl">No. 1 at wide mid (74.8)</span><span role="cell" class="cl">Not in any board’s top ten</span></div>
+</div></div>
+<p class="ft">Level 40 is the FC 27 cap: <b>962 AP</b> to spend on the way from the start to the ceiling. Meta board: the best placing on the FC 27 season 1 boards (4-2-3-1), each a top ten.</p>
+<script>
+(function(){var R=document.querySelector('[data-a32x]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.v)R.dataset.v=b.dataset.v;else if(b.dataset.all)R.dataset.all=b.dataset.all;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.v!==undefined&&R.dataset.v===x.dataset.v)||(x.dataset.all!==undefined&&R.dataset.all===x.dataset.all);x.setAttribute('aria-pressed',on)})});
+})();
+</script>
 </div>
 <!--kg-card-end: html-->
 
-<p>Read the grid as ceilings, not free gifts — every point above the floor is bought with AP, and <a href="/blog/pro-clubs-attribute-upgrade-costs/">prices climb near the caps</a>. What it shows honestly: nobody out-scores the Finisher, nobody out-muscles the Target, and the Magician gives up almost nothing on the ball to either.</p>
+<p><strong>FC 27 has four forward archetypes: the Finisher, the Magician, the Spark and the Target.</strong> Highest ceilings: the Finisher for Scoring (99), the Spark for Pace (97) and the Target for Physical (95); Ball Control, Passing and Defending are shared at the top. You have 962 AP to spend at level 40, and each archetype prices every attribute on its own four tiers, so the same upgrade costs a different amount on each.</p>
+<p>Every upgrade priced, one archetype per page: <a href="/blog/pro-clubs-finisher-stats/">Finisher</a> · <a href="/blog/pro-clubs-magician-stats/">Magician</a> · <a href="/blog/pro-clubs-spark-stats/">Spark</a> · <a href="/blog/pro-clubs-attribute-upgrade-costs/">all 13 compared</a>.</p>
+
+<h2 id="costs">What each one costs to upgrade</h2>
+<p>Every archetype has four attributes in its cheapest price tier, and they differ:</p>
+<ul>
+<li><strong>Finisher:</strong> Agility, Dribbling, Sprint Speed and Vision.</li>
+<li><strong>Magician:</strong> Balance, Composure, Volleys and Shot Power.</li>
+<li><strong>Spark:</strong> Curve, Dribbling, Vision and Long Shots.</li>
+<li><strong>Target:</strong> Short Pass, Acceleration, Ball Control and Curve.</li>
+</ul>
+<p>The widest gap between the four: 90 Dribbling costs 65 AP on a Spark and 209 on a Target, each from its own starting value. Raised to 90, the Finisher is the outright cheapest in two of the 29 attributes all four carry, the Magician in four, the Spark in six and the Target in six; in seven the lowest price is shared; and in four at most one of them can reach 90.</p>
 <!--kg-card-begin: html-->
-<figure class="a32c">
-<style>.a32c{margin:0 0 1.6em}.a32c img{width:100%;height:auto;border-radius:12px;display:block}
-.a32c figcaption{margin-top:8px;font-size:12.5px;color:#898781;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}</style>
-<img src="https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-a32-v7.jpg" alt="Official EA SPORTS FC 26 art with STRIKERS in large type" loading="lazy" width="1200" height="675">
-<figcaption>EA SPORTS FC 26 — the game these archetypes live in.</figcaption>
-</figure>
+<div class="pcs a32m" data-a32m>
+<style>
+.a32m .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a32m .mx{min-width:310px}
+.a32m .mr{display:grid;grid-template-columns:minmax(96px,1.6fr) repeat(4,minmax(44px,1fr));gap:2px;margin-top:2px}
+.a32m .mr abbr{display:none;text-decoration:none;border:0}
+.a32m .mr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 2px;font-size:13px;font-variant-numeric:tabular-nums;border-radius:4px}
+.a32m .mr .rh{justify-content:flex-start;padding-left:2px;font-weight:600;color:var(--ink)}
+.a32m .mr.hd .rh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a32m .mr.hd .ch{font-size:11.5px;font-weight:700;line-height:1.15;text-align:center}
+.a32m .mr.hd .ch a{color:var(--ink2)!important;text-decoration:none}
+.a32m .mr.hd .ch a:hover{color:var(--t0)!important;text-decoration:underline}
+.a32m .mr.cg span{grid-column:1/-1;justify-content:flex-start;min-height:0;padding:10px 2px 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a32m .cl{color:var(--ink)}
+.a32m .cl.lo{font-weight:800;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+.a32m .cl.cap{font-size:10.5px;color:var(--mut);background:rgba(255,255,255,.03)}
+.a32m .lg .lo{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+@media (max-width:520px){.a32m .mr .fn{display:none}.a32m .mr abbr{display:inline}.a32m .mr>span{font-size:12.5px}.a32m .cl.cap{font-size:10px;letter-spacing:-.01em}}
+</style>
+<p class="kk">Same upgrade, four archetypes</p>
+<p class="tl">What it costs to raise each attribute</p>
+<p class="sb">AP from each archetype’s own starting value, tinted by its price tier for that attribute. The outlined cell is the cheapest of the four.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Raise to"><span class="lb">Raise to</span><button type="button" class="ch" data-to="80" aria-pressed="false">80</button><button type="button" class="ch" data-to="85" aria-pressed="false">85</button><button type="button" class="ch" data-to="90" aria-pressed="true">90</button></span>
+  <span class="grp2" role="group" aria-label="Attributes"><span class="lb">Show</span><button type="button" class="ch" data-cat="all" aria-pressed="true">All</button><button type="button" class="ch" data-cat="Pace" aria-pressed="false">Pace</button><button type="button" class="ch" data-cat="Ball Control" aria-pressed="false">Ball Control</button><button type="button" class="ch" data-cat="Scoring" aria-pressed="false">Scoring</button><button type="button" class="ch" data-cat="Passing" aria-pressed="false">Passing</button><button type="button" class="ch" data-cat="Physical" aria-pressed="false">Physical</button><button type="button" class="ch" data-cat="Defending" aria-pressed="false">Defending</button></span>
+</div>
+<div class="lg" aria-hidden="true"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span><span><i class="lo"></i>Cheapest of the four</span><span>max = can’t reach it</span></div>
+<div class="scroll"><div class="mx" role="table" aria-label="AP to raise each attribute on Finisher, Magician, Spark and Target" data-mx><div class="mr hd" role="row"><span role="columnheader" class="rh">To 90</span><span role="columnheader" class="ch"><a href="/blog/pro-clubs-finisher-stats/"><span class="fn">Finisher</span><abbr title="Finisher">FIN</abbr></a></span><span role="columnheader" class="ch"><a href="/blog/pro-clubs-magician-stats/"><span class="fn">Magician</span><abbr title="Magician">MAG</abbr></a></span><span role="columnheader" class="ch"><a href="/blog/pro-clubs-spark-stats/"><span class="fn">Spark</span><abbr title="Spark">SPK</abbr></a></span><span role="columnheader" class="ch"><a href="#target"><span class="fn">Target</span><abbr title="Target">TGT</abbr></a></span></div><div class="mr cg" role="row"><span role="rowheader">Pace</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k0 lo">76</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl k0 lo">76</span><span role="cell" class="cl k3">209</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">234</span></div><div class="mr cg" role="row"><span role="rowheader">Ball Control</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl k0 lo">72</span><span role="cell" class="cl k3">197</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">209</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k1">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl k1">92</span><span role="cell" class="cl k1">92</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">76</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl k0">76</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k3">209</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">72</span><span role="cell" class="cl k2">143</span><span role="cell" class="cl k2">143</span></div><div class="mr cg" role="row"><span role="rowheader">Scoring</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl k1 lo">71</span><span role="cell" class="cl k1 lo">71</span><span role="cell" class="cl k1 lo">71</span><span role="cell" class="cl k1 lo">71</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k2 lo">143</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">76</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Long Shots</span><span role="cell" class="cl k2">179</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k0 lo">82</span><span role="cell" class="cl k2">167</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Volleys</span><span role="cell" class="cl k1">92</span><span role="cell" class="cl k0 lo">72</span><span role="cell" class="cl k1">102</span><span role="cell" class="cl k1">102</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr cg" role="row"><span role="rowheader">Passing</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl k0">82</span><span role="cell" class="cl k1">92</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k2">167</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl k2">184</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl k2">189</span></div><div class="mr" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl k3">209</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k2">129</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl k2">189</span><span role="cell" class="cl k2">189</span><span role="cell" class="cl k2 lo">167</span><span role="cell" class="cl k2">189</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl k1">108</span><span role="cell" class="cl k1">92</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k0">92</span></div><div class="mr cg" role="row"><span role="rowheader">Physical</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl k1">119</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl k2">151</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1">126</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl k1 lo">119</span><span role="cell" class="cl k1">131</span><span role="cell" class="cl k1">136</span><span role="cell" class="cl k1 lo">119</span></div><div class="mr cg" role="row"><span role="rowheader">Defending</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 82</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 82</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 82</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 82</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 80</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div></div></div>
+
+<script>
+(function(){var R=document.querySelector('[data-a32m]');if(!R||R.dataset.on)return;R.dataset.on='1';
+
+function ppt(B,t,v){var r=B[t];for(var i=0;i<r.length;i++)if(v>=r[i].min&&v<=r[i].max)return r[i].cost;throw new Error('no cost band '+t+' '+v)}
+function apTo(B,t,a,b){var s=0;for(var v=a+1;v<=b;v++)s+=ppt(B,t,v);return s}
+function steps(B,t,a,b){var o=[];for(var v=a+1;v<=b;v++){var c=ppt(B,t,v),l=o[o.length-1];if(l&&l.c===c)l.b=v;else o.push({a:v,b:v,c:c})}return o}
+function costRow(B,T,t,a,b,to){var top=to==='max'?b:Math.min(to,b);return {top:top,ap:top>a?apTo(B,T[t],a,top):0,capped:to!=='max'&&b<to,have:a>=top}}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+function matrix(D,S){
+var h='<div class="mr hd" role="row"><span role="columnheader" class="rh">To '+S.to+'</span>'
++D.cols.map(function(c){var n='<span class="fn">'+esc(c.name)+'</span><abbr title="'+esc(c.name)+'">'+esc(c.code)+'</abbr>';return '<span role="columnheader" class="ch'+(c.cur?' cur':'')+'">'+(c.href?'<a href="'+c.href+'">'+n+'</a>':n)+'</span>'}).join('')+'</div>';
+D.groups.forEach(function(g){
+if(S.cat!=='all'&&S.cat!==g[0])return;
+h+='<div class="mr cg" role="row"><span role="rowheader">'+esc(g[0])+'</span></div>';
+g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],S.to);r.t=x[0];return r});
+var ok=cs.filter(function(r){return !r.capped}).map(function(r){return r.ap});
+var lo=ok.length?Math.min.apply(null,ok):-1;
+h+='<div class="mr" role="row"><span role="rowheader" class="rh">'+esc(D.names[k])+'</span>'+cs.map(function(r,i){
+var cur=D.cols[i].cur?' cur':'';
+if(r.capped)return '<span role="cell" class="cl cap'+cur+'">max '+r.top+'</span>';
+return '<span role="cell" class="cl k'+r.t+(r.ap===lo?' lo':'')+cur+'">'+fmt(r.ap)+'</span>';
+}).join('')+'</div>';
+});
+});
+return h;
+}
+function wins(D,to){
+var cur=D.cols.filter(function(c){return c.cur})[0],only=[],tie=[];
+D.groups.forEach(function(g){g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],to);r.id=c.id;return r}).filter(function(r){return !r.capped});
+var me=cs.filter(function(r){return r.id===cur.id})[0];if(!me)return;
+var lo=Math.min.apply(null,cs.map(function(r){return r.ap}));if(me.ap!==lo)return;
+(cs.filter(function(r){return r.ap===lo}).length>1?tie:only).push(D.names[k]);
+})});
+var and=function(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]};
+var s=only.length?'cheapest of the five for <b>'+and(only)+'</b>':'never the outright cheapest of the five';
+if(tie.length)s+='; level cheapest for '+and(tie);
+return s+' (to '+to+').';
+}
+
+var D={"B":{"tier0":[{"min":1,"max":69,"cost":1},{"min":70,"max":74,"cost":2},{"min":75,"max":84,"cost":3},{"min":85,"max":89,"cost":6},{"min":90,"max":92,"cost":8},{"min":93,"max":94,"cost":10},{"min":95,"max":95,"cost":15},{"min":96,"max":96,"cost":20},{"min":97,"max":97,"cost":25},{"min":98,"max":98,"cost":30},{"min":99,"max":99,"cost":35}],"tier1":[{"min":1,"max":63,"cost":1},{"min":64,"max":69,"cost":2},{"min":70,"max":74,"cost":3},{"min":75,"max":79,"cost":4},{"min":80,"max":84,"cost":5},{"min":85,"max":89,"cost":8},{"min":90,"max":92,"cost":11},{"min":93,"max":94,"cost":15},{"min":95,"max":95,"cost":20},{"min":96,"max":96,"cost":25},{"min":97,"max":97,"cost":30},{"min":98,"max":98,"cost":35},{"min":99,"max":99,"cost":40}],"tier2":[{"min":1,"max":60,"cost":1},{"min":61,"max":63,"cost":2},{"min":64,"max":69,"cost":3},{"min":70,"max":74,"cost":4},{"min":75,"max":79,"cost":6},{"min":80,"max":84,"cost":7},{"min":85,"max":89,"cost":11},{"min":90,"max":92,"cost":15},{"min":93,"max":94,"cost":20},{"min":95,"max":95,"cost":25},{"min":96,"max":96,"cost":30},{"min":97,"max":97,"cost":35},{"min":98,"max":98,"cost":40},{"min":99,"max":99,"cost":45}],"tier3":[{"min":1,"max":60,"cost":2},{"min":61,"max":63,"cost":3},{"min":64,"max":66,"cost":4},{"min":67,"max":69,"cost":5},{"min":70,"max":74,"cost":6},{"min":75,"max":79,"cost":8},{"min":80,"max":84,"cost":10},{"min":85,"max":89,"cost":15},{"min":90,"max":92,"cost":20},{"min":93,"max":94,"cost":25},{"min":95,"max":95,"cost":30},{"min":96,"max":96,"cost":35},{"min":97,"max":97,"cost":40},{"min":98,"max":98,"cost":45},{"min":99,"max":99,"cost":50}]},"T":["tier0","tier1","tier2","tier3"],"cols":[{"id":"finisher","name":"Finisher","code":"FIN","href":"/blog/pro-clubs-finisher-stats/","cur":false},{"id":"magician","name":"Magician","code":"MAG","href":"/blog/pro-clubs-magician-stats/","cur":false},{"id":"spark","name":"Spark","code":"SPK","href":"/blog/pro-clubs-spark-stats/","cur":false},{"id":"target","name":"Target","code":"TGT","href":"#target","cur":false}],"groups":[["Pace",["acceleration","sprintSpeed"]],["Ball Control",["agility","balance","reactions","ballControl","dribbling","composure"]],["Scoring",["attPosition","finishing","shotPower","longShots","volleys","penalties"]],["Passing",["vision","crossing","fkAcc","shortPass","longPass","curve"]],["Physical",["jumping","strength","stamina","aggression"]],["Defending",["interceptions","headingAcc","defAware","standTackle","slideTackle"]]],"names":{"acceleration":"Acceleration","sprintSpeed":"Sprint Speed","agility":"Agility","balance":"Balance","reactions":"Reactions","ballControl":"Ball Control","dribbling":"Dribbling","composure":"Composure","vision":"Vision","crossing":"Crossing","fkAcc":"FK Acc.","shortPass":"Short Pass","longPass":"Long Pass","curve":"Curve","attPosition":"Att. Position","finishing":"Finishing","shotPower":"Shot Power","longShots":"Long Shots","volleys":"Volleys","penalties":"Penalties","interceptions":"Interceptions","headingAcc":"Heading Acc.","defAware":"Def. Aware","standTackle":"Stand Tackle","slideTackle":"Slide Tackle","jumping":"Jumping","strength":"Strength","stamina":"Stamina","aggression":"Aggression"},"cells":{"finisher":{"acceleration":[2,75,95],"sprintSpeed":[0,70,95],"agility":[0,72,99],"balance":[2,75,96],"reactions":[1,75,99],"ballControl":[1,75,96],"dribbling":[0,70,96],"composure":[2,75,99],"vision":[0,65,92],"crossing":[2,55,92],"fkAcc":[1,65,99],"shortPass":[3,70,92],"longPass":[2,50,92],"curve":[1,70,96],"attPosition":[1,80,99],"finishing":[3,75,99],"shotPower":[2,75,99],"longShots":[2,60,96],"volleys":[1,75,99],"penalties":[1,75,99],"interceptions":[3,60,85],"headingAcc":[2,75,96],"defAware":[2,55,85],"standTackle":[3,50,75],"slideTackle":[2,40,75],"jumping":[1,65,92],"strength":[2,70,92],"stamina":[1,65,92],"aggression":[1,65,96]},"magician":{"acceleration":[3,75,95],"sprintSpeed":[3,70,95],"agility":[3,72,99],"balance":[0,75,99],"reactions":[1,75,99],"ballControl":[1,75,96],"dribbling":[3,75,96],"composure":[0,72,96],"vision":[1,75,96],"crossing":[2,65,92],"fkAcc":[1,65,99],"shortPass":[3,75,96],"longPass":[2,50,92],"curve":[1,75,99],"attPosition":[1,80,96],"finishing":[3,75,99],"shotPower":[0,70,92],"longShots":[2,65,96],"volleys":[0,72,96],"penalties":[1,75,99],"interceptions":[3,50,82],"headingAcc":[2,65,85],"defAware":[2,45,82],"standTackle":[3,40,75],"slideTackle":[2,40,75],"jumping":[1,60,85],"strength":[2,65,90],"stamina":[1,65,92],"aggression":[1,55,92]},"spark":{"acceleration":[3,75,99],"sprintSpeed":[3,75,95],"agility":[3,75,99],"balance":[2,75,96],"reactions":[1,75,99],"ballControl":[2,75,96],"dribbling":[0,75,99],"composure":[2,72,96],"vision":[0,75,96],"crossing":[2,75,99],"fkAcc":[1,65,99],"shortPass":[2,75,96],"longPass":[2,65,92],"curve":[0,75,96],"attPosition":[1,80,96],"finishing":[3,65,96],"shotPower":[2,65,92],"longShots":[0,65,92],"volleys":[1,72,96],"penalties":[1,75,99],"interceptions":[3,55,85],"headingAcc":[2,50,85],"defAware":[2,50,85],"standTackle":[3,55,80],"slideTackle":[2,45,75],"jumping":[1,55,85],"strength":[2,65,90],"stamina":[1,65,92],"aggression":[1,50,92]},"target":{"acceleration":[0,70,90],"sprintSpeed":[3,65,92],"agility":[3,70,92],"balance":[1,75,92],"reactions":[1,75,99],"ballControl":[0,70,92],"dribbling":[3,70,92],"composure":[2,72,96],"vision":[2,65,92],"crossing":[2,50,90],"fkAcc":[1,65,99],"shortPass":[0,75,96],"longPass":[2,50,92],"curve":[0,55,90],"attPosition":[1,80,96],"finishing":[2,72,96],"shotPower":[2,75,99],"longShots":[2,65,96],"volleys":[1,72,96],"penalties":[1,75,99],"interceptions":[3,50,82],"headingAcc":[2,75,99],"defAware":[2,50,82],"standTackle":[3,45,75],"slideTackle":[2,40,75],"jumping":[1,75,96],"strength":[2,75,99],"stamina":[1,60,92],"aggression":[1,65,92]}}};
+var S={to:90,cat:'all'},X=R.querySelector('[data-mx]');
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.to)S.to=+b.dataset.to;else if(b.dataset.cat)S.cat=b.dataset.cat;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.to!==undefined&&String(S.to)===x.dataset.to)||(x.dataset.cat!==undefined&&S.cat===x.dataset.cat);x.setAttribute('aria-pressed',on)});
+ X.innerHTML=matrix(D,S)});
+})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<h2 id="finisher" class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/finisher.svg" alt="" loading="lazy" width="26" height="26">Finisher</h2>
+<!--kg-card-end: html-->
+<p>The Finisher has the group’s highest Scoring ceiling and shares the top Ball Control and Defending ceilings. Its four cheapest attributes to raise are Agility, Dribbling, Sprint Speed and Vision; its most expensive tier holds Stand Tackle, Interceptions, Finishing and Short Pass. Raised to 90, it is the outright cheapest of the four for Sprint Speed and Agility.</p>
+<ul>
+<li><strong>Inspired by:</strong> Alex Morgan. <strong>Height:</strong> 5'5" to 6'3".</li>
+<li><strong>Signature PlayStyle:</strong> Low Driven Shot. <strong>Perks:</strong> Fake to Real and 1v1 Master.</li>
+<li><strong>Stars:</strong> 3★ to 5★ skill moves (40 AP), 3★ to 5★ weak foot (85 AP).</li>
+<li><strong>Cheapest specialization:</strong> Presser, 332 AP (Agility 90, Stamina 92 and Aggression 90).</li>
+<li><strong>Recommended roles:</strong> Playmaker, Inside Forward, Shadow Striker, Target Forward, False 9, Poacher, Advanced Forward and Classic 10.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at striker (73.7).</li>
+<li><strong>Most copied Finisher build:</strong> <a href="https://proclubshq.com/b/ade67fd3-e40e-47c8-aa75-a5a1d5ea5331?src=guide">Mbappé '26 WC</a>.</li>
+</ul>
+<p>Next: <a href="/blog/pro-clubs-finisher-stats/">every Finisher upgrade priced</a> · <a href="https://proclubshq.com/explore?archetype=finisher&year=27&src=guide">all FC 27 Finisher builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="magician" class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/magician.svg" alt="" loading="lazy" width="26" height="26">Magician</h2>
+<!--kg-card-end: html-->
+<p>The Magician shares the top Ball Control and Passing ceilings. Its four cheapest attributes to raise are Balance, Composure, Volleys and Shot Power; its most expensive tier holds Stand Tackle, Interceptions, Acceleration, Dribbling, Finishing, Short Pass, Agility and Sprint Speed. Raised to 90, it is the outright cheapest of the four for Balance, Composure, Shot Power and Volleys.</p>
+<ul>
+<li><strong>Inspired by:</strong> Ronaldinho. <strong>Height:</strong> 5'4" to 6'2".</li>
+<li><strong>Signature PlayStyle:</strong> Technical. <strong>Perks:</strong> Getaway Driver and Ankle Breaker.</li>
+<li><strong>Stars:</strong> 3★ to 5★ skill moves (55 AP), 3★ to 5★ weak foot (65 AP).</li>
+<li><strong>Cheapest specialization:</strong> Magician+, 363 AP (Acceleration 90, Composure 90 and Ball Control 92).</li>
+<li><strong>Recommended roles:</strong> Playmaker, Winger, Wide Playmaker, Inside Forward, Shadow Striker, False 9, Poacher, Advanced Forward and Classic 10.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at attacking mid (73.8).</li>
+<li><strong>Most copied Magician build:</strong> <a href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf?src=guide">Lamine Yamal</a>.</li>
+</ul>
+<p>Next: <a href="/blog/pro-clubs-magician-stats/">every Magician upgrade priced</a> · <a href="https://proclubshq.com/explore?archetype=magician&year=27&src=guide">all FC 27 Magician builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="spark" class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/spark.svg" alt="" loading="lazy" width="26" height="26">Spark</h2>
+<!--kg-card-end: html-->
+<p>The Spark has the group’s highest Pace ceiling and shares the top Ball Control and Passing ceilings. Its four cheapest attributes to raise are Curve, Dribbling, Vision and Long Shots; its most expensive tier holds Stand Tackle, Acceleration, Agility, Sprint Speed, Interceptions and Finishing. Raised to 90, it is the outright cheapest of the four for Dribbling, Vision, Crossing, Long Pass, Curve and Long Shots.</p>
+<ul>
+<li><strong>Inspired by:</strong> Luis Figo. <strong>Height:</strong> 5'4" to 6'2".</li>
+<li><strong>Signature PlayStyle:</strong> Trickster. <strong>Perks:</strong> Bail Out and Cut Back Specialist.</li>
+<li><strong>Stars:</strong> 3★ to 5★ skill moves (40 AP), 3★ to 5★ weak foot (65 AP).</li>
+<li><strong>Cheapest specialization:</strong> Joker, 397 AP (Att. Position 90, Crossing 92 and Long Pass 90).</li>
+<li><strong>Recommended roles:</strong> Half-Winger, Winger, Wide Playmaker, Wide Midfielder and Inside Forward.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at wide mid (74.8).</li>
+<li><strong>Most copied Spark build:</strong> <a href="https://proclubshq.com/b/a64958d0-a8e7-4c36-9158-dd9edf7de295?src=guide">Rafael Leão</a>.</li>
+</ul>
+<p>Next: <a href="/blog/pro-clubs-spark-stats/">every Spark upgrade priced</a> · <a href="https://proclubshq.com/explore?archetype=spark&year=27&src=guide">all FC 27 Spark builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="target" class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/target.svg" alt="" loading="lazy" width="26" height="26">Target</h2>
+<!--kg-card-end: html-->
+<p>The Target has the group’s highest Physical ceiling and shares the top Defending ceiling. Its four cheapest attributes to raise are Short Pass, Acceleration, Ball Control and Curve; its most expensive tier holds Stand Tackle, Interceptions, Agility, Dribbling and Sprint Speed. Raised to 90, it is the outright cheapest of the four for Acceleration, Ball Control, Short Pass, Finishing, Jumping and Strength.</p>
+<ul>
+<li><strong>Inspired by:</strong> Zlatan Ibrahimovic. <strong>Height:</strong> 5'10" to 6'5".</li>
+<li><strong>Signature PlayStyle:</strong> Precision Header. <strong>Perks:</strong> No Look Finisher and Physical Shooter.</li>
+<li><strong>Stars:</strong> 2★ to 5★ skill moves (48 AP), 2★ to 5★ weak foot (105 AP).</li>
+<li><strong>Cheapest specialization:</strong> Target+, 425 AP (Agility 90, Jumping 92 and Volleys 90).</li>
+<li><strong>Recommended roles:</strong> Playmaker, Winger, Shadow Striker, Target Forward, False 9, Poacher, Advanced Forward and Classic 10.</li>
+<li><strong>FC 27 meta boards:</strong> not in any board’s top ten.</li>
+<li><strong>Most copied Target build:</strong> <a href="https://proclubshq.com/b/02a7b5ab-f502-441a-884d-ed7c6ede3db6?src=guide">CL Ronaldo</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=target&year=27&src=guide">all FC 27 Target builds in the app</a>.</p>
+
+<h2 id="specializations">The specializations, priced</h2>
+<p>Each specialization asks for three attributes at 90 or 92. Bought from a new pro’s starting values, the cheapest of the 12 in the group is Presser on the Finisher, 332 AP (35% of your 962); the dearest is Spark+ on the Spark, 571 AP.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a32s">
+<style>
+.a32s .ag{padding:10px 0 6px;border-top:1px solid var(--line)}
+.a32s .ag:first-of-type{border-top:0;padding-top:2px}
+.a32s .an{margin:0 0 6px;font:800 15px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.a32s .an a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a32s .sr{display:grid;grid-template-columns:minmax(120px,1.1fr) 1.4fr 70px;gap:10px;align-items:center;padding:4px 0}
+.a32s .sr .nm{font-size:13.5px;font-weight:600;line-height:1.25}
+.a32s .sr .nm small{display:block;font-size:11.5px;font-weight:600;color:#c9a227}
+.a32s .sr .br{display:flex;gap:2px;height:10px;background:rgba(255,255,255,.05);border-radius:0 4px 4px 0;overflow:hidden}
+.a32s .sr .br i{display:block;height:10px}
+.a32s .sr .v{text-align:right;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.a32s .sr .v small{display:block;font-size:10.5px;font-weight:600;color:var(--mut)}
+@media (max-width:520px){.a32s .sr{grid-template-columns:minmax(104px,1fr) 1fr 60px;gap:8px}}
+</style>
+<p class="kk">Specializations</p>
+<p class="tl">What each one costs to unlock</p>
+<p class="sb">Its three criteria bought from a new pro’s starting values. The bar is your 962 AP, split by the three criteria’s price tiers.</p>
+<div class="ag"><p class="an"><a href="/blog/pro-clubs-finisher-stats/">Finisher</a></p>
+<div class="sr"><span class="nm">Presser<small>Relentless+</small></span><span class="br" role="img" aria-label="Agility 90: 72 AP, Stamina 92: 141 AP, Aggression 90: 119 AP"><i class="t0" style="width:7.48%"></i><i class="t1" style="width:14.66%"></i><i class="t1" style="width:12.37%"></i></span><span class="v">332<small>35% of AP</small></span></div>
+<div class="sr"><span class="nm">Finisher+<small>Chip Shot+</small></span><span class="br" role="img" aria-label="Ball Control 90: 92 AP, Composure 92: 159 AP, Reactions 90: 92 AP"><i class="t1" style="width:9.56%"></i><i class="t2" style="width:16.53%"></i><i class="t1" style="width:9.56%"></i></span><span class="v">343<small>36% of AP</small></span></div>
+<div class="sr"><span class="nm">Hunter<small>Gamechanger+</small></span><span class="br" role="img" aria-label="Att. Position 90: 71 AP, Finishing 90: 177 AP, Curve 92: 130 AP"><i class="t1" style="width:7.38%"></i><i class="t3" style="width:18.40%"></i><i class="t1" style="width:13.51%"></i></span><span class="v">378<small>39% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an"><a href="/blog/pro-clubs-magician-stats/">Magician</a></p>
+<div class="sr"><span class="nm">Magician+<small>First Touch+</small></span><span class="br" role="img" aria-label="Acceleration 90: 177 AP, Composure 90: 72 AP, Ball Control 92: 114 AP"><i class="t3" style="width:18.40%"></i><i class="t0" style="width:7.48%"></i><i class="t1" style="width:11.85%"></i></span><span class="v">363<small>38% of AP</small></span></div>
+<div class="sr"><span class="nm">Invader<small>Incisive Pass+</small></span><span class="br" role="img" aria-label="Att. Position 90: 71 AP, Vision 90: 92 AP, Long Pass 92: 219 AP"><i class="t1" style="width:7.38%"></i><i class="t1" style="width:9.56%"></i><i class="t2" style="width:22.77%"></i></span><span class="v">382<small>40% of AP</small></span></div>
+<div class="sr"><span class="nm">Hotshot<small>Power Shot+</small></span><span class="br" role="img" aria-label="Finishing 90: 177 AP, Shot Power 92: 92 AP, Long Shots 90: 167 AP"><i class="t3" style="width:18.40%"></i><i class="t0" style="width:9.56%"></i><i class="t2" style="width:17.36%"></i></span><span class="v">436<small>45% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an"><a href="/blog/pro-clubs-spark-stats/">Spark</a></p>
+<div class="sr"><span class="nm">Joker<small>Whipped Pass+</small></span><span class="br" role="img" aria-label="Att. Position 90: 71 AP, Crossing 92: 159 AP, Long Pass 90: 167 AP"><i class="t1" style="width:7.38%"></i><i class="t2" style="width:16.53%"></i><i class="t2" style="width:17.36%"></i></span><span class="v">397<small>41% of AP</small></span></div>
+<div class="sr"><span class="nm">Ace<small>Chip Shot+</small></span><span class="br" role="img" aria-label="Reactions 90: 92 AP, Ball Control 90: 129 AP, Finishing 92: 274 AP"><i class="t1" style="width:9.56%"></i><i class="t2" style="width:13.41%"></i><i class="t3" style="width:28.48%"></i></span><span class="v">495<small>51% of AP</small></span></div>
+<div class="sr"><span class="nm">Spark+<small>Quick Step+</small></span><span class="br" role="img" aria-label="Agility 92: 217 AP, Sprint Speed 90: 177 AP, Acceleration 90: 177 AP"><i class="t3" style="width:22.56%"></i><i class="t3" style="width:18.40%"></i><i class="t3" style="width:18.40%"></i></span><span class="v">571<small>59% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an">Target</p>
+<div class="sr"><span class="nm">Target+<small>Acrobatic+</small></span><span class="br" role="img" aria-label="Agility 90: 209 AP, Jumping 92: 114 AP, Volleys 90: 102 AP"><i class="t3" style="width:21.73%"></i><i class="t1" style="width:11.85%"></i><i class="t1" style="width:10.60%"></i></span><span class="v">425<small>44% of AP</small></span></div>
+<div class="sr"><span class="nm">Roamer<small>Incisive Pass+</small></span><span class="br" role="img" aria-label="Vision 90: 167 AP, Long Pass 90: 189 AP, Short Pass 92: 81 AP"><i class="t2" style="width:17.36%"></i><i class="t2" style="width:19.65%"></i><i class="t0" style="width:8.42%"></i></span><span class="v">437<small>45% of AP</small></span></div>
+<div class="sr"><span class="nm">Runner<small>Enforcer+</small></span><span class="br" role="img" aria-label="Sprint Speed 92: 274 AP, Strength 90: 129 AP, Att. Position 90: 71 AP"><i class="t3" style="width:28.48%"></i><i class="t2" style="width:13.41%"></i><i class="t1" style="width:7.38%"></i></span><span class="v">474<small>49% of AP</small></span></div>
+</div>
+<div class="lg" aria-hidden="true" style="margin-top:10px"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span></div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="stars">Skill moves and weak foot</h2>
+<p>All four reach 5★ skill moves; 5★ costs least on the Finisher and the Spark, 40 AP from 3★. All four reach 5★ weak foot; 5★ costs least on the Magician and the Spark, 65 AP from 3★.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a32k">
+<style>
+.a32k .tr{display:grid;grid-template-columns:minmax(96px,1fr) 1.2fr 1.2fr;gap:8px;align-items:center;padding:8px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.a32k .tr.hd{border-top:0;padding-top:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.a32k .tr>span{font-size:14px}
+.a32k .tr>span small{display:block;font-size:11.5px;color:var(--mut)}
+.a32k .tr .nm{font-weight:600}
+.a32k .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+<p class="kk">Stars cost AP too</p>
+<p class="tl">Skill moves and weak foot</p>
+<p class="sb">From each archetype’s starting stars to its maximum, paid out of the same 962 AP.</p>
+<div role="table" aria-label="Skill move and weak foot costs">
+<div class="tr hd" role="row"><span role="columnheader"><span class="vh">Archetype</span></span><span role="columnheader">Skill moves</span><span role="columnheader">Weak foot</span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Finisher</span><span role="cell">3★ → 5★<small>15 + 25 = 40 AP</small></span><span role="cell">3★ → 5★<small>35 + 50 = 85 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Magician</span><span role="cell">3★ → 5★<small>20 + 35 = 55 AP</small></span><span role="cell">3★ → 5★<small>25 + 40 = 65 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Spark</span><span role="cell">3★ → 5★<small>15 + 25 = 40 AP</small></span><span role="cell">3★ → 5★<small>25 + 40 = 65 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Target</span><span role="cell">2★ → 5★<small>8 + 15 + 25 = 48 AP</small></span><span role="cell">2★ → 5★<small>20 + 35 + 50 = 105 AP</small></span></div>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="meta">Which is best? The meta boards</h2>
+<p>The Finisher is no. 1 at striker (73.7), the Magician is no. 1 at attacking mid (73.8) and the Spark is no. 1 at wide mid (74.8). The Target is not in any board’s top ten yet. The boards score every published FC 27 build against the season’s reference XI and move as new builds publish; the <a href="/blog/best-pro-clubs-archetypes/">FC 27 archetype tier list</a> ranks all thirteen by them.</p>
+
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta .row{display:flex;flex-wrap:wrap;gap:8px}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">FC 27 in the app</p>
+<h3>Open a finished forward build</h3>
+<p>Every build in the builder is priced against your 962 AP as you move a slider. Open one, copy it, and make it yours.</p>
+<div class="row"><a class="b" href="https://proclubshq.com/explore?archetype=finisher&year=27&src=guide">Finisher builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=magician&year=27&src=guide">Magician builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=spark&year=27&src=guide">Spark builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=target&year=27&src=guide">Target builds →</a></div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->
@@ -76,135 +365,30 @@
 .f27b li:last-child{margin-bottom:0}
 .f27b a{color:#7fb0ff;font-weight:700;text-decoration:none}
 .f27b a:hover{text-decoration:underline}</style>
-<p class="k">Playing FC 27 next</p>
-<h3>What actually changes in FC 27</h3>
+<p class="k">More on FC 27</p>
+<h3>The rest of what is new</h3>
 <ul>
 <li><a href="/blog/fc27-disruptor-build/">The Disruptor</a> — The only brand-new archetype in FC 27 — a ball-winning midfielder built on Roy Keane, with a finished level-40 build.</li>
 <li><a href="/blog/fc27-masteries-explained/">Masteries</a> — A permanent progression layer FC 26 does not have: every archetype you level grants attribute points to every build on your account.</li>
 <li><a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> — One signature PlayStyle instead of four, level-gated perks, and a different specialization structure.</li>
+<li><a href="/blog/fc27-level-40-builds/">Level 40 builds</a> — FC 27 starts you at a 40-level cap with a far tighter budget, so the whole spending order changes.</li>
 </ul>
 </div>
 <!--kg-card-end: html-->
 
-<!--kg-card-begin: html-->
-<div class="pchq-ad" data-ad="a"></div>
-<!--kg-card-end: html-->
-
-<!--kg-card-begin: html-->
-<h2 class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/finisher.svg" alt="" loading="lazy" width="26" height="26">Finisher — the pure goalscorer</h2>
-<!--kg-card-end: html-->
-<p>The only <strong>99 Scoring ceiling</strong> in the game, wrapped in a 98 touch. The Finisher's job description is one line: be in the right place and don't miss. Both perks serve it — Fake to Real for the one-on-one, 1v1 Master for the same moment — and the signature set (Low Driven Shot, First Touch, Quick Step, Acrobatic) is four ways of turning a half-chance into a shot on target.</p>
-<p>On the live meta board the Finisher is <strong>no. 1 winger</strong> and runner-up at striker — it scores from wide as well as through the middle, which is why two of the meta XI's front three are Finishers.</p>
-<!--kg-card-begin: html-->
-<div class="a32f">
-<style>.a32f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a32f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a32f p{margin:0 0 8px;color:#c3c2b7}
-.a32f p b{color:inherit}
-.a32f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a32f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a32f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Low Driven Shot"><img src="https://proclubshq.com/assets/playstyles/low-driven-shot.png" alt="Low Driven Shot PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Quick Step"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Acrobatic"><img src="https://proclubshq.com/assets/playstyles/acrobatic.png" alt="Acrobatic PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Fake to Real</b> — shot fakes create more separation from defenders. <b>1v1 Master</b> — boost to finishing and composure when one-on-one with the keeper.</p>
-<p><b>Specializations:</b> Finisher+, Presser and Hunter. <b>Meta board:</b> no. 1 on the W board (79.9).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Finisher if:</strong></p>
-<ul>
-<li>Your club creates chances and wastes them — you are the fix.</li>
-<li>You want to play wide: the meta's wing slots are both Finishers right now.</li>
-<li>You'd rather have the best shot in the game than the best dribble.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-finisher-build/">the complete Finisher build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<h2 class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/target.svg" alt="" loading="lazy" width="26" height="26">Target — the reference point</h2>
-<!--kg-card-end: html-->
-<p>The tallest allowed frame up front (up to <strong>6'5"</strong>), the group's best Physical ceiling, and a signature set built for it: Power Shot, Precision Header, Tiki Taka, Press Proven. The Target scores the goals the other two can't reach — crosses, corners, second balls — and holds the ball up so your midfield can arrive. 6th Sense and Physical Shooter both reward playing with your back to goal.</p>
-<p>It is the current <strong>no. 1 striker</strong> on the meta board. In a lobby full of small, fast forwards, the archetype nobody can move off the ball wins the games that get physical.</p>
-<!--kg-card-begin: html-->
-<div class="a32f">
-<style>.a32f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a32f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a32f p{margin:0 0 8px;color:#c3c2b7}
-.a32f p b{color:inherit}
-.a32f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a32f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a32f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Power Shot"><img src="https://proclubshq.com/assets/playstyles/power-shot.png" alt="Power Shot PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Precision Header"><img src="https://proclubshq.com/assets/playstyles/precision-header.png" alt="Precision Header PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Tiki Taka"><img src="https://proclubshq.com/assets/playstyles/tiki-taka.png" alt="Tiki Taka PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Press Proven"><img src="https://proclubshq.com/assets/playstyles/press-proven.png" alt="Press Proven PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>6th Sense</b> — shoot with back to goal in the attacking third to gain a short boost to finishing, balance, and composure. <b>Physical Shooter</b> — shield off an opponent, then shoot in the box for a boost to strength, shot power, and balance.</p>
-<p><b>Specializations:</b> Target+, Roamer and Runner. <b>Meta board:</b> no. 1 on the ST board (79.1).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Target if:</strong></p>
-<ul>
-<li>Your club actually crosses the ball — a Target without service is a statue.</li>
-<li>You play the classic 9: hold-up, flick-ons, box presence, first contact on set pieces.</li>
-<li>You want the meta pick for the ST slot as it stands today.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-target-build/">the complete Target build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<h2 class="a32h"><img class="aico" src="https://proclubshq.com/assets/archetypes/magician.svg" alt="" loading="lazy" width="26" height="26">Magician — the inventor</h2>
-<!--kg-card-end: html-->
-<p>A <strong>98 Ball Control</strong> ceiling with 95 pace and a 96 Scoring line behind it — the Magician creates its own chance and then takes it. The signature set is the flair kit in full: Technical, Finesse Shot, Chip Shot, Inventive. Getaway Driver buys separation; Ankle Breaker punishes anyone who dives in. It is the second striker, the false nine, the winger who comes inside to curl one.</p>
-<p>On the board it sits <strong>3rd at winger (78.0)</strong> behind two Finishers — the trade is real: more creation, slightly less finish. If you want the touchline itself rather than the half-space, also look at the Spark in the <a href="/blog/pro-clubs-midfielder-archetypes/">midfield roundup</a> — catalogued as a midfielder, played as a wide forward.</p>
-<!--kg-card-begin: html-->
-<div class="a32f">
-<style>.a32f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a32f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a32f p{margin:0 0 8px;color:#c3c2b7}
-.a32f p b{color:inherit}
-.a32f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a32f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a32f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Technical"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Chip Shot"><img src="https://proclubshq.com/assets/playstyles/chip-shot.png" alt="Chip Shot PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Inventive"><img src="https://proclubshq.com/assets/playstyles/inventive.png" alt="Inventive PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Getaway Driver</b> — escapes markers with quick direction changes in the final third. <b>Ankle Breaker</b> — successful skill moves briefly slow nearby defenders.</p>
-<p><b>Specializations:</b> Magician+, Hotshot and Invader. <b>Meta board:</b> 3rd on the W board (78.0).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Magician if:</strong></p>
-<ul>
-<li>You beat players off the dribble and want the game's best tools for it up front.</li>
-<li>Your club already has a finisher and needs the player who makes his chances.</li>
-<li>You score finesse-shot goals from the cut-in — that's this archetype's signature move, literally.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-magician-build/">the complete Magician build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<p>Still torn? The <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head tool</a> puts any two of the three side by side, ceiling by ceiling, and the <a href="/blog/which-pro-clubs-archetype-should-i-play/">four-question quiz</a> scores your answers against all 13 archetypes — not just the forwards.</p>
-
-<!--kg-card-begin: html-->
-<div class="pchq-cta">
-<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
-.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
-.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
-.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
-.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
-<p class="k">Finished builds, ready to copy</p>
-<h3>Every striker archetype has builds in the app</h3>
-<p>Open a finished Finisher, Target or Magician from the explore feed, save a copy, and bend it to your game — every attribute priced live.</p>
-<a class="b" href="https://proclubshq.com/explore">Browse striker builds →</a>
-</div>
-<!--kg-card-end: html-->
-
-<h2>Frequently asked questions</h2>
-<h3>How many striker archetypes are there in Pro Clubs?</h3>
-<p>Three — the Finisher, the Target and the Magician. Wingers often run a fourth option, the Spark, which the game files as a midfielder.</p>
-<h3>What is the best striker archetype in FC 26?</h3>
-<p>On the live meta board the Target is the no. 1 striker and the Finisher is the no. 1 winger, so the honest answer is: Target through the middle, Finisher out wide. The Magician trades a little of both for creation.</p>
-<h3>Can the Finisher play on the wing?</h3>
-<p>Yes — both wing slots in the current meta XI are Finishers. The 99 Scoring ceiling travels; the archetype scores from wide angles as well as central ones.</p>
-<h3>Do the striker archetypes carry over to FC 27?</h3>
-<p>Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a striker you build now is a head start, not a throwaway.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>How many forward archetypes are there in FC 27 Pro Clubs?</h3>
+<p>Four: the Finisher, the Magician, the Spark and the Target.</p>
+<h3>Which forward archetype has the highest ceilings in FC 27?</h3>
+<p>Highest ceilings in the group: the Finisher for Scoring (99), the Spark for Pace (97) and the Target for Physical (95). The Finisher, the Magician and the Spark share the top Ball Control ceiling (98). The Magician and the Spark share the top Passing ceiling (96). The Finisher and the Target share the top Defending ceiling (83).</p>
+<h3>Which forward archetype is cheapest to upgrade?</h3>
+<p>It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Finisher: Agility, Dribbling, Sprint Speed and Vision. The Magician: Balance, Composure, Volleys and Shot Power. The Spark: Curve, Dribbling, Vision and Long Shots. The Target: Short Pass, Acceleration, Ball Control and Curve. The widest gap: 90 Dribbling costs 65 AP on a Spark and 209 on a Target.</p>
+<h3>Which forward specialization is cheapest to unlock?</h3>
+<p>Presser on the Finisher: 332 AP from a new Finisher’s starting values (Agility 90, Stamina 92 and Aggression 90). The dearest in the group is Spark+ on the Spark, 571 AP.</p>
+<h3>What is the best forward archetype in FC 27?</h3>
+<p>By the FC 27 season 1 meta boards: the Finisher no. 1 at striker (73.7); the Magician no. 1 at attacking mid (73.8); the Spark no. 1 at wide mid (74.8); the Target not in any board’s top ten. The boards rank published builds and move as new ones publish.</p>
+<h3>How many AP do you get in FC 27 Pro Clubs?</h3>
+<p>962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget.</p>
 <!--kg-card-begin: html-->
 <script type="application/ld+json">
 {
@@ -213,39 +397,86 @@
  "mainEntity": [
   {
    "@type": "Question",
-   "name": "How many striker archetypes are there in Pro Clubs?",
+   "name": "How many forward archetypes are there in FC 27 Pro Clubs?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Three — the Finisher, the Target and the Magician. Wingers often run a fourth option, the Spark, which the game files as a midfielder."
+    "text": "Four: the Finisher, the Magician, the Spark and the Target."
    }
   },
   {
    "@type": "Question",
-   "name": "What is the best striker archetype in FC 26?",
+   "name": "Which forward archetype has the highest ceilings in FC 27?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "On the live meta board the Target is the no. 1 striker and the Finisher is the no. 1 winger, so the honest answer is: Target through the middle, Finisher out wide. The Magician trades a little of both for creation."
+    "text": "Highest ceilings in the group: the Finisher for Scoring (99), the Spark for Pace (97) and the Target for Physical (95). The Finisher, the Magician and the Spark share the top Ball Control ceiling (98). The Magician and the Spark share the top Passing ceiling (96). The Finisher and the Target share the top Defending ceiling (83)."
    }
   },
   {
    "@type": "Question",
-   "name": "Can the Finisher play on the wing?",
+   "name": "Which forward archetype is cheapest to upgrade?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — both wing slots in the current meta XI are Finishers. The 99 Scoring ceiling travels; the archetype scores from wide angles as well as central ones."
+    "text": "It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Finisher: Agility, Dribbling, Sprint Speed and Vision. The Magician: Balance, Composure, Volleys and Shot Power. The Spark: Curve, Dribbling, Vision and Long Shots. The Target: Short Pass, Acceleration, Ball Control and Curve. The widest gap: 90 Dribbling costs 65 AP on a Spark and 209 on a Target."
    }
   },
   {
    "@type": "Question",
-   "name": "Do the striker archetypes carry over to FC 27?",
+   "name": "Which forward specialization is cheapest to unlock?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a striker you build now is a head start, not a throwaway."
+    "text": "Presser on the Finisher: 332 AP from a new Finisher’s starting values (Agility 90, Stamina 92 and Aggression 90). The dearest in the group is Spark+ on the Spark, 571 AP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the best forward archetype in FC 27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "By the FC 27 season 1 meta boards: the Finisher no. 1 at striker (73.7); the Magician no. 1 at attacking mid (73.8); the Spark no. 1 at wide mid (74.8); the Target not in any board’s top ten. The boards rank published builds and move as new ones publish."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many AP do you get in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget."
    }
   }
  ]
 }
 </script>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get EA SPORTS FC 27</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">PlayStation 5</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Xbox Series X</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">PC (EA App)</span><span class="g">Buy now →</span></a>
+</div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->

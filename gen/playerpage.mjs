@@ -87,6 +87,12 @@ const byEvidence = (controls, n = 5) => [...controls]
 // ── One release's whole section ────────────────────────────────────────────
 // Everything about a version lives inside this, so moving FC 27 above FC 26 on
 // launch day is a reordering of two calls and nothing else.
+// The archetype's own guide. Every archetype has `pro-clubs-<id>-build` except
+// the Disruptor, new in FC 27, whose guide is `fc27-disruptor-build`; a link
+// built from the id alone pointed Disruptor players at a 404.
+const STATS = new Set(['magician', 'spark', 'finisher', 'maestro', 'disruptor']);
+const guideHref = (id) => `${BLOG}/${id === 'disruptor' ? 'fc27-disruptor-build' : `pro-clubs-${id}-build`}/`;
+
 function releaseSection({ P, cfg, build, an, year, R, isLead, first }) {
   const arch = archOf(build.archetype_id);
   const archName = archTitle(arch?.name ?? build.archetype_id);
@@ -138,7 +144,7 @@ ${weak.length ? ` ${esc(listOf(weak.map((w) => `${w.attr} sits at ${w.v}`)))} �
   weak.some((w) => /Head|Jump/i.test(w.attr)) ? 'do not expect to win anything in the air'
   : weak.some((w) => /Tackle|Aware|Intercept/i.test(w.attr)) ? 'this build does not defend'
   : 'those parts of the game belong to someone else in your club'}.` : ''}
-If that is the job your club needs filling, the <a href="${BLOG}/pro-clubs-${arch?.id}-build/">${esc(archName)} guide</a> spends the same points differently.</p>`) : '';
+If that is the job your club needs filling, the <a href="${guideHref(arch?.id)}">${esc(archName)} guide</a> spends the same points differently.</p>`) : '';
 
   // Five controls, animated through the shared renderer. The REASON is shown,
   // not explained (owner, 2026-08-23): a PlayStyle behind a control is its
@@ -220,8 +226,13 @@ export function renderPlayerPage(cfg, all, { CTRL, analysisFor, ARM_OF }) {
     P, cfg, build: b, an: an[`fc${y}`], year: y,
     R: CTRL[y] ?? CTRL[26], isLead: y === leadYear, first,
   }) : null;
-  const A = S(leadYear, lead), B = S(otherYear, other);
-  const main = A ?? B;
+  // FC 27 ONLY since 2026-09-23 (owner: "FC 26 data is, to be honest,
+  // irrelevant right now"; FC 26 searches were ~5% of these pages' clicks).
+  // The FC 26 section, its jump link and its divider are gone; `other` is no
+  // longer rendered. Every player has an FC 27 build (checked at export).
+  if (!lead) throw new Error(`${cfg.slug}: no FC ${leadYear} build`);
+  const A = S(leadYear, lead), B = null;
+  const main = A;
 
   const css = kg(`<style>${baseCss(P)}
 .${P}{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9}
@@ -320,11 +331,11 @@ ${PCHQ_CSS}
   const related = others.map((p) =>
     `<a href="${BLOG}/${p.slug}-pro-clubs-build/">${esc(p.name)}</a>`).join(' · ');
 
-  const leadAn = an[`fc${leadYear}`] ?? an[`fc${otherYear}`] ?? {};
-  const leadBuild = lead ?? other;
+  const leadAn = an[`fc${leadYear}`] ?? {};
+  const leadBuild = lead;
   const faq = kg(`<div class="${P}">
 <h2 id="faq">Quick answers</h2>
-<p><strong>What archetype is the ${esc(first)} build?</strong> ${esc(main.archName)}${main.arch?.position ? `, a ${esc(main.arch.position.toLowerCase())}` : ''}. The <a href="${BLOG}/pro-clubs-${main.arch?.id}-build/">${esc(main.archName)} guide</a> covers the AP order behind it and thirteen more finished builds on the same archetype.</p>
+<p><strong>What archetype is the ${esc(first)} build?</strong> ${esc(main.archName)}${main.arch?.position ? `, a ${esc(main.arch.position.toLowerCase())}` : ''}. The <a href="${guideHref(main.arch?.id)}">${esc(main.archName)} guide</a> has more finished FC 27 builds on the same archetype${STATS.has(main.arch?.id) ? `, and the <a href="${BLOG}/pro-clubs-${main.arch.id}-stats/">${esc(main.archName)} stats page</a> prices every upgrade` : ''}.</p>
 <p><strong>How tall is it, and what AcceleRATE does that give?</strong> ${ft(leadBuild.height)} at ${leadBuild.weight} lb, which the builder computes as <strong>${esc(leadBuild.accelerationType ?? 'Controlled')}</strong>. Change the frame and that can change with it — the <a href="${BLOG}/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a> has the thresholds.</p>
 ${leadAn.gold?.length ? `<p><strong>Which PlayStyles does it run?</strong> Gold: ${esc(listOf(leadAn.gold))}. ${leadAn.regulars?.length ? `Regular slots: ${esc(listOf(leadAn.regulars.slice(0, 5)))}${leadAn.regulars.length > 5 ? ' and more' : ''}.` : ''} Every badge on the card above is one of those.</p>` : ''}
 ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc((leadAn.specs.find((x) => x.worn) ?? leadAn.specs[0]).name)}${leadAn.specs.length > 1 ? `, with ${esc(leadAn.specs.filter((x) => !x.worn).map((x) => x.name).join(' and '))} unlocked beside it so you can switch between games` : ''}.</p>` : ''}

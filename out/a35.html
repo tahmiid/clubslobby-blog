@@ -1,64 +1,312 @@
-<p>Pro Clubs has exactly <strong>two goalkeeper archetypes</strong>, and the choice is a philosophy question: does your keeper's game end on the line or start there? The Shot Stopper is the reflex wall; the Sweeper Keeper is the eleventh outfielder. Their <strong>Goalkeeping ceilings are identical — 99 average</strong> — so you are not choosing who saves better at the limit; you are choosing what else your keeper does. This page settles it; both have <a href="/blog/pro-clubs-shot-stopper-build/">complete</a> <a href="/blog/pro-clubs-sweeper-keeper-build/">build guides</a>.</p>
-
 <!--kg-card-begin: html-->
-<div class="a35g">
 <style>
-.a35g{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--good:#0ca30c;--bad:#e66767;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-.a35g *{box-sizing:border-box}
-.a35g table th{background:transparent!important;color:var(--muted)!important}
-.a35g table td{color:var(--ct,inherit)!important}
-.a35g .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.a35g .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.a35g .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.a35g .chips{display:flex;flex-wrap:wrap;gap:6px}
-.a35g .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.a35g .chip:hover{border-color:var(--muted)}
-.a35g .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.a35g .chip[disabled]{opacity:.32;cursor:not-allowed}
-.a35g .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.a35g{padding:14px}}
-.a35g{overflow-x:auto}
-.a35g .g{display:grid;grid-template-columns:minmax(110px,1.2fr) repeat(2,minmax(86px,1fr));min-width:340px;font-size:13.5px}
-.a35g .h{padding:8px 10px;font-weight:650}
-.a35g .h a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--muted)}
-.a35g .h small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
-.a35g .h .aico{display:block;width:22px;height:22px;margin-bottom:4px;color:var(--muted)}
-.a35h .aico{width:30px;height:30px;vertical-align:-5px;margin-right:10px}
-.a35g .c{padding:7px 10px;border-top:1px solid var(--grid);font-variant-numeric:tabular-nums}
-.a35g .r{color:var(--ink2)}
-.a35g .b{font-weight:700;color:var(--accent)}
-.a35g .meta{font-size:12px;font-variant-numeric:normal}
+.pcs{--bg:#0e0f19;--ink:#f2f3f7;--ink2:#b9bec9;--mut:#8a90a0;--line:rgba(255,255,255,.09);
+  --t0:#2DE2C5;
+  --t1:#24A08F;
+  --t2:#A8435B;
+  --t3:#FF6B8A;
+  font:400 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px 14px;margin:1.6em 0}
+.pcs *{box-sizing:border-box}
+.pcs,.pcs *{word-break:normal;overflow-wrap:normal;hyphens:none}
+.pcs p{margin:0}
+.pcs .kk{margin:0 0 4px;font:700 11px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)}
+.pcs .tl{margin:0 0 3px;font:800 21px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.pcs .sb{margin:0 0 12px;font-size:13px;color:var(--ink2)}
+.pcs .ctl{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 10px;align-items:center}
+.pcs .ctl .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-right:2px}
+.pcs .grp2{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.pcs button.ch{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:transparent;color:var(--ink2);cursor:pointer;min-height:30px}
+.pcs button.ch:hover{border-color:var(--mut)}
+.pcs button.ch[aria-pressed="true"]{background:var(--ink);color:#0e0f19;border-color:var(--ink);font-weight:700}
+.pcs .sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px}
+.pcs .t0{background:var(--t0)}
+.pcs .k0{background:rgba(45,226,197,.32)}
+.pcs .t1{background:var(--t1)}
+.pcs .k1{background:rgba(36,160,143,.15)}
+.pcs .t2{background:var(--t2)}
+.pcs .k2{background:rgba(168,67,91,.24)}
+.pcs .t3{background:var(--t3)}
+.pcs .k3{background:rgba(255,107,138,.32)}
+.pcs .lg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 6px;font-size:12px;color:var(--ink2)}
+.pcs .lg span{display:inline-flex;align-items:center;gap:6px}
+.pcs .ft{margin:12px 0 0;font-size:11.5px;color:var(--mut)}
+.pcs .ft b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){.pcs{padding:14px 12px 12px}.pcs .tl{font-size:19px}}</style>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pcs a35x" data-a35x data-v="max" data-all="0">
+<style>
+.a35x .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 14px}
+.a35x .tabs .tb{font-size:12.5px;font-weight:700;line-height:1;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  color:var(--ink2)!important;text-decoration:none!important;background:transparent}
+.a35x .tabs a.tb:hover{border-color:var(--t0);color:var(--ink)!important}
+.a35x .tabs .tb.cur{background:var(--t0);border-color:var(--t0);color:#062a24!important}
+.a35x .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a35x .g{min-width:224px}
+.a35x .tr{display:grid;grid-template-columns:minmax(96px,1.3fr) repeat(2,minmax(60px,1fr));gap:2px;margin-top:2px}
+.a35x .tr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 4px;font-size:13.5px;font-variant-numeric:tabular-nums;border-radius:4px;text-align:center}
+.a35x .tr .rh{justify-content:flex-start;text-align:left;font-weight:600;color:var(--ink)}
+.a35x .hd>span{flex-direction:column;gap:3px;min-height:0;padding:0 2px 6px;font-size:12.5px;font-weight:700;line-height:1.15}
+.a35x .hd a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a35x .hd small{font-size:10.5px;font-weight:400;color:var(--mut)}
+.a35x .hd img{width:22px;height:22px}
+.a35x .cr .cl{background:rgba(255,255,255,.05)}
+.a35x .cr .rh{font-weight:700}
+.a35x .at>span{min-height:24px;font-size:12.5px;color:var(--ink2)}
+.a35x .at .rh{padding-left:12px;font-weight:400;color:var(--ink2)}
+.a35x[data-all="0"] .at{display:none}
+.a35x[data-v="max"] .n,.a35x[data-v="min"] .x{display:none}
+.a35x .cl b{font-weight:600}
+.a35x[data-v="max"] .bx,.a35x[data-v="min"] .bn{box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+.a35x[data-v="max"] .bx .x,.a35x[data-v="min"] .bn .n{font-weight:800;color:var(--ink)}
+.a35x .fx{border-top:1px solid var(--line);padding-top:2px}
+.a35x .fx>span{font-size:12px;line-height:1.3;color:var(--ink2)}
+.a35x .fx .rh{font-size:12.5px;color:var(--ink)}
+.a35x .fx img{width:22px;height:22px;display:block;margin:0 auto 2px}
+.a35x .fx .ps{flex-direction:column}
+.a35x .sh{margin:12px 0 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a35x .lg .bx{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(45,226,197,.85)}
+@media (max-width:520px){.a35x .tr>span{font-size:12.5px}.a35x .hd small{display:none}}
 </style>
-<p class="hd">Shot Stopper vs Sweeper Keeper, side by side</p>
-<p class="sub">Attribute-category ceilings — the highest each archetype can average, not where it starts. Best of the group in blue.</p>
-<div class="g" role="table" aria-label="Shot Stopper vs Sweeper Keeper, side by side">
-<span class="h"></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/shot-stopper.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-shot-stopper-build/">Shot Stopper</a><small>Oliver Kahn</small></span>
-<span class="h"><img class="aico" src="https://proclubshq.com/assets/archetypes/sweeper-keeper.svg" alt="" loading="lazy" width="26" height="26"><a href="/blog/pro-clubs-sweeper-keeper-build/">Sweeper Keeper</a><small>Lev Yashin</small></span>
-<span class="c r">Goalkeeping</span><span class="c b">99</span><span class="c b">99</span>
-<span class="c r">Pace</span><span class="c">89</span><span class="c b">90</span>
-<span class="c r">Ball Control</span><span class="c">88</span><span class="c b">91</span>
-<span class="c r">Passing</span><span class="c">86</span><span class="c b">88</span>
-<span class="c r">Physical</span><span class="c">94</span><span class="c b">96</span>
-<span class="c r">Height</span><span class="c">6'0"–6'7"</span><span class="c">5'10"–6'6"</span>
-<span class="c r">Meta board</span><span class="c meta">no. 1 on the GK board (73.9)</span><span class="c meta">off the boards this season</span>
+<p class="kk">FC 27 · <time datetime="2026-09-23">Updated 23 September 2026</time></p>
+<nav class="tabs" aria-label="FC 27 archetypes by position"><a class="tb" href="/blog/best-pro-clubs-archetypes/">Tier list</a><a class="tb" href="/blog/pro-clubs-striker-archetypes/">Forwards</a><a class="tb" href="/blog/pro-clubs-midfielder-archetypes/">Midfielders</a><a class="tb" href="/blog/pro-clubs-defender-archetypes/">Defenders</a><span class="tb cur" aria-current="page">Keepers</span></nav>
+<p class="tl">The two FC 27 goalkeeper archetypes, side by side</p>
+<p class="sb">Attribute averages by category: the highest each archetype can reach, or where a new one starts. Tap a name for its section.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Values"><span class="lb">Show</span><button type="button" class="ch" data-v="max" aria-pressed="true">Ceiling</button><button type="button" class="ch" data-v="min" aria-pressed="false">Start</button></span>
+  <span class="grp2" role="group" aria-label="Rows"><span class="lb">Rows</span><button type="button" class="ch" data-all="0" aria-pressed="true">Categories</button><button type="button" class="ch" data-all="1" aria-pressed="false">Every attribute</button></span>
 </div>
-<p class="foot">Ceilings from the Pro Clubs HQ catalog; board standings from the live meta season (Spain &amp; Portugal 2030, 4-3-3).</p>
+<div class="lg" aria-hidden="true"><span><i class="bx"></i>Best of the two</span></div>
+<div class="scroll"><div class="g" role="table" aria-label="The two FC 27 goalkeeper archetypes, side by side">
+<div class="tr hd" role="row"><span role="columnheader" class="rh"></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/shot-stopper.svg" alt="" loading="lazy" width="26" height="26"><a href="#shot-stopper">Shot Stopper</a><small>Gianluigi Buffon</small></span><span role="columnheader"><img class="aico" src="https://proclubshq.com/assets/archetypes/sweeper-keeper.svg" alt="" loading="lazy" width="26" height="26"><a href="#sweeper-keeper">Sweeper Keeper</a><small>Edwin van der Sar</small></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Goalkeeping</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">73</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">73</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">GK Diving</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">GK Handling</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">GK Kicking</span><span role="cell" class="cl bx"><b class="x">99</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">GK Pos.</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">GK Reflexes</span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Pace</span><span role="cell" class="cl"><b class="x">89</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl"><b class="x">85</b><b class="n">55</b></span><span role="cell" class="cl bx bn"><b class="x">88</b><b class="n">65</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Physical</span><span role="cell" class="cl"><b class="x">94</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">74</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl bx"><b class="x">96</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Passing</span><span role="cell" class="cl bn"><b class="x">84</b><b class="n">53</b></span><span role="cell" class="cl bx bn"><b class="x">87</b><b class="n">53</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">99</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl bn"><b class="x">82</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">40</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">65</b></span><span role="cell" class="cl bx"><b class="x">92</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl"><b class="x">88</b><b class="n">59</b></span><span role="cell" class="cl bx bn"><b class="x">91</b><b class="n">69</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl bx"><b class="x">90</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl bx"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">70</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl bn"><b class="x">85</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl"><b class="x">75</b><b class="n">45</b></span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl"><b class="x">90</b><b class="n">55</b></span><span role="cell" class="cl bx bn"><b class="x">92</b><b class="n">75</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Defending</span><span role="cell" class="cl"><b class="x">77</b><b class="n">47</b></span><span role="cell" class="cl bx bn"><b class="x">87</b><b class="n">59</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl"><b class="x">90</b><b class="n">65</b></span><span role="cell" class="cl bx bn"><b class="x">96</b><b class="n">75</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">65</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl"><b class="x">70</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">90</b><b class="n">65</b></span></div>
+<div class="tr cr" role="row"><span role="rowheader" class="rh">Scoring</span><span role="cell" class="cl"><b class="x">71</b><b class="n">43</b></span><span role="cell" class="cl bx bn"><b class="x">73</b><b class="n">47</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">85</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">40</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">50</b></span><span role="cell" class="cl bx bn"><b class="x">75</b><b class="n">50</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Long Shots</span><span role="cell" class="cl bx"><b class="x">60</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">60</b><b class="n">45</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Volleys</span><span role="cell" class="cl bx bn"><b class="x">60</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">60</b><b class="n">40</b></span></div><div class="tr at" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl"><b class="x">70</b><b class="n">40</b></span><span role="cell" class="cl bx bn"><b class="x">80</b><b class="n">55</b></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Height</span><span role="cell" class="cl">5'10"–6'6"</span><span role="cell" class="cl">6'0"–6'7"</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Skill moves</span><span role="cell" class="cl">1–2★</span><span role="cell" class="cl">1–3★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Weak foot</span><span role="cell" class="cl">1–3★</span><span role="cell" class="cl">1–4★</span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Signature PlayStyle</span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/far-reach.png" alt="" loading="lazy" width="22" height="22">Far Reach</span></span><span role="cell" class="cl"><span class="ps"><img src="https://proclubshq.com/assets/playstyles/footwork.png" alt="" loading="lazy" width="22" height="22">Footwork</span></span></div>
+<div class="tr fx" role="row"><span role="rowheader" class="rh">Meta board</span><span role="cell" class="cl">No. 1 at goalkeeper (70.3)</span><span role="cell" class="cl">4th at goalkeeper (68.9)</span></div>
+</div></div>
+<p class="ft">Level 40 is the FC 27 cap: <b>962 AP</b> to spend on the way from the start to the ceiling. Meta board: the best placing on the FC 27 season 1 boards (4-2-3-1), each a top ten.</p>
+<script>
+(function(){var R=document.querySelector('[data-a35x]');if(!R||R.dataset.on)return;R.dataset.on='1';
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.v)R.dataset.v=b.dataset.v;else if(b.dataset.all)R.dataset.all=b.dataset.all;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.v!==undefined&&R.dataset.v===x.dataset.v)||(x.dataset.all!==undefined&&R.dataset.all===x.dataset.all);x.setAttribute('aria-pressed',on)})});
+})();
+</script>
 </div>
 <!--kg-card-end: html-->
 
-<p>Read the grid carefully: the Sweeper Keeper wins every outfield column — feet, pace, passing, physicality — while the Goalkeeping row ties at the top. The catch is in what ceilings don't show: what each point costs to buy, and what the meta season currently rewards.</p>
+<p><strong>FC 27 has two goalkeeper archetypes: the Shot Stopper and the Sweeper Keeper.</strong> Both reach 99 in all five goalkeeping attributes and start level in three of them; the differences are GK Handling (a new Shot Stopper starts at 75, a Sweeper Keeper at 65) and GK Kicking (a new Shot Stopper starts at 65, a Sweeper Keeper at 75). Highest ceilings: the Sweeper Keeper for Pace (90), Physical (96), Passing (87), Ball Control (91), Defending (87) and Scoring (73); Goalkeeping is shared at the top. You have 962 AP to spend at level 40, and each archetype prices every attribute on its own four tiers, so the same upgrade costs a different amount on each.</p>
+<p>The same prices for all thirteen archetypes: <a href="/blog/pro-clubs-attribute-upgrade-costs/">FC 27 AP costs, every archetype compared</a>.</p>
+
+<h2 id="costs">What each one costs to upgrade</h2>
+<p>Every archetype has four attributes in its cheapest price tier, and they differ:</p>
+<ul>
+<li><strong>Shot Stopper:</strong> Acceleration, GK Pos., Reactions and Short Pass.</li>
+<li><strong>Sweeper Keeper:</strong> GK Kicking, Long Pass, Vision and Ball Control.</li>
+</ul>
+<p>The widest gap between the two: 90 GK Kicking costs 65 AP on a Sweeper Keeper and 234 on a Shot Stopper, each from its own starting value. Raised to 90, the Shot Stopper is the outright cheapest in five of the 32 attributes both carry and the Sweeper Keeper in 12; in one the lowest price is shared; and in 14 at most one of them can reach 90.</p>
 <!--kg-card-begin: html-->
-<figure class="a35c">
-<style>.a35c{margin:0 0 1.6em}.a35c img{width:100%;height:auto;border-radius:12px;display:block}
-.a35c figcaption{margin-top:8px;font-size:12.5px;color:#898781;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}</style>
-<img src="https://proclubshq.com/blog/content/images/size/w1200/2026/08/feat-a35-v7.jpg" alt="Official EA SPORTS FC 26 goalkeeper art with KEEPERS in large type" loading="lazy" width="1200" height="675">
-<figcaption>EA SPORTS FC 26 — the game these archetypes live in.</figcaption>
-</figure>
+<div class="pcs a35m" data-a35m>
+<style>
+.a35m .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a35m .mx{min-width:210px}
+.a35m .mr{display:grid;grid-template-columns:minmax(96px,1.6fr) repeat(2,minmax(44px,1fr));gap:2px;margin-top:2px}
+.a35m .mr abbr{display:none;text-decoration:none;border:0}
+.a35m .mr>span{display:flex;align-items:center;justify-content:center;min-height:30px;padding:3px 2px;font-size:13px;font-variant-numeric:tabular-nums;border-radius:4px}
+.a35m .mr .rh{justify-content:flex-start;padding-left:2px;font-weight:600;color:var(--ink)}
+.a35m .mr.hd .rh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a35m .mr.hd .ch{font-size:11.5px;font-weight:700;line-height:1.15;text-align:center}
+.a35m .mr.hd .ch a{color:var(--ink2)!important;text-decoration:none}
+.a35m .mr.hd .ch a:hover{color:var(--t0)!important;text-decoration:underline}
+.a35m .mr.cg span{grid-column:1/-1;justify-content:flex-start;min-height:0;padding:10px 2px 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.a35m .cl{color:var(--ink)}
+.a35m .cl.lo{font-weight:800;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+.a35m .cl.cap{font-size:10.5px;color:var(--mut);background:rgba(255,255,255,.03)}
+.a35m .lg .lo{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px rgba(242,243,247,.85)}
+@media (max-width:520px){.a35m .mr .fn{display:none}.a35m .mr abbr{display:inline}.a35m .mr>span{font-size:12.5px}.a35m .cl.cap{font-size:10px;letter-spacing:-.01em}}
+</style>
+<p class="kk">Same upgrade, two archetypes</p>
+<p class="tl">What it costs to raise each attribute</p>
+<p class="sb">AP from each archetype’s own starting value, tinted by its price tier for that attribute. The outlined cell is the cheapest of the two.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Raise to"><span class="lb">Raise to</span><button type="button" class="ch" data-to="80" aria-pressed="false">80</button><button type="button" class="ch" data-to="85" aria-pressed="false">85</button><button type="button" class="ch" data-to="90" aria-pressed="true">90</button></span>
+  <span class="grp2" role="group" aria-label="Attributes"><span class="lb">Show</span><button type="button" class="ch" data-cat="all" aria-pressed="true">All</button><button type="button" class="ch" data-cat="Goalkeeping" aria-pressed="false">Goalkeeping</button><button type="button" class="ch" data-cat="Pace" aria-pressed="false">Pace</button><button type="button" class="ch" data-cat="Physical" aria-pressed="false">Physical</button><button type="button" class="ch" data-cat="Passing" aria-pressed="false">Passing</button><button type="button" class="ch" data-cat="Ball Control" aria-pressed="false">Ball Control</button><button type="button" class="ch" data-cat="Defending" aria-pressed="false">Defending</button><button type="button" class="ch" data-cat="Scoring" aria-pressed="false">Scoring</button></span>
+</div>
+<div class="lg" aria-hidden="true"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span><span><i class="lo"></i>Cheapest of the two</span><span>max = can’t reach it</span></div>
+<div class="scroll"><div class="mx" role="table" aria-label="AP to raise each attribute on Shot Stopper and Sweeper Keeper" data-mx><div class="mr hd" role="row"><span role="columnheader" class="rh">To 90</span><span role="columnheader" class="ch"><a href="#shot-stopper"><span class="fn">Shot Stopper</span><abbr title="Shot Stopper">SS</abbr></a></span><span role="columnheader" class="ch"><a href="#sweeper-keeper"><span class="fn">Sweeper Keeper</span><abbr title="Sweeper Keeper">SK</abbr></a></span></div><div class="mr cg" role="row"><span role="rowheader">Goalkeeping</span></div><div class="mr" role="row"><span role="rowheader" class="rh">GK Diving</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr" role="row"><span role="rowheader" class="rh">GK Handling</span><span role="cell" class="cl k2 lo">129</span><span role="cell" class="cl k3">234</span></div><div class="mr" role="row"><span role="rowheader" class="rh">GK Kicking</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">GK Pos.</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k3">177</span></div><div class="mr" role="row"><span role="rowheader" class="rh">GK Reflexes</span><span role="cell" class="cl k3">177</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr cg" role="row"><span role="rowheader">Pace</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Acceleration</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k3">177</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Sprint Speed</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 88</span></div><div class="mr cg" role="row"><span role="rowheader">Physical</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Jumping</span><span role="cell" class="cl k1">119</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Strength</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2 lo">151</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stamina</span><span role="cell" class="cl k1">119</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Aggression</span><span role="cell" class="cl k1">119</span><span role="cell" class="cl k1 lo">92</span></div><div class="mr cg" role="row"><span role="rowheader">Passing</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Vision</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Crossing</span><span role="cell" class="cl cap">max 82</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">FK Acc.</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Short Pass</span><span role="cell" class="cl k0 lo">82</span><span role="cell" class="cl k3">271</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Long Pass</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k0 lo">65</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Curve</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div><div class="mr cg" role="row"><span role="rowheader">Ball Control</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Agility</span><span role="cell" class="cl k3">271</span><span role="cell" class="cl k3 lo">234</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Balance</span><span role="cell" class="cl k2">167</span><span role="cell" class="cl k2 lo">151</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Reactions</span><span role="cell" class="cl k0 lo">65</span><span role="cell" class="cl k1">92</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Ball Control</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl k0 lo">82</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Dribbling</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Composure</span><span role="cell" class="cl k2">184</span><span role="cell" class="cl k2 lo">129</span></div><div class="mr cg" role="row"><span role="rowheader">Defending</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Interceptions</span><span role="cell" class="cl k3">234</span><span role="cell" class="cl k3 lo">177</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Heading Acc.</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl k2 lo">167</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Def. Aware</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Stand Tackle</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Slide Tackle</span><span role="cell" class="cl cap">max 70</span><span role="cell" class="cl k2 lo">167</span></div><div class="mr cg" role="row"><span role="rowheader">Scoring</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Att. Position</span><span role="cell" class="cl cap">max 85</span><span role="cell" class="cl cap">max 85</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Finishing</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Shot Power</span><span role="cell" class="cl cap">max 75</span><span role="cell" class="cl cap">max 75</span></div><div class="mr" role="row"><span role="rowheader" class="rh">Penalties</span><span role="cell" class="cl cap">max 70</span><span role="cell" class="cl cap">max 80</span></div></div></div>
+<p class="ft">Long Shots and Volleys are left out: their price is not confirmed.</p>
+<script>
+(function(){var R=document.querySelector('[data-a35m]');if(!R||R.dataset.on)return;R.dataset.on='1';
+
+function ppt(B,t,v){var r=B[t];for(var i=0;i<r.length;i++)if(v>=r[i].min&&v<=r[i].max)return r[i].cost;throw new Error('no cost band '+t+' '+v)}
+function apTo(B,t,a,b){var s=0;for(var v=a+1;v<=b;v++)s+=ppt(B,t,v);return s}
+function steps(B,t,a,b){var o=[];for(var v=a+1;v<=b;v++){var c=ppt(B,t,v),l=o[o.length-1];if(l&&l.c===c)l.b=v;else o.push({a:v,b:v,c:c})}return o}
+function costRow(B,T,t,a,b,to){var top=to==='max'?b:Math.min(to,b);return {top:top,ap:top>a?apTo(B,T[t],a,top):0,capped:to!=='max'&&b<to,have:a>=top}}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+function matrix(D,S){
+var h='<div class="mr hd" role="row"><span role="columnheader" class="rh">To '+S.to+'</span>'
++D.cols.map(function(c){var n='<span class="fn">'+esc(c.name)+'</span><abbr title="'+esc(c.name)+'">'+esc(c.code)+'</abbr>';return '<span role="columnheader" class="ch'+(c.cur?' cur':'')+'">'+(c.href?'<a href="'+c.href+'">'+n+'</a>':n)+'</span>'}).join('')+'</div>';
+D.groups.forEach(function(g){
+if(S.cat!=='all'&&S.cat!==g[0])return;
+h+='<div class="mr cg" role="row"><span role="rowheader">'+esc(g[0])+'</span></div>';
+g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],S.to);r.t=x[0];return r});
+var ok=cs.filter(function(r){return !r.capped}).map(function(r){return r.ap});
+var lo=ok.length?Math.min.apply(null,ok):-1;
+h+='<div class="mr" role="row"><span role="rowheader" class="rh">'+esc(D.names[k])+'</span>'+cs.map(function(r,i){
+var cur=D.cols[i].cur?' cur':'';
+if(r.capped)return '<span role="cell" class="cl cap'+cur+'">max '+r.top+'</span>';
+return '<span role="cell" class="cl k'+r.t+(r.ap===lo?' lo':'')+cur+'">'+fmt(r.ap)+'</span>';
+}).join('')+'</div>';
+});
+});
+return h;
+}
+function wins(D,to){
+var cur=D.cols.filter(function(c){return c.cur})[0],only=[],tie=[];
+D.groups.forEach(function(g){g[1].forEach(function(k){
+var cs=D.cols.map(function(c){var x=D.cells[c.id][k];var r=costRow(D.B,D.T,x[0],x[1],x[2],to);r.id=c.id;return r}).filter(function(r){return !r.capped});
+var me=cs.filter(function(r){return r.id===cur.id})[0];if(!me)return;
+var lo=Math.min.apply(null,cs.map(function(r){return r.ap}));if(me.ap!==lo)return;
+(cs.filter(function(r){return r.ap===lo}).length>1?tie:only).push(D.names[k]);
+})});
+var and=function(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]};
+var s=only.length?'cheapest of the five for <b>'+and(only)+'</b>':'never the outright cheapest of the five';
+if(tie.length)s+='; level cheapest for '+and(tie);
+return s+' (to '+to+').';
+}
+
+var D={"B":{"tier0":[{"min":1,"max":69,"cost":1},{"min":70,"max":74,"cost":2},{"min":75,"max":84,"cost":3},{"min":85,"max":89,"cost":6},{"min":90,"max":92,"cost":8},{"min":93,"max":94,"cost":10},{"min":95,"max":95,"cost":15},{"min":96,"max":96,"cost":20},{"min":97,"max":97,"cost":25},{"min":98,"max":98,"cost":30},{"min":99,"max":99,"cost":35}],"tier1":[{"min":1,"max":63,"cost":1},{"min":64,"max":69,"cost":2},{"min":70,"max":74,"cost":3},{"min":75,"max":79,"cost":4},{"min":80,"max":84,"cost":5},{"min":85,"max":89,"cost":8},{"min":90,"max":92,"cost":11},{"min":93,"max":94,"cost":15},{"min":95,"max":95,"cost":20},{"min":96,"max":96,"cost":25},{"min":97,"max":97,"cost":30},{"min":98,"max":98,"cost":35},{"min":99,"max":99,"cost":40}],"tier2":[{"min":1,"max":60,"cost":1},{"min":61,"max":63,"cost":2},{"min":64,"max":69,"cost":3},{"min":70,"max":74,"cost":4},{"min":75,"max":79,"cost":6},{"min":80,"max":84,"cost":7},{"min":85,"max":89,"cost":11},{"min":90,"max":92,"cost":15},{"min":93,"max":94,"cost":20},{"min":95,"max":95,"cost":25},{"min":96,"max":96,"cost":30},{"min":97,"max":97,"cost":35},{"min":98,"max":98,"cost":40},{"min":99,"max":99,"cost":45}],"tier3":[{"min":1,"max":60,"cost":2},{"min":61,"max":63,"cost":3},{"min":64,"max":66,"cost":4},{"min":67,"max":69,"cost":5},{"min":70,"max":74,"cost":6},{"min":75,"max":79,"cost":8},{"min":80,"max":84,"cost":10},{"min":85,"max":89,"cost":15},{"min":90,"max":92,"cost":20},{"min":93,"max":94,"cost":25},{"min":95,"max":95,"cost":30},{"min":96,"max":96,"cost":35},{"min":97,"max":97,"cost":40},{"min":98,"max":98,"cost":45},{"min":99,"max":99,"cost":50}]},"T":["tier0","tier1","tier2","tier3"],"cols":[{"id":"shot-stopper","name":"Shot Stopper","code":"SS","href":"#shot-stopper","cur":false},{"id":"sweeper-keeper","name":"Sweeper Keeper","code":"SK","href":"#sweeper-keeper","cur":false}],"groups":[["Goalkeeping",["gkDiving","gkHandling","gkKicking","gkPositioning","gkReflexes"]],["Pace",["acceleration","sprintSpeed"]],["Physical",["jumping","strength","stamina","aggression"]],["Passing",["vision","crossing","fkAcc","shortPass","longPass","curve"]],["Ball Control",["agility","balance","reactions","ballControl","dribbling","composure"]],["Defending",["interceptions","headingAcc","defAware","standTackle","slideTackle"]],["Scoring",["attPosition","finishing","shotPower","penalties"]]],"names":{"acceleration":"Acceleration","sprintSpeed":"Sprint Speed","agility":"Agility","balance":"Balance","reactions":"Reactions","ballControl":"Ball Control","dribbling":"Dribbling","composure":"Composure","vision":"Vision","crossing":"Crossing","fkAcc":"FK Acc.","shortPass":"Short Pass","longPass":"Long Pass","curve":"Curve","attPosition":"Att. Position","finishing":"Finishing","shotPower":"Shot Power","penalties":"Penalties","interceptions":"Interceptions","headingAcc":"Heading Acc.","defAware":"Def. Aware","standTackle":"Stand Tackle","slideTackle":"Slide Tackle","jumping":"Jumping","strength":"Strength","stamina":"Stamina","aggression":"Aggression","gkDiving":"GK Diving","gkHandling":"GK Handling","gkKicking":"GK Kicking","gkPositioning":"GK Pos.","gkReflexes":"GK Reflexes"},"cells":{"shot-stopper":{"acceleration":[0,75,92],"sprintSpeed":[3,55,85],"agility":[3,50,90],"balance":[2,65,90],"reactions":[0,75,96],"ballControl":[2,65,85],"dribbling":[3,45,75],"composure":[2,55,90],"vision":[2,65,92],"crossing":[2,40,82],"fkAcc":[1,40,75],"shortPass":[0,65,92],"longPass":[2,65,90],"curve":[1,40,75],"attPosition":[1,50,85],"finishing":[3,40,75],"shotPower":[2,50,75],"penalties":[1,40,70],"interceptions":[3,65,90],"headingAcc":[2,40,75],"defAware":[2,40,75],"standTackle":[3,40,75],"slideTackle":[2,50,70],"jumping":[1,65,96],"strength":[2,65,96],"stamina":[1,65,90],"aggression":[1,65,92],"gkDiving":[2,75,99],"gkHandling":[2,75,99],"gkKicking":[3,65,99],"gkPositioning":[0,75,99],"gkReflexes":[3,75,99]},"sweeper-keeper":{"acceleration":[3,75,92],"sprintSpeed":[3,65,88],"agility":[3,65,90],"balance":[2,70,90],"reactions":[1,75,96],"ballControl":[0,65,90],"dribbling":[3,65,85],"composure":[2,75,92],"vision":[0,75,99],"crossing":[2,40,85],"fkAcc":[1,40,75],"shortPass":[3,50,92],"longPass":[0,75,96],"curve":[1,40,75],"attPosition":[1,50,85],"finishing":[3,40,75],"shotPower":[2,50,75],"penalties":[1,55,80],"interceptions":[3,75,96],"headingAcc":[2,65,90],"defAware":[2,40,75],"standTackle":[3,50,85],"slideTackle":[2,65,90],"jumping":[1,75,99],"strength":[2,70,96],"stamina":[1,75,92],"aggression":[1,75,96],"gkDiving":[2,75,99],"gkHandling":[3,65,99],"gkKicking":[0,75,99],"gkPositioning":[3,75,99],"gkReflexes":[2,75,99]}}};
+var S={to:90,cat:'all'},X=R.querySelector('[data-mx]');
+R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
+ if(b.dataset.to)S.to=+b.dataset.to;else if(b.dataset.cat)S.cat=b.dataset.cat;else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var on=(x.dataset.to!==undefined&&String(S.to)===x.dataset.to)||(x.dataset.cat!==undefined&&S.cat===x.dataset.cat);x.setAttribute('aria-pressed',on)});
+ X.innerHTML=matrix(D,S)});
+})();
+</script>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<h2 id="shot-stopper" class="a35h"><img class="aico" src="https://proclubshq.com/assets/archetypes/shot-stopper.svg" alt="" loading="lazy" width="26" height="26">Shot Stopper</h2>
+<!--kg-card-end: html-->
+<p>The Shot Stopper shares the top Goalkeeping ceiling. Its four cheapest attributes to raise are Acceleration, GK Pos., Reactions and Short Pass; its most expensive tier holds Dribbling, Finishing, Stand Tackle, GK Reflexes, Sprint Speed, GK Kicking, Interceptions and Agility. Raised to 90, it is the outright cheapest of the two for Acceleration, Reactions, Short Pass, GK Handling and GK Pos.</p>
+<ul>
+<li><strong>Inspired by:</strong> Gianluigi Buffon. <strong>Height:</strong> 5'10" to 6'6".</li>
+<li><strong>Signature PlayStyle:</strong> Far Reach. <strong>Perks:</strong> Low Shot Saver and Ready to Act.</li>
+<li><strong>Stars:</strong> 1★ to 2★ skill moves (5 AP), 1★ to 3★ weak foot (30 AP).</li>
+<li><strong>Cheapest specialization:</strong> Shot Stopper+, 343 AP (Jumping 90, GK Handling 92 and GK Pos. 90).</li>
+<li><strong>Recommended roles:</strong> Goalkeeper.</li>
+<li><strong>FC 27 meta boards:</strong> no. 1 at goalkeeper (70.3).</li>
+<li><strong>Most copied Shot Stopper build:</strong> <a href="https://proclubshq.com/b/2b89a3ef-be90-4182-8c5b-8ce0c440074b?src=guide">The Octopus</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=shot-stopper&year=27&src=guide">all FC 27 Shot Stopper builds in the app</a>.</p>
+
+<!--kg-card-begin: html-->
+<h2 id="sweeper-keeper" class="a35h"><img class="aico" src="https://proclubshq.com/assets/archetypes/sweeper-keeper.svg" alt="" loading="lazy" width="26" height="26">Sweeper Keeper</h2>
+<!--kg-card-end: html-->
+<p>The Sweeper Keeper has the group’s highest Pace, Physical, Passing, Ball Control, Defending and Scoring ceilings and shares the top Goalkeeping ceiling. Its four cheapest attributes to raise are GK Kicking, Long Pass, Vision and Ball Control; its most expensive tier holds Finishing, Dribbling, Acceleration, GK Pos., Interceptions, Stand Tackle, Sprint Speed, Agility, GK Handling and Short Pass. Raised to 90, it is the outright cheapest of the two for Agility, Balance, Composure, Vision, Long Pass, Interceptions, Jumping, Strength, Stamina, Aggression, GK Kicking and GK Reflexes.</p>
+<ul>
+<li><strong>Inspired by:</strong> Edwin van der Sar. <strong>Height:</strong> 6'0" to 6'7".</li>
+<li><strong>Signature PlayStyle:</strong> Footwork. <strong>Perks:</strong> Back Option and Rush Specialist.</li>
+<li><strong>Stars:</strong> 1★ to 3★ skill moves (15 AP), 1★ to 4★ weak foot (48 AP).</li>
+<li><strong>Cheapest specialization:</strong> Launcher, 275 AP (Long Pass 90, GK Kicking 92 and GK Reflexes 90).</li>
+<li><strong>Recommended roles:</strong> Sweeper Keeper.</li>
+<li><strong>FC 27 meta boards:</strong> 4th at goalkeeper (68.9).</li>
+<li><strong>Most copied Sweeper Keeper build:</strong> <a href="https://proclubshq.com/b/e793c2c3-01c7-4af7-a591-51e5a48c1e26?src=guide">Sweeper Libero</a>.</li>
+</ul>
+<p>Next: <a href="https://proclubshq.com/explore?archetype=sweeper-keeper&year=27&src=guide">all FC 27 Sweeper Keeper builds in the app</a>.</p>
+
+<h2 id="specializations">The specializations, priced</h2>
+<p>Each specialization asks for three attributes at 90 or 92. Bought from a new pro’s starting values, the cheapest of the 6 in the group is Launcher on the Sweeper Keeper, 275 AP (29% of your 962); the dearest is Extra on the Sweeper Keeper, 617 AP.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a35s">
+<style>
+.a35s .ag{padding:10px 0 6px;border-top:1px solid var(--line)}
+.a35s .ag:first-of-type{border-top:0;padding-top:2px}
+.a35s .an{margin:0 0 6px;font:800 15px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.a35s .an a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a35s .sr{display:grid;grid-template-columns:minmax(120px,1.1fr) 1.4fr 70px;gap:10px;align-items:center;padding:4px 0}
+.a35s .sr .nm{font-size:13.5px;font-weight:600;line-height:1.25}
+.a35s .sr .nm small{display:block;font-size:11.5px;font-weight:600;color:#c9a227}
+.a35s .sr .br{display:flex;gap:2px;height:10px;background:rgba(255,255,255,.05);border-radius:0 4px 4px 0;overflow:hidden}
+.a35s .sr .br i{display:block;height:10px}
+.a35s .sr .v{text-align:right;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.a35s .sr .v small{display:block;font-size:10.5px;font-weight:600;color:var(--mut)}
+@media (max-width:520px){.a35s .sr{grid-template-columns:minmax(104px,1fr) 1fr 60px;gap:8px}}
+</style>
+<p class="kk">Specializations</p>
+<p class="tl">What each one costs to unlock</p>
+<p class="sb">Its three criteria bought from a new pro’s starting values. The bar is your 962 AP, split by the three criteria’s price tiers.</p>
+<div class="ag"><p class="an">Shot Stopper</p>
+<div class="sr"><span class="nm">Shot Stopper+<small>Cross Claimer+</small></span><span class="br" role="img" aria-label="Jumping 90: 119 AP, GK Handling 92: 159 AP, GK Pos. 90: 65 AP"><i class="t1" style="width:12.37%"></i><i class="t2" style="width:16.53%"></i><i class="t0" style="width:6.76%"></i></span><span class="v">343<small>36% of AP</small></span></div>
+<div class="sr"><span class="nm">Octopus<small>Deflector+</small></span><span class="br" role="img" aria-label="Strength 90: 167 AP, GK Diving 92: 159 AP, GK Pos. 90: 65 AP"><i class="t2" style="width:17.36%"></i><i class="t2" style="width:16.53%"></i><i class="t0" style="width:6.76%"></i></span><span class="v">391<small>41% of AP</small></span></div>
+<div class="sr"><span class="nm">Spider<small>1v1 Close Down+</small></span><span class="br" role="img" aria-label="Acceleration 90: 65 AP, Agility 90: 271 AP, GK Reflexes 92: 217 AP"><i class="t0" style="width:6.76%"></i><i class="t3" style="width:28.17%"></i><i class="t3" style="width:22.56%"></i></span><span class="v">553<small>57% of AP</small></span></div>
+</div>
+<div class="ag"><p class="an">Sweeper Keeper</p>
+<div class="sr"><span class="nm">Launcher<small>Long Ball Pass+</small></span><span class="br" role="img" aria-label="Long Pass 90: 65 AP, GK Kicking 92: 81 AP, GK Reflexes 90: 129 AP"><i class="t0" style="width:6.76%"></i><i class="t0" style="width:8.42%"></i><i class="t2" style="width:13.41%"></i></span><span class="v">275<small>29% of AP</small></span></div>
+<div class="sr"><span class="nm">Sweeper Keeper+<small>Far Throw+</small></span><span class="br" role="img" aria-label="Vision 90: 65 AP, GK Diving 92: 159 AP, GK Kicking 90: 65 AP"><i class="t0" style="width:6.76%"></i><i class="t2" style="width:16.53%"></i><i class="t0" style="width:6.76%"></i></span><span class="v">289<small>30% of AP</small></span></div>
+<div class="sr"><span class="nm">Extra<small>Press Proven+</small></span><span class="br" role="img" aria-label="GK Pos. 92: 217 AP, Short Pass 90: 271 AP, Composure 90: 129 AP"><i class="t3" style="width:22.56%"></i><i class="t3" style="width:28.17%"></i><i class="t2" style="width:13.41%"></i></span><span class="v">617<small>64% of AP</small></span></div>
+</div>
+<div class="lg" aria-hidden="true" style="margin-top:10px"><span><i class="sw t0"></i>Cheapest</span><span><i class="sw t1"></i>Cheap</span><span><i class="sw t2"></i>Expensive</span><span><i class="sw t3"></i>Most expensive</span></div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="stars">Skill moves and weak foot</h2>
+<p>Neither reaches 5★ skill moves: the Shot Stopper stops at 2★ and the Sweeper Keeper stops at 3★. Neither reaches 5★ weak foot: the Shot Stopper stops at 3★ and the Sweeper Keeper stops at 4★.</p>
+<!--kg-card-begin: html-->
+<div class="pcs a35k">
+<style>
+.a35k .tr{display:grid;grid-template-columns:minmax(96px,1fr) 1.2fr 1.2fr;gap:8px;align-items:center;padding:8px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.a35k .tr.hd{border-top:0;padding-top:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.a35k .tr>span{font-size:14px}
+.a35k .tr>span small{display:block;font-size:11.5px;color:var(--mut)}
+.a35k .tr .nm{font-weight:600}
+.a35k .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+<p class="kk">Stars cost AP too</p>
+<p class="tl">Skill moves and weak foot</p>
+<p class="sb">From each archetype’s starting stars to its maximum, paid out of the same 962 AP.</p>
+<div role="table" aria-label="Skill move and weak foot costs">
+<div class="tr hd" role="row"><span role="columnheader"><span class="vh">Archetype</span></span><span role="columnheader">Skill moves</span><span role="columnheader">Weak foot</span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Shot Stopper</span><span role="cell">1★ → 2★<small>5 AP</small></span><span role="cell">1★ → 3★<small>10 + 20 = 30 AP</small></span></div>
+<div class="tr" role="row"><span class="nm" role="rowheader">Sweeper Keeper</span><span role="cell">1★ → 3★<small>5 + 10 = 15 AP</small></span><span role="cell">1★ → 4★<small>8 + 15 + 25 = 48 AP</small></span></div>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<h2 id="meta">Which is best? The meta boards</h2>
+<p>The Shot Stopper is no. 1 at goalkeeper (70.3) and the Sweeper Keeper is 4th at goalkeeper (68.9). The boards score every published FC 27 build against the season’s reference XI and move as new builds publish; the <a href="/blog/best-pro-clubs-archetypes/">FC 27 archetype tier list</a> ranks all thirteen by them.</p>
+
+<!--kg-card-begin: html-->
+<div class="pchq-cta">
+<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
+.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
+.pchq-cta .row{display:flex;flex-wrap:wrap;gap:8px}
+.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
+<p class="k">FC 27 in the app</p>
+<h3>Open a finished goalkeeper build</h3>
+<p>Every build in the builder is priced against your 962 AP as you move a slider. Open one, copy it, and make it yours.</p>
+<div class="row"><a class="b" href="https://proclubshq.com/explore?archetype=shot-stopper&year=27&src=guide">Shot Stopper builds →</a><a class="b" href="https://proclubshq.com/explore?archetype=sweeper-keeper&year=27&src=guide">Sweeper Keeper builds →</a></div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->
@@ -74,105 +322,30 @@
 .f27b li:last-child{margin-bottom:0}
 .f27b a{color:#7fb0ff;font-weight:700;text-decoration:none}
 .f27b a:hover{text-decoration:underline}</style>
-<p class="k">Playing FC 27 next</p>
-<h3>What actually changes in FC 27</h3>
+<p class="k">More on FC 27</p>
+<h3>The rest of what is new</h3>
 <ul>
 <li><a href="/blog/fc27-disruptor-build/">The Disruptor</a> — The only brand-new archetype in FC 27 — a ball-winning midfielder built on Roy Keane, with a finished level-40 build.</li>
 <li><a href="/blog/fc27-masteries-explained/">Masteries</a> — A permanent progression layer FC 26 does not have: every archetype you level grants attribute points to every build on your account.</li>
 <li><a href="/blog/fc27-archetype-changes/">What changed for your archetype</a> — One signature PlayStyle instead of four, level-gated perks, and a different specialization structure.</li>
+<li><a href="/blog/fc27-level-40-builds/">Level 40 builds</a> — FC 27 starts you at a 40-level cap with a far tighter budget, so the whole spending order changes.</li>
 </ul>
 </div>
 <!--kg-card-end: html-->
 
-<!--kg-card-begin: html-->
-<div class="pchq-ad" data-ad="a"></div>
-<!--kg-card-end: html-->
-
-<!--kg-card-begin: html-->
-<h2 class="a35h"><img class="aico" src="https://proclubshq.com/assets/archetypes/shot-stopper.svg" alt="" loading="lazy" width="26" height="26">Shot Stopper — the wall</h2>
-<!--kg-card-end: html-->
-<p>Kahn's archetype: the tallest frame in the game (up to <strong>6'7"</strong>), Low Shot Saver and Ready to Act as perks, and a signature set — Far Reach, Footwork, Deflector, Long Ball Pass — built to make the goal smaller. Its three specializations (Shot Stopper+, Spider, Octopus) are all versions of the same promise: the shot does not go in.</p>
-<p>The board is unambiguous this season: <strong>every top GK entry is a Shot Stopper</strong>, led at 73.9 by a Courtois build — the same one featured in the <a href="/blog/pro-clubs-shot-stopper-build/">build guide</a>. The meta season scores keepers on their saving attributes, and this archetype's are the cheapest to max.</p>
-<!--kg-card-begin: html-->
-<div class="a35f">
-<style>.a35f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a35f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a35f p{margin:0 0 8px;color:#c3c2b7}
-.a35f p b{color:inherit}
-.a35f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a35f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a35f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="Far Reach"><img src="https://proclubshq.com/assets/playstyles/far-reach.png" alt="Far Reach PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Footwork"><img src="https://proclubshq.com/assets/playstyles/footwork.png" alt="Footwork PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Long Ball Pass"><img src="https://proclubshq.com/assets/playstyles/long-ball-pass.png" alt="Long Ball Pass PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Deflector"><img src="https://proclubshq.com/assets/playstyles/deflector.png" alt="Deflector PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Low Shot Saver</b> — improved ability to save low shots struck close to the body. <b>Ready to Act</b> — faster reactions to rebounds and follow-up shots inside the box.</p>
-<p><b>Specializations:</b> Shot Stopper+, Spider and Octopus. <b>Meta board:</b> no. 1 on the GK board (73.9).</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Shot Stopper if:</strong></p>
-<ul>
-<li>Your club defends deep — your job is the shot, not the space behind.</li>
-<li>You want the meta keeper: the GK board is all Shot Stoppers right now.</li>
-<li>Height matters to you — 6'7" is the biggest goal-shrinker in the game.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-shot-stopper-build/">the complete Shot Stopper build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<!--kg-card-begin: html-->
-<h2 class="a35h"><img class="aico" src="https://proclubshq.com/assets/archetypes/sweeper-keeper.svg" alt="" loading="lazy" width="26" height="26">Sweeper Keeper — the eleventh outfielder</h2>
-<!--kg-card-end: html-->
-<p>Yashin's archetype, and the modern job description: <strong>better feet (91), better pace (90), better passing (88)</strong> than the Shot Stopper, with 1v1 Close Down in the signature set for the through-ball it exists to kill. Back Option makes you the recycling outlet; Rush Specialist wins the race to the ball over the top. Launcher turns goal kicks into counters.</p>
-<p>It is <strong>off the meta board this season</strong> — the scoring rewards pure saving stats, where the Shot Stopper's spend goes further. That is a season verdict, not a quality one: in a high-line club that plays out from the back, the Sweeper Keeper does things no Shot Stopper can. The <a href="/blog/pro-clubs-sweeper-keeper-build/">build guide</a> runs a Neuer and an Ederson — the two real-world versions of the job.</p>
-<!--kg-card-begin: html-->
-<div class="a35f">
-<style>.a35f{border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px 18px;margin:0 0 1.6em;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px}
-.a35f .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#898781;margin:0 0 8px}
-.a35f p{margin:0 0 8px;color:#c3c2b7}
-.a35f p b{color:inherit}
-.a35f .sig{display:flex;gap:8px;margin:2px 0 10px}
-.a35f .sb{width:44px;height:44px;border-radius:10px;background:#3a2f10;border:1.5px solid #c9a227;display:flex;align-items:center;justify-content:center}
-.a35f .sb img{width:32px;height:32px}
-</style>
-<p class="l">Signature PlayStyles — permanent, no slot spent</p>
-<div class="sig"><span class="sb" title="1v1 Close Down"><img src="https://proclubshq.com/assets/playstyles/1v1-close-down.png" alt="1v1 Close Down PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Far Reach"><img src="https://proclubshq.com/assets/playstyles/far-reach.png" alt="Far Reach PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Deflector"><img src="https://proclubshq.com/assets/playstyles/deflector.png" alt="Deflector PlayStyle" loading="lazy" width="32" height="32"></span><span class="sb" title="Far Throw"><img src="https://proclubshq.com/assets/playstyles/far-throw.png" alt="Far Throw PlayStyle" loading="lazy" width="32" height="32"></span></div>
-<p><b>Perks:</b> <b>Back Option</b> — positions to receive back passes, improving distribution under pressure. <b>Rush Specialist</b> — faster rushes off the line to clear danger outside the box.</p>
-<p><b>Specializations:</b> Sweeper Keeper+, Launcher and Extra. <b>Meta board:</b> off the boards this season.</p>
-</div>
-<!--kg-card-end: html-->
-<p><strong>Pick the Sweeper Keeper if:</strong></p>
-<ul>
-<li>Your club plays a high line — the space behind it is your position.</li>
-<li>Build-up starts with you: your passing column is why.</li>
-<li>You'd rather prevent the shot than save it.</li>
-</ul>
-<p>Full guide: <a href="/blog/pro-clubs-sweeper-keeper-build/">the complete Sweeper Keeper build</a> — the level-100 attributes, AP order and specialization call.</p>
-
-<p>Still undecided? The honest tiebreak: pick by your club's defensive line, not by your reflexes — both archetypes save at the same ceiling. The <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head tool</a> shows the full attribute-by-attribute picture.</p>
-
-<!--kg-card-begin: html-->
-<div class="pchq-cta">
-<style>.pchq-cta{margin:2em 0;padding:22px 24px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
-.pchq-cta .k{font:700 11.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5;margin:0 0 6px}
-.pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
-.pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
-.pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
-<p class="k">Finished builds, ready to copy</p>
-<h3>Both keeper archetypes have builds in the app</h3>
-<p>Open a finished Shot Stopper or Sweeper Keeper from the explore feed — including the board-topping Courtois — save a copy, and make it yours.</p>
-<a class="b" href="https://proclubshq.com/explore">Browse keeper builds →</a>
-</div>
-<!--kg-card-end: html-->
-
-<h2>Frequently asked questions</h2>
-<h3>How many goalkeeper archetypes are there in Pro Clubs?</h3>
-<p>Two — the Shot Stopper and the Sweeper Keeper. Their Goalkeeping ceilings are identical; they differ in everything a keeper does besides saving.</p>
-<h3>Is Shot Stopper or Sweeper Keeper better?</h3>
-<p>On the live meta board, the Shot Stopper — every top GK entry is one this season. But the boards score saving attributes; a club that plays a high line and builds from the back gets more from the Sweeper Keeper.</p>
-<h3>How tall should a Pro Clubs goalkeeper be?</h3>
-<p>The Shot Stopper allows 6'0"–6'7", the Sweeper Keeper 5'10"–6'6". Taller frames shrink the goal; shorter ones move quicker off the line — match it to which archetype and job you picked.</p>
-<h3>Do the goalkeeper archetypes carry over to FC 27?</h3>
-<p>Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a keeper you build now is a head start, not a throwaway.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>How many goalkeeper archetypes are there in FC 27 Pro Clubs?</h3>
+<p>Two: the Shot Stopper and the Sweeper Keeper.</p>
+<h3>Which goalkeeper archetype has the highest ceilings in FC 27?</h3>
+<p>Highest ceilings in the group: the Sweeper Keeper for Pace (90), Physical (96), Passing (87), Ball Control (91), Defending (87) and Scoring (73). The Shot Stopper and the Sweeper Keeper share the top Goalkeeping ceiling (99).</p>
+<h3>Which goalkeeper archetype is cheapest to upgrade?</h3>
+<p>It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Shot Stopper: Acceleration, GK Pos., Reactions and Short Pass. The Sweeper Keeper: GK Kicking, Long Pass, Vision and Ball Control. The widest gap: 90 GK Kicking costs 65 AP on a Sweeper Keeper and 234 on a Shot Stopper.</p>
+<h3>Which goalkeeper specialization is cheapest to unlock?</h3>
+<p>Launcher on the Sweeper Keeper: 275 AP from a new Sweeper Keeper’s starting values (Long Pass 90, GK Kicking 92 and GK Reflexes 90). The dearest in the group is Extra on the Sweeper Keeper, 617 AP.</p>
+<h3>What is the best goalkeeper archetype in FC 27?</h3>
+<p>By the FC 27 season 1 meta boards: the Shot Stopper no. 1 at goalkeeper (70.3); the Sweeper Keeper 4th at goalkeeper (68.9). The boards rank published builds and move as new ones publish.</p>
+<h3>How many AP do you get in FC 27 Pro Clubs?</h3>
+<p>962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget.</p>
 <!--kg-card-begin: html-->
 <script type="application/ld+json">
 {
@@ -181,39 +354,86 @@
  "mainEntity": [
   {
    "@type": "Question",
-   "name": "How many goalkeeper archetypes are there in Pro Clubs?",
+   "name": "How many goalkeeper archetypes are there in FC 27 Pro Clubs?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Two — the Shot Stopper and the Sweeper Keeper. Their Goalkeeping ceilings are identical; they differ in everything a keeper does besides saving."
+    "text": "Two: the Shot Stopper and the Sweeper Keeper."
    }
   },
   {
    "@type": "Question",
-   "name": "Is Shot Stopper or Sweeper Keeper better?",
+   "name": "Which goalkeeper archetype has the highest ceilings in FC 27?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "On the live meta board, the Shot Stopper — every top GK entry is one this season. But the boards score saving attributes; a club that plays a high line and builds from the back gets more from the Sweeper Keeper."
+    "text": "Highest ceilings in the group: the Sweeper Keeper for Pace (90), Physical (96), Passing (87), Ball Control (91), Defending (87) and Scoring (73). The Shot Stopper and the Sweeper Keeper share the top Goalkeeping ceiling (99)."
    }
   },
   {
    "@type": "Question",
-   "name": "How tall should a Pro Clubs goalkeeper be?",
+   "name": "Which goalkeeper archetype is cheapest to upgrade?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "The Shot Stopper allows 6'0\"–6'7\", the Sweeper Keeper 5'10\"–6'6\". Taller frames shrink the goal; shorter ones move quicker off the line — match it to which archetype and job you picked."
+    "text": "It depends on the stat: each has four attributes in its cheapest price tier, and they differ. The Shot Stopper: Acceleration, GK Pos., Reactions and Short Pass. The Sweeper Keeper: GK Kicking, Long Pass, Vision and Ball Control. The widest gap: 90 GK Kicking costs 65 AP on a Sweeper Keeper and 234 on a Shot Stopper."
    }
   },
   {
    "@type": "Question",
-   "name": "Do the goalkeeper archetypes carry over to FC 27?",
+   "name": "Which goalkeeper specialization is cheapest to unlock?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes. EA has confirmed all 13 archetypes return in FC 27, unlocked by default with free resets — a keeper you build now is a head start, not a throwaway."
+    "text": "Launcher on the Sweeper Keeper: 275 AP from a new Sweeper Keeper’s starting values (Long Pass 90, GK Kicking 92 and GK Reflexes 90). The dearest in the group is Extra on the Sweeper Keeper, 617 AP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the best goalkeeper archetype in FC 27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "By the FC 27 season 1 meta boards: the Shot Stopper no. 1 at goalkeeper (70.3); the Sweeper Keeper 4th at goalkeeper (68.9). The boards rank published builds and move as new ones publish."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many AP do you get in FC 27 Pro Clubs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "962 AP at level 40, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget."
    }
   }
  ]
 }
 </script>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get EA SPORTS FC 27</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">PlayStation 5</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Xbox Series X</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">PC (EA App)</span><span class="g">Buy now →</span></a>
+</div>
+</div>
 <!--kg-card-end: html-->
 
 <!--kg-card-begin: html-->

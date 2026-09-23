@@ -1,72 +1,8 @@
-// a27: Creator spoke — De Bruyne (Creator+) / Messi WC 2026 (Creator+).
-// Featured pair = the two most-copied public Creators since 2026-08-14;
-// the WC tribute replaced the Palmer.
-import { renderSpoke } from './spoke.mjs';
+// a27: the Creator build page, FC 27 only since 2026-09-23.
+// Rendered by gen/spoke27.mjs (all twelve at once: gen/spokes27.mjs). The FC 26
+// guide this file used to configure (editorial pairs, AP-path stages, FAQ) is
+// in git history (before 2026-09-23).
+import { renderSpoke27 } from './spoke27.mjs';
+import { SPOKES } from './spokes27.mjs';
 
-renderSpoke({
-  n: 27,
-  archId: 'creator',
-  // Amazon pre-order block, below the app CTA (spoke.mjs, MONETIZATION.md §5).
-  // Emits nothing while amazon-us is pending.
-  affiliate: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
-  hideCats: ['Defending'],
-  tabs: ['De Bruyne — the Creator+', 'Messi WC 2026 — the tribute'],
-  shortNames: ['De Bruyne', 'Messi WC 2026'],
-  blurbs: [
-    'The assist king. Vision 98, Crossing and Curve 97, and Creator+ boosting the teammate on the end of every through ball — the final pass, perfected.',
-    'The World Cup tribute. Agility and Dribbling 95 under a five-star weak foot and five-star skill moves, Shot Power 96 — the Creator who beats a man first and picks the pass or the finish after.',
-  ],
-  buildsH2: 'The two builds, in full',
-
-  // Grid rollout (owner, 2026-08-21): the magician A/B read 32% clicks-per-
-  // view against the card's 10% over 18-21 Aug, so every spoke now opens
-  // with the grid. Data exported from prod; every id API-verified
-  // (CLAUDE.md publishing rule 1).
-  gridFile: 'creator-grid.json',
-  gridHead: 'Seven Creator builds, ready to copy',
-  gridSub: 'De Bruyne, Pedri, Palmer, Bruno Fernandes, Güler — plus the Dead Ball Demon and Sniper concepts. Tap any card to open it.',
-  midReel: 1,  // Messi WC 2026: 5 copies vs De Bruyne 3 on 2026-08-21 - the badge must stay true
-
-  intro: () => `<p>The Creator is EA FC Pro Clubs' final-pass specialist — the attacking midfielder whose whole game is the ball that unlocks a back line. Here are seven finished level-100 Creator builds you can open and copy right now; below them, the complete FC 26 guide — every attribute, the order to spend your AP, and which specialization to take.</p>`,
-
-  whyParas: ({ arch, esc }) => [
-    `<p>${esc(arch.description)} Nine ceilings hit <strong>99</strong>, and the telling ones are Curve, Crossing, Long Shots and Att. Position — delivery stats the Maestro doesn't max. This is the higher, sharper of the two playmakers: less interested in controlling ninety minutes, entirely interested in the five passes that win the match. Defensively it is a passenger, and the build should accept that.</p>`,
-    `<p>The perks are both about pass trajectory. <strong>${esc(arch.perks[0].name)}</strong> — ${esc(arch.perks[0].desc).toLowerCase()} <strong>${esc(arch.perks[1].name)}</strong> — ${esc(arch.perks[1].desc).toLowerCase()} If you'd rather run the whole game from deeper, that's the Maestro — see what you'd trade in the <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head tool</a>, or start from the <a href="/blog/pro-clubs-archetypes-explained/">full archetype guide</a>.</p>`,
-  ],
-
-  buildsParas: ({ openUrl, builds, costs, fmt, TOTAL_AP }) => [
-    `<p><strong>The De Bruyne</strong> is the assist king: Vision 98, Crossing 97, Curve 97, Long Pass 96 and Short Pass 96, with all nine PlayStyle slots earned by the passing thresholds themselves — and the <strong>Creator+</strong> specialization, whose Assistant perk boosts the Finishing, Balance and Ball Control of the teammate your through ball finds. Your striker's stats improve because you passed to them.</p>`,
-    `<p><strong>The Messi WC 2026</strong> is the tribute build: Agility 95 and Dribbling 95 with a five-star weak foot AND five-star skill moves, Shot Power 96, Finishing 93 — also <strong>Creator+</strong>, because after the dribble the killer pass is still the point. Built for the run that beats two men before the assist.</p>`,
-    `<p>Both are public on <a href="https://proclubshq.com/u/buildmaster">@buildmaster</a>, both land inside the AP budget (${fmt(costs[0])} and ${fmt(costs[1])} of ${fmt(TOTAL_AP)}), and opening either gives you a copy to bend toward your own game — <a href="${openUrl(builds[0])}">the De Bruyne</a>, <a href="${openUrl(builds[1])}">the Messi WC 2026</a>.</p>`,
-  ],
-
-  stages: [
-    { name: 'See the pass', why: 'Vision and the touch to act on it.',
-      buys: [['vision', 92], ['shortPass', 92], ['ballControl', 90], ['composure', 90]] },
-    { name: 'Unlock Creator+', why: 'The three specialization criteria, nothing more.', spec: true },
-    { name: 'Perfect the delivery', why: 'The 97-rated crosses and the shot from range.',
-      buys: [['crossing', 97], ['curve', 97], ['longPass', 96], ['longShots', 92], ['shotPower', 90]] },
-    { name: 'Finish the build', why: 'Vision to 98, then polish.', remainder: true },
-  ],
-
-  apPathOutro: ({ stages, specStage, fmt, BUILDER }) => `<p>Vision comes first because every other stat serves it — at level ${stages[0].level} you already see runs your lobby teammates don't make yet. The Creator+ push is mostly paid for by then: Long Pass 90 and Crossing 90 complete it after ${fmt(specStage.cum)} AP, around <strong>level ${specStage.level}</strong>, and from there every through ball upgrades its receiver. Stage 3 is the expensive one — Crossing and Curve to 97 ride the top of the price curve — and it is the build's identity, so it stays. Per-point prices are in the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> — or skip the arithmetic and <a href="${BUILDER}">drag the sliders in the builder</a>, which prices every change live.</p>`,
-
-  specOutro: () => `<p>The honest ranking: <strong>Creator+</strong> if assists are your currency — no other perk in the game improves a teammate at the moment it matters. <strong>Sniper</strong> if you take the set pieces and arrive for cut-backs. <strong>Architect</strong> is for deep-lying quarterbacks — raking switches off FK Accuracy 90 — a beautiful niche that most clubs don't actually need twice. Full pricing across all 39 specializations is in <a href="/blog/pro-clubs-specializations-unlock-planner/">the specialization planner</a>.</p>`,
-
-  playstylesPara: () => `<p>A level-100 pro carries nine PlayStyle slots, and both builds run them full — the silver icons on the cards above, ordered shooting, passing, defending, ball control, physical. Every badge is earned: its unlock thresholds sit inside attributes the build buys anyway; nothing is bought for a badge. Check any other PlayStyle's thresholds against this build in the <a href="/blog/pro-clubs-playstyle-requirements/">requirements tool</a>.</p>`,
-
-  physiquePara: ({ arch, builds, ft }) => `<p>The archetype allows ${ft(arch.height.min)} to ${ft(arch.height.max)} and ${arch.weight.min}–${arch.weight.max} lb. Both builds come out <strong>Explosive</strong> — the De Bruyne at ${ft(builds[0].height)}, the Messi at ${ft(builds[1].height)} — because a Creator's burst is what buys the half-yard the pass needs. Check the maths in the <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE guide</a>.</p>`,
-
-  faq: ({ arch, fmt, featuredCost, TOTAL_AP, specStage }) => [
-    ['What is the Creator archetype in EA FC Pro Clubs?',
-     `The Creator is one of the four midfielder archetypes, inspired by ${arch.inspiredBy}. Vision, Curve, Crossing, Long Shots and Att. Position all reach 99, and its perks (${arch.perks.map((p) => p.name).join(' and ')}) perfect the two pass trajectories that beat back lines.`],
-    ['What is the best Creator build?',
-     `Vision 98 over a 96-rated passing set, Crossing and Curve at 97, and Long Shots 96 to keep defences honest. The full level-100 build costs ${fmt(featuredCost)} AP of the ${fmt(TOTAL_AP)} available, and you can open it directly in the Pro Clubs HQ builder.`],
-    ['Which Creator specialization should I take?',
-     'Creator+ if you play the killer pass — its Assistant perk boosts the teammate receiving your through ball. Sniper if you shoot and take set pieces. Architect for deep switch-play quarterbacking.'],
-    ['How much AP does a full Creator build cost?',
-     `${fmt(featuredCost)} AP for the complete level-100 build — inside the ${fmt(TOTAL_AP)} AP a pro earns reaching level 100. The three Creator+ criteria cost ${specStage.ap} AP beyond the passing core this build buys anyway.`],
-    ['Is the Creator good as a CAM?',
-     'It is the CAM archetype for pass-first players — Att. Position 99 and the delivery ceilings live exactly in that zone. If your CAM game is dribbling at defenders instead, the Magician suits you better; if it is arriving to shoot, look at the Maestro’s Crasher spec.'],
-  ],
-});
+renderSpoke27(SPOKES.find((s) => s.n === 27));

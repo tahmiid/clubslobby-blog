@@ -1,177 +1,440 @@
-import { writeFileSync } from 'node:fs';
+// FC 27 archetypes head to head: pick any two of the 13 and compare them
+// attribute by attribute. Slug `pro-clubs-archetypes-head-to-head` (a12),
+// REWRITTEN IN PLACE for FC 27 on 2026-09-23, like a11 and a2: the FC 26 page
+// had 1 click in the 28 days to 21 Sep, so the URL (linked from a dozen spokes
+// and roundups as "the head-to-head tool") was worth keeping and its FC 26
+// data was not. The FC 26 generator is in git history (2823acd and earlier).
+//
+// What it keeps from FC 26: any two archetypes, keepers included, side by
+// side by category; body ranges, skill moves, weak foot, signature PlayStyle
+// and specializations in a card each (under the table, so the table comes
+// first on a phone); and the closest and furthest
+// outfield pairs, computed. What FC 27 adds: starting values beside ceilings,
+// each attribute's AP price tier on each archetype, and the AP to reach 90
+// from where a new pro starts - the same cost model as the stats pages
+// (gen/archetype-stats.mjs model()/COST_JS), so a price here and a price there
+// cannot disagree. Perks are left out: the catalog lists a second perk at a
+// level above the FC 27 cap, and nothing on this page needs it.
+//
+// Owner's rule for data pages (23 Sep): the tool is the FIRST body element and
+// the date line is the card's own first line.
+//
+// Every number comes from data/fc27/archetypes.json and rules_progression.json
+// (both exported verbatim by ops/export-fc27-catalog.mjs). The widget's
+// renderer (H2H_JS) is ONE string: evaluated here for the default view and
+// checked for all 78 pairs x 3 modes against an independent count, and pasted
+// into the page for every change. Every sentence is computed and asserted.
+//
+//     ~/.local/node22/bin/node ops/export-fc27-catalog.mjs   # after any catalog change
+//     ~/.local/node22/bin/node gen/a12-head-to-head.mjs
+import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { appCta, ARCH, PLAYSTYLES, ATTRS, CATS, BRAND, title, esc, kg, baseCss } from './common.mjs';
+import { ATTRS, CATS, esc, kg, appCta } from './common.mjs';
+import { FC27_ARCH, psName } from './fc27grid.mjs';
+import { cardsGrid } from './mostcopied.mjs';
+import { affiliateSection } from './affiliate.mjs';
+import { AD_A, AD_C } from './ads.mjs';
+import {
+  model, statsCss, stat, pageOf, specName, HUB, TIER, TK, BANDS, BUDGET, CAP_LEVEL, COST_JS, ROLE_BUILDS, dayLabel,
+  list, fmt, assert,
+} from './archetype-stats.mjs';
 
-const P = 'hh27';
+const P = 'a12';
+const UPDATED = '2026-09-23';   // the day the COPY changed, never today by reflex
+const COMPARED = '/blog/pro-clubs-archetypes-compared/';
+const words = (n) => ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen'][n] ?? String(n);
 
-// The six outfield categories plus a goalkeeping one, so keeper comparisons work.
-const CATS2 = { ...CATS, 'Goalkeeping': ['gkDiving', 'gkHandling', 'gkKicking', 'gkReflexes', 'gkPositioning'] };
-const IN2CM = 2.54, LB2KG = 2.20462;
+// The two sides' colours: a validated categorical pair on the card surface
+// #0e0f19 (dataviz validator, dark mode: lightness band, chroma, CVD dE 16.2
+// deutan, normal dE 24.3, contrast - all PASS). Only the bars wear them; every
+// number stays in text ink, and the side is also named by position (left/right).
+const SIDE = ['#159C88', '#8C6CE6'];
 
-const A = ARCH.map((a) => ({
-  id: a.id, name: title(a.name), position: a.position, by: a.inspiredBy,
-  h: [Math.round(a.height.min * IN2CM), Math.round(a.height.max * IN2CM)],
-  w: [Math.round(a.weight.min / LB2KG), Math.round(a.weight.max / LB2KG)],
-  sm: [a.skillMoves.min, a.skillMoves.max], wf: [a.weakFoot.min, a.weakFoot.max],
-  perks: a.perks.map((p) => ({ name: p.name, desc: p.desc })),
-  specs: a.specializations.map((s) => s.name),
-  sig: a.signature.map((id) => PLAYSTYLES[id]?.name ?? id),
-  key: a.keyAttributes ?? [],
-  max: Object.fromEntries(Object.entries(a.attributes).map(([k, v]) => [k, v.max])),
-}));
-const NAMES = Object.fromEntries(Object.entries(ATTRS).map(([k, v]) => [k, v.name]));
-
-// Similarity over shared attribute ceilings — drives the prose tables.
-const pairs = [];
-for (let i = 0; i < A.length; i++) for (let j = i + 1; j < A.length; j++) {
-  const a = A[i], b = A[j];
-  const shared = Object.keys(a.max).filter((k) => k in b.max);
-  const gaps = shared.map((k) => ({ k, d: a.max[k] - b.max[k] }));
-  const avg = gaps.reduce((s, g) => s + Math.abs(g.d), 0) / shared.length;
-  const big = gaps.reduce((m, g) => Math.abs(g.d) > Math.abs(m.d) ? g : m);
-  pairs.push({ a, b, avg, big, samePos: a.position === b.position });
+// Forwards, midfielders, defenders, keepers (a11's order).
+const ORDER = ['finisher', 'magician', 'spark', 'target', 'creator', 'disruptor', 'maestro',
+  'recycler', 'boss', 'marauder', 'progressor', 'shot-stopper', 'sweeper-keeper'];
+if (JSON.stringify([...ORDER].sort()) !== JSON.stringify(FC27_ARCH.map((a) => a.id).sort())) throw new Error('ORDER is not the FC 27 archetype list');
+const M = Object.fromEntries(ORDER.map((id) => [id, model(id)]));
+const byId = Object.fromEntries(FC27_ARCH.map((a) => [a.id, a]));
+const name = (id) => byId[id].name;
+const the = (id) => `the ${name(id)}`;
+const attrName = (k) => ATTRS[k]?.name ?? k;
+const OUTKEYS = Object.values(CATS).flat();
+const GK = ['gkDiving', 'gkHandling', 'gkKicking', 'gkPositioning', 'gkReflexes'];
+const CATS2 = [...Object.entries(CATS), ['Goalkeeping', GK]];
+const KEEPER_IDS = ORDER.filter((id) => byId[id].position === 'Keeper');
+const OUTFIELD = ORDER.filter((id) => byId[id].position !== 'Keeper');
+for (const id of ORDER) {
+  const ks = Object.keys(byId[id].attributes);
+  const want = KEEPER_IDS.includes(id) ? [...OUTKEYS, ...GK] : OUTKEYS;
+  assert(ks.length === want.length && want.every((k) => byId[id].attributes[k]), `${id} carries exactly ${want.length} attributes`);
 }
-const outPairs = pairs.filter((p) => p.a.position !== 'Keeper' && p.b.position !== 'Keeper').sort((x, y) => x.avg - y.avg);
-const twins = outPairs.slice(0, 4);
-const contrasts = outPairs.slice(-4).reverse();
+const statsHref = (id) => (pageOf(id) ? `/blog/${pageOf(id).slug}/` : '');
 
-const DEF_A = 'finisher', DEF_B = 'target';
-
-// The comparison body template exists twice — here for the crawlable default,
-// and in the inline script for re-renders. Keep the two in step.
-const bar = (v, side) => v == null ? '<span class="nb">—</span>'
-  : `<span class="bw ${side}"><i style="width:${Math.round(100 * (v - 40) / 59)}%"></i></span>`;
-const body = (a, b) => {
-  const cats = Object.entries(CATS2).filter(([, ks]) => ks.some((k) => k in a.max || k in b.max));
-  const star = (r) => r[0] === r[1] ? `${r[1]}★` : `${r[0]}–${r[1]}★`;
-  const meta = (x) => `<div class="mc"><p class="mn">${esc(x.name)}</p><p class="mb">${esc(x.position)} · after ${esc(x.by)}</p>
-    <p class="mr">${x.h[0]}–${x.h[1]} cm · ${x.w[0]}–${x.w[1]} kg · SM ${star(x.sm)} · WF ${star(x.wf)}</p>
-    <p class="ml"><b>Perks</b> ${x.perks.map((p) => esc(p.name)).join(' · ')}</p>
-    <p class="ml"><b>Specializations</b> ${x.specs.map(esc).join(' · ')}</p>
-    <p class="ml"><b>Signature PlayStyles</b> ${x.sig.map(esc).join(' · ')}</p></div>`;
-  let wa = 0, wb = 0;
-  const secs = cats.map(([c, ks]) => {
-    const rows = ks.filter((k) => k in a.max || k in b.max).map((k) => {
-      const va = a.max[k], vb = b.max[k];
-      const cls = va == null || vb == null ? '' : va > vb ? 'wa' : vb > va ? 'wb' : '';
-      return `<div class="r ${cls}"><span class="va">${va ?? '—'}${a.key.includes(k) ? '<em>★</em>' : ''}</span>${bar(va, 'bl')}<span class="an">${esc(NAMES[k])}</span>${bar(vb, 'br')}<span class="vb">${b.key.includes(k) ? '<em>★</em>' : ''}${vb ?? '—'}</span></div>`;
-    });
-    const ca = ks.filter((k) => k in a.max), cb = ks.filter((k) => k in b.max);
-    const ma = ca.length ? Math.round(ca.reduce((s, k) => s + a.max[k], 0) / ca.length) : null;
-    const mb = cb.length ? Math.round(cb.reduce((s, k) => s + b.max[k], 0) / cb.length) : null;
-    if (ma != null && mb != null) { if (ma > mb) wa++; else if (mb > ma) wb++; }
-    const lead = ma == null || mb == null ? '' : ma === mb ? 'level' : (ma > mb ? a.name : b.name) + ` +${Math.abs(ma - mb)}`;
-    return `<div class="sec"><p class="sh"><span>${c}</span><span class="ld">${lead}</span></p>${rows.join('')}</div>`;
-  });
-  const verdict = wa === wb ? `Dead level: ${wa} categories each.` : `${(wa > wb ? a : b).name} leads ${Math.max(wa, wb)} of ${wa + wb} categories on average ceiling.`;
-  return `<div class="meta">${meta(a)}${meta(b)}</div><p class="vd">${verdict}</p>${secs.join('')}`;
+// ── Header card text, per archetype (built once, rendered by the renderer) ──
+const ftin = (i) => `${Math.floor(i / 12)}′${i % 12}″`;
+const cm = (i) => Math.round(i * 2.54);
+const kgOf = (lb) => Math.round(lb / 2.20462);
+const stars = (r) => (r.min === r.max ? `${r.max}★` : `${r.min}–${r.max}★`);
+const cardHtml = (id) => {
+  const a = byId[id];
+  const m = M[id];
+  const href = statsHref(id);
+  const nm = href ? `<a href="${href}">${esc(a.name)}</a>` : esc(a.name);
+  const sig = a.signature.map(psName);
+  assert(sig.length === 1, `${id} has one signature PlayStyle`);
+  const specs = m.specs.map((s) => `<li><b>${esc(specName(s.name))}</b> <span class="ps">${esc(s.ps)}</span><small>${esc(s.crit.map((x) => `${attrName(x.k)} ${x.v}`).join(' · '))} · ${s.ap == null ? 'price not confirmed' : `${fmt(s.ap)} AP`}</small></li>`).join('');
+  return `<p class="mn">${nm}</p><p class="mb">${esc(a.position)} · inspired by ${esc(a.inspiredBy)}</p>`
+    + `<dl><dt>Height</dt><dd>${ftin(a.height.min)}–${ftin(a.height.max)} <small>${cm(a.height.min)}–${cm(a.height.max)} cm</small></dd>`
+    + `<dt>Weight</dt><dd>${a.weight.min}–${a.weight.max} lb <small>${kgOf(a.weight.min)}–${kgOf(a.weight.max)} kg</small></dd>`
+    + `<dt>Skill moves</dt><dd>${stars(a.skillMoves)}</dd><dt>Weak foot</dt><dd>${stars(a.weakFoot)}</dd>`
+    + `<dt>Signature</dt><dd>${esc(sig[0])}</dd></dl>`
+    + `<p class="sh2">Specializations <small>AP to unlock from the start</small></p><ul>${specs}</ul>`;
 };
 
-const dA = A.find((x) => x.id === DEF_A), dB = A.find((x) => x.id === DEF_B);
+// ── The renderer: ONE source, run here and in the reader's browser ───────────
+// h2h(D, S): D = {B, T:[tier keys], TL:[tier labels], cats:[[cat,[k]]], names:{k:n},
+//                 arch:{id:{n,card,v:{k:[t,min,max]}}}}   (t = -1: price not confirmed)
+//            S = {a, b, show:'max'|'min'|'ap'}
+// Range modes draw each bar from the starting value to the ceiling on a 40-99
+// scale, in the side's colour; AP mode draws the AP to 90 from the start,
+// tinted by that archetype's price tier (a11's convention). The stronger side
+// of each row is in bold: the higher value, or the lower price.
+const H2H_JS = String.raw`
+function h2h(D,S){
+var A=D.arch[S.a],Bv=D.arch[S.b],ap=S.show==='ap';
+function cell(x,k){var v=x.v[k];if(!v)return null;var r={t:v[0],lo:v[1],hi:v[2]};if(v[0]>=0){var c=costRow(D.B,D.T,v[0],v[1],v[2],90);r.ap=c.ap;r.cap=c.capped}return r}
+function key(r){if(!r)return null;if(!ap)return S.show==='max'?r.hi:r.lo;return r.t<0||r.cap?null:r.ap}
+var mx=1;D.cats.forEach(function(g){g[1].forEach(function(k){[cell(A,k),cell(Bv,k)].forEach(function(r){if(ap&&r&&r.t>=0&&!r.cap&&r.ap>mx)mx=r.ap})})});
+var wa=0,wb=0,lv=0,na=0,shared=0,secs='';
+function bar(r,side){
+if(!r)return '<span class="bw"></span>';
+if(ap){if(r.t<0||r.cap)return '<span class="bw"></span>';return '<span class="bw s'+side+'"><i class="t'+r.t+'" style="width:'+Math.max(1.5,100*r.ap/mx).toFixed(1)+'%"></i></span>'}
+var o=(100*(r.lo-40)/59).toFixed(1),w=Math.max(1.5,100*(r.hi-r.lo)/59).toFixed(1);
+return '<span class="bw s'+side+'"><i class="s'+(side==='l'?0:1)+'" style="'+(side==='l'?'right':'left')+':'+o+'%;width:'+w+'%"></i></span>'}
+function num(r){if(!r)return '—';if(!ap)return String(S.show==='max'?r.hi:r.lo);if(r.t<0)return '<small>n/a</small>';if(r.cap)return '<small>max '+r.hi+'</small>';return fmt(r.ap)}
+function sw(r){return r&&r.t>=0?'<i class="sw t'+r.t+'" title="'+esc(D.TL[r.t])+' tier"></i>':''}
+D.cats.forEach(function(g){
+var ks=g[1].filter(function(k){return A.v[k]||Bv.v[k]});if(!ks.length)return;
+var ca=0,cb=0,sa=0,sb=0,both=0,rows='';
+ks.forEach(function(k){
+var ra=cell(A,k),rb=cell(Bv,k),xa=key(ra),xb=key(rb),cl='';
+if(ra&&rb){shared++;
+ if(xa===null||xb===null)na++;
+ else if(xa===xb)lv++;
+ else if(ap?xa<xb:xa>xb){wa++;ca++;cl=' wa'}else{wb++;cb++;cl=' wb'}}
+if(ra&&rb&&!ap){both++;sa+=xa;sb+=xb}
+rows+='<div class="r'+cl+'"><span class="va">'+num(ra)+sw(ra)+'</span>'+bar(ra,'l')+'<span class="an">'+esc(D.names[k])+'</span>'+bar(rb,'r')+'<span class="vb">'+sw(rb)+num(rb)+'</span></div>'});
+var ld='';
+if(ap)ld=ca||cb?(ca>cb?esc(A.n)+' cheaper in '+ca:cb>ca?esc(Bv.n)+' cheaper in '+cb:'cheaper in '+ca+' each')+' of '+ks.length:'';
+else if(both===ks.length){var d=(sa-sb)/both;ld=Math.abs(d)<1e-9?'level on average':esc(d>0?A.n:Bv.n)+' +'+Math.abs(d).toFixed(1)+' on average'}
+secs+='<div class="sec"><p class="sh"><span>'+esc(g[0])+'</span><span class="ld">'+ld+'</span></p>'+rows+'</div>'});
+var what=S.show==='max'?'the higher ceiling':S.show==='min'?'the higher starting value':'';
+var vd=ap?'Reaching 90 from the start costs less on the <b>'+esc(A.n)+'</b> in '+wa+' of '+shared+' shared attributes and on the <b>'+esc(Bv.n)+'</b> in '+wb+(lv?'; the same in '+lv:'')+(na?'; '+na+' out of reach or unpriced on one side':'')+'.'
+:'The <b>'+esc(A.n)+'</b> has '+what+' in '+wa+' of '+shared+' shared attributes, the <b>'+esc(Bv.n)+'</b> in '+wb+(lv?'; '+lv+' are level':'')+'.';
+return '<p class="vd">'+vd+'</p>'+secs+'<div class="meta"><div class="mc ma">'+A.card+'</div><div class="mc mbb">'+Bv.card+'</div></div>';
+}
+`;
+const JS = new Function(`${COST_JS}\n${H2H_JS}\nreturn { h2h };`)();
 
-const widget = kg(`<div class="${P}" data-${P}>
-<style>${baseCss(P)}
-.${P} .row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.${P} select{font:inherit;font-size:14px;padding:7px 10px;border-radius:8px;border:1px solid var(--ring);
-  background:var(--s1);color:var(--ink);min-width:190px}
-.${P} .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.${P} .mc{border:1px solid var(--grid);border-radius:9px;padding:11px 13px}
-.${P} .mn{font-size:15.5px;font-weight:700;margin:0}
-.${P} .mb{font-size:12px;color:var(--muted);margin:0 0 6px}
-.${P} .mr{font-size:12.5px;color:var(--ink2);margin:0 0 7px;font-variant-numeric:tabular-nums}
-.${P} .ml{font-size:12px;color:var(--ink2);margin:0 0 4px;line-height:1.45}
-.${P} .ml b{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.${P} .vd{font-size:13.5px;font-weight:650;margin:0 0 14px;color:var(--accent)}
-.${P} .sec{margin-bottom:13px}
-.${P} .sh{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 6px;padding-bottom:4px;border-bottom:1px solid var(--grid)}
-.${P} .sh .ld{color:var(--accent)}
-.${P} .r{display:grid;grid-template-columns:40px 1fr 118px 1fr 40px;gap:8px;align-items:center;margin-bottom:4px}
-.${P} .an{font-size:11.5px;color:var(--ink2);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.${P} .va,.${P} .vb{font-size:12.5px;font-variant-numeric:tabular-nums;font-weight:650}
-.${P} .va{text-align:right}
-.${P} .va em,.${P} .vb em{font-style:normal;color:var(--accent);font-size:10px;vertical-align:2px}
-.${P} .bw{position:relative;height:6px;background:var(--bar);border-radius:99px;overflow:hidden}
-.${P} .bw i{position:absolute;top:0;bottom:0;background:var(--accent2);border-radius:99px}
-.${P} .bw.bl i{right:0}
-.${P} .bw.br i{left:0}
-.${P} .r.wa .bw.bl i,.${P} .r.wb .bw.br i{background:var(--accent)}
-.${P} .nb{color:var(--muted);font-size:11px;text-align:center}
-@media (max-width:600px){.${P} .meta{grid-template-columns:1fr}
- .${P} .r{grid-template-columns:34px 1fr 92px 1fr 34px;gap:5px}}
+const D = {
+  B: BANDS, T: TK(), TL: TIER.map((t) => t.label),
+  cats: CATS2, names: Object.fromEntries([...OUTKEYS, ...GK].map((k) => [k, attrName(k)])),
+  arch: Object.fromEntries(ORDER.map((id) => [id, {
+    n: name(id), card: cardHtml(id),
+    v: Object.fromEntries(Object.entries(byId[id].attributes).map(([k, x]) => [k, [M[id].keys.includes(k) ? M[id].t(k) : -1, x.min, x.max]])),
+  }])),
+};
+// Unpriced cells are exactly the catalog's `unconfirmed` ones (model() checks
+// that); every priced cell's AP to 90 is the model's (which checks itself
+// against an independent implementation).
+for (const id of ORDER) for (const k of M[id].keys) M[id].cost(k, 90);
+
+// ── An independent count of every verdict, all 78 pairs, all three modes ─────
+const verdictOf = (a, b, show) => {
+  let wa = 0, wb = 0, lv = 0, na = 0, shared = 0;
+  for (const k of Object.keys(byId[a].attributes)) {
+    if (!byId[b].attributes[k]) continue;
+    shared++;
+    const v = (id) => {
+      if (show === 'max') return byId[id].attributes[k].max;
+      if (show === 'min') return byId[id].attributes[k].min;
+      if (!M[id].keys.includes(k)) return null;
+      const c = M[id].cost(k, 90);
+      return c.capped ? null : c.ap;
+    };
+    const x = v(a), y = v(b);
+    if (x === null || y === null) na++;
+    else if (x === y) lv++;
+    else if (show === 'ap' ? x < y : x > y) wa++;
+    else wb++;
+  }
+  return { wa, wb, lv, na, shared };
+};
+for (const a of ORDER) for (const b of ORDER) {
+  if (a === b) continue;
+  for (const show of ['max', 'min', 'ap']) {
+    const html = JS.h2h(D, { a, b, show });
+    const v = verdictOf(a, b, show);
+    const want = show === 'ap'
+      ? `in ${v.wa} of ${v.shared} shared attributes and on the <b>${name(b)}</b> in ${v.wb}${v.lv ? `; the same in ${v.lv}` : ''}${v.na ? `; ${v.na} out of reach or unpriced on one side` : ''}.`
+      : `in ${v.wa} of ${v.shared} shared attributes, the <b>${name(b)}</b> in ${v.wb}${v.lv ? `; ${v.lv} are level` : ''}.`;
+    if (!html.includes(want)) throw new Error(`verdict ${a}/${b}/${show}: expected "${want}"`);
+  }
+}
+
+// ── Pairs: closest and furthest on ceilings ─────────────────────────────────
+// Distance = the average absolute ceiling gap over the attributes both carry
+// (compared as the integer SUM, so ties are exact).
+const pairOf = (a, b) => {
+  const ks = Object.keys(byId[a].attributes).filter((k) => byId[b].attributes[k]);
+  const gaps = ks.map((k) => ({ k, d: byId[a].attributes[k].max - byId[b].attributes[k].max }));
+  const sum = gaps.reduce((s, g) => s + Math.abs(g.d), 0);
+  const big = Math.max(...gaps.map((g) => Math.abs(g.d)));
+  const bigs = gaps.filter((g) => Math.abs(g.d) === big);
+  const tier = ks.filter((k) => M[a].keys.includes(k) && M[b].keys.includes(k) && M[a].t(k) === M[b].t(k)).length;
+  return { a, b, n: ks.length, sum, avg: sum / ks.length, big, bigs, tier, samePos: byId[a].position === byId[b].position };
+};
+const outPairs = [];
+for (let i = 0; i < OUTFIELD.length; i++) for (let j = i + 1; j < OUTFIELD.length; j++) outPairs.push(pairOf(OUTFIELD[i], OUTFIELD[j]));
+outPairs.sort((x, y) => x.sum - y.sum || name(x.a).localeCompare(name(y.a)));
+assert(outPairs.every((p) => p.n === OUTKEYS.length), 'every outfield pair shares all 29 attributes');
+const closest = outPairs.slice(0, 5);
+const furthest = outPairs.slice(-5).reverse();
+const tiedTop = outPairs.filter((p) => p.sum === outPairs[0].sum);
+const tiedBottom = outPairs.filter((p) => p.sum === outPairs[outPairs.length - 1].sum);
+const samePos = outPairs.filter((p) => p.samePos);
+const spClose = samePos.filter((p) => p.sum === samePos[0].sum);
+const spFar = samePos.filter((p) => p.sum === samePos[samePos.length - 1].sum);
+const pn = (p) => `${the(p.a)} and ${the(p.b)}`;
+// Several pairs in one sentence: "the A and the B, and the C and the D".
+const pairs = (ps) => (ps.length < 2 ? ps.map(pn).join('') : `${ps.slice(0, -1).map(pn).join(', ')}, and ${pn(ps[ps.length - 1])}`);
+const cap = (s) => s.replace(/^./, (x) => x.toUpperCase());
+const d1 = (v) => v.toFixed(1);
+// "the biggest single difference is X, N points in the Y's favour" - each
+// attribute named with the side whose ceiling is higher, since two tied
+// biggest gaps can run opposite ways (the Magician and the Boss: Curve one
+// way, Slide Tackle the other).
+const winOf = (p, g) => (g.d > 0 ? p.a : p.b);
+const bigClause = (p) => (p.bigs.length === 1
+  ? `the biggest single difference is ${attrName(p.bigs[0].k)}, where ${the(winOf(p, p.bigs[0]))}’s ceiling is ${p.big} points higher`
+  : `the biggest single differences are ${p.big} points each, in ${list(p.bigs.map((g) => `${attrName(g.k)} (${the(winOf(p, g))} higher)`))}`);
+assert(furthest.every((p) => !p.samePos), 'the five furthest pairs all cross positions');
+
+// The Disruptor's nearest outfield match.
+const disPairs = outPairs.filter((p) => p.a === 'disruptor' || p.b === 'disruptor');
+const disNear = disPairs[0];
+assert(disPairs[1].sum > disNear.sum, 'the Disruptor has one closest match');
+const disMate = disNear.a === 'disruptor' ? disNear.b : disNear.a;
+const disSameNear = disPairs.find((p) => p.samePos);
+const mateCrosses = byId[disMate].position !== 'Midfielder';
+
+// The two keepers.
+const kp = pairOf(KEEPER_IDS[0], KEEPER_IDS[1]);
+const gkLevel = GK.filter((k) => byId[kp.a].attributes[k].max === byId[kp.b].attributes[k].max);
+assert(kp.n === OUTKEYS.length + GK.length, 'the keepers share all 34 attributes');
+
+// The lead sentence: alike on ceilings, priced differently - true of every
+// closest pair; and the Disruptor is the one archetype not in FC 26 (read from
+// the FC 26 catalog file for this check only).
+assert(closest.every((p) => p.tier < p.n), 'every closest pair prices at least one attribute on different tiers');
+const FC26_IDS = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'archetypes.json'), 'utf8')).map((x) => x.id);
+assert(ORDER.filter((id) => !FC26_IDS.includes(id)).join() === 'disruptor', 'the Disruptor is the one archetype new in FC 27');
+
+// The default view: the new archetype against its closest match.
+const S0 = { a: 'disruptor', b: disMate, show: 'max' };
+
+// ── The widget ──────────────────────────────────────────────────────────────
+const widget = () => {
+  const c = `${P}h`;
+  const opts = (sel) => Object.entries({ Forward: 'Forwards', Midfielder: 'Midfielders', Defender: 'Defenders', Keeper: 'Keepers' })
+    .map(([pos, label]) => `<optgroup label="${label}">${ORDER.filter((id) => byId[id].position === pos).map((id) => `<option value="${id}"${id === sel ? ' selected' : ''}>${esc(name(id))}</option>`).join('')}</optgroup>`).join('');
+  const chip = (v, label, on) => `<button type="button" class="ch" data-show="${v}" aria-pressed="${on}">${label}</button>`;
+  return kg(`<div class="pcs ${c}" id="compare" data-${c} data-show="${S0.show}">
+<style>
+.${c} .sel{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin:0 0 12px}
+.${c} .sel label{display:flex;flex-direction:column;gap:5px}
+.${c} select{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:#161826;border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:7px 10px;min-height:36px;min-width:150px}
+.${c} .sel label:first-child select{box-shadow:inset 3px 0 0 ${SIDE[0]}}
+.${c} .sel label:nth-child(3) select{box-shadow:inset 3px 0 0 ${SIDE[1]}}
+.${c} button.sw2{font:inherit;font-size:15px;line-height:1;padding:8px 10px;border-radius:9px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--ink2);cursor:pointer;min-height:36px}
+.${c} .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.${c} .mc{border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.${c} .mc.ma{border-top:3px solid ${SIDE[0]}}
+.${c} .mc.mbb{border-top:3px solid ${SIDE[1]}}
+.${c} .mn{font:800 17px/1.2 Archivo,system-ui,sans-serif;margin:0}
+.${c} .mn a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.${c} .mb{font-size:11.5px;color:var(--mut);margin:2px 0 8px}
+.${c} dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0 0 8px;font-size:12.5px;font-variant-numeric:tabular-nums}
+.${c} dt{color:var(--mut)}
+.${c} dd{margin:0;color:var(--ink)}
+.${c} dd small{color:var(--mut);margin-left:4px}
+.${c} .sh2{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 4px}
+.${c} .sh2 small{text-transform:none;letter-spacing:0;font-weight:400;margin-left:4px}
+.${c} .mc ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.${c} .mc li{margin:0;font-size:12.5px;line-height:1.35;color:var(--ink)}
+.${c} .mc li .ps{font-size:11.5px;font-weight:600;color:#c9a227}
+.${c} .mc li small{display:block;font-size:11px;color:var(--mut)}
+.${c} .vd{font-size:13.5px;margin:0 0 12px;color:var(--ink2)}
+.${c} .vd b{color:var(--ink)}
+.${c} .sec{margin:0 0 12px}
+.${c} .sh{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 4px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.${c} .sh .ld{color:var(--ink2);text-transform:none;letter-spacing:0;font-weight:600}
+.${c} .r{display:grid;grid-template-columns:62px 1fr 108px 1fr 62px;gap:8px;align-items:center;min-height:24px}
+.${c} .an{font-size:12px;color:var(--ink2);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.${c} .va,.${c} .vb{display:flex;align-items:center;gap:5px;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.${c} .va{justify-content:flex-end}
+.${c} .va small,.${c} .vb small{font-size:10.5px;color:var(--mut)}
+.${c} .r.wa .va,.${c} .r.wb .vb{color:var(--ink);font-weight:800}
+.${c} .sw{width:8px;height:8px;border-radius:2px;flex:none}
+.${c} .bw{position:relative;display:block;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden}
+.${c} .bw i{position:absolute;top:0;bottom:0;border-radius:4px}
+.${c} .bw.sl i.s0{background:${SIDE[0]}}
+.${c} .bw.sr i.s1{background:${SIDE[1]}}
+.${c} .bw.sl i[class^="t"]{right:0}
+.${c} .bw.sr i[class^="t"]{left:0}
+.${c} .sel .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.${c} .lg2{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 8px;font-size:12px;color:var(--ink2)}
+.${c} .lg2 span{display:inline-flex;align-items:center;gap:6px}
+.${c}[data-show="ap"] .lg2.rng,.${c}:not([data-show="ap"]) .lg2.cst{display:none}
+@media (max-width:600px){.${c} .meta{grid-template-columns:1fr}.${c} .r{grid-template-columns:50px 1fr 84px 1fr 50px;gap:5px}.${c} .an{font-size:11px}.${c} select{min-width:0;width:100%}.${c} .sel label{flex:1 1 40%}}
 </style>
-<p class="hd">Archetype head-to-head</p>
-<p class="sub">Pick any two of the 13 archetypes — attribute ceilings side by side, category by category. ★ marks a key attribute.</p>
-<div class="row">
-  <div><span class="lbl">Archetype A</span><select data-a>${A.map((x) => `<option value="${x.id}"${x.id === DEF_A ? ' selected' : ''}>${esc(x.name)} · ${esc(x.position)}</option>`).join('')}</select></div>
-  <div><span class="lbl">Archetype B</span><select data-b>${A.map((x) => `<option value="${x.id}"${x.id === DEF_B ? ' selected' : ''}>${esc(x.name)} · ${esc(x.position)}</option>`).join('')}</select></div>
+<p class="kk">FC 27 · <time datetime="${UPDATED}">Updated ${esc(dayLabel(UPDATED))}</time></p>
+<p class="tl">Any two archetypes, head to head</p>
+<p class="sb">Pick two of the ${words(ORDER.length)}. Every attribute from where a new pro starts to its ceiling, or what it costs in AP to raise it to 90.</p>
+<div class="sel">
+  <label><span class="lb">Archetype A</span><select data-a aria-label="Archetype A">${opts(S0.a)}</select></label>
+  <button type="button" class="sw2" data-swap aria-label="Swap the two">⇄</button>
+  <label><span class="lb">Archetype B</span><select data-b aria-label="Archetype B">${opts(S0.b)}</select></label>
 </div>
-<div data-body>${body(dA, dB)}</div>
-<p class="foot">Attribute ceilings, body ranges, perks and specializations from the ${BRAND} catalog. Bars are drawn on the 40–99 scale; the brighter bar marks the higher ceiling.</p>
+<div class="ctl"><span class="grp2" role="group" aria-label="Compare"><span class="lb">Compare</span>${chip('max', 'Ceilings', true)}${chip('min', 'Starting values', false)}${chip('ap', 'AP to 90', false)}</span></div>
+<div class="lg2 rng" aria-hidden="true"><span><i class="sw" style="background:${SIDE[0]};width:14px"></i><i class="sw" style="background:${SIDE[1]};width:14px"></i>Bar: start to ceiling, 40–99</span>${TIER.map((t, i) => `<span><i class="sw t${i}"></i>${esc(t.label)}</span>`).join('')}</div>
+<div class="lg2 cst" aria-hidden="true">${TIER.map((t, i) => `<span><i class="sw t${i}"></i>${esc(t.label)}</span>`).join('')}<span>max = can’t reach 90</span></div>
+<div data-body>${JS.h2h(D, S0)}</div>
+<p class="ft">The swatch by each number is that archetype’s AP price tier for the attribute. AP to 90 is paid from a new pro’s starting value, out of the <b>${fmt(BUDGET)} AP</b> you have at level ${CAP_LEVEL}. The keepers’ Long Shots and Volleys prices are not confirmed (n/a).</p>
 <script>
-(function(){var R=document.querySelector('[data-${P}]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var A=${JSON.stringify(A)},NAMES=${JSON.stringify(NAMES)},CATS=${JSON.stringify(CATS2)};
-var sa=R.querySelector('[data-a]'),sb=R.querySelector('[data-b]'),bd=R.querySelector('[data-body]');
-var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
-function bar(v,side){return v==null?'<span class="nb">—</span>':'<span class="bw '+side+'"><i style="width:'+Math.round(100*(v-40)/59)+'%"></i></span>'}
-function star(r){return r[0]===r[1]?r[1]+'★':r[0]+'–'+r[1]+'★'}
-function meta(x){return '<div class="mc"><p class="mn">'+e(x.name)+'</p><p class="mb">'+e(x.position)+' · after '+e(x.by)+'</p>'
- +'<p class="mr">'+x.h[0]+'–'+x.h[1]+' cm · '+x.w[0]+'–'+x.w[1]+' kg · SM '+star(x.sm)+' · WF '+star(x.wf)+'</p>'
- +'<p class="ml"><b>Perks</b> '+x.perks.map(function(p){return e(p.name)}).join(' · ')+'</p>'
- +'<p class="ml"><b>Specializations</b> '+x.specs.map(e).join(' · ')+'</p>'
- +'<p class="ml"><b>Signature PlayStyles</b> '+x.sig.map(e).join(' · ')+'</p></div>'}
-function render(){var a=A.filter(function(x){return x.id===sa.value})[0],b=A.filter(function(x){return x.id===sb.value})[0];
- var wa=0,wb=0,secs='';
- Object.keys(CATS).forEach(function(c){var ks=CATS[c].filter(function(k){return k in a.max||k in b.max});if(!ks.length)return;
-  var rows=ks.map(function(k){var va=a.max[k],vb=b.max[k];
-   var cls=va==null||vb==null?'':va>vb?'wa':vb>va?'wb':'';
-   return '<div class="r '+cls+'"><span class="va">'+(va==null?'—':va)+(a.key.indexOf(k)>=0?'<em>★</em>':'')+'</span>'+bar(va,'bl')+'<span class="an">'+e(NAMES[k])+'</span>'+bar(vb,'br')+'<span class="vb">'+(b.key.indexOf(k)>=0?'<em>★</em>':'')+(vb==null?'—':vb)+'</span></div>'}).join('');
-  var ca=CATS[c].filter(function(k){return k in a.max}),cb=CATS[c].filter(function(k){return k in b.max});
-  var ma=ca.length?Math.round(ca.reduce(function(s,k){return s+a.max[k]},0)/ca.length):null;
-  var mb=cb.length?Math.round(cb.reduce(function(s,k){return s+b.max[k]},0)/cb.length):null;
-  if(ma!=null&&mb!=null){if(ma>mb)wa++;else if(mb>ma)wb++}
-  var lead=ma==null||mb==null?'':ma===mb?'level':((ma>mb?a.name:b.name)+' +'+Math.abs(ma-mb));
-  secs+='<div class="sec"><p class="sh"><span>'+c+'</span><span class="ld">'+lead+'</span></p>'+rows+'</div>'});
- var vd=wa===wb?'Dead level: '+wa+' categories each.':((wa>wb?a:b).name+' leads '+Math.max(wa,wb)+' of '+(wa+wb)+' categories on average ceiling.');
- bd.innerHTML='<div class="meta">'+meta(a)+meta(b)+'</div><p class="vd">'+vd+'</p>'+secs}
-sa.addEventListener('change',render);sb.addEventListener('change',render);})();
+(function(){var R=document.querySelector('[data-${c}]');if(!R||R.dataset.on)return;R.dataset.on='1';
+${COST_JS}${H2H_JS}
+var D=${JSON.stringify(D)};
+var S={a:'${S0.a}',b:'${S0.b}',show:'${S0.show}'},sa=R.querySelector('[data-a]'),sb=R.querySelector('[data-b]'),bd=R.querySelector('[data-body]');
+R.dataset.show=S.show;
+function draw(){S.a=sa.value;S.b=sb.value;R.dataset.show=S.show;bd.innerHTML=h2h(D,S);
+ R.querySelectorAll('button.ch').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.show===S.show)})}
+sa.addEventListener('change',draw);sb.addEventListener('change',draw);
+R.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||!R.contains(b))return;
+ if(b.dataset.swap!==undefined){var t=sa.value;sa.value=sb.value;sb.value=t}else if(b.dataset.show)S.show=b.dataset.show;else return;draw()});
+document.addEventListener('click',function(e){var l=e.target.closest('a[data-pa]');if(!l)return;e.preventDefault();
+ sa.value=l.dataset.pa;sb.value=l.dataset.pb;S.show='max';draw();R.scrollIntoView({behavior:'smooth',block:'start'})});
+})();
 </script>
 </div>`);
+};
 
-const prName = (p) => `${p.a.name} vs ${p.b.name}`;
-const twinRows = twins.map((p) => `<tr><td>${esc(prName(p))}</td><td>${p.avg.toFixed(1)}</td><td>${esc(NAMES[p.big.k])} — ${p.big.d > 0 ? p.a.name : p.b.name} +${Math.abs(p.big.d)}</td></tr>`).join('');
-const conRows = contrasts.map((p) => `<tr><td>${esc(prName(p))}</td><td>${p.avg.toFixed(1)}</td><td>${esc(NAMES[p.big.k])} — ${p.big.d > 0 ? p.a.name : p.b.name} +${Math.abs(p.big.d)}</td></tr>`).join('');
-const samePos = outPairs.filter((p) => p.samePos);
+// ── The pair tables (static; each pair loads into the tool) ────────────────
+const pairTable = (id, label, pairs) => {
+  const c = `${P}${id}`;
+  return kg(`<div class="pcs ${c}">
+<style>
+.${c} .tr{display:grid;grid-template-columns:minmax(120px,1.5fr) minmax(52px,.5fr) 1.5fr minmax(56px,.55fr);gap:8px;align-items:center;padding:8px 2px;border-top:1px solid var(--line);font-size:13.5px;font-variant-numeric:tabular-nums}
+.${c} .tr.hd{border-top:0;padding-top:0;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.${c} .tr a{color:var(--ink)!important;font-weight:700;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.${c} .tr small{display:block;font-size:11px;color:var(--mut)}
+.${c} .n{text-align:right;font-weight:700}
+@media (max-width:560px){.${c} .tr{grid-template-columns:minmax(104px,1.3fr) 44px 1.3fr 44px;gap:6px;font-size:12.5px}}
+</style>
+<p class="kk">${esc(label)}</p>
+<div role="table" aria-label="${esc(label)}">
+<div class="tr hd" role="row"><span role="columnheader">Pair</span><span role="columnheader" class="n">Avg gap</span><span role="columnheader">Biggest difference</span><span role="columnheader" class="n">Same tier</span></div>
+${pairs.map((p) => {
+    return `<div class="tr" role="row"><span role="rowheader"><a href="#compare" data-pa="${p.a}" data-pb="${p.b}">${esc(name(p.a))} vs ${esc(name(p.b))}</a><small>${esc(byId[p.a].position)}${p.samePos ? 's' : ` · ${esc(byId[p.b].position)}`}</small></span><span role="cell" class="n">${d1(p.avg)}</span><span role="cell">${p.bigs.map((g) => `${esc(attrName(g.k))}<small>${esc(name(winOf(p, g)))} +${p.big}</small>`).join('')}</span><span role="cell" class="n">${p.tier}<small>of ${p.n}</small></span></div>`;
+  }).join('\n')}
+</div>
+<p class="ft">Avg gap: the average difference between the two ceilings over all ${OUTKEYS.length} attributes. Same tier: attributes both archetypes price on the same AP tier. Tap a pair to load it into the tool.</p>
+</div>`);
+};
 
-const html = `<p>Trying to pick between two archetypes is the most common build decision in Pro Clubs, and eyeballing two separate stat screens is a bad way to make it. Put any two side by side instead:</p>
+// ── Builds grid: the most copied FC 27 builds, any archetype ────────────────
+const topBuilds = ROLE_BUILDS.builds.filter((b) => !b.unverified && b.level === CAP_LEVEL)
+  .sort((x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount) || x.buildName.localeCompare(y.buildName)).slice(0, 6);
+assert(topBuilds.length === 6, 'six builds for the grid');
 
-${widget}
+// ── FAQ ─────────────────────────────────────────────────────────────────────
+const tieLead = tiedTop.length > 1
+  ? `${words(tiedTop.length)} pairs tie: ${pairs(tiedTop)}, each ${d1(tiedTop[0].avg)} points apart on average`
+  : `${pn(tiedTop[0])}, ${d1(tiedTop[0].avg)} points apart on average`;
+assert(tiedBottom.length === 1, 'one pair is furthest apart');
+const far = tiedBottom[0];
+const faq = [
+  ['Which two FC 27 archetypes are most similar?',
+   `On attribute ceilings, ${tieLead} across all ${OUTKEYS.length} attributes. ${tiedTop.map((p) => `For ${pn(p)}, ${bigClause(p)}.`).join(' ')}`],
+  ['Which two archetypes are furthest apart?',
+   `${pn(far).replace(/^t/, 'T')}: their ceilings are ${d1(far.avg)} points apart on average, and ${bigClause(far)}.`],
+  ['Which archetype is closest to the Disruptor?',
+   `${the(disMate).replace(/^t/, 'T')}, a ${byId[disMate].position.toLowerCase()}: ${d1(disNear.avg)} points apart on average${mateCrosses ? `, closer than any midfielder. The nearest midfielder is ${the(disSameNear.a === 'disruptor' ? disSameNear.b : disSameNear.a)}, at ${d1(disSameNear.avg)}` : ''}.`],
+  ['How different are the two keepers?',
+   `${pn(kp).replace(/^t/, 'T')} are ${d1(kp.avg)} points apart on average across their ${kp.n} attributes, and ${bigClause(kp)}. ${gkLevel.length === GK.length ? 'All five goalkeeping ceilings are level' : `${words(gkLevel.length).replace(/^./, (x) => x.toUpperCase())} of the five goalkeeping ceilings are level (${list(gkLevel.map(attrName))})`}.`],
+  ['Can I compare a keeper with an outfield archetype?',
+   `Yes. Keepers carry all ${OUTKEYS.length} outfield attributes plus ${words(GK.length)} goalkeeping ones, so the tool compares them attribute by attribute; an outfield archetype shows a dash on the goalkeeping rows.`],
+];
+const strip = (s) => s.replace(/<[^>]+>/g, '');
+const faqLd = kg(`<script type="application/ld+json">
+${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: strip(a) } })) }, null, 1).replace(/</g, '\\u003c')}
+</script>`);
 
-<h2>The closest calls in the game</h2>
-<p>Averaging the ceiling gap across all shared attributes, these outfield pairs are hardest to tell apart:</p>
-<table>
-<thead><tr><th>Pair</th><th>Avg ceiling gap</th><th>Biggest single difference</th></tr></thead>
-<tbody>${twinRows}</tbody>
-</table>
-<p>When the ceilings barely differ, the decision moves to everything that is not a ceiling: the perks, the three specializations, the signature PlayStyles — all listed in the tool's header cards — plus two things with articles of their own: which <a href="/blog/pro-clubs-playstyle-requirements/">PlayStyle thresholds</a> each can reach, and which <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">AcceleRATE profiles</a> their height and attribute ranges allow.</p>
+// ── Meta ────────────────────────────────────────────────────────────────────
+export const META = {
+  slug: 'pro-clubs-archetypes-head-to-head',
+  title: 'FC 27 Pro Clubs Archetypes Head to Head: Compare Any Two',
+  meta_title: 'FC 27 Pro Clubs Archetype Comparison: Any Two Side by Side',
+  meta_description: `Compare any two of the ${ORDER.length} FC 27 Pro Clubs archetypes: ceilings, starting values, AP cost tiers, specializations and body ranges, plus the closest pairs.`,
+  custom_excerpt: `Any two FC 27 archetypes side by side: attribute ceilings, starting values, what each attribute costs to raise to 90, specializations and body ranges.`,
+  tags: ['Guides', 'Archetypes', 'Tools', 'FC 27'],
+};
 
-<h2>And the biggest contrasts</h2>
-<table>
-<thead><tr><th>Pair</th><th>Avg ceiling gap</th><th>Biggest single difference</th></tr></thead>
-<tbody>${conRows}</tbody>
-</table>
-<p>No surprise at the top: the widest gulfs all pair a ball-playing archetype with a destroyer. Those comparisons make themselves — the interesting ones are the ${samePos.length} same-position pairs, where <strong>${esc(prName(samePos[0]))}</strong> run closest (${samePos[0].avg.toFixed(1)} average gap) and <strong>${esc(prName(samePos[samePos.length - 1]))}</strong> sit furthest apart (${samePos[samePos.length - 1].avg.toFixed(1)}).</p>
+// ── The page ────────────────────────────────────────────────────────────────
+const html = `${statsCss()}
+${widget()}
 
-${appCta({ href: '/meta', kicker: 'Try it yourself', head: 'See which archetypes top the meta', body: 'Published builds ranked 0–100 per position this season — the head-to-head above, settled by real builds.', label: 'Open meta rankings' })}
+<p><strong>Two archetypes can look alike on ceilings and still price the same upgrade differently.</strong> The tool opens on the Disruptor, new in FC 27, against its closest match on ceilings, ${the(disMate)}${mateCrosses ? ` — a ${byId[disMate].position.toLowerCase()}, not a midfielder` : ''}. Switch to <em>AP to 90</em> to see what each attribute costs from where a new pro starts, out of the ${fmt(BUDGET)} AP you have at level ${CAP_LEVEL}.</p>
 
-<h2>Frequently asked questions</h2>
-<h3>Which two archetypes are most similar?</h3>
-<p>${esc(prName(twins[0]))} — an average ceiling gap of just ${twins[0].avg.toFixed(1)} points across their shared attributes. No two archetypes have identical ceilings, though: even that pair splits on ${esc(NAMES[twins[0].big.k])} by ${Math.abs(twins[0].big.d)} points.</p>
-<h3>How should I split a same-position decision?</h3>
-<p>Check the category verdict first, then the ★ key attributes — those price a cost tier cheaper to level, so the same role built on the wrong archetype costs meaningfully more AP (the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP cost guide</a> puts numbers on that). Then compare perks and specializations, which no amount of levelling changes.</p>
-<h3>Can I compare a keeper with an outfield archetype?</h3>
-<p>The tool allows it — keepers carry every outfield attribute, so the comparison renders — but only the two keeper archetypes have goalkeeping stats, and an outfield pro shows a dash there. The realistic keeper decision is Shot Stopper vs Sweeper Keeper.</p>`;
+<h2 id="closest">The closest pairs</h2>
+<p>Averaging the ceiling gap over all ${OUTKEYS.length} attributes, ${tiedTop.length > 1 ? `${words(tiedTop.length)} outfield pairs tie as the closest: ${pairs(tiedTop)}, each ${d1(tiedTop[0].avg)} points apart on average` : `the closest outfield pair is ${pn(tiedTop[0])}, ${d1(tiedTop[0].avg)} points apart on average`}. When ceilings are this close, the decision moves to what is not a ceiling: the starting values, the price tiers and the specializations, all in the tool above.</p>
+${pairTable('c', 'Closest outfield pairs', closest)}
 
-writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a12.html'), html);
-console.log('a12: pairs', pairs.length, '| closest', prName(outPairs[0]), outPairs[0].avg.toFixed(1),
-  '| furthest', prName(outPairs[outPairs.length - 1]), outPairs[outPairs.length - 1].avg.toFixed(1),
-  '| same-pos pairs', samePos.length, '| bytes', html.length);
+${cardsGrid(`${P}-b`, {
+  builds: topBuilds, id: 'most-copied', level: 'h2', stat,
+  heading: 'Most copied FC 27 builds',
+  sub: `The builds people copy most, any archetype. Tap a card to open it in the builder and see where its ${fmt(BUDGET)} AP went.`,
+})}
+
+${AD_A}
+
+<h2 id="furthest">The furthest apart</h2>
+${pairTable('f', 'Furthest outfield pairs', furthest)}
+<p>All five of the widest gaps cross positions. Within one position, ${pairs(spClose)} run closest (${d1(spClose[0].avg)}) and ${pairs(spFar)} sit furthest apart (${d1(spFar[0].avg)}), out of ${samePos.length} same-position pairs.</p>
+<p>For every outfield archetype’s ceilings in one grid, see <a href="${COMPARED}">the archetypes compared</a>; for who pays least to raise any attribute, <a href="/blog/${HUB.slug}/">the AP costs of all ${words(ORDER.length)}</a>.</p>
+
+${appCta({
+  href: '/explore?year=27&src=guide',
+  kicker: 'FC 27 in the app',
+  head: 'Try both in the builder',
+  body: `Open a build of each archetype and move the same slider: the builder stops at each one’s ceiling and prices it against your ${fmt(BUDGET)} AP.`,
+  label: 'Browse FC 27 builds',
+})}
+
+<h2 id="faq">Frequently asked questions</h2>
+${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${a}</p>`).join('\n')}
+${faqLd}
+${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+
+${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
+
+const OUTDIR = path.join(import.meta.dirname, '..', 'out');
+for (const [k, v] of Object.entries(META)) if (typeof v === 'string' && v.includes("'")) throw new Error(`META.${k} has a straight apostrophe`);
+assert(META.meta_title.length <= 60 && META.meta_title.startsWith('FC 27 Pro Clubs') && META.meta_description.length <= 160,
+  `meta lengths ${META.meta_title.length}/${META.meta_description.length}`);
+writeFileSync(path.join(OUTDIR, 'a12.html'), html);
+writeFileSync(path.join(OUTDIR, 'a12.meta.json'), `${JSON.stringify(META, null, 1)}\n`);
+console.log(`a12 ${META.slug}: default ${S0.a} vs ${S0.b} | closest ${tiedTop.map((p) => `${p.a}/${p.b}`).join(', ')} ${d1(tiedTop[0].avg)} | furthest ${far.a}/${far.b} ${d1(far.avg)} | ${topBuilds.length} build cards | bytes ${html.length}`);

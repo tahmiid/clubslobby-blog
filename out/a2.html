@@ -1,175 +1,233 @@
-<p>Brighter means a higher ceiling. Defensive archetypes give up scoring, attacking archetypes give up defending, and the midfield hybrids pay a little of both:</p>
-
 <!--kg-card-begin: html-->
-<div class="hm27" data-hm27>
 <style>
-.hm27{--s1:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);
-  --accent:#6da7ec;--accent2:#256abf;--bar:#2c2c2a;--good:#0ca30c;--bad:#e66767;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--s1);
-  border:1px solid var(--ring);border-radius:12px;padding:20px;margin:0 0 1.6em;font-size:15px;line-height:1.45}
-.hm27 *{box-sizing:border-box}
-.hm27 table th{background:transparent!important;color:var(--muted)!important}
-.hm27 table td{color:var(--ct,inherit)!important}
-.hm27 .hd{font-size:17px;font-weight:650;margin:0 0 2px}
-.hm27 .sub{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.hm27 .lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.hm27 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.hm27 .chip{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--ring);
-  background:transparent;color:var(--ink2);cursor:pointer}
-.hm27 .chip:hover{border-color:var(--muted)}
-.hm27 .chip[aria-pressed="true"]{background:var(--ink);color:var(--s1);border-color:var(--ink)}
-.hm27 .chip[disabled]{opacity:.32;cursor:not-allowed}
-.hm27 .foot{margin-top:14px;font-size:11.5px;color:var(--muted)}
-@media (max-width:600px){.hm27{padding:14px}}
-  .hm27 .s0{--c:#184f95;--ct:#ffffff}.hm27 .s1{--c:#256abf;--ct:#ffffff}.hm27 .s2{--c:#3987e5;--ct:#0b0b0b}.hm27 .s3{--c:#6da7ec;--ct:#0b0b0b}.hm27 .s4{--c:#9ec5f4;--ct:#0b0b0b}
-.hm27 .hint{font-size:12.5px;color:var(--muted);margin:0 0 8px}
-.hm27 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hm27 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.hm27 table{border-collapse:separate;border-spacing:2px;width:100%;min-width:520px}
-.hm27 th{font-size:11.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 0 6px}
-.hm27 .rh{text-align:left!important;white-space:nowrap;padding-right:10px!important;text-transform:none!important;letter-spacing:0!important}
-.hm27 .rb{font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:none;border:0;padding:0;cursor:pointer;display:block}
-.hm27 .rb:hover{text-decoration:underline}
-.hm27 .pos{display:block;font-size:11px;font-weight:400;color:var(--muted)}
-.hm27 td{background:var(--c);color:var(--ct);text-align:center;font-size:13px;font-variant-numeric:tabular-nums;
-  padding:9px 4px;border-radius:4px;min-width:62px;position:relative}
-.hm27 td:focus-visible,.hm27 td:hover{outline:2px solid var(--ink);outline-offset:-2px}
-.hm27 .lg{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--muted)}
-.hm27 .k{width:19px;height:9px;background:var(--c);display:inline-block;border-radius:2px}
-.hm27 .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--s1);font-size:12.5px;
-  padding:7px 10px;border-radius:7px;opacity:0;transition:opacity .1s;max-width:230px;line-height:1.35}
-.hm27 .tip b{display:block;font-size:13px}
-.hm27 .det{margin-top:20px;padding-top:16px;border-top:1px solid var(--grid)}
-.hm27 .det h4{margin:0;font-size:17px}
-.hm27 .det .who{margin:1px 0 8px;font-size:12.5px;color:var(--muted)}
-.hm27 .det .desc{margin:0 0 13px;font-size:14px;color:var(--ink2);max-width:60ch}
-.hm27 .bars{display:grid;gap:7px;margin-bottom:15px}
-.hm27 .bar{display:grid;grid-template-columns:94px 1fr 78px;align-items:center;gap:10px}
-.hm27 .bl{font-size:12.5px;color:var(--ink2)}
-.hm27 .bt{position:relative;height:12px;background:var(--bar);border-radius:6px}
-.hm27 .bf{position:absolute;top:0;height:12px;background:var(--c);border-radius:6px;min-width:6px}
-.hm27 .bv{font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
-.hm27 .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.hm27 h5{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.hm27 .meta ul{margin:0;padding-left:16px;font-size:13.5px;color:var(--ink2)}
-.hm27 .meta li{margin-bottom:5px}
-@media (max-width:600px){.hm27 .bar{grid-template-columns:80px 1fr 70px;gap:7px}}
+.pcs{--bg:#0e0f19;--ink:#f2f3f7;--ink2:#b9bec9;--mut:#8a90a0;--line:rgba(255,255,255,.09);
+  --t0:#2DE2C5;
+  --t1:#24A08F;
+  --t2:#A8435B;
+  --t3:#FF6B8A;
+  font:400 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 18px 14px;margin:1.6em 0}
+.pcs *{box-sizing:border-box}
+.pcs,.pcs *{word-break:normal;overflow-wrap:normal;hyphens:none}
+.pcs p{margin:0}
+.pcs .kk{margin:0 0 4px;font:700 11px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)}
+.pcs .tl{margin:0 0 3px;font:800 21px/1.2 Archivo,system-ui,sans-serif;color:var(--ink)}
+.pcs .sb{margin:0 0 12px;font-size:13px;color:var(--ink2)}
+.pcs .ctl{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 10px;align-items:center}
+.pcs .ctl .lb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-right:2px}
+.pcs .grp2{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.pcs button.ch{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
+  background:transparent;color:var(--ink2);cursor:pointer;min-height:30px}
+.pcs button.ch:hover{border-color:var(--mut)}
+.pcs button.ch[aria-pressed="true"]{background:var(--ink);color:#0e0f19;border-color:var(--ink);font-weight:700}
+.pcs .sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px}
+.pcs .t0{background:var(--t0)}
+.pcs .k0{background:rgba(45,226,197,.32)}
+.pcs .t1{background:var(--t1)}
+.pcs .k1{background:rgba(36,160,143,.15)}
+.pcs .t2{background:var(--t2)}
+.pcs .k2{background:rgba(168,67,91,.24)}
+.pcs .t3{background:var(--t3)}
+.pcs .k3{background:rgba(255,107,138,.32)}
+.pcs .lg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 6px;font-size:12px;color:var(--ink2)}
+.pcs .lg span{display:inline-flex;align-items:center;gap:6px}
+.pcs .ft{margin:12px 0 0;font-size:11.5px;color:var(--mut)}
+.pcs .ft b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){.pcs{padding:14px 12px 12px}.pcs .tl{font-size:19px}}</style>
+<!--kg-card-end: html-->
+<!--kg-card-begin: html-->
+<div class="pcs a2g" data-a2g>
+<style>
+  .a2g .s0{--c:#184f95;--ct:#ffffff}.a2g .s1{--c:#256abf;--ct:#ffffff}.a2g .s2{--c:#3987e5;--ct:#0b0b0b}.a2g .s3{--c:#6da7ec;--ct:#0b0b0b}.a2g .s4{--c:#9ec5f4;--ct:#0b0b0b}
+.a2g .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.a2g .gx{min-width:320px}
+.a2g .gr{display:grid;grid-template-columns:minmax(96px,1.5fr) repeat(var(--n),minmax(40px,1fr));gap:2px;margin-top:2px}
+.a2g .gr>span{display:flex;align-items:center;justify-content:center;min-height:32px;padding:3px 2px;font-size:13px;font-variant-numeric:tabular-nums;border-radius:4px}
+.a2g .gr .rh{flex-direction:column;align-items:flex-start;justify-content:center;padding-left:2px;font-weight:700;color:var(--ink);line-height:1.2}
+.a2g .gr .rh a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:rgba(45,226,197,.6);text-underline-offset:3px}
+.a2g .gr .rh small{font-size:10.5px;font-weight:400;color:var(--mut)}
+.a2g .gr.hd>span{min-height:0;align-items:flex-end}
+.a2g button.so{all:unset;cursor:pointer;font-size:11px;font-weight:700;line-height:1.15;text-align:center;color:var(--ink2);padding:2px 1px 5px;border-bottom:2px solid transparent}
+.a2g .gr.hd .rh button.so{text-align:left;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.a2g button.so:hover{color:var(--ink)}
+.a2g button.so.on{color:var(--ink);border-bottom-color:var(--t0)}
+.a2g button.so:focus-visible{outline:2px solid var(--t0);outline-offset:1px}
+.a2g abbr{display:none;text-decoration:none;border:0}
+.a2g .cl{background:var(--c);color:var(--ct)}
+.a2g .cl.tp{font-weight:800;box-shadow:inset 0 0 0 2px #f2f3f7}
+.a2g .lg{align-items:center;margin:10px 0 0}
+.a2g .lg .rp{display:inline-flex;gap:2px}
+.a2g .lg .rp i{display:inline-block;width:18px;height:10px;border-radius:2px;background:var(--c)}
+.a2g .lg .tpk i{display:inline-block;width:14px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 2px #f2f3f7}
+.a2g .ft a{color:#7fb0ff!important}
+@media (max-width:560px){.a2g .fn{display:none}.a2g abbr{display:inline}.a2g .gx{min-width:0}
+  .a2g .gr{grid-template-columns:76px repeat(var(--n),minmax(0,1fr))}.a2g .gr.hd .rh button.so{letter-spacing:.02em}.a2g .gr>span{font-size:11.5px;min-height:30px;padding:3px 0}
+  .a2g .gr .rh{font-size:12px}.a2g button.so{font-size:10px}.a2g button.ch{padding:6px 10px;min-height:28px;font-size:12px}}
 </style>
-<p class="hd">Attribute ceilings by archetype</p>
-<p class="sub">The highest rating each archetype can reach, averaged per category. Outfield only — keepers use a separate attribute set.</p>
-<div class="chips" style="margin-bottom:12px" role="group" aria-label="Filter by position">
-<button type="button" class="chip" data-f="all" aria-pressed="true">All 11</button><button type="button" class="chip" data-f="Defender">Defenders</button><button type="button" class="chip" data-f="Midfielder">Midfielders</button><button type="button" class="chip" data-f="Forward">Forwards</button>
+<p class="kk">FC 27 · <time datetime="2026-09-23">Updated 23 September 2026</time></p>
+<p class="tl">Every outfield archetype, side by side</p>
+<p class="sb">The highest value each attribute can reach on each archetype, averaged per category. Switch to starting values, or pick a category for every attribute in it. Tap a column to sort.</p>
+<div class="ctl">
+  <span class="grp2" role="group" aria-label="Show"><span class="lb">Show</span><button type="button" class="ch" data-show="max" aria-pressed="true">Ceiling</button><button type="button" class="ch" data-show="min" aria-pressed="false">Start</button><button type="button" class="ch" data-show="room" aria-pressed="false">Room to grow</button></span>
+  <span class="grp2" role="group" aria-label="Position"><span class="lb">Who</span><button type="button" class="ch" data-pos="all" aria-pressed="true">All 11</button><button type="button" class="ch" data-pos="Forward" aria-pressed="false">Forwards</button><button type="button" class="ch" data-pos="Midfielder" aria-pressed="false">Midfielders</button><button type="button" class="ch" data-pos="Defender" aria-pressed="false">Defenders</button></span>
+  <span class="grp2" role="group" aria-label="Category"><span class="lb">Category</span><button type="button" class="ch" data-cat="all" aria-pressed="true">All</button><button type="button" class="ch" data-cat="Pace" aria-pressed="false">Pace</button><button type="button" class="ch" data-cat="Ball Control" aria-pressed="false">Ball Control</button><button type="button" class="ch" data-cat="Passing" aria-pressed="false">Passing</button><button type="button" class="ch" data-cat="Scoring" aria-pressed="false">Scoring</button><button type="button" class="ch" data-cat="Defending" aria-pressed="false">Defending</button><button type="button" class="ch" data-cat="Physical" aria-pressed="false">Physical</button></span>
 </div>
-<p class="hint">Hover or focus any cell for its floor-to-ceiling range. Select a name for the full profile.</p>
-<div class="scroll"><table>
-<caption class="sr">Attribute ceilings by archetype and category</caption>
-<thead><tr><th class="rh">Archetype</th><th>Pace</th><th>Ball Control</th><th>Passing</th><th>Scoring</th><th>Defending</th><th>Physical</th></tr></thead>
-<tbody><tr data-p="Defender"><th scope="row" class="rh"><button type="button" class="rb" data-a="progressor">Progressor</button><span class="pos">Defender</span></th><td class="s2" data-v="90" data-m="73" data-c="Pace" data-n="Progressor" tabindex="0">90</td><td class="s3" data-v="95" data-m="69" data-c="Ball Control" data-n="Progressor" tabindex="0">95</td><td class="s2" data-v="92" data-m="62" data-c="Passing" data-n="Progressor" tabindex="0">92</td><td class="s1" data-v="87" data-m="58" data-c="Scoring" data-n="Progressor" tabindex="0">87</td><td class="s4" data-v="97" data-m="75" data-c="Defending" data-n="Progressor" tabindex="0">97</td><td class="s3" data-v="96" data-m="69" data-c="Physical" data-n="Progressor" tabindex="0">96</td></tr><tr data-p="Defender"><th scope="row" class="rh"><button type="button" class="rb" data-a="boss">Boss</button><span class="pos">Defender</span></th><td class="s2" data-v="90" data-m="73" data-c="Pace" data-n="Boss" tabindex="0">90</td><td class="s2" data-v="92" data-m="65" data-c="Ball Control" data-n="Boss" tabindex="0">92</td><td class="s2" data-v="89" data-m="55" data-c="Passing" data-n="Boss" tabindex="0">89</td><td class="s1" data-v="87" data-m="63" data-c="Scoring" data-n="Boss" tabindex="0">87</td><td class="s4" data-v="98" data-m="75" data-c="Defending" data-n="Boss" tabindex="0">98</td><td class="s4" data-v="97" data-m="74" data-c="Physical" data-n="Boss" tabindex="0">97</td></tr><tr data-p="Defender"><th scope="row" class="rh"><button type="button" class="rb" data-a="engine">Engine</button><span class="pos">Defender</span></th><td class="s2" data-v="92" data-m="73" data-c="Pace" data-n="Engine" tabindex="0">92</td><td class="s3" data-v="93" data-m="66" data-c="Ball Control" data-n="Engine" tabindex="0">93</td><td class="s3" data-v="94" data-m="65" data-c="Passing" data-n="Engine" tabindex="0">94</td><td class="s1" data-v="87" data-m="67" data-c="Scoring" data-n="Engine" tabindex="0">87</td><td class="s3" data-v="93" data-m="73" data-c="Defending" data-n="Engine" tabindex="0">93</td><td class="s3" data-v="96" data-m="70" data-c="Physical" data-n="Engine" tabindex="0">96</td></tr><tr data-p="Defender"><th scope="row" class="rh"><button type="button" class="rb" data-a="marauder">Marauder</button><span class="pos">Defender</span></th><td class="s3" data-v="94" data-m="75" data-c="Pace" data-n="Marauder" tabindex="0">94</td><td class="s3" data-v="96" data-m="68" data-c="Ball Control" data-n="Marauder" tabindex="0">96</td><td class="s3" data-v="94" data-m="67" data-c="Passing" data-n="Marauder" tabindex="0">94</td><td class="s2" data-v="92" data-m="63" data-c="Scoring" data-n="Marauder" tabindex="0">92</td><td class="s3" data-v="95" data-m="70" data-c="Defending" data-n="Marauder" tabindex="0">95</td><td class="s3" data-v="95" data-m="68" data-c="Physical" data-n="Marauder" tabindex="0">95</td></tr><tr data-p="Midfielder"><th scope="row" class="rh"><button type="button" class="rb" data-a="recycler">Recycler</button><span class="pos">Midfielder</span></th><td class="s2" data-v="90" data-m="70" data-c="Pace" data-n="Recycler" tabindex="0">90</td><td class="s3" data-v="95" data-m="69" data-c="Ball Control" data-n="Recycler" tabindex="0">95</td><td class="s3" data-v="95" data-m="67" data-c="Passing" data-n="Recycler" tabindex="0">95</td><td class="s3" data-v="93" data-m="67" data-c="Scoring" data-n="Recycler" tabindex="0">93</td><td class="s3" data-v="95" data-m="73" data-c="Defending" data-n="Recycler" tabindex="0">95</td><td class="s3" data-v="95" data-m="73" data-c="Physical" data-n="Recycler" tabindex="0">95</td></tr><tr data-p="Midfielder"><th scope="row" class="rh"><button type="button" class="rb" data-a="maestro">Maestro</button><span class="pos">Midfielder</span></th><td class="s2" data-v="90" data-m="68" data-c="Pace" data-n="Maestro" tabindex="0">90</td><td class="s4" data-v="98" data-m="71" data-c="Ball Control" data-n="Maestro" tabindex="0">98</td><td class="s4" data-v="97" data-m="74" data-c="Passing" data-n="Maestro" tabindex="0">97</td><td class="s4" data-v="97" data-m="68" data-c="Scoring" data-n="Maestro" tabindex="0">97</td><td class="s2" data-v="89" data-m="63" data-c="Defending" data-n="Maestro" tabindex="0">89</td><td class="s2" data-v="92" data-m="64" data-c="Physical" data-n="Maestro" tabindex="0">92</td></tr><tr data-p="Midfielder"><th scope="row" class="rh"><button type="button" class="rb" data-a="creator">Creator</button><span class="pos">Midfielder</span></th><td class="s2" data-v="92" data-m="68" data-c="Pace" data-n="Creator" tabindex="0">92</td><td class="s4" data-v="97" data-m="72" data-c="Ball Control" data-n="Creator" tabindex="0">97</td><td class="s4" data-v="98" data-m="75" data-c="Passing" data-n="Creator" tabindex="0">98</td><td class="s4" data-v="98" data-m="74" data-c="Scoring" data-n="Creator" tabindex="0">98</td><td class="s1" data-v="87" data-m="54" data-c="Defending" data-n="Creator" tabindex="0">87</td><td class="s2" data-v="92" data-m="61" data-c="Physical" data-n="Creator" tabindex="0">92</td></tr><tr data-p="Midfielder"><th scope="row" class="rh"><button type="button" class="rb" data-a="spark">Spark</button><span class="pos">Midfielder</span></th><td class="s4" data-v="97" data-m="75" data-c="Pace" data-n="Spark" tabindex="0">97</td><td class="s4" data-v="98" data-m="75" data-c="Ball Control" data-n="Spark" tabindex="0">98</td><td class="s4" data-v="97" data-m="72" data-c="Passing" data-n="Spark" tabindex="0">97</td><td class="s3" data-v="95" data-m="70" data-c="Scoring" data-n="Spark" tabindex="0">95</td><td class="s0" data-v="82" data-m="51" data-c="Defending" data-n="Spark" tabindex="0">82</td><td class="s2" data-v="90" data-m="59" data-c="Physical" data-n="Spark" tabindex="0">90</td></tr><tr data-p="Forward"><th scope="row" class="rh"><button type="button" class="rb" data-a="magician">Magician</button><span class="pos">Forward</span></th><td class="s3" data-v="95" data-m="73" data-c="Pace" data-n="Magician" tabindex="0">95</td><td class="s4" data-v="98" data-m="74" data-c="Ball Control" data-n="Magician" tabindex="0">98</td><td class="s3" data-v="96" data-m="68" data-c="Passing" data-n="Magician" tabindex="0">96</td><td class="s3" data-v="96" data-m="73" data-c="Scoring" data-n="Magician" tabindex="0">96</td><td class="s0" data-v="81" data-m="48" data-c="Defending" data-n="Magician" tabindex="0">81</td><td class="s2" data-v="90" data-m="61" data-c="Physical" data-n="Magician" tabindex="0">90</td></tr><tr data-p="Forward"><th scope="row" class="rh"><button type="button" class="rb" data-a="finisher">Finisher</button><span class="pos">Forward</span></th><td class="s3" data-v="95" data-m="73" data-c="Pace" data-n="Finisher" tabindex="0">95</td><td class="s4" data-v="98" data-m="74" data-c="Ball Control" data-n="Finisher" tabindex="0">98</td><td class="s3" data-v="94" data-m="63" data-c="Passing" data-n="Finisher" tabindex="0">94</td><td class="s4" data-v="99" data-m="73" data-c="Scoring" data-n="Finisher" tabindex="0">99</td><td class="s0" data-v="83" data-m="56" data-c="Defending" data-n="Finisher" tabindex="0">83</td><td class="s3" data-v="93" data-m="66" data-c="Physical" data-n="Finisher" tabindex="0">93</td></tr><tr data-p="Forward"><th scope="row" class="rh"><button type="button" class="rb" data-a="target">Target</button><span class="pos">Forward</span></th><td class="s2" data-v="91" data-m="68" data-c="Pace" data-n="Target" tabindex="0">91</td><td class="s3" data-v="94" data-m="72" data-c="Ball Control" data-n="Target" tabindex="0">94</td><td class="s3" data-v="93" data-m="60" data-c="Passing" data-n="Target" tabindex="0">93</td><td class="s4" data-v="97" data-m="73" data-c="Scoring" data-n="Target" tabindex="0">97</td><td class="s0" data-v="83" data-m="52" data-c="Defending" data-n="Target" tabindex="0">83</td><td class="s3" data-v="95" data-m="69" data-c="Physical" data-n="Target" tabindex="0">95</td></tr></tbody>
-</table></div>
-<div class="lg"><span>81</span><span style="display:flex;gap:2px"><span class="k s0"></span><span class="k s1"></span><span class="k s2"></span><span class="k s3"></span><span class="k s4"></span></span><span>99</span><span style="margin-left:4px">attribute ceiling</span></div>
-<div class="det" data-d="progressor">
-<h4>Progressor</h4><p class="who">Defender · inspired by Fernando Hierro</p>
-<p class="desc">A modern centre-back capable of stepping out of the backline to start attacks with progressive passing.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:55.0%;width:28.3%"></span></span><span class="bv">73 → 90</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s3" style="left:48.3%;width:43.3%"></span></span><span class="bv">69 → 95</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s2" style="left:36.7%;width:50.0%"></span></span><span class="bv">62 → 92</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s1" style="left:30.0%;width:48.3%"></span></span><span class="bv">58 → 87</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s4" style="left:58.3%;width:36.7%"></span></span><span class="bv">75 → 97</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:48.3%;width:45.0%"></span></span><span class="bv">69 → 96</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Restarter</strong> — Quick restarts after winning the ball launch immediate attacks.</li><li><strong>Goalkeepers Favourite</strong> — Improved link-up with your keeper for safe build-up play.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Progressor+</strong> <span style="color:var(--muted);font-size:12px">Fernando Hierro</span></li><li><strong>Pioneer</strong> <span style="color:var(--muted);font-size:12px">Franz Beckenbauer</span></li><li><strong>Janitor</strong> <span style="color:var(--muted);font-size:12px">Rio Ferdinand</span></li></ul></div></div>
-</div><div class="det" data-d="boss" hidden>
-<h4>Boss</h4><p class="who">Defender · inspired by Nemanja Vidić</p>
-<p class="desc">Wins the ball with imposing physicality. Willing to put everything on the line for the team.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:55.0%;width:28.3%"></span></span><span class="bv">73 → 90</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s2" style="left:41.7%;width:45.0%"></span></span><span class="bv">65 → 92</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s2" style="left:25.0%;width:56.7%"></span></span><span class="bv">55 → 89</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s1" style="left:38.3%;width:40.0%"></span></span><span class="bv">63 → 87</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s4" style="left:58.3%;width:38.3%"></span></span><span class="bv">75 → 98</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s4" style="left:56.7%;width:38.3%"></span></span><span class="bv">74 → 97</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Shuffler</strong> — Improved lateral movement when jockeying and containing attackers.</li><li><strong>Box Controller</strong> — Dominates the penalty area, boosting clearances and aerial duels.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Boss+</strong> <span style="color:var(--muted);font-size:12px">Nemanja Vidić</span></li><li><strong>Enforcer</strong> <span style="color:var(--muted);font-size:12px">Patrick Vieira</span></li><li><strong>Capitano</strong> <span style="color:var(--muted);font-size:12px">Paolo Maldini</span></li></ul></div></div>
-</div><div class="det" data-d="engine" hidden>
-<h4>Engine</h4><p class="who">Defender · inspired by Park Ji Sung</p>
-<p class="desc">This player's incredible stamina allows them to maintain maximum effort throughout the match. Even while others are tiring, the Engine keeps on going and going...</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:55.0%;width:31.7%"></span></span><span class="bv">73 → 92</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s3" style="left:43.3%;width:45.0%"></span></span><span class="bv">66 → 93</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:41.7%;width:48.3%"></span></span><span class="bv">65 → 94</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s1" style="left:45.0%;width:33.3%"></span></span><span class="bv">67 → 87</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s3" style="left:55.0%;width:33.3%"></span></span><span class="bv">73 → 93</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:50.0%;width:43.3%"></span></span><span class="bv">70 → 96</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Tracker</strong> — Tracks runners tirelessly, gaining defensive positioning boosts.</li><li><strong>Presser</strong> — Pressing opponents drains their stamina faster.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Engine+</strong> <span style="color:var(--muted);font-size:12px">Park Ji Sung</span></li><li><strong>Everywhere</strong> <span style="color:var(--muted);font-size:12px">Javier Zanetti</span></li><li><strong>Gadget</strong> <span style="color:var(--muted);font-size:12px">Marcelo</span></li></ul></div></div>
-</div><div class="det" data-d="marauder" hidden>
-<h4>Marauder</h4><p class="who">Defender · inspired by Cafu</p>
-<p class="desc">A defensive specialist whose pulsating pace means they're also comfortable and effective going forward.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s3" style="left:58.3%;width:31.7%"></span></span><span class="bv">75 → 94</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s3" style="left:46.7%;width:46.7%"></span></span><span class="bv">68 → 96</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:45.0%;width:45.0%"></span></span><span class="bv">67 → 94</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s2" style="left:38.3%;width:48.3%"></span></span><span class="bv">63 → 92</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s3" style="left:50.0%;width:41.7%"></span></span><span class="bv">70 → 95</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:46.7%;width:45.0%"></span></span><span class="bv">68 → 95</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>High Speed Crosser</strong> — Deliver accurate crosses while sprinting at full speed.</li><li><strong>Tackle and Run</strong> — Win the ball and immediately burst forward with a speed boost.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Marauder+</strong> <span style="color:var(--muted);font-size:12px">Cafu</span></li><li><strong>Speedster</strong> <span style="color:var(--muted);font-size:12px">Lilian Thuram</span></li><li><strong>Athlete</strong> <span style="color:var(--muted);font-size:12px">Roberto Carlos</span></li></ul></div></div>
-</div><div class="det" data-d="recycler" hidden>
-<h4>Recycler</h4><p class="who">Midfielder · inspired by Michaël Essien</p>
-<p class="desc">This passing machine is critical to taking the ball from the backline and giving it to your most dangerous attackers.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:50.0%;width:33.3%"></span></span><span class="bv">70 → 90</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s3" style="left:48.3%;width:43.3%"></span></span><span class="bv">69 → 95</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:45.0%;width:46.7%"></span></span><span class="bv">67 → 95</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s3" style="left:45.0%;width:43.3%"></span></span><span class="bv">67 → 93</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s3" style="left:55.0%;width:36.7%"></span></span><span class="bv">73 → 95</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:55.0%;width:36.7%"></span></span><span class="bv">73 → 95</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Press and Pass</strong> — Win the ball and instantly gain passing accuracy for quick recycling.</li><li><strong>Physical Passer</strong> — Passing under physical pressure retains full accuracy.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Recycler+</strong> <span style="color:var(--muted);font-size:12px">Michaël Essien</span></li><li><strong>Driver</strong> <span style="color:var(--muted);font-size:12px">Yaya Touré</span></li><li><strong>Thief</strong> <span style="color:var(--muted);font-size:12px">Claude Makélélé</span></li></ul></div></div>
-</div><div class="det" data-d="maestro" hidden>
-<h4>Maestro</h4><p class="who">Midfielder · inspired by Toni Kroos</p>
-<p class="desc">Orchestrating the game from deep, this player can unlock a defence to create chances for their forwards.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:46.7%;width:36.7%"></span></span><span class="bv">68 → 90</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s4" style="left:51.7%;width:45.0%"></span></span><span class="bv">71 → 98</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s4" style="left:56.7%;width:38.3%"></span></span><span class="bv">74 → 97</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s4" style="left:46.7%;width:48.3%"></span></span><span class="bv">68 → 97</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s2" style="left:38.3%;width:43.3%"></span></span><span class="bv">63 → 89</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s2" style="left:40.0%;width:46.7%"></span></span><span class="bv">64 → 92</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Fly Trap</strong> — Draws opponents in before releasing the ball, opening space for teammates.</li><li><strong>Eagle Eyes</strong> — Spots distant runs, boosting long pass speed and accuracy.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Maestro+</strong> <span style="color:var(--muted);font-size:12px">Toni Kroos</span></li><li><strong>Crasher</strong> <span style="color:var(--muted);font-size:12px">Frank Lampard</span></li><li><strong>Heartbeat</strong> <span style="color:var(--muted);font-size:12px">Pavel Nedved</span></li></ul></div></div>
-</div><div class="det" data-d="creator" hidden>
-<h4>Creator</h4><p class="who">Midfielder · inspired by Andrés Iniesta</p>
-<p class="desc">Capable of delivering precise and incisive passes that can dismantle even the most organised backlines.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:46.7%;width:40.0%"></span></span><span class="bv">68 → 92</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s4" style="left:53.3%;width:41.7%"></span></span><span class="bv">72 → 97</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s4" style="left:58.3%;width:38.3%"></span></span><span class="bv">75 → 98</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s4" style="left:56.7%;width:40.0%"></span></span><span class="bv">74 → 98</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s1" style="left:23.3%;width:55.0%"></span></span><span class="bv">54 → 87</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s2" style="left:35.0%;width:51.7%"></span></span><span class="bv">61 → 92</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Grasshopper Passer</strong> — Lofted through passes gain accuracy and drop perfectly into stride.</li><li><strong>Bullseye Passer</strong> — Driven passes hit their target with pinpoint precision.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Creator+</strong> <span style="color:var(--muted);font-size:12px">Andrés Iniesta</span></li><li><strong>Architect</strong> <span style="color:var(--muted);font-size:12px">David Beckham</span></li><li><strong>Sniper</strong> <span style="color:var(--muted);font-size:12px">Zinedine Zidane</span></li></ul></div></div>
-</div><div class="det" data-d="spark" hidden>
-<h4>Spark</h4><p class="who">Midfielder · inspired by Luís Figo</p>
-<p class="desc">Excels in short, explosive bursts - getting to the byline and pulling back tantalising crosses for teammates.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s4" style="left:58.3%;width:36.7%"></span></span><span class="bv">75 → 97</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s4" style="left:58.3%;width:38.3%"></span></span><span class="bv">75 → 98</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s4" style="left:53.3%;width:41.7%"></span></span><span class="bv">72 → 97</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s3" style="left:50.0%;width:41.7%"></span></span><span class="bv">70 → 95</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s0" style="left:18.3%;width:51.7%"></span></span><span class="bv">51 → 82</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s2" style="left:31.7%;width:51.7%"></span></span><span class="bv">59 → 90</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Bail Out</strong> — Escape tight situations with a burst of acceleration after a skill move.</li><li><strong>Cut Back Specialist</strong> — Cut backs from the byline gain accuracy and power.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Spark+</strong> <span style="color:var(--muted);font-size:12px">Luís Figo</span></li><li><strong>Joker</strong> <span style="color:var(--muted);font-size:12px">Eden Hazard</span></li><li><strong>Ace</strong> <span style="color:var(--muted);font-size:12px">Jay-Jay Okocha</span></li></ul></div></div>
-</div><div class="det" data-d="magician" hidden>
-<h4>Magician</h4><p class="who">Forward · inspired by Ronaldinho</p>
-<p class="desc">Combining remarkable control, dribbling, and vision, this player creates chances out of very little, both for themselves and teammates.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s3" style="left:55.0%;width:36.7%"></span></span><span class="bv">73 → 95</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s4" style="left:56.7%;width:40.0%"></span></span><span class="bv">74 → 98</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:46.7%;width:46.7%"></span></span><span class="bv">68 → 96</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s3" style="left:55.0%;width:38.3%"></span></span><span class="bv">73 → 96</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s0" style="left:13.3%;width:55.0%"></span></span><span class="bv">48 → 81</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s2" style="left:35.0%;width:48.3%"></span></span><span class="bv">61 → 90</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Getaway Driver</strong> — Escapes markers with quick direction changes in the final third.</li><li><strong>Ankle Breaker</strong> — Successful skill moves briefly slow nearby defenders.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Magician+</strong> <span style="color:var(--muted);font-size:12px">Ronaldinho</span></li><li><strong>Hotshot</strong> <span style="color:var(--muted);font-size:12px">Thierry Henry</span></li><li><strong>Invader</strong> <span style="color:var(--muted);font-size:12px">Mia Hamm</span></li></ul></div></div>
-</div><div class="det" data-d="finisher" hidden>
-<h4>Finisher</h4><p class="who">Forward · inspired by Alex Morgan</p>
-<p class="desc">Possesses a killer instinct in front of the goal - a beast when one-on-one with the keeper.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s3" style="left:55.0%;width:36.7%"></span></span><span class="bv">73 → 95</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s4" style="left:56.7%;width:40.0%"></span></span><span class="bv">74 → 98</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:38.3%;width:51.7%"></span></span><span class="bv">63 → 94</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s4" style="left:55.0%;width:43.3%"></span></span><span class="bv">73 → 99</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s0" style="left:26.7%;width:45.0%"></span></span><span class="bv">56 → 83</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:43.3%;width:45.0%"></span></span><span class="bv">66 → 93</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>Fake to Real</strong> — Shot fakes create more separation from defenders.</li><li><strong>1v1 Master</strong> — Boost to Finishing and Composure when one-on-one with the keeper.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Finisher+</strong> <span style="color:var(--muted);font-size:12px">Alex Morgan</span></li><li><strong>Presser</strong> <span style="color:var(--muted);font-size:12px">Carlos Tevez</span></li><li><strong>Hunter</strong> <span style="color:var(--muted);font-size:12px">Birgit Prinz</span></li></ul></div></div>
-</div><div class="det" data-d="target" hidden>
-<h4>Target</h4><p class="who">Forward · inspired by Zlatan Ibrahimović</p>
-<p class="desc">Classic hold-up player that harnesses their physicality in duels both on the ground and in the air.</p>
-<div class="bars"><div class="bar"><span class="bl">Pace</span><span class="bt"><span class="bf s2" style="left:46.7%;width:38.3%"></span></span><span class="bv">68 → 91</span></div><div class="bar"><span class="bl">Ball Control</span><span class="bt"><span class="bf s3" style="left:53.3%;width:36.7%"></span></span><span class="bv">72 → 94</span></div><div class="bar"><span class="bl">Passing</span><span class="bt"><span class="bf s3" style="left:33.3%;width:55.0%"></span></span><span class="bv">60 → 93</span></div><div class="bar"><span class="bl">Scoring</span><span class="bt"><span class="bf s4" style="left:55.0%;width:40.0%"></span></span><span class="bv">73 → 97</span></div><div class="bar"><span class="bl">Defending</span><span class="bt"><span class="bf s0" style="left:20.0%;width:51.7%"></span></span><span class="bv">52 → 83</span></div><div class="bar"><span class="bl">Physical</span><span class="bt"><span class="bf s3" style="left:48.3%;width:43.3%"></span></span><span class="bv">69 → 95</span></div></div>
-<div class="meta"><div><h5>Perks</h5><ul><li><strong>6th Sense</strong> — Shoot with back to goal in the attacking third to gain a short boost to Finishing, Balance, and Composure.</li><li><strong>Physical Shooter</strong> — Shield off an opponent, then shoot in the box for a boost to Strength, Shot Power, and Balance.</li></ul></div>
-<div><h5>Specializations</h5><ul><li><strong>Target+</strong> <span style="color:var(--muted);font-size:12px">Zlatan Ibrahimović</span></li><li><strong>Roamer</strong> <span style="color:var(--muted);font-size:12px">Francesco Totti</span></li><li><strong>Runner</strong> <span style="color:var(--muted);font-size:12px">Ronaldo</span></li></ul></div></div>
-</div>
-<p class="foot">Source: Pro Clubs HQ catalog. Ratings are per-attribute caps averaged across each category.</p>
+<div class="scroll" data-grid><div class="gx" role="table" aria-label="Attribute ceilings, by category" style="--n:6"><div class="gr hd" role="row"><span role="columnheader" class="rh"><button type="button" class="so on" data-sort="">Archetype</button></span><span role="columnheader"><button type="button" class="so" data-sort="Pace" title="Sort by Pace"><span class="fn">Pace</span><abbr title="Pace">PAC</abbr></button></span><span role="columnheader"><button type="button" class="so" data-sort="Ball Control" title="Sort by Ball Control"><span class="fn">Ball Control</span><abbr title="Ball Control">CTL</abbr></button></span><span role="columnheader"><button type="button" class="so" data-sort="Passing" title="Sort by Passing"><span class="fn">Passing</span><abbr title="Passing">PAS</abbr></button></span><span role="columnheader"><button type="button" class="so" data-sort="Scoring" title="Sort by Scoring"><span class="fn">Scoring</span><abbr title="Scoring">SCO</abbr></button></span><span role="columnheader"><button type="button" class="so" data-sort="Defending" title="Sort by Defending"><span class="fn">Defending</span><abbr title="Defending">DEF</abbr></button></span><span role="columnheader"><button type="button" class="so" data-sort="Physical" title="Sort by Physical"><span class="fn">Physical</span><abbr title="Physical">PHY</abbr></button></span></div><div class="gr" role="row"><span role="rowheader" class="rh"><a href="/blog/pro-clubs-finisher-stats/">Finisher</a><small>Forward</small></span><span role="cell" class="cl s3" title="Finisher · Pace: starts 72.5, ceiling 95.0">95.0</span><span role="cell" class="cl s4" title="Finisher · Ball Control: starts 73.7, ceiling 97.5">97.5</span><span role="cell" class="cl s3" title="Finisher · Passing: starts 62.5, ceiling 93.8">93.8</span><span role="cell" class="cl s4 tp" title="Finisher · Scoring: starts 73.3, ceiling 98.5">98.5</span><span role="cell" class="cl s1" title="Finisher · Defending: starts 56.0, ceiling 83.2">83.2</span><span role="cell" class="cl s3" title="Finisher · Physical: starts 66.3, ceiling 93.0">93.0</span></div><div class="gr" role="row"><span role="rowheader" class="rh"><a href="/blog/pro-clubs-magician-stats/">Magician</a><small>Forward</small></span><span role="cell" class="cl s3" title="Magician · Pace: starts 72.5, ceiling 95.0">95.0</span><span role="cell" class="cl s4" title="Magician · Ball Control: starts 74.0, ceiling 97.5">97.5</span><span role="cell" class="cl s3" title="Magician · Passing: starts 67.5, ceiling 95.7">95.7</span><span role="cell" class="cl s4" title="Magician · Scoring: starts 72.8, ceiling 96.3">96.3</span><span role="cell" class="cl s0" title="Magician · Defending: starts 48.0, ceiling 79.8">79.8</span><span role="cell" class="cl s2" title="Magician · Physical: starts 61.3, ceiling 89.8">89.8</span></div><div class="gr" role="row"><span role="rowheader" class="rh"><a href="/blog/pro-clubs-spark-stats/">Spark</a><small>Forward</small></span><span role="cell" class="cl s4 tp" title="Spark · Pace: starts 75.0, ceiling 97.0">97.0</span><span role="cell" class="cl s4" title="Spark · Ball Control: starts 74.5, ceiling 97.5">97.5</span><span role="cell" class="cl s4" title="Spark · Passing: starts 71.7, ceiling 96.3">96.3</span><span role="cell" class="cl s3" title="Spark · Scoring: starts 70.3, ceiling 95.2">95.2</span><span role="cell" class="cl s0" title="Spark · Defending: starts 51.0, ceiling 82.0">82.0</span><span role="cell" class="cl s2" title="Spark · Physical: starts 58.8, ceiling 89.8">89.8</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Target<small>Forward</small></span><span role="cell" class="cl s2" title="Target · Pace: starts 67.5, ceiling 91.0">91.0</span><span role="cell" class="cl s3" title="Target · Ball Control: starts 72.0, ceiling 93.8">93.8</span><span role="cell" class="cl s3" title="Target · Passing: starts 60.0, ceiling 93.2">93.2</span><span role="cell" class="cl s4" title="Target · Scoring: starts 73.2, ceiling 97.0">97.0</span><span role="cell" class="cl s1" title="Target · Defending: starts 52.0, ceiling 82.6">82.6</span><span role="cell" class="cl s3" title="Target · Physical: starts 68.8, ceiling 94.8">94.8</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Creator<small>Midfielder</small></span><span role="cell" class="cl s3" title="Creator · Pace: starts 67.5, ceiling 92.0">92.0</span><span role="cell" class="cl s4" title="Creator · Ball Control: starts 72.3, ceiling 97.0">97.0</span><span role="cell" class="cl s4 tp" title="Creator · Passing: starts 75.0, ceiling 97.5">97.5</span><span role="cell" class="cl s4" title="Creator · Scoring: starts 72.7, ceiling 97.5">97.5</span><span role="cell" class="cl s2" title="Creator · Defending: starts 54.0, ceiling 87.0">87.0</span><span role="cell" class="cl s3" title="Creator · Physical: starts 61.3, ceiling 91.5">91.5</span></div><div class="gr" role="row"><span role="rowheader" class="rh"><a href="/blog/pro-clubs-disruptor-stats/">Disruptor</a><small>Midfielder</small></span><span role="cell" class="cl s3" title="Disruptor · Pace: starts 72.5, ceiling 92.0">92.0</span><span role="cell" class="cl s3" title="Disruptor · Ball Control: starts 68.8, ceiling 93.8">93.8</span><span role="cell" class="cl s3" title="Disruptor · Passing: starts 65.0, ceiling 93.2">93.2</span><span role="cell" class="cl s2" title="Disruptor · Scoring: starts 64.2, ceiling 89.8">89.8</span><span role="cell" class="cl s3" title="Disruptor · Defending: starts 71.0, ceiling 91.6">91.6</span><span role="cell" class="cl s3" title="Disruptor · Physical: starts 71.3, ceiling 95.8">95.8</span></div><div class="gr" role="row"><span role="rowheader" class="rh"><a href="/blog/pro-clubs-maestro-stats/">Maestro</a><small>Midfielder</small></span><span role="cell" class="cl s2" title="Maestro · Pace: starts 67.5, ceiling 90.0">90.0</span><span role="cell" class="cl s4 tp" title="Maestro · Ball Control: starts 70.8, ceiling 98.0">98.0</span><span role="cell" class="cl s4" title="Maestro · Passing: starts 74.2, ceiling 96.8">96.8</span><span role="cell" class="cl s4" title="Maestro · Scoring: starts 70.0, ceiling 96.5">96.5</span><span role="cell" class="cl s2" title="Maestro · Defending: starts 62.4, ceiling 89.4">89.4</span><span role="cell" class="cl s3" title="Maestro · Physical: starts 63.8, ceiling 91.5">91.5</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Recycler<small>Midfielder</small></span><span role="cell" class="cl s2" title="Recycler · Pace: starts 70.0, ceiling 90.0">90.0</span><span role="cell" class="cl s3" title="Recycler · Ball Control: starts 68.3, ceiling 95.0">95.0</span><span role="cell" class="cl s3" title="Recycler · Passing: starts 66.7, ceiling 94.8">94.8</span><span role="cell" class="cl s3" title="Recycler · Scoring: starts 65.0, ceiling 92.3">92.3</span><span role="cell" class="cl s3" title="Recycler · Defending: starts 72.0, ceiling 95.2">95.2</span><span role="cell" class="cl s3" title="Recycler · Physical: starts 71.0, ceiling 94.5">94.5</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Boss<small>Defender</small></span><span role="cell" class="cl s2" title="Boss · Pace: starts 70.0, ceiling 90.0">90.0</span><span role="cell" class="cl s3" title="Boss · Ball Control: starts 65.0, ceiling 91.8">91.8</span><span role="cell" class="cl s2" title="Boss · Passing: starts 55.0, ceiling 87.8">87.8</span><span role="cell" class="cl s2" title="Boss · Scoring: starts 62.5, ceiling 87.5">87.5</span><span role="cell" class="cl s4 tp" title="Boss · Defending: starts 75.0, ceiling 97.2">97.2</span><span role="cell" class="cl s4 tp" title="Boss · Physical: starts 73.8, ceiling 97.3">97.3</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Marauder<small>Defender</small></span><span role="cell" class="cl s3" title="Marauder · Pace: starts 75.0, ceiling 95.0">95.0</span><span role="cell" class="cl s3" title="Marauder · Ball Control: starts 68.3, ceiling 94.3">94.3</span><span role="cell" class="cl s3" title="Marauder · Passing: starts 66.7, ceiling 94.3">94.3</span><span role="cell" class="cl s3" title="Marauder · Scoring: starts 62.5, ceiling 92.7">92.7</span><span role="cell" class="cl s3" title="Marauder · Defending: starts 70.0, ceiling 94.8">94.8</span><span role="cell" class="cl s3" title="Marauder · Physical: starts 66.8, ceiling 94.0">94.0</span></div><div class="gr" role="row"><span role="rowheader" class="rh">Progressor<small>Defender</small></span><span role="cell" class="cl s3" title="Progressor · Pace: starts 71.0, ceiling 92.0">92.0</span><span role="cell" class="cl s3" title="Progressor · Ball Control: starts 69.2, ceiling 94.5">94.5</span><span role="cell" class="cl s3" title="Progressor · Passing: starts 61.7, ceiling 91.8">91.8</span><span role="cell" class="cl s1" title="Progressor · Scoring: starts 58.3, ceiling 86.5">86.5</span><span role="cell" class="cl s4 tp" title="Progressor · Defending: starts 75.0, ceiling 97.2">97.2</span><span role="cell" class="cl s3" title="Progressor · Physical: starts 68.8, ceiling 95.8">95.8</span></div></div><div class="lg"><span>79.8</span><span class="rp"><i class="s0"></i><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i></span><span>98.5</span><span class="tpk"><i></i>highest in its column</span></div></div>
+<p class="ft">Outfield only: the two keepers carry five goalkeeping attributes no outfield archetype has, so they are compared in the <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head</a>. Room to grow is the ceiling minus the starting value.</p>
 <script>
-(function(){var R=document.querySelector('[data-hm27]');if(!R||R.dataset.on)return;R.dataset.on='1';
-var tip=document.createElement('div');tip.className='tip';R.appendChild(tip);
-function show(el){var r=el.getBoundingClientRect();
- tip.innerHTML='<b>'+el.dataset.n+'</b>'+el.dataset.c+'<br>floor '+el.dataset.m+' → ceiling '+el.dataset.v;
- tip.style.opacity='1';var t=r.top-tip.offsetHeight-8;tip.style.top=(t<4?r.bottom+8:t)+'px';
- tip.style.left=Math.max(4,Math.min(window.innerWidth-tip.offsetWidth-4,r.left+r.width/2-tip.offsetWidth/2))+'px';}
-function hide(){tip.style.opacity='0';}
-R.querySelectorAll('td').forEach(function(c){
- c.addEventListener('mouseenter',function(){show(c)});c.addEventListener('mouseleave',hide);
- c.addEventListener('focus',function(){show(c)});c.addEventListener('blur',hide);});
-R.addEventListener('click',function(e){
- var b=e.target.closest('.rb');
- if(b){R.querySelectorAll('.det').forEach(function(d){d.hidden=(d.dataset.d!==b.dataset.a)});
-  var o=R.querySelector('.det:not([hidden])');if(o)o.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
- var f=e.target.closest('.chip');
- if(f){R.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===f))});
-  R.querySelectorAll('tbody tr').forEach(function(tr){tr.style.display=(f.dataset.f==='all'||tr.dataset.p===f.dataset.f)?'':'none'});}});
-window.addEventListener('scroll',hide,{passive:true});})();
+(function(){var R=document.querySelector('[data-a2g]');if(!R||R.dataset.on)return;R.dataset.on='1';
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function grid(D,S){
+var one=S.cat!=='all',cols;
+if(!one)cols=D.cats.map(function(c){return {k:c[0],n:c[0],ab:c[2],ks:c[1]}});
+else cols=D.cats.filter(function(c){return c[0]===S.cat})[0][1].map(function(k){return {k:k,n:D.names[k],ab:D.abbr[k],ks:[k]}});
+function av(a,ks,i){var s=0;ks.forEach(function(k){s+=a.v[k][i]});return s/ks.length}
+var rows=D.arch.filter(function(a){return S.pos==='all'||a.pos===S.pos}).map(function(a){
+ return {a:a,lo:cols.map(function(c){return av(a,c.ks,0)}),hi:cols.map(function(c){return av(a,c.ks,1)})}});
+rows.forEach(function(r){r.v=r.hi.map(function(h,i){return S.show==='max'?h:S.show==='min'?r.lo[i]:h-r.lo[i]})});
+var si=-1;cols.forEach(function(c,i){if(c.k===S.sort)si=i});
+rows.sort(function(p,q){return si>=0?((q.v[si]-p.v[si])||(p.a.o-q.a.o)):(p.a.o-q.a.o)});
+var all=[];rows.forEach(function(r){all=all.concat(r.v)});
+var lo=Math.min.apply(null,all),hi=Math.max.apply(null,all);
+function st(v){return hi===lo?4:Math.max(0,Math.min(4,Math.round(4*(v-lo)/(hi-lo))))}
+function num(v){return one?String(Math.round(v)):v.toFixed(1)}
+var top=cols.map(function(c,i){return Math.max.apply(null,rows.map(function(r){return r.v[i]}))});
+var h='<div class="gx" role="table" aria-label="'+esc((S.show==='max'?'Attribute ceilings':S.show==='min'?'Starting values':'Room from start to ceiling')+(one?', '+S.cat:', by category'))+'" style="--n:'+cols.length+'">';
+h+='<div class="gr hd" role="row"><span role="columnheader" class="rh"><button type="button" class="so'+(si<0?' on':'')+'" data-sort="">Archetype</button></span>'
++cols.map(function(c,i){return '<span role="columnheader"'+(si===i?' aria-sort="descending"':'')+'><button type="button" class="so'+(si===i?' on':'')+'" data-sort="'+esc(c.k)+'" title="Sort by '+esc(c.n)+'"><span class="fn">'+esc(c.n)+'</span><abbr title="'+esc(c.n)+'">'+esc(c.ab)+'</abbr></button></span>'}).join('')+'</div>';
+rows.forEach(function(r){
+ var nm=r.a.href?'<a href="'+r.a.href+'">'+esc(r.a.n)+'</a>':esc(r.a.n);
+ h+='<div class="gr" role="row"><span role="rowheader" class="rh">'+nm+'<small>'+esc(r.a.pos)+'</small></span>'
+ +r.v.map(function(v,i){return '<span role="cell" class="cl s'+st(v)+(v===top[i]?' tp':'')+'" title="'+esc(r.a.n+' · '+cols[i].n+': starts '+num(r.lo[i])+', ceiling '+num(r.hi[i]))+'">'+num(v)+'</span>'}).join('')+'</div>';
+});
+h+='</div><div class="lg"><span>'+num(lo)+'</span><span class="rp">'+[0,1,2,3,4].map(function(i){return '<i class="s'+i+'"></i>'}).join('')+'</span><span>'+num(hi)+'</span><span class="tpk"><i></i>highest in its column</span></div>';
+return h;
+}
+
+var D={"cats":[["Pace",["acceleration","sprintSpeed"],"PAC"],["Ball Control",["agility","balance","reactions","ballControl","dribbling","composure"],"CTL"],["Passing",["vision","crossing","fkAcc","shortPass","longPass","curve"],"PAS"],["Scoring",["attPosition","finishing","shotPower","longShots","volleys","penalties"],"SCO"],["Defending",["interceptions","headingAcc","defAware","standTackle","slideTackle"],"DEF"],["Physical",["jumping","strength","stamina","aggression"],"PHY"]],"names":{"acceleration":"Acceleration","sprintSpeed":"Sprint Speed","agility":"Agility","balance":"Balance","reactions":"Reactions","ballControl":"Ball Control","dribbling":"Dribbling","composure":"Composure","vision":"Vision","crossing":"Crossing","fkAcc":"FK Acc.","shortPass":"Short Pass","longPass":"Long Pass","curve":"Curve","attPosition":"Att. Position","finishing":"Finishing","shotPower":"Shot Power","longShots":"Long Shots","volleys":"Volleys","penalties":"Penalties","interceptions":"Interceptions","headingAcc":"Heading Acc.","defAware":"Def. Aware","standTackle":"Stand Tackle","slideTackle":"Slide Tackle","jumping":"Jumping","strength":"Strength","stamina":"Stamina","aggression":"Aggression"},"abbr":{"acceleration":"ACC","sprintSpeed":"SPD","agility":"AGI","balance":"BAL","reactions":"REA","ballControl":"BAC","dribbling":"DRI","composure":"COM","vision":"VIS","crossing":"CRO","fkAcc":"FKA","shortPass":"SPA","longPass":"LPA","curve":"CRV","attPosition":"POS","finishing":"FIN","shotPower":"SHO","longShots":"LSH","volleys":"VOL","penalties":"PEN","interceptions":"INT","headingAcc":"HEA","defAware":"DFA","standTackle":"STT","slideTackle":"SLT","jumping":"JMP","strength":"STR","stamina":"STA","aggression":"AGG"},"arch":[{"id":"finisher","n":"Finisher","pos":"Forward","href":"/blog/pro-clubs-finisher-stats/","o":0,"v":{"acceleration":[75,95],"sprintSpeed":[70,95],"agility":[72,99],"balance":[75,96],"reactions":[75,99],"ballControl":[75,96],"dribbling":[70,96],"composure":[75,99],"vision":[65,92],"crossing":[55,92],"fkAcc":[65,99],"shortPass":[70,92],"longPass":[50,92],"curve":[70,96],"attPosition":[80,99],"finishing":[75,99],"shotPower":[75,99],"longShots":[60,96],"volleys":[75,99],"penalties":[75,99],"interceptions":[60,85],"headingAcc":[75,96],"defAware":[55,85],"standTackle":[50,75],"slideTackle":[40,75],"jumping":[65,92],"strength":[70,92],"stamina":[65,92],"aggression":[65,96]}},{"id":"magician","n":"Magician","pos":"Forward","href":"/blog/pro-clubs-magician-stats/","o":1,"v":{"acceleration":[75,95],"sprintSpeed":[70,95],"agility":[72,99],"balance":[75,99],"reactions":[75,99],"ballControl":[75,96],"dribbling":[75,96],"composure":[72,96],"vision":[75,96],"crossing":[65,92],"fkAcc":[65,99],"shortPass":[75,96],"longPass":[50,92],"curve":[75,99],"attPosition":[80,96],"finishing":[75,99],"shotPower":[70,92],"longShots":[65,96],"volleys":[72,96],"penalties":[75,99],"interceptions":[50,82],"headingAcc":[65,85],"defAware":[45,82],"standTackle":[40,75],"slideTackle":[40,75],"jumping":[60,85],"strength":[65,90],"stamina":[65,92],"aggression":[55,92]}},{"id":"spark","n":"Spark","pos":"Forward","href":"/blog/pro-clubs-spark-stats/","o":2,"v":{"acceleration":[75,99],"sprintSpeed":[75,95],"agility":[75,99],"balance":[75,96],"reactions":[75,99],"ballControl":[75,96],"dribbling":[75,99],"composure":[72,96],"vision":[75,96],"crossing":[75,99],"fkAcc":[65,99],"shortPass":[75,96],"longPass":[65,92],"curve":[75,96],"attPosition":[80,96],"finishing":[65,96],"shotPower":[65,92],"longShots":[65,92],"volleys":[72,96],"penalties":[75,99],"interceptions":[55,85],"headingAcc":[50,85],"defAware":[50,85],"standTackle":[55,80],"slideTackle":[45,75],"jumping":[55,85],"strength":[65,90],"stamina":[65,92],"aggression":[50,92]}},{"id":"target","n":"Target","pos":"Forward","href":"","o":3,"v":{"acceleration":[70,90],"sprintSpeed":[65,92],"agility":[70,92],"balance":[75,92],"reactions":[75,99],"ballControl":[70,92],"dribbling":[70,92],"composure":[72,96],"vision":[65,92],"crossing":[50,90],"fkAcc":[65,99],"shortPass":[75,96],"longPass":[50,92],"curve":[55,90],"attPosition":[80,96],"finishing":[72,96],"shotPower":[75,99],"longShots":[65,96],"volleys":[72,96],"penalties":[75,99],"interceptions":[50,82],"headingAcc":[75,99],"defAware":[50,82],"standTackle":[45,75],"slideTackle":[40,75],"jumping":[75,96],"strength":[75,99],"stamina":[60,92],"aggression":[65,92]}},{"id":"creator","n":"Creator","pos":"Midfielder","href":"","o":4,"v":{"acceleration":[70,92],"sprintSpeed":[65,92],"agility":[72,99],"balance":[65,96],"reactions":[75,99],"ballControl":[75,96],"dribbling":[75,96],"composure":[72,96],"vision":[75,99],"crossing":[75,96],"fkAcc":[75,99],"shortPass":[75,96],"longPass":[75,96],"curve":[75,99],"attPosition":[80,99],"finishing":[65,96],"shotPower":[72,96],"longShots":[72,99],"volleys":[72,96],"penalties":[75,99],"interceptions":[55,85],"headingAcc":[50,85],"defAware":[50,85],"standTackle":[65,90],"slideTackle":[50,90],"jumping":[60,90],"strength":[65,92],"stamina":[65,92],"aggression":[55,92]}},{"id":"disruptor","n":"Disruptor","pos":"Midfielder","href":"/blog/pro-clubs-disruptor-stats/","o":5,"v":{"acceleration":[75,92],"sprintSpeed":[70,92],"agility":[68,92],"balance":[75,96],"reactions":[70,99],"ballControl":[65,92],"dribbling":[65,92],"composure":[70,92],"vision":[65,90],"crossing":[65,96],"fkAcc":[50,95],"shortPass":[75,96],"longPass":[70,92],"curve":[65,90],"attPosition":[70,90],"finishing":[50,90],"shotPower":[70,92],"longShots":[65,85],"volleys":[65,90],"penalties":[65,92],"interceptions":[75,92],"headingAcc":[65,90],"defAware":[70,92],"standTackle":[70,92],"slideTackle":[75,92],"jumping":[65,92],"strength":[75,96],"stamina":[75,99],"aggression":[70,96]}},{"id":"maestro","n":"Maestro","pos":"Midfielder","href":"/blog/pro-clubs-maestro-stats/","o":6,"v":{"acceleration":[70,90],"sprintSpeed":[65,90],"agility":[75,99],"balance":[70,96],"reactions":[65,99],"ballControl":[75,99],"dribbling":[65,96],"composure":[75,99],"vision":[75,99],"crossing":[75,92],"fkAcc":[75,99],"shortPass":[75,96],"longPass":[75,99],"curve":[70,96],"attPosition":[80,96],"finishing":[65,96],"shotPower":[70,96],"longShots":[70,96],"volleys":[65,96],"penalties":[70,99],"interceptions":[75,92],"headingAcc":[50,85],"defAware":[65,90],"standTackle":[72,90],"slideTackle":[50,90],"jumping":[60,90],"strength":[65,92],"stamina":[65,92],"aggression":[65,92]}},{"id":"recycler","n":"Recycler","pos":"Midfielder","href":"","o":7,"v":{"acceleration":[70,90],"sprintSpeed":[70,90],"agility":[68,92],"balance":[75,92],"reactions":[65,99],"ballControl":[65,96],"dribbling":[65,92],"composure":[72,99],"vision":[75,96],"crossing":[65,92],"fkAcc":[50,99],"shortPass":[70,96],"longPass":[75,96],"curve":[65,90],"attPosition":[70,90],"finishing":[55,90],"shotPower":[70,96],"longShots":[65,96],"volleys":[65,90],"penalties":[65,92],"interceptions":[75,99],"headingAcc":[60,90],"defAware":[75,99],"standTackle":[75,96],"slideTackle":[75,92],"jumping":[65,90],"strength":[72,96],"stamina":[72,96],"aggression":[75,96]}},{"id":"boss","n":"Boss","pos":"Defender","href":"","o":8,"v":{"acceleration":[70,90],"sprintSpeed":[70,90],"agility":[65,90],"balance":[75,90],"reactions":[60,99],"ballControl":[65,92],"dribbling":[60,88],"composure":[65,92],"vision":[55,90],"crossing":[45,90],"fkAcc":[50,90],"shortPass":[65,92],"longPass":[65,90],"curve":[50,75],"attPosition":[75,90],"finishing":[45,82],"shotPower":[70,96],"longShots":[60,85],"volleys":[60,80],"penalties":[65,92],"interceptions":[75,96],"headingAcc":[75,99],"defAware":[75,96],"standTackle":[75,96],"slideTackle":[75,99],"jumping":[75,99],"strength":[75,99],"stamina":[70,92],"aggression":[75,99]}},{"id":"marauder","n":"Marauder","pos":"Defender","href":"","o":9,"v":{"acceleration":[75,95],"sprintSpeed":[75,95],"agility":[70,95],"balance":[65,92],"reactions":[70,99],"ballControl":[70,96],"dribbling":[70,92],"composure":[65,92],"vision":[60,92],"crossing":[75,99],"fkAcc":[60,95],"shortPass":[65,92],"longPass":[65,92],"curve":[75,96],"attPosition":[65,92],"finishing":[55,90],"shotPower":[65,92],"longShots":[60,90],"volleys":[65,96],"penalties":[65,96],"interceptions":[70,96],"headingAcc":[65,90],"defAware":[70,96],"standTackle":[70,96],"slideTackle":[75,96],"jumping":[60,92],"strength":[60,92],"stamina":[75,96],"aggression":[72,96]}},{"id":"progressor","n":"Progressor","pos":"Defender","href":"","o":10,"v":{"acceleration":[70,92],"sprintSpeed":[72,92],"agility":[70,92],"balance":[70,92],"reactions":[65,99],"ballControl":[70,96],"dribbling":[65,92],"composure":[75,96],"vision":[75,92],"crossing":[50,92],"fkAcc":[45,90],"shortPass":[75,96],"longPass":[75,96],"curve":[50,85],"attPosition":[70,90],"finishing":[50,85],"shotPower":[65,92],"longShots":[50,85],"volleys":[50,75],"penalties":[65,92],"interceptions":[75,96],"headingAcc":[75,96],"defAware":[75,99],"standTackle":[75,99],"slideTackle":[75,96],"jumping":[75,99],"strength":[70,96],"stamina":[65,92],"aggression":[65,96]}}]};
+var S={show:'max',pos:'all',cat:'all',sort:''},G=R.querySelector('[data-grid]');
+R.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||!R.contains(b))return;var d=b.dataset,so=d.sort;
+ if(so!==undefined)S.sort=so;else if(d.show)S.show=d.show;else if(d.pos)S.pos=d.pos;else if(d.cat){S.cat=d.cat;S.sort=''}else return;
+ R.querySelectorAll('button.ch').forEach(function(x){var q=x.dataset;x.setAttribute('aria-pressed',(q.show!==undefined&&q.show===S.show)||(q.pos!==undefined&&q.pos===S.pos)||(q.cat!==undefined&&q.cat===S.cat))});
+ G.innerHTML=grid(D,S);
+ if(so!==undefined)G.querySelectorAll('button.so').forEach(function(x){if(x.dataset.sort===so)x.focus()})});
+})();
 </script>
 </div>
 <!--kg-card-end: html-->
 
-<h2>The ceiling is only half the story</h2>
-<p>Two archetypes can share a category score and still play nothing alike. Standing Tackle is the clearest case:</p>
-<ul>
-<li><strong>Boss</strong> starts at 75 and caps at <strong>99</strong>.</li>
-<li><strong>Magician</strong> starts at 40 and caps at <strong>80</strong>.</li>
-</ul>
-<p>That's not a gap you close with skill points — a Magician cannot become a defender. Finishing reverses it exactly: Finisher and Magician both reach 99 while Boss stops at 82.</p>
-<p>So read the grid as two questions at once. How high can this archetype go, and how much of the pitch does it give up to get there?</p>
+<p><strong>Every FC 27 outfield archetype caps each attribute at its own ceiling</strong> and starts it at its own value. The highest average ceiling in each category belongs to <strong>the Spark</strong> for Pace (97.0), <strong>the Maestro</strong> for Ball Control (98.0), <strong>the Creator</strong> for Passing (97.5), <strong>the Finisher</strong> for Scoring (98.5), <strong>the Boss and the Progressor</strong> for Defending (97.2) and <strong>the Boss</strong> for Physical (97.3). The Maestro has the highest ceilings overall, and no archetype leads every category.</p>
 
-<h2>What the pattern tells you</h2>
-<p>The categories cluster tightly at the top — every ceiling in the grid sits between 81 and 99. That's deliberate on EA's part: no archetype is strictly worse than another, they're aimed at different jobs. The real spread is in the <em>floors</em>, which is why the range bars in each profile matter more than the headline number.</p>
-<p>Category leaders, if you only want the summary: Pace <strong>Spark</strong>, Ball Control <strong>Maestro</strong>, Passing <strong>Creator</strong>, Scoring <strong>Finisher</strong>, Defending and Physical both <strong>Boss</strong>.</p>
+<h2 id="what-the-grid-shows">What the grid shows</h2>
+<ul>
+<li><strong>It splits by position.</strong> Every forward’s Defending ceiling (79.8–83.2 on average) is below every defender’s (94.8–97.2), and every defender’s Scoring ceiling (86.5–92.7) is below every forward’s (95.2–98.5).</li>
+<li><strong>Reactions is 99 on all eleven.</strong> Every other attribute has a different ceiling on at least two archetypes.</li>
+<li><strong>The widest gaps are 24 points</strong>, in Curve, Volleys, Stand Tackle and Slide Tackle: in each, one archetype can reach 99 where another stops at 75.</li>
+<li><strong>The Finisher can reach 99 in the most attributes, nine</strong>; the Disruptor and the Marauder in two each.</li>
+<li><strong>The Disruptor, new in FC 27</strong>, is the only outfield archetype that can reach 99 Stamina. Its highest category is Physical (95.8), and it has the least room between start and ceiling of the eleven: 713 points across its 29 attributes, against 777 on the Target.</li>
+</ul>
+
+<!--kg-card-begin: html-->
+<div class="a2-b mcg">
+<style>
+.a2-b.mcg .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px}
+.a2-b.mcg .bc{display:block;background:var(--s1);border:1px solid var(--ring);border-radius:11px;
+  padding:11px 12px;text-decoration:none;transition:border-color .15s}
+.a2-b.mcg .bc:hover{border-color:#c9a227}
+.a2-b.mcg .bc .nm{font-size:14.5px;font-weight:700;color:var(--ink);margin:0}
+.a2-b.mcg .bc .ar{font-size:11px;font-weight:600;color:#2DE2C5;margin:1px 0 8px}
+.a2-b.mcg .bc .ps{display:flex;align-items:center;gap:5px}
+.a2-b.mcg .bc .sb{width:30px;height:30px;border-radius:8px;background:#3a2f10;border:1.5px solid #c9a227;
+  display:flex;align-items:center;justify-content:center}
+.a2-b.mcg .bc .sb img{width:21px;height:21px}
+.a2-b.mcg .bc .rb{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
+.a2-b.mcg .bc .rb img{width:18px;height:18px}
+.a2-b.mcg .bc .sg{font-size:10px;color:var(--ink2);margin:7px 0 0}
+.a2-b.mcg .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}
+.a2-b.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
+.a2-b.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
+<h2 id="most-copied">Most copied FC 27 builds</h2>
+<p class="sub">The outfield builds people copy most. Tap a card to open it in the builder and see where its 962 AP went.</p>
+<div class="grid"><a class="bc" href="https://proclubshq.com/b/ade67fd3-e40e-47c8-aa75-a5a1d5ea5331?src=grid">
+<p class="nm">Mbappé '26 WC</p>
+<p class="ar">Finisher · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Low Driven Shot (signature)"><img src="https://proclubshq.com/assets/playstyles/low-driven-shot.png" alt="Low Driven Shot PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Rapid"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'10" · 161 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/0d717109-9963-4f80-8483-e0b5dca0b670?src=grid">
+<p class="nm">Gennaro Gattuso</p>
+<p class="ar">Disruptor · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Jockey (signature)"><img src="https://proclubshq.com/assets/playstyles/jockey.png" alt="Jockey PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Anticipate"><img src="https://proclubshq.com/assets/playstyles/anticipate.png" alt="Anticipate PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Bruiser"><img src="https://proclubshq.com/assets/playstyles/bruiser.png" alt="Bruiser PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Intercept"><img src="https://proclubshq.com/assets/playstyles/intercept.png" alt="Intercept PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'10" · 165 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/72b66470-67d9-454b-b694-fc59798bb05e?src=grid">
+<p class="nm">Vitinha</p>
+<p class="ar">Maestro · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Incisive Pass (signature)"><img src="https://proclubshq.com/assets/playstyles/incisive-pass.png" alt="Incisive Pass PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Tiki Taka"><img src="https://proclubshq.com/assets/playstyles/tiki-taka.png" alt="Tiki Taka PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Pinged Pass"><img src="https://proclubshq.com/assets/playstyles/pinged-pass.png" alt="Pinged Pass PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'8" · 143 lbs · Explosive</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/7cf7127e-77a8-4095-806a-ae7afaae9767?src=grid">
+<p class="nm">Thierry Henry</p>
+<p class="ar">Finisher · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Finesse Shot (signature)"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Quick Step"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Technical"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'2" · 183 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/a64958d0-a8e7-4c36-9158-dd9edf7de295?src=grid">
+<p class="nm">Rafael Leão</p>
+<p class="ar">Spark · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Quick Step (signature)"><img src="https://proclubshq.com/assets/playstyles/quick-step.png" alt="Quick Step PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Rapid"><img src="https://proclubshq.com/assets/playstyles/rapid.png" alt="Rapid PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">6'2" · 176 lbs · Controlled</p>
+</a>
+<a class="bc" href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf?src=grid">
+<p class="nm">Lamine Yamal</p>
+<p class="ar">Magician · Lv 40</p>
+<div class="ps">
+<span class="sb" title="Trickster (signature)"><img src="https://proclubshq.com/assets/playstyles/trickster.png" alt="Trickster PlayStyle" loading="lazy" width="21" height="21"></span>
+<span class="rb" title="Technical"><img src="https://proclubshq.com/assets/playstyles/technical.png" alt="Technical PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="First Touch"><img src="https://proclubshq.com/assets/playstyles/first-touch.png" alt="First Touch PlayStyle" loading="lazy" width="18" height="18"></span><span class="rb" title="Finesse Shot"><img src="https://proclubshq.com/assets/playstyles/finesse-shot.png" alt="Finesse Shot PlayStyle" loading="lazy" width="18" height="18"></span>
+</div>
+<p class="sg">Most copied</p>
+<p class="hw">5'11" · 143 lbs · Explosive</p>
+</a></div>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="a"></div>
+<!--kg-card-end: html-->
+
+<h2 id="starting-values">The ceiling is half of it: where each one starts</h2>
+<p>A ceiling is how high an attribute can go; the starting value is where a new pro has it before a single AP is spent. Slide Tackle shows how far apart the two can be:</p>
+<ul>
+<li><strong>Boss</strong>: Slide Tackle starts at 75, ceiling 99.</li>
+<li><strong>Finisher</strong>: Slide Tackle starts at 40, ceiling 75.</li>
+<li><strong>Magician</strong>: Slide Tackle starts at 40, ceiling 75.</li>
+<li><strong>Spark</strong>: Slide Tackle starts at 45, ceiling 75.</li>
+<li><strong>Target</strong>: Slide Tackle starts at 40, ceiling 75.</li>
+</ul>
+<p>Across all 29 attributes the Maestro starts highest (an average of 68.7) and the Target lowest (65.6). Switch the grid to <em>Start</em> or <em>Room to grow</em> to see it category by category. What each point of that room costs in AP is priced per archetype on the <a href="/blog/pro-clubs-attribute-upgrade-costs/">AP costs page</a>, and in full for the <a href="/blog/pro-clubs-magician-stats/">Magician</a>, <a href="/blog/pro-clubs-spark-stats/">Spark</a>, <a href="/blog/pro-clubs-finisher-stats/">Finisher</a>, <a href="/blog/pro-clubs-maestro-stats/">Maestro</a> and <a href="/blog/pro-clubs-disruptor-stats/">Disruptor</a>.</p>
+<p>Torn between two? The <a href="/blog/pro-clubs-archetypes-head-to-head/">head-to-head</a> puts any two side by side, attribute by attribute, with what each one costs to raise.</p>
 
 <!--kg-card-begin: html-->
 <div class="pchq-cta">
@@ -178,15 +236,106 @@ window.addEventListener('scroll',hide,{passive:true});})();
 .pchq-cta h3{margin:0 0 6px;font:800 21px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
 .pchq-cta p{margin:0 0 14px;font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
 .pchq-cta a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;font:700 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}</style>
-<p class="k">Try it yourself</p>
-<h3>Compare every archetype in the builder</h3>
-<p>The same ceilings this article ranks, on live sliders — pick an archetype and see where its limits actually sit.</p>
-<a class="b" href="https://proclubshq.com/">Open the archetype list →</a>
+<p class="k">FC 27 in the app</p>
+<h3>See the ceilings on a real build</h3>
+<p>Open any FC 27 build and move a slider: the builder stops each attribute at its archetype’s ceiling and prices it against your 962 AP.</p>
+<a class="b" href="https://proclubshq.com/explore?year=27&src=guide">Browse FC 27 builds →</a>
 </div>
 <!--kg-card-end: html-->
 
-<h2>Frequently asked questions</h2>
-<h3>Why are keepers not in the comparison?</h3>
-<p>Keepers use a separate attribute set built around diving, handling, reflexes, kicking and positioning. Scoring them on outfield categories would make them look uniformly weak, which would be misleading rather than informative.</p>
-<h3>Does a higher ceiling mean a better archetype?</h3>
-<p>No. Every archetype trades a high ceiling in one area for a low one elsewhere. What matters is whether its strengths match the role you actually play.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Which FC 27 archetype has the highest attribute ceilings?</h3>
+<p>Across all 29 outfield attributes, the Maestro: its ceilings average 94.5, the highest of the eleven, and the Boss’s are the lowest, at 91.7. No archetype leads every category, though: the Spark leads Pace, the Maestro leads Ball Control, the Creator leads Passing, the Finisher leads Scoring, the Boss and the Progressor lead Defending and the Boss leads Physical.</p>
+<h3>Which archetype has the highest Pace ceiling in FC 27?</h3>
+<p>The Spark: Acceleration 99 and Sprint Speed 95, an average of 97.0.</p>
+<h3>Which archetype can reach 99 in the most attributes?</h3>
+<p>The Finisher, in nine: Agility, Reactions, Composure, FK Acc., Att. Position, Finishing, Shot Power, Volleys and Penalties. The Disruptor and the Marauder can reach 99 in two each.</p>
+<h3>Is the Engine still in FC 27?</h3>
+<p>No. FC 27 has thirteen archetypes, eleven outfield and two keepers. The Engine is not one of them, and the Disruptor is the one that was not in FC 26.</p>
+<h3>Why are the keepers not in the grid?</h3>
+<p>The two keepers carry five goalkeeping attributes (GK Diving, GK Handling, GK Kicking, GK Pos. and GK Reflexes) that no outfield archetype has, so an outfield grid would leave out what they are built around. The head-to-head compares any two of the thirteen, keepers included.</p>
+<!--kg-card-begin: html-->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Which FC 27 archetype has the highest attribute ceilings?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Across all 29 outfield attributes, the Maestro: its ceilings average 94.5, the highest of the eleven, and the Boss’s are the lowest, at 91.7. No archetype leads every category, though: the Spark leads Pace, the Maestro leads Ball Control, the Creator leads Passing, the Finisher leads Scoring, the Boss and the Progressor lead Defending and the Boss leads Physical."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which archetype has the highest Pace ceiling in FC 27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Spark: Acceleration 99 and Sprint Speed 95, an average of 97.0."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which archetype can reach 99 in the most attributes?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Finisher, in nine: Agility, Reactions, Composure, FK Acc., Att. Position, Finishing, Shot Power, Volleys and Penalties. The Disruptor and the Marauder can reach 99 in two each."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is the Engine still in FC 27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. FC 27 has thirteen archetypes, eleven outfield and two keepers. The Engine is not one of them, and the Disruptor is the one that was not in FC 26."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why are the keepers not in the grid?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The two keepers carry five goalkeeping attributes (GK Diving, GK Handling, GK Kicking, GK Pos. and GK Reflexes) that no outfield archetype has, so an outfield grid would leave out what they are built around. The head-to-head compares any two of the thirteen, keepers included."
+   }
+  }
+ ]
+}
+</script>
+<!--kg-card-end: html-->
+
+
+<!--kg-card-begin: html-->
+<div class="pchq-aff" data-aff="1">
+<style>.pchq-aff{margin:2em 0;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(12,12,20,.85)}
+.pchq-aff .disc{margin:0 0 12px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-aff h3{margin:0 0 12px;font:800 18px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-aff .affimg{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;margin:0 0 14px}
+.pchq-aff .affgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pchq-aff .affrows{display:flex;flex-direction:column;gap:8px}
+.pchq-aff .affcard,.pchq-aff .affrow{border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.03);text-decoration:none;transition:border-color .15s,background .15s}
+.pchq-aff .affcard:hover,.pchq-aff .affrow:hover{border-color:rgba(45,226,197,.55);background:rgba(45,226,197,.07)}
+.pchq-aff .affcard{display:flex;flex-direction:column;gap:6px;padding:14px}
+.pchq-aff .affcard .b{font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.1em;color:#2DE2C5}
+.pchq-aff .affcard .n{font:700 14.5px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affcard .g{font:600 12.5px/1 system-ui,-apple-system,sans-serif;color:#9aa0ad;margin-top:auto}
+.pchq-aff .affrow{display:flex;align-items:center;gap:14px;padding:13px 15px}
+.pchq-aff .affrow .b{flex:0 0 54px;height:38px;display:grid;place-items:center;border-radius:8px;background:rgba(45,226,197,.12);color:#2DE2C5;font:800 12px/1 system-ui,-apple-system,sans-serif;letter-spacing:.06em}
+.pchq-aff .affrow .n{flex:1;font:700 15px/1.35 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-aff .affrow .g{color:#9aa0ad;font:700 17px/1 system-ui,-apple-system,sans-serif}
+@media(max-width:560px){.pchq-aff .affgrid{grid-template-columns:1fr}}</style>
+<p class="disc">Affiliate links — buying through them keeps this site free. No extra cost to you.</p>
+<a class="affimglink" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><img class="affimg" src="https://proclubshq.com/blog/content/images/2026/08/aff-fc27.webp" alt="EA Sports FC 27 key art" width="1200" height="600" loading="lazy" decoding="async"></a>
+<h3>Get EA SPORTS FC 27</h3>
+<div class="affgrid">
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9SYK5Q7?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PlayStation 5 disc at Amazon"><span class="b">PS5</span><span class="n">PlayStation 5</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H9T7MTYK?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — Xbox Series X disc at Amazon"><span class="b">XBOX</span><span class="n">Xbox Series X</span><span class="g">Buy now →</span></a>
+<a class="affcard" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com/dp/B0H73HPJ1H?tag=proclubshq-fc27-20" aria-label="EA SPORTS FC 27 — PC (EA App) digital at Amazon"><span class="b">PC</span><span class="n">PC (EA App)</span><span class="g">Buy now →</span></a>
+</div>
+</div>
+<!--kg-card-end: html-->
+
+<!--kg-card-begin: html-->
+<div class="pchq-ad" data-ad="c"></div>
+<!--kg-card-end: html-->

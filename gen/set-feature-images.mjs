@@ -9,17 +9,18 @@ import { call } from './ghost-admin.mjs';
 
 const MAP = [
   ['feat-a1.png', 'pro-clubs-archetypes-explained', 'All 13 Pro Clubs archetype icons'],
-  ['feat-a2.png', 'pro-clubs-archetypes-compared', 'Pro Clubs archetypes compared by attribute ceiling'],
-  ['feat-a3.png', 'which-pro-clubs-archetype-should-i-play', 'Choosing between Pro Clubs archetypes'],
-  ['feat-a4.png', 'pro-clubs-accelerate-explosive-lengthy-controlled', 'Controlled, Explosive and Lengthy acceleration compared'],
+  ['feat-fc27-compared.jpg', 'pro-clubs-archetypes-compared', 'EA SPORTS FC 27 key art with CEILINGS across it'],
+  ['feat-fc27-quiz.jpg', 'which-pro-clubs-archetype-should-i-play', 'EA SPORTS FC 27 key art with ARCHETYPE QUIZ across it'],
+  ['feat-fc27-accelerate.jpg', 'pro-clubs-accelerate-explosive-lengthy-controlled', 'EA SPORTS FC 27 key art with ACCELERATE across it'],
+  ['feat-fc27-accelerate-calculator.jpg', 'lengthy-vs-controlled-vs-explosive', 'EA SPORTS FC 27 key art with CALCULATOR across it'],
   ['feat-fc27-grounds.jpg', 'fc27-the-grounds-pro-clubs-explained', "EA SPORTS FC 27's The Grounds: a cage pitch and crowd in the social hub"],
   ['feat-fc27-platforms.jpg', 'fc27-clubs-platforms-ps4-xbox-one-switch', 'PS4, Xbox One and Switch struck through; PS5, Series X|S, PC and Switch 2 supported'],
-  ['feat-a8.png', 'pro-clubs-playstyle-requirements', 'Two thresholds cleared and one missed'],
+  ['feat-fc27-playstyles.jpg', 'pro-clubs-playstyle-requirements', 'EA SPORTS FC 27 key art with PLAYSTYLES across it'],
   ['feat-a9.png', 'pro-clubs-specializations-unlock-planner', 'One archetype branching into three specializations'],
   ['feat-a10.png', 'pro-clubs-level-rewards', 'The climb to level 100 with milestone steps'],
   // a11 rewritten for FC 27 (2026-09-23): the FC 27 key art, like its stats pages.
   ['feat-fc27-ap-costs.jpg', 'pro-clubs-attribute-upgrade-costs', "EA SPORTS FC 27 key art with AP COSTS across it"],
-  ['feat-a12.png', 'pro-clubs-archetypes-head-to-head', 'Two archetypes compared across the halfway line'],
+  ['feat-fc27-head-to-head.jpg', 'pro-clubs-archetypes-head-to-head', 'EA SPORTS FC 27 key art with VERSUS across it'],
   ['feat-fc27-masteries.jpg', 'fc27-masteries-explained', 'EA SPORTS FC 27 key art with MASTERIES across it'],
   ['feat-fc27-amps.jpg', 'fc27-amps-explained', 'EA SPORTS FC 27 key art with AMPS across it'],
   ['feat-fc27-archetypes.jpg', 'fc27-archetype-changes', 'EA SPORTS FC 27 key art with ARCHETYPES across it'],
@@ -39,19 +40,22 @@ const MAP = [
   // This replaced the FC 26 studio key art with a badged glyph: one purple
   // poster on all thirteen, which read as dated beside the FC 27 covers.
   // make-spoke-feats.py still owns feat-spokes.jpg, the in-body cover figure.
-  ...['magician', 'shot-stopper', 'sweeper-keeper', 'progressor', 'boss', 'engine', 'marauder',
+  // FC 27 since 2026-09-23 (the sweep; gen/make-fc27-sweep-feats.py): the FC 27
+  // key art with the archetype's name. The Engine is gone from FC 27 and its
+  // page 301s to the Disruptor build page, so it has no cover here.
+  ...['magician', 'shot-stopper', 'sweeper-keeper', 'progressor', 'boss', 'marauder',
     'recycler', 'maestro', 'creator', 'spark', 'finisher', 'target']
-    .map((a) => [`feat-spoke-${a}.jpg`, `pro-clubs-${a}-build`,
-      `Official EA SPORTS FC 26 in-game art with ${a.replace(/-/g, ' ').toUpperCase()} in large type`]),
+    .map((a) => [`feat-fc27-build-${a}.jpg`, `pro-clubs-${a}-build`,
+      `EA SPORTS FC 27 key art with ${a.replace(/-/g, ' ').toUpperCase()} across it`]),
   // a31-a35, the roundup set (gen/make-group-feats.py, 2026-08-11): the four
   // position pages reuse the spoke set's position stills — deliberate, one
   // visual language per position — and the tier list takes the FC 26 studio
   // key art, whose five posed players read as the lineup a tier list is.
-  ['feat-a31.jpg', 'best-pro-clubs-archetypes', 'Official EA SPORTS FC 26 key art with TIER LIST in large type'],
-  ['feat-a32.jpg', 'pro-clubs-striker-archetypes', 'Official EA SPORTS FC 26 art with STRIKERS in large type'],
-  ['feat-a33.jpg', 'pro-clubs-midfielder-archetypes', 'Official EA SPORTS FC 26 art with MIDFIELD in large type'],
-  ['feat-a34.jpg', 'pro-clubs-defender-archetypes', 'Official EA SPORTS FC 26 defenders art with DEFENDERS in large type'],
-  ['feat-a35.jpg', 'pro-clubs-goalkeeper-archetypes', 'Official EA SPORTS FC 26 goalkeeper art with KEEPERS in large type'],
+  ['feat-fc27-tier-list.jpg', 'best-pro-clubs-archetypes', 'EA SPORTS FC 27 key art with TIER LIST across it'],
+  ['feat-fc27-striker-archetypes.jpg', 'pro-clubs-striker-archetypes', 'EA SPORTS FC 27 key art with FORWARDS across it'],
+  ['feat-fc27-midfielder-archetypes.jpg', 'pro-clubs-midfielder-archetypes', 'EA SPORTS FC 27 key art with MIDFIELDERS across it'],
+  ['feat-fc27-defender-archetypes.jpg', 'pro-clubs-defender-archetypes', 'EA SPORTS FC 27 key art with BACK LINE across it'],
+  ['feat-fc27-goalkeeper-archetypes.jpg', 'pro-clubs-goalkeeper-archetypes', 'EA SPORTS FC 27 key art with GOALKEEPERS across it'],
   // The 35 player-page covers (a72–a106). These rows lived only on the box
   // until 2026-09-15, when the generated block below made the repo copy the
   // one that ships; ported back so the two files are one file again.
