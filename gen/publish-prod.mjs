@@ -172,12 +172,15 @@ const POSTS = [
   // worst ratio on the site. Ranking is done; the title was the whole problem.
   // "Priced" is not a word anyone searches, and the year was missing while
   // "fc26" appears throughout the query data.
+  // Rewritten in place for FC 27 on 2026-09-23 (gen/a11-ap-costs.mjs): the
+  // all-archetype comparison and the hub of the stats pages. Same slug; the FC 26
+  // page had 2 clicks in 28 days, so nothing it earned was lost.
   { file: 'a11.html', slug: 'pro-clubs-attribute-upgrade-costs', status: 'published',
-    title: 'Pro Clubs AP Costs: What Every Attribute Upgrade Really Costs',
-    meta_title: 'FC 26 Pro Clubs AP Costs: What Every Upgrade Costs',
-    meta_description: 'The full EA FC Pro Clubs AP cost curve — four tiers, per-archetype pricing, and a calculator for any upgrade. You earn 3,167 AP; spending it well is the game.',
-    custom_excerpt: 'The four cost tiers, per-archetype pricing, and a calculator that prices any upgrade.',
-    tags: ['Guides', 'Tools', 'FC 26'] },
+    title: 'FC 27 Pro Clubs AP Costs: What Every Archetype Pays for Every Upgrade',
+    meta_title: 'FC 27 Pro Clubs AP Costs: All 13 Archetypes Compared',
+    meta_description: 'What each FC 27 archetype is cheap and expensive to upgrade, who pays least for 90 in any stat, and every archetype’s cheapest specialization.',
+    custom_excerpt: 'All 13 FC 27 archetypes compared: their cheapest and most expensive stats, who pays least to reach 90 in any attribute, and the cheapest specialization on each.',
+    tags: ['Guides', 'Tools', 'FC 27'] },
   // Retitled 2026-08-12: 187 impressions, position 4.8, ZERO clicks. "Any Two"
   // sells the tool's mechanic; nobody searches for the ability to compare two
   // things. The queries are "pro clubs archetypes" and "all pro clubs
@@ -1240,6 +1243,42 @@ const POSTS = [
     meta_description: 'The best FC 27 Pro Clubs goalkeeper builds at level 40 — shot-stoppers who stay on the line and sweeper keepers who play high — ranked by copies, with the meta board’s goalkeeper. Open any build and copy it.',
     custom_excerpt: 'Shot-stopper or sweeper keeper — the level-40 goalkeeper builds people copy, and the meta’s pick between the posts.',
     tags: ['Guides', 'Builds', 'FC 27'] },
+  // The per-archetype stats pages (gen/archetype-stats.mjs, 2026-09-23): what
+  // is cheap and what is expensive to upgrade on each archetype. The rows are
+  // COPIED from out/aNNN.meta.json, which the generator computes (the
+  // description names each archetype's cheapest tier from the catalog), so
+  // after a catalog change regenerate and re-copy them. They publish as a set
+  // with a11: every page links the other five.
+  { file: 'a193.html', slug: 'pro-clubs-magician-stats', status: 'published',
+    title: 'FC 27 Pro Clubs Magician Stats: What’s Cheap to Upgrade and What Costs the Most',
+    meta_title: 'FC 27 Pro Clubs Magician Stats: Cheap vs Expensive',
+    meta_description: 'FC 27 Magician stats priced in AP: Balance, Composure, Volleys and Shot Power are the cheapest to raise; pace, dribbling and finishing cost the most.',
+    custom_excerpt: 'All 29 Magician attributes priced from where a new Magician starts, its three specializations priced, and the same upgrades on the Spark, Finisher, Maestro and Disruptor.',
+    tags: ['Guides', 'Archetypes', 'FC 27'] },
+  { file: 'a194.html', slug: 'pro-clubs-spark-stats', status: 'published',
+    title: 'FC 27 Pro Clubs Spark Stats: What’s Cheap to Upgrade and What Costs the Most',
+    meta_title: 'FC 27 Pro Clubs Spark Stats: Cheap vs Expensive',
+    meta_description: 'FC 27 Spark stats priced in AP: Curve, Dribbling, Vision and Long Shots are the cheapest to raise; pace, agility and finishing cost the most.',
+    custom_excerpt: 'All 29 Spark attributes priced from where a new Spark starts, its three specializations priced, and the same upgrades on the Magician, Finisher, Maestro and Disruptor.',
+    tags: ['Guides', 'Archetypes', 'FC 27'] },
+  { file: 'a195.html', slug: 'pro-clubs-finisher-stats', status: 'published',
+    title: 'FC 27 Pro Clubs Finisher Stats: What’s Cheap to Upgrade and What Costs the Most',
+    meta_title: 'FC 27 Pro Clubs Finisher Stats: Cheap vs Expensive',
+    meta_description: 'FC 27 Finisher stats priced in AP: Agility, Dribbling, Sprint Speed and Vision are the cheapest to raise; finishing and short passing cost the most.',
+    custom_excerpt: 'All 29 Finisher attributes priced from where a new Finisher starts, its three specializations priced, and the same upgrades on the Magician, Spark, Maestro and Disruptor.',
+    tags: ['Guides', 'Archetypes', 'FC 27'] },
+  { file: 'a196.html', slug: 'pro-clubs-maestro-stats', status: 'published',
+    title: 'FC 27 Pro Clubs Maestro Stats: What’s Cheap to Upgrade and What Costs the Most',
+    meta_title: 'FC 27 Pro Clubs Maestro Stats: Cheap vs Expensive',
+    meta_description: 'FC 27 Maestro stats priced in AP: Interceptions, Short Pass, Def. Aware and Strength are the cheapest to raise; pace, dribbling and finishing cost the most.',
+    custom_excerpt: 'All 29 Maestro attributes priced from where a new Maestro starts, its three specializations priced, and the same upgrades on the Magician, Spark, Finisher and Disruptor.',
+    tags: ['Guides', 'Archetypes', 'FC 27'] },
+  { file: 'a197.html', slug: 'pro-clubs-disruptor-stats', status: 'published',
+    title: 'FC 27 Pro Clubs Disruptor Stats: What’s Cheap to Upgrade and What Costs the Most',
+    meta_title: 'FC 27 Pro Clubs Disruptor Stats: Cheap vs Expensive',
+    meta_description: 'FC 27 Disruptor stats priced in AP: Slide Tackle, Stamina, Sprint Speed and Crossing are the cheapest to raise; interceptions and standing tackles cost the most.',
+    custom_excerpt: 'All 29 Disruptor attributes priced from where a new Disruptor starts, its three specializations priced, and the same upgrades on the Magician, Spark, Finisher and Maestro.',
+    tags: ['Guides', 'Archetypes', 'FC 27'] },
 ];
 
 // Optional filter: `node publish-prod.mjs a8 a12` publishes only those

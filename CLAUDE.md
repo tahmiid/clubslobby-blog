@@ -360,6 +360,30 @@ slug guessed from an action name would be wrong even for a published page.
   claim. If the owner ever wants a tier page ("all 5 star skill moves") or a
   themed roundup, that copy is a starting point, not a plan.
 
+## The stats pages and the AP-costs hub (a11, a193–a197) — built 2026-09-23
+
+Per-archetype "what is cheap and what is expensive to upgrade" pages for the
+Magician, Spark, Finisher, Maestro and Disruptor (`pro-clubs-<id>-stats`), plus
+`pro-clubs-attribute-upgrade-costs` (a11) rewritten in place as the FC 27
+all-13 comparison. Owner brief after the Reddit cost post (DISTRIBUTION.md §8).
+
+- **`gen/archetype-stats.mjs` is the factory; `gen/a193`–`a197` are thin
+  configs; `gen/a11-ap-costs.mjs` is the hub.** Every number comes from the
+  catalog export through one cost model; the JS the reader's browser runs is
+  the same source the generator runs and is checked against an independent
+  implementation at build time; every comparison a config makes is `assert`ed,
+  so a catalog change that makes a sentence false stops the build.
+- **Don't touch the performing pages to promote these** (owner, 23 Sep). The
+  `pro-clubs-<id>-build` spokes and `fc27-disruptor-build` are among the
+  blog's most-read and best-converting pages; these pages link TO them, never
+  the other way round without the owner's say-so.
+- **Publish the six as a set.** Each page links the other five and the hub;
+  the roster rows are copied from `out/aNNN.meta.json` (computed), and the
+  covers come from `gen/make-fc27-stats-feats.py`.
+- **Preview before publishing** with `ops/preview-draft.mjs <stem>` and
+  `preview_start blog-preview` (port 8766): the Browser pane will not run a
+  widget's script in a `file://` page.
+
 ## Feature images
 
 **Every published article needs one** — Google shows it in results and
@@ -447,6 +471,11 @@ node ops/affiliate-test.mjs                                       # after editin
   URLs never do, so the same address can hold FC 28. `ops/rename-slug.mjs`
   renames a post in place; the 301 is yours to add (DEPLOYMENT.md, the
   `CLUBS27-BLOG-REDIRECTS` block).
+- **Data pages open with the table** (owner, 2026-09-23, on the stats pages):
+  "people don't like to look at text when they open a link — start with the
+  actual table, and then we can write a little bit." The chart is the first
+  body element; the date line lives in the card's own first line, and the
+  archetype switcher is tabs inside the card.
 - **Build-list pages open with a grid and label cards, never small counts**
   (owner, 2026-09-22, on the position pages): "people don't like to read"
   — the grid comes before the prose, on the page and inside each section —

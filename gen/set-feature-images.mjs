@@ -17,7 +17,8 @@ const MAP = [
   ['feat-a8.png', 'pro-clubs-playstyle-requirements', 'Two thresholds cleared and one missed'],
   ['feat-a9.png', 'pro-clubs-specializations-unlock-planner', 'One archetype branching into three specializations'],
   ['feat-a10.png', 'pro-clubs-level-rewards', 'The climb to level 100 with milestone steps'],
-  ['feat-a11.png', 'pro-clubs-attribute-upgrade-costs', 'Attribute point prices rising into a cost wall'],
+  // a11 rewritten for FC 27 (2026-09-23): the FC 27 key art, like its stats pages.
+  ['feat-fc27-ap-costs.jpg', 'pro-clubs-attribute-upgrade-costs', "EA SPORTS FC 27 key art with AP COSTS across it"],
   ['feat-a12.png', 'pro-clubs-archetypes-head-to-head', 'Two archetypes compared across the halfway line'],
   ['feat-fc27-masteries.jpg', 'fc27-masteries-explained', 'EA SPORTS FC 27 key art with MASTERIES across it'],
   ['feat-fc27-amps.jpg', 'fc27-amps-explained', 'EA SPORTS FC 27 key art with AMPS across it'],
@@ -213,6 +214,12 @@ const MAP = [
   ['feat-fc27-midfield.jpg', 'best-pro-clubs-midfielder-builds', "EA SPORTS FC 27 key art with MIDFIELD across it"],
   ['feat-fc27-defenders.jpg', 'best-pro-clubs-defender-builds', "EA SPORTS FC 27 key art with DEFENDERS across it"],
   ['feat-fc27-keepers.jpg', 'best-pro-clubs-goalkeeper-builds', "EA SPORTS FC 27 key art with KEEPERS across it"],
+  // The per-archetype stats pages (gen/make-fc27-stats-feats.py, 2026-09-23).
+  ['feat-fc27-magician-stats.jpg', 'pro-clubs-magician-stats', "EA SPORTS FC 27 key art with MAGICIAN STATS across it"],
+  ['feat-fc27-spark-stats.jpg', 'pro-clubs-spark-stats', "EA SPORTS FC 27 key art with SPARK STATS across it"],
+  ['feat-fc27-finisher-stats.jpg', 'pro-clubs-finisher-stats', "EA SPORTS FC 27 key art with FINISHER STATS across it"],
+  ['feat-fc27-maestro-stats.jpg', 'pro-clubs-maestro-stats', "EA SPORTS FC 27 key art with MAESTRO STATS across it"],
+  ['feat-fc27-disruptor-stats.jpg', 'pro-clubs-disruptor-stats', "EA SPORTS FC 27 key art with DISRUPTOR STATS across it"],
 ];
 
 // Optional filter: `node set-feature-images.mjs a8 a12` assigns only those.
