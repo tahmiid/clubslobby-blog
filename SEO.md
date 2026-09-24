@@ -176,6 +176,15 @@ them the next day).
   `_is_indexable`). If it trips: rendered output changed → bump the date to the
   DEPLOY time and the hash; byte-identical refactor → hash only. It was proven
   to bite by perturbing `_name`.
+- **24 Sep 2026: the pin also covers `_height_cm`**, the helper that prints a
+  build's centimetres (app #265, #266), and `BUILD_PAGE_REVISED` moved twice
+  that day (07:22 and 09:18 UTC): first because 75 in stopped printing as
+  190 (a banker's round) and a chosen `heightCm` started printing as itself,
+  then because a build saved in inches alone prints the centimetres its inch
+  label stands for in its archetype (a 72 in Recycler is 182, a 72 in Boss
+  183). Both were rendered-output changes, so every /b/ URL was re-dated;
+  the nine static and controls URLs kept their own dates. The rule held: a
+  date moves only when bytes move.
 
 ---
 
@@ -612,5 +621,7 @@ head injection) is issue #7 here.
   overlap. Verify on the retail Skill Moves screen on the 18th before either
   number is cited again.
 - **The AdSense re-review** — on the watcher email, after STALE clears.
-- `main` is 40 commits behind `dev` in the app repo; `dev` is what production
-  runs. Left alone by owner decision.
+- ~~`main` is 40 commits behind `dev` in the app repo; `dev` is what production
+  runs. Left alone by owner decision.~~ **Since 24 Sep `main` is
+  fast-forwarded to `dev` after every deploy** (app CLAUDE.md, "Finishing"):
+  `main` is what production runs, `dev` is what is next.
