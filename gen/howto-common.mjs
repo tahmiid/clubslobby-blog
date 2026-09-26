@@ -9,7 +9,7 @@
 // 2026-08-20): a reader plays on one pad and the other column is noise. The
 // floating switcher changes it anywhere on the page and remembers the choice.
 import { esc, kg } from './common.mjs';
-import { renderMove as renderInputs, CONTROL_CSS } from './controls.mjs';
+import { renderMove as renderInputs, CONTROL_CSS, CONTROLS } from './controls.mjs';
 
 /**
  * @param move  a dataset action (controls.mjs `lookup` result)
@@ -70,3 +70,10 @@ const WORD = {
 };
 export const comboWords = (combo) => String(combo ?? '')
   .replace(/\*(\w+)\*/g, (_, t) => WORD[t] || t).replace(/\s+/g, ' ').trim();
+
+// The same words on Xbox: button labels from the dataset's own bindings
+// (never typed - CONTROLS.md: Xbox is computed from the PS string).
+const XTOK = { S: 'FACE_LEFT', O: 'FACE_RIGHT', X: 'FACE_DOWN', T: 'FACE_UP', L1: 'BUMPER_L', R1: 'BUMPER_R',
+  L2: 'TRIGGER_L', R2: 'TRIGGER_R', L3: 'STICK_L_CLICK', R3: 'STICK_R_CLICK', TP: 'VIEW' };
+export const comboWordsXbox = (combo) => String(combo ?? '')
+  .replace(/\*(\w+)\*/g, (_, t) => (XTOK[t] && CONTROLS.bindings[XTOK[t]]?.xbox?.label) || WORD[t] || t).replace(/\s+/g, ' ').trim();

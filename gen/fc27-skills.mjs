@@ -15,7 +15,7 @@ import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
 import { moveList, padSwitcher, lookup } from './controls.mjs';
-import { inputCard as sharedCard, bothCard, HOWTO_STYLE, comboWords } from './howto-common.mjs';
+import { inputCard as sharedCard, bothCard, HOWTO_STYLE, comboWords, comboWordsXbox } from './howto-common.mjs';
 import { breadcrumbLd, howToLd, itemListLd, plainCombo } from './jsonld.mjs';
 
 // The inputs come from the controls dataset (data/fc27-controls.json, exported
@@ -114,6 +114,16 @@ ${howToLd({
   steps: [comboWords(CTRL(m.name).guidedCombo)],
 })}`;
   writeFileSync(path.join(DIR, 'out', `a${50 + i}.html`), html);
+  // Owner's formats (26 Sep 2026): a short, precise title and a keyword-strip
+  // description. Computed from the dataset, so the combo in the snippet is
+  // the combo on the page; the publisher prefers this file over the roster.
+  const combo = CTRL(m.name).keyCombo.replace(/\s*\(while [^)]*\)/g, '');
+  const title = `${m.name} in FC 27: PS5 & Xbox Combo`;
+  writeFileSync(path.join(DIR, 'out', `a${50 + i}.meta.json`), `${JSON.stringify({
+    slug: `fc27-how-to-${m.slug}`, title, meta_title: title,
+    meta_description: [`FC 27`, `Pro Clubs`, m.name, `PS5: ${comboWords(combo)}`, `Xbox: ${comboWordsXbox(combo)}`,
+      `${m.star}-Star`, ...(m.condition ? [m.condition.charAt(0).toUpperCase() + m.condition.slice(1)] : [])].join(' · '),
+  }, null, 1)}\n`);
   return { file: `a${50 + i}.html`, slug: `fc27-how-to-${m.slug}`, move: m };
 }
 
