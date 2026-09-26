@@ -213,8 +213,8 @@ const POSTS = [
   // was missing from every one of these.
   { file: 'a18.html', slug: 'pro-clubs-magician-build', status: 'published',
     title: 'Best Pro Clubs Magician Build for FC 27: Level 40 Builds to Copy',
-    meta_title: 'Best Pro Clubs Magician Build — FC 27 Level 40 Guide',
-    meta_description: 'The best FC 27 Pro Clubs Magician builds at level 40, most copied first — Lamine Yamal, Messi ’26 WC and Neymar Jr — plus the Magician’s specializations and upgrade costs.',
+    meta_title: 'Best FC 27 Magician Build',
+    meta_description: 'FC 27 Pro Clubs · Level-40 · Magician+ · Hotshot · Invader · Height & Weight · AcceleRATE · Lamine Yamal · Messi · Neymar · Ronaldinho',
     custom_excerpt: 'Level-40 Magician builds people actually copy, the three specializations priced, and what the Magician is cheap and expensive to upgrade.',
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 27'] },
   { file: 'a19.html', slug: 'pro-clubs-shot-stopper-build', status: 'published',
