@@ -82,9 +82,9 @@ export const planeChecker = (c) => kg(`<div class="${c}">
 .${c} .bd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 0}
 .${c} .bd div{border-radius:8px;padding:8px 4px;text-align:center;font:700 12px system-ui,sans-serif;opacity:.35;border:2px solid transparent}
 .${c} .bd div.on{opacity:1;border-color:#fff}
-.${c} .rs{margin:12px 0 0;border-radius:12px;padding:12px;text-align:center;font:800 26px Archivo,system-ui,sans-serif}
+.${c} .rs{margin:12px 0 0;border-radius:12px;padding:12px;text-align:center;font:800 26px Archivo,system-ui,sans-serif;min-height:84px;display:flex;flex-direction:column;justify-content:center}
 .${c} .rs small{display:block;font:600 13px system-ui,sans-serif;margin-top:4px}
-.${c} .wy{font-size:13px;color:#c3c7d1;margin:8px 0 0;text-align:center}
+.${c} .wy{font-size:13px;line-height:1.5;color:#c3c7d1;margin:8px 0 0;text-align:center;min-height:4.5em}
 .${c} select{width:100%;margin:16px 0 8px;padding:8px 10px;border-radius:10px;background:#161a24;color:#fff;border:1px solid rgba(255,255,255,.15);font-size:14px}
 .${c} canvas{width:100%;height:auto;border-radius:10px;touch-action:pan-y;cursor:crosshair;display:block}
 .${c} .six{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:8px 0 0}
