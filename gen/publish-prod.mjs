@@ -474,10 +474,10 @@ const POSTS = [
     custom_excerpt: 'Twelve return, one is new. Every archetype with its signature PlayStyle and ready-made builds.',
     tags: ['Guides', 'Archetypes', 'FC 27'] },
   { file: 'a67.html', slug: 'fc27-best-specializations', status: 'published',
-    title: 'FC 27 Specializations: All 40 Explained (Unlock Criteria & PlayStyle+)',
-    meta_title: 'FC 27 Specializations: All 40 Explained',
-    meta_description: 'All 40 FC 27 specializations with their unlock criteria and PlayStyle+ rewards — and a live build wearing every single one.',
-    custom_excerpt: 'Every specialization, its PlayStyle+, its criteria — and a real build wearing it.',
+    title: 'FC 27 Specialized Builds',
+    meta_title: 'FC 27 Specialized Builds: All 39 Specializations',
+    meta_description: 'FC 27 Pro Clubs · Level-40 · Hunter · Presser · Hotshot · Invader · Joker · Ace · Architect · Sniper · Destroyer · Anchor · Enforcer · Capitano · Spider · Octopus',
+    custom_excerpt: 'A level-40 build for every FC 27 specialization, most copied first, then what each one unlocks.',
     tags: ['Guides', 'Archetypes', 'FC 27'] },
   // The controls suite (2026-08-20): the pillar + three full lists, mirroring
   // the game's own three-button Controls screen. Rendered by the same module

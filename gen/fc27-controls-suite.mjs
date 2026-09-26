@@ -166,14 +166,17 @@ and the game's wording or a simplified reading. Rows marked
 
 function listArticle(key, writing, file) {
   const s = SCREENS[key];
+  // Skill moves (owner, 26 Sep 2026): the button combos are the first thing
+  // on the page - no intro, no per-tier prose above the rows; both move below.
+  const combosFirst = key === 'skills';
   const html = `${STYLE}
-${tri(s.slug)}
-${intro(s.noun, s.screen)}
+${combosFirst ? '' : `${tri(s.slug)}\n${intro(s.noun, s.screen)}`}
 ${kg(screenList(s.screen, {
     newSet: newSfx,
     hrefFor: key === 'basic' ? null : hrefForMove,
-    introFor: introFor(s.screen),
+    introFor: combosFirst ? null : introFor(s.screen),
   }))}
+${combosFirst ? `${intro(s.noun, s.screen)}\n<h2>Every tier, in brief</h2>\n${[...new Set(CONTROLS.moves.filter((m) => m.screen === s.screen).map((m) => m.page))].map((pg) => introFor(s.screen)(pg)).filter(Boolean).join('\n')}\n${tri(s.slug)}` : ''}
 ${AD_A}
 ${gameBlock}
 ${writing}

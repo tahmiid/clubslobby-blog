@@ -10,6 +10,30 @@ import path from 'node:path';
 import { esc, kg, appCta, archIcon, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { FC27_BUILDS, FC27_ARCH, psName, buildCard, gridCss } from './fc27grid.mjs';
+import { readFileSync } from 'node:fs';
+import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
+
+// ── Specialized builds, FIRST (owner, 26 Sep 2026): the page ranks for
+// "fc27 clubs builds" / "best creator build fc27", so it opens with builds -
+// one per specialization, the most copied house build wearing it, grouped
+// forwards -> midfielders -> defenders -> keepers. The explainer follows.
+const RB = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'fc27', 'role-builds.json'), 'utf8')).builds;
+const RBI = Object.fromEntries(RB.map((b) => [b.id, b]));
+const specBuild = (arc, s) => {
+  const c = [...RB.filter((b) => b.archetype_id === arc.id && b.selectedSpecialization === s.id && b.level === 40 && !b.unverified),
+    ...FC27_BUILDS.filter((b) => b.archetype === arc.id && b.spec === s.id).map((b) => RBI[b.id]).filter(Boolean)];
+  const best = c.sort((x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount))[0];
+  if (!best) throw new Error(`a67: no build wears ${arc.id}/${s.id}`);
+  return { ...best, specLabel: s.name.charAt(0) + s.name.slice(1).toLowerCase().replace(/\+$/, '+') };
+};
+const SPEC_TOTAL = FC27_ARCH.reduce((n, a) => n + a.specializations.length, 0);
+const GROUPS = [['Forward', 'Attacker'], ['Midfielder', 'Midfielder'], ['Defender', 'Defender'], ['Keeper', 'Goalkeeper']];
+const specGrids = GROUPS.map(([pos, label]) => {
+  const arcs = FC27_ARCH.filter((a) => a.position === pos);
+  const builds = arcs.flatMap((a) => a.specializations.map((s) => specBuild(a, s)));
+  return cardsGrid(`a67${pos[0].toLowerCase()}`, { builds, id: `${label.toLowerCase()}-specialized-builds`, level: 'h2', stat: topAttrsLine,
+    heading: `${label} specialized builds`, sub: `One level-40 build per specialization, the most copied wearing it. ${builds.length} for ${arcs.map((a) => a.name).join(', ')}.` });
+}).join('\n\n');
 
 const wearerOf = (arcId, specId) =>
   FC27_BUILDS.find((b) => b.archetype === arcId && b.spec === specId &&
@@ -36,7 +60,9 @@ ${rows}
 </div>`)}`;
 }).join('\n');
 
-const html = `${updatedLine('2026-09-21', 'criteria and PlayStyle+ rewards confirmed on the retail game')}
+const html = `${updatedLine('2026-09-26', 'a build for every specialization, most copied first')}
+${specGrids}
+
 <p><strong>Every FC 27 archetype carries three specializations, and each one changes your signature PlayStyle.</strong> That's the real reason to pick one: the specialization's PlayStyle+ replaces your archetype's default signature — if you want it. Below are all 40, with their unlock criteria and, for each one, a live build actually wearing it that you can open and copy.</p>
 
 <h2>How specializations work</h2>
@@ -48,11 +74,12 @@ ${appCta({
   href: '/explore?year=27',
   kicker: 'See them worn',
   head: 'Every specialization, on a real build',
-  body: 'All 40 specializations are represented across our ready-made FC 27 builds — open any of them and see the full loadout.',
+  body: `All ${SPEC_TOTAL} specializations are represented across our ready-made FC 27 builds — open any of them and see the full loadout`,
+
   label: 'Browse FC 27 builds',
 })}
 
-<h2>All 40 specializations, by archetype</h2>
+<h2>All ${SPEC_TOTAL} specializations, by archetype</h2>
 ${sections}
 
 <h2>Which specialization is best?</h2>

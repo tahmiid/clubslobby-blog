@@ -91,7 +91,7 @@ export const copiedCard = (b, stat = copiesLine) => {
   const arch = archOf(b.archetype_id);
   return `<a class="bc" href="${SITE}/b/${b.id}?src=grid">
 <p class="nm">${esc(b.buildName)}</p>
-<p class="ar">${esc(arch?.name ? archTitle(arch.name) : b.archetype_id)} · Lv ${b.level}</p>
+<p class="ar">${esc(arch?.name ? archTitle(arch.name) : b.archetype_id)}${b.specLabel ? ` · ${esc(b.specLabel)}` : ''} · Lv ${b.level}</p>
 <div class="ps">
 ${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
 ${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}

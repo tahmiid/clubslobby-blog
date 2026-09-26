@@ -10,6 +10,51 @@ import path from 'node:path';
 import { BRAND, esc, kg, baseCss, appCta, updatedLine } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { positionsNav } from './positions-nav.mjs';
+import { readFileSync } from 'node:fs';
+import { ATTRS, archIcon } from './common.mjs';
+import { FC27_ARCH } from './fc27grid.mjs';
+import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
+
+// ── The app's Masteries picker, FIRST (owner, 26 Sep 2026: "give them the
+// table we have in our app"): one row per archetype, None / 10 / 30, the
+// attributes its schedule touches with what that level gives (+0 before the
+// first milestone, so a row always names the same attributes - the app's
+// MasteriesPicker rule). Read from the catalog (archetypes.json masteries),
+// never typed. Then the most-copied builds.
+const MS = FC27_ARCH.map((a) => {
+  const ids = [...new Set((a.masteries ?? []).flatMap((m) => m.attributes.map((x) => x.id)))];
+  const at = (lvl) => Object.fromEntries(ids.map((id) => [id, (a.masteries ?? []).filter((m) => m.level <= lvl)
+    .reduce((n, m) => n + (m.attributes.find((x) => x.id === id)?.delta ?? 0), 0)]));
+  return { id: a.id, n: a.name, ids, v: { 0: at(0), 10: at(10), 30: at(30) } };
+});
+if (MS.some((m) => !m.ids.length)) throw new Error('a13: an archetype has no mastery schedule in the catalog');
+const picker = kg(`<div class="msp">
+<style>
+.msp{border-radius:16px;padding:14px;background:linear-gradient(135deg,#10141d,#0b0e14);border:1px solid rgba(201,162,39,.35);margin:0 0 22px}
+.msp .hd{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 10px}
+.msp .hd b{font:800 18px Archivo,system-ui,sans-serif;color:#fff}.msp .hd span{font:700 13px system-ui,sans-serif;color:#c9a227}
+.msp .r{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.msp .nm{display:flex;align-items:center;gap:8px;font:700 14px system-ui,sans-serif;color:#f2f3f7}.msp .nm img{width:22px;height:22px}
+.msp .sg{display:flex;border:1px solid rgba(255,255,255,.15);border-radius:9px;overflow:hidden}
+.msp .sg button{background:none;border:0;color:#9aa0ad;font:700 12.5px system-ui,sans-serif;padding:6px 11px;cursor:pointer}
+.msp .sg button.on{background:#c9a227;color:#1f1606}
+.msp .ch{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+.msp .ch span{font:600 12px system-ui,sans-serif;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.05);color:#9aa0ad}
+.msp .ch span.up{background:rgba(201,162,39,.16);color:#f0d27a}
+</style>
+<div class="hd"><b>Your masteries</b><span data-t>+0 on every build</span></div>
+${MS.map((m) => `<div class="r" data-a="${m.id}"><span class="nm">${archIcon(m.id)}${esc(m.n)}</span>
+<span class="sg">${['0', '10', '30'].map((l) => `<button type="button" data-l="${l}"${l === '0' ? ' class="on"' : ''}>${l === '0' ? '—' : l}</button>`).join('')}</span>
+<span class="ch">${m.ids.map((id) => `<span data-i="${id}">${esc(ATTRS[id]?.name ?? id)} +0</span>`).join('')}</span></div>`).join('\n')}
+<script>(function(){var r=document.currentScript.parentNode,M=${JSON.stringify(Object.fromEntries(MS.map((m) => [m.id, m.v])))},N=${JSON.stringify(Object.fromEntries(MS.flatMap((m) => m.ids).map((id) => [id, ATTRS[id]?.name ?? id])))};
+function up(){var t=0;r.querySelectorAll('.r').forEach(function(row){var l=row.querySelector('.on').getAttribute('data-l'),v=M[row.getAttribute('data-a')][l];
+row.querySelectorAll('[data-i]').forEach(function(c){var n=v[c.getAttribute('data-i')]||0;t+=n;c.textContent=N[c.getAttribute('data-i')]+' +'+n;c.className=n?'up':''})});
+r.querySelector('[data-t]').textContent='+'+t+' on every build'}
+r.addEventListener('click',function(e){var b=e.target.closest('.sg button');if(!b)return;b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});up()})})();</script>
+</div>`);
+const RB = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'data', 'fc27', 'role-builds.json'), 'utf8')).builds;
+const popular = cardsGrid('a13g', { builds: RB.filter((b) => b.level === 40 && !b.unverified).slice(0, 6), id: 'most-copied', level: 'h2',
+  stat: topAttrsLine, heading: 'Most copied FC 27 builds', sub: 'Level-40 builds, most copied first. Tap one to open it in the builder.' });
 
 const P = 'ms27';
 
@@ -89,11 +134,13 @@ R.addEventListener('click',function(e){
 </script>
 </div>`);
 
-const html = `${updatedLine('2026-09-21', 'the full schedule and every value, read from the game')}
+const html = `${updatedLine('2026-09-26', 'the full schedule and every value, read from the game')}
+${picker}
+${popular}
+
 <p><strong>FC 27 Masteries are permanent attribute boosts your pro earns by levelling an archetype: +1 to two attributes at level 10 and +1 more to the second at level 30, kept on every build you own.</strong> All thirteen pairs and their values are in the planner below.</p>
 <p>Masteries are FC 27's answer to a question Clubs has never had a good answer for: <strong>why level an archetype you don't main?</strong> The answer now is that every archetype you develop leaves a permanent mark on your pro — reach its milestones and you unlock attribute boosts that apply to <em>every build you use</em>, not just the one you levelled. This is from EA's official Grounds &amp; Clubs deep dive, so unlike most of what's written about FC 27 right now, none of it is speculation.</p>
 
-${widget}
 
 <h2>How Masteries work</h2>
 <p>Every archetype has two mastery milestones, at <strong>level 10</strong> and <strong>level 30</strong>. Level 10 grants +1 to both attributes of the archetype's pair; level 30 grants +1 more to the second of them, so a fully mastered archetype is worth +1 and +2. The boosts follow your pro across every archetype from then on — we watched a Maestro's level-10 mastery sit on a Disruptor pro as +1 Reactions and +1 Ball Control. EA's own launch example was the Finisher: <strong>level 10 unlocks +1 Finishing and +1 Composure on every archetype you use</strong>.</p>

@@ -15,7 +15,7 @@ import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
 import { moveList, padSwitcher, lookup } from './controls.mjs';
-import { inputCard as sharedCard, HOWTO_STYLE, comboWords } from './howto-common.mjs';
+import { inputCard as sharedCard, bothCard, HOWTO_STYLE, comboWords } from './howto-common.mjs';
 import { breadcrumbLd, howToLd, itemListLd, plainCombo } from './jsonld.mjs';
 
 // The inputs come from the controls dataset (data/fc27-controls.json, exported
@@ -39,6 +39,8 @@ const HUB = '/blog/fc27-new-skill-moves/';
 // 2026-09-14, shared with gen/fc27-howtos.mjs (the carried-over moves and the
 // celebrations) so the two page families render one product. This wrapper
 // keeps the call sites below unchanged.
+const topCard = (m) => bothCard(CTRL(m.name), `${m.star}-star move${
+    m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}`);
 const inputCard = (m) => sharedCard(CTRL(m.name), `${m.star}-star move${
     m.condition ? ` &nbsp;·&nbsp; ${esc(m.condition)} only` : ''}`);
 const STYLE = HOWTO_STYLE;
@@ -52,12 +54,12 @@ const gameBlock = affiliateSection({ heading: 'Get the game',
 function renderMove(m, i) {
   const others = MOVES.filter((x) => x.slug !== m.slug && x.star === m.star).slice(0, 3);
   const html = `${STYLE}
+${topCard(m)}
+${m.slug === 'giant-fake-shot' ? `<h2 id="ordinary-fake-shot">The ordinary fake shot</h2>\n${bothCard(lookup('Fake Shot', { page: 'Attacking - Simple' }), 'Basic control · any pro, no skill stars needed')}` : ''}
 <p>${esc(m.name)} is one of the 13 skill moves new to EA FC 27. It is a
 <strong>${m.star}-star move</strong>, so any pro with
 ${m.star} skill star${m.star === 1 ? '' : 's'} or more can perform it.</p>
 ${m.slug === 'giant-fake-shot' ? `<p>Looking for the ordinary <strong>fake shot</strong> — Circle then Cross on PlayStation, B then A on Xbox? That one is a basic control, not a skill move: <a href="/blog/fc27-basic-controls/#fake-shot">here it is on the basic controls page</a>, animated. This page is the ${m.star}-star flair version.</p>` : ''}
-
-${inputCard(m)}
 
 <h2>What it does</h2>
 <p>${esc(m.what)}</p>

@@ -22,7 +22,21 @@ export const inputCard = (move, meta, label = '') => kg(`<div class="pchq-input"
   <div class="pchq-input-meta">${meta}</div>
 </div>`);
 
+// Both readings at once, game wording first then the simplified sequence
+// (owner, 26 Sep 2026: "the first thing on the page should be the button
+// combo. Once in game terms and right after that the simplified version").
+// The same markup twice; each copy pins one reading regardless of the
+// page-wide toggle.
+export const bothCard = (move, meta) => kg(`<div class="pchq-input pchq-both">
+  <div class="pchq-input-label">In game</div><div class="pchq-input-combo pin-auth">${renderInputs(move)}</div>
+  <div class="pchq-input-label" style="margin-top:12px">Simplified</div><div class="pchq-input-combo pin-simple">${renderInputs(move)}</div>
+  <div class="pchq-input-meta">${meta}</div>
+</div>`);
+
 export const HOWTO_STYLE = kg(`<style>
+.pin-auth .cread-auth,.simpleread .pin-auth .cread-auth{display:inline!important}.pin-auth .cread-simple,.simpleread .pin-auth .cread-simple{display:none!important}
+.pin-simple .cread-simple,.simpleread .pin-simple .cread-simple{display:inline!important}.pin-simple .cread-auth,.simpleread .pin-simple .cread-auth{display:none!important}
+.pchq-both{margin-top:0}
 .pchq-input{border:1px solid #23364c;border-radius:12px;padding:16px 18px;margin:22px 0;
   background:#0a1826;color:#e9edf6;font-size:17px}
 .pchq-input-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
