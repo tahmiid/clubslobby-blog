@@ -277,7 +277,6 @@ export const META = {
 const html = `${statsCss()}
 ${checker()}
 ${planeChecker(`${P}pl`)}
-<p style="font-size:13px;color:#9aa0ad">The big word is the in-game menu reading (your bought attributes). The map colours each body by the match reading, where height and weight add or take away the six attributes shown.</p>
 
 ${appCta({
   href: '/',
