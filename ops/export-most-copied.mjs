@@ -76,6 +76,10 @@ const forYear = async (year) => {
       height: full.height,
       weight: full.weight,
       accelerationType: full.accelerationType ?? null,
+      inGameAccelerationType: full.inGameAccelerationType ?? null,
+      // top 5 attributes for the new grid card (gen/cardab.mjs), 26 Sep
+      top: Object.entries(full.attributes ?? {}).map(([k, v]) => ({ k, v: typeof v === 'number' ? v : (v?.value ?? v?.current ?? null) }))
+        .filter((x) => typeof x.v === 'number').sort((x, y) => y.v - x.v).slice(0, 5),
       copyCount: b.copyCount ?? 0,
       creator: full.creator?.handle ?? null,
     });

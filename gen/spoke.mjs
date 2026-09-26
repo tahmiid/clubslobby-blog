@@ -15,6 +15,7 @@
 //   long cells overlap the next column.
 // - AP prices use the exact a9/a11 cost model, and the stage plan must sum to
 //   the featured build's exact price — asserted, not hoped.
+import { pair } from './cardab.mjs';
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { ARCH, ATTRS, PLAYSTYLES, BRAND, SITE, CATS, CATNAMES, title, esc, kg, baseCss, ceiling } from './common.mjs';
@@ -327,8 +328,8 @@ ${cardAnchor(BUILDS[cfg.midReel ?? 0] || BUILDS[0], true)}
 ${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
 ${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
 </div>
-<p class="sg">${(b.playstyles || []).length} regular PlayStyles</p>
-<p class="hw">${ft(b.height)} · ${b.weight} lbs · ${esc(b.accelerationType)}</p>
+${pair(`<p class="sg">${(b.playstyles || []).length} regular PlayStyles</p>
+<p class="hw">${ft(b.height)} · ${b.weight} lbs · ${esc(b.accelerationType)}</p>`, b, `${ft(b.height)} · ${b.weight} lbs`)}
 </a>`;
   };
 

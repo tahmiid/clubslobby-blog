@@ -16,6 +16,7 @@
 // (user's standing call), silver-bordered same shape marks a regular.
 // Nothing invented here; the glyphs hotlink from the app like everywhere
 // else on the blog.
+import { pair, pairCss } from './cardab.mjs';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg } from './common.mjs';
@@ -46,7 +47,7 @@ export const gridCss = (P) => `
   border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
 .${P} .bc .rb img{width:18px;height:18px}
 .${P} .bc .sg{font-size:10px;color:var(--ink2);margin:7px 0 0}
-.${P} .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}`;
+.${P} .bc .hw{font-size:10px;color:var(--ink2);opacity:.65;margin:2px 0 0}${pairCss(P)}`;
 
 export const buildCard = (b) => {
   const sig = (b.signature || [])[0];
@@ -64,8 +65,8 @@ export const buildCard = (b) => {
 <span class="sb" title="${esc(psName(sig))} (signature)"><img src="${psImg(sig)}" alt="${esc(psName(sig))} PlayStyle" loading="lazy" width="21" height="21"></span>
 ${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psImg(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
 </div>
-<p class="sg">${esc(psName(sig))}${isOriginal ? '' : '+'} · ${regs.length} regular</p>
-<p class="hw">${ft(b.height)} · ${b.weight} lbs</p>
+${pair(`<p class="sg">${esc(psName(sig))}${isOriginal ? '' : '+'} · ${regs.length} regular</p>
+<p class="hw">${ft(b.height)} · ${b.weight} lbs</p>`, b, `${ft(b.height)} · ${b.weight} lbs`)}
 </a>`;
 };
 

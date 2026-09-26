@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-22",
+ "generatedAt": "2026-09-26",
  "fc26": [
   {
    "id": "a07d0193-30cf-42c7-8dad-6f9f887f8778",
@@ -26,6 +26,29 @@
    "height": 67,
    "weight": 159,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "fkAcc",
+     "v": 99
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "acceleration",
+     "v": 94
+    },
+    {
+     "k": "agility",
+     "v": 94
+    }
+   ],
    "copyCount": 20,
    "creator": "buildmaster"
   },
@@ -54,6 +77,29 @@
    "height": 73,
    "weight": 170,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 96
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "curve",
+     "v": 95
+    },
+    {
+     "k": "composure",
+     "v": 94
+    },
+    {
+     "k": "shortPass",
+     "v": 94
+    }
+   ],
    "copyCount": 14,
    "creator": "throwbackfc"
   },
@@ -82,6 +128,29 @@
    "height": 69,
    "weight": 150,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "fkAcc",
+     "v": 99
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "acceleration",
+     "v": 94
+    },
+    {
+     "k": "agility",
+     "v": 94
+    }
+   ],
    "copyCount": 14,
    "creator": "buildmaster"
   },
@@ -110,6 +179,29 @@
    "height": 74,
    "weight": 183,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "penalties",
+     "v": 99
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "volleys",
+     "v": 95
+    },
+    {
+     "k": "acceleration",
+     "v": 94
+    }
+   ],
    "copyCount": 12,
    "creator": "buildmaster"
   },
@@ -138,6 +230,29 @@
    "height": 68,
    "weight": 163,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "attPosition",
+     "v": 98
+    },
+    {
+     "k": "composure",
+     "v": 97
+    },
+    {
+     "k": "reactions",
+     "v": 97
+    },
+    {
+     "k": "acceleration",
+     "v": 95
+    }
+   ],
    "copyCount": 6,
    "creator": "specialevents"
   },
@@ -166,6 +281,29 @@
    "height": 69,
    "weight": 154,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "vision",
+     "v": 99
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "curve",
+     "v": 95
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    },
+    {
+     "k": "composure",
+     "v": 94
+    }
+   ],
    "copyCount": 6,
    "creator": "buildmaster"
   },
@@ -190,6 +328,29 @@
    "height": 74,
    "weight": 187,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 99
+    },
+    {
+     "k": "agility",
+     "v": 99
+    },
+    {
+     "k": "dribbling",
+     "v": 99
+    },
+    {
+     "k": "attPosition",
+     "v": 96
+    },
+    {
+     "k": "balance",
+     "v": 96
+    }
+   ],
    "copyCount": 5,
    "creator": "freakbuilds"
   },
@@ -218,6 +379,29 @@
    "height": 71,
    "weight": 172,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "agility",
+     "v": 99
+    },
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "fkAcc",
+     "v": 99
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    },
+    {
+     "k": "acceleration",
+     "v": 94
+    }
+   ],
    "copyCount": 4,
    "creator": "throwbackfc"
   },
@@ -246,6 +430,29 @@
    "height": 67,
    "weight": 159,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 97
+    },
+    {
+     "k": "balance",
+     "v": 96
+    },
+    {
+     "k": "composure",
+     "v": 96
+    },
+    {
+     "k": "curve",
+     "v": 96
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    }
+   ],
    "copyCount": 4,
    "creator": "specialevents"
   },
@@ -274,6 +481,29 @@
    "height": 77,
    "weight": 194,
    "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 96
+    },
+    {
+     "k": "jumping",
+     "v": 95
+    },
+    {
+     "k": "headingAcc",
+     "v": 94
+    },
+    {
+     "k": "shotPower",
+     "v": 94
+    },
+    {
+     "k": "strength",
+     "v": 94
+    }
+   ],
    "copyCount": 3,
    "creator": "buildmaster"
   },
@@ -302,6 +532,29 @@
    "height": 71,
    "weight": 154,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "vision",
+     "v": 99
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    },
+    {
+     "k": "composure",
+     "v": 94
+    },
+    {
+     "k": "longPass",
+     "v": 94
+    },
+    {
+     "k": "shortPass",
+     "v": 94
+    }
+   ],
    "copyCount": 3,
    "creator": "buildmaster"
   },
@@ -330,6 +583,29 @@
    "height": 72,
    "weight": 190,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "attPosition",
+     "v": 98
+    },
+    {
+     "k": "reactions",
+     "v": 97
+    },
+    {
+     "k": "aggression",
+     "v": 96
+    },
+    {
+     "k": "agility",
+     "v": 96
+    }
+   ],
    "copyCount": 3,
    "creator": "specialevents"
   },
@@ -358,6 +634,29 @@
    "height": 70,
    "weight": 161,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 95
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 95
+    },
+    {
+     "k": "volleys",
+     "v": 95
+    },
+    {
+     "k": "agility",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -386,6 +685,29 @@
    "height": 74,
    "weight": 196,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "penalties",
+     "v": 99
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "volleys",
+     "v": 95
+    },
+    {
+     "k": "headingAcc",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -414,6 +736,29 @@
    "height": 75,
    "weight": 181,
    "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "composure",
+     "v": 99
+    },
+    {
+     "k": "shortPass",
+     "v": 96
+    },
+    {
+     "k": "longPass",
+     "v": 95
+    },
+    {
+     "k": "shotPower",
+     "v": 95
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "specialevents"
   },
@@ -442,36 +787,31 @@
    "height": 75,
    "weight": 170,
    "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "shotPower",
+     "v": 96
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "volleys",
+     "v": 95
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
-  },
-  {
-   "id": "ec66aa62-f00f-4d6a-bf29-3ed131250e5d",
-   "buildName": "Iniesta '10",
-   "archetype_id": "maestro",
-   "level": 100,
-   "signature": [
-    "pinged-pass",
-    "tiki-taka",
-    "first-touch",
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "inventive",
-    "long-ball-pass",
-    "chip-shot",
-    "acrobatic",
-    "finesse-shot",
-    "game-changer",
-    "whipped-pass",
-    "trickster"
-   ],
-   "height": 67,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "copyCount": 2,
-   "creator": "specialevents"
   },
   {
    "id": "93ad6248-1570-4ab4-a7be-4864405daa8c",
@@ -498,8 +838,82 @@
    "height": 76,
    "weight": 181,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "gkDiving",
+     "v": 99
+    },
+    {
+     "k": "gkReflexes",
+     "v": 99
+    },
+    {
+     "k": "jumping",
+     "v": 95
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "gkHandling",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "throwbackfc"
+  },
+  {
+   "id": "ec66aa62-f00f-4d6a-bf29-3ed131250e5d",
+   "buildName": "Iniesta '10",
+   "archetype_id": "maestro",
+   "level": 100,
+   "signature": [
+    "pinged-pass",
+    "tiki-taka",
+    "first-touch",
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "inventive",
+    "long-ball-pass",
+    "chip-shot",
+    "acrobatic",
+    "finesse-shot",
+    "game-changer",
+    "whipped-pass",
+    "trickster"
+   ],
+   "height": 67,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "vision",
+     "v": 99
+    },
+    {
+     "k": "composure",
+     "v": 97
+    },
+    {
+     "k": "balance",
+     "v": 96
+    },
+    {
+     "k": "dribbling",
+     "v": 96
+    }
+   ],
+   "copyCount": 2,
+   "creator": "specialevents"
   },
   {
    "id": "5c753090-aca5-440d-bcb1-bb7a085ef851",
@@ -526,6 +940,29 @@
    "height": 70,
    "weight": 163,
    "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "crossing",
+     "v": 95
+    },
+    {
+     "k": "curve",
+     "v": 95
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 95
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    },
+    {
+     "k": "dribbling",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -554,6 +991,29 @@
    "height": 68,
    "weight": 143,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "vision",
+     "v": 96
+    },
+    {
+     "k": "composure",
+     "v": 94
+    },
+    {
+     "k": "dribbling",
+     "v": 94
+    },
+    {
+     "k": "longPass",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -582,6 +1042,29 @@
    "height": 74,
    "weight": 176,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 96
+    },
+    {
+     "k": "ballControl",
+     "v": 94
+    },
+    {
+     "k": "shotPower",
+     "v": 94
+    },
+    {
+     "k": "vision",
+     "v": 94
+    },
+    {
+     "k": "agility",
+     "v": 92
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -610,6 +1093,29 @@
    "height": 74,
    "weight": 190,
    "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "gkKicking",
+     "v": 99
+    },
+    {
+     "k": "longPass",
+     "v": 96
+    },
+    {
+     "k": "jumping",
+     "v": 95
+    },
+    {
+     "k": "reactions",
+     "v": 95
+    },
+    {
+     "k": "gkDiving",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "buildmaster"
   },
@@ -638,6 +1144,29 @@
    "height": 74,
    "weight": 185,
    "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "longPass",
+     "v": 96
+    },
+    {
+     "k": "composure",
+     "v": 95
+    },
+    {
+     "k": "defAware",
+     "v": 95
+    },
+    {
+     "k": "jumping",
+     "v": 95
+    },
+    {
+     "k": "reactions",
+     "v": 94
+    }
+   ],
    "copyCount": 2,
    "creator": "throwbackfc"
   },
@@ -666,6 +1195,29 @@
    "height": 73,
    "weight": 165,
    "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 99
+    },
+    {
+     "k": "composure",
+     "v": 99
+    },
+    {
+     "k": "shortPass",
+     "v": 94
+    },
+    {
+     "k": "shotPower",
+     "v": 94
+    },
+    {
+     "k": "agility",
+     "v": 92
+    }
+   ],
    "copyCount": 1,
    "creator": "buildmaster"
   }
@@ -687,7 +1239,30 @@
    "height": 70,
    "weight": 161,
    "accelerationType": "Controlled",
-   "copyCount": 21,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 99
+    },
+    {
+     "k": "curve",
+     "v": 92
+    },
+    {
+     "k": "attPosition",
+     "v": 90
+    },
+    {
+     "k": "dribbling",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 83
+    }
+   ],
+   "copyCount": 29,
    "creator": "specialevents"
   },
   {
@@ -706,26 +1281,72 @@
    "height": 70,
    "weight": 165,
    "accelerationType": "Controlled",
-   "copyCount": 13,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "slideTackle",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    }
+   ],
+   "copyCount": 22,
    "creator": "throwbackfc"
   },
   {
-   "id": "7cf7127e-77a8-4095-806a-ae7afaae9767",
-   "buildName": "Thierry Henry",
-   "archetype_id": "finisher",
+   "id": "172beea3-e8d8-40d2-82a4-5641824bdf68",
+   "buildName": "Toni Kroos",
+   "archetype_id": "maestro",
    "level": 40,
    "signature": [
-    "finesse-shot"
+    "incisive-pass"
    ],
    "playstyles": [
-    "quick-step",
-    "technical",
-    "first-touch"
+    "tiki-taka",
+    "first-touch",
+    "pinged-pass"
    ],
-   "height": 74,
-   "weight": 183,
+   "height": 72,
+   "weight": 168,
    "accelerationType": "Controlled",
-   "copyCount": 9,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "longPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
+    }
+   ],
+   "copyCount": 21,
    "creator": "throwbackfc"
   },
   {
@@ -744,26 +1365,30 @@
    "height": 68,
    "weight": 143,
    "accelerationType": "Explosive",
-   "copyCount": 8,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "a64958d0-a8e7-4c36-9158-dd9edf7de295",
-   "buildName": "Rafael Leão",
-   "archetype_id": "spark",
-   "level": 40,
-   "signature": [
-    "quick-step"
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
    ],
-   "playstyles": [
-    "rapid",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 74,
-   "weight": 176,
-   "accelerationType": "Controlled",
-   "copyCount": 8,
+   "copyCount": 17,
    "creator": "buildmaster"
   },
   {
@@ -782,8 +1407,73 @@
    "height": 71,
    "weight": 143,
    "accelerationType": "Explosive",
-   "copyCount": 6,
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "balance",
+     "v": 92
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 87
+    }
+   ],
+   "copyCount": 16,
    "creator": "buildmaster"
+  },
+  {
+   "id": "7cf7127e-77a8-4095-806a-ae7afaae9767",
+   "buildName": "Thierry Henry",
+   "archetype_id": "finisher",
+   "level": 40,
+   "signature": [
+    "finesse-shot"
+   ],
+   "playstyles": [
+    "quick-step",
+    "technical",
+    "first-touch"
+   ],
+   "height": 74,
+   "weight": 183,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "agility",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ],
+   "copyCount": 15,
+   "creator": "throwbackfc"
   },
   {
    "id": "896e72c7-453e-45e0-b7ec-8d197b14f2d6",
@@ -801,274 +1491,31 @@
    "height": 76,
    "weight": 198,
    "accelerationType": "Lengthy",
-   "copyCount": 6,
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "slideTackle",
+     "v": 92
+    },
+    {
+     "k": "aggression",
+     "v": 90
+    },
+    {
+     "k": "strength",
+     "v": 90
+    },
+    {
+     "k": "headingAcc",
+     "v": 89
+    },
+    {
+     "k": "jumping",
+     "v": 89
+    }
+   ],
+   "copyCount": 14,
    "creator": "freakbuilds"
-  },
-  {
-   "id": "172beea3-e8d8-40d2-82a4-5641824bdf68",
-   "buildName": "Toni Kroos",
-   "archetype_id": "maestro",
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 72,
-   "weight": 168,
-   "accelerationType": "Controlled",
-   "copyCount": 5,
-   "creator": "throwbackfc"
-  },
-  {
-   "id": "36a632f0-6e71-4592-8fc5-60391e6a5137",
-   "buildName": "Aurélien Tchouaméni",
-   "archetype_id": "disruptor",
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 74,
-   "weight": 181,
-   "accelerationType": "Lengthy",
-   "copyCount": 5,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "3f9232cf-c101-47c7-a64d-e5329a79b497",
-   "buildName": "Rodri '26 WC",
-   "archetype_id": "recycler",
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "aerial-fortress",
-    "bruiser",
-    "first-touch"
-   ],
-   "height": 75,
-   "weight": 181,
-   "accelerationType": "Lengthy",
-   "copyCount": 5,
-   "creator": "specialevents"
-  },
-  {
-   "id": "d6dc3938-eef2-4331-a957-0af63bf68b3a",
-   "buildName": "Messi '26 WC",
-   "archetype_id": "magician",
-   "level": 40,
-   "signature": [
-    "first-touch"
-   ],
-   "playstyles": [
-    "trickster",
-    "tiki-taka",
-    "bruiser"
-   ],
-   "height": 67,
-   "weight": 159,
-   "accelerationType": "Controlled",
-   "copyCount": 4,
-   "creator": "specialevents"
-  },
-  {
-   "id": "03cd78ad-100f-4c08-ad2f-c4b3b9ffa567",
-   "buildName": "Kylian Mbappé",
-   "archetype_id": "finisher",
-   "level": 40,
-   "signature": [
-    "low-driven-shot"
-   ],
-   "playstyles": [
-    "quick-step",
-    "rapid",
-    "incisive-pass"
-   ],
-   "height": 70,
-   "weight": 165,
-   "accelerationType": "Explosive",
-   "copyCount": 3,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
-   "buildName": "Neymar Jr",
-   "archetype_id": "magician",
-   "level": 40,
-   "signature": [
-    "technical"
-   ],
-   "playstyles": [
-    "trickster",
-    "first-touch",
-    "finesse-shot"
-   ],
-   "height": 69,
-   "weight": 150,
-   "accelerationType": "Explosive",
-   "copyCount": 3,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "01d4ca68-6e65-4325-8807-556447307059",
-   "buildName": "Roy Keane",
-   "archetype_id": "disruptor",
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 71,
-   "weight": 163,
-   "accelerationType": "Controlled",
-   "copyCount": 3,
-   "creator": "throwbackfc"
-  },
-  {
-   "id": "8a250c95-09e6-4541-9b57-41cd3b72bf46",
-   "buildName": "Cristiano Ronaldo",
-   "archetype_id": "finisher",
-   "level": 40,
-   "signature": [
-    "low-driven-shot"
-   ],
-   "playstyles": [
-    "quick-step",
-    "acrobatic",
-    "first-touch"
-   ],
-   "height": 74,
-   "weight": 183,
-   "accelerationType": "Controlled",
-   "copyCount": 3,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "868e1b9a-0409-49d5-a112-d1320cd14d6b",
-   "buildName": "Zinedine Zidane",
-   "archetype_id": "creator",
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "first-touch",
-    "technical",
-    "acrobatic"
-   ],
-   "height": 73,
-   "weight": 176,
-   "accelerationType": "Controlled",
-   "copyCount": 3,
-   "creator": "throwbackfc"
-  },
-  {
-   "id": "ea201c50-5cbd-4364-82da-584a0487afdf",
-   "buildName": "Joshua Kimmich",
-   "archetype_id": "recycler",
-   "level": 40,
-   "signature": [
-    "intercept"
-   ],
-   "playstyles": [
-    "pinged-pass",
-    "long-ball-pass",
-    "anticipate"
-   ],
-   "height": 70,
-   "weight": 165,
-   "accelerationType": "Controlled",
-   "copyCount": 3,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "606faa9d-4e9c-4fb9-bdf8-c557806efd17",
-   "buildName": "Luka Modrić",
-   "archetype_id": "maestro",
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "tiki-taka",
-    "first-touch",
-    "pinged-pass"
-   ],
-   "height": 68,
-   "weight": 146,
-   "accelerationType": "Explosive",
-   "copyCount": 3,
-   "creator": "buildmaster"
-  },
-  {
-   "id": "b0f71219-007c-44e7-820e-308e6921be06",
-   "buildName": "Claude Makélélé",
-   "archetype_id": "disruptor",
-   "level": 40,
-   "signature": [
-    "jockey"
-   ],
-   "playstyles": [
-    "anticipate",
-    "bruiser",
-    "intercept"
-   ],
-   "height": 69,
-   "weight": 146,
-   "accelerationType": "Controlled",
-   "copyCount": 2,
-   "creator": "throwbackfc"
-  },
-  {
-   "id": "04c0509c-292f-4f0b-a212-a9490e7713c0",
-   "buildName": "The Shadow",
-   "archetype_id": "marauder",
-   "level": 40,
-   "signature": [
-    "relentless"
-   ],
-   "playstyles": [
-    "aerial-fortress",
-    "quick-step",
-    "slide-tackle"
-   ],
-   "height": 72,
-   "weight": 165,
-   "accelerationType": "Controlled",
-   "copyCount": 2,
-   "creator": "freakbuilds"
-  },
-  {
-   "id": "118f9650-08ec-4929-a810-c839a503d2e3",
-   "buildName": "Arda Güler",
-   "archetype_id": "creator",
-   "level": 40,
-   "signature": [
-    "incisive-pass"
-   ],
-   "playstyles": [
-    "technical",
-    "first-touch",
-    "tiki-taka"
-   ],
-   "height": 69,
-   "weight": 154,
-   "accelerationType": "Explosive",
-   "copyCount": 2,
-   "creator": "buildmaster"
   },
   {
    "id": "02a7b5ab-f502-441a-884d-ed7c6ede3db6",
@@ -1086,7 +1533,30 @@
    "height": 74,
    "weight": 183,
    "accelerationType": "Controlled",
-   "copyCount": 2,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "jumping",
+     "v": 92
+    },
+    {
+     "k": "agility",
+     "v": 90
+    },
+    {
+     "k": "volleys",
+     "v": 90
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "headingAcc",
+     "v": 89
+    }
+   ],
+   "copyCount": 13,
    "creator": "specialevents"
   },
   {
@@ -1105,12 +1575,329 @@
    "height": 77,
    "weight": 203,
    "accelerationType": "Controlled",
-   "copyCount": 2,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "gkHandling",
+     "v": 92
+    },
+    {
+     "k": "gkPositioning",
+     "v": 90
+    },
+    {
+     "k": "jumping",
+     "v": 90
+    },
+    {
+     "k": "gkDiving",
+     "v": 89
+    },
+    {
+     "k": "gkKicking",
+     "v": 84
+    }
+   ],
+   "copyCount": 13,
    "creator": "freakbuilds"
   },
   {
-   "id": "283ce795-bf32-4ae7-850d-b702ed6ee106",
-   "buildName": "Moisés Caicedo",
+   "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
+   "buildName": "Neymar Jr",
+   "archetype_id": "magician",
+   "level": 40,
+   "signature": [
+    "technical"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 69,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "balance",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    }
+   ],
+   "copyCount": 11,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "3f9232cf-c101-47c7-a64d-e5329a79b497",
+   "buildName": "Rodri '26 WC",
+   "archetype_id": "recycler",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "aerial-fortress",
+    "bruiser",
+    "first-touch"
+   ],
+   "height": 75,
+   "weight": 181,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 92
+    },
+    {
+     "k": "longPass",
+     "v": 90
+    },
+    {
+     "k": "strength",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "ballControl",
+     "v": 84
+    }
+   ],
+   "copyCount": 10,
+   "creator": "specialevents"
+  },
+  {
+   "id": "a64958d0-a8e7-4c36-9158-dd9edf7de295",
+   "buildName": "Rafael Leão",
+   "archetype_id": "spark",
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "rapid",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 74,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "curve",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    },
+    {
+     "k": "agility",
+     "v": 84
+    }
+   ],
+   "copyCount": 10,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "cd3dda86-a328-4419-91fb-f6d6e4effd2c",
+   "buildName": "Cafu",
+   "archetype_id": "marauder",
+   "level": 40,
+   "signature": [
+    "quick-step"
+   ],
+   "playstyles": [
+    "whipped-pass",
+    "rapid",
+    "jockey"
+   ],
+   "height": 69,
+   "weight": 165,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 86
+    }
+   ],
+   "copyCount": 9,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "04c0509c-292f-4f0b-a212-a9490e7713c0",
+   "buildName": "The Shadow",
+   "archetype_id": "marauder",
+   "level": 40,
+   "signature": [
+    "relentless"
+   ],
+   "playstyles": [
+    "aerial-fortress",
+    "quick-step",
+    "slide-tackle"
+   ],
+   "height": 72,
+   "weight": 165,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "strength",
+     "v": 92
+    },
+    {
+     "k": "aggression",
+     "v": 90
+    },
+    {
+     "k": "defAware",
+     "v": 90
+    },
+    {
+     "k": "reactions",
+     "v": 89
+    },
+    {
+     "k": "crossing",
+     "v": 84
+    }
+   ],
+   "copyCount": 8,
+   "creator": "freakbuilds"
+  },
+  {
+   "id": "d6dc3938-eef2-4331-a957-0af63bf68b3a",
+   "buildName": "Messi '26 WC",
+   "archetype_id": "magician",
+   "level": 40,
+   "signature": [
+    "first-touch"
+   ],
+   "playstyles": [
+    "trickster",
+    "tiki-taka",
+    "bruiser"
+   ],
+   "height": 67,
+   "weight": 159,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "balance",
+     "v": 96
+    },
+    {
+     "k": "ballControl",
+     "v": 96
+    },
+    {
+     "k": "acceleration",
+     "v": 90
+    },
+    {
+     "k": "composure",
+     "v": 90
+    },
+    {
+     "k": "curve",
+     "v": 87
+    }
+   ],
+   "copyCount": 7,
+   "creator": "specialevents"
+  },
+  {
+   "id": "868e1b9a-0409-49d5-a112-d1320cd14d6b",
+   "buildName": "Zinedine Zidane",
+   "archetype_id": "creator",
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "first-touch",
+    "technical",
+    "acrobatic"
+   ],
+   "height": 73,
+   "weight": 176,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 92
+    },
+    {
+     "k": "vision",
+     "v": 92
+    },
+    {
+     "k": "agility",
+     "v": 88
+    },
+    {
+     "k": "composure",
+     "v": 88
+    },
+    {
+     "k": "curve",
+     "v": 84
+    }
+   ],
+   "copyCount": 7,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "36a632f0-6e71-4592-8fc5-60391e6a5137",
+   "buildName": "Aurélien Tchouaméni",
    "archetype_id": "disruptor",
    "level": 40,
    "signature": [
@@ -1121,10 +1908,327 @@
     "bruiser",
     "intercept"
    ],
-   "height": 70,
-   "weight": 161,
+   "height": 74,
+   "weight": 181,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "interceptions",
+     "v": 89
+    },
+    {
+     "k": "standTackle",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 88
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    }
+   ],
+   "copyCount": 7,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "8b1a5849-3f1d-4cef-89bf-aff126e82bcb",
+   "buildName": "Erling Haaland",
+   "archetype_id": "target",
+   "level": 40,
+   "signature": [
+    "precision-header"
+   ],
+   "playstyles": [
+    "power-shot",
+    "bruiser",
+    "acrobatic"
+   ],
+   "height": 77,
+   "weight": 194,
+   "accelerationType": "Lengthy",
+   "inGameAccelerationType": "Lengthy",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "headingAcc",
+     "v": 84
+    },
+    {
+     "k": "jumping",
+     "v": 84
+    },
+    {
+     "k": "shotPower",
+     "v": 84
+    }
+   ],
+   "copyCount": 6,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "8a250c95-09e6-4541-9b57-41cd3b72bf46",
+   "buildName": "Cristiano Ronaldo",
+   "archetype_id": "finisher",
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
+   ],
+   "playstyles": [
+    "quick-step",
+    "acrobatic",
+    "first-touch"
+   ],
+   "height": 74,
+   "weight": 183,
    "accelerationType": "Controlled",
-   "copyCount": 2,
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "agility",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "finishing",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 87
+    }
+   ],
+   "copyCount": 6,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "01d4ca68-6e65-4325-8807-556447307059",
+   "buildName": "Roy Keane",
+   "archetype_id": "disruptor",
+   "level": 40,
+   "signature": [
+    "jockey"
+   ],
+   "playstyles": [
+    "anticipate",
+    "bruiser",
+    "intercept"
+   ],
+   "height": 71,
+   "weight": 163,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "aggression",
+     "v": 89
+    },
+    {
+     "k": "slideTackle",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "stamina",
+     "v": 89
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    }
+   ],
+   "copyCount": 5,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "0aa08154-cb43-4af0-a342-1e9cceb69a99",
+   "buildName": "Ronaldinho",
+   "archetype_id": "magician",
+   "level": 40,
+   "signature": [
+    "technical"
+   ],
+   "playstyles": [
+    "trickster",
+    "first-touch",
+    "finesse-shot"
+   ],
+   "height": 71,
+   "weight": 172,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "balance",
+     "v": 92
+    },
+    {
+     "k": "composure",
+     "v": 91
+    },
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "acceleration",
+     "v": 84
+    }
+   ],
+   "copyCount": 5,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "03cd78ad-100f-4c08-ad2f-c4b3b9ffa567",
+   "buildName": "Kylian Mbappé",
+   "archetype_id": "finisher",
+   "level": 40,
+   "signature": [
+    "low-driven-shot"
+   ],
+   "playstyles": [
+    "quick-step",
+    "rapid",
+    "incisive-pass"
+   ],
+   "height": 70,
+   "weight": 165,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "finishing",
+     "v": 92
+    },
+    {
+     "k": "acceleration",
+     "v": 89
+    },
+    {
+     "k": "composure",
+     "v": 89
+    },
+    {
+     "k": "sprintSpeed",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
+    }
+   ],
+   "copyCount": 4,
+   "creator": "buildmaster"
+  },
+  {
+   "id": "9e5613fc-2652-4501-9948-b95e603fd517",
+   "buildName": "Andrés Iniesta",
+   "archetype_id": "creator",
+   "level": 40,
+   "signature": [
+    "incisive-pass"
+   ],
+   "playstyles": [
+    "technical",
+    "first-touch",
+    "tiki-taka"
+   ],
+   "height": 67,
+   "weight": 150,
+   "accelerationType": "Explosive",
+   "inGameAccelerationType": "Explosive",
+   "top": [
+    {
+     "k": "ballControl",
+     "v": 89
+    },
+    {
+     "k": "dribbling",
+     "v": 89
+    },
+    {
+     "k": "agility",
+     "v": 84
+    },
+    {
+     "k": "composure",
+     "v": 84
+    },
+    {
+     "k": "curve",
+     "v": 84
+    }
+   ],
+   "copyCount": 4,
+   "creator": "throwbackfc"
+  },
+  {
+   "id": "ea201c50-5cbd-4364-82da-584a0487afdf",
+   "buildName": "Joshua Kimmich",
+   "archetype_id": "recycler",
+   "level": 40,
+   "signature": [
+    "intercept"
+   ],
+   "playstyles": [
+    "pinged-pass",
+    "long-ball-pass",
+    "anticipate"
+   ],
+   "height": 70,
+   "weight": 165,
+   "accelerationType": "Controlled",
+   "inGameAccelerationType": "Controlled",
+   "top": [
+    {
+     "k": "shortPass",
+     "v": 89
+    },
+    {
+     "k": "vision",
+     "v": 89
+    },
+    {
+     "k": "longPass",
+     "v": 85
+    },
+    {
+     "k": "crossing",
+     "v": 84
+    },
+    {
+     "k": "defAware",
+     "v": 84
+    }
+   ],
+   "copyCount": 4,
    "creator": "buildmaster"
   }
  ]

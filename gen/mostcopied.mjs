@@ -56,6 +56,7 @@ import path from 'node:path';
 import { ARCH, ATTRS, SITE, esc, kg } from './common.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss, FC27_ARCH } from './fc27grid.mjs';
+import { pair } from './cardab.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const MOST_COPIED = JSON.parse(readFileSync(path.join(DIR, 'most-copied.json'), 'utf8'));
@@ -95,10 +96,8 @@ export const copiedCard = (b, stat = copiesLine) => {
 ${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psIcon(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}
 ${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
 </div>
-<p class="sg">${stat(b)}</p>
-${stat.runLabel
-    ? `<p class="hw">${ft(b.height)} · ${b.weight} lbs</p>${b.accelerationType ? `<p class="hw run" style="color:${RUN[b.accelerationType] ?? '#a3aabb'}">${esc(b.accelerationType)}${b.inGameAccelerationType && b.inGameAccelerationType !== b.accelerationType ? ` (${esc(b.inGameAccelerationType)} in game)` : ''}</p>` : ''}`
-    : `<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>`}
+${pair(`<p class="sg">${stat.runLabel ? (b.copyCount > 0 ? 'Most copied' : 'Most viewed') : stat(b)}</p>
+<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>`, b, `${ft(b.height)} · ${b.weight} lbs`)}
 </a>`;
 };
 
@@ -106,7 +105,7 @@ ${stat.runLabel
 // player pages put it between the lead build and its controls, under the
 // section's own h2) and an h2 when it is a section of its own.
 export const cardsGrid = (P, { builds, heading, sub, id = 'most-copied', level = 'h2', stat = copiesLine }) => {
-  return kg(`<div class="${P} mcg">
+  return kg(`<div class="${P} mcg${stat.runLabel ? ' cvn' : ''}">
 <style>${gridCss(`${P}.mcg`)}
 .${P}.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
 .${P} .bc .at{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.${P} .bc .at span{display:flex;flex-direction:column;align-items:center;padding:3px 0;border-radius:6px;background:rgba(255,255,255,.05)}.${P} .bc .at i{font:600 9px/1.2 system-ui,sans-serif;font-style:normal;color:#9aa0ad;letter-spacing:.04em}.${P} .bc .hw.run{margin-top:3px;font-weight:700;font-size:11px;opacity:1}.${P} .bc .at b{font:800 14px/1.2 Archivo,system-ui,sans-serif}
