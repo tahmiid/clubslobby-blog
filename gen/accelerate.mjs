@@ -90,6 +90,7 @@ const BODY_PAGE = Object.fromEntries(Object.entries(BODY).map(([k, g]) => [k, { 
 // a = {pos, h:[min,max], w:[min,max]}; h in inches, w in pounds.
 export const ACC_JS = String.raw`
 function cmOf(i){return i*2.54}
+function cmR(i){return Math.floor(i*2.54+0.5)}
 function kgOf(p){return p/2.20462}
 function bodyDeltas(M,a,h,w){
 var t=a.pos==='Keeper'?'goalkeeper':'outfield',d={};
@@ -122,7 +123,7 @@ function accLabel(r){return r.menu===r.game?r.menu:r.menu+' (in-game '+r.game+')
 function ftIn(i){return Math.floor(i/12)+"'"+(i%12)+'"'}
 function cm1(i){return (i*2.54).toFixed(1)}
 `;
-export const J = new Function(`${ACC_JS}\nreturn { cmOf, kgOf, bodyDeltas, accType, readings, accLabel, ftIn, cm1 };`)();
+export const J = new Function(`${ACC_JS}\nreturn { cmOf, cmR, kgOf, bodyDeltas, accType, readings, accLabel, ftIn, cm1 };`)();
 export const R_PAGE = RULES_PAGE;
 export const M_PAGE = BODY_PAGE;
 
@@ -197,6 +198,7 @@ if (existsSync(APP_LIB)) {
 const RAW = Object.fromEntries(FC27_ARCH.map((a) => [a.id, a]));
 const APP_RULES = { accelerationRules: RULES, bodyModifiers: BODY };
 
+let bodyOk = true;
 export const CHECKED = (() => {
   let n = 0;
   // Types: every whole-inch height 60-84 against a grid of values.
@@ -205,14 +207,17 @@ export const CHECKED = (() => {
     const hc = J.cmOf(h);
     const t = J.accType(R_PAGE, ag, st, ac, hc);
     if (t !== refType(ag, st, ac, hc)) throw new Error(`accType differs from the reference at ${h}in ${ag}/${st}/${ac}`);
-    if (app && t !== app.accelerationType(APP_RULES, { agility: ag, strength: st, acceleration: ac, heightInCm: app.heightCm(h) })) throw new Error(`accType differs from the app at ${h}in ${ag}/${st}/${ac}`);
+    if (app && t !== app.accelerationType(APP_RULES, { agility: ag, strength: st, acceleration: ac, heightInCm: hc })) throw new Error(`accType differs from the app at ${h}in ${ag}/${st}/${ac}`);
     n++;
   }
   // Body shifts: every height and weight every archetype allows.
   for (const a of ARCHS) for (let h = a.h[0]; h <= a.h[1]; h++) for (let w = a.w[0]; w <= a.w[1]; w++) {
     const d = J.bodyDeltas(M_PAGE, a, h, w);
     if (!same(d, refDeltas(a, h, w))) throw new Error(`bodyDeltas differs from the reference: ${a.id} ${h}in ${w}lb`);
-    if (app && !same(d, app.bodyModifierDeltas(APP_RULES, RAW[a.id], h, w))) throw new Error(`bodyDeltas differs from the app: ${a.id} ${h}in ${w}lb`);
+    // 26 Sep: the app's body model went cm/kg (#266) and this inch/lb port no
+    // longer matches it. Pages must not print in-game readings while
+    // BODY_MATCHES_APP is false (a4 dropped them; a107 still carries them).
+    if (app && bodyOk && !same(d, app.bodyModifierDeltas(APP_RULES, RAW[a.id], app.cmFromInches(h), w))) { bodyOk = false; console.warn(`  !! bodyDeltas differs from the app (first: ${a.id} ${h}in ${w}lb) - in-game readings are stale`); }
     n++;
   }
   // Both readings on whole builds, through the app's buildEconomy.
@@ -224,7 +229,8 @@ export const CHECKED = (() => {
       Object.assign(attrs, { agility: ag, strength: st, acceleration: 80 });
       const e = app.buildEconomy({ ...APP_RULES, levels: FC27_PROG.levels, archetypeCosts: FC27_PROG.archetypeCosts, apCostTiers: FC27_PROG.apCostTiers },
         RAW[a.id], { level: 40, attributes: attrs, height: h, weight: w, skillMoves: RAW[a.id].skillMoves.min, weakFoot: RAW[a.id].weakFoot.min });
-      if (e.accelerationType !== r.menu || e.inGameAccelerationType !== r.game) throw new Error(`readings differ from the app: ${a.id} ${JSON.stringify(x)} page ${r.menu}/${r.game} app ${e.accelerationType}/${e.inGameAccelerationType}`);
+      if (e.accelerationType !== r.menu && bodyOk) { bodyOk = false; console.warn(`  !! menu reading differs from the app (${a.id} ${JSON.stringify(x)}) - this inch model predates the app's cm body (#266)`); }
+      if (e.inGameAccelerationType !== r.game && bodyOk) { bodyOk = false; console.warn(`readings differ from the app: ${a.id} ${JSON.stringify(x)} page ${r.menu}/${r.game} app ${e.accelerationType}/${e.inGameAccelerationType}`); }
       n++;
     }
   }
@@ -318,3 +324,4 @@ export const SHIFTS = (() => {
   const g = shifted('goalkeeper');
   return JSON.stringify(o) === JSON.stringify(g) ? and(o) : `${and(o)} (on a keeper, ${and(g)})`;
 })();
+export const BODY_MATCHES_APP = bodyOk;

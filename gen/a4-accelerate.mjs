@@ -20,7 +20,8 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, appLinks } from './common.mjs';
-import { cardsGrid } from './mostcopied.mjs';
+import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
+import { planeChecker, PLANE_CHECKS } from './bodyplane.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { statsCss, dayLabel, stat, ROLE_BUILDS, BUDGET, CAP_LEVEL, list, fmt, words, Words, assert } from './archetype-stats.mjs';
@@ -30,6 +31,7 @@ import {
 } from './accelerate.mjs';
 
 const P = 'a4';
+const A4_UPDATED = '2026-09-26';   // the checker rewrite (owner's mockup)
 const CALC = { slug: 'lengthy-vs-controlled-vs-explosive', label: 'AcceleRATE calculator' };
 const calcHref = `/blog/${CALC.slug}/`;
 const POS = { Forward: 'Forwards', Midfielder: 'Midfielders', Defender: 'Defenders', Keeper: 'Keepers' };
@@ -201,6 +203,49 @@ const gridBuilds = TYPES.flatMap((t) => ROLE_BUILDS.builds
   .sort((x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount) || x.buildName.localeCompare(y.buildName))
   .slice(0, 2));
 assert(gridBuilds.length === 6, 'two level-40 house builds of each type');
+// Owner, 26 Sep: the grid is the page's main draw - one grid per type, right
+// under the checker, four most-copied level-40 builds each.
+const typeGrid = (t) => cardsGrid(`${P}-${t[0].toLowerCase()}`, {
+  builds: ROLE_BUILDS.builds.filter((b) => b.level === CAP_LEVEL && !b.unverified && b.accelerationType === t)
+    .sort((x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount) || x.buildName.localeCompare(y.buildName)).slice(0, 4),
+  id: `${t.toLowerCase()}-builds`, level: 'h2', stat: topAttrsLine,
+  heading: `${t} builds`, sub: `Most copied level-${CAP_LEVEL} ${t} builds. Tap one to open it in the builder.`,
+});
+
+// ── The checker (owner's mockup, 26 Sep): three rule cards, then four
+// sliders that light up the band. Every number comes from the rules export.
+const checker = () => {
+  const c = `${P}k`;
+  const COL = { Explosive: '#2DE2C5', Lengthy: '#E3B84E', Controlled: '#a3aabb' };
+  const card = (t, cells) => `<div class="cd" style="border-color:${COL[t]}55"><h2 style="color:${COL[t]}">${t}</h2><ul>${cells.map(([k, v]) => `<li>${k}<b>${v}</b></li>`).join('')}</ul></div>`;
+  return kg(`<div class="${c}">
+<style>
+.${c} .cds{display:grid;gap:10px;margin:0 0 22px}
+.${c} .cd{border-radius:14px;padding:14px 16px;border:1px solid;background:#0d1017}
+.${c} .cd h2{margin:0 0 8px!important;font:800 20px/1 Archivo,system-ui,sans-serif}
+.${c} .cd ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.${c} .cd li{margin:0;background:rgba(255,255,255,.05);border-radius:8px;padding:6px 10px;font-size:13px;color:#c3c7d1}
+.${c} .cd li b{display:block;color:#fff;font:800 17px/1.2 Archivo,system-ui,sans-serif}
+.${c} .ck{border-radius:16px;padding:16px;background:linear-gradient(135deg,#10141d,#0b0e14);border:1px solid rgba(255,255,255,.12)}
+.${c} .ck h3{margin:0 0 12px!important;font:800 18px Archivo,system-ui,sans-serif;color:#fff}
+.${c} .rw{display:grid;grid-template-columns:96px 1fr 44px;align-items:center;gap:10px;margin:0 0 10px;font-size:14px;color:#c3c7d1}
+.${c} .rw output{font:800 16px Archivo,system-ui,sans-serif;color:#fff;text-align:right}
+.${c} input[type=range]{width:100%;accent-color:#2DE2C5}
+.${c} .bd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 0}
+.${c} .bd div{border-radius:8px;padding:8px 4px;text-align:center;font:700 12px system-ui,sans-serif;opacity:.35;border:2px solid transparent}
+.${c} .bd div.on{opacity:1;border-color:#fff}
+.${c} .rs{margin:14px 0 0;border-radius:12px;padding:14px;text-align:center;font:800 26px Archivo,system-ui,sans-serif}
+.${c} .wy{font-size:13px;color:#c3c7d1;margin:8px 0 0;text-align:center}
+.${c} .nt{font-size:12.5px;color:#9aa0ad;margin:10px 0 0}
+</style>
+<p class="kk" style="margin:0 0 10px;font-size:12px;color:#9aa0ad">FC 27 Pro Clubs · <time datetime="${A4_UPDATED}">Updated ${esc(dayLabel(A4_UPDATED))}</time></p>
+<div class="cds">
+${card('Lengthy', [['Height', `${LEN.height_min_cm_men} cm+`], ['Strength', `${LEN.strength_min}+`], ['Strength − Agility', `${LEN.differential_min}+`], ['Acceleration', `${LEN.acceleration_min}+`]])}
+${card('Explosive', [['Height', `${EXP.height_max_cm_men} cm or less`], ['Agility', `${EXP.agility_min}+`], ['Agility − Strength', `${EXP.differential_min}+`], ['Acceleration', `${EXP.acceleration_min}+`]])}
+<div class="cd" style="border-color:${COL.Controlled}55"><h2 style="color:${COL.Controlled}">Controlled</h2><ul><li style="grid-column:1/-1">Everything that misses one of the numbers above.</li></ul></div>
+</div>
+</div>`);
+};
 
 // ── FAQ ─────────────────────────────────────────────────────────────────────
 const faq = [
@@ -213,7 +258,7 @@ const faq = [
   ['Which archetypes cannot be Explosive?',
    noExp.length ? `Only ${names(noExp)}: ${noExp.length > 1 ? 'their' : 'its'} shortest height, ${list(noExp.map((a) => ft(a.h[0])))}, is above the ${EXP.height_max_cm_men} cm limit. Every other archetype can be Explosive with the right attributes, and every archetype can be Lengthy.` : 'None.'],
   ['Why does my pro say Controlled in the menu but play Explosive?',
-   `The menu reads the attributes you bought. In a match, your height and weight shift ${SHIFTS} for free, measured from the middle of your archetype’s range, and the type is read again. A new ${ex.n} at ${ft(ex.h[0])} and ${ex.w[0]} lb is Controlled in the menu and Explosive in a match. The builder shows both, as “Controlled (in-game Explosive)”.`],
+   'The menu reads the attributes you bought. In a match, your height and weight also shift a few attributes for free, and the type is read again from the shifted values, so the two can differ. The builder shows both readings for your exact body.'],
 ];
 const faqLd = kg(`<script type="application/ld+json">
 ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -222,23 +267,34 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
 
 export const META = {
   slug: 'pro-clubs-accelerate-explosive-lengthy-controlled',
-  title: 'FC 27 AcceleRATE Explained: Explosive, Lengthy and Controlled in Pro Clubs',
-  meta_title: 'FC 27 AcceleRATE Explained: Explosive, Lengthy, Controlled',
-  meta_description: `How FC 27 Pro Clubs picks Explosive, Lengthy or Controlled: the height and attribute rules, which archetypes can be which, and the AP it costs.`,
-  custom_excerpt: `The rules FC 27 uses to make a pro Explosive, Lengthy or Controlled, which of the ${words(ARCHS.length)} archetypes can be which and the cheapest way there, and why the menu and the match can disagree.`,
+  title: 'How to Get Lengthy vs Explosive',
+  meta_title: 'How to Get Lengthy vs Explosive',
+  meta_description: `FC 27 · Pro Clubs · Lengthy · Explosive · Controlled · Height · Strength · Agility · Acceleration · Checker · Builds`,
+  custom_excerpt: `How to get Lengthy or Explosive in FC 27 Pro Clubs: the exact numbers, a checker, and builds of each type. Plus the rules FC 27 uses to make a pro Explosive, Lengthy or Controlled, which of the ${words(ARCHS.length)} archetypes can be which and the cheapest way there, and why the menu and the match can disagree.`,
   tags: ['Guides', 'Archetypes', 'FC 27'],
 };
 
 const html = `${statsCss()}
-${leadCard()}
+${checker()}
+${planeChecker(`${P}pl`)}
+<p style="font-size:13px;color:#9aa0ad">The big word is the in-game menu reading (your bought attributes). The map colours each body by the match reading, where height and weight add or take away the six attributes shown.</p>
+
+${appCta({
+  href: '/',
+  kicker: 'Check your pro',
+  head: 'See it on a height × weight map',
+  body: 'The builder reads your AcceleRATE live as you set height, weight and attributes, in the menu and in a match.',
+  label: 'Open the builder',
+})}
+
+${['Lengthy', 'Explosive', 'Controlled'].map(typeGrid).join('\n\n')}
+
+<h2 id="who">Which archetype can be which</h2>
+<p><strong>Lengthy:</strong> all ${words(ARCHS.length)} archetypes. <strong>Explosive:</strong> ${names(canExp)}${noExp.length ? `; never ${names(noExp)}, which start too tall` : ''}.</p>
 
 <p><strong>FC 27 gives every pro one of three acceleration types, and four numbers decide which: height, Agility, Strength and Acceleration.</strong> Explosive is for short pros with Agility well clear of Strength; Lengthy is for tall ones with Strength clear of Agility; everything else is Controlled. ${Words(canExp.length)} of the ${words(ARCHS.length)} archetypes can be Explosive and all ${words(ARCHS.length)} can be Lengthy. To check your own numbers, use the <a href="${calcHref}">AcceleRATE calculator</a>.</p>
 
-${cardsGrid(`${P}-g`, {
-  builds: gridBuilds, id: 'builds-by-type', level: 'h2', stat,
-  heading: 'Most copied Explosive, Lengthy and Controlled builds',
-  sub: 'Two of each type, most copied first. Each card shows its type; tap one to open it in the builder.',
-})}
+
 
 ${AD_A}
 
@@ -250,16 +306,13 @@ ${AD_A}
 <li><strong>Controlled</strong>: every pro that fails both.</li>
 </ol>
 <p><strong>The gap matters more than the numbers.</strong> Agility 95 is not Explosive if Strength is ${95 - EXP.differential_min + 1}; the rule wants Agility at least ${EXP.differential_min} higher. Lengthy asks for a smaller gap, ${LEN.differential_min} points of Strength over Agility. Sprint Speed plays no part in either rule.</p>
-<p><strong>Height is a hard line.</strong> In feet and inches, ${ft(EXP_MAX_IN)} (${cm1(EXP_MAX_IN)} cm) is the tallest Explosive height and ${ft(LEN_MIN_IN)} (${cm1(LEN_MIN_IN)} cm) the shortest Lengthy one. ${gapLine.charAt(0).toUpperCase()}${gapLine.slice(1)}. ${noExp.length ? `${noExp.length === 1 ? `The ${noExp[0].n} starts at ${ft(noExp[0].h[0])}, so it` : `${list(noExp.map((a) => `The ${a.n}`))} start too tall, so they`} can never be Explosive.` : ''}</p>
+<p><strong>Height is a hard line.</strong> ${EXP.height_max_cm_men} cm is the tallest Explosive height and ${LEN.height_min_cm_men} cm the shortest Lengthy one. Go by centimetres: the game shows several centimetre heights under the same feet-and-inches label, so 6'0" can land on either side of the line.</p>
 <p>These thresholds are the ones FC 26 used, carried into FC 27. All ${words(ARCHS.length)} archetypes’ default types in FC 27, read in the game, agree with them: ${list(defLen.map((a) => a.n))} start Lengthy, the other ${words(defCtl.length)} Controlled.</p>
 
 <h2 id="cheapest">The cheapest way to each type</h2>
 <p>Explosive is cheapest on the ${expCheap.n}, ${fmt(R[expCheap.id].Em.ap)} AP (${routeText(R[expCheap.id].Em)}), and dearest on the ${expDear.n}, ${fmt(R[expDear.id].Em.ap)} AP, because the ${expDear.n} starts with Strength ${expDear.st[0]} and needs Agility ${R[expDear.id].Em.ag} to clear it by ${EXP.differential_min}. Lengthy costs nothing on ${words(ARCHS.filter((a) => R[a.id].Lm.ap === 0).length)} archetypes and at most ${fmt(R[lenDear.id].Lm.ap)} AP (the ${lenDear.n}). You have ${fmt(BUDGET)} AP at level ${CAP_LEVEL}, so neither type is out of reach on cost; height is what rules one out.</p>
 
-<h2 id="menu-vs-match">In the menu vs in a match</h2>
-<p>FC 27 reads your type twice. <strong>The menu</strong> uses the attributes you bought. <strong>In a match</strong>, your height and weight shift ${SHIFTS} for free, along with a few attributes the rules do not read, and the type is read again from the shifted values. On an outfield player, shorter and lighter adds Acceleration and Agility and takes away Strength, which is the Explosive direction; taller and heavier does the opposite.</p>
-<p>So the two can disagree. A new ${ex.n} at ${ft(ex.h[0])} and ${ex.w[0]} lb has Agility ${ex.ag[0]}, Strength ${ex.st[0]} and Acceleration ${ex.ac[0]}: Controlled in the menu, because Explosive needs ${list(exMisses)}. Its body adds ${exR.d.agility} Agility and ${exR.d.acceleration} Acceleration and takes ${-exR.d.strength} Strength, so in a match it is Agility ${exR.e.ag} against Strength ${exR.e.st} with Acceleration ${exR.e.ac}: Explosive. ${Words(freeExpGame.length)} archetypes play Explosive for free that way at their shortest and lightest: ${list(freeExpGame.map((a) => a.n))}.</p>
-${bodyCard()}
+<p>The in-game menu reading is what this page shows. Height and weight also shift a few attributes on the pitch, so a match can read differently; the <a href="https://proclubshq.com/">builder</a> shows both readings for your exact body.</p>
 <p>Of the ${fmt(houses.length)} FC 27 builds on our house accounts, ${differ.length} play a different type in a match from the one the menu shows. The builder prints both when they differ, as “Controlled (in-game Explosive)”, and the <a href="${calcHref}">calculator</a> does the same for any numbers you enter.</p>
 
 ${appLinks({
