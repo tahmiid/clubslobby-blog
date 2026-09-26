@@ -31,3 +31,9 @@ fans/reputation/facilities do; tournament ranking; Amps tab location.
   shorter titles; no blurred header image (logo / archetype logos instead);
   SEO text lower or more informative; mention costs on build pages.
 - Review order: most popular article first.
+
+## Done 26 Sep
+- a188-a192 position pages LIVE (cards: top-4 attrs + coloured AcceleRATE; short titles; keyword-strip descriptions).
+- a5 The Grounds LIVE: answer-first shortcut box, then app/article links.
+- a4 AcceleRATE LIVE: owner's checker + editor's height×weight map (gen/bodyplane.mjs, app cm/kg model, checked vs progression.js), type grids.
+- Open: a107 calculator still on the stale inch/lb body model (gen/accelerate.mjs warns). App #311 (site name) filed; #309 (level 10/20/30 house builds).
