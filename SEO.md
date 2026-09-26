@@ -421,6 +421,12 @@ all PASS). Findings and the rules each one turned into:
    cap from the release (it said "1–100" for FC 27). The SPA sets the same
    titles client-side (`hooks/usePageTitle.js`) — the two are kept in step by
    hand — and `public/index.html` is "Pro Clubs Builder for EA FC 27 & FC 26".
+   **Site name (#299, 26 Sep):** Google printed the bare domain
+   "proclubshq.com" above app titles because the domain ROOT carried no
+   `WebSite` JSON-LD (the blog's at `/blog/` does not count). The crawler
+   home twin and `public/index.html` now both carry `WebSite` "Pro Clubs
+   HQ" (alternateName ProClubsHQ); keep the two identical, and never move
+   or remove it - the `og:site_name` tag alone was not enough.
    The four static sitemap entries carry `lastmod` = `STATIC_PAGE_REVISED`
    (crawl.py), dated at the deploy like `BUILD_PAGE_REVISED`; until then a
    retitle never asked Google to come back. After a deploy that changes what
