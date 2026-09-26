@@ -72,6 +72,9 @@
 .a4pl .rw{display:grid;grid-template-columns:96px 1fr 44px;align-items:center;gap:10px;margin:0 0 10px;font-size:14px;color:#c3c7d1}
 .a4pl .rw output{font:800 16px Archivo,system-ui,sans-serif;color:#fff;text-align:right}
 .a4pl input[type=range]{width:100%;accent-color:#2DE2C5}
+.a4pl input.z{-webkit-appearance:none;appearance:none;height:8px;border-radius:99px;outline:none}
+.a4pl input.z::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tc);border:3px solid #0b0e14;box-shadow:0 0 0 2px var(--tc)}
+.a4pl input.z::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--tc);border:3px solid #0b0e14}
 .a4pl .bd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 0}
 .a4pl .bd div{border-radius:8px;padding:8px 4px;text-align:center;font:700 12px system-ui,sans-serif;opacity:.35;border:2px solid transparent}
 .a4pl .bd div.on{opacity:1;border-color:#fff}
@@ -86,7 +89,7 @@
 .a4pl .six b{font:800 15px Archivo,system-ui,sans-serif}
 </style>
 <h3>Check your pro</h3>
-<div class="rw">Height<input data-k="h" type="range" min="30" max="99" aria-label="Height"><output data-o="h"></output></div><div class="rw">Agility<input data-k="ag" type="range" min="30" max="99" aria-label="Agility"><output data-o="ag"></output></div><div class="rw">Strength<input data-k="st" type="range" min="30" max="99" aria-label="Strength"><output data-o="st"></output></div><div class="rw">Acceleration<input data-k="ac" type="range" min="30" max="99" aria-label="Acceleration"><output data-o="ac"></output></div>
+<div class="rw">Height<input data-k="h" class="z" type="range" min="30" max="99" aria-label="Height"><output data-o="h"></output></div><div class="rw">Agility<input data-k="ag" type="range" min="30" max="99" aria-label="Agility"><output data-o="ag"></output></div><div class="rw">Strength<input data-k="st" type="range" min="30" max="99" aria-label="Strength"><output data-o="st"></output></div><div class="rw">Acceleration<input data-k="ac" class="z" type="range" min="30" max="99" aria-label="Acceleration"><output data-o="ac"></output></div>
 <div class="bd"><div data-b="Explosive" style="background:#2DE2C522;color:#2DE2C5">Explosive</div><div data-b="Controlled" style="background:#a3aabb22;color:#a3aabb">Controlled</div><div data-b="Lengthy" style="background:#E3B84E22;color:#E3B84E">Lengthy</div></div>
 <div class="rs"></div><p class="wy"></p>
 <select aria-label="Archetype"><option value="shot-stopper">Shot Stopper</option><option value="sweeper-keeper">Sweeper Keeper</option><option value="progressor">Progressor</option><option value="boss">Boss</option><option value="marauder">Marauder</option><option value="disruptor">Disruptor</option><option value="recycler">Recycler</option><option value="maestro">Maestro</option><option value="creator">Creator</option><option value="spark">Spark</option><option value="magician">Magician</option><option value="finisher" selected>Finisher</option><option value="target">Target</option></select>
@@ -100,7 +103,10 @@ var r=document.currentScript.parentNode,A=[{"id":"shot-stopper","n":"Shot Stoppe
 var sel=r.querySelector('select'),cv=r.querySelector('canvas'),x=cv.getContext('2d'),a,kg;
 function q(s){return r.querySelector(s)}function el(k){return q('[data-k='+k+']')}function v(k){return +el(k).value}
 function pick(first){a=A.filter(function(z){return z.id===sel.value})[0];var h=el('h');h.min=a.h0;h.max=a.h1;if(first){h.value=185;['ag','st','ac'].forEach(function(k,i){el(k).value=[62,75,78][i]})}if(+h.value<a.h0||+h.value>a.h1)h.value=a.hd;kg=a.wd;run()}
-function run(){var cm=v('h'),ag=v('ag'),st=v('st'),ac=v('ac');['h','ag','st','ac'].forEach(function(k){q('[data-o='+k+']').textContent=v(k)});
+function zone(k,cuts,cols,val){var i=el(k),mn=+i.min,mx=+i.max,st=[],p=function(n){return ((n-mn)/(mx-mn)*100).toFixed(2)+'%'},prev=mn,z=0;
+cuts.forEach(function(c,j){st.push(cols[j]+'55 '+p(prev)+' '+p(c)),st.push('#ffffff '+p(c)+' calc('+p(c)+' + 2px)');prev=c;if(val>=c)z=j+1});st.push(cols[cuts.length]+'55 '+p(prev)+' 100%');
+i.style.background='linear-gradient(90deg,'+st.join(',')+')';i.style.setProperty('--tc',cols[z])}
+function run(){var E0=R[0],L0=R[1];zone('h',[L0.hmin],[C.Explosive,C.Lengthy],v('h'));zone('ac',[L0.acm,E0.acm],['#a3aabb',C.Lengthy,C.Explosive],v('ac'));var cm=v('h'),ag=v('ag'),st=v('st'),ac=v('ac');['h','ag','st','ac'].forEach(function(k){q('[data-o='+k+']').textContent=v(k)});
 var W=cv.width,H=cv.height,nx=a.w1-a.w0+1,ny=a.h1-a.h0+1,cw=W/nx,ch=H/ny;x.clearRect(0,0,W,H);
 for(var h=a.h0;h<=a.h1;h++)for(var w=a.w0;w<=a.w1;w++){var dd=pDeltas(BM,a,h,w);x.fillStyle=CM[pType(R,ag+(dd.agility||0),st+(dd.strength||0),ac+(dd.acceleration||0),h)];x.fillRect((w-a.w0)*cw,(a.h1-h)*ch,Math.ceil(cw),Math.ceil(ch))}
 x.strokeStyle='rgba(255,255,255,.3)';x.beginPath();x.moveTo((a.wd-a.w0+.5)*cw,0);x.lineTo((a.wd-a.w0+.5)*cw,H);x.moveTo(0,(a.h1-a.hd+.5)*ch);x.lineTo(W,(a.h1-a.hd+.5)*ch);x.stroke();

@@ -76,6 +76,9 @@ export const planeChecker = (c) => kg(`<div class="${c}">
 .${c} .rw{display:grid;grid-template-columns:96px 1fr 44px;align-items:center;gap:10px;margin:0 0 10px;font-size:14px;color:#c3c7d1}
 .${c} .rw output{font:800 16px Archivo,system-ui,sans-serif;color:#fff;text-align:right}
 .${c} input[type=range]{width:100%;accent-color:#2DE2C5}
+.${c} input.z{-webkit-appearance:none;appearance:none;height:8px;border-radius:99px;outline:none}
+.${c} input.z::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tc);border:3px solid #0b0e14;box-shadow:0 0 0 2px var(--tc)}
+.${c} input.z::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--tc);border:3px solid #0b0e14}
 .${c} .bd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 0}
 .${c} .bd div{border-radius:8px;padding:8px 4px;text-align:center;font:700 12px system-ui,sans-serif;opacity:.35;border:2px solid transparent}
 .${c} .bd div.on{opacity:1;border-color:#fff}
@@ -90,7 +93,7 @@ export const planeChecker = (c) => kg(`<div class="${c}">
 .${c} .six b{font:800 15px Archivo,system-ui,sans-serif}
 </style>
 <h3>Check your pro</h3>
-${[['h', 'Height'], ['ag', 'Agility'], ['st', 'Strength'], ['ac', 'Acceleration']].map(([id, l]) => `<div class="rw">${l}<input data-k="${id}" type="range" min="30" max="99" aria-label="${l}"><output data-o="${id}"></output></div>`).join('')}
+${[['h', 'Height'], ['ag', 'Agility'], ['st', 'Strength'], ['ac', 'Acceleration']].map(([id, l]) => `<div class="rw">${l}<input data-k="${id}"${id === 'h' || id === 'ac' ? ' class="z"' : ''} type="range" min="30" max="99" aria-label="${l}"><output data-o="${id}"></output></div>`).join('')}
 <div class="bd"><div data-b="Explosive" style="background:${COL.Explosive}22;color:${COL.Explosive}">Explosive</div><div data-b="Controlled" style="background:#a3aabb22;color:#a3aabb">Controlled</div><div data-b="Lengthy" style="background:${COL.Lengthy}22;color:${COL.Lengthy}">Lengthy</div></div>
 <div class="rs"></div><p class="wy"></p>
 <select aria-label="Archetype">${ARCHS.map((a) => `<option value="${a.id}"${a.id === 'finisher' ? ' selected' : ''}>${esc(a.n)}</option>`).join('')}</select>
@@ -101,7 +104,10 @@ var r=document.currentScript.parentNode,A=${JSON.stringify(ARCHS)},R=${JSON.stri
 var sel=r.querySelector('select'),cv=r.querySelector('canvas'),x=cv.getContext('2d'),a,kg;
 function q(s){return r.querySelector(s)}function el(k){return q('[data-k='+k+']')}function v(k){return +el(k).value}
 function pick(first){a=A.filter(function(z){return z.id===sel.value})[0];var h=el('h');h.min=a.h0;h.max=a.h1;if(first){h.value=185;['ag','st','ac'].forEach(function(k,i){el(k).value=[62,75,78][i]})}if(+h.value<a.h0||+h.value>a.h1)h.value=a.hd;kg=a.wd;run()}
-function run(){var cm=v('h'),ag=v('ag'),st=v('st'),ac=v('ac');['h','ag','st','ac'].forEach(function(k){q('[data-o='+k+']').textContent=v(k)});
+function zone(k,cuts,cols,val){var i=el(k),mn=+i.min,mx=+i.max,st=[],p=function(n){return ((n-mn)/(mx-mn)*100).toFixed(2)+'%'},prev=mn,z=0;
+cuts.forEach(function(c,j){st.push(cols[j]+'55 '+p(prev)+' '+p(c)),st.push('#ffffff '+p(c)+' calc('+p(c)+' + 2px)');prev=c;if(val>=c)z=j+1});st.push(cols[cuts.length]+'55 '+p(prev)+' 100%');
+i.style.background='linear-gradient(90deg,'+st.join(',')+')';i.style.setProperty('--tc',cols[z])}
+function run(){var E0=R[0],L0=R[1];zone('h',[L0.hmin],[C.Explosive,C.Lengthy],v('h'));zone('ac',[L0.acm,E0.acm],['#a3aabb',C.Lengthy,C.Explosive],v('ac'));var cm=v('h'),ag=v('ag'),st=v('st'),ac=v('ac');['h','ag','st','ac'].forEach(function(k){q('[data-o='+k+']').textContent=v(k)});
 var W=cv.width,H=cv.height,nx=a.w1-a.w0+1,ny=a.h1-a.h0+1,cw=W/nx,ch=H/ny;x.clearRect(0,0,W,H);
 for(var h=a.h0;h<=a.h1;h++)for(var w=a.w0;w<=a.w1;w++){var dd=pDeltas(BM,a,h,w);x.fillStyle=CM[pType(R,ag+(dd.agility||0),st+(dd.strength||0),ac+(dd.acceleration||0),h)];x.fillRect((w-a.w0)*cw,(a.h1-h)*ch,Math.ceil(cw),Math.ceil(ch))}
 x.strokeStyle='rgba(255,255,255,.3)';x.beginPath();x.moveTo((a.wd-a.w0+.5)*cw,0);x.lineTo((a.wd-a.w0+.5)*cw,H);x.moveTo(0,(a.h1-a.hd+.5)*ch);x.lineTo(W,(a.h1-a.hd+.5)*ch);x.stroke();
