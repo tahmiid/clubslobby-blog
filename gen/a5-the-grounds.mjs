@@ -13,7 +13,7 @@ const P = 'gr27';
 // status: 1 = EA said it officially, 2 = hands-on previews / reveal coverage,
 // 3 = nobody has the number. Ordered so the strongest evidence reads first.
 const FACTS = [
-  [1, 'Release date', 'FC 27 launches worldwide on 25 September 2026.'],
+  [1, 'Release date', 'FC 27 launched worldwide on 25 September 2026.'],
   [1, 'Early access', 'Ultimate and Ultimate Plus editions play from 18 September — up to seven days early.'],
   [1, 'Clubs is still in', 'Clubs has not been removed. It sits inside The Grounds rather than beside it.'],
   [1, 'The Grounds', 'A social football hub built around your created pro — move around as your avatar, play Kickabouts, 1v1s and Clubs matches.'],
@@ -88,53 +88,35 @@ R.addEventListener('click',function(e){var f=e.target.closest('.chip');if(!f)ret
 </script>
 </div>`);
 
-const html = `${updatedLine('2026-09-21', 'rewritten for the retail game: 25 of 27 facts now confirmed')}
-<p>Short answer: <strong>yes</strong>. Pro Clubs is in FC 27 — it is called Clubs now and it lives inside The Grounds: open The Grounds from the main menu and the Clubhouse is where Leagues, Playoffs and the new Club Tournaments are. Still 11-a-side, still your pro. What changed is everything around it — and one thing most coverage called a change isn't one at all.</p>
-
-<p>Every claim below is marked by where it came from — EA's own words, the game itself, or preview coverage — and you can filter by how solid it is:</p>
-
-${widget}
+const html = `${updatedLine('2026-09-26', 'the fastest way into Clubs, from the retail game')}
+<p><strong>Yes, Pro Clubs is in FC 27.</strong> It is called Clubs and sits inside The Grounds, which is why it feels buried. There is a shortcut.</p>
+${kg(`<div style="margin:0 0 22px;border-radius:14px;padding:18px 18px 8px;background:linear-gradient(135deg,#10141d,#0b0e14);border:1px solid rgba(45,226,197,.35)">
+<p style="margin:0 0 10px;font:700 11px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#2DE2C5">The shortcut</p>
+<ol style="margin:0 0 12px;padding-left:20px;color:#f2f3f7;font-size:16px;line-height:1.6">
+<li>Press <strong>R2</strong> (<strong>RT</strong> on Xbox) to open the communication hub.</li>
+<li>Go to the <strong>Club</strong> tab.</li>
+<li>Select <strong>Go to Club</strong>.</li>
+</ol>
+<p style="margin:0 0 10px;font:600 11px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9aa0ad">The long way</p>
+<p style="margin:0 0 10px;color:#c3c7d1;font-size:14.5px">Main menu → <strong>The Grounds</strong> → wait for the open world to load → open the menu icon → Clubs, archetypes and the rest.</p>
+</div>`)}
 
 <h2 id="where">Where is Pro Clubs in FC 27?</h2>
-<p>Inside The Grounds. From the main menu, enter The Grounds; the Clubhouse is the door to Clubs — Leagues, Playoffs and the new <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a> — and Drop-in and Rush matches run from the same hub. Your Virtual Pro is one player everywhere in it, so the <a href="/blog/fc27-archetypes/">FC 27 archetype</a> you build for 11-a-side is the one that walks around Parkside.</p>
+<p>Inside The Grounds. The Clubhouse is the door to Clubs (Leagues, Playoffs and the new <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a>), and Drop-in and Rush run from the same hub. Your Virtual Pro is one player everywhere in it, so the <a href="/blog/fc27-archetypes/">FC 27 archetype</a> you build for 11-a-side is the one that walks around Parkside.</p>
 <p>Everything new in FC 27 Clubs, each on its own page: <a href="/blog/fc27-archetypes/">FC 27 archetypes</a> · <a href="/blog/fc27-masteries-explained/">FC 27 Masteries</a> · <a href="/blog/fc27-amps-explained/">FC 27 Amps</a> · <a href="/blog/fc27-best-specializations/">FC 27 specializations</a> · <a href="/blog/pro-clubs-level-rewards/">the level-40 ladder</a> · <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a>.</p>
 
-${positionsNav('fc27-the-grounds-pro-clubs-explained')}
-
-<h2>Clubs isn't leaving. It's moving in somewhere bigger</h2>
-<p>The Grounds is a new social football hub built around your created pro — a place where you move around as your own avatar, play Kickabouts and 1v1s, and get into Clubs matches. A space wrapped around the football, not a replacement for it.</p>
-<p>The thing to understand is that it's one pro across all of it. The character you walk around The Grounds with is the same Virtual Pro you take into an 11-a-side Clubs match. Progress doesn't live in two places.</p>
-
-<h2>The mentors are a new progression axis</h2>
-<p>Four mentors guide different parts of The Grounds, and EA's deep dive has now assigned each a specialist area: Alex Hunter — returning from The Journey — handles player-improvement challenges, Mbappé fronts Small-sided play, Chloe Kelly runs Kickabouts and in-world activities, and Dybala anchors Clubs and Stadium events around club identity and loyalty.</p>
-<p>What's still open is the part that matters for levelling: whether mentor challenges are the fastest route to XP, and whether anything locks you to one mentor's path. The deep dive describes areas, not rates.</p>
-
-<h2>The "big change" that isn't one</h2>
-<p>A lot of FC 27 coverage has led on the same line: <strong>archetypes can be swapped at any time.</strong> It's usually presented as the headline change for anyone who builds a pro.</p>
-<p>It isn't a change. <strong>Archetypes already work like that in FC 26.</strong> You can move between any of the 13 whenever you like, and switching doesn't reset your progression. If you build pros today, this is simply the game you're already playing.</p>
-<p>So the practical answer is reassuring rather than dramatic: how you think about archetype choice carries over intact. It was already closer to picking a loadout than choosing a career, and nothing in the game changes that.</p>
-<p>EA's Grounds &amp; Clubs deep dive has since answered the question actually worth asking — and in the player's favour. Not only does switching stay free: <strong>resets are now free too</strong> ("no longer cost Coins or a reset consumable"), they work per-attribute instead of wiping the whole build, and every archetype is unlocked from the start. <a href="/blog/fc27-archetype-changes/">We've broken down what's genuinely new versus what was already true here.</a></p>
-
-<h2>What's staying the same — mostly</h2>
-<p>Thirteen archetypes, AXP, PlayStyles and PlayStyles+ all return — that's now official. One asterisk from EA's own Masteries table: twelve of the thirteen names match FC 26, but <strong>Engine is gone and an archetype called Disruptor appears in its place</strong>. Whether that's a rename or a replacement, EA hasn't said. The three-branch specialization structure is reported to return but wasn't mentioned in the deep dive.</p>
-<p>That structural continuity matters more than it sounds. It means the underlying maths of a Clubs build — attribute ceilings, AP costs, which PlayStyles you can equip at which values — probably still works the same way, even if every number inside it moves.</p>
-
-<h2>You may not be able to play it at all</h2>
-<p>The Grounds and the full Clubs experience are on PS5, Xbox Series X|S, PC and Nintendo Switch 2 only. They are <strong>not</strong> on PS4, Xbox One, or the original Nintendo Switch. FC 27 exists on those platforms; this part of it doesn't.</p>
-<p>Switch 2 gets the full version — the first time a Nintendo platform has been included at this level.</p>
-
-<h2>The dates</h2>
-<ul>
-<li><strong>5–25 August</strong> — closed beta. Invite-only, no public sign-up. Anyone selling you a code is selling you nothing.</li>
-<li><strong>18 September</strong> — early access, for Ultimate and Ultimate Plus editions.</li>
-<li><strong>25 September</strong> — worldwide launch.</li>
-</ul>
-<p>EA's Grounds &amp; Clubs deep dive has now landed, and it's the reason most of the tracker above turned green. We've covered each confirmed system in its own article: <a href="/blog/fc27-masteries-explained/">Masteries</a>, <a href="/blog/fc27-amps-explained/">Amps</a>, <a href="/blog/fc27-archetype-changes/">the archetype unlock and reset changes</a>, <a href="/blog/fc27-clubs-live-tournaments/">Club Tournaments</a>, and <a href="/blog/fc27-club-objectives/">Club Objectives</a>.</p>
-
-<h2>What we're doing about it</h2>
-<p>We rebuild the catalog from scratch every year — attribute ceilings, AP costs, PlayStyle requirements, AcceleRATE thresholds — and we don't publish numbers we haven't verified against more than one source.</p>
-<p>That means our FC 27 build tools land when there's real data to put in them, not on reveal day. Until then this page gets updated claim by claim, and everything else on this site is FC 26 content, tagged as such, and stays accurate for the game it describes.</p>
-
+<h2 id="next">Now build your pro</h2>
+<p>You are in. Here is what players open next:</p>
+${kg(`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:0 0 22px">
+${[
+  ['/blog/fc27-level-40-builds/', 'Level-40 builds', 'Every FC 27 build, ready to copy'],
+  ['/blog/pro-clubs-magician-build/', 'Magician build', 'The most-read build on the site'],
+  ['/blog/best-pro-clubs-striker-builds/', 'Best striker builds', 'Poacher, target man, complete forward'],
+  ['/blog/best-pro-clubs-midfielder-builds/', 'Best midfielder builds', 'Destroyer to dribbling 10'],
+  ['/blog/fc27-archetypes/', 'FC 27 archetypes', 'All 13, and what each is for'],
+  ['/blog/fc27-best-specializations/', 'Best specializations', 'Which one to pick'],
+].map(([h, t, d]) => `<a href="${h}" style="display:block;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);text-decoration:none"><b style="display:block;color:#f2f3f7;font-size:15px">${t} →</b><span style="color:#9aa0ad;font-size:13px">${d}</span></a>`).join('')}
+</div>`)}
 
 ${fc27Rail('fc27-the-grounds-pro-clubs-explained')}
 
@@ -150,13 +132,13 @@ ${appCta({
 <h3>Is Pro Clubs in FC 27?</h3>
 <p>Yes. Clubs is still in the game — 11-a-side, your own pro, leagues and playoffs — and it now sits inside The Grounds, a social hub built around your created pro, rather than being a separate menu item.</p>
 <h3>Where is Pro Clubs in FC 27?</h3>
-<p>Inside The Grounds: enter it from the main menu and open the Clubhouse for Leagues, Playoffs and Club Tournaments. Drop-in and Rush run from the same hub, and the pro is the same one everywhere.</p>
+<p>Inside The Grounds. The quickest way in: press R2 (RT on Xbox) to open the communication hub, go to the Club tab and select Go to Club. The long way is main menu → The Grounds → the menu icon.</p>
 <h3>What is The Grounds in FC 27?</h3>
 <p>A social football hub with three districts — Parkside, Montclair and Zeiza — where you move around as your own avatar, play Kickabouts and 1v1s, take on mentor challenges, and enter Clubs matches. XP earned there feeds the same Virtual Pro.</p>
 <h3>Can you still play 11-a-side Clubs in FC 27?</h3>
 <p>Yes, on PS5, Xbox Series X|S, PC and Nintendo Switch 2.</p>
 <h3>When does FC 27 come out?</h3>
-<p>25 September 2026 worldwide, with early access from 18 September for Ultimate and Ultimate Plus editions.</p>`;
+<p>It launched worldwide on 25 September 2026, after early access from 18 September for Ultimate and Ultimate Plus editions.</p>`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a5.html'), html);
 console.log('a5: the grounds | facts', FACTS.length,

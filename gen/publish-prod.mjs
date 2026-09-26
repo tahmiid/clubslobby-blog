@@ -94,10 +94,10 @@ const POSTS = [
     tags: ['Guides', 'Archetypes', 'FC 27'] },
 
   { file: 'a5.html', slug: 'fc27-the-grounds-pro-clubs-explained', status: 'published',
-    title: 'Is Pro Clubs in FC 27? Yes, and Here’s Where It Is (The Grounds Explained)',
-    meta_title: 'Is Pro Clubs in FC 27? Yes — Where Clubs Lives Now',
-    meta_description: 'Yes — Pro Clubs is in FC 27 as Clubs, inside The Grounds. Where to find it, what changed and what stayed: archetypes, leagues, playoffs and the new Club Tournaments.',
-    custom_excerpt: 'Clubs is not being removed — it is being absorbed. Every claim marked by where it came from, filterable by how solid it is.',
+    title: 'Where Is Pro Clubs in FC 27? The Shortcut',
+    meta_title: 'Where Is Pro Clubs in FC 27? The Shortcut',
+    meta_description: 'Pro Clubs · FC 27 · Shortcut: R2 → Club → Go to Club · The Grounds · Clubhouse · Leagues · Playoffs · Club Tournaments',
+    custom_excerpt: 'Yes, Pro Clubs is in FC 27, inside The Grounds. The fastest way in: R2, Club tab, Go to Club.',
     tags: ['News', 'FC 27'] },
 
   // Retitled 2026-08-12: 236 impressions at 1.27%, position 6.3. The article
