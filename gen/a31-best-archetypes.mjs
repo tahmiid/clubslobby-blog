@@ -9,13 +9,13 @@
 // and the position pages are named in the first paragraph. No build grid here
 // on purpose - a grid would compete with the thing that works.
 //
-// Placements are COMPUTED from the FC 27 meta boards (data/meta-fc27-season1.json,
-// refreshed by ops/export-role-builds.mjs from the app's public
-// /api/meta/current?year=27), never asserted: S = tops a position board, A =
+// Placements are COMPUTED from the FC 27 meta boards (gen/meta27.mjs, refreshed
+// by ops/export-meta.mjs from the app's public /api/meta/current?year=27),
+// never asserted; no meta fact (formation, board count, score range) is typed
+// into the prose (owner, 25 Sep 2026): S = tops a position board, A =
 // top four without topping one, B = outside every top four. Each board lists
 // its top ten only, so an archetype missing from them is "not in any board's
-// top ten", never "unranked". The season's admin label is never printed - only
-// its number. Build names and handles from the boards are never printed
+// top ten", never "unranked". The season is named by its label, as /meta prints it. Build names and handles from the boards are never printed
 // either: the page names archetypes and scores, nothing a member typed.
 //
 // Archetype names link the FC 27 stats page where one exists, otherwise the
@@ -29,11 +29,11 @@ import { AD_A, AD_C } from './ads.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { statsCss, dayLabel, list, words, Words } from './archetype-stats.mjs';
+import { ORDER, SEASON, FORMATION, LEAD_LO, LEAD_HI, VOTERS } from './meta27.mjs';
 import { META27, ROUNDUPS, TIER_LIST, placings, posName, ord, topN, archHref, roundupOf, navTabs, NAV_CSS, checkPage } from './group.mjs';
 
 const P = 'a31';
-const UPDATED = '2026-09-23';   // the day the COPY changed, never today by reflex
-const SEASON = META27.season.number;
+const UPDATED = '2026-09-25';   // the day the COPY changed, never today by reflex
 const cap1 = (x) => x.charAt(0).toUpperCase() + x.slice(1);
 
 // ── Tiers, computed ─────────────────────────────────────────────────────────
@@ -49,8 +49,6 @@ for (const a of FC27_ARCH) {
   TIERS[tierOf(a.id)].push(a);
 }
 for (const t of Object.keys(TIERS)) TIERS[t].sort((x, y) => best(y.id) - best(x.id) || x.name.localeCompare(y.name));
-const ORDER = ['GK', 'CB', 'FB', 'CDM', 'CAM', 'WM', 'ST'].filter((p) => META27.boards[p]);
-if (ORDER.length !== Object.keys(META27.boards).length) throw new Error('a board this page does not order');
 
 // One line per archetype, read straight off the boards: its best placing, then
 // any other top-four placings.
@@ -87,7 +85,7 @@ const tierWidget = () => {
 </style>
 <p class="kk">FC 27 · <time datetime="${UPDATED}">Updated ${esc(dayLabel(UPDATED))}</time></p>
 ${navTabs(TIER_LIST.slug)}
-<p class="tl">The FC 27 archetype tier list, season ${SEASON}</p>
+<p class="tl">The FC 27 archetype tier list, ${esc(SEASON)}</p>
 <p class="sb">Placements follow the FC 27 meta boards: S tops a position board, A makes a top four, B is outside every top four this season.</p>
 ${Object.entries(TIERS).filter(([, xs]) => xs.length).map(([t, xs]) => `<div class="tier">
 <span class="badge" style="background:${TIER_META[t][0]};color:${TIER_META[t][1]}">${t}</span>
@@ -96,7 +94,7 @@ ${Object.entries(TIERS).filter(([, xs]) => xs.length).map(([t, xs]) => `<div cla
 ${xs.map((a) => `<div class="card">${archIcon(a.id)}<a href="${archHref(a.id)}">${esc(a.name)}</a><small>${esc(a.position)} · ${esc(a.inspiredBy)}</small><p>${esc(why(a.id))}</p></div>`).join('\n')}
 </div></div>
 </div>`).join('\n')}
-<p class="ft">Scores from the ${BRAND} meta engine: every published FC 27 build, scored 0 to 100 against the season’s reference XI (${esc(META27.season.formation)}). Each board is a ${topN}; boards move as new builds publish.</p>
+<p class="ft">Scores from the ${BRAND} meta engine: every published FC 27 build, scored 0 to 100 against the season’s reference XI (${esc(FORMATION)}). Each board is a ${topN}; boards move as new builds publish.</p>
 </div>`);
 };
 
@@ -115,7 +113,7 @@ const pickGrid = () => {
 .${c} .r{color:var(--ink2)}
 .${c} .r a{font-weight:600}
 </style>
-<p class="kk">Season ${SEASON} · ${esc(META27.season.formation)}</p>
+<p class="kk">${esc(SEASON)} · ${esc(FORMATION)}</p>
 <p class="tl">The meta pick for every position</p>
 <p class="sb">The archetype of each board’s top build, and the next archetype down the same board.</p>
 <div class="scroll"><div class="g" role="table" aria-label="Meta pick per position">
@@ -141,23 +139,21 @@ const posPara = ORDER.map((p) => {
   const ru = rows.find((r) => r.archetypeId !== w.archetypeId);
   return `<strong>${esc(posName(p))}:</strong> ${esc(w.archetype)} at ${w.score.toFixed(1)}${ru ? `, ${esc(ru.archetype)} the next archetype at ${ru.score.toFixed(1)}` : `, and no other archetype in the ${topN}`}.`;
 }).join(' ');
-const leads = ORDER.map((p) => META27.boards[p][0].score);
-const [loLead, hiLead] = [Math.min(...leads), Math.max(...leads)];
+const [loLead, hiLead] = [LEAD_LO, LEAD_HI];
 const positionsLine = ROUNDUPS.map((r) => `<a href="/blog/${r.slug}/">${esc(r.label.toLowerCase())}</a>`);
 
 const faq = [
   ['What is the best archetype in FC 27?',
-   `By the FC 27 season ${SEASON} boards, the ${top.archetype}: its ${top.score.toFixed(1)} at ${posName(top.pos).toLowerCase()} is the highest score any FC 27 build holds. But "best" is per position: ${winnersLine}.`],
+   `By the FC 27 ${SEASON} boards, the ${top.archetype}: its ${top.score.toFixed(1)} at ${posName(top.pos).toLowerCase()} is the highest score any FC 27 build holds. But "best" is per position: ${winnersLine}.`],
   ['How is this tier list ranked?',
-   `It is not our opinion: placements follow the ${BRAND} meta engine, which scores every published FC 27 build 0 to 100 against the season ${SEASON} reference XI (${META27.season.formation}). S tier tops a position board, A tier makes a top four, B tier is outside every top four this season.`],
+   `It is not our opinion: placements follow the ${BRAND} meta engine, which scores every published FC 27 build 0 to 100 against the ${SEASON} reference XI (${FORMATION}). S tier tops a position board, A tier makes a top four, B tier is outside every top four this season.`],
   ['Which archetypes are in B tier?',
    `${cap1(list(bNames.map((n) => `the ${n}`)))} ${bNames.length > 1 ? 'are' : 'is'} in B tier: ${TIERS.B.map((a) => `the ${a.name} ${placings(a.id).length ? `is ${ord(placings(a.id)[0].rank)} at ${posName(placings(a.id)[0].pos).toLowerCase()}` : `is not in any board’s ${topN}`}`).join('; ')}. B tier is a verdict on this season’s boards, not on the archetype.`],
-  ['Why are the scores in the 60s and 70s, not the 90s?',
-   `The formula’s perfect 100 is structurally out of reach, because no single build can max every component it measures. This season the seven boards are led at scores from ${loLead.toFixed(1)} to ${hiLead.toFixed(1)}.`],
+  ['Why does no build score 100?',
+   `The formula’s perfect 100 is structurally out of reach, because no single build can max every component it measures. This season the ${words(ORDER.length)} boards are led at scores from ${loLead.toFixed(1)} to ${hiLead.toFixed(1)}.`],
   ['Will the tier list change?',
-   'Yes, twice over: boards move as new builds publish, and each meta season sets a new formation and reference XI.'],
+   `Yes, twice over: boards move as new builds publish, and each meta season sets a new formation and reference XI. Players vote on what the next season should be on the live Meta page${VOTERS ? ` (${VOTERS} players picked ${SEASON})` : ''}.`],
 ];
-if (!(loLead >= 60 && hiLead < 80)) throw new Error('a31: the scores question says 60s and 70s');
 const ld = kg(`<script type="application/ld+json">
 ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }, null, 1).replace(/</g, '\\u003c')}
@@ -167,8 +163,8 @@ export const META = {
   slug: TIER_LIST.slug,
   title: 'Best Pro Clubs Archetypes: The FC 27 Meta Tier List',
   meta_title: 'Best Pro Clubs Archetypes: FC 27 Meta Tier List',
-  meta_description: `All ${words(FC27_ARCH.length)} FC 27 Pro Clubs archetypes ranked S to B by the meta boards: the no. 1 pick for all seven positions and the scores behind them.`,
-  custom_excerpt: `All ${FC27_ARCH.length} FC 27 archetypes ranked S to B by the season ${SEASON} meta boards, the meta pick for every position, and a deeper page for each position group.`,
+  meta_description: `All ${words(FC27_ARCH.length)} FC 27 Pro Clubs archetypes ranked S to B by the meta boards: the no. 1 pick for all ${words(ORDER.length)} positions and the scores behind them.`,
+  custom_excerpt: `All ${FC27_ARCH.length} FC 27 archetypes ranked S to B by the ${SEASON} meta boards, the meta pick for every position, and a deeper page for each position group.`,
   tags: ['Guides', 'Archetypes', 'FC 27'],
 };
 
@@ -184,10 +180,10 @@ ${AD_A}
 
 <h2 id="positions">Position by position, one line each</h2>
 <p>${posPara}</p>
-<p>${lone.length ? `${Words(lone.length)} of the ${words(ORDER.length)} boards hold one archetype all the way down their ${topN}, so the next archetype is where the challenger stands. ` : ''}The <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a> page has every house build these boards score, and the <a href="/blog/fc27-archetypes/">FC 27 archetypes guide</a> explains what each one is for.</p>
+<p>${lone.length ? `${Words(lone.length)} of the ${words(ORDER.length)} boards ${lone.length === 1 ? 'holds' : 'hold'} one archetype all the way down ${lone.length === 1 ? 'its' : 'their'} ${topN}, so the next archetype is where the challenger stands. ` : ''}The <a href="/blog/fc27-level-40-builds/">FC 27 Pro Clubs builds</a> page has every level-40 house build, ranked by copies, and the <a href="/blog/fc27-archetypes/">FC 27 archetypes guide</a> explains what each one is for.</p>
 
 <h2 id="how-it-works">How the ranking works, and what it does not say</h2>
-<p>The meta engine scores builds, not reputations: each season declares a formation and imports a reference build per position, and every published build is measured against it. Scores cluster around 70 because a perfect 100 is structurally unreachable. Two things this list deliberately is not: it is not a verdict on an archetype’s design (a B tier archetype can be the right pick for your club’s system), and it is not frozen. Boards move with every published build, and the <a href="https://proclubshq.com/meta">live board</a> is always ahead of this page.</p>
+<p>The meta engine scores builds, not reputations: each season declares a formation and imports a reference build per position, and every published build is measured against it. This season’s board leaders score ${loLead.toFixed(1)} to ${hiLead.toFixed(1)}; a perfect 100 is structurally unreachable. Two things this list deliberately is not: it is not a verdict on an archetype’s design (a B tier archetype can be the right pick for your club’s system), and it is not frozen. Boards move with every published build, and the <a href="https://proclubshq.com/meta">live board</a> is always ahead of this page. Players also vote there on the next season’s formation.</p>
 
 ${fc27Rail(TIER_LIST.slug)}
 
@@ -211,4 +207,4 @@ checkPage(P, html, META);
 const OUT = path.join(import.meta.dirname, '..', 'out');
 writeFileSync(path.join(OUT, 'a31.html'), html);
 writeFileSync(path.join(OUT, 'a31.meta.json'), `${JSON.stringify(META, null, 1)}\n`);
-console.log(`a31 ${TIER_LIST.slug}: FC 27 S:${TIERS.S.length} A:${TIERS.A.length} B:${TIERS.B.length} (season ${SEASON}) | bytes ${html.length}`);
+console.log(`a31 ${TIER_LIST.slug}: FC 27 S:${TIERS.S.length} A:${TIERS.A.length} B:${TIERS.B.length} (${SEASON}) | bytes ${html.length}`);

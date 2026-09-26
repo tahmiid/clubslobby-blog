@@ -17,7 +17,7 @@
 // year it is replaced rather than updated.
 import { execFileSync } from 'node:child_process';
 import { createHmac } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const API = 'https://proclubshq.com/blog/ghost/api/admin';
@@ -297,14 +297,14 @@ const POSTS = [
   // a31-a35: the roundup set (2026-08-11), built for the first GSC export's
   // gaps — "best archetypes" ranked ~20-30 and the position-group queries
   // ("striker archetypes" ~36) had no page to land on. a31's tiers and every
-  // board number are computed from data/meta-season3.json, a snapshot of the
-  // app's public /api/meta/current; refresh the snapshot and regenerate when
-  // the boards move materially. Evergreen slugs — rewritten per game year.
+  // board number are computed from data/meta-fc27.json (gen/meta27.mjs;
+  // refresh with ops/export-meta.mjs), and out/a31.meta.json overrides this
+  // row's text when it travels with the html. Evergreen slugs — rewritten per game year.
   { file: 'a31.html', slug: 'best-pro-clubs-archetypes', status: 'published',
     title: 'Best Pro Clubs Archetypes: The FC 27 Meta Tier List',
     meta_title: 'Best Pro Clubs Archetypes: FC 27 Meta Tier List',
-    meta_description: 'All 13 FC 27 Pro Clubs archetypes ranked S to B by the meta boards: the no. 1 pick for all seven positions and the scores behind them.',
-    custom_excerpt: 'All 13 FC 27 archetypes ranked S to B by the season 1 meta boards, the meta pick for every position, and a deeper page for each position group.',
+    meta_description: 'All 13 FC 27 Pro Clubs archetypes ranked S to B by the meta boards: the no. 1 pick for all eight positions and the scores behind them.',
+    custom_excerpt: 'All 13 FC 27 archetypes ranked S to B by the Season 1 meta boards, the meta pick for every position, and a deeper page for each position group.',
     tags: ['Guides', 'Archetypes', 'FC 27'] },
   { file: 'a32.html', slug: 'pro-clubs-striker-archetypes', status: 'published',
     title: 'FC 27 Pro Clubs Striker Archetypes: Finisher, Magician, Spark and Target Compared',
@@ -1214,34 +1214,34 @@ const POSTS = [
   // Ultimate Team, and no counts in the metadata so a re-export cannot make
   // an excerpt false (publish rule 3).
   { file: 'a188.html', slug: 'best-pro-clubs-striker-builds', status: 'published',
-    title: 'Best FC 27 Pro Clubs Striker Builds: Poacher, Complete Forward or Target Man',
+    title: 'Best FC 27 Pro Clubs Striker Builds',
     meta_title: 'Best FC 27 Pro Clubs Striker Builds by Role (Level 40)',
     meta_description: 'The best FC 27 Pro Clubs striker builds at level 40, ranked by how many players copied them — poacher, complete forward and target man, with the meta board’s pick. Open any build and copy it.',
-    custom_excerpt: 'Poacher, complete forward or target man — the level-40 striker builds people actually copy, and the meta board’s pick.',
+    custom_excerpt: 'Poacher, complete forward or target man: the level-40 striker builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   { file: 'a189.html', slug: 'best-pro-clubs-winger-builds', status: 'published',
-    title: 'Best FC 27 Pro Clubs Winger Builds: Pace Winger or Skill Winger',
+    title: 'Best FC 27 Pro Clubs Winger Builds',
     meta_title: 'Best FC 27 Pro Clubs Winger Builds by Role (Level 40)',
     meta_description: 'The best FC 27 Pro Clubs winger builds at level 40, ranked by copies — pace wingers who go outside and skill wingers who cut in, with the meta board’s wide pick. Open any build and copy it.',
-    custom_excerpt: 'Outside to the byline or inside onto the strong foot — the level-40 winger builds people copy, and the meta’s wide pick.',
+    custom_excerpt: 'Pace winger or skill winger: the level-40 winger builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   { file: 'a190.html', slug: 'best-pro-clubs-midfielder-builds', status: 'published',
-    title: 'Best FC 27 Pro Clubs Midfielder Builds: CDM, CM and CAM by Role',
+    title: 'Best FC 27 Pro Clubs Midfielder Builds',
     meta_title: 'Best FC 27 Pro Clubs Midfielder Builds: CDM, CM, CAM',
     meta_description: 'The best FC 27 Pro Clubs midfielder builds at level 40 by role — destroyer, deep-lying playmaker, box-to-box, central playmaker, attacking playmaker and dribbling 10 — ranked by copies, with the meta board’s picks.',
-    custom_excerpt: 'Six midfield jobs, from destroyer to dribbling 10 — the level-40 builds people copy for each, and the meta’s picks.',
+    custom_excerpt: 'Six midfield roles, from destroyer to dribbling 10: the level-40 builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   { file: 'a191.html', slug: 'best-pro-clubs-defender-builds', status: 'published',
-    title: 'Best FC 27 Pro Clubs Defender Builds: Centre-Back and Full-Back by Role',
+    title: 'Best FC 27 Pro Clubs Defender Builds',
     meta_title: 'Best FC 27 Pro Clubs Defender Builds: CB and Full-Back',
     meta_description: 'The best FC 27 Pro Clubs defender builds at level 40 by role — stopper, ball-playing centre-back, attacking and defensive full-back — ranked by copies, with the meta board’s picks for CB and full-back.',
-    custom_excerpt: 'Stopper, ball-player, attacking or defensive full-back — the level-40 defender builds people copy, and the meta’s picks.',
+    custom_excerpt: 'Centre-backs and full-backs: the level-40 defender builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   { file: 'a192.html', slug: 'best-pro-clubs-goalkeeper-builds', status: 'published',
-    title: 'Best FC 27 Pro Clubs Goalkeeper Builds: Shot-Stopper or Sweeper Keeper',
+    title: 'Best FC 27 Pro Clubs Goalkeeper Builds',
     meta_title: 'Best FC 27 Pro Clubs Goalkeeper Builds by Role (Level 40)',
     meta_description: 'The best FC 27 Pro Clubs goalkeeper builds at level 40 — shot-stoppers who stay on the line and sweeper keepers who play high — ranked by copies, with the meta board’s goalkeeper. Open any build and copy it.',
-    custom_excerpt: 'Shot-stopper or sweeper keeper — the level-40 goalkeeper builds people copy, and the meta’s pick between the posts.',
+    custom_excerpt: 'Shot-stopper or sweeper keeper: the level-40 goalkeeper builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   // The per-archetype stats pages (gen/archetype-stats.mjs, 2026-09-23): what
   // is cheap and what is expensive to upgrade on each archetype. The rows are
@@ -1311,9 +1311,17 @@ const only = new Set(process.argv.slice(2));
 for (const p of POSTS) {
   if (only.size && !only.has(p.file.replace('.html', '')) && !only.has(p.slug)) continue;
   const html = readFileSync(path.join(OUT, p.file), 'utf8');
-  const body = { title: p.title, slug: p.slug, html, status: p.status,
-    meta_title: p.meta_title, meta_description: p.meta_description,
-    custom_excerpt: p.custom_excerpt, tags: p.tags.map((name) => ({ name })) };
+  // A generator that computes its own header text writes out/<stem>.meta.json
+  // beside the html; when that file travels with the html it WINS over the
+  // roster row, so data-driven text (a31's position count and season, since
+  // 2026-09-25) cannot go stale in a hand-copied row. Copy it with the html.
+  const metaFile = path.join(OUT, p.file.replace('.html', '.meta.json'));
+  const gen = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, 'utf8')) : {};
+  if (gen.slug && gen.slug !== p.slug) throw new Error(`${metaFile} is for ${gen.slug}, not ${p.slug}`);
+  const pick = (k) => gen[k] ?? p[k];
+  const body = { title: pick('title'), slug: p.slug, html, status: p.status,
+    meta_title: pick('meta_title'), meta_description: pick('meta_description'),
+    custom_excerpt: pick('custom_excerpt'), tags: p.tags.map((name) => ({ name })) };
   const found = await call(`/posts/slug/${p.slug}/`);
   let res;
   if (found.ok) {

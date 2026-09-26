@@ -69,6 +69,9 @@ export async function page() {
       return false;
     },
     async shot(file) { const r = await send('Page.captureScreenshot', { format: 'png' }); writeFileSync(file, Buffer.from(r.data, 'base64')); return file; },
+    // Raw protocol events (the reel recorder's screencast frames).
+    listen: (fn) => listeners.add(fn),
+    unlisten: (fn) => listeners.delete(fn),
     close: () => ws.close(),
   };
 }

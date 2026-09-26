@@ -14,8 +14,7 @@
 // `sort=copied`, re-sorted here by copies then views so a role with no copies
 // yet still has an honest order. Every id that can appear on a page is
 // verified through /api/builds/<id>/public before it is written (publish
-// rule 1). The meta snapshot a31 and group.mjs read is refreshed in the same
-// run, from the same call a31 documents.
+// rule 1). The meta snapshot is refreshed by ops/export-meta.mjs.
 //
 //     ~/.local/node22/bin/node ops/export-role-builds.mjs
 import { writeFileSync } from 'node:fs';
@@ -87,10 +86,7 @@ writeFileSync(path.join(dataDir, 'fc27', 'role-builds.json'),
   JSON.stringify({ generatedAt: new Date().toISOString().slice(0, 10), year: YEAR, builds: out }, null, 1));
 console.log(`-> data/fc27/role-builds.json (${out.length} builds)`);
 
-const meta = await get(`/meta/current?year=${YEAR}`);
-if (!meta?.boards || !meta?.season) throw new Error('meta/current has no boards/season — snapshot NOT refreshed');
-writeFileSync(path.join(dataDir, 'meta-fc27-season1.json'), JSON.stringify(meta, null, 1));
-console.log(`-> data/meta-fc27-season1.json refreshed: season ${meta.season.number}, boards ${Object.keys(meta.boards).join(' ')}`);
+// The meta snapshot is ops/export-meta.mjs's job since 2026-09-25 (gen/meta27.mjs).
 
 // The words the pages' calls to action will search for. A word the search
 // does not understand as a position would send a reader to an empty feed.

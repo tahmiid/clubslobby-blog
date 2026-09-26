@@ -53,7 +53,7 @@
 // export date in each file's mtime — there is no refresher for those yet).
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import { ARCH, SITE, esc, kg } from './common.mjs';
+import { ARCH, ATTRS, SITE, esc, kg } from './common.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss, FC27_ARCH } from './fc27grid.mjs';
 
@@ -72,6 +72,18 @@ export const archTitle = (n) => String(n ?? '').toLowerCase()
 export const copiesLine = (b) => `${b.copyCount} ${b.copyCount === 1 ? 'copy' : 'copies'}`;
 export const viewsLine  = (b) => `${b.viewCount ?? 0} ${b.viewCount === 1 ? 'view' : 'views'}`;
 
+// A build's four highest attributes as chips, coloured like the editor's
+// sliders (ClubsUI AttributeSlider.jsx: >=80 green, >=55 orange, else red).
+// Owner, 25 Sep: readers want "FIN 99 · ACC 92" on the card, not "Most
+// copied" - the ranking is already the order. Needs `b.top` from the export.
+const grade = (v) => (v >= 80 ? '#2FD26B' : v >= 55 ? '#E8912D' : '#D9542F');
+export const topAttrsLine = (b) => `<span class="at">${(b.top ?? []).slice(0, 4).map(({ k, v }) =>
+  `<span><i>${esc(ATTRS[k]?.abbr ?? k)}</i><b style="color:${grade(v)}">${v}</b></span>`).join('')}</span>`;
+topAttrsLine.runLabel = true;   // cards with it put AcceleRATE on its own coloured line
+// The app's AcceleRATE colours (ClubsUI pages/edit/BodyMap.jsx); Controlled is
+// a lighter grey than the app's #6f7791 so it reads on the card background.
+const RUN = { Explosive: '#2DE2C5', Lengthy: '#E3B84E', Controlled: '#a3aabb' };
+
 export const copiedCard = (b, stat = copiesLine) => {
   const sigs = b.signature ?? [];
   const regs = (b.playstyles ?? []).slice(0, Math.max(4 - sigs.length, 0));
@@ -84,7 +96,9 @@ ${sigs.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img s
 ${regs.map((r) => `<span class="rb" title="${esc(psName(r))}"><img src="${psIcon(r)}" alt="${esc(psName(r))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}
 </div>
 <p class="sg">${stat(b)}</p>
-<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>
+${stat.runLabel
+    ? `<p class="hw">${ft(b.height)} · ${b.weight} lbs</p>${b.accelerationType ? `<p class="hw run" style="color:${RUN[b.accelerationType] ?? '#a3aabb'}">${esc(b.accelerationType)}${b.inGameAccelerationType && b.inGameAccelerationType !== b.accelerationType ? ` (${esc(b.inGameAccelerationType)} in game)` : ''}</p>` : ''}`
+    : `<p class="hw">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${esc(b.accelerationType)}` : ''}</p>`}
 </a>`;
 };
 
@@ -95,9 +109,9 @@ export const cardsGrid = (P, { builds, heading, sub, id = 'most-copied', level =
   return kg(`<div class="${P} mcg">
 <style>${gridCss(`${P}.mcg`)}
 .${P}.mcg{--s1:rgba(255,255,255,.05);--ring:rgba(255,255,255,.13);--ink:#f2f3f7;--ink2:#b9bec9;margin:1.9em 0}
+.${P} .bc .at{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.${P} .bc .at span{display:flex;flex-direction:column;align-items:center;padding:3px 0;border-radius:6px;background:rgba(255,255,255,.05)}.${P} .bc .at i{font:600 9px/1.2 system-ui,sans-serif;font-style:normal;color:#9aa0ad;letter-spacing:.04em}.${P} .bc .hw.run{margin-top:3px;font-weight:700;font-size:11px;opacity:1}.${P} .bc .at b{font:800 14px/1.2 Archivo,system-ui,sans-serif}
 .${P}.mcg .sub{font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#9aa0ad;margin:0 0 11px}</style>
-<${level} id="${id}">${esc(heading)}</${level}>
-<p class="sub">${esc(sub)}</p>
+${heading ? `<${level} id="${id}">${esc(heading)}</${level}>\n` : ''}<p class="sub">${esc(sub)}</p>
 <div class="grid">${builds.map((b) => copiedCard(b, stat)).join('\n')}</div>
 </div>`);
 };

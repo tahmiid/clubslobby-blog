@@ -24,8 +24,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, BRAND, ATTRS, esc, kg, appCta, updatedLine } from './common.mjs';
-import { cardsGrid } from './mostcopied.mjs';
-import { FC27_ARCH, FC27_PROG, psName } from './fc27grid.mjs';
+import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
+import { FC27_ARCH, FC27_PROG, psName, psImg } from './fc27grid.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { itemListLd } from './jsonld.mjs';
@@ -34,7 +34,7 @@ import { PAGES, positionsNav } from './positions-nav.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'fc27', 'role-builds.json'), 'utf8'));
-const META = JSON.parse(readFileSync(path.join(DIR, 'meta-fc27-season1.json'), 'utf8'));
+import { META27 as META, SEASON } from './meta27.mjs';
 const HOUSE = new Set(['buildmaster', 'throwbackfc', 'specialevents', 'freakbuilds']);
 const AP40 = FC27_PROG.levels.find((l) => l.level === 40).apCumulative;
 const CAP = 40;
@@ -92,39 +92,42 @@ const LOOSE_PAGE = (archId) => {
   return { Forward: 'strikers', Midfielder: 'midfielders', Defender: 'defenders', Keeper: 'keepers' }[pos];
 };
 
-const BOARD_LABEL = { ST: 'striker', WM: 'wide midfielder', CAM: 'attacking midfielder', CDM: 'defensive midfielder', CB: 'centre-back', FB: 'full-back', GK: 'goalkeeper' };
+const BOARD_LABEL = { ST: 'striker', W: 'winger', WM: 'wide midfielder', CAM: 'attacking midfielder', CDM: 'defensive midfielder', CB: 'centre-back', FB: 'full-back', GK: 'goalkeeper' };
 
 // ── The pages ───────────────────────────────────────────────────────────────
 const CONFIG = {
   strikers: {
-    h1: 'Best FC 27 Pro Clubs Striker Builds: Poacher, Complete Forward or Target Man',
+    h1: 'Best FC 27 Pro Clubs Striker Builds',
     singular: 'striker', plural: 'strikers', q: 'striker', perRole: 6,
     roles: ['st-poacher', 'st-complete', 'st-target'], boards: ['ST'],
-    intro: `Every striker in Pro Clubs plays one of three jobs, and the job decides the build before the archetype does. The <strong>poacher</strong> lives on the last defender's shoulder, the <strong>complete forward</strong> does a bit of everything and still scores the most, and the <strong>target man</strong> is the reference point the whole attack plays off. Above, the strikers people copy most; below, the FC 27 level-${CAP} builds for each job, ranked by how many players have copied them into their own club, with the launch-week meta board's pick alongside. Every card opens in the builder; copy it and change what you like.`,
+    // Owner, 25 Sep: this page read bland on the eye - a decoration strip of
+    // the four attacking archetype logos, no words. This page only for now.
+    banner: ['finisher', 'target', 'magician', 'spark'],
+    intro: `Level-${CAP} FC 27 striker builds for each role (poacher, complete forward and target man), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
   wingers: {
-    h1: 'Best FC 27 Pro Clubs Winger Builds: Pace Winger or Skill Winger',
+    h1: 'Best FC 27 Pro Clubs Winger Builds',
     singular: 'winger', plural: 'wingers', q: 'winger', perRole: 6,
-    roles: ['winger-pace', 'winger-skill'], boards: ['WM'],
-    intro: `A Pro Clubs winger either goes outside or comes inside, and that choice is the build. The <strong>pace winger</strong> beats the full-back to the byline; the <strong>skill winger</strong> cuts in onto his strong foot and shoots. Above, the wingers people copy most; below, both jobs at level ${CAP}, ranked by how many players have copied each build, with the meta board's wide pick alongside. Tap a card to open it in the builder and make it yours.`,
+    roles: ['winger-pace', 'winger-skill'], boards: ['W', 'WM'],
+    intro: `Level-${CAP} FC 27 winger builds for each role (pace winger and skill winger), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
   midfielders: {
-    h1: 'Best FC 27 Pro Clubs Midfielder Builds: CDM, CM and CAM by Role',
+    h1: 'Best FC 27 Pro Clubs Midfielder Builds',
     singular: 'midfielder', plural: 'midfielders', q: 'midfielder', perRole: 4,
     roles: ['dm-destroyer', 'dm-deeplying', 'cm-boxtobox', 'cm-playmaker', 'am-playmaker', 'am-dribbler'], boards: ['CDM', 'CAM'],
-    intro: `Midfield has more jobs than any other line — six in this catalog. Two in front of the back four (the <strong>destroyer</strong> and the <strong>deep-lying playmaker</strong>), two in the centre (<strong>box-to-box</strong> and the <strong>central playmaker</strong>) and two at the 10 (the <strong>attacking playmaker</strong> and the <strong>dribbler</strong>). Above, the midfielders people copy most; below, pick the job your club needs, then the build: each one is a level-${CAP} FC 27 build ranked by how many players have copied it, with the meta board's picks for both midfield slots.`,
+    intro: `Level-${CAP} FC 27 midfielder builds for each role (all six midfield roles, from destroyer to dribbling 10), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
   defenders: {
-    h1: 'Best FC 27 Pro Clubs Defender Builds: Centre-Back and Full-Back by Role',
+    h1: 'Best FC 27 Pro Clubs Defender Builds',
     singular: 'defender', plural: 'defenders', q: 'defender', perRole: 6,
     roles: ['cb-stopper', 'cb-ballplayer', 'fullback-attacking', 'fullback-defensive'], boards: ['CB', 'FB'],
-    intro: `A back four is four jobs, not one position. The <strong>stopper</strong> wins the duel, the <strong>ball-playing centre-back</strong> starts the attack, the <strong>attacking full-back</strong> is a winger with a defensive job and the <strong>defensive full-back</strong> stays home. Above, the defenders people copy most; below, the level-${CAP} FC 27 builds for each job, ranked by how many players have copied them, with the meta board's picks for centre-back and full-back. Every card opens in the builder.`,
+    intro: `Level-${CAP} FC 27 defender builds for each role (stopper, ball-playing centre-back, attacking and defensive full-back), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
   keepers: {
-    h1: 'Best FC 27 Pro Clubs Goalkeeper Builds: Shot-Stopper or Sweeper Keeper',
+    h1: 'Best FC 27 Pro Clubs Goalkeeper Builds',
     singular: 'goalkeeper', plural: 'goalkeepers', q: 'goalkeeper', perRole: 6,
     roles: ['gk-shotstopper', 'gk-sweeper'], boards: ['GK'],
-    intro: `There are two ways to keep goal in Pro Clubs. The <strong>shot-stopper</strong> stays on his line and makes the save; the <strong>sweeper keeper</strong> plays high, comes for the through ball and starts attacks with his feet. Above, the goalkeepers people copy most; below, the level-${CAP} FC 27 builds for both, ranked by how many players have copied them, with the meta board's goalkeeper alongside. Tap a card to open it in the builder.`,
+    intro: `Level-${CAP} FC 27 goalkeeper builds for each role (shot-stopper and sweeper keeper), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
 };
 
@@ -133,7 +136,7 @@ const rank = (x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount
 // A label, never a small number (owner, 22 Sep: *"three copies, three views —
 // don't say like that; say most copied and most viewed"*). The order is still
 // copies then views, so the label is true of the card's place in it.
-const stat = (b) => (b.copyCount > 0 ? 'Most copied' : 'Most viewed');
+const stat = topAttrsLine;
 const archName = (id) => FC27_ARCH.find((a) => a.id === id)?.name ?? id;
 const attrName = (k) => ATTRS[k]?.name ?? k;
 const list = (xs) => xs.join(', ').replace(/, ([^,]*)$/, ' and $1');
@@ -146,27 +149,35 @@ const count = (xs, key) => {
 // Counted over the WHOLE role, so the sentence stays true when the six cards
 // above it change with the next export.
 const facts = (pool) => {
-  const archs = count(pool, (b) => b.archetype_id).map(([id, n]) => `${archName(id)} ×${n}`);
-  const ps = count(pool.flatMap((b) => [...b.signature, ...b.playstyles]), (s) => s).slice(0, 4).map(([s]) => psName(s));
-  const at = count(pool.flatMap((b) => b.top.slice(0, 3)), (t) => t.k).slice(0, 4).map(([k]) => attrName(k));
-  const acc = count(pool, (b) => b.accelerationType).map(([a, n]) => `${a} ${Math.round((n / pool.length) * 100)}%`);
+  // Icons and chips, not sentences (owner, 25 Sep: a PlayStyle list in prose
+  // is hard to read - show the PlayStyle).
+  const chip = (t) => `<span class="ch">${esc(t)}</span>`;
+  const archs = count(pool, (b) => b.archetype_id).map(([id, n]) => `<span class="ch"><img src="${SITE}/assets/archetypes/${id}.svg" alt="">${esc(archName(id))} ×${n}</span>`).join('');
+  const ps = count(pool.flatMap((b) => [...b.signature, ...b.playstyles]), (s) => s).slice(0, 4).map(([s]) => `<span class="ch"><img src="${psImg(s)}" alt="">${esc(psName(s))}</span>`).join('');
+  const at = count(pool.flatMap((b) => b.top.slice(0, 3)), (t) => t.k).slice(0, 4).map(([k]) => chip(attrName(k))).join('');
+  const acc = count(pool, (b) => b.accelerationType).map(([a, n]) => chip(`${a} ${Math.round((n / pool.length) * 100)}%`)).join('');
   return kg(`<ul class="pchq-facts">
 <style>.pchq-facts{margin:0 0 1.2em;padding:12px 16px;list-style:none;border:1px solid rgba(255,255,255,.10);border-radius:10px;
   font:400 13.5px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c3c7d1}
-.pchq-facts li{margin:0 0 4px}.pchq-facts li:last-child{margin:0}.pchq-facts b{color:#f2f3f7;font-weight:600}</style>
-<li><b>Archetypes in this role:</b> ${esc(list(archs))}</li>
-<li><b>PlayStyles they carry most:</b> ${esc(list(ps))}</li>
-<li><b>What they max out:</b> ${esc(list(at))}</li>
-<li><b>AcceleRATE:</b> ${esc(acc.join(' · '))}</li>
+.pchq-facts li{margin:0 0 10px}.pchq-facts li:last-child{margin:0}.pchq-facts b{display:block;color:#9aa0ad;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 5px}
+.pchq-facts .ic{display:flex;flex-wrap:wrap;gap:6px}.pchq-facts .ch{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.06);color:#f2f3f7;font-size:12.5px}
+.pchq-facts .ch img{width:20px;height:20px}</style>
+<li><b>Archetypes</b><span class="ic">${archs}</span></li>
+<li><b>Top PlayStyles</b><span class="ic">${ps}</span></li>
+<li><b>Maxed first</b><span class="ic">${at}</span></li>
+<li><b>AcceleRATE</b><span class="ic">${acc}</span></li>
 </ul>`);
 };
 
+// The board's leader, by ARCHETYPE and score only. Since the 25 Sep meta v2
+// the public boards hold members' builds (house builds are off them), and a
+// member's build name or handle is unreviewed text - never printed here. A
+// board with no rows says nothing rather than something stale.
+const leader = (board) => (META.boards?.[board] ?? [])[0];
 const boardLine = (board) => {
-  const rows = (META.boards?.[board] ?? []).filter((r) => HOUSE.has(r.handle));
-  if (!rows.length) return '';
-  const r = rows[0];
-  const ord = r.rank === 1 ? 'top of' : `${r.rank}${{ 2: 'nd', 3: 'rd' }[r.rank] ?? 'th'} on`;
-  return `<p>On the live <a href="${SITE}/meta?year=27">meta board</a>, the ${esc(BOARD_LABEL[board])} slot's best house build is <a href="${SITE}/b/${r.buildId}?src=guide">${esc(r.buildName)}</a> — a ${esc(r.archetype)} scoring ${r.score.toFixed(1)} of 100, ${ord} the board.</p>`;
+  const r = leader(board);
+  if (!r) return '';
+  return `<p>Early in ${esc(SEASON)}, the <a href="${SITE}/meta?year=27">meta board</a>’s ${esc(BOARD_LABEL[board])} slot is led by a ${esc(r.archetype)} build (${r.score.toFixed(1)} of 100). Still early: the boards move as builds publish.</p>`;
 };
 
 // ── One page ────────────────────────────────────────────────────────────────
@@ -184,14 +195,15 @@ const render = (page) => {
     shownAll.push(...shown);
     // Grid first, words after (owner, 22 Sep: "people don't like to read…
     // start right away with the grid").
-    return `<h2 id="${roleId}">${esc(role.name)} — ${esc(role.job)}</h2>
+    // One header per role, and no football basics (owner, 25 Sep: "my users
+    // already know what a poacher is"). role.blurb stays in ROLES, unused, in
+    // case it earns a place lower down later.
+    return `<h2 id="${roleId}">${esc(role.name)} builds</h2>
 ${cardsGrid(`${P}-${roleId}`, {
-    builds: shown, id: `${roleId}-builds`, level: 'h3', stat,
-    heading: `Best ${role.name.toLowerCase()} builds`,
-    sub: `${pool.length} ${role.name.toLowerCase()} builds in the catalog, most copied first, then most viewed. Tap a card to open it in the builder.`,
+    builds: shown, id: `${roleId}-builds`, stat,
+    sub: `${pool.length} in the catalog, most copied first. Tap a card to open it in the builder.`,
   })}
-<p>${role.blurb}</p>
-${facts(pool)}`;
+`;  // the facts block was cut (owner, 25 Sep); facts() stays for reuse
   }).filter(Boolean);
 
   const loosePool = BUILDS.filter((b) => !b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key).sort(rank);
@@ -199,13 +211,11 @@ ${facts(pool)}`;
   if (loosePool.length >= 3) {
     const shown = loosePool.slice(0, cfg.perRole);
     shownAll.push(...shown);
-    loose = `<h2 id="special-editions">Special editions and concept builds</h2>
+    loose = `<h2 id="special-editions">Special ${cfg.plural}</h2>
 ${cardsGrid(`${P}-loose`, {
-      builds: shown, id: 'special-builds', level: 'h3', stat,
-      heading: `Special ${cfg.plural}`,
-      sub: `${loosePool.length} in the catalog, most copied first, then most viewed.`,
-    })}
-<p>World Cup editions, throwbacks and concept builds from the house accounts. They were not written for one role, so they sit here under their archetype's position.</p>`;
+      builds: shown, id: 'special-builds', stat,
+      sub: `World Cup editions, throwbacks and concepts. ${loosePool.length} in the catalog, most copied first.`,
+    })}`;
   }
 
   // Slot A after the first role: below a grid of app links, never above one.
@@ -228,11 +238,11 @@ ${cardsGrid(`${P}-loose`, {
   const totalInRoles = cfg.roles.reduce((s, r) => s + BUILDS.filter((b) => b.playerRole === r).length, 0);
   const archUsed = count(BUILDS.filter((b) => cfg.roles.includes(b.playerRole)), (b) => b.archetype_id)
     .map(([id, n]) => `${archName(id)} (${n})`);
-  const top = cfg.boards.map((b) => (META.boards?.[b] ?? []).filter((r) => HOUSE.has(r.handle))[0]).filter(Boolean);
+  const top = cfg.boards.map((b) => ({ b, r: leader(b) })).filter((x) => x.r);
 
   const faq = [
     [`Which archetype makes the best ${cfg.singular} in FC 27 Pro Clubs?`,
-     `${top.length ? `On the launch-week meta board ${list(top.map((r) => `${r.buildName} (${r.archetype} · ${r.score.toFixed(1)})`))} ${top.length > 1 ? 'lead' : 'leads'} the ${list(cfg.boards.map((b) => BOARD_LABEL[b]))} slot${cfg.boards.length > 1 ? 's' : ''}. ` : ''}Across the ${totalInRoles} ${cfg.singular} builds in the catalog the archetypes used are ${list(archUsed)}. Pick the job first; the archetype follows from it.`],
+     `${top.length ? `On the ${SEASON} meta board ${list(top.map(({ b, r }) => `a ${r.archetype} (${r.score.toFixed(1)}) leads the ${BOARD_LABEL[b]} slot`))}. ` : ''}Across the ${totalInRoles} ${cfg.singular} builds in the catalog the archetypes used are ${list(archUsed)}. Pick the job first; the archetype follows from it.`],
     ['Are these Pro Clubs builds or Ultimate Team?',
      `Pro Clubs only. Archetypes, PlayStyle+ slots, specializations and the level-${CAP} cap belong to Clubs; Ultimate Team has none of them. Every card opens the build in the ${BRAND} builder, where you can copy it and change any attribute.`],
     [`How many ability points does a level-${CAP} ${cfg.singular} have?`,
@@ -247,7 +257,9 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   const uniq = shownAll.filter((b, i, a) => a.findIndex((x) => x.id === b.id) === i);
   const listLd = kg(itemListLd({ name: cfg.h1, items: uniq.map((b) => ({ name: b.buildName, url: `${SITE}/b/${b.id}` })) }));
 
-  const html = `${updatedLine(UPDATED, 'ranked from the live builds and the launch-week meta board')}
+  const banner = cfg.banner ? kg(`<div aria-hidden="true" style="margin:0 0 22px;border-radius:16px;padding:20px 12px;background:radial-gradient(120% 140% at 0% 0%,rgba(45,226,197,.22),rgba(45,226,197,0) 55%),linear-gradient(135deg,#10141d,#0b0e14);border:1px solid rgba(45,226,197,.25);display:flex;justify-content:space-around;align-items:center">${cfg.banner.map((id) => `<img src="${SITE}/assets/archetypes/${id}.svg" width="56" height="56" alt="" loading="eager">`).join('')}</div>`) : '';
+  const html = `${updatedLine(UPDATED, 'ranked from the live builds and the live meta board')}
+${banner}
 ${topGrid}
 
 <p>${cfg.intro}</p>

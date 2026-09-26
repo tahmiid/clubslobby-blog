@@ -15,11 +15,12 @@
 //   - ceilings and starting values from data/fc27/archetypes.json
 //   - every AP price through `model()` in gen/archetype-stats.mjs (the stats
 //     pages' cost model, checked against an independent implementation there)
-//   - board standings from data/meta-fc27-season1.json (the app's public
-//     /api/meta/current?year=27, refreshed by ops/export-role-builds.mjs). The
+//   - board standings from gen/meta27.mjs (data/meta-fc27.json, the app's
+//     public /api/meta/current?year=27, refreshed by ops/export-meta.mjs). The
 //     boards list each position's TOP TEN only, so an archetype missing from
-//     them is "not in any board's top ten", never "unranked". The season's
-//     admin label is never printed - only its number.
+//     them is "not in any board's top ten", never "unranked". The season is
+//     named by its label, as /meta prints it (since 25 Sep; before, the label
+//     was the admin's "Beta" and only the number was printed).
 //   - build links from data/fc27/role-builds.json (house builds, ids verified
 //     at export).
 // A config supplies only its slug, title strings, category order and the one
@@ -52,13 +53,9 @@ const DIR = path.join(import.meta.dirname, '..', 'data');
 const OUT = path.join(import.meta.dirname, '..', 'out');
 
 // ── The meta boards ─────────────────────────────────────────────────────────
-export const META27 = JSON.parse(readFileSync(path.join(DIR, 'meta-fc27-season1.json'), 'utf8'));
-if (META27.season.gameYear !== 27) throw new Error('meta-fc27-season1.json is not an FC 27 snapshot');
-const depths = [...new Set(Object.values(META27.boards).map((r) => r.length))];
-if (depths.length !== 1) throw new Error(`boards differ in depth: ${depths.join(', ')}`);
-export const BOARD_DEPTH = depths[0];
+import { META27, BOARD_DEPTH, posName } from './meta27.mjs';
+export { META27, BOARD_DEPTH, posName };
 export const topN = `top ${words(BOARD_DEPTH)}`;
-export const posName = (p) => META27.positionNames?.[p] ?? p;
 export const ord = (n) => (n === 1 ? 'no. 1'
   : `${n}${['th', 'st', 'nd', 'rd'][(n % 10 > 3 || Math.floor((n % 100) / 10) === 1) ? 0 : n % 10]}`);
 // Every board appearance of one archetype: its best rank on each board.
@@ -191,7 +188,7 @@ ${fixed('Weak foot', (id) => starSpan(model(id).star('weakFoot')))}
 ${fixed('Signature PlayStyle', (id) => model(id).a.signature.map((s) => `<span class="ps"><img src="${psImg(s)}" alt="" loading="lazy" width="22" height="22">${esc(psName(s))}</span>`).join(''))}
 ${fixed('Meta board', (id) => esc(cap1(boardLine(id))))}
 </div></div>
-<p class="ft">Level ${CAP_LEVEL} is the FC 27 cap: <b>${fmt(BUDGET)} AP</b> to spend on the way from the start to the ceiling. Meta board: the best placing on the FC 27 season ${META27.season.number} boards (${esc(META27.season.formation)}), each a ${topN}.</p>
+<p class="ft">Level ${CAP_LEVEL} is the FC 27 cap: <b>${fmt(BUDGET)} AP</b> to spend on the way from the start to the ceiling. Meta board: the best placing on the FC 27 ${esc(META27.season.label)} boards (${esc(META27.season.formationName || META27.season.formation)}), each a ${topN}.</p>
 <script>
 (function(){var R=document.querySelector('[data-${c}]');if(!R||R.dataset.on)return;R.dataset.on='1';
 R.addEventListener('click',function(e){var b=e.target.closest('button.ch');if(!b||!R.contains(b))return;
@@ -487,7 +484,7 @@ export function renderGroup(cfg) {
     [`Which ${R.noun} specialization is cheapest to unlock?`,
      `${specTitle(cs.s.name)} on the ${M[cs.id].name}: ${fmt(cs.s.ap)} AP from a new ${M[cs.id].name}’s starting values (${list(cs.s.crit.map((x) => `${attrName(x.k)} ${x.v}`))}). The dearest in the group is ${specTitle(ds.s.name)} on the ${M[ds.id].name}, ${fmt(ds.s.ap)} AP.`],
     [`What is the best ${R.noun} archetype in FC 27?`,
-     `By the FC 27 season ${META27.season.number} meta boards: ${ids.map((id) => `${the(id)} ${boardLine(id)}`).join('; ')}. The boards rank published builds and move as new ones publish.`],
+     `By the FC 27 ${META27.season.label} meta boards: ${ids.map((id) => `${the(id)} ${boardLine(id)}`).join('; ')}. The boards rank published builds and move as new ones publish.`],
     ...(cfg.faqExtra ? cfg.faqExtra(G) : []),
     [`How many AP do you get in FC 27 Pro Clubs?`,
      `${fmt(BUDGET)} AP at level ${CAP_LEVEL}, the FC 27 level cap. Skill move and weak foot stars are paid from the same budget.`],
