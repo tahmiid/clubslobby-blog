@@ -74,6 +74,15 @@ const glanceCss = (c) => `
 .${c} .cr{font-size:13px;color:var(--ink2)}
 @media (max-width:560px){.${c} .gl{grid-template-columns:1fr}}`;
 
+// A player's short name for a description strip: year/edition suffixes and
+// nicknames off ("Messi '26 WC", "Zlatan the Bicycle"), the surname kept with
+// its particle ("van Dijk", "van der Sar").
+const surname = (n) => {
+  const w = n.replace(/\s*['’(]\s*\d\d.*$/, '').replace(/\s*\(.*\)$/, '').replace(/\s+the\s+.*$/i, '').replace(/\s+Jr\.?$/, '').trim().split(/\s+/);
+  const p = w.findIndex((x, i) => i > 0 && /^(van|de|der|di|da|dos|del|von)$/.test(x));
+  return p > 0 ? w.slice(p).join(' ') : w[w.length - 1];
+};
+
 export function renderSpoke27({ n, archId, meta: metaCfg = {} }) {
   const P = `a${n}`;
   const m = model(archId);
@@ -185,20 +194,23 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
 ${statsCss()}
 ${grid}
 
-<p><strong>The ${esc(name)} is ${/^[AEIOU]/i.test(a.position) ? 'an' : 'a'} ${esc(a.position.toLowerCase())} archetype${a.inspiredBy ? ` modelled on ${esc(a.inspiredBy)}` : ''}.</strong> ${esc(a.description ?? '')} Above, the FC 27 ${esc(name)} builds people copy most, all at level ${CAP_LEVEL}; below, what the archetype costs to build. See also ${list(onward)}.</p>
+<h2 id="prices">What's cheap and what's expensive</h2>
+<p>Each archetype puts each attribute in one of four price tiers. On ${/^[AEIOU]/i.test(name) ? 'an' : 'a'} ${esc(name)}, ${list(cheap.map(attrName))} are the cheapest to raise and ${list(dear.map(attrName))} the dearest.</p>
+${tiersCard}
+${statsHref(archId) ? `<p><a href="${statsHref(archId)}">Every ${esc(name)} upgrade priced, attribute by attribute →</a></p>` : ''}
+
+<h2 id="specializations">Specializations</h2>
+<p>Bought from a new ${esc(name)}'s starting values, ${esc(specName(s1.name))} is the cheapest to unlock at ${fmt(s1.ap)} AP, then ${esc(specName(s2.name))} at ${fmt(s2.ap)} and ${esc(specName(s3.name))} at ${fmt(s3.ap)}.</p>
+${specsCard}
 
 ${AD_A}
 
 <h2 id="glance">The FC 27 ${esc(name)}</h2>
 ${glance}
 
-<h2 id="prices">What's cheap and what's expensive</h2>
-<p>Each archetype puts each attribute in one of four price tiers. On ${/^[AEIOU]/i.test(name) ? 'an' : 'a'} ${esc(name)}, ${list(cheap.map(attrName))} are the cheapest to raise and ${list(dear.map(attrName))} the dearest.</p>
-${tiersCard}
+<p><strong>The ${esc(name)} is ${/^[AEIOU]/i.test(a.position) ? 'an' : 'a'} ${esc(a.position.toLowerCase())} archetype${a.inspiredBy ? ` modelled on ${esc(a.inspiredBy)}` : ''}.</strong> ${esc(a.description ?? '')} The grid at the top holds the FC 27 ${esc(name)} builds people copy most, all at level ${CAP_LEVEL}, and the prices and specializations above show what the archetype costs to build. See also ${list(onward)}.</p>
 
-<h2 id="specializations">Specializations</h2>
-<p>Bought from a new ${esc(name)}'s starting values, ${esc(specName(s1.name))} is the cheapest to unlock at ${fmt(s1.ap)} AP, then ${esc(specName(s2.name))} at ${fmt(s2.ap)} and ${esc(specName(s3.name))} at ${fmt(s3.ap)}.</p>
-${specsCard}
+
 
 ${playersBlock}
 
@@ -223,9 +235,15 @@ ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
   // description names the builds the grid actually shows, most copied first.
   const meta = {
     slug: `pro-clubs-${archId}-build`,
-    title: metaCfg.title ?? `Best Pro Clubs ${name} Build for FC 27: Level 40 Builds to Copy`,
-    meta_title: metaCfg.meta_title ?? `Best Pro Clubs ${name} Build — FC 27 Level 40 Guide`,
-    meta_description: `The best FC 27 Pro Clubs ${name} builds at level ${CAP_LEVEL}, most copied first — ${list(top3)} — plus the ${name}’s specializations and upgrade costs.`,
+    // Owner's formats (26 Sep 2026): short title, keyword-strip description -
+    // level, specializations, signature, AcceleRATE, then the real players on
+    // the grid (concept builds carry no nation and are skipped).
+    title: metaCfg.title ?? `Best FC 27 ${name} Build`,
+    meta_title: metaCfg.meta_title ?? `Best FC 27 ${name} Build`,
+    meta_description: metaCfg.meta_description ?? [`Level-${CAP_LEVEL}`,
+      ...specs.map((x) => specName(x.name).replace(/(^|\s)(\p{Ll})/gu, (_, sp, c) => sp + c.toUpperCase())),
+      ...(sig ? [psName(sig)] : []), ...(isKeeper ? [] : ['AcceleRATE']),
+      ...[...new Set(shown.filter((b) => b.nation).map((b) => surname(b.buildName)))].slice(0, 4)].join(' · '),
     custom_excerpt: `Level-${CAP_LEVEL} ${name} builds people actually copy, the three specializations priced, and what the ${name} is cheap and expensive to upgrade.`,
     tags: ['Guides', 'Builds', 'Archetypes', 'FC 27'],
   };
