@@ -1243,6 +1243,72 @@ const POSTS = [
     meta_description: 'Shot Stopper · Sweeper Keeper · META · Level-40 · Neuer · Courtois · Buffon · Maignan',
     custom_excerpt: 'Shot-stopper or sweeper keeper: the level-40 goalkeeper builds people copy most.',
     tags: ['Guides', 'Builds', 'FC 27'] },
+  // The five single-position pages (gen/fc27-role-builds.mjs, 2026-09-29): CDM,
+  // CM, CAM, CB and full-backs, each its parent's roles at 12 builds a role.
+  // Their header text is COMPUTED (out/aNNN.meta.json, which wins over these
+  // rows when it travels with the html); the rows are the copy of the day they
+  // were added, so a publish without the meta file still says something true.
+  { file: 'a198.html', slug: 'best-pro-clubs-cdm-builds', status: 'published',
+    title: 'Best FC 27 Pro Clubs CDM Builds',
+    meta_title: 'Best FC 27 CDM Builds',
+    meta_description: 'Recycler · Disruptor · META · Destroyer · Deep-Lying Playmaker · Level-40 · Gattuso · Tchouaméni · Keane · Rodri',
+    custom_excerpt: 'Destroyer or deep-lying playmaker: the level-40 CDM builds people copy most.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  { file: 'a199.html', slug: 'best-pro-clubs-cm-builds', status: 'published',
+    title: 'Best FC 27 Pro Clubs CM Builds',
+    meta_title: 'Best FC 27 CM Builds',
+    meta_description: 'Boss · Creator · META · Box-to-Box Midfielder · Central Playmaker · Level-40 · Kroos · Vitinha · Modrić · Pedri',
+    custom_excerpt: 'Box-to-box or central playmaker: the level-40 CM builds people copy most.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  { file: 'a200.html', slug: 'best-pro-clubs-cam-builds', status: 'published',
+    title: 'Best FC 27 Pro Clubs CAM Builds',
+    meta_title: 'Best FC 27 CAM Builds',
+    meta_description: 'Magician · Creator · Finisher · META · Attacking Playmaker · Dribbling 10 · Level-40 · Neymar · Iniesta · Ronaldinho · Zidane',
+    custom_excerpt: 'Attacking playmaker or dribbling 10: the level-40 CAM builds people copy most.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  { file: 'a201.html', slug: 'best-pro-clubs-cb-builds', status: 'published',
+    title: 'Best FC 27 Pro Clubs CB Builds',
+    meta_title: 'Best FC 27 CB Builds (Centre-Back)',
+    meta_description: 'Boss · Progressor · META · Stopper · Ball-Playing Centre-Back · Level-40 · Vidić · Rüdiger · Calafiori · Van Dijk',
+    custom_excerpt: 'Stopper or ball-playing centre-back: the level-40 CB builds people copy most.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  { file: 'a202.html', slug: 'best-pro-clubs-fullback-builds', status: 'published',
+    title: 'Best FC 27 Pro Clubs Full-Back Builds',
+    meta_title: 'Best FC 27 Full-Back Builds (LB & RB)',
+    meta_description: 'Marauder · Disruptor · META · Attacking Full-Back · Defensive Full-Back · Level-40 · Cafu · Davies · Alexander-Arnold · Mendes',
+    custom_excerpt: 'Attacking or defensive full-back: the level-40 LB and RB builds people copy most.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  // The height and weight table (gen/a203-height-weight.mjs, 2026-09-29):
+  // what each archetype allows and what players build, counted by
+  // ops/export-body-picks.mjs. Computed header, as above.
+  { file: 'a203.html', slug: 'pro-clubs-height-and-weight', status: 'published',
+    title: 'FC 27 Pro Clubs Height and Weight, by Archetype',
+    meta_title: 'Best FC 27 Height and Weight, by Archetype',
+    meta_description: 'Finisher · Spark · Maestro · Creator · All 13 Archetypes · Height · Weight · cm · ft · kg · lbs · AcceleRATE · Explosive · Lengthy',
+    custom_excerpt: 'The height and weight every FC 27 archetype allows, and the body players build most on each.',
+    tags: ['Guides', 'Builds', 'FC 27'] },
+  // The feature pages (gen/features.mjs + gen/hq-features.mjs, 2026-09-29):
+  // the lobby, build from a photo and the phone app, each on the address it
+  // keeps once it is live. No year in the slug and no "coming soon" in the
+  // title: `status` in hq-features.mjs is the switch.
+  { file: 'a204.html', slug: 'pro-clubs-find-teammates', status: 'published',
+    title: 'Find FC 27 Pro Clubs Teammates: The Drop-In Lobby',
+    meta_title: 'Find FC 27 Pro Clubs Teammates: Drop-In Lobby',
+    meta_description: 'Find Teammates · Drop-In · Club Matches · LFG · Looking for a Club · See the Build First · FC 27 Pro Clubs',
+    custom_excerpt: 'Pick your build, say you are up for a game, and let teammates find you. The lobby opens in the next few days.',
+    tags: ['News', 'Pro Clubs HQ'] },
+  { file: 'a205.html', slug: 'pro-clubs-build-from-a-photo', status: 'published',
+    title: 'FC 27 Pro Clubs Build Scanner: From a Photo to a Build',
+    meta_title: 'FC 27 Pro Clubs Build Scanner: Photo to Build',
+    meta_description: 'Build Scanner · Photo to Build · Screenshot · Archetype · Attributes · PlayStyles · Height and Weight · Share Your Build',
+    custom_excerpt: 'Take a photo of your build on the screen and get it as a build you can save and share. Opening in the next few days.',
+    tags: ['News', 'Pro Clubs HQ'] },
+  { file: 'a206.html', slug: 'pro-clubs-hq-app', status: 'published',
+    title: 'Pro Clubs HQ App for iPhone and Android',
+    meta_title: 'Pro Clubs App for FC 27: iPhone and Android',
+    meta_description: 'iPhone · Android · Builder · Builds to Copy · Meta · Controls · Club Pages · Notifications · FC 27 Pro Clubs',
+    custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. Coming in the next few weeks.',
+    tags: ['News', 'Pro Clubs HQ'] },
   // The per-archetype stats pages (gen/archetype-stats.mjs, 2026-09-23): what
   // is cheap and what is expensive to upgrade on each archetype. The rows are
   // COPIED from out/aNNN.meta.json, which the generator computes (the

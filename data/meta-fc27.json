@@ -27,7 +27,7 @@
     "archetype": "Shot Stopper",
     "archetypeId": "shot-stopper",
     "level": 40,
-    "score": 92.2,
+    "score": 92.7,
     "kind": "original"
    }
   },
@@ -38,14 +38,14 @@
    "x": 14,
    "y": 74,
    "entry": {
-    "rank": 1,
+    "rank": 2,
     "buildId": "f870dc70-ef79-4638-8481-4fb640dd3bd2",
     "buildName": "Offensive Wing Back — alexsaitoscristian",
     "handle": "alexsaitoscristian",
     "archetype": "Marauder",
     "archetypeId": "marauder",
     "level": 40,
-    "score": 79.6,
+    "score": 85.9,
     "kind": "remix"
    }
   },
@@ -63,7 +63,7 @@
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 88,
+    "score": 93.8,
     "kind": "original"
    }
   },
@@ -75,14 +75,14 @@
    "y": 79,
    "entry": {
     "rank": 2,
-    "buildId": "f35cb521-9973-419d-b660-dac8a7afad50",
-    "buildName": "Antonio Rüdiger — secondodevita",
-    "handle": "secondodevita",
+    "buildId": "a7a6bd2b-e597-4d3e-8ab2-9aad28d07a28",
+    "buildName": "shftyhq",
+    "handle": "aliasslime8",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 86.7,
-    "kind": "remix"
+    "score": 91.4,
+    "kind": "original"
    }
   },
   {
@@ -92,15 +92,15 @@
    "x": 86,
    "y": 74,
    "entry": {
-    "rank": 4,
-    "buildId": "eeee2253-fb60-4c6c-860f-41e180a46b10",
-    "buildName": "Fast DM",
-    "handle": "a-tahmiid",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
+    "rank": 3,
+    "buildId": "c9865986-b8e4-4258-9deb-4ea160416101",
+    "buildName": "LM/LB",
+    "handle": "kenw49",
+    "archetype": "Marauder",
+    "archetypeId": "marauder",
     "level": 40,
-    "score": 78.5,
-    "kind": "remix"
+    "score": 85.7,
+    "kind": "original"
    }
   },
   {
@@ -111,13 +111,13 @@
    "y": 61,
    "entry": {
     "rank": 1,
-    "buildId": "4971e8bf-75e9-4ecf-9e2f-2a376575be48",
-    "buildName": "Roy Keane — fjon84",
-    "handle": "fjon84",
+    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
+    "buildName": "Gennaro Gattuso — damiosa95",
+    "handle": "dd",
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 88,
+    "score": 95.3,
     "kind": "remix"
    }
   },
@@ -129,14 +129,14 @@
    "y": 61,
    "entry": {
     "rank": 2,
-    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
-    "buildName": "Gennaro Gattuso — damiosa95",
-    "handle": "damiosa95",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
+    "buildId": "8f008939-6ce2-4069-87b0-9fab71f258d9",
+    "buildName": "Recycler - MDC",
+    "handle": "sensei",
+    "archetype": "Recycler",
+    "archetypeId": "recycler",
     "level": 40,
-    "score": 88,
-    "kind": "remix"
+    "score": 90.9,
+    "kind": "original"
    }
   },
   {
@@ -153,7 +153,7 @@
     "archetype": "Creator",
     "archetypeId": "creator",
     "level": 40,
-    "score": 84.7,
+    "score": 91.1,
     "kind": "remix"
    }
   },
@@ -165,13 +165,13 @@
    "y": 24,
    "entry": {
     "rank": 1,
-    "buildId": "4fedb6a2-4f31-40da-9248-99333b7b87aa",
-    "buildName": "메지션",
-    "handle": "9room51",
-    "archetype": "Magician",
-    "archetypeId": "magician",
+    "buildId": "bd7dac85-048e-49bf-8abd-923675dac8bb",
+    "buildName": "Explosive Agility Menace",
+    "handle": "fremin-mackintosh",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 87.3,
+    "score": 96.5,
     "kind": "original"
    }
   },
@@ -189,7 +189,7 @@
     "archetype": "Finisher",
     "archetypeId": "finisher",
     "level": 40,
-    "score": 93.5,
+    "score": 94.9,
     "kind": "original"
    }
   },
@@ -207,7 +207,7 @@
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 87.1,
+    "score": 91.1,
     "kind": "remix"
    }
   }
@@ -222,19 +222,19 @@
     "archetype": "Creator",
     "archetypeId": "creator",
     "level": 40,
-    "score": 84.7,
+    "score": 91.1,
     "kind": "remix"
    },
    {
     "rank": 2,
-    "buildId": "79167e09-cc84-4001-8614-147cad052649",
-    "buildName": "YAMAL LVL 40",
-    "handle": "amilvu17",
-    "archetype": "Spark",
-    "archetypeId": "spark",
+    "buildId": "e4cbbdf2-6539-4216-a597-cacc2c70c38c",
+    "buildName": "Zinedine Zidane",
+    "handle": "luthfiarwanendra",
+    "archetype": "Creator",
+    "archetypeId": "creator",
     "level": 40,
-    "score": 81.1,
-    "kind": "original"
+    "score": 86.2,
+    "kind": "remix"
    },
    {
     "rank": 3,
@@ -244,85 +244,85 @@
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 80.5,
+    "score": 84.1,
     "kind": "original"
    },
    {
     "rank": 4,
-    "buildId": "53bd0072-d476-4623-bb33-579b6bc00cd2",
-    "buildName": "A7 Passing Creator",
-    "handle": "mohdarfan0181",
+    "buildId": "28212526-568c-4b60-bbe6-df260851d0ea",
+    "buildName": "M. Ozil  Prime WC 2010",
+    "handle": "x_mxtro",
     "archetype": "Creator",
     "archetypeId": "creator",
     "level": 40,
-    "score": 78.4,
+    "score": 82.9,
     "kind": "original"
    },
    {
     "rank": 5,
+    "buildId": "79167e09-cc84-4001-8614-147cad052649",
+    "buildName": "YAMAL LVL 40",
+    "handle": "amilvu17",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 81,
+    "kind": "original"
+   },
+   {
+    "rank": 6,
+    "buildId": "b91113af-2b31-4232-9dbd-9a9b39f7f680",
+    "buildName": "Classic 10",
+    "handle": "luthfiarwanendra",
+    "archetype": "Creator",
+    "archetypeId": "creator",
+    "level": 40,
+    "score": 81,
+    "kind": "original"
+   },
+   {
+    "rank": 7,
     "buildId": "d5a046e6-1580-40ad-8f30-56f298d1d116",
     "buildName": "Lamine Yamal - TOTW",
     "handle": "s1oth",
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 76.5,
-    "kind": "original"
-   },
-   {
-    "rank": 6,
-    "buildId": "54ed01a2-5422-4f3d-b1cd-925eb03dacee",
-    "buildName": "Creator",
-    "handle": "loberschmidt",
-    "archetype": "Creator",
-    "archetypeId": "creator",
-    "level": 40,
-    "score": 75.9,
-    "kind": "original"
-   },
-   {
-    "rank": 7,
-    "buildId": "edbc0e37-0ac0-4824-b6b0-07c35f158df6",
-    "buildName": "MESSI LVL 40",
-    "handle": "amilvu17",
-    "archetype": "Creator",
-    "archetypeId": "creator",
-    "level": 40,
-    "score": 73.9,
+    "score": 80.9,
     "kind": "original"
    },
    {
     "rank": 8,
+    "buildId": "2b4d54ac-57c8-443c-90cc-adbc83c38e62",
+    "buildName": "Neymar Santos  Young Prime SS",
+    "handle": "x_mxtro",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 80.3,
+    "kind": "original"
+   },
+   {
+    "rank": 9,
+    "buildId": "17142cdb-7722-4c1e-bba1-98548c12c9bf",
+    "buildName": "Dybala CAM No 10",
+    "handle": "x_mxtro",
+    "archetype": "Creator",
+    "archetypeId": "creator",
+    "level": 40,
+    "score": 80.1,
+    "kind": "original"
+   },
+   {
+    "rank": 10,
     "buildId": "58a2846c-eb02-488d-b605-7258fb2a9f74",
     "buildName": "Neymar Jr Magician",
     "handle": "a-tahmiid",
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 73.7,
+    "score": 79.5,
     "kind": "remix"
-   },
-   {
-    "rank": 9,
-    "buildId": "39a42386-1557-4fe1-8bc9-6303e3d378b6",
-    "buildName": "40 creator pre-patch",
-    "handle": "hunter",
-    "archetype": "Creator",
-    "archetypeId": "creator",
-    "level": 40,
-    "score": 73.4,
-    "kind": "original"
-   },
-   {
-    "rank": 10,
-    "buildId": "1168b21f-dec8-4f44-b0fb-781743b2e196",
-    "buildName": "lw st",
-    "handle": "adamu",
-    "archetype": "Magician",
-    "archetypeId": "magician",
-    "level": 40,
-    "score": 72.9,
-    "kind": "original"
    }
   ],
   "CB": [
@@ -334,253 +334,141 @@
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 88,
+    "score": 93.8,
     "kind": "original"
    },
    {
     "rank": 2,
+    "buildId": "a7a6bd2b-e597-4d3e-8ab2-9aad28d07a28",
+    "buildName": "shftyhq",
+    "handle": "aliasslime8",
+    "archetype": "Boss",
+    "archetypeId": "boss",
+    "level": 40,
+    "score": 91.4,
+    "kind": "original"
+   },
+   {
+    "rank": 3,
     "buildId": "f35cb521-9973-419d-b660-dac8a7afad50",
     "buildName": "Antonio Rüdiger — secondodevita",
     "handle": "secondodevita",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 86.7,
+    "score": 87.3,
     "kind": "remix"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "buildId": "ec0314db-c631-43cb-af73-a734e4b657a6",
     "buildName": "Boss",
     "handle": "loberschmidt",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 83.3,
+    "score": 87,
     "kind": "original"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "buildId": "bd7f91f6-29f1-4ed3-a620-6b3056cc12c0",
     "buildName": "Matiś",
     "handle": "matiic410",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 81.4,
-    "kind": "original"
-   },
-   {
-    "rank": 5,
-    "buildId": "b5bd2737-178b-425a-b84a-4fe68f36da29",
-    "buildName": "Committed Header Menace",
-    "handle": "s4m4ritain",
-    "archetype": "Boss",
-    "archetypeId": "boss",
-    "level": 40,
-    "score": 81.1,
+    "score": 86.6,
     "kind": "original"
    },
    {
     "rank": 6,
-    "buildId": "e0aa2ed8-8717-4b5c-8a0d-9b0a6c458373",
-    "buildName": "Ferocious Header Machine",
-    "handle": "s4m4ritain",
+    "buildId": "b035fdf9-ab46-4c88-8e0b-1801b0de5eb1",
+    "buildName": "Boss CB",
+    "handle": "anonymouski",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 80.5,
+    "score": 86.6,
     "kind": "original"
    },
    {
     "rank": 7,
-    "buildId": "ab1ba7ef-5987-4b48-9d17-92dcbbe9f723",
-    "buildName": "Ball playing cb",
-    "handle": "xscr3wyyy",
-    "archetype": "Boss",
-    "archetypeId": "boss",
-    "level": 40,
-    "score": 80.2,
-    "kind": "original"
-   },
-   {
-    "rank": 8,
     "buildId": "9db7d577-ab72-4ff8-a169-32dadfaf646c",
     "buildName": "TAK ZWANA ŚCIANA",
     "handle": "rafstef24",
     "archetype": "Boss",
     "archetypeId": "boss",
     "level": 40,
-    "score": 79.6,
+    "score": 85,
+    "kind": "original"
+   },
+   {
+    "rank": 8,
+    "buildId": "e0aa2ed8-8717-4b5c-8a0d-9b0a6c458373",
+    "buildName": "Ferocious Header Machine",
+    "handle": "s4m4ritain",
+    "archetype": "Boss",
+    "archetypeId": "boss",
+    "level": 40,
+    "score": 84.2,
     "kind": "original"
    },
    {
     "rank": 9,
-    "buildId": "4e7f6ba2-53a8-4871-bef3-e8dd239fa7d0",
-    "buildName": "defensa",
-    "handle": "trunks710",
-    "archetype": "Recycler",
-    "archetypeId": "recycler",
-    "level": 40,
-    "score": 78.5,
-    "kind": "original"
-   },
-   {
-    "rank": 10,
     "buildId": "fa797638-ff69-4254-8aa1-40b51503dcf0",
     "buildName": "Giupino-Progressor",
     "handle": "secondodevita",
     "archetype": "Progressor",
     "archetypeId": "progressor",
     "level": 40,
-    "score": 77,
+    "score": 84.1,
+    "kind": "original"
+   },
+   {
+    "rank": 10,
+    "buildId": "b5bd2737-178b-425a-b84a-4fe68f36da29",
+    "buildName": "Committed Header Menace",
+    "handle": "s4m4ritain",
+    "archetype": "Boss",
+    "archetypeId": "boss",
+    "level": 40,
+    "score": 83.4,
     "kind": "original"
    }
   ],
   "CDM": [
    {
     "rank": 1,
-    "buildId": "4971e8bf-75e9-4ecf-9e2f-2a376575be48",
-    "buildName": "Roy Keane — fjon84",
-    "handle": "fjon84",
+    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
+    "buildName": "Gennaro Gattuso — damiosa95",
+    "handle": "dd",
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 88,
+    "score": 95.3,
     "kind": "remix"
    },
    {
     "rank": 2,
-    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
-    "buildName": "Gennaro Gattuso — damiosa95",
-    "handle": "damiosa95",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 88,
-    "kind": "remix"
-   },
-   {
-    "rank": 3,
-    "buildId": "eeee2253-fb60-4c6c-860f-41e180a46b10",
-    "buildName": "Fast DM",
-    "handle": "a-tahmiid",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 88,
-    "kind": "remix"
-   },
-   {
-    "rank": 4,
-    "buildId": "c6c3d881-58bc-4280-b5df-779f0f8a89e2",
-    "buildName": "Patrick Vieira — burgerkingjoan",
-    "handle": "burgerkingjoan",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 87.9,
-    "kind": "remix"
-   },
-   {
-    "rank": 5,
     "buildId": "8f008939-6ce2-4069-87b0-9fab71f258d9",
     "buildName": "Recycler - MDC",
     "handle": "sensei",
     "archetype": "Recycler",
     "archetypeId": "recycler",
     "level": 40,
-    "score": 86.3,
+    "score": 90.9,
     "kind": "original"
    },
    {
-    "rank": 6,
-    "buildId": "0c55011c-64b3-4e5a-9558-bde575fba4af",
-    "buildName": "Defensive DM",
-    "handle": "gala",
-    "archetype": "Recycler",
-    "archetypeId": "recycler",
-    "level": 40,
-    "score": 84.4,
-    "kind": "original"
-   },
-   {
-    "rank": 7,
-    "buildId": "4f973f3f-e36f-4607-bdc1-4af151ec1567",
-    "buildName": "A7 Recycler",
-    "handle": "mohdarfan0181",
-    "archetype": "Recycler",
-    "archetypeId": "recycler",
-    "level": 40,
-    "score": 82.4,
-    "kind": "original"
-   },
-   {
-    "rank": 8,
-    "buildId": "e5a5b535-29bc-4623-b719-fa00d0afec42",
-    "buildName": "Finos United - MDC",
-    "handle": "sensei",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 81.6,
-    "kind": "original"
-   },
-   {
-    "rank": 9,
-    "buildId": "89406d6e-460b-4f04-ac21-28581fa7ba41",
-    "buildName": "Razor-Sharp Muscle Menace",
-    "handle": "natechapman14",
-    "archetype": "Recycler",
-    "archetypeId": "recycler",
-    "level": 40,
-    "score": 79.8,
-    "kind": "original"
-   },
-   {
-    "rank": 10,
-    "buildId": "fe0f6fa5-c80a-4621-970d-ce95bb2fb9c6",
-    "buildName": "Gennaro Gattuso Pacey",
-    "handle": "a-tahmiid",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 79.3,
-    "kind": "remix"
-   }
-  ],
-  "FB": [
-   {
-    "rank": 1,
-    "buildId": "f870dc70-ef79-4638-8481-4fb640dd3bd2",
-    "buildName": "Offensive Wing Back — alexsaitoscristian",
-    "handle": "alexsaitoscristian",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
-    "level": 40,
-    "score": 79.6,
-    "kind": "remix"
-   },
-   {
-    "rank": 2,
+    "rank": 3,
     "buildId": "4971e8bf-75e9-4ecf-9e2f-2a376575be48",
     "buildName": "Roy Keane — fjon84",
     "handle": "fjon84",
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 78.5,
-    "kind": "remix"
-   },
-   {
-    "rank": 3,
-    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
-    "buildName": "Gennaro Gattuso — damiosa95",
-    "handle": "damiosa95",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 78.5,
+    "score": 88.1,
     "kind": "remix"
    },
    {
@@ -591,73 +479,185 @@
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 78.5,
+    "score": 88.1,
     "kind": "remix"
    },
    {
     "rank": 5,
+    "buildId": "a74f6811-a0b6-4ec0-9cd6-307e07d5cf17",
+    "buildName": "Gennaro Gattuso — secondodevita",
+    "handle": "secondodevita",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 88.1,
+    "kind": "remix"
+   },
+   {
+    "rank": 6,
+    "buildId": "c6c3d881-58bc-4280-b5df-779f0f8a89e2",
+    "buildName": "Patrick Vieira — burgerkingjoan",
+    "handle": "burgerkingjoan",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 88,
+    "kind": "remix"
+   },
+   {
+    "rank": 7,
+    "buildId": "4c7b4e54-b1d2-481e-be91-736f109c11e8",
+    "buildName": "Park Ji Sung CDM",
+    "handle": "x_mxtro",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 87.2,
+    "kind": "original"
+   },
+   {
+    "rank": 8,
+    "buildId": "22e08f14-4cc9-44b1-8dc7-a448128b6a8b",
+    "buildName": "Recycler - MDC — whatajoke44",
+    "handle": "whatajoke44",
+    "archetype": "Recycler",
+    "archetypeId": "recycler",
+    "level": 40,
+    "score": 86.3,
+    "kind": "remix"
+   },
+   {
+    "rank": 9,
+    "buildId": "a9a2b48f-0ce1-479a-ad5d-127f2644f79b",
+    "buildName": "PURE STEALER CDM",
+    "handle": "kayahankaya3",
+    "archetype": "Recycler",
+    "archetypeId": "recycler",
+    "level": 40,
+    "score": 85.9,
+    "kind": "original"
+   },
+   {
+    "rank": 10,
+    "buildId": "0c55011c-64b3-4e5a-9558-bde575fba4af",
+    "buildName": "Defensive DM",
+    "handle": "gala",
+    "archetype": "Recycler",
+    "archetypeId": "recycler",
+    "level": 40,
+    "score": 84.6,
+    "kind": "original"
+   }
+  ],
+  "FB": [
+   {
+    "rank": 1,
+    "buildId": "7679fade-13b7-467f-9651-e4ee68269bb6",
+    "buildName": "Gennaro Gattuso — damiosa95",
+    "handle": "dd",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 89,
+    "kind": "remix"
+   },
+   {
+    "rank": 2,
+    "buildId": "f870dc70-ef79-4638-8481-4fb640dd3bd2",
+    "buildName": "Offensive Wing Back — alexsaitoscristian",
+    "handle": "alexsaitoscristian",
+    "archetype": "Marauder",
+    "archetypeId": "marauder",
+    "level": 40,
+    "score": 85.9,
+    "kind": "remix"
+   },
+   {
+    "rank": 3,
+    "buildId": "c9865986-b8e4-4258-9deb-4ea160416101",
+    "buildName": "LM/LB",
+    "handle": "kenw49",
+    "archetype": "Marauder",
+    "archetypeId": "marauder",
+    "level": 40,
+    "score": 85.7,
+    "kind": "original"
+   },
+   {
+    "rank": 4,
+    "buildId": "4971e8bf-75e9-4ecf-9e2f-2a376575be48",
+    "buildName": "Roy Keane — fjon84",
+    "handle": "fjon84",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 81.9,
+    "kind": "remix"
+   },
+   {
+    "rank": 5,
+    "buildId": "eeee2253-fb60-4c6c-860f-41e180a46b10",
+    "buildName": "Fast DM",
+    "handle": "a-tahmiid",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 81.9,
+    "kind": "remix"
+   },
+   {
+    "rank": 6,
+    "buildId": "a74f6811-a0b6-4ec0-9cd6-307e07d5cf17",
+    "buildName": "Gennaro Gattuso — secondodevita",
+    "handle": "secondodevita",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 81.9,
+    "kind": "remix"
+   },
+   {
+    "rank": 7,
+    "buildId": "4c7b4e54-b1d2-481e-be91-736f109c11e8",
+    "buildName": "Park Ji Sung CDM",
+    "handle": "x_mxtro",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
+    "level": 40,
+    "score": 80.9,
+    "kind": "original"
+   },
+   {
+    "rank": 8,
     "buildId": "fe0f6fa5-c80a-4621-970d-ce95bb2fb9c6",
     "buildName": "Gennaro Gattuso Pacey",
     "handle": "a-tahmiid",
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 78,
+    "score": 79.7,
     "kind": "remix"
    },
    {
-    "rank": 6,
-    "buildId": "194f193a-a616-4006-bb0b-eec1f81fec67",
-    "buildName": "Offensive Wing Back — lisbonbox1",
-    "handle": "lisbonbox1",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
+    "rank": 9,
+    "buildId": "38dce190-01ea-409f-81dc-b79b54fdffd7",
+    "buildName": "b2b",
+    "handle": "derekmorgan",
+    "archetype": "Disruptor",
+    "archetypeId": "disruptor",
     "level": 40,
-    "score": 76,
-    "kind": "remix"
+    "score": 79.3,
+    "kind": "original"
    },
    {
-    "rank": 7,
+    "rank": 10,
     "buildId": "cd846afb-e24f-4fb1-a322-719a6603ec54",
     "buildName": "Box-to-Box disruptor",
     "handle": "nors_pt",
     "archetype": "Disruptor",
     "archetypeId": "disruptor",
     "level": 40,
-    "score": 75,
-    "kind": "original"
-   },
-   {
-    "rank": 8,
-    "buildId": "e5a5b535-29bc-4623-b719-fa00d0afec42",
-    "buildName": "Finos United - MDC",
-    "handle": "sensei",
-    "archetype": "Disruptor",
-    "archetypeId": "disruptor",
-    "level": 40,
-    "score": 73.3,
-    "kind": "original"
-   },
-   {
-    "rank": 9,
-    "buildId": "9f4718f5-a35b-42d9-9671-8d896f8848e6",
-    "buildName": "Balanced Wing Back",
-    "handle": "gala",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
-    "level": 40,
-    "score": 72.7,
-    "kind": "original"
-   },
-   {
-    "rank": 10,
-    "buildId": "22e6937e-e3c5-492d-9683-19fd66cc6308",
-    "buildName": "Cafu",
-    "handle": "nachograuperez",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
-    "level": 40,
-    "score": 70.9,
+    "score": 78.2,
     "kind": "original"
    }
   ],
@@ -670,11 +670,22 @@
     "archetype": "Shot Stopper",
     "archetypeId": "shot-stopper",
     "level": 40,
-    "score": 92.2,
+    "score": 92.7,
     "kind": "original"
    },
    {
     "rank": 2,
+    "buildId": "6cd0ea53-3759-48f6-a0fd-919cd0a2f682",
+    "buildName": "Buffon",
+    "handle": "gala",
+    "archetype": "Shot Stopper",
+    "archetypeId": "shot-stopper",
+    "level": 40,
+    "score": 90.8,
+    "kind": "original"
+   },
+   {
+    "rank": 3,
     "buildId": "4dd42344-c32b-40f8-8f33-78dca282b4d2",
     "buildName": "Aura",
     "handle": "marcogabrieluk7",
@@ -682,17 +693,6 @@
     "archetypeId": "shot-stopper",
     "level": 40,
     "score": 89.5,
-    "kind": "original"
-   },
-   {
-    "rank": 3,
-    "buildId": "6cd0ea53-3759-48f6-a0fd-919cd0a2f682",
-    "buildName": "Buffon",
-    "handle": "gala",
-    "archetype": "Shot Stopper",
-    "archetypeId": "shot-stopper",
-    "level": 40,
-    "score": 89.2,
     "kind": "original"
    },
    {
@@ -714,7 +714,7 @@
     "archetype": "Sweeper Keeper",
     "archetypeId": "sweeper-keeper",
     "level": 40,
-    "score": 86.5,
+    "score": 86.9,
     "kind": "original"
    },
    {
@@ -725,7 +725,7 @@
     "archetype": "Sweeper Keeper",
     "archetypeId": "sweeper-keeper",
     "level": 40,
-    "score": 85.6,
+    "score": 86,
     "kind": "original"
    },
    {
@@ -741,6 +741,17 @@
    },
    {
     "rank": 8,
+    "buildId": "be6e95bd-3ac4-4303-9446-2fbac81379b1",
+    "buildName": "Razor-Sharp Dive Machine",
+    "handle": "jonathanespinola04",
+    "archetype": "Sweeper Keeper",
+    "archetypeId": "sweeper-keeper",
+    "level": 40,
+    "score": 83.5,
+    "kind": "original"
+   },
+   {
+    "rank": 9,
     "buildId": "deb1cf08-6b62-478b-a713-b197c2101336",
     "buildName": "40 Sweeper",
     "handle": "ash",
@@ -751,15 +762,15 @@
     "kind": "original"
    },
    {
-    "rank": 9,
-    "buildId": "594e3e85-cd58-46ea-a14a-fa54e556581d",
-    "buildName": "Sweeper Libero — tontot1807",
-    "handle": "tontot1807",
-    "archetype": "Sweeper Keeper",
-    "archetypeId": "sweeper-keeper",
+    "rank": 10,
+    "buildId": "c79ba1a9-b981-4660-a6c8-6f3b7b699b01",
+    "buildName": "Gk2",
+    "handle": "trunks710",
+    "archetype": "Shot Stopper",
+    "archetypeId": "shot-stopper",
     "level": 40,
-    "score": 76.8,
-    "kind": "remix"
+    "score": 79,
+    "kind": "original"
    }
   ],
   "ST": [
@@ -771,33 +782,44 @@
     "archetype": "Finisher",
     "archetypeId": "finisher",
     "level": 40,
-    "score": 93.5,
+    "score": 94.9,
     "kind": "original"
    },
    {
     "rank": 2,
-    "buildId": "b648d409-49aa-4f0c-99f7-052dac319bd6",
-    "buildName": "Controlled Finisher",
-    "handle": "anonymouski",
+    "buildId": "b6b03146-9e39-4fae-b6fd-a369f864ff75",
+    "buildName": "best st build",
+    "handle": "xxona75",
     "archetype": "Finisher",
     "archetypeId": "finisher",
     "level": 40,
-    "score": 90.8,
+    "score": 89.8,
     "kind": "original"
    },
    {
     "rank": 3,
+    "buildId": "ff1678a8-e1eb-4f62-84f9-21a6d5482bcf",
+    "buildName": "Slippery Pace Specialist",
+    "handle": "tempestggez",
+    "archetype": "Finisher",
+    "archetypeId": "finisher",
+    "level": 40,
+    "score": 87.8,
+    "kind": "original"
+   },
+   {
+    "rank": 4,
     "buildId": "7e7c4e5c-523f-4f87-8257-11edcf9647b5",
     "buildName": "Explosive Agility Menace",
     "handle": "xxona75",
     "archetype": "Finisher",
     "archetypeId": "finisher",
     "level": 40,
-    "score": 86.9,
+    "score": 87.5,
     "kind": "original"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "buildId": "0d0828f7-ea36-4106-8033-dcebc793288b",
     "buildName": "Mobile Striker",
     "handle": "gala",
@@ -808,7 +830,40 @@
     "kind": "original"
    },
    {
-    "rank": 5,
+    "rank": 6,
+    "buildId": "92d0b6fa-c6ed-48ea-8ea6-f9d330ceb81f",
+    "buildName": "KSA",
+    "handle": "bssaam8520",
+    "archetype": "Finisher",
+    "archetypeId": "finisher",
+    "level": 40,
+    "score": 85.8,
+    "kind": "original"
+   },
+   {
+    "rank": 7,
+    "buildId": "34cf90a9-5ad5-44cc-b66f-deaa9cbad78e",
+    "buildName": "Explosive Pace Artist",
+    "handle": "xxona75",
+    "archetype": "Finisher",
+    "archetypeId": "finisher",
+    "level": 40,
+    "score": 85.6,
+    "kind": "original"
+   },
+   {
+    "rank": 8,
+    "buildId": "05f3d78d-ac5f-4934-8d57-bb8dee019e39",
+    "buildName": "Agile Pace Artist",
+    "handle": "xxona75",
+    "archetype": "Finisher",
+    "archetypeId": "finisher",
+    "level": 40,
+    "score": 85.5,
+    "kind": "original"
+   },
+   {
+    "rank": 9,
     "buildId": "e5187541-194c-453d-81c7-fc1a947f7666",
     "buildName": "Kylian Mbappé — luigi120208",
     "handle": "luigi120208",
@@ -819,71 +874,27 @@
     "kind": "remix"
    },
    {
-    "rank": 6,
-    "buildId": "23c62c39-651b-4ed7-a8bf-c29797dcf198",
-    "buildName": "Thierry Henry — jose080105dark",
-    "handle": "jose080105dark",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 84.8,
-    "kind": "remix"
-   },
-   {
-    "rank": 7,
-    "buildId": "2d0cac6c-758a-454d-8ad8-5091ae80ccd6",
-    "buildName": "Kylian Mbappé — brunopinto109",
-    "handle": "brunopinto109",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 82.3,
-    "kind": "remix"
-   },
-   {
-    "rank": 8,
-    "buildId": "9a0888fc-0e8a-4345-a348-d8ea39f4d13f",
-    "buildName": "Controlled Finisher",
-    "handle": "edgesetter",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 81.3,
-    "kind": "remix"
-   },
-   {
-    "rank": 9,
-    "buildId": "bbe0699b-8839-4392-82df-67ff6c360b1e",
-    "buildName": "Controlled Finisher lvl 40",
-    "handle": "kcdilla",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 81,
-    "kind": "remix"
-   },
-   {
     "rank": 10,
-    "buildId": "1ccded1d-be3e-4485-867c-a5626593136c",
-    "buildName": "Finalizador",
-    "handle": "joseiy",
+    "buildId": "577c149a-645e-4c2c-98fe-1e900ae4454a",
+    "buildName": "Pace Demon Finisher",
+    "handle": "ggsantana",
     "archetype": "Finisher",
     "archetypeId": "finisher",
     "level": 40,
-    "score": 80.6,
+    "score": 85,
     "kind": "original"
    }
   ],
   "W": [
    {
     "rank": 1,
-    "buildId": "4fedb6a2-4f31-40da-9248-99333b7b87aa",
-    "buildName": "메지션",
-    "handle": "9room51",
-    "archetype": "Magician",
-    "archetypeId": "magician",
+    "buildId": "bd7dac85-048e-49bf-8abd-923675dac8bb",
+    "buildName": "Explosive Agility Menace",
+    "handle": "fremin-mackintosh",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 87.3,
+    "score": 96.5,
     "kind": "original"
    },
    {
@@ -894,108 +905,108 @@
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 87.1,
+    "score": 91.1,
     "kind": "remix"
    },
    {
     "rank": 3,
-    "buildId": "d6d851bf-6172-4827-8e80-3c32275aa548",
-    "buildName": "A7 Finisher",
-    "handle": "mohdarfan0181",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
+    "buildId": "40d27586-cf30-43e1-99b6-ce7610882bf8",
+    "buildName": "Main",
+    "handle": "jacobojaramillo15",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 85.8,
+    "score": 88.3,
     "kind": "original"
    },
    {
     "rank": 4,
-    "buildId": "1168b21f-dec8-4f44-b0fb-781743b2e196",
-    "buildName": "lw st",
-    "handle": "adamu",
-    "archetype": "Magician",
-    "archetypeId": "magician",
+    "buildId": "3660e4c4-37ad-4633-af40-54d7dbc8733f",
+    "buildName": "Explosive Agility Menace — purfectz",
+    "handle": "purfectz",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 85.7,
-    "kind": "original"
+    "score": 88,
+    "kind": "remix"
    },
    {
     "rank": 5,
+    "buildId": "6a632961-75a8-4182-b588-2c77bbb27afd",
+    "buildName": "Explosive Agility Menace — whatajoke44",
+    "handle": "whatajoke44",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 88,
+    "kind": "remix"
+   },
+   {
+    "rank": 6,
+    "buildId": "9c0639cb-ba2f-4d57-85a1-958d1dce88c2",
+    "buildName": "Magician Striker",
+    "handle": "anonymouski",
+    "archetype": "Magician",
+    "archetypeId": "magician",
+    "level": 40,
+    "score": 86.1,
+    "kind": "original"
+   },
+   {
+    "rank": 7,
     "buildId": "414f2485-c50a-4273-a1ca-4fcadfa8d27d",
     "buildName": "A7 Spark",
     "handle": "mohdarfan0181",
     "archetype": "Spark",
     "archetypeId": "spark",
     "level": 40,
-    "score": 82.1,
-    "kind": "original"
-   },
-   {
-    "rank": 6,
-    "buildId": "b648d409-49aa-4f0c-99f7-052dac319bd6",
-    "buildName": "Controlled Finisher",
-    "handle": "anonymouski",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 81.9,
-    "kind": "original"
-   },
-   {
-    "rank": 7,
-    "buildId": "d5a046e6-1580-40ad-8f30-56f298d1d116",
-    "buildName": "Lamine Yamal - TOTW",
-    "handle": "s1oth",
-    "archetype": "Magician",
-    "archetypeId": "magician",
-    "level": 40,
-    "score": 81.6,
+    "score": 85,
     "kind": "original"
    },
    {
     "rank": 8,
-    "buildId": "d1fb798f-57f5-4036-9cc6-ed4066c79a54",
-    "buildName": "Agile Burst Technician",
-    "handle": "mv1804",
-    "archetype": "Spark",
-    "archetypeId": "spark",
+    "buildId": "9722ed43-5417-40e7-bd1e-27415acc5972",
+    "buildName": "Neymar JR Prime Santos",
+    "handle": "x_mxtro",
+    "archetype": "Magician",
+    "archetypeId": "magician",
     "level": 40,
-    "score": 79.5,
+    "score": 85,
     "kind": "original"
    },
    {
     "rank": 9,
-    "buildId": "23c62c39-651b-4ed7-a8bf-c29797dcf198",
-    "buildName": "Thierry Henry — jose080105dark",
-    "handle": "jose080105dark",
-    "archetype": "Finisher",
-    "archetypeId": "finisher",
-    "level": 40,
-    "score": 79.1,
-    "kind": "remix"
-   },
-   {
-    "rank": 10,
-    "buildId": "bf5354ea-614b-449c-9107-2534463e94d5",
-    "buildName": "Xerox Build",
-    "handle": "matheus-fazevedo29",
+    "buildId": "4fedb6a2-4f31-40da-9248-99333b7b87aa",
+    "buildName": "메지션",
+    "handle": "9room51",
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 78.8,
+    "score": 84.7,
+    "kind": "original"
+   },
+   {
+    "rank": 10,
+    "buildId": "bed25078-875c-4787-98fa-0cf80f265dc4",
+    "buildName": "Neymar Prime  WC 2014",
+    "handle": "x_mxtro",
+    "archetype": "Magician",
+    "archetypeId": "magician",
+    "level": 40,
+    "score": 84,
     "kind": "original"
    }
   ],
   "WM": [
    {
     "rank": 1,
-    "buildId": "4fedb6a2-4f31-40da-9248-99333b7b87aa",
-    "buildName": "메지션",
-    "handle": "9room51",
-    "archetype": "Magician",
-    "archetypeId": "magician",
+    "buildId": "bd7dac85-048e-49bf-8abd-923675dac8bb",
+    "buildName": "Explosive Agility Menace",
+    "handle": "fremin-mackintosh",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 87,
+    "score": 97.2,
     "kind": "original"
    },
    {
@@ -1006,95 +1017,95 @@
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 86,
+    "score": 90,
     "kind": "remix"
    },
    {
     "rank": 3,
-    "buildId": "1168b21f-dec8-4f44-b0fb-781743b2e196",
-    "buildName": "lw st",
-    "handle": "adamu",
-    "archetype": "Magician",
-    "archetypeId": "magician",
+    "buildId": "40d27586-cf30-43e1-99b6-ce7610882bf8",
+    "buildName": "Main",
+    "handle": "jacobojaramillo15",
+    "archetype": "Spark",
+    "archetypeId": "spark",
     "level": 40,
-    "score": 84.9,
+    "score": 89,
     "kind": "original"
    },
    {
     "rank": 4,
+    "buildId": "3660e4c4-37ad-4633-af40-54d7dbc8733f",
+    "buildName": "Explosive Agility Menace — purfectz",
+    "handle": "purfectz",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 88.8,
+    "kind": "remix"
+   },
+   {
+    "rank": 5,
+    "buildId": "6a632961-75a8-4182-b588-2c77bbb27afd",
+    "buildName": "Explosive Agility Menace — whatajoke44",
+    "handle": "whatajoke44",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 88.8,
+    "kind": "remix"
+   },
+   {
+    "rank": 6,
     "buildId": "414f2485-c50a-4273-a1ca-4fcadfa8d27d",
     "buildName": "A7 Spark",
     "handle": "mohdarfan0181",
     "archetype": "Spark",
     "archetypeId": "spark",
     "level": 40,
-    "score": 82.4,
-    "kind": "original"
-   },
-   {
-    "rank": 5,
-    "buildId": "d5a046e6-1580-40ad-8f30-56f298d1d116",
-    "buildName": "Lamine Yamal - TOTW",
-    "handle": "s1oth",
-    "archetype": "Magician",
-    "archetypeId": "magician",
-    "level": 40,
-    "score": 80.8,
-    "kind": "original"
-   },
-   {
-    "rank": 6,
-    "buildId": "d1fb798f-57f5-4036-9cc6-ed4066c79a54",
-    "buildName": "Agile Burst Technician",
-    "handle": "mv1804",
-    "archetype": "Spark",
-    "archetypeId": "spark",
-    "level": 40,
-    "score": 80.6,
+    "score": 85.3,
     "kind": "original"
    },
    {
     "rank": 7,
-    "buildId": "2b30184b-25c3-4e2c-ae62-499bebc6bc2a",
-    "buildName": "Slippery Burst Technician",
-    "handle": "nors_pt",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
+    "buildId": "9c0639cb-ba2f-4d57-85a1-958d1dce88c2",
+    "buildName": "Magician Striker",
+    "handle": "anonymouski",
+    "archetype": "Magician",
+    "archetypeId": "magician",
     "level": 40,
-    "score": 80.1,
+    "score": 85.2,
     "kind": "original"
    },
    {
     "rank": 8,
-    "buildId": "709a3822-5abd-446b-bc56-0f97de5ab349",
-    "buildName": "marauder rush 40",
-    "handle": "test",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
+    "buildId": "4fedb6a2-4f31-40da-9248-99333b7b87aa",
+    "buildName": "메지션",
+    "handle": "9room51",
+    "archetype": "Magician",
+    "archetypeId": "magician",
     "level": 40,
-    "score": 79.2,
+    "score": 84.4,
     "kind": "original"
    },
    {
     "rank": 9,
-    "buildId": "f870dc70-ef79-4638-8481-4fb640dd3bd2",
-    "buildName": "Offensive Wing Back — alexsaitoscristian",
-    "handle": "alexsaitoscristian",
-    "archetype": "Marauder",
-    "archetypeId": "marauder",
-    "level": 40,
-    "score": 78.1,
-    "kind": "remix"
-   },
-   {
-    "rank": 10,
-    "buildId": "bf5354ea-614b-449c-9107-2534463e94d5",
-    "buildName": "Xerox Build",
-    "handle": "matheus-fazevedo29",
+    "buildId": "9722ed43-5417-40e7-bd1e-27415acc5972",
+    "buildName": "Neymar JR Prime Santos",
+    "handle": "x_mxtro",
     "archetype": "Magician",
     "archetypeId": "magician",
     "level": 40,
-    "score": 77.6,
+    "score": 84.3,
+    "kind": "original"
+   },
+   {
+    "rank": 10,
+    "buildId": "c394008d-0562-4e32-bc43-9d7d568b82f4",
+    "buildName": "Spark test",
+    "handle": "royalbannaji",
+    "archetype": "Spark",
+    "archetypeId": "spark",
+    "level": 40,
+    "score": 83.6,
     "kind": "original"
    }
   ]

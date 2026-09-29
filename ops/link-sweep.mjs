@@ -73,17 +73,27 @@ const appLinks = (html) => {
 // nginx's 200.
 //
 // **This list is the app's router, transcribed** (frontend/src/App.js, read
-// 2026-08-23). The first version of this file was a list of paths that
-// *seemed* right and it passed `/archetypes`, which does not exist. Re-read
-// the router when it changes; a route list invented here is worse than no
-// check, because it certifies dead links as live.
+// 2026-08-23 and again 2026-09-29). The first version of this file was a list
+// of paths that *seemed* right and it passed `/archetypes`, which does not
+// exist. Re-read the router when it changes; a route list invented here is
+// worse than no check, because it certifies dead links as live.
+//
+// 29 Sep re-read, against the code production runs (ca5a039): `/create` is
+// the archetype picker since the reel took `/` (25 Sep), `/controls` has
+// three screens (22 Sep), `/hq`, `/locker-room` and `/c/<platform>/<club>`
+// arrived with the reel batch and the clubs deploy, and `/style-guide` is
+// gone (it moved behind the admin gate on 24 Aug; the old address renders
+// "not found"). A link to a route that needs a signed-in account
+// (`/my-builds`, `/locker-room`, `/inbox`) is a real page: signed out, it
+// shows the way in.
 const KNOWN_PATHS = new Set([
-  '/', '/explore', '/meta', '/inbox', '/my-builds', '/level-rewards',
-  '/privacy', '/terms', '/style-guide', '/reset-password', '/verify-email',
-  '/admin', '/admin/traffic',
+  '/', '/create', '/explore', '/meta', '/inbox', '/hq', '/my-builds', '/locker-room', '/level-rewards',
+  '/controls', '/controls/skill-moves', '/controls/celebrations',
+  '/privacy', '/terms', '/reset-password', '/verify-email',
+  '/admin', '/admin/traffic', '/admin/monetization', '/admin/style-guide',
 ]);
 // Routes that take a parameter; the bare path is NOT a route.
-const PARAM_ROUTES = ['/b/', '/build/', '/edit/', '/u/'];
+const PARAM_ROUTES = ['/b/', '/build/', '/edit/', '/u/', '/c/'];
 
 const verify = async (href) => {
   // Malformed before anything else: two schemes, or a scheme that lost its

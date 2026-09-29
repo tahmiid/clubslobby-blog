@@ -53,7 +53,7 @@ const shape = (b) => ({
   id: b.id, buildName: b.buildName, archetype_id: b.archetype_id,
   playerRole: b.playerRole ?? null, selectedSpecialization: b.selectedSpecialization ?? null,
   level: b.level, signature: b.signature ?? [], playstyles: b.playstyles ?? [],
-  height: b.height, weight: b.weight,
+  height: b.height, weight: b.weight, heightCm: b.heightCm ?? null,
   accelerationType: b.accelerationType ?? null, inGameAccelerationType: b.inGameAccelerationType ?? null,
   skillMoves: b.skillMoves ?? null, weakFoot: b.weakFoot ?? null,
   nation: b.nation ?? null, club: b.club ?? null,
@@ -64,19 +64,25 @@ const byRank = (x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCou
 const out = house.map(shape).sort(byRank);
 console.log('attributes shape seen:', JSON.stringify(house[0]?.attributes ?? null).slice(0, 120));
 
-// Verify what can reach a page: the top 8 per role, and the top 8 role-less
-// builds per archetype (the generator caps a section well below that).
+// Verify what can reach a page: the top VERIFY_TOP per role, and as many
+// role-less builds per archetype. The single-position pages (CDM, CM, CAM,
+// CB, full-backs; 2026-09-29) show 12 per role, so this must stay at or above
+// the largest `perRole` in gen/fc27-role-builds.mjs. Every build checked here
+// is written with `verified: true`, and the generator refuses to print a card
+// without it.
+const VERIFY_TOP = 12;
 const groups = new Map();
 for (const b of out) {
   const key = b.playerRole ?? `~${b.archetype_id}`;
   if (!groups.has(key)) groups.set(key, []);
   groups.get(key).push(b);
 }
-const toVerify = [...groups.values()].flatMap((g) => g.slice(0, 8));
+const toVerify = [...groups.values()].flatMap((g) => g.slice(0, VERIFY_TOP));
+for (const b of toVerify) b.verified = true;
 let bad = 0;
 for (const b of toVerify) {
   const r = await fetch(`${SITE}/api/builds/${b.id}/public`, H);
-  if (!r.ok) { bad++; b.unverified = true; console.warn(`  !! ${b.buildName} ${b.id} -> ${r.status}`); }
+  if (!r.ok) { bad++; b.unverified = true; b.verified = false; console.warn(`  !! ${b.buildName} ${b.id} -> ${r.status}`); }
 }
 console.log(`verified ${toVerify.length} ids that can appear on a page, ${bad} failed`);
 console.log('per role:', Object.fromEntries([...groups].map(([k, g]) => [k, g.length])));
@@ -90,7 +96,7 @@ console.log(`-> data/fc27/role-builds.json (${out.length} builds)`);
 
 // The words the pages' calls to action will search for. A word the search
 // does not understand as a position would send a reader to an empty feed.
-for (const q of ['striker', 'winger', 'midfielder', 'defender', 'goalkeeper', 'cdm', 'centre back', 'fullback']) {
+for (const q of ['striker', 'winger', 'midfielder', 'defender', 'goalkeeper', 'cdm', 'cm', 'cam', 'cb', 'fullback']) {
   const j = await get(`/explore?q=${encodeURIComponent(q)}&year=${YEAR}&limit=1`);
   console.log(`  q=${q}: ${j.total ?? '?'} builds, chips ${JSON.stringify((j.interpretation?.chips ?? []).map((c) => c.label ?? c))}`);
 }

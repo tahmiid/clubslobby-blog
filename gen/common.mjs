@@ -86,6 +86,16 @@ export const appLinks = ({ kicker, head, body, links }) => kg(`<div class="pchq-
 
 export const kg = (html) => `<!--kg-card-begin: html-->\n${html}\n<!--kg-card-end: html-->`;
 
+// The id Ghost gives a heading. Ghost's HTML->Lexical converter throws away
+// the `id` on a bare <h2>/<h3> and writes its own from the heading's TEXT
+// ("Destroyer builds" -> destroyer-builds), so a link to `#dm-destroyer`
+// lands at the top of the page on the live site while working in every local
+// file (found 2026-09-29, before the first such link shipped). A link to a
+// heading goes through this, and the heading carries the same id so the local
+// file and the live page agree. An id INSIDE a kg() card is left alone.
+export const ghostId = (text) => String(text).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 // A visible "Updated <date>" line at the top of an article body (2026-09-21).
 // Google prints the byline's PUBLISHED date in the snippet ("16 Aug 2026 —")
 // while every launch-week competitor shows "3 days ago"; the theme's byline

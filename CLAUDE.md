@@ -79,6 +79,22 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
    `<script>` blocks stripped — the card widget's example URL reads as a
    dead link otherwise) is cheap insurance after any multi-article publish.
 
+6. **A link to a heading uses the id Ghost will write, not the one you
+   gave it.** Ghost's HTML→Lexical converter drops the `id` on a bare
+   `<h2>`/`<h3>` and writes its own from the heading's TEXT: `<h2
+   id="dm-destroyer">Destroyer builds</h2>` is served as
+   `id="destroyer-builds"`. A link to `#dm-destroyer` works in every local
+   file and lands at the top of the page on the live one (found 2026-09-29,
+   before the first such link shipped). `ghostId(text)` in `gen/common.mjs`
+   makes the id Ghost will make; give the heading the same one so the local
+   file agrees. An id INSIDE a `kg()` card is left alone.
+7. **The Source theme restyles every `<table>`** into a nowrap inline-block
+   scroller with scroll-shadow gradients, which cuts a table that would have
+   fitted a phone and paints a white bar down its first column. A table that
+   should simply fit says so (`display:table!important`, `white-space:
+   normal!important`, `background-image:none!important`; see
+   `gen/a203-height-weight.mjs`).
+
 ## Player pages
 
 `gen/playerpage.mjs` renders one player, `gen/players.mjs` is the roster.
@@ -388,6 +404,89 @@ all-13 comparison. Owner brief after the Reddit cost post (DISTRIBUTION.md §8).
 - **Preview before publishing** with `ops/preview-draft.mjs <stem>` and
   `preview_start blog-preview` (port 8766): the Browser pane will not run a
   widget's script in a `file://` page.
+
+## The position pages (a188–a192 and a198–a202)
+
+`gen/fc27-role-builds.mjs` writes all ten from one export; `gen/positions-nav.mjs`
+is the list of them. Two tiers since 2026-09-29:
+
+| Tier | Pages | Builds per role | Role-less builds |
+|---|---|---|---|
+| Group | strikers, wingers, midfielders, defenders, goalkeepers | 4 or 6 | a "Special" section |
+| Single position | CDM, CM, CAM, CB, full-backs | 12 | none |
+
+- **Why single-position pages** (29 Sep search read, issue #12): every
+  competitor on those result pages runs one page per position, "best cdm build
+  fc 27" was already arriving at the midfielder page, and the abbreviation is
+  what people type. Each names its `parent` and holds the parent's roles for
+  that position; the parent's role sections link down to it.
+- **Role-less builds stay on the group pages.** The catalog files a World Cup
+  edition or a concept build by position GROUP ("Midfielder"); putting one on
+  the CDM page would be a guess.
+- **A card prints only an id the export resolved.** `ops/export-role-builds.mjs`
+  checks the top `VERIFY_TOP` (12) per role through the API and writes
+  `verified: true`; the generator throws on a card without it. Raise
+  `VERIFY_TOP` before raising a `perRole`.
+- **The single-position pages' header text is computed** and written to
+  `out/aNNN.meta.json` (archetypes by count, the roles, the four names leading
+  the opening grid), which `publish-prod.mjs` prefers over its roster row. The
+  five group pages keep the owner-format rows of 26 Sep.
+- **One closing block, low on the page**: "What FC 27 CDMs have in common",
+  counted over the whole position. The per-role facts block was cut by the
+  owner on 25 Sep; this is one block, below every grid.
+- **Refresh**: `ops/export-role-builds.mjs`, `ops/export-meta.mjs`,
+  `gen/fc27-role-builds.mjs`, then **`ops/ab-inject.mjs a190`** while the grid
+  card test runs (to 3 Oct), link sweep, publish all ten.
+
+## The height and weight page (a203)
+
+`pro-clubs-height-and-weight`, from `gen/a203-height-weight.mjs` and
+`ops/export-body-picks.mjs`.
+
+- **"Players build most" counts MEMBERS' builds, never the house catalog.** A
+  house build takes its body from the real player it is modelled on, so the
+  catalog's most common Magician height is a fact about footballers. Originals
+  and remixes only: a plain copy carries its source's body.
+- **Totals only leave the export.** No member's name, handle, build name or id
+  is written; the one build named per archetype is the most-copied HOUSE
+  build, resolved through the API first.
+- **It never says "best" as a verdict** (owner, 25 Sep: meta claims are
+  phrased from data). Every sentence is counted at build time; an archetype
+  under `MIN_BUILDS` (10) prints "too few builds to call".
+- **Units are the app's**: whole centimetres and whole kilograms, with feet
+  and inches and pounds as labels, every rounding half-up. The three helpers
+  are ports of `frontend/src/lib/progression.js` (app repo); an inch-only
+  build is read the way `buildHeightCm` reads it.
+- **The attribute shifts are printed as the catalog holds them** and carry the
+  sentence "the ones FC 26 used, carried into FC 27" (`inherited: 26`). No
+  shift is computed for a particular body here; that is the builder's job, and
+  issue #8 (the cm/kg body model on the AcceleRATE pages) is still open.
+
+## The feature pages (a204–a206)
+
+`pro-clubs-find-teammates` (the lobby), `pro-clubs-build-from-a-photo` and
+`pro-clubs-hq-app`, from `gen/features.mjs`; `gen/hq-features.mjs` holds the
+list, the `status` switch and the "New on Pro Clubs HQ" rail.
+
+- **Published before the features opened, on purpose** (owner, 29 Sep): a
+  page Google has read on the day a feature opens beats one it meets three
+  weeks later. The addresses carry no year and no "coming soon".
+- **Only what the owner said the feature does** goes on a page about
+  something that is not open. No screen, no button name, no date: "in the next
+  few days" and "in the next few weeks" were the owner's words on 29 Sep.
+- **Every page is useful on the day it is read**: under the status card comes
+  what works TODAY, as app links the sweep resolves.
+- **When a feature opens**: read the real thing, correct the steps against it,
+  set `status: 'live'` and its `href` in `hq-features.mjs`, move `UPDATED` in
+  `features.mjs`, regenerate, publish. The "When does it open?" question drops
+  out by itself.
+- **Their covers say PRO CLUBS HQ, never EA SPORTS FC 27**
+  (`gen/make-hq-feats.py`): an "EA SPORTS FC 27 / THE APP" cover reads as EA's
+  own app. A screenshot cover puts its words in their own strip, the layout of
+  the app's share images.
+- **`ops/link-sweep.mjs` knows the app's router as of 29 Sep** (`/create`,
+  `/controls`, `/hq`, `/locker-room`, `/c/<platform>/<club>`). Re-read
+  `frontend/src/App.js` before linking a new app page.
 
 ## Feature images
 

@@ -1,5 +1,17 @@
-// The five "best FC 27 Pro Clubs builds by position" pages, organised by ROLE:
-// a188 strikers, a189 wingers, a190 midfielders, a191 defenders, a192 keepers.
+// The "best FC 27 Pro Clubs builds by position" pages, organised by ROLE:
+// a188 strikers, a189 wingers, a190 midfielders, a191 defenders, a192 keepers,
+// and since 2026-09-29 the five single-position pages a198 CDM, a199 CM,
+// a200 CAM, a201 CB, a202 full-backs.
+//
+// Why single-position pages (29 Sep search read, blog issue #12): every
+// competitor on those result pages runs one page per position, "best cdm
+// build fc 27" was already arriving at the midfielder page, and the
+// abbreviation is what people type. Each one holds its parent's roles for
+// that position, shows 12 builds per role where the parent shows 4 or 6, and
+// closes with what the position's builds have in common, counted from the
+// data. Role-less builds (World Cup editions, concepts) stay on the parent
+// pages only: the catalog files them by position GROUP ("Midfielder"), and
+// putting one on a CDM page would be a guess.
 //
 // Why by role (owner, 2026-09-22): *"usually we make a build and take a role in
 // the team and play like that."* A striker page that says "Finisher or Target"
@@ -23,14 +35,15 @@
 //     ~/.local/node22/bin/node gen/fc27-role-builds.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { SITE, BRAND, ATTRS, esc, kg, appCta, updatedLine } from './common.mjs';
+import { SITE, BRAND, ATTRS, esc, kg, ghostId, appCta, updatedLine } from './common.mjs';
 import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
 import { FC27_ARCH, FC27_PROG, psName, psImg } from './fc27grid.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { affiliateSection } from './affiliate.mjs';
 import { itemListLd } from './jsonld.mjs';
 import { AD_A, AD_C } from './ads.mjs';
-import { PAGES, positionsNav } from './positions-nav.mjs';
+import { PAGES, pageOf, positionsNav } from './positions-nav.mjs';
+import { hqRail } from './hq-features.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const DATA = JSON.parse(readFileSync(path.join(DIR, 'fc27', 'role-builds.json'), 'utf8'));
@@ -39,6 +52,9 @@ const HOUSE = new Set(['buildmaster', 'throwbackfc', 'specialevents', 'freakbuil
 const AP40 = FC27_PROG.levels.find((l) => l.level === 40).apCumulative;
 const CAP = 40;
 const UPDATED = DATA.generatedAt;   // the day the ranking was read — never today by reflex
+// The height and weight table (gen/a203-height-weight.mjs). Publish it with
+// or before the single-position pages: each one links it.
+const HEIGHT_WEIGHT_SLUG = 'pro-clubs-height-and-weight';
 
 const dropped = DATA.builds.filter((b) => b.unverified || b.level !== CAP);
 if (dropped.length) console.warn(`  !! ${dropped.length} builds left out (unverified or not level ${CAP}): ${dropped.map((b) => b.buildName).join(', ')}`);
@@ -129,7 +145,52 @@ const CONFIG = {
     roles: ['gk-shotstopper', 'gk-sweeper'], boards: ['GK'],
     intro: `Level-${CAP} FC 27 goalkeeper builds for each role (shot-stopper and sweeper keeper), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`,
   },
+  // ── The single-position pages (2026-09-29). `short` is what people type and
+  // what the headings say; `long` is the position spelled out, once, in the
+  // intro. `q` is a word the app's search reads as that position (probed by
+  // ops/export-role-builds.mjs). Their header text is computed and written to
+  // out/aNNN.meta.json, which publish-prod.mjs prefers over its roster row.
+  cdm: {
+    h1: 'Best FC 27 Pro Clubs CDM Builds', metaTitle: 'Best FC 27 CDM Builds',
+    singular: 'CDM', plural: 'CDMs', long: 'defensive midfielder', q: 'cdm', perRole: 12,
+    roles: ['dm-destroyer', 'dm-deeplying'], boards: ['CDM'],
+    excerpt: `Destroyer or deep-lying playmaker: the level-${CAP} CDM builds people copy most.`,
+  },
+  cm: {
+    h1: 'Best FC 27 Pro Clubs CM Builds', metaTitle: 'Best FC 27 CM Builds',
+    singular: 'CM', plural: 'CMs', long: 'central midfielder', q: 'cm', perRole: 12,
+    roles: ['cm-boxtobox', 'cm-playmaker'], boards: ['CM'],
+    excerpt: `Box-to-box or central playmaker: the level-${CAP} CM builds people copy most.`,
+  },
+  cam: {
+    h1: 'Best FC 27 Pro Clubs CAM Builds', metaTitle: 'Best FC 27 CAM Builds',
+    singular: 'CAM', plural: 'CAMs', long: 'attacking midfielder', q: 'cam', perRole: 12,
+    roles: ['am-playmaker', 'am-dribbler'], boards: ['CAM'],
+    excerpt: `Attacking playmaker or dribbling 10: the level-${CAP} CAM builds people copy most.`,
+  },
+  cb: {
+    h1: 'Best FC 27 Pro Clubs CB Builds', metaTitle: 'Best FC 27 CB Builds (Centre-Back)',
+    singular: 'CB', plural: 'CBs', long: 'centre-back', q: 'cb', perRole: 12,
+    roles: ['cb-stopper', 'cb-ballplayer'], boards: ['CB'],
+    excerpt: `Stopper or ball-playing centre-back: the level-${CAP} CB builds people copy most.`,
+  },
+  fullbacks: {
+    h1: 'Best FC 27 Pro Clubs Full-Back Builds', metaTitle: 'Best FC 27 Full-Back Builds (LB & RB)',
+    singular: 'full-back', plural: 'full-backs', long: 'left-back and right-back', q: 'fullback', perRole: 12,
+    roles: ['fullback-attacking', 'fullback-defensive'], boards: ['FB'],
+    excerpt: `Attacking or defensive full-back: the level-${CAP} LB and RB builds people copy most.`,
+  },
 };
+for (const p of PAGES.filter((x) => x.parent)) {
+  const c = CONFIG[p.key];
+  const roleNames = c.roles.map((r) => ROLES[r].name.toLowerCase());
+  c.intro = `Level-${CAP} FC 27 ${c.singular} (${c.long}) builds for each role (${roleNames.join(' and ')}), ranked by how many players copied them. Tap any card to open it in the builder and make it yours.`;
+  // A role may live on one single-position page only, or the parent's "more"
+  // link would have two places to go.
+  for (const r of c.roles) if (!CONFIG[p.parent].roles.includes(r)) throw new Error(`${p.key}: role ${r} is not on its parent page ${p.parent}`);
+}
+// role id -> the single-position page that lists it in full
+const DEEP = new Map(PAGES.filter((x) => x.parent).flatMap((p) => CONFIG[p.key].roles.map((r) => [r, p])));
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const rank = (x, y) => (y.copyCount - x.copyCount) || (y.viewCount - x.viewCount) || x.buildName.localeCompare(y.buildName);
@@ -144,6 +205,36 @@ const count = (xs, key) => {
   const c = new Map();
   for (const x of xs) { const k = key(x); if (k == null) continue; c.set(k, (c.get(k) ?? 0) + 1); }
   return [...c].sort((a, b) => b[1] - a[1]);
+};
+
+// Publish rule 1: a card may only print an id the export resolved through
+// /api/builds/<id>/public. The export writes `verified: true` on each.
+const checked = (page, bs) => {
+  const miss = bs.filter((b) => b.verified !== true);
+  if (miss.length) throw new Error(`${page}: ${miss.length} cards not verified by the export (raise VERIFY_TOP in ops/export-role-builds.mjs and re-run it): ${miss.map((b) => b.buildName).join(', ')}`);
+  return bs;
+};
+const ftIn = (inches) => `${Math.floor(inches / 12)}'${inches % 12}"`;
+const SMALL = new Set(['to', 'and', 'of', 'the']);
+const titleCase = (t) => t.replace(/[A-Za-z0-9]+/g, (w, i) => (i > 0 && SMALL.has(w) ? w : w.charAt(0).toUpperCase() + w.slice(1)));
+// "Gennaro Gattuso" -> Gattuso, "Virgil van Dijk" -> Van Dijk, "Rodri" -> Rodri
+const PARTICLES = new Set(['van', 'de', 'da', 'di', 'dos', 'del', 'der', 'den', 'le', 'la']);
+const SUFFIX = new Set(['jr', 'jr.', 'junior', 'júnior']);
+const shortName = (name) => {
+  const w = name.replace(/\s*\([^)]*\)/g, '').trim().split(/\s+/);
+  while (w.length > 1 && SUFFIX.has(w[w.length - 1].toLowerCase())) w.pop();   // "Neymar Jr" is Neymar
+  let i = w.length - 1;
+  while (i > 0 && PARTICLES.has(w[i - 1].toLowerCase())) i--;
+  const out = w.slice(i).join(' ');
+  return out.charAt(0).toUpperCase() + out.slice(1);
+};
+// The middle half of a list of numbers: [p25, p75], so one giant or one
+// featherweight does not set the range the page prints.
+const middle = (xs) => {
+  const v = xs.filter((x) => typeof x === 'number').sort((a, b) => a - b);
+  if (!v.length) return null;
+  const at = (q) => v[Math.min(v.length - 1, Math.floor(q * v.length))];
+  return [at(0.25), at(0.75)];
 };
 
 // Counted over the WHOLE role, so the sentence stays true when the six cards
@@ -165,7 +256,12 @@ const facts = (pool) => {
 <li><b>Archetypes</b><span class="ic">${archs}</span></li>
 <li><b>Top PlayStyles</b><span class="ic">${ps}</span></li>
 <li><b>Maxed first</b><span class="ic">${at}</span></li>
-<li><b>AcceleRATE</b><span class="ic">${acc}</span></li>
+<li><b>AcceleRATE</b><span class="ic">${acc}</span></li>${(() => {
+    const h = middle(pool.map((b) => b.height)), w = middle(pool.map((b) => b.weight));
+    if (!h || !w) return '';
+    const span = (a, b, f) => (a === b ? f(a) : `${f(a)} to ${f(b)}`);
+    return `\n<li><b>Height and weight</b><span class="ic">${chip(span(h[0], h[1], ftIn))}${chip(span(w[0], w[1], (x) => `${x} lbs`))}</span></li>`;
+  })()}
 </ul>`);
 };
 
@@ -191,27 +287,33 @@ const render = (page) => {
     if (!role) throw new Error(`no role text for ${roleId}`);
     const pool = BUILDS.filter((b) => b.playerRole === roleId).sort(rank);
     if (pool.length < 3) { console.warn(`  !! ${page.slug}: ${roleId} has ${pool.length} builds — section skipped`); return ''; }
-    const shown = pool.slice(0, cfg.perRole);
+    const shown = checked(page.slug, pool.slice(0, cfg.perRole));
     shownAll.push(...shown);
+    // A group page shows a few per role; the single-position page shows 12.
+    const deep = !page.parent && DEEP.get(roleId);
+    const more = deep && pool.length > shown.length
+      ? `<p><a href="/blog/${deep.slug}/#${ghostId(`${role.name} builds`)}">More ${esc(role.name.toLowerCase())} builds on the ${esc(deep.label)} page →</a></p>\n` : '';
     // Grid first, words after (owner, 22 Sep: "people don't like to read…
     // start right away with the grid").
     // One header per role, and no football basics (owner, 25 Sep: "my users
     // already know what a poacher is"). role.blurb stays in ROLES, unused, in
     // case it earns a place lower down later.
-    return `<h2 id="${roleId}">${esc(role.name)} builds</h2>
+    // The heading's id is the one Ghost will give it (common.mjs ghostId).
+    return `<h2 id="${ghostId(`${role.name} builds`)}">${esc(role.name)} builds</h2>
 ${cardsGrid(`${P}-${roleId}`, {
     builds: shown, id: `${roleId}-builds`, stat,
     sub: `${pool.length} in the catalog, most copied first. Tap a card to open it in the builder.`,
   })}
-`;  // the facts block was cut (owner, 25 Sep); facts() stays for reuse
+${more}`;  // the per-role facts block was cut (owner, 25 Sep); the single-position pages carry ONE, low on the page
   }).filter(Boolean);
 
-  const loosePool = BUILDS.filter((b) => !b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key).sort(rank);
+  // Role-less builds belong to the group pages only (see the header).
+  const loosePool = page.parent ? [] : BUILDS.filter((b) => !b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key).sort(rank);
   let loose = '';
   if (loosePool.length >= 3) {
-    const shown = loosePool.slice(0, cfg.perRole);
+    const shown = checked(page.slug, loosePool.slice(0, cfg.perRole));
     shownAll.push(...shown);
-    loose = `<h2 id="special-editions">Special ${cfg.plural}</h2>
+    loose = `<h2 id="${ghostId(`Special ${cfg.plural}`)}">Special ${cfg.plural}</h2>
 ${cardsGrid(`${P}-loose`, {
       builds: shown, id: 'special-builds', stat,
       sub: `World Cup editions, throwbacks and concepts. ${loosePool.length} in the catalog, most copied first.`,
@@ -226,8 +328,8 @@ ${cardsGrid(`${P}-loose`, {
   // grid"): the position's most-copied builds across every role, before a
   // word of prose. Same ranking as the sections, so nothing is claimed twice
   // differently.
-  const topPool = BUILDS.filter((b) => cfg.roles.includes(b.playerRole) || (!b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key)).sort(rank);
-  const topShown = topPool.slice(0, 6);
+  const topPool = BUILDS.filter((b) => cfg.roles.includes(b.playerRole) || (!page.parent && !b.playerRole && LOOSE_PAGE(b.archetype_id) === page.key)).sort(rank);
+  const topShown = checked(page.slug, topPool.slice(0, 6));
   for (const b of topShown) if (!shownAll.some((x) => x.id === b.id)) shownAll.unshift(b);
   const topGrid = cardsGrid(`${P}-top`, {
     builds: topShown, id: 'most-copied', level: 'h2', stat,
@@ -257,19 +359,31 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   const uniq = shownAll.filter((b, i, a) => a.findIndex((x) => x.id === b.id) === i);
   const listLd = kg(itemListLd({ name: cfg.h1, items: uniq.map((b) => ({ name: b.buildName, url: `${SITE}/b/${b.id}` })) }));
 
+  // Single-position pages: the banner is the archetypes their builds use most,
+  // and the closing block is what the whole position has in common.
+  const rolePool = BUILDS.filter((b) => cfg.roles.includes(b.playerRole));
+  if (page.parent) cfg.banner = count(rolePool, (b) => b.archetype_id).slice(0, 4).map(([id]) => id);
+  const parent = page.parent ? pageOf(page.parent) : null;
+  const upLine = parent ? ` The other ${CONFIG[parent.key].singular} roles and the special editions are on <a href="/blog/${parent.slug}/">${esc(CONFIG[parent.key].h1)}</a>.` : '';
+  const common = page.parent ? `<h2 id="${ghostId(`What FC 27 ${cfg.plural} have in common`)}">What FC 27 ${esc(cfg.plural)} have in common</h2>
+<p>Counted across all ${rolePool.length} ${esc(cfg.singular)} builds in the catalog, not only the cards above.</p>
+${facts(rolePool)}
+<p><a href="/blog/${HEIGHT_WEIGHT_SLUG}/">Height and weight for every FC 27 archetype →</a></p>
+` : '';
+
   const banner = cfg.banner ? kg(`<div aria-hidden="true" style="margin:0 0 22px;border-radius:16px;padding:20px 12px;background:radial-gradient(120% 140% at 0% 0%,rgba(45,226,197,.22),rgba(45,226,197,0) 55%),linear-gradient(135deg,#10141d,#0b0e14);border:1px solid rgba(45,226,197,.25);display:flex;justify-content:space-around;align-items:center">${cfg.banner.map((id) => `<img src="${SITE}/assets/archetypes/${id}.svg" width="56" height="56" alt="" loading="eager">`).join('')}</div>`) : '';
   const html = `${updatedLine(UPDATED, 'ranked from the live builds and the live meta board')}
 ${banner}
 ${topGrid}
 
-<p>${cfg.intro}</p>
+<p>${cfg.intro}${upLine}</p>
 
 ${positionsNav(page.slug)}
 ${cfg.boards.map(boardLine).join('\n')}
 
 ${body}
 
-<h2>How to read these builds</h2>
+${common}<h2>How to read these builds</h2>
 <p>Every build is a level-${CAP} FC 27 pro: ${AP40} ability points spent in full, one signature PlayStyle+ in gold and three regular PlayStyles in silver on each card, the specialization chosen for the job. The order is how many players have copied the build, then how many have viewed it, read on ${esc(new Date(`${UPDATED}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' }))}. Copying puts the build in your own locker as a draft; change anything and the builder re-prices it live.</p>
 
 ${appCta({
@@ -281,7 +395,7 @@ ${appCta({
   })}
 
 ${fc27Rail(page.slug)}
-
+${page.parent ? `\n${hqRail(page.slug)}\n` : ''}
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
@@ -293,6 +407,22 @@ ${AD_C}`;
 
   const out = path.join(import.meta.dirname, '..', 'out', `${P}.html`);
   writeFileSync(out, html);
+  // Computed header text (single-position pages): archetypes by how many of
+  // the position's builds use them, the roles, then the four names that lead
+  // the opening grid. publish-prod.mjs prefers this file over its roster row,
+  // so a re-export cannot leave a description naming a build that moved.
+  if (cfg.metaTitle) {
+    const strip = [
+      ...count(rolePool, (b) => b.archetype_id).slice(0, 4).map(([id]) => titleCase(archName(id).toLowerCase())),
+      'META', ...cfg.roles.map((r) => titleCase(ROLES[r].name)), `Level-${CAP}`,
+      ...topShown.map((b) => shortName(b.buildName)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 4),
+    ].join(' · ');
+    if (strip.length > 160) throw new Error(`${P}: meta description is ${strip.length} characters`);
+    writeFileSync(path.join(import.meta.dirname, '..', 'out', `${P}.meta.json`), `${JSON.stringify({
+      slug: page.slug, title: cfg.h1, meta_title: cfg.metaTitle, meta_description: strip, custom_excerpt: cfg.excerpt,
+    }, null, 1)}\n`);
+    console.log(`   ${P}.meta.json: ${strip}`);
+  }
   console.log(`${P} ${page.slug}: ${sections.length} roles, ${shownAll.length} cards incl. the opening ${topShown.length} (${loosePool.length >= 3 ? 'with' : 'no'} special section) | bytes ${html.length}`);
   return { shown: shownAll.length, roles: sections.length, cards: shownAll.map((b) => b.buildName) };
 };

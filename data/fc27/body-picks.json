@@ -1,0 +1,1603 @@
+{
+ "generatedAt": "2026-09-29",
+ "year": 27,
+ "note": "Totals only. Member originals and remixes; plain copies and house builds are not counted. Heights in whole cm as the app reads them, weights in whole kg.",
+ "memberBuilds": 399,
+ "archetypes": {
+  "shot-stopper": {
+   "builds": 6,
+   "authors": 5,
+   "atStart": 0,
+   "heights": [
+    [
+     197,
+     4
+    ],
+    [
+     192,
+     1
+    ],
+    [
+     196,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     80,
+     4
+    ],
+    [
+     84,
+     1
+    ],
+    [
+     92,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 5,
+    "Lengthy": 1
+   },
+   "differ": 0,
+   "mostCopied": [
+    {
+     "id": "2b89a3ef-be90-4182-8c5b-8ce0c440074b",
+     "buildName": "The Octopus",
+     "cm": 196,
+     "inches": 77,
+     "lbs": 203,
+     "kg": 92,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "c54a195a-1d2e-4329-a126-0f7aca1e1243",
+     "buildName": "Thibaut Courtois",
+     "cm": 197,
+     "inches": 78,
+     "lbs": 212,
+     "kg": 96,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "4ecd2279-5dff-4f86-b567-5205acc1c4c8",
+     "buildName": "Joan García",
+     "cm": 193,
+     "inches": 76,
+     "lbs": 187,
+     "kg": 85,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "sweeper-keeper": {
+   "builds": 5,
+   "authors": 5,
+   "atStart": 1,
+   "heights": [
+    [
+     200,
+     2
+    ],
+    [
+     191,
+     1
+    ],
+    [
+     192,
+     1
+    ],
+    [
+     196,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     80,
+     2
+    ],
+    [
+     85,
+     1
+    ],
+    [
+     90,
+     1
+    ],
+    [
+     92,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 5
+   },
+   "differ": 0,
+   "mostCopied": [
+    {
+     "id": "14715e68-6c08-40c1-a1cf-07efa850a26e",
+     "buildName": "Manuel Neuer",
+     "cm": 192,
+     "inches": 76,
+     "lbs": 203,
+     "kg": 92,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "e793c2c3-01c7-4af7-a591-51e5a48c1e26",
+     "buildName": "Sweeper Libero",
+     "cm": 191,
+     "inches": 75,
+     "lbs": 187,
+     "kg": 85,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "ee6636cc-33aa-41a9-abec-b7144eeb561a",
+     "buildName": "Mike Maignan",
+     "cm": 191,
+     "inches": 75,
+     "lbs": 196,
+     "kg": 89,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "progressor": {
+   "builds": 21,
+   "authors": 19,
+   "atStart": 2,
+   "heights": [
+    [
+     177,
+     7
+    ],
+    [
+     195,
+     5
+    ],
+    [
+     186,
+     3
+    ],
+    [
+     183,
+     2
+    ],
+    [
+     187,
+     1
+    ],
+    [
+     190,
+     1
+    ],
+    [
+     192,
+     1
+    ],
+    [
+     193,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     75,
+     14
+    ],
+    [
+     85,
+     3
+    ],
+    [
+     84,
+     2
+    ],
+    [
+     78,
+     1
+    ],
+    [
+     80,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 14,
+    "Lengthy": 5,
+    "Explosive": 2
+   },
+   "differ": 3,
+   "mostCopied": [
+    {
+     "id": "6739abc0-c880-4848-9228-58d6d15eeef5",
+     "buildName": "Cannavaro '06 WC",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 176,
+     "kg": 80,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "35b7712c-de47-4fd7-a051-ebe3a6297aa2",
+     "buildName": "Riccardo Calafiori",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 187,
+     "kg": 85,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "a45e3f25-48f4-4cc6-a329-6ad51eec9fcd",
+     "buildName": "Virgil van Dijk",
+     "cm": 193,
+     "inches": 76,
+     "lbs": 203,
+     "kg": 92,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    }
+   ]
+  },
+  "boss": {
+   "builds": 20,
+   "authors": 19,
+   "atStart": 2,
+   "heights": [
+    [
+     196,
+     7
+    ],
+    [
+     188,
+     6
+    ],
+    [
+     180,
+     3
+    ],
+    [
+     191,
+     2
+    ],
+    [
+     186,
+     1
+    ],
+    [
+     195,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     80,
+     7
+    ],
+    [
+     90,
+     4
+    ],
+    [
+     84,
+     2
+    ],
+    [
+     98,
+     2
+    ],
+    [
+     85,
+     1
+    ],
+    [
+     86,
+     1
+    ],
+    [
+     92,
+     1
+    ],
+    [
+     93,
+     1
+    ],
+    [
+     100,
+     1
+    ]
+   ],
+   "menu": {
+    "Lengthy": 11,
+    "Controlled": 9
+   },
+   "differ": 1,
+   "mostCopied": [
+    {
+     "id": "896e72c7-453e-45e0-b7ec-8d197b14f2d6",
+     "buildName": "The Wall",
+     "cm": 193,
+     "inches": 76,
+     "lbs": 198,
+     "kg": 90,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "b686413c-8899-48e8-9045-047b01162592",
+     "buildName": "Federico Valverde",
+     "cm": 183,
+     "inches": 72,
+     "lbs": 176,
+     "kg": 80,
+     "menu": "Lengthy",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "5b06fd0d-2d45-45a9-b09e-870b91c1c428",
+     "buildName": "Nemanja Vidić",
+     "cm": 191,
+     "inches": 75,
+     "lbs": 185,
+     "kg": 84,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    }
+   ]
+  },
+  "marauder": {
+   "builds": 30,
+   "authors": 25,
+   "atStart": 4,
+   "heights": [
+    [
+     178,
+     6
+    ],
+    [
+     188,
+     6
+    ],
+    [
+     183,
+     5
+    ],
+    [
+     182,
+     3
+    ],
+    [
+     186,
+     3
+    ],
+    [
+     168,
+     2
+    ],
+    [
+     170,
+     2
+    ],
+    [
+     174,
+     1
+    ],
+    [
+     177,
+     1
+    ],
+    [
+     185,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     65,
+     13
+    ],
+    [
+     75,
+     7
+    ],
+    [
+     74,
+     5
+    ],
+    [
+     68,
+     1
+    ],
+    [
+     69,
+     1
+    ],
+    [
+     77,
+     1
+    ],
+    [
+     80,
+     1
+    ],
+    [
+     84,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 14,
+    "Explosive": 9,
+    "Lengthy": 7
+   },
+   "differ": 1,
+   "mostCopied": [
+    {
+     "id": "cd3dda86-a328-4419-91fb-f6d6e4effd2c",
+     "buildName": "Cafu",
+     "cm": 175,
+     "inches": 69,
+     "lbs": 165,
+     "kg": 75,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    },
+    {
+     "id": "04c0509c-292f-4f0b-a212-a9490e7713c0",
+     "buildName": "The Shadow",
+     "cm": 183,
+     "inches": 72,
+     "lbs": 165,
+     "kg": 75,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "86bdae63-9989-4a36-a374-e1cc18b2f5c8",
+     "buildName": "Roberto Carlos '02 WC",
+     "cm": 168,
+     "inches": 66,
+     "lbs": 152,
+     "kg": 69,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "disruptor": {
+   "builds": 34,
+   "authors": 26,
+   "atStart": 16,
+   "heights": [
+    [
+     178,
+     17
+    ],
+    [
+     168,
+     4
+    ],
+    [
+     180,
+     4
+    ],
+    [
+     173,
+     2
+    ],
+    [
+     183,
+     2
+    ],
+    [
+     177,
+     1
+    ],
+    [
+     182,
+     1
+    ],
+    [
+     184,
+     1
+    ],
+    [
+     185,
+     1
+    ],
+    [
+     188,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     75,
+     16
+    ],
+    [
+     65,
+     11
+    ],
+    [
+     74,
+     5
+    ],
+    [
+     67,
+     1
+    ],
+    [
+     83,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 30,
+    "Lengthy": 3,
+    "Explosive": 1
+   },
+   "differ": 4,
+   "mostCopied": [
+    {
+     "id": "0d717109-9963-4f80-8483-e0b5dca0b670",
+     "buildName": "Gennaro Gattuso",
+     "cm": 178,
+     "inches": 70,
+     "lbs": 165,
+     "kg": 75,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "36a632f0-6e71-4592-8fc5-60391e6a5137",
+     "buildName": "Aurélien Tchouaméni",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 181,
+     "kg": 82,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "01d4ca68-6e65-4325-8807-556447307059",
+     "buildName": "Roy Keane",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 163,
+     "kg": 74,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "recycler": {
+   "builds": 32,
+   "authors": 29,
+   "atStart": 7,
+   "heights": [
+    [
+     182,
+     10
+    ],
+    [
+     172,
+     5
+    ],
+    [
+     192,
+     3
+    ],
+    [
+     177,
+     2
+    ],
+    [
+     178,
+     2
+    ],
+    [
+     185,
+     2
+    ],
+    [
+     188,
+     2
+    ],
+    [
+     180,
+     1
+    ],
+    [
+     181,
+     1
+    ],
+    [
+     186,
+     1
+    ],
+    [
+     187,
+     1
+    ],
+    [
+     190,
+     1
+    ],
+    [
+     191,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     65,
+     13
+    ],
+    [
+     75,
+     9
+    ],
+    [
+     66,
+     2
+    ],
+    [
+     68,
+     2
+    ],
+    [
+     70,
+     2
+    ],
+    [
+     74,
+     2
+    ],
+    [
+     77,
+     1
+    ],
+    [
+     80,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 27,
+    "Lengthy": 5
+   },
+   "differ": 8,
+   "mostCopied": [
+    {
+     "id": "3f9232cf-c101-47c7-a64d-e5329a79b497",
+     "buildName": "Rodri '26 WC",
+     "cm": 191,
+     "inches": 75,
+     "lbs": 181,
+     "kg": 82,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "7ea2dd42-a5a8-4486-9019-dec2a780a68f",
+     "buildName": "Rodri",
+     "cm": 191,
+     "inches": 75,
+     "lbs": 181,
+     "kg": 82,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "ea201c50-5cbd-4364-82da-584a0487afdf",
+     "buildName": "Joshua Kimmich",
+     "cm": 178,
+     "inches": 70,
+     "lbs": 165,
+     "kg": 75,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "maestro": {
+   "builds": 40,
+   "authors": 34,
+   "atStart": 9,
+   "heights": [
+    [
+     175,
+     12
+    ],
+    [
+     174,
+     6
+    ],
+    [
+     162,
+     5
+    ],
+    [
+     170,
+     5
+    ],
+    [
+     183,
+     3
+    ],
+    [
+     177,
+     2
+    ],
+    [
+     178,
+     2
+    ],
+    [
+     182,
+     2
+    ],
+    [
+     171,
+     1
+    ],
+    [
+     185,
+     1
+    ],
+    [
+     188,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     65,
+     14
+    ],
+    [
+     75,
+     10
+    ],
+    [
+     66,
+     4
+    ],
+    [
+     74,
+     3
+    ],
+    [
+     68,
+     2
+    ],
+    [
+     70,
+     2
+    ],
+    [
+     76,
+     2
+    ],
+    [
+     67,
+     1
+    ],
+    [
+     72,
+     1
+    ],
+    [
+     73,
+     1
+    ]
+   ],
+   "menu": {
+    "Controlled": 30,
+    "Explosive": 10
+   },
+   "differ": 2,
+   "mostCopied": [
+    {
+     "id": "a64472a1-d570-4cda-822d-2660d9af429c",
+     "buildName": "Two-Footed",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 165,
+     "kg": 75,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": false
+    },
+    {
+     "id": "c5cd11e3-0d8e-45cd-aa5c-fd05c995d3b4",
+     "buildName": "Iniesta '10",
+     "cm": 170,
+     "inches": 67,
+     "lbs": 150,
+     "kg": 68,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": false
+    },
+    {
+     "id": "0a86d6a2-1028-461d-8c7a-ee544a5c3fce",
+     "buildName": "The Magnet",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 168,
+     "kg": 76,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": false
+    }
+   ]
+  },
+  "creator": {
+   "builds": 37,
+   "authors": 32,
+   "atStart": 3,
+   "heights": [
+    [
+     170,
+     7
+    ],
+    [
+     175,
+     6
+    ],
+    [
+     174,
+     5
+    ],
+    [
+     178,
+     3
+    ],
+    [
+     188,
+     3
+    ],
+    [
+     164,
+     2
+    ],
+    [
+     165,
+     2
+    ],
+    [
+     166,
+     2
+    ],
+    [
+     183,
+     2
+    ],
+    [
+     162,
+     1
+    ],
+    [
+     169,
+     1
+    ],
+    [
+     172,
+     1
+    ],
+    [
+     177,
+     1
+    ],
+    [
+     179,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     65,
+     13
+    ],
+    [
+     66,
+     7
+    ],
+    [
+     68,
+     4
+    ],
+    [
+     74,
+     4
+    ],
+    [
+     75,
+     4
+    ],
+    [
+     67,
+     3
+    ],
+    [
+     70,
+     1
+    ],
+    [
+     71,
+     1
+    ]
+   ],
+   "menu": {
+    "Explosive": 20,
+    "Controlled": 17
+   },
+   "differ": 7,
+   "mostCopied": [
+    {
+     "id": "172beea3-e8d8-40d2-82a4-5641824bdf68",
+     "buildName": "Toni Kroos",
+     "cm": 183,
+     "inches": 72,
+     "lbs": 168,
+     "kg": 76,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "72b66470-67d9-454b-b694-fc59798bb05e",
+     "buildName": "Vitinha",
+     "cm": 173,
+     "inches": 68,
+     "lbs": 143,
+     "kg": 65,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    },
+    {
+     "id": "9e5613fc-2652-4501-9948-b95e603fd517",
+     "buildName": "Andrés Iniesta",
+     "cm": 170,
+     "inches": 67,
+     "lbs": 150,
+     "kg": 68,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    }
+   ]
+  },
+  "spark": {
+   "builds": 44,
+   "authors": 41,
+   "atStart": 7,
+   "heights": [
+    [
+     175,
+     8
+    ],
+    [
+     162,
+     7
+    ],
+    [
+     170,
+     7
+    ],
+    [
+     173,
+     3
+    ],
+    [
+     177,
+     3
+    ],
+    [
+     178,
+     3
+    ],
+    [
+     180,
+     3
+    ],
+    [
+     172,
+     2
+    ],
+    [
+     176,
+     2
+    ],
+    [
+     179,
+     2
+    ],
+    [
+     166,
+     1
+    ],
+    [
+     174,
+     1
+    ],
+    [
+     181,
+     1
+    ],
+    [
+     183,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     60,
+     16
+    ],
+    [
+     70,
+     9
+    ],
+    [
+     62,
+     4
+    ],
+    [
+     69,
+     4
+    ],
+    [
+     61,
+     3
+    ],
+    [
+     68,
+     2
+    ],
+    [
+     76,
+     2
+    ],
+    [
+     64,
+     1
+    ],
+    [
+     65,
+     1
+    ],
+    [
+     75,
+     1
+    ],
+    [
+     77,
+     1
+    ]
+   ],
+   "menu": {
+    "Explosive": 41,
+    "Controlled": 3
+   },
+   "differ": 1,
+   "mostCopied": [
+    {
+     "id": "84169940-cd9e-42f4-9e15-3717cea244bf",
+     "buildName": "Lamine Yamal",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 143,
+     "kg": 65,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    },
+    {
+     "id": "a64958d0-a8e7-4c36-9158-dd9edf7de295",
+     "buildName": "Rafael Leão",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 176,
+     "kg": 80,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "45a911a8-e194-4566-96e2-7cfd4e1fb771",
+     "buildName": "Mohamed Salah",
+     "cm": 175,
+     "inches": 69,
+     "lbs": 157,
+     "kg": 71,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    }
+   ]
+  },
+  "magician": {
+   "builds": 36,
+   "authors": 32,
+   "atStart": 3,
+   "heights": [
+    [
+     175,
+     8
+    ],
+    [
+     170,
+     4
+    ],
+    [
+     183,
+     4
+    ],
+    [
+     171,
+     3
+    ],
+    [
+     188,
+     3
+    ],
+    [
+     178,
+     2
+    ],
+    [
+     180,
+     2
+    ],
+    [
+     185,
+     2
+    ],
+    [
+     162,
+     1
+    ],
+    [
+     165,
+     1
+    ],
+    [
+     166,
+     1
+    ],
+    [
+     168,
+     1
+    ],
+    [
+     173,
+     1
+    ],
+    [
+     174,
+     1
+    ],
+    [
+     177,
+     1
+    ],
+    [
+     182,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     60,
+     15
+    ],
+    [
+     70,
+     6
+    ],
+    [
+     68,
+     4
+    ],
+    [
+     61,
+     3
+    ],
+    [
+     69,
+     3
+    ],
+    [
+     78,
+     2
+    ],
+    [
+     62,
+     1
+    ],
+    [
+     72,
+     1
+    ],
+    [
+     73,
+     1
+    ]
+   ],
+   "menu": {
+    "Explosive": 22,
+    "Controlled": 14
+   },
+   "differ": 4,
+   "mostCopied": [
+    {
+     "id": "7b174e48-9d09-4e23-94f1-326babe7640c",
+     "buildName": "Neymar Jr",
+     "cm": 175,
+     "inches": 69,
+     "lbs": 150,
+     "kg": 68,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    },
+    {
+     "id": "d6dc3938-eef2-4331-a957-0af63bf68b3a",
+     "buildName": "Messi '26 WC",
+     "cm": 170,
+     "inches": 67,
+     "lbs": 159,
+     "kg": 72,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "0aa08154-cb43-4af0-a342-1e9cceb69a99",
+     "buildName": "Ronaldinho",
+     "cm": 180,
+     "inches": 71,
+     "lbs": 172,
+     "kg": 78,
+     "menu": "Explosive",
+     "game": "Explosive",
+     "copied": true
+    }
+   ]
+  },
+  "finisher": {
+   "builds": 66,
+   "authors": 50,
+   "atStart": 6,
+   "heights": [
+    [
+     177,
+     13
+    ],
+    [
+     180,
+     9
+    ],
+    [
+     188,
+     8
+    ],
+    [
+     182,
+     7
+    ],
+    [
+     164,
+     6
+    ],
+    [
+     173,
+     3
+    ],
+    [
+     190,
+     3
+    ],
+    [
+     170,
+     2
+    ],
+    [
+     176,
+     2
+    ],
+    [
+     185,
+     2
+    ],
+    [
+     165,
+     1
+    ],
+    [
+     168,
+     1
+    ],
+    [
+     169,
+     1
+    ],
+    [
+     171,
+     1
+    ],
+    [
+     172,
+     1
+    ],
+    [
+     175,
+     1
+    ],
+    [
+     179,
+     1
+    ],
+    [
+     181,
+     1
+    ],
+    [
+     183,
+     1
+    ],
+    [
+     184,
+     1
+    ],
+    [
+     189,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     70,
+     22
+    ],
+    [
+     71,
+     9
+    ],
+    [
+     79,
+     8
+    ],
+    [
+     80,
+     7
+    ],
+    [
+     83,
+     7
+    ],
+    [
+     73,
+     3
+    ],
+    [
+     75,
+     3
+    ],
+    [
+     72,
+     2
+    ],
+    [
+     78,
+     2
+    ],
+    [
+     86,
+     1
+    ],
+    [
+     89,
+     1
+    ],
+    [
+     90,
+     1
+    ]
+   ],
+   "menu": {
+    "Explosive": 43,
+    "Controlled": 23
+   },
+   "differ": 8,
+   "mostCopied": [
+    {
+     "id": "ade67fd3-e40e-47c8-aa75-a5a1d5ea5331",
+     "buildName": "Mbappé '26 WC",
+     "cm": 177,
+     "inches": 70,
+     "lbs": 161,
+     "kg": 73,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "7cf7127e-77a8-4095-806a-ae7afaae9767",
+     "buildName": "Thierry Henry",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 183,
+     "kg": 83,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "8a250c95-09e6-4541-9b57-41cd3b72bf46",
+     "buildName": "Cristiano Ronaldo",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 183,
+     "kg": 83,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    }
+   ]
+  },
+  "target": {
+   "builds": 28,
+   "authors": 25,
+   "atStart": 2,
+   "heights": [
+    [
+     195,
+     14
+    ],
+    [
+     177,
+     3
+    ],
+    [
+     193,
+     3
+    ],
+    [
+     186,
+     2
+    ],
+    [
+     190,
+     2
+    ],
+    [
+     183,
+     1
+    ],
+    [
+     185,
+     1
+    ],
+    [
+     187,
+     1
+    ],
+    [
+     191,
+     1
+    ]
+   ],
+   "weights": [
+    [
+     80,
+     15
+    ],
+    [
+     90,
+     4
+    ],
+    [
+     100,
+     3
+    ],
+    [
+     91,
+     2
+    ],
+    [
+     83,
+     1
+    ],
+    [
+     86,
+     1
+    ],
+    [
+     89,
+     1
+    ],
+    [
+     98,
+     1
+    ]
+   ],
+   "menu": {
+    "Lengthy": 16,
+    "Controlled": 12
+   },
+   "differ": 3,
+   "mostCopied": [
+    {
+     "id": "8b1a5849-3f1d-4cef-89bf-aff126e82bcb",
+     "buildName": "Erling Haaland",
+     "cm": 195,
+     "inches": 77,
+     "lbs": 194,
+     "kg": 88,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    },
+    {
+     "id": "02a7b5ab-f502-441a-884d-ed7c6ede3db6",
+     "buildName": "CL Ronaldo",
+     "cm": 188,
+     "inches": 74,
+     "lbs": 183,
+     "kg": 83,
+     "menu": "Controlled",
+     "game": "Controlled",
+     "copied": true
+    },
+    {
+     "id": "87518094-01f9-4d6a-9b29-03359bbd0d28",
+     "buildName": "Zlatan Ibrahimović",
+     "cm": 195,
+     "inches": 77,
+     "lbs": 209,
+     "kg": 95,
+     "menu": "Lengthy",
+     "game": "Lengthy",
+     "copied": true
+    }
+   ]
+  }
+ }
+}

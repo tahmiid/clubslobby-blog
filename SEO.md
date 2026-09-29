@@ -477,6 +477,52 @@ the Traffic tab's `NOTES` marks 22 Sep and search CTR by page family is the
 instrument. The blog side (the calculator's cover, the directive in Ghost's
 head injection) is issue #7 here.
 
+### 7c. The 29 Sep read — where the clicks come from, and what was built on it
+
+Search clicks went 45 a day (30 Aug) to 951 a day (26 Sep). The 14 days to
+26 Sep, 6,596 clicks, by page family (`analytics_daily.gsc.topPages`):
+
+| Page family | Clicks | Share |
+|---|---|---|
+| Archetype build and stats pages | 3,296 | 50% |
+| Best-by-position lists | 998 | 15% |
+| Archetypes hub pages | 488 | 7% |
+| App `/b/` build pages | 397 | 6% |
+| App home | 378 | 6% |
+| Controls and skills (blog) | 120 | 2% |
+| App `/explore` | 92 | 1% |
+| **Player articles (50+ pages)** | **35** | under 1% |
+| App `/controls*` | 14 | under 1% |
+
+The stored query list is the day's top 50 with no per-query position, so the
+long tail is invisible there; read Search Console itself for volumes.
+
+What it turned into (all live 29 Sep, issue #12):
+
+1. **One page per position.** Every competitor on "best cdm / cam / cb /
+   fullback build fc 27" runs a page per position; we had five group pages.
+   `best-pro-clubs-{cdm,cm,cam,cb,fullback}-builds` are the five
+   single-position pages, linked from their parents' role sections and from
+   the position nav. The group pages' titles and descriptions were not
+   touched.
+2. **Height and weight has a page of its own** (`pro-clubs-height-and-weight`):
+   "best height and weight for magician fc 27" was arriving with nothing to
+   land on. It answers with a count of what players build, never a verdict.
+3. **The feature pages went out before the features** (§8 precedent: be
+   ranking on the day, not three weeks after). Indexable, each with something
+   to do today.
+4. **"The Grounds" stays out of titles** (owner, 29 Sep): competitors title
+   their build pages "Clubs & The Grounds"; the same builds play in both, and
+   nobody searches the word.
+5. **Spanish, French and Portuguese are the next batch, not this one**
+   (owner, 29 Sep; issue #13). Those result pages are thin (one Dexerto.fr
+   page, YouTube, TikTok), a French query took 383 impressions for 0 clicks
+   and `/explore` already ranks on a Portuguese one.
+
+Crowded, and not to be chased with articles: club stats trackers (four
+dedicated sites and an app), PlayStyle tier lists and tactics (FUT.GG, FUTBIN,
+GameSpot). Do not write more player articles or levelling explainers.
+
 ## 8. Content rules that are also SEO rules
 
 - **FC 27 numbers are rumor until EA publishes, and the word "beta" appears
@@ -601,6 +647,19 @@ head injection) is issue #7 here.
 ---
 
 ## 11. Open, and dated
+
+- **Read the nine 29 Sep pages on ~9 Oct** (three days of lag after a week):
+  impressions and position per page for the five single-position pages, the
+  height and weight page and the three feature pages. A page with zero
+  impressions that day has not been crawled; check URL Inspection before
+  reading it as a failure (§6).
+- **Request indexing for the nine new URLs** is the owner's click in Search
+  Console; the reindex queue only knows build pages.
+- **Flip the feature pages to live** the day each feature opens
+  (`gen/hq-features.mjs`).
+- **The other pages that show builds still carry the 25 Sep export** (issue
+  #11): 130 of the 470 house builds changed archetype with app #317, and only
+  the ten position pages were regenerated on 29 Sep.
 
 - **#186** — over half of Googlebot's build crawls land on noindexed pages our
   own blog grids (156 non-curated ids) and creator pages (137) link to; 11

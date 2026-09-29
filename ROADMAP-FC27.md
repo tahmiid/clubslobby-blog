@@ -239,6 +239,33 @@ lane. Blog side after that: the 6 Oct GA4 read of Reddit, the Journey by
 Mediavine application ~1 Oct (`MONETIZATION.md`), and the Search Console
 re-read from ~28 Sep (`SEO.md`).
 
+### Update — 29 Sep, the first post-launch batch
+
+Search clicks: 45 a day on 30 Aug, 951 a day on 26 Sep. Half of them land on
+the archetype build and stats pages and 15% on the position lists; the 50-odd
+player articles take 35 clicks a fortnight between them (SEO.md §7c).
+
+Shipped in one batch, unattended (owner: "everything is your call"), issue #12:
+
+| Page | Address |
+|---|---|
+| Best CDM / CM / CAM / CB / full-back builds | `best-pro-clubs-{cdm,cm,cam,cb,fullback}-builds` |
+| Height and weight, by archetype | `pro-clubs-height-and-weight` |
+| The lobby (find teammates) | `pro-clubs-find-teammates` |
+| Your build from a photo | `pro-clubs-build-from-a-photo` |
+| The phone app | `pro-clubs-hq-app` |
+
+The five group position pages were regenerated on the fresh export with the
+new two-line nav and a link from each role to its single-position page.
+
+Next, in this order:
+
+1. Flip each feature page to live the day its feature opens.
+2. Issue #11: refresh every other page that shows builds (the spokes, the
+   level-40 hub, the player pages) on the post-#317 data.
+3. Issue #13: Spanish, French and Portuguese versions of the top pages.
+4. Read the nine new pages in Search Console on ~9 Oct.
+
 ## 2. Scorecard against the 5 Aug reviews
 
 **Blog review — 6 of 8 done or mostly done:**

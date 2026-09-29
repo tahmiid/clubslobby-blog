@@ -218,6 +218,19 @@ const MAP = [
   ['feat-fc27-midfield.jpg', 'best-pro-clubs-midfielder-builds', "EA SPORTS FC 27 key art with MIDFIELD across it"],
   ['feat-fc27-defenders.jpg', 'best-pro-clubs-defender-builds', "EA SPORTS FC 27 key art with DEFENDERS across it"],
   ['feat-fc27-keepers.jpg', 'best-pro-clubs-goalkeeper-builds', "EA SPORTS FC 27 key art with KEEPERS across it"],
+  // The five single-position pages (gen/make-fc27-role-feats.py, 2026-09-29).
+  ['feat-fc27-cdm.jpg', 'best-pro-clubs-cdm-builds', "EA SPORTS FC 27 key art with CDM across it"],
+  ['feat-fc27-cm.jpg', 'best-pro-clubs-cm-builds', "EA SPORTS FC 27 key art with CM across it"],
+  ['feat-fc27-cam.jpg', 'best-pro-clubs-cam-builds', "EA SPORTS FC 27 key art with CAM across it"],
+  ['feat-fc27-cb.jpg', 'best-pro-clubs-cb-builds', "EA SPORTS FC 27 key art with CB across it"],
+  ['feat-fc27-fullbacks.jpg', 'best-pro-clubs-fullback-builds', "EA SPORTS FC 27 key art with FULL-BACKS across it"],
+  // The height and weight table and the three feature pages
+  // (gen/make-hq-feats.py, 2026-09-29). The feature covers say PRO CLUBS HQ,
+  // never EA SPORTS FC 27: they are about our product.
+  ['feat-fc27-height-weight.jpg', 'pro-clubs-height-and-weight', "EA SPORTS FC 27 key art with HEIGHT + WEIGHT across it"],
+  ['feat-hq-teammates.jpg', 'pro-clubs-find-teammates', "A kickabout in FC 27\u2019s The Grounds, with TEAMMATES across it"],
+  ['feat-hq-build-photo.jpg', 'pro-clubs-build-from-a-photo', "The Pro Clubs HQ builder above the words PHOTO TO BUILD"],
+  ['feat-hq-app.jpg', 'pro-clubs-hq-app', "Build cards from Pro Clubs HQ above the words THE APP"],
   // The per-archetype stats pages (gen/make-fc27-stats-feats.py, 2026-09-23).
   ['feat-fc27-magician-stats.jpg', 'pro-clubs-magician-stats', "EA SPORTS FC 27 key art with MAGICIAN STATS across it"],
   ['feat-fc27-spark-stats.jpg', 'pro-clubs-spark-stats', "EA SPORTS FC 27 key art with SPARK STATS across it"],
