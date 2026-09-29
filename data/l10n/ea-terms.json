@@ -1,0 +1,768 @@
+{
+ "generatedAt": "2026-09-29",
+ "languages": [
+  "es-ES",
+  "es-MX",
+  "fr",
+  "pt-BR",
+  "pt-PT"
+ ],
+ "sources": {
+  "strings": "https://www.ea.com/ea-sports-fc/ultimate-team/web-app/loc/<locale>.json",
+  "archetypes": "https://www.ea.com/<lang>/games/ea-sports-fc/fc-27/news/pitch-notes-fc27-the-grounds-deep-dive"
+ },
+ "caveats": [
+  "playstyles, attributes and labels are the FC 27 web app strings; the Clubs menu differs for a few PlayStyles in fr and pt-BR",
+  "attribute values are the short labels",
+  "archetypes are what EA prints on its web page; the in-game menu differs for some in pt-BR and uses gendered forms in fr",
+  "pt-PT has no archetype names: EA publishes no pt-PT page",
+  "not a glossary: see issue #13 before printing any of these"
+ ],
+ "archetypes": {
+  "shot-stopper": {
+   "en": "Shot Stopper",
+   "es-ES": "Muro",
+   "es-MX": "Paragoles",
+   "fr": "Dernier rempart",
+   "pt-BR": "Muralha"
+  },
+  "sweeper-keeper": {
+   "en": "Sweeper Keeper",
+   "es-ES": "Guardameta líbero/a",
+   "es-MX": "Portero/a líbero/a",
+   "fr": "Gardien libéro",
+   "pt-BR": "Goleira-líbero"
+  },
+  "progressor": {
+   "en": "Progressor",
+   "es-ES": "Impulso",
+   "es-MX": "Precursor/a",
+   "fr": "Facilitation",
+   "pt-BR": "Comandante"
+  },
+  "boss": {
+   "en": "Boss",
+   "es-ES": "Líder",
+   "es-MX": "Jefe/a",
+   "fr": "Boss",
+   "pt-BR": "Chefia"
+  },
+  "marauder": {
+   "en": "Marauder",
+   "es-ES": "Amenaza",
+   "es-MX": "Acechador/a",
+   "fr": "Traque",
+   "pt-BR": "Ambivalente"
+  },
+  "disruptor": {
+   "en": "Disruptor",
+   "es-ES": "Inagotable",
+   "es-MX": "Disruptor/a",
+   "fr": "Trouble-fête",
+   "pt-BR": "Mata-ataques"
+  },
+  "recycler": {
+   "en": "Recycler",
+   "es-ES": "Nexo",
+   "es-MX": "Reciclador/a",
+   "fr": "Récupération",
+   "pt-BR": "Compasso"
+  },
+  "maestro": {
+   "en": "Maestro",
+   "es-ES": "Guía",
+   "es-MX": "Maestro/a",
+   "fr": "Maestro",
+   "pt-BR": "Maestria"
+  },
+  "creator": {
+   "en": "Creator",
+   "es-ES": "Artista",
+   "es-MX": "Creador/a",
+   "fr": "Création",
+   "pt-BR": "Cérebro"
+  },
+  "spark": {
+   "en": "Spark",
+   "es-ES": "Chispa",
+   "es-MX": "Chispa",
+   "fr": "Étincelle",
+   "pt-BR": "Gatilho"
+  },
+  "magician": {
+   "en": "Magician",
+   "es-ES": "Ilusionista",
+   "es-MX": "Mago/a",
+   "fr": "Magie",
+   "pt-BR": "Magia em campo"
+  },
+  "finisher": {
+   "en": "Finisher",
+   "es-ES": "Killer",
+   "es-MX": "Rematador/a",
+   "fr": "Finisseur",
+   "pt-BR": "Finalizador"
+  },
+  "target": {
+   "en": "Target",
+   "es-ES": "Referencia",
+   "es-MX": "Objetivo",
+   "fr": "Point d'appui",
+   "pt-BR": "Target"
+  }
+ },
+ "playstyles": {
+  "1v1-close-down": {
+   "en": "1v1 Close Down",
+   "key": "extendedPlayerInfo.signatureAbility.name.33",
+   "es-ES": "Maestría en 1 contra 1",
+   "es-MX": "Achique 1 vs. 1",
+   "fr": "Marquage 1-1",
+   "pt-BR": "Saída mano a mano",
+   "pt-PT": "Mancha 1x1"
+  },
+  "acrobatic": {
+   "en": "Acrobatic",
+   "key": "extendedPlayerInfo.signatureAbility.name.5",
+   "es-ES": "Acrobático",
+   "es-MX": "Acrobático",
+   "fr": "Acrobatique",
+   "pt-BR": "Acrobata",
+   "pt-PT": "Acrobático"
+  },
+  "aerial-fortress": {
+   "en": "Aerial Fortress",
+   "key": "extendedPlayerInfo.signatureAbility.name.19",
+   "es-ES": "Fortaleza aérea",
+   "es-MX": "Fortaleza aérea",
+   "fr": "Forteresse aérienne",
+   "pt-BR": "Força Aérea",
+   "pt-PT": "Fortaleza Aérea"
+  },
+  "anticipate": {
+   "en": "Anticipate",
+   "key": "extendedPlayerInfo.signatureAbility.name.17",
+   "es-ES": "Anticipación",
+   "es-MX": "Anticipación",
+   "fr": "Anticipation",
+   "pt-BR": "Antecipação",
+   "pt-PT": "Antecipa"
+  },
+  "block": {
+   "en": "Block",
+   "key": "extendedPlayerInfo.signatureAbility.name.15",
+   "es-ES": "Bloqueo",
+   "es-MX": "Bloqueo",
+   "fr": "Contre",
+   "pt-BR": "Barreira",
+   "pt-PT": "Bloquear"
+  },
+  "bruiser": {
+   "en": "Bruiser",
+   "key": "extendedPlayerInfo.signatureAbility.name.28",
+   "es-ES": "Leñero",
+   "es-MX": "Agresivo",
+   "fr": "Agressif",
+   "pt-BR": "Xerife",
+   "pt-PT": "Duro"
+  },
+  "chip-shot": {
+   "en": "Chip Shot",
+   "key": "extendedPlayerInfo.signatureAbility.name.1",
+   "es-ES": "Vaselina",
+   "es-MX": "Tiro bombeado",
+   "fr": "Ballon piqué",
+   "pt-BR": "Cavadinha",
+   "pt-PT": "Remate em Chapéu"
+  },
+  "cross-claimer": {
+   "en": "Cross Claimer",
+   "key": "extendedPlayerInfo.signatureAbility.name.32",
+   "es-ES": "Cazacentros",
+   "es-MX": "PO cazacentros",
+   "fr": "Sortie sur les centres",
+   "pt-BR": "Saída aérea",
+   "pt-PT": "Conquista Cruzamentos"
+  },
+  "dead-ball": {
+   "en": "Dead Ball",
+   "key": "extendedPlayerInfo.signatureAbility.name.3",
+   "es-ES": "Balón parado",
+   "es-MX": "Balón parado",
+   "fr": "Coup de pied arrêté",
+   "pt-BR": "Bola parada",
+   "pt-PT": "Pontaria Afinada"
+  },
+  "deflector": {
+   "en": "Deflector",
+   "key": "extendedPlayerInfo.signatureAbility.name.35",
+   "es-ES": "Repelebalones",
+   "es-MX": "Deflectora",
+   "fr": "Déviation",
+   "pt-BR": "Obstáculo",
+   "pt-PT": "Defletor"
+  },
+  "enforcer": {
+   "en": "Enforcer",
+   "key": "extendedPlayerInfo.signatureAbility.name.29",
+   "es-ES": "Tanque",
+   "es-MX": "Tanque",
+   "fr": "Passage en force",
+   "pt-BR": "Solidez",
+   "pt-PT": "Dominância"
+  },
+  "far-reach": {
+   "en": "Far Reach",
+   "key": "extendedPlayerInfo.signatureAbility.name.34",
+   "es-ES": "Largo alcance",
+   "es-MX": "Largo alcance",
+   "fr": "Classe de loin",
+   "pt-BR": "Braço elástico",
+   "pt-PT": "Alcance Maior"
+  },
+  "far-throw": {
+   "en": "Far Throw",
+   "key": "extendedPlayerInfo.signatureAbility.name.30",
+   "es-ES": "Saque lejano",
+   "es-MX": "Saque largo",
+   "fr": "Longue relance",
+   "pt-BR": "Arremesso longo",
+   "pt-PT": "Lançamento Distante"
+  },
+  "finesse-shot": {
+   "en": "Finesse Shot",
+   "key": "extendedPlayerInfo.signatureAbility.name.0",
+   "es-ES": "Con calidad",
+   "es-MX": "Tiro colocado",
+   "fr": "Tir en finesse",
+   "pt-BR": "Chute colocado",
+   "pt-PT": "Remate em Jeito"
+  },
+  "first-touch": {
+   "en": "First Touch",
+   "key": "extendedPlayerInfo.signatureAbility.name.22",
+   "es-ES": "Primer toque",
+   "es-MX": "Primer toque",
+   "fr": "Contrôle",
+   "pt-BR": "Domínio",
+   "pt-PT": "Primeiro Toque"
+  },
+  "footwork": {
+   "en": "Footwork",
+   "key": "extendedPlayerInfo.signatureAbility.name.31",
+   "es-ES": "Pies ágiles",
+   "es-MX": "Pie salvador",
+   "fr": "Arrêt du pied",
+   "pt-BR": "Usa os pés",
+   "pt-PT": "Trabalho de Pés"
+  },
+  "game-changer": {
+   "en": "Gamechanger",
+   "key": "extendedPlayerInfo.signatureAbility.name.7",
+   "es-ES": "Revolución",
+   "es-MX": "Revolucionario",
+   "fr": "Révolutionnaire",
+   "pt-BR": "Vanguarda",
+   "pt-PT": "Vanguardista"
+  },
+  "incisive-pass": {
+   "en": "Incisive Pass",
+   "key": "extendedPlayerInfo.signatureAbility.name.8",
+   "es-ES": "Pase incisivo",
+   "es-MX": "Pase balístico",
+   "fr": "Passe incisive",
+   "pt-BR": "Passe direto",
+   "pt-PT": "Passe Incisivo"
+  },
+  "intercept": {
+   "en": "Intercept",
+   "key": "extendedPlayerInfo.signatureAbility.name.16",
+   "es-ES": "Interceptor",
+   "es-MX": "Intercepción",
+   "fr": "Interception",
+   "pt-BR": "Interceptação",
+   "pt-PT": "Intercetar"
+  },
+  "inventive": {
+   "en": "Inventive",
+   "key": "extendedPlayerInfo.signatureAbility.name.13",
+   "es-ES": "Inventiva",
+   "es-MX": "Inventivo",
+   "fr": "Génie",
+   "pt-BR": "Criativo",
+   "pt-PT": "Inventivo"
+  },
+  "jockey": {
+   "en": "Jockey",
+   "key": "extendedPlayerInfo.signatureAbility.name.14",
+   "es-ES": "Insuperable",
+   "es-MX": "Encarar",
+   "fr": "Lutte",
+   "pt-BR": "Cercar",
+   "pt-PT": "Encarar"
+  },
+  "long-ball-pass": {
+   "en": "Long Ball Pass",
+   "key": "extendedPlayerInfo.signatureAbility.name.10",
+   "es-ES": "Pases largos",
+   "es-MX": "Pase largo",
+   "fr": "Passe longue",
+   "pt-BR": "Passe longo",
+   "pt-PT": "Passe Longo"
+  },
+  "long-throw": {
+   "en": "Long Throw",
+   "key": "extendedPlayerInfo.signatureAbility.name.27",
+   "es-ES": "Saque potente",
+   "es-MX": "Saques de banda",
+   "fr": "Longue touche",
+   "pt-BR": "Lateral Longo",
+   "pt-PT": "Lançamento Comprido"
+  },
+  "low-driven-shot": {
+   "en": "Low Driven Shot",
+   "key": "extendedPlayerInfo.signatureAbility.name.6",
+   "es-ES": "Tiro raso potente",
+   "es-MX": "Tiro con potencia bajo",
+   "fr": "Tir rasant appuyé",
+   "pt-BR": "Chute direto rasteiro",
+   "pt-PT": "Remate em Força Rasteiro"
+  },
+  "pinged-pass": {
+   "en": "Pinged Pass",
+   "key": "extendedPlayerInfo.signatureAbility.name.9",
+   "es-ES": "Pase de empeine",
+   "es-MX": "Pase al espacio",
+   "fr": "Passe fusante",
+   "pt-BR": "Passe Forte",
+   "pt-PT": "Passe Picado"
+  },
+  "power-shot": {
+   "en": "Power Shot",
+   "key": "extendedPlayerInfo.signatureAbility.name.2",
+   "es-ES": "Zapatazo",
+   "es-MX": "Tiro potente",
+   "fr": "Tir puissant",
+   "pt-BR": "Pombo sem asas",
+   "pt-PT": "Remate Potente"
+  },
+  "precision-header": {
+   "en": "Precision Header",
+   "key": "extendedPlayerInfo.signatureAbility.name.4",
+   "es-ES": "Cabezazo de precisión",
+   "es-MX": "Cabezazo preciso",
+   "fr": "Tête précise",
+   "pt-BR": "Cabeceio Preciso",
+   "pt-PT": "Cabeceamento de Precisão"
+  },
+  "press-proven": {
+   "en": "Press Proven",
+   "key": "extendedPlayerInfo.signatureAbility.name.24",
+   "es-ES": "Paso firme",
+   "es-MX": "Sangre fría",
+   "fr": "Résiste au pressing",
+   "pt-BR": "Cabeça fria",
+   "pt-PT": "Resistente à Pressão"
+  },
+  "quick-step": {
+   "en": "Quick Step",
+   "key": "extendedPlayerInfo.signatureAbility.name.25",
+   "es-ES": "Paso rápido",
+   "es-MX": "Paso veloz",
+   "fr": "Foulée rapide",
+   "pt-BR": "Pé de vento",
+   "pt-PT": "Pés Rápidos"
+  },
+  "rapid": {
+   "en": "Rapid",
+   "key": "extendedPlayerInfo.signatureAbility.name.21",
+   "es-ES": "Regate veloz",
+   "es-MX": "Veloz",
+   "fr": "Rapide",
+   "pt-BR": "Veloz",
+   "pt-PT": "Rapidez"
+  },
+  "relentless": {
+   "en": "Relentless",
+   "key": "extendedPlayerInfo.signatureAbility.name.26",
+   "es-ES": "Implacable",
+   "es-MX": "Implacable",
+   "fr": "Infatigable",
+   "pt-BR": "Incansável",
+   "pt-PT": "Implacável"
+  },
+  "slide-tackle": {
+   "en": "Slide Tackle",
+   "key": "extendedPlayerInfo.signatureAbility.name.18",
+   "es-ES": "Entrada agresiva",
+   "es-MX": "Barrida",
+   "fr": "Tacle glissé",
+   "pt-BR": "Carrinho",
+   "pt-PT": "Des. Carrinho"
+  },
+  "technical": {
+   "en": "Technical",
+   "key": "extendedPlayerInfo.signatureAbility.name.20",
+   "es-ES": "Regate hábil",
+   "es-MX": "Técnico",
+   "fr": "Technique",
+   "pt-BR": "Técnica",
+   "pt-PT": "Tecnicista"
+  },
+  "tiki-taka": {
+   "en": "Tiki Taka",
+   "key": "extendedPlayerInfo.signatureAbility.name.11",
+   "es-ES": "Tikitaka",
+   "es-MX": "Tiquitaca",
+   "fr": "Tiki-taka",
+   "pt-BR": "Tiki-taka",
+   "pt-PT": "Tiki Taka"
+  },
+  "trickster": {
+   "en": "Trickster",
+   "key": "extendedPlayerInfo.signatureAbility.name.23",
+   "es-ES": "Trilero",
+   "es-MX": "Ilusionista",
+   "fr": "Technicien",
+   "pt-BR": "Malvadeza",
+   "pt-PT": "Ilusionista"
+  },
+  "whipped-pass": {
+   "en": "Whipped Pass",
+   "key": "extendedPlayerInfo.signatureAbility.name.12",
+   "es-ES": "Pase con rosca",
+   "es-MX": "Pase con efecto",
+   "fr": "Passe travaillée",
+   "pt-BR": "Passe de GPS",
+   "pt-PT": "Passe em Efeito"
+  }
+ },
+ "attributes": {
+  "acceleration": {
+   "en": "Acceleration",
+   "key": "item.subattribute.acceleration",
+   "es-ES": "Aceleración",
+   "es-MX": "Aceleración",
+   "fr": "Accélér.",
+   "pt-BR": "Aceleração",
+   "pt-PT": "Aceleração"
+  },
+  "aggression": {
+   "en": "Aggression",
+   "key": "item.subattribute.aggression",
+   "es-ES": "Agresividad",
+   "es-MX": "Agresividad",
+   "fr": "Agressivité",
+   "pt-BR": "Combativ.",
+   "pt-PT": "Agressividade"
+  },
+  "agility": {
+   "en": "Agility",
+   "key": "item.subattribute.agility",
+   "es-ES": "Agilidad",
+   "es-MX": "Agilidad",
+   "fr": "Agilité",
+   "pt-BR": "Agilidade",
+   "pt-PT": "Agilidade"
+  },
+  "attPosition": {
+   "en": "Att. Position",
+   "key": "item.subattribute.positioning",
+   "es-ES": "Pos. ataque",
+   "es-MX": "Pos. ataque",
+   "fr": "Pos. off.",
+   "pt-BR": "Pos. ataque",
+   "pt-PT": "Pos. Ataque"
+  },
+  "balance": {
+   "en": "Balance",
+   "key": "item.subattribute.balance",
+   "es-ES": "Equilibrio",
+   "es-MX": "Balance",
+   "fr": "Équilibre",
+   "pt-BR": "Equilíbrio",
+   "pt-PT": "Equilíbrio"
+  },
+  "ballControl": {
+   "en": "Ball Control",
+   "key": "item.subattribute.ballcontrol",
+   "es-ES": "Control balón",
+   "es-MX": "Contr. bal.",
+   "fr": "Cond. balle",
+   "pt-BR": "Contr. bola",
+   "pt-PT": "Controlo Bola"
+  },
+  "composure": {
+   "en": "Composure",
+   "key": "item.subattribute.composure",
+   "es-ES": "Compostura",
+   "es-MX": "Compostura",
+   "fr": "Calme",
+   "pt-BR": "Frieza",
+   "pt-PT": "Compostura"
+  },
+  "crossing": {
+   "en": "Crossing",
+   "key": "item.subattribute.crossing",
+   "es-ES": "Centros",
+   "es-MX": "Centros",
+   "fr": "Centres",
+   "pt-BR": "Cruzamento",
+   "pt-PT": "Cruzamentos"
+  },
+  "curve": {
+   "en": "Curve",
+   "key": "item.subattribute.curve",
+   "es-ES": "Efecto",
+   "es-MX": "Efecto",
+   "fr": "Effet",
+   "pt-BR": "Curva",
+   "pt-PT": "Efeito"
+  },
+  "defAware": {
+   "en": "Def. Aware",
+   "key": "item.subattribute.marking",
+   "es-ES": "Cap. defensiva",
+   "es-MX": "Percep. def.",
+   "fr": "Lucidité déf.",
+   "pt-BR": "Noção def.",
+   "pt-PT": "Propen. Def."
+  },
+  "dribbling": {
+   "en": "Dribbling",
+   "key": "item.subattribute.dribbling",
+   "es-ES": "Regates",
+   "es-MX": "Regates",
+   "fr": "Dribbles",
+   "pt-BR": "Condução",
+   "pt-PT": "Drible"
+  },
+  "finishing": {
+   "en": "Finishing",
+   "key": "item.subattribute.finishing",
+   "es-ES": "Finalización",
+   "es-MX": "Remates",
+   "fr": "Finition",
+   "pt-BR": "Finalização",
+   "pt-PT": "Finalização"
+  },
+  "fkAcc": {
+   "en": "FK Acc.",
+   "key": "item.subattribute.freekickaccuracy",
+   "es-ES": "Precisión falta",
+   "es-MX": "Precisión TL",
+   "fr": "Précision CF",
+   "pt-BR": "Cobr. falta",
+   "pt-PT": "Prec. Livres"
+  },
+  "gkDiving": {
+   "en": "GK Diving",
+   "key": "item.subattribute.gkdiving",
+   "es-ES": "Estirada",
+   "es-MX": "Estirada (PO)",
+   "fr": "Plongeons",
+   "pt-BR": "Elast. GL",
+   "pt-PT": "Mergulhos GR"
+  },
+  "gkHandling": {
+   "en": "GK Handling",
+   "key": "item.subattribute.gkhandling",
+   "es-ES": "Paradas",
+   "es-MX": "Manejo (PO)",
+   "fr": "Jeu à la main",
+   "pt-BR": "Manejo GL",
+   "pt-PT": "Jogo Mãos GR"
+  },
+  "gkKicking": {
+   "en": "GK Kicking",
+   "key": "item.subattribute.gkkicking",
+   "es-ES": "Saques",
+   "es-MX": "Saque (PO)",
+   "fr": "Jeu au pied",
+   "pt-BR": "Chute GL",
+   "pt-PT": "Jogo Pés GR"
+  },
+  "gkPositioning": {
+   "en": "GK Pos.",
+   "key": "item.subattribute.gkpositioning",
+   "es-ES": "Colocación",
+   "es-MX": "Coloc. (PO)",
+   "fr": "Pos. G",
+   "pt-BR": "Pos. GL",
+   "pt-PT": "Pos. GR"
+  },
+  "gkReflexes": {
+   "en": "GK Reflexes",
+   "key": "item.subattribute.gkreflexes",
+   "es-ES": "Reflejos",
+   "es-MX": "Reflejos (PO)",
+   "fr": "Réflexes G",
+   "pt-BR": "Reflexos GL",
+   "pt-PT": "Reflexos GR"
+  },
+  "headingAcc": {
+   "en": "Heading Acc.",
+   "key": "item.subattribute.headingaccuracy",
+   "es-ES": "Prec. cabeza",
+   "es-MX": "Cabeceo",
+   "fr": "Précis. tête",
+   "pt-BR": "Cabeceio",
+   "pt-PT": "Cabeceamento"
+  },
+  "interceptions": {
+   "en": "Interceptions",
+   "key": "item.subattribute.interceptions",
+   "es-ES": "Intercepciones",
+   "es-MX": "Intercep.",
+   "fr": "Intercep.",
+   "pt-BR": "Intercept.",
+   "pt-PT": "Interceções"
+  },
+  "jumping": {
+   "en": "Jumping",
+   "key": "item.subattribute.jumping",
+   "es-ES": "Salto",
+   "es-MX": "Salto",
+   "fr": "Détente",
+   "pt-BR": "Impulsão",
+   "pt-PT": "Salto"
+  },
+  "longPass": {
+   "en": "Long Pass",
+   "key": "item.subattribute.longpassing",
+   "es-ES": "Pase largo",
+   "es-MX": "Pase largo",
+   "fr": "Passes longues",
+   "pt-BR": "Lançamento",
+   "pt-PT": "Passe Longo"
+  },
+  "longShots": {
+   "en": "Long Shots",
+   "key": "item.subattribute.longshots",
+   "es-ES": "Tiro lejano",
+   "es-MX": "Tiros largos",
+   "fr": "Tirs de loin",
+   "pt-BR": "Ch. de longe",
+   "pt-PT": "Rem. Longe"
+  },
+  "penalties": {
+   "en": "Penalties",
+   "key": "item.subattribute.penalties",
+   "es-ES": "Penaltis",
+   "es-MX": "Penales",
+   "fr": "Pénaltys",
+   "pt-BR": "Pênaltis",
+   "pt-PT": "Penáltis"
+  },
+  "reactions": {
+   "en": "Reactions",
+   "key": "item.subattribute.reactions",
+   "es-ES": "Anticipación",
+   "es-MX": "Reacciones",
+   "fr": "Réactivité",
+   "pt-BR": "Reação",
+   "pt-PT": "Reflexos"
+  },
+  "shortPass": {
+   "en": "Short Pass",
+   "key": "item.subattribute.shortpassing",
+   "es-ES": "Pase corto",
+   "es-MX": "Pase corto",
+   "fr": "Passes courtes",
+   "pt-BR": "Passe curto",
+   "pt-PT": "Passe Curto"
+  },
+  "shotPower": {
+   "en": "Shot Power",
+   "key": "item.subattribute.shotpower",
+   "es-ES": "Pot. de tiro",
+   "es-MX": "Pot. de tiro",
+   "fr": "Puiss. tir",
+   "pt-BR": "Força chute",
+   "pt-PT": "Pot. Remate"
+  },
+  "slideTackle": {
+   "en": "Slide Tackle",
+   "key": "item.subattribute.slidingtackle",
+   "es-ES": "Entradas",
+   "es-MX": "Barridas",
+   "fr": "Tacles gliss.",
+   "pt-BR": "Carrinho",
+   "pt-PT": "Carrinho"
+  },
+  "sprintSpeed": {
+   "en": "Sprint Speed",
+   "key": "item.subattribute.sprintspeed",
+   "es-ES": "Velocidad",
+   "es-MX": "Vel. sprint",
+   "fr": "Vitesse",
+   "pt-BR": "Pique",
+   "pt-PT": "Sprint"
+  },
+  "stamina": {
+   "en": "Stamina",
+   "key": "item.subattribute.stamina",
+   "es-ES": "Resistencia",
+   "es-MX": "Energía",
+   "fr": "Endurance",
+   "pt-BR": "Fôlego",
+   "pt-PT": "Resistência"
+  },
+  "standTackle": {
+   "en": "Stand Tackle",
+   "key": "item.subattribute.standingtackle",
+   "es-ES": "Entrada normal",
+   "es-MX": "Entradas",
+   "fr": "Tacles deb.",
+   "pt-BR": "Div. em pé",
+   "pt-PT": "Desarme em Pé"
+  },
+  "strength": {
+   "en": "Strength",
+   "key": "item.subattribute.strength",
+   "es-ES": "Fuerza",
+   "es-MX": "Fuerza",
+   "fr": "Force",
+   "pt-BR": "Força",
+   "pt-PT": "Força"
+  },
+  "vision": {
+   "en": "Vision",
+   "key": "item.subattribute.vision",
+   "es-ES": "Visión",
+   "es-MX": "Visión",
+   "fr": "Vista",
+   "pt-BR": "Visão",
+   "pt-PT": "Visão"
+  },
+  "volleys": {
+   "en": "Volleys",
+   "key": "item.subattribute.volleys",
+   "es-ES": "Voleas",
+   "es-MX": "Voleas",
+   "fr": "Volées",
+   "pt-BR": "Voleio",
+   "pt-PT": "Volleys"
+  }
+ },
+ "labels": {
+  "skillMoves": {
+   "en": "Skill Moves",
+   "key": "extendedPlayerInfo.stats.skillmoves",
+   "es-ES": "Filigranas",
+   "es-MX": "Movimientos hábiles",
+   "fr": "Gestes techniques",
+   "pt-BR": "Fintas",
+   "pt-PT": "Mov. Técnicos"
+  },
+  "weakFoot": {
+   "en": "Weak Foot",
+   "key": "IWL_extendedPlayerInfo.stats.weakfoot",
+   "es-ES": "Pierna mala",
+   "es-MX": "Pie débil",
+   "fr": "Mauvais pied",
+   "pt-BR": "Perna Ruim",
+   "pt-PT": "Pior Pé"
+  }
+ }
+}
