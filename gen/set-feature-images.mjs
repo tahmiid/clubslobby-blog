@@ -231,6 +231,7 @@ const MAP = [
   ['feat-hq-teammates.jpg', 'pro-clubs-find-teammates', "A kickabout in FC 27\u2019s The Grounds, with TEAMMATES across it"],
   ['feat-hq-build-photo.jpg', 'pro-clubs-build-from-a-photo', "The Pro Clubs HQ builder above the words PHOTO TO BUILD"],
   ['feat-hq-app.jpg', 'pro-clubs-hq-app', "Build cards from Pro Clubs HQ above the words THE APP"],
+  ['feat-hq-drop-in.jpg', 'pro-clubs-drop-in-teammates', "A street pitch in FC 27\u2019s The Grounds, with DROP-IN across it"],
   // The per-archetype stats pages (gen/make-fc27-stats-feats.py, 2026-09-23).
   ['feat-fc27-magician-stats.jpg', 'pro-clubs-magician-stats', "EA SPORTS FC 27 key art with MAGICIAN STATS across it"],
   ['feat-fc27-spark-stats.jpg', 'pro-clubs-spark-stats', "EA SPORTS FC 27 key art with SPARK STATS across it"],

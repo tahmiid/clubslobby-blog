@@ -656,7 +656,11 @@ GameSpot). Do not write more player articles or levelling explainers.
 - **Request indexing for the nine new URLs** is the owner's click in Search
   Console; the reindex queue only knows build pages.
 - **Flip the feature pages to live** the day each feature opens
-  (`gen/hq-features.mjs`).
+  (`gen/hq-features.mjs`). The lobby was flipped 30 Sep, with a207 beside
+  it; the photo page and the app page are still "opening".
+- **`/lobby` has no crawler twin in the app** (a crawler gets the shell) and
+  is not in the app sitemap: an app-repo task if the lobby is to rank on its
+  own address.
 - **The other pages that show builds still carry the 25 Sep export** (issue
   #11): 130 of the 470 house builds changed archetype with app #317, and only
   the ten position pages were regenerated on 29 Sep.

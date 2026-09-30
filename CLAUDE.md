@@ -476,6 +476,13 @@ list, the `status` switch and the "New on Pro Clubs HQ" rail.
   few days" and "in the next few weeks" were the owner's words on 29 Sep.
 - **Every page is useful on the day it is read**: under the status card comes
   what works TODAY, as app links the sweep resolves.
+- **The lobby opened 30 Sep 2026** (`/lobby`; app repo `backend/LOBBY.md` is
+  the spec): its page was flipped to `live` the same day and rewritten
+  against the real screens, and `pro-clubs-drop-in-teammates` (a207) lists
+  every way to find teammates with the lobby first. `ops/link-sweep.mjs`
+  knows `/lobby` and `/lobby/go`. The app serves crawlers the shell at
+  `/lobby` (no twin, not in the app sitemap), so the blog pages are what
+  Google reads about it.
 - **When a feature opens**: read the real thing, correct the steps against it,
   set `status: 'live'` and its `href` in `hq-features.mjs`, move `UPDATED` in
   `features.mjs`, regenerate, publish. The "When does it open?" question drops

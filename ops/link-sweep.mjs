@@ -88,6 +88,7 @@ const appLinks = (html) => {
 // shows the way in.
 const KNOWN_PATHS = new Set([
   '/', '/create', '/explore', '/meta', '/inbox', '/hq', '/my-builds', '/locker-room', '/level-rewards',
+  '/lobby', '/lobby/go',   // the drop-in lobby (app #324), open 30 Sep 2026
   '/controls', '/controls/skill-moves', '/controls/celebrations',
   '/privacy', '/terms', '/reset-password', '/verify-email',
   '/admin', '/admin/traffic', '/admin/monetization', '/admin/style-guide',

@@ -16,9 +16,10 @@
 import { esc, kg } from './common.mjs';
 
 export const FEATURES = [
-  { key: 'lobby', n: 204, slug: 'pro-clubs-find-teammates', status: 'soon', href: null,
-    label: 'Find teammates: the lobby',
-    why: 'Pick your build, say you are up for a game, and let teammates find you.' },
+  // Open since 30 Sep 2026 (owner: "the lobby is live", proclubshq.com/lobby).
+  { key: 'lobby', n: 204, slug: 'pro-clubs-find-teammates', status: 'live', href: '/lobby',
+    label: 'The drop-in lobby',
+    why: 'Go live with your build, see who wants to join and what they play, and drop in together.' },
   { key: 'photo', n: 205, slug: 'pro-clubs-build-from-a-photo', status: 'soon', href: null,
     label: 'Your build from a photo',
     why: 'Take a photo of your build on the screen and get it as a build you can share.' },
@@ -57,9 +58,9 @@ export const hqRail = (currentSlug) => {
   return kg(`<div class="hqf">
 <style>${CSS}</style>
 <p class="k">New on Pro Clubs HQ</p>
-<h3>${items.some((f) => f.status === 'soon') ? 'What is opening next' : 'What just opened'}</h3>
+<h3>${items.every((f) => f.status === 'soon') ? 'What is opening next' : items.every((f) => f.status === 'live') ? 'What just opened' : 'What just opened, and what is next'}</h3>
 <ul>
-${items.map((f) => `<li><a href="/blog/${f.slug}/">${esc(f.label)}</a> — ${esc(f.why)}${f.status === 'soon' ? ' <i>Opening soon</i>' : ''}</li>`).join('\n')}
+${items.map((f) => `<li><a href="/blog/${f.slug}/">${esc(f.label)}</a> — ${esc(f.why)} <i>${f.status === 'soon' ? 'Opening soon' : 'Open now'}</i></li>`).join('\n')}
 </ul>
 </div>`);
 };

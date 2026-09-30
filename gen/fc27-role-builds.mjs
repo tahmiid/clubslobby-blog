@@ -395,7 +395,9 @@ ${appCta({
   })}
 
 ${fc27Rail(page.slug)}
-${page.parent ? `\n${hqRail(page.slug)}\n` : ''}
+
+${hqRail(page.slug)}
+
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}

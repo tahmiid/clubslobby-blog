@@ -1309,6 +1309,14 @@ const POSTS = [
     meta_description: 'iPhone · Android · Builder · Builds to Copy · Meta · Controls · Club Pages · Notifications · FC 27 Pro Clubs',
     custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. Coming in the next few weeks.',
     tags: ['News', 'Pro Clubs HQ'] },
+  // The drop-in teammates list (gen/a207-dropin-teammates.mjs, 2026-09-30):
+  // the lobby opened that day; every way to find teammates, the lobby first.
+  { file: 'a207.html', slug: 'pro-clubs-drop-in-teammates', status: 'published',
+    title: 'How to Find Good Teammates for FC 27 Pro Clubs Drop-In',
+    meta_title: 'Find Teammates for FC 27 Pro Clubs Drop-In',
+    meta_description: 'Drop-In Teammates · The Lobby · See Their Build First · EA Recruiting Thread · Discord · Your Club Page · PS5 · Xbox · PC · FC 27 Pro Clubs',
+    custom_excerpt: 'Four ways to find teammates for drop-in, and the one that shows you their build before you play.',
+    tags: ['Guides', 'FC 27'] },
   // The per-archetype stats pages (gen/archetype-stats.mjs, 2026-09-23): what
   // is cheap and what is expensive to upgrade on each archetype. The rows are
   // COPIED from out/aNNN.meta.json, which the generator computes (the

@@ -28,35 +28,47 @@ import { FEATURES, hqRail } from './hq-features.mjs';
 import { positionsNav } from './positions-nav.mjs';
 import { AD_C } from './ads.mjs';
 
-const UPDATED = '2026-09-29';   // the day the COPY changed, never today by reflex
+const UPDATED = '2026-09-29';   // the day the COPY changed, never today by reflex (a page may carry its own `updated`)
 const OUT = path.join(import.meta.dirname, '..', 'out');
 const INDEPENDENT = [`Is ${BRAND} part of EA?`,
   `No. ${BRAND} is an independent site made by Clubs players. It is not affiliated with or endorsed by EA SPORTS.`];
 
 const PAGES = {
   lobby: {
+    // OPEN since 30 Sep 2026. Every line below was read against the live
+    // page and the app repo's LOBBY.md (the routes, the options, who sees
+    // what). The owner's brief for the copy (30 Sep): the pain it solves -
+    // drop-in matches you with players you know nothing about - and what you
+    // gain: you know your teammates' builds before the whistle. Nothing about
+    // testing state; the word the app wears beside its title is not printed
+    // here (owner rule since 16 Aug).
     title: 'Find FC 27 Pro Clubs Teammates: The Drop-In Lobby',
-    meta_title: 'Find FC 27 Pro Clubs Teammates: Drop-In Lobby',
-    meta_description: 'Find Teammates · Drop-In · Club Matches · LFG · Looking for a Club · See the Build First · FC 27 Pro Clubs',
-    custom_excerpt: 'Pick your build, say you are up for a game, and let teammates find you. The lobby opens in the next few days.',
-    when: 'in the next few days', note: 'the lobby opens in the next few days',
-    head: 'A lobby where you see the build before you say yes',
+    meta_title: 'FC 27 Pro Clubs Drop-In Lobby: Find Teammates',
+    meta_description: 'Drop-In Lobby · Find Teammates · See Their Build First · Club Matches · PS5 · Xbox · PC · Switch · Free · FC 27 Pro Clubs',
+    custom_excerpt: 'Go live with your build, see who wants to join and what they play, and drop in together. Open now on Pro Clubs HQ.',
+    updated: '2026-09-30', when: 'now', note: 'the lobby is open at proclubshq.com/lobby',
+    head: 'Drop in with players whose builds you have already seen',
     points: [
-      'Pick the build you are playing and say what you are up for: a drop-in game or a club match.',
-      'Players in the lobby see you waiting, with your build beside your name.',
-      'Anyone can ask to join you, with a build of their own or without one.',
-      'Gamertags are swapped only after you accept.',
+      'Go live with the build you are playing, for a drop-in game or a club match, and say your platform and region.',
+      'Players see you waiting in the lobby and on your build\'s cards in the reel, with the build beside your name.',
+      'When someone asks to join, you see the build they would bring before you answer.',
+      'Accept, and both of you get the other\'s gamertag. Until then nobody sees it.',
     ],
-    stepsHead: 'How the lobby works',
+    stepsHead: 'How the drop-in lobby works',
     steps: [
-      'Open the build you play and put it in the lobby, for a drop-in game or a club match.',
-      'You show as waiting. Your build sits beside your name, so nobody has to guess what you bring.',
-      'A player asks to join. If they have a build, you see it before you answer.',
-      'Accept, swap gamertags, and meet in the game.',
+      'Open the lobby and tap Go live. Pick the build you are playing, drop-in or club match, your platform, your region and how long you are up for: 30, 60 or 120 minutes.',
+      'You are on the board. Anyone browsing the lobby, or your build in the reel, sees you waiting and what you play.',
+      'A player asks to join. You get a notification with their build, and one tap says yes or not now.',
+      'On yes, you see each other\'s gamertag, with quick replies for the last mile: Sending invite, Add me, Ready.',
+      'Nobody waiting? Tap Let me know and the lobby tells you when the next player goes live, for the next 5, 10 or 15 minutes.',
     ],
+    todayHead: 'What makes a drop-in work',
     today: [
-      { kicker: 'Live now', head: 'Find the build your team is missing',
-        body: 'Finished level-40 builds for every position, most copied first. Open one, copy it, change what you want.',
+      { kicker: 'Open now', head: 'Go live, or find a game',
+        body: 'The lobby is free and works in your phone or desktop browser. Turn notifications on and you will know the moment someone asks to join.',
+        links: [{ href: '/lobby', label: 'Open the lobby' }] },
+      { kicker: 'Live now', head: 'Bring a build people want next to them',
+        body: 'Your build is your calling card in the lobby. Finished level-40 builds for every position, most copied first: open one, copy it, make it yours.',
         links: [
           { href: '/explore?q=striker&year=27', label: 'Strikers' },
           { href: '/explore?q=cam&year=27', label: 'CAMs' },
@@ -64,21 +76,20 @@ const PAGES = {
           { href: '/explore?q=cb&year=27', label: 'Centre-backs' },
           { href: '/explore?q=goalkeeper&year=27', label: 'Goalkeepers' },
         ] },
-      { kicker: 'Live now', head: 'Put your club on your profile',
-        body: 'Connect your club from My Builds. Its page carries the crest, the division and the last ten results, and the locker room keeps your own numbers and matches.',
+      { kicker: 'Live now', head: 'Club match instead of drop-in',
+        body: 'Connect your club from My Builds and you can go live for a club match: the lobby names the positions your club needs, and the player who joins plays for your club.',
         links: [{ href: '/my-builds', label: 'Connect your club' }] },
-      { kicker: 'Live now', head: 'Publish the build you play',
-        body: 'Build it once and it has a link you can drop in any chat. When the lobby opens, it is the build beside your name.',
-        links: [{ href: '/create', label: 'Open the builder' }] },
     ],
-    extra: `<h2>Until the lobby opens</h2>
-<p>EA's own forum runs a <a href="https://forums.ea.com/discussions/fc-27-the-grounds-clubs-en/recruiting-clubs--the-grounds-find-your-club-or-teammates/13709090">recruiting thread for Clubs and The Grounds</a>, with one template for a player looking for a club and one for a club looking for players. What it cannot show is the build behind the name, which is the part the lobby adds.</p>`,
+    extra: `<h2>Why the lobby, and not the drop-in queue</h2>
+<p>Drop-in matches you with whoever is there. You find out what your teammates can do when the whistle goes, and a bad draw is fifteen minutes gone. In the lobby you see a player's archetype, level, PlayStyles and top attributes before you say yes, you know what they play, and you can adjust your own build to fit. The other ways to find people are still there: EA's forum runs a <a href="https://forums.ea.com/discussions/fc-27-the-grounds-clubs-en/recruiting-clubs--the-grounds-find-your-club-or-teammates/13709090">recruiting thread for Clubs and The Grounds</a>, and the Clubs Discord servers do the same job in chat. None of them shows the build behind the name.</p>`,
     nav: true,
     faq: [
-      ['When does the lobby open?', 'In the next few days. This page will link it the day it does.'],
-      ['Is the lobby for drop-in or for club matches?', 'Both. You say which one you are up for when you put your build in the lobby.'],
-      ['Can other players see my gamertag?', `Not until you accept their request. Until then they see your build and your ${BRAND} name.`],
-      ['Do I need a build to join someone?', 'No. You can ask to join without one. With one, the player you ask sees what you would play.'],
+      ['Is the drop-in lobby free?', `Yes. It needs a free ${BRAND} account, because the player you join has to know who asked.`],
+      ['Is the lobby for drop-in or for club matches?', 'Both. You choose when you go live. A club match needs a club connected to your account; a drop-in needs nothing but a build.'],
+      ['Which platforms and regions?', 'PS5, Xbox, PC and Switch, with nine regions from NA East to Oceania. You set both when you go live, and the lobby filters on them.'],
+      ['Can other players see my gamertag?', `Not until you accept their request. Until then they see your build and your ${BRAND} name. Once you accept, each side sees the other's gamertag, and nobody else does.`],
+      ['Do I need a build to join someone?', 'No. You can ask to join without one. With one, the host sees what you would play before answering.'],
+      ['Do I need the app?', 'No. The lobby works in a phone or desktop browser today. The app, coming to iPhone and Android, carries the same lobby.'],
     ],
   },
   photo: {
@@ -124,7 +135,7 @@ const PAGES = {
     head: `${BRAND} on your phone`,
     points: [
       'For iPhone and Android.',
-      'Everything the site does: builds to copy, the builder, the meta, the controls and your club.',
+      'Everything the site does: builds to copy, the builder, the meta, the controls, your club and the drop-in lobby.',
       'Notifications when something happens on your builds.',
     ],
     stepsHead: null, steps: [],
@@ -192,7 +203,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
 </script>`);
 
   const html = [
-    updatedLine(UPDATED, soon ? p.note : 'open now'),
+    updatedLine(p.updated ?? UPDATED, soon ? p.note : p.note),
     status,
     steps,
     today,
