@@ -20,6 +20,10 @@ export const FEATURES = [
   { key: 'lobby', n: 204, slug: 'pro-clubs-find-teammates', status: 'live', href: '/lobby',
     label: 'The drop-in lobby',
     why: 'Go live with your build, see who wants to join and what they play, and drop in together.' },
+  // Open since 3 Oct 2026 (app #437, backend/COMPANION.md).
+  { key: 'companion', n: 208, slug: 'pro-clubs-match-tracker', status: 'live', href: '/companion',
+    label: 'The Companion match logger',
+    why: 'Tap what went wrong during the match, and the report after it says which attributes to raise.' },
   { key: 'photo', n: 205, slug: 'pro-clubs-build-from-a-photo', status: 'soon', href: null,
     label: 'Your build from a photo',
     why: 'Take a photo of your build on the screen and get it as a build you can share.' },

@@ -92,6 +92,68 @@ const PAGES = {
       ['Do I need the app?', 'No. The lobby works in a phone or desktop browser today. The app, coming to iPhone and Android, carries the same lobby.'],
     ],
   },
+  companion: {
+    // OPEN since 3 Oct 2026 (app #437). Every line read against the app
+    // repo's backend/COMPANION.md and app/companion.py (EVENTS, BAD_BY_SET):
+    // the tile names are the app's English labels, the attribute lists are
+    // EVENTS verbatim. Re-read both if the tiles change.
+    title: 'FC 27 Pro Clubs Match Tracker: Fix Your Build After Every Game',
+    meta_title: 'FC 27 Pro Clubs Match Tracker: Fix Your Build',
+    meta_description: 'Match Tracker · One Tap Logger · Outpaced · Heavy Touch · Lost Duels · Which Attributes to Raise · Edit Your Build · Free · FC 27 Pro Clubs',
+    custom_excerpt: 'Keep your phone beside the pad, tap what goes wrong during the match, and the report after it tells you which attributes to raise. Free, no account needed.',
+    updated: '2026-10-03', when: 'now', note: 'the Companion is open at proclubshq.com/companion',
+    head: 'Log the match with one tap, fix the build after it',
+    points: [
+      'Keep your phone next to you while you play. Something goes wrong, you tap it: Outpaced, Heavy touch, Lost duel, Missed shot.',
+      'Something goes right, you tap that too: PlayStyle kicked in, Perk activated, Felt great.',
+      'At full time you get a report: what went wrong most, and the attributes that answer it, lowest first.',
+      'One tap on Edit build takes you straight to your build to change it.',
+    ],
+    stepsHead: 'How the Companion works',
+    steps: [
+      'Open the Companion at kick-off. It goes straight into the logger; no account needed.',
+      'Pick your build, or just your archetype. The tiles change to match: a striker gets Missed shot and Beaten in the air, a keeper gets Beaten 1v1 and Fumbled.',
+      'Tap as you play. A bar under the clock runs in game minutes and marks every tap, orange for bad and green for good.',
+      'Half-time and Full time. The report lists what happened, which attributes answer it, and how this match compares with your last five.',
+      'Tap Edit build, move the points, and play the next one. Every match stays in Reports.',
+    ],
+    todayHead: 'Start with the Companion',
+    today: [
+      { kicker: 'Open now', head: 'Log your next match',
+        body: 'Free, in your phone browser, without signing in. Sign in later and the matches you logged move to your account.',
+        links: [{ href: '/companion', label: 'Open the Companion' }] },
+      { kicker: 'Live now', head: 'No build yet? Start from one',
+        body: 'Finished level-40 builds for every position, most copied first. Copy one, play it, and let the Companion tell you what to change.',
+        links: [
+          { href: '/explore?q=striker&year=27', label: 'Strikers' },
+          { href: '/explore?q=cam&year=27', label: 'CAMs' },
+          { href: '/explore?q=cdm&year=27', label: 'CDMs' },
+          { href: '/explore?q=cb&year=27', label: 'Centre-backs' },
+          { href: '/explore?q=goalkeeper&year=27', label: 'Goalkeepers' },
+        ] },
+    ],
+    extra: `<h2>Why log it yourself</h2>
+<p>EA's match stats already count your goals, passes, tackles and rating. They don't count the moments that tell you your build is wrong: the full-back who ran past you, the touch that went two yards too far, the header you lost to a smaller player. You feel those, and by full time you have forgotten half of them. The Companion only asks for what the stats can't see, and turns it into a list of attributes.</p>
+<h2>Which attributes fix what</h2>
+<p>Every tile points at the attributes that answer it. This is the table the report uses:</p>
+${kg(`<div class="hqt"><style>.hqt table{display:table!important;table-layout:fixed;width:100%!important;white-space:normal!important;overflow:visible!important;background:rgba(12,12,20,.72)!important;background-image:none!important;box-shadow:none!important;margin:0!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:12px;border-collapse:separate!important;border-spacing:0}.hqt th,.hqt td{white-space:normal!important;overflow-wrap:anywhere;background:transparent!important;border:0!important;border-top:1px solid rgba(255,255,255,.12)!important;padding:9px 8px!important;vertical-align:top;text-align:left;font-size:14px;line-height:1.4}.hqt th{border-top:0!important;color:#9aa0ad!important;font:700 11px/1.3 system-ui,sans-serif!important;letter-spacing:.08em;text-transform:uppercase}.hqt td:first-child{width:40%;font-weight:700;color:#f2f3f7!important}.hqt td{color:#d9dce3!important}</style>
+<table>
+<thead><tr><th>You keep getting…</th><th>Look at</th></tr></thead>
+<tbody>
+<tr><td>Outpaced</td><td>Acceleration, Sprint Speed, Agility</td></tr>\n<tr><td>Exhausted</td><td>Stamina</td></tr>\n<tr><td>Bad pass</td><td>Short Passing, Long Passing, Vision</td></tr>\n<tr><td>Lost duel</td><td>Strength, Balance, Aggression</td></tr>\n<tr><td>Heavy touch</td><td>Ball Control, Dribbling, Agility</td></tr>\n<tr><td>Missed shot</td><td>Finishing, Shot Power, Composure</td></tr>\n<tr><td>Long shot off</td><td>Long Shots, Shot Power, Curve</td></tr>\n<tr><td>Bad cross</td><td>Crossing, Curve</td></tr>\n<tr><td>Beaten in the air</td><td>Jumping, Heading Accuracy, Strength</td></tr>\n<tr><td>Turned easily</td><td>Agility, Balance, Reactions</td></tr>\n<tr><td>Lost my runner</td><td>Defensive Awareness, Interceptions, Reactions</td></tr>\n<tr><td>Beaten in behind</td><td>Sprint Speed, Acceleration, Defensive Awareness</td></tr>\n<tr><td>Mistimed tackle</td><td>Standing Tackle, Sliding Tackle, Defensive Awareness</td></tr>\n<tr><td>Slow to react (GK)</td><td>GK Reflexes, Reactions</td></tr>\n<tr><td>Out of position (GK)</td><td>GK Positioning, Reactions</td></tr>\n<tr><td>Beaten 1v1 (GK)</td><td>GK Diving, GK Reflexes</td></tr>\n<tr><td>Fumbled (GK)</td><td>GK Handling</td></tr>\n<tr><td>Dropped a cross (GK)</td><td>GK Handling, Jumping, Strength</td></tr>\n<tr><td>Slow off my line (GK)</td><td>Acceleration, Sprint Speed, GK Positioning</td></tr>\n<tr><td>Bad kick (GK)</td><td>GK Kicking</td></tr>
+</tbody>
+</table>
+</div>`)}
+<p>One bad moment is a bad moment. The same tile five matches running is your build. The report shows how many of your last five matches had it.</p>`,
+    nav: true,
+    faq: [
+      ['Is the Companion free?', 'Yes, and it needs no account. Sign in when you want to keep your matches with your builds.'],
+      ['Can I change the tiles?', 'Yes. Each archetype has its own six problem tiles and three good ones. You can reorder them, hide them, bring in tiles from other positions, or add your own.'],
+      ['Does it read my match from EA?', 'No. It logs what you tap. Goals, assists and ratings are in EA\'s stats already; the Companion logs what they leave out.'],
+      ['What if I leave the screen mid-match?', 'The match keeps running. Come back and carry on; the clock and your taps are where you left them.'],
+      ['Do I need the app?', 'No. The Companion works in a phone browser today.'],
+    ],
+  },
   photo: {
     title: 'FC 27 Pro Clubs Build Scanner: From a Photo to a Build',
     meta_title: 'FC 27 Pro Clubs Build Scanner: Photo to Build',

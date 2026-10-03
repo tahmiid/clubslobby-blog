@@ -1317,6 +1317,14 @@ const POSTS = [
     meta_description: 'Drop-In Teammates · The Lobby · See Their Build First · EA Recruiting Thread · Discord · Your Club Page · PS5 · Xbox · PC · FC 27 Pro Clubs',
     custom_excerpt: 'Four ways to find teammates for drop-in, and the one that shows you their build before you play.',
     tags: ['Guides', 'FC 27'] },
+  // The Companion match logger (gen/features.mjs, 2026-10-03): app #437
+  // opened that day. Header text is computed in out/a208.meta.json.
+  { file: 'a208.html', slug: 'pro-clubs-match-tracker', status: 'published',
+    title: 'FC 27 Pro Clubs Match Tracker: Fix Your Build After Every Game',
+    meta_title: 'FC 27 Pro Clubs Match Tracker: Fix Your Build',
+    meta_description: 'Match Tracker · One Tap Logger · Outpaced · Heavy Touch · Lost Duels · Which Attributes to Raise · Edit Your Build · Free · FC 27 Pro Clubs',
+    custom_excerpt: 'Keep your phone beside the pad, tap what goes wrong during the match, and the report after it tells you which attributes to raise. Free, no account needed.',
+    tags: ['News', 'Pro Clubs HQ'] },
   // The per-archetype stats pages (gen/archetype-stats.mjs, 2026-09-23): what
   // is cheap and what is expensive to upgrade on each archetype. The rows are
   // COPIED from out/aNNN.meta.json, which the generator computes (the

@@ -31,6 +31,7 @@ COVERS = [
     ('feat-hq-build-photo.jpg', 'PHOTO TO BUILD', os.path.join(RAW, 'builder.png'), 'PRO CLUBS HQ', False),
     ('feat-hq-app.jpg', 'THE APP', os.path.join(RAW, 'builds.png'), 'PRO CLUBS HQ', False),
     ('feat-hq-drop-in.jpg', 'DROP-IN', os.path.join(ASSETS, 'EA_FC27_Grounds_Atletico.jpg'), 'PRO CLUBS HQ', True),
+    ('feat-hq-match-tracker.jpg', 'MATCH TRACKER', os.path.join(ASSETS, 'EA_FC27_Grounds_Bernabeu.jpg'), 'PRO CLUBS HQ', True),
 ]
 
 def screenshot_cover(out, words, src, eyebrow):
