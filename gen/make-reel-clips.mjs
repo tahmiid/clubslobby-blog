@@ -18,7 +18,7 @@
 //   node gen/make-reel-clips.mjs                 top 10 most-copied FC 27 builds
 //   node gen/make-reel-clips.mjs --top 12        more
 //   node gen/make-reel-clips.mjs <build id>…     specific builds
-//   REEL_OUT=<dir>                               default ~/Desktop/Claude/reel-clips/<date>
+//   REEL_OUT=<dir>                               default ~/ProClubsHQ-Vault/media/reel-clips/<date>
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
@@ -33,7 +33,7 @@ const MAX_MS = 30000; // a reveal that never completes still ends
 const args = process.argv.slice(2);
 const topN = args.includes('--top') ? Number(args[args.indexOf('--top') + 1]) : 10;
 const ids = args.filter((a, i) => /^[0-9a-f-]{36}$/.test(a) && args[i - 1] !== '--top');
-const OUT = process.env.REEL_OUT || path.join(os.homedir(), 'Desktop', 'Claude', 'reel-clips', new Date().toISOString().slice(0, 10));
+const OUT = process.env.REEL_OUT || path.join(os.homedir(), 'ProClubsHQ-Vault', 'media', 'reel-clips', new Date().toISOString().slice(0, 10));
 const SWIFT = path.join(import.meta.dirname, 'frames-to-mp4.swift');
 mkdirSync(OUT, { recursive: true });
 
