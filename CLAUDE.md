@@ -202,6 +202,15 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
 
 ## The theme: `pchq` (theme/pchq) — LIVE 5 Oct 2026
 
+- **The tip (Buy Me a Coffee) is placed by the theme's script**
+  (`assets/js/pchq-nav.js`), design A, the yellow button with
+  the cup under one grey line (owner, 5 Oct). Where, by the owner's rules:
+  a cheat sheet between the price list and the AP calculator; `fc27-archetypes`
+  where the list of 13 ends (before "What changed from FC 26"); a tool page
+  (the `TOOLS` list in the script) or a `-stats` page right after its first
+  widget; every other article right before the FAQ; no FAQ, before the
+  affiliate links, else at the end. The footer link stays on every page.
+
 The blog runs our own Ghost theme since 5 Oct 2026: Casper 5.12.1 with the app
 header, an **icon dock** (Cheat sheets · Builds · Tools · Meta · Guides ·
 Lobby; in the header on a computer, fixed at the bottom on a phone like the

@@ -305,15 +305,36 @@ function lightbox(trigger) {
     var c = document.querySelector('.post-template .gh-content');
     if (!c || document.querySelector('.pq-tip')) return;
     if (/ProClubsHQ\/\d+\.\d+\.\d+ \((ios|android);/.test(navigator.userAgent)) return;
-    /* On a cheat sheet: right after the specializations section, where the
-       reader has just used the tools (the affiliate links there are at the
-       very foot, and depth decides what gets seen). */
-    var at = null, sp = c.querySelector('#specializations');
-    while (sp && sp.parentNode !== c) sp = sp.parentNode;
-    if (sp) at = sp.nextElementSibling;
+    /* Where it goes (owner, 5 Oct 2026):
+       - a cheat sheet: between the price list and the AP calculator;
+       - "FC 27 archetypes" (all 13): where the list of 13 ends;
+       - a tool or a stats page: right after the tool, its first widget;
+       - every other article: right before the FAQ;
+       - no FAQ: before the affiliate links, else at the end. */
+    var top = function (el) { while (el && el.parentNode !== c) el = el.parentNode; return el; };
+    var slug = location.pathname.replace(/^\/blog\/|\/$/g, '');
+    var TOOLS = ['pro-clubs-attribute-upgrade-costs', 'lengthy-vs-controlled-vs-explosive', 'pro-clubs-height-and-weight',
+        'pro-clubs-archetypes-head-to-head', 'pro-clubs-archetypes-compared', 'pro-clubs-level-rewards',
+        'fc27-masteries-explained', 'pro-clubs-playstyle-requirements', 'pro-clubs-accelerate-explosive-lengthy-controlled'];
+    var at = null;
+    if (c.querySelector('#calculator')) {
+        at = top(c.querySelector('#calculator'));
+    } else if (slug === 'fc27-archetypes') {
+        at = top(c.querySelector('#what-changed-from-fc-26'));
+    } else if (TOOLS.indexOf(slug) >= 0 || /^pro-clubs-[a-z-]+-stats$/.test(slug)) {
+        /* the first top-level block that holds the tool itself */
+        var kids = c.children;
+        for (var i = 0; i < kids.length; i++) {
+            if (kids[i].matches('.pchq-updated, style, script') || kids[i].querySelector('.pchq-updated')) continue;
+            if (kids[i].querySelector('input, select, button, table, canvas, svg, [role="table"]')) { at = kids[i].nextElementSibling; break; }
+        }
+    }
     if (!at) {
-        at = c.querySelector('.pchq-aff');
-        while (at && at.parentNode !== c) at = at.parentNode;
+        var hs = c.querySelectorAll('h2');
+        for (var j = 0; j < hs.length; j++) if (/^frequently asked|questions$/i.test(hs[j].textContent.trim())) { at = top(hs[j]); break; }
+    }
+    if (!at) {
+        at = top(c.querySelector('.pchq-aff'));
         if (at && at.previousElementSibling && /^H[23]$/.test(at.previousElementSibling.tagName)) at = at.previousElementSibling;
     }
     var d = document.createElement('div');
