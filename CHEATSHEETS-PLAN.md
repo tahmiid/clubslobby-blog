@@ -100,3 +100,18 @@ X-Guest-Id pattern), no links allowed, rate-limited per guest and IP, a
 word filter, Report on every comment, owner can hide from admin; a guest's
 comments move to the account at sign-in. No Disqus (its ads and trackers
 clash with Journey). App-lane work: ~1 session at high effort.
+
+## Phase 2 contract from the integration lane (5 Oct 2026; app dev edafde8, NOT deployed)
+
+Do not add the discussion section or the Save button until Integration says it is live.
+
+- `GET /api/sheets/{archetype}/comments[?before=<ISO>]` -> `{thread, name, count, comments, next, limits:{text:400,nameMin:2,nameMax:24}}`;
+  newest first, 20 a page, `next` = pass as `?before=`; empty thread = `comments: []` (render nothing).
+  Comment: `{id, thread, name, member, handle, text, at, mine, build}`; `build` null or `{id, name, archetype_id, level, url}`.
+  Send `X-Guest-Id` (and `Authorization: Bearer` from localStorage `clubs_auth_token` when present).
+- `POST /api/sheets/{archetype}/comments` `{text, name?, buildId?}` -> 201 `{comment, count}`. Guest: header `X-Guest-Id`
+  from localStorage `clubs_guest_id` (make a UUID and store it there if absent) plus `name`. Refusals are
+  `{detail:{code,message}}` (422 name|no-links|words|empty|too-long|build|said, 429 slow-down, 401, 403); show `message`.
+- `DELETE /api/sheets/comments/{id}` (own), `POST /api/sheets/comments/{id}/report` `{reason: spam|abuse|inappropriate|other}`.
+- Save: link `/b/<id>?src=grid&intent=save`; the app saves as the page opens and offers sign-in to a guest.
+- Not built: replies, an admin screen (admin routes exist).
