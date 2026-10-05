@@ -32,7 +32,7 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 | GameSir | marketing@gamesir.com | Emailed 2026-10-05 | Read reply; follow up ~10-12 Oct if silent |
 | KontrolFreek | s.creatorsupport@kontrolfreek.com | Emailed 2026-10-05 | same |
 | Nacon / RIG | creators-accessories@nacon.fr | Emailed 2026-10-05 | same |
-| GamerSupps | gamersupps.gg/pages/partnership | Form filled 2026-10-05 — owner ticks reCAPTCHA + submits | Confirm submitted |
+| GamerSupps | gamersupps.gg/pages/partnership | **Applied 2026-10-05** ("Application submitted successfully") | Read reply; follow up ~12 Oct if silent |
 | Sneak Energy | Awin "Sneak Legion" (merchant 116217) | Not started | Owner creates an Awin publisher account first |
 | Next wave | PowerA (Impact), ExitLag, Secretlab, G FUEL, Turtle Beach (Impact), SCUF (Sovrn) | Not started | Mostly affiliate-first; pitch the paid slot to their affiliate managers |
 
