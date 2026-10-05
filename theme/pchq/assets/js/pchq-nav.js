@@ -105,7 +105,7 @@
     f.rel = 'stylesheet';
     f.href = 'https://fonts.googleapis.com/css2?family=Cookie&display=swap';
     document.head.appendChild(f);
-    d.innerHTML = '<span>Pro Clubs HQ is free. Tips pay for the servers and the EA match data.</span>'
+    d.innerHTML = '<span>Pro Clubs HQ is free. Tips pay for the servers.</span>'
         + '<a class="pq-tip-btn" href="https://buymeacoffee.com/proclubshq" target="_blank" rel="noopener">'
         + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h12l-1.200 11.500a2 2 0 0 1-2 1.500H8.200a2 2 0 0 1-2-1.500z"/><path d="M4 8l1-3h12l1 3"/><path d="M8 5l.500-2h5l.500 2"/></svg>'
         + 'Buy us a coffee</a>';

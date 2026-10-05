@@ -105,6 +105,6 @@ body.pq::before{background:#04040a!important}
 /* the tip in an article: a line and the yellow coffee button, no box */
 .pq-tip{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:6px 0;font-family:Manrope,system-ui,sans-serif}
 .pq-tip span{font-size:13.5px;line-height:1.45;color:#9aa0ae}
-.pq-tip-btn{display:inline-flex;align-items:center;gap:8px;background:#FFDD00;color:#0d0c22!important;text-decoration:none!important;font:400 26px/1 Cookie,"Brush Script MT",cursive;padding:9px 20px 8px 16px;border-radius:12px;white-space:nowrap;box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.gh-content .pq-tip-btn,.pq-tip-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,221,0,.08)!important;border:2px solid #FFDD00;color:#FFDD00!important;text-decoration:none!important;font:400 26px/1 Cookie,"Brush Script MT",cursive;padding:9px 20px 8px 16px;border-radius:12px;white-space:nowrap}
 .pq-tip-btn svg{width:24px;height:24px;flex:none}
-.pq-tip-btn:hover{filter:brightness(1.05)}
+.gh-content .pq-tip-btn:hover{background:rgba(255,221,0,.16)!important}
