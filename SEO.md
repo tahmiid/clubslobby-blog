@@ -658,6 +658,16 @@ GameSpot). Do not write more player articles or levelling explainers.
 - **Flip the feature pages to live** the day each feature opens
   (`gen/hq-features.mjs`). The lobby was flipped 30 Sep, with a207 beside
   it; the photo page and the app page are still "opening".
+- **Height and weight page retitled 6 Oct** (owner): "Best FC 27 Height and
+  Weight: Lengthy vs Explosive" with a sentence description. Baseline, 28 days
+  to 4 Oct: 1,791 impressions, 102 clicks, CTR 5.7%, position 3.7; the queries
+  GSC shows are "best height and weight for <archetype> fc 27". Read again ~20 Oct.
+- **Site name, 6 Oct check:** the domain root still carries `WebSite` "Pro
+  Clubs HQ" (alternateName ProClubsHQ) for Googlebot and for browsers, and
+  Google re-crawled `https://proclubshq.com/` on 5 Oct 22:40 UTC. Results
+  still print "proclubshq.com". Nothing on our side is wrong; Google's site-name
+  system is slow and not guaranteed for young sites. Re-check in Search results
+  ~20 Oct before changing anything.
 - **The 13 archetype pages became cheat sheets on 5 Oct, at the same
   addresses** (CLAUDE.md). What to read on **12 Oct** in Search Console, per
   page, against 6 Sep-3 Oct: "best magician build fc27" 356 impressions,

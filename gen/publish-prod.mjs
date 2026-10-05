@@ -1286,8 +1286,8 @@ const POSTS = [
   // ops/export-body-picks.mjs. Computed header, as above.
   { file: 'a203.html', slug: 'pro-clubs-height-and-weight', status: 'published',
     title: 'FC 27 Pro Clubs Height and Weight, by Archetype',
-    meta_title: 'Best FC 27 Height and Weight, by Archetype',
-    meta_description: 'Finisher · Spark · Maestro · Creator · All 13 Archetypes · Height · Weight · cm · ft · kg · lbs · AcceleRATE · Explosive · Lengthy',
+    meta_title: 'Best FC 27 Height and Weight: Lengthy vs Explosive',
+    meta_description: 'The best height and weight for every FC 27 archetype, and what each body makes you: Lengthy, Explosive or Controlled. The body players build most, archetype by archetype.',
     custom_excerpt: 'The height and weight every FC 27 archetype allows, and the body players build most on each.',
     tags: ['Guides', 'Builds', 'FC 27'] },
   // The feature pages (gen/features.mjs + gen/hq-features.mjs, 2026-09-29):

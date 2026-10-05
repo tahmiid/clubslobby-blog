@@ -274,8 +274,11 @@ assert(strip.length <= 160, `meta description is ${strip.length} characters`);
 writeFileSync(path.join(ROOT, 'out', `${P}.meta.json`), `${JSON.stringify({
   slug: SLUG,
   title: 'FC 27 Pro Clubs Height and Weight, by Archetype',
-  meta_title: 'Best FC 27 Height and Weight, by Archetype',
-  meta_description: strip,
+  // Owner, 6 Oct: 1,791 impressions at 5.7% CTR in 28 days; readers want the
+  // AcceleRATE answer, so the title says Lengthy vs Explosive and the
+  // description is a sentence (Google replaced the keyword strip with body text).
+  meta_title: 'Best FC 27 Height and Weight: Lengthy vs Explosive',
+  meta_description: 'The best height and weight for every FC 27 archetype, and what each body makes you: Lengthy, Explosive or Controlled. The body players build most, archetype by archetype.',
   custom_excerpt: 'The height and weight every FC 27 archetype allows, and the body players build most on each.',
 }, null, 1)}\n`);
 console.log(`${P} ${SLUG}: ${ROWS.length} archetypes (${counted.length} with ${MIN_BUILDS}+ builds), ${TOTAL} member builds | bytes ${html.length}`);
