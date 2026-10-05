@@ -101,9 +101,7 @@ word filter, Report on every comment, owner can hide from admin; a guest's
 comments move to the account at sign-in. No Disqus (its ads and trackers
 clash with Journey). App-lane work: ~1 session at high effort.
 
-## Phase 2 contract from the integration lane (5 Oct 2026; app dev edafde8, NOT deployed)
-
-Do not add the discussion section or the Save button until Integration says it is live.
+## Phase 2 contract from the integration lane (5 Oct 2026; app edafde8, LIVE, and on the 13 sheets the same day)
 
 - `GET /api/sheets/{archetype}/comments[?before=<ISO>]` -> `{thread, name, count, comments, next, limits:{text:400,nameMin:2,nameMax:24}}`;
   newest first, 20 a page, `next` = pass as `?before=`; empty thread = `comments: []` (render nothing).

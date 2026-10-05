@@ -163,10 +163,13 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   generator runs the app's 416 `bodyShifts.json` cases through it and refuses
   to build on a mismatch (`gen/accelerate.mjs`'s older inch/pound port is
   stale against the app and is NOT used for shifts here).
-- **Comments and Save are built and switched off**: `PHASE2=1 node
-  gen/cheatsheets.mjs` adds the discussion section and the Save buttons (app
-  #450's API, CHEATSHEETS-PLAN.md). Publish with it only after the
-  integration lane says the API is live on production.
+- **Comments and Save are LIVE (5 Oct 2026, app #450).** Each sheet ends its
+  tools with "<Archetype> discussion": one thread per archetype through
+  `/api/sheets/<id>/comments`, guests post with a name (the app's
+  `clubs_guest_id`), refusals show the API's own message, Report and Delete
+  per comment; a card's Save links `/b/<id>?src=grid&intent=save`. The
+  contract is in CHEATSHEETS-PLAN.md. `PHASE2=0` builds without them. No
+  admin screen yet: a reported comment is hidden through the admin API.
 - **One Signature Perk.** The catalog lists two perks per archetype; FC 27's
   40 levels unlock one (`gen/a10-level-rewards.mjs`). Never print "level 45".
 - **AcceleRATE thresholds are FC 26's, carried into FC 27**, and the section

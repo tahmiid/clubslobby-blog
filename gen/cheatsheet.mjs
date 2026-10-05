@@ -74,8 +74,9 @@ if (/<\/script/i.test(CLIENT) || CLIENT.includes('`')) throw new Error('cheatshe
 // The pure half of the page's script, run here for the first paint.
 const C = new Function(`${COST_JS}\n${CLIENT}\nreturn { csBody, csBodyHtml, csDeltas, csSheet, csPitch, csPairs, csCompare, csCalc, csSteps, csLevel, csTop, csGrade, csFt, csCostTo };`)();
 
-// Comments and Save need app #450 on production. PHASE2=1 turns them on.
-const PHASE2 = process.env.PHASE2 === '1';
+// Comments and Save (app #450) are live on production since 5 Oct 2026.
+// PHASE2=0 builds the sheets without them (if the API is ever withdrawn).
+const PHASE2 = process.env.PHASE2 !== '0';
 // The app's own table of body shifts (416 rows, pinned on its client and its
 // server): the page's port must agree with every row when the app repo is here.
 const SHIFTS_FILE = path.join(process.env.CLUBSUI_DIR ?? path.join(homedir(), 'Desktop', 'Claude', 'ClubsUI-main'), 'frontend', 'src', '__fixtures__', 'bodyShifts.json');
