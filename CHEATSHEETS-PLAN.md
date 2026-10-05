@@ -1,5 +1,21 @@
 # Cheat sheets + new blog theme — the plan (owner-approved direction, 5 Oct 2026)
 
+> **STATUS: batch one is LIVE (5 Oct 2026, ~08:20 UTC).** The theme, the 13
+> sheets, the hourly match-stats feed and the rollback are done; how they work
+> is in CLAUDE.md ("The archetype cheat sheets", "The theme") and
+> DEPLOYMENT.md ("The blog theme"). What differs from the plan below:
+> - the quick-facts tiles sit UNDER the first six cards, not above them, so a
+>   card starts on a phone's first screen (build-list rule);
+> - cards carry no copy counts (owner rule, 22 Sep: Most copied / Most viewed);
+> - no Save button and no discussion yet - both are phase 2, in the app;
+> - a Share button sits beside every tool (owner, 5 Oct, during the build);
+> - owner's answers: no negative win effect is ever shown; the middle tiers
+>   are Low and High;
+> - the match numbers are served from Ghost's content/files, not /data/, so
+>   nginx was not touched.
+> Still open: phase 2 (below), the stats pages' tier names, the lobby pages'
+> rewrite for the new lobby, the 12 stale player pages (SEO.md).
+
 Design reference: `design/cheat-sheet/magician-mockup.html` (open it in a browser;
 every number in it is live data from 5 Oct). `theme-options.html` is the
 earlier A/B/C round: the owner chose A's look with C's readability.

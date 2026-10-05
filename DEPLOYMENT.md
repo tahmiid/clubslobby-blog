@@ -424,7 +424,11 @@ If you ever reissue the origin cert manually, grey-cloud the record first.
 
 ## 10. Gotchas
 
-0. **The Casper theme carries one local edit, and an upgrade will revert it.**
+0. **SUPERSEDED 5 Oct 2026: the active theme is `pchq`, our fork of Casper,
+   and the `noindex` line below lives in it (theme/pchq/default.hbs), so a
+   Ghost upgrade no longer removes it. It matters again only if the site is
+   rolled back to stock Casper for longer than an upgrade cycle.** What
+   follows is the history. The Casper theme carries one local edit, and an upgrade will revert it.
    `content/themes/casper/default.hbs` has a hand-added line immediately before
    `{{ghost_head}}`:
 
@@ -698,6 +702,60 @@ white-on-black then luminance-as-alpha, because there is still no real SVG
 rasteriser) plus the clean `feat-spokes.jpg` used inside article bodies. The
 key art source is `assets/EAS_FC26_WGE_KeyArt_RGB_16-9_3840x2160.jpg`,
 downloaded from EA's own CDN (drop-assets.ea.com).
+
+### The blog theme: `pchq` (since 5 Oct 2026)
+
+Source: `theme/pchq` in this repo (CLAUDE.md "The theme"). On the box it is a
+real directory, `/var/www/proclubslobby/content/themes/pchq` - not a symlink
+into `current/` like `casper` and `source` - so a Ghost upgrade leaves it be.
+
+```bash
+N=~/.local/node22/bin/node
+GSCAN=<path>/node_modules/.bin/gscan $N ops/build-theme.mjs   # partial, built assets, theme/pchq.zip, validator
+$N ops/link-sweep.mjs out/_nav.html                            # the menus' app links
+ops/cheatsheets-deploy.sh theme                                # scp the zip, upload, activate
+ops/cheatsheets-rollback.sh theme                              # back to Casper: one API call, no restart
+```
+
+- **Upload and activation go through the Admin API** (`ops/theme-deploy.mjs`,
+  runs on the box). The upload runs Ghost's validator and refuses a broken
+  theme without touching the site; activation needs no restart. The
+  integration key can POST and PUT themes but GET `/themes/` answers 403.
+- **Bump `version` in theme/pchq/package.json** when the theme changes, and
+  upload the zip under the same name (`pchq.zip` → theme `pchq`): Ghost
+  replaces the installed copy.
+- **Its custom settings start from package.json's defaults**, which were set
+  to what Casper had live (cover off, List feed, post image Hidden). Ghost
+  keeps a theme's settings by theme NAME (`custom_theme_settings`), so
+  switching back to Casper restores Casper's own.
+- **Verify after any activation**: `/blog/`, a post, `/blog/tag/guides/`
+  (must still carry `noindex, follow`), `/blog/about/`, a 404; then a phone
+  width and a desktop width in a browser. 5 Oct: all 200, tag and author still
+  noindex.
+- **The whole rollback** (theme and the 13 cheat sheets) is
+  `ops/cheatsheets-rollback.sh`; its copy of the old pages is
+  `/root/publish/bak-20261005-cheatsheets` on the box. Run on production
+  5 Oct 08:16 UTC as a test: 10 seconds, old titles and grids back, then
+  `ops/cheatsheets-deploy.sh all` put everything live again.
+
+### The cheat sheets' match numbers (since 5 Oct 2026)
+
+```
+home PC (data project)  coach.tahmiid.com/public/archetype-stats.json   no key; positives only
+   └─ hourly, :35 ─▶ box  /usr/local/bin/pchq-archetype-stats-pull.sh  (ops/archetype-stats-pull.sh)
+        └─▶ /var/www/proclubslobby/content/files/data/fc27-archetype-stats.json
+              = https://proclubshq.com/blog/content/files/data/fc27-archetype-stats.json
+```
+
+- Cron: `/etc/cron.d/pchq-archetype-stats`; log: `/var/log/pchq-archetype-stats.log`.
+- The pull validates before it installs (version, 13 archetypes, no effect at
+  or below zero, no names). A failed pull leaves the last good file; a page
+  without the file shows the numbers it was published with.
+- Ghost serves `content/files` itself, with a year's max-age (Cloudflare does
+  not cache it: `cf-cache-status: DYNAMIC`). The page adds `?d=<6-hour block>`.
+  No nginx change was made for any of this.
+- If the home PC is down for days the pages keep the last numbers and their
+  "updated" date says so. `ops/export-match-stats.mjs` warns past 48 hours.
 
 ### The archetype spoke pages (a18–a30)
 

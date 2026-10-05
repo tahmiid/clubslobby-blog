@@ -658,6 +658,28 @@ GameSpot). Do not write more player articles or levelling explainers.
 - **Flip the feature pages to live** the day each feature opens
   (`gen/hq-features.mjs`). The lobby was flipped 30 Sep, with a207 beside
   it; the photo page and the app page are still "opening".
+- **The 13 archetype pages became cheat sheets on 5 Oct, at the same
+  addresses** (CLAUDE.md). What to read on **12 Oct** in Search Console, per
+  page, against 6 Sep-3 Oct: "best magician build fc27" 356 impressions,
+  position 2.9, CTR 22.8%; "best maestro build fc27" 228 / 2.9 / 27.2%; "best
+  finisher build fc27" 250 / 3.3 / 22.0%; "disruptor archetype fc 27" 130 /
+  2.4 / 30.0%; "best height and weight for magician fc 27" 110 / 3.2 / 5.5%
+  (the sheet's AcceleRATE, height and weight section is aimed at that one).
+  Titles kept their head keyword and gained ": Cheat Sheet"; descriptions are
+  computed from the live builds (the Magician's still named Lamine Yamal, a
+  Spark since #317). Blog→app: the old grids sent ~475 clicks a day from 11
+  pages (A/B log, 26 Sep-5 Oct); a sheet's card opens its stats first, so
+  expect fewer `src=grid` clicks and judge the sheets on GA4 engagement and
+  pages per session as well (owner accepted the trade, 5 Oct). A drastic drop
+  is what `ops/cheatsheets-rollback.sh` is for.
+- **Every blog page now links ~65 others through the dock's menus**
+  (`gen/site-nav.mjs`, theme `pchq`, 5 Oct). Re-run `ops/link-graph.mjs`
+  before reading orphan counts again; they changed by construction.
+- **The player pages are stale against the app**: 12 of the 35 are built on a
+  build whose archetype has since changed (Bellingham, De Bruyne, Kane, Isak,
+  Kroos, Lamine Yamal, Lewandowski, Modrić, Pelé, R9, Saka, Vinícius - listed
+  by `ops/export-cheatsheet-builds.mjs`). The sheets link each under its LIVE
+  archetype; the pages themselves still describe the old one.
 - **The Companion page (a208, `pro-clubs-match-tracker`) opened live 3 Oct**
   with app #437. Its tile→attribute table is `app/companion.py` EVENTS
   transcribed; re-read it when the tiles change. Request indexing for it is

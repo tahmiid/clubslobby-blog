@@ -155,36 +155,49 @@ ${kg(`<div class="hqt"><style>.hqt table{display:table!important;table-layout:fi
     ],
   },
   photo: {
+    // OPEN since 1 Oct 2026 (app #381; its own page, /scan, since #411).
+    // Flipped to live on 5 Oct 2026 and every line read against the app
+    // repo's pages/ScanPage.jsx, components/scan/PageChips.jsx and
+    // lib/scan/assemble.js at origin/main that day: the four tabs by their
+    // game names, the live camera on a phone and screenshots on a computer,
+    // photos read on the device, the AP on screen as the check, an account
+    // asked for at Save, the English game only. The word the app wears beside
+    // its title is not printed here (owner rule since 16 Aug).
     title: 'FC 27 Pro Clubs Build Scanner: From a Photo to a Build',
     meta_title: 'FC 27 Pro Clubs Build Scanner: Photo to Build',
     meta_description: 'Build Scanner · Photo to Build · Screenshot · Archetype · Attributes · PlayStyles · Height and Weight · Share Your Build',
-    custom_excerpt: 'Take a photo of your build on the screen and get it as a build you can save and share. Opening in the next few days.',
-    when: 'in the next few days', note: 'build from a photo opens in the next few days',
-    head: 'Your build, from a photo of your screen',
+    custom_excerpt: 'Photograph the four tabs of your build in the game and get it as a build you can edit, save and share. Open now on Pro Clubs HQ.',
+    updated: '2026-10-05', when: 'now', note: 'the build scanner is open at proclubshq.com/scan',
+    head: 'Your build, from photos of your screen',
     points: [
-      'Take a photo of your build in the game, or use a screenshot.',
-      `${BRAND} reads it and makes the build for you: archetype, level, attributes, PlayStyles, height and weight.`,
-      'Check it, save it, and it has its own link to share.',
+      'Open your build in the game and photograph its four tabs: Attributes, PlayStyles, Specializations and Body.',
+      `${BRAND} reads them and makes the build: archetype, level, attributes, PlayStyles, specialization, height and weight.`,
+      'The photos are read on your own phone or computer. Nothing is uploaded; only the build is saved, when you save it.',
+      'Check it in the builder, save it, and it has its own link to share.',
     ],
-    stepsHead: 'How it works',
+    stepsHead: 'How the build scanner works',
     steps: [
-      'In FC 27, open your pro so the build is on the screen.',
-      'Take a photo of the screen with your phone, or a screenshot on the console.',
-      `Give it to ${BRAND}. You get the build back, ready to check.`,
-      'Save it. Share the link, publish it, or take it into the lobby.',
+      'In FC 27, open Customise on your pro so the four tabs are on the TV. Turn Attribute Totals off, so the numbers are the ones you spent.',
+      'Open the scanner on your phone. It opens the camera, and the chips at the bottom show which tab is next.',
+      'Photograph each tab with the whole TV in the frame: Attributes, PlayStyles, Specializations, Body. Any order works.',
+      'The build opens in the builder with everything it read, checked against the AP your screen shows. Anything it could not see is listed for you to set.',
+      'Save it. You are asked for an account at Save, not before.',
+      'On a computer, drop in four screenshots instead of taking photos.',
     ],
+    todayHead: 'Start with the scanner',
     today: [
-      { kicker: 'Live now', head: 'Build it by hand in a few minutes',
-        body: 'Pick your archetype and set the attributes. Every point is priced as you go, and the builder shows your AcceleRATE type and the AP you have left.',
-        links: [{ href: '/create', label: 'Open the builder' }] },
-      { kicker: 'Live now', head: 'Start from a build close to yours',
+      { kicker: 'Open now', head: 'Scan your build',
+        body: 'Free, in your phone browser, with no account until you save.',
+        links: [{ href: '/scan', label: 'Open the scanner' }] },
+      { kicker: 'Live now', head: 'Or start from a build close to yours',
         body: 'Copy a finished build and change what is different. The search reads positions, PlayStyles and body types.',
         links: [{ href: '/explore?year=27', label: 'Find a build' }] },
     ],
     faq: [
-      ['When does build from a photo open?', 'In the next few days. This page will link it the day it does.'],
-      ['What does it read from the photo?', 'The build: archetype, level, attributes, PlayStyles, height and weight. You check what it read before you save.'],
-      ['Do I need an account?', `To save a build, yes: a free ${BRAND} account. Looking at builds needs none.`],
+      ['What does it read from the photos?', 'The build: archetype, level, attributes, PlayStyles, specialization, height and weight. You check what it read before you save.'],
+      ['Are my photos uploaded?', 'No. They are read on your own phone or computer. The only thing saved is the build, when you save it.'],
+      ['Which languages can it read?', 'The English game, for now.'],
+      ['Do I need an account?', `To save a build, yes: a free ${BRAND} account, asked for at Save. Scanning needs none.`],
     ],
   },
   app: {

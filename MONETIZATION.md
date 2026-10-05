@@ -348,6 +348,16 @@ rows in the explore feed — and even that should lose to the alternatives in §
 
 ---
 
+> ### 2026-10-05 — the phone dock and a sticky bottom ad cannot share the bottom edge
+>
+> The blog's theme (`pchq`, CLAUDE.md) pins an icon dock to the bottom 58px of
+> a phone screen, and 66% of visitors are on phones (GA4, 7 Sep-4 Oct).
+> Journey/Mediavine's adhesion unit wants the same strip. Decide before the
+> script goes in: move the dock to the top on phones (one media query in
+> `theme/pchq/assets/css/pchq.css`), lift the ad above the dock, or decline the
+> adhesion unit. The 13 cheat sheets carry slots A, B and C like the pages
+> they replaced (A after the level ladder, B after "wins with", C last).
+
 ## 5. Affiliate — the other switch
 
 **Mechanic:** join a programme, get a tracking link, place it in the FC 27

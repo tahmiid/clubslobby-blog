@@ -88,12 +88,113 @@ DEPLOYMENT.md §12 has the long form. Before calling any publish done:
    before the first such link shipped). `ghostId(text)` in `gen/common.mjs`
    makes the id Ghost will make; give the heading the same one so the local
    file agrees. An id INSIDE a `kg()` card is left alone.
-7. **The Source theme restyles every `<table>`** into a nowrap inline-block
+7. **The theme (Casper, and `pchq` which is built on it) restyles every `<table>`** into a nowrap inline-block
    scroller with scroll-shadow gradients, which cuts a table that would have
    fitted a phone and paints a white bar down its first column. A table that
    should simply fit says so (`display:table!important`, `white-space:
    normal!important`, `background-image:none!important`; see
    `gen/a203-height-weight.mjs`).
+
+## The archetype cheat sheets (a18–a22, a24–a30, a64) — LIVE 5 Oct 2026
+
+The 13 archetype build pages are **cheat sheets** since 5 Oct 2026 (owner:
+"it actually is a Magician cheat sheet"): same addresses, the old page's text
+kept, and around it the builds with every stat a tap away, AcceleRATE and
+body, the level ladder, real match numbers, who it wins with, the price list,
+an AP calculator, specializations and a comparison with any other archetype.
+`CHEATSHEETS-PLAN.md` is the brief, `design/cheat-sheet/` the approved mockup.
+
+| What | Where |
+|---|---|
+| The page | `gen/cheatsheet.mjs` (roster `SHEETS`), `gen/cheatsheets.mjs` (CLI + the Disruptor's own text) |
+| Its CSS and script | `gen/cheatsheet.css`, `gen/cheatsheet.client.js` — pasted INTO each page |
+| Builds | `ops/export-cheatsheet-builds.mjs` → `data/fc27/cheatsheet-builds.json` |
+| Match numbers | `ops/export-match-stats.mjs` → `data/fc27/match-stats.json` |
+
+```bash
+N=~/.local/node22/bin/node
+$N ops/export-fc27-catalog.mjs && $N ops/export-cheatsheet-builds.mjs && $N ops/export-match-stats.mjs
+$N gen/cheatsheets.mjs                      # all 13 (or: 18 64)
+$N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh posts
+```
+
+- **A sheet is self-contained.** Its CSS, script and data ride in the post, so
+  it renders under any theme; rolling the theme back does not break it.
+- **The client file's pure half runs in Node too** (`new Function` in
+  `cheatsheet.mjs`): the first paint of the comparison, the match numbers, the
+  calculator and the level line is written by the same code a tap re-runs. No
+  backticks and no closing script tag in that file; the generator refuses.
+- **Every `<h2>` is inside an HTML card**, so its id is ours (`#prices`,
+  `#accelerate`, `#compare` …). The in-page chips and the per-tool Share
+  buttons link those ids (owner, 5 Oct: a share button beside each tool,
+  sharing the article at that tool).
+- **Builds: house accounts only, archetype read from the build's PUBLIC
+  page.** On 5 Oct the old Magician page still led with Lamine Yamal, a Spark
+  since app #317; `export-cheatsheet-builds.mjs` drops and names any build
+  listed under one archetype and served under another. It also files the 35
+  player pages under their build's LIVE archetype (12 had moved).
+- **Cards say Most copied / Most viewed, never a count**, and the page opens
+  with the builds: the quick-facts tiles sit UNDER the first six cards so a
+  card starts on a phone's first screen (the mockup had them above).
+- **"We do not promote negativity" (owner, 5 Oct).** A win effect at or below
+  zero is never printed, for an archetype or a pair. The filter is in the data
+  repo (`analysis/public_stats.py`, tested), re-checked by the box's pull
+  script and by `export-match-stats.mjs`. An archetype without a positive
+  effect simply shows none; the comparison prints the win-effect row only when
+  both sides have one, and a keeper's match numbers only beside a keeper's.
+- **One Signature Perk.** The catalog lists two perks per archetype; FC 27's
+  40 levels unlock one (`gen/a10-level-rewards.mjs`). Never print "level 45".
+- **AcceleRATE thresholds are FC 26's, carried into FC 27**, and the section
+  says so (`gen/accelerate.mjs`). Only the MENU reading is used here.
+- **Tier names are Cheap / Low / High / Expensive** on a sheet (owner, 5 Oct).
+  The stats pages (a193–a197, a11) still say Cheapest / Cheap / Expensive /
+  Most expensive: "Cheap" means tier 0 here and tier 1 there. Open question.
+- **No Save button and no comments yet.** Save needs the app to save a build
+  after sign-in; comments need guest comments in the app (CHEATSHEETS-PLAN.md
+  phase 2). A button that does not do what it says is not shipped.
+- **Links**: build links carry `src=grid` (both log parsers count it), the
+  search box and "see every build" go to `/explore?q=<archetype>&year=27&src=guide`,
+  the scan promo to `/scan`.
+- **The match numbers refresh themselves.** The page re-reads
+  `/blog/content/files/data/fc27-archetype-stats.json?d=<6-hour block>` and
+  redraws "On the pitch", "Wins with" and the comparison when the file is
+  newer than the publish. The box pulls that file hourly from the data
+  project (`ops/archetype-stats-pull.sh`, DEPLOYMENT.md). The numbers Google
+  reads are the ones in the published HTML: re-export and republish now and
+  then.
+- **Rollback**: `ops/cheatsheets-rollback.sh` (tested on production 5 Oct:
+  10 seconds). `gen/spoke27.mjs` and the old `a64` generator stay in the repo
+  for that reason; do not delete them while the rollback copy is the plan.
+- **The grid-card A/B test is over** (26 Sep–5 Oct, read 5 Oct: old card 2,202
+  clicks, new card 2,093, z −1.66, no clear winner). Seven of its eleven pages
+  are sheets now and a190 was regenerated without the switcher; a65, a66 and
+  a10 still carry it until their next regenerate. Do not run
+  `ops/ab-inject.mjs` again: its list still names the sheets' files.
+
+## The theme: `pchq` (theme/pchq) — LIVE 5 Oct 2026
+
+The blog runs our own Ghost theme since 5 Oct 2026: Casper 5.12.1 with the app
+header, an **icon dock** (Cheat sheets · Builds · Tools · Meta · Guides ·
+Lobby; in the header on a computer, fixed at the bottom on a phone like the
+app's) and a menu per icon listing that section's pages. Owner: "I cannot
+navigate it ... a dock where they can see like tools, builds, archetypes".
+
+- **`gen/site-nav.mjs` is the ONE list of menu pages.** `ops/build-theme.mjs`
+  writes `partials/pchq-nav.hbs` from it, fetches every blog link (must answer
+  200), writes the app links to `out/_nav.html` for `ops/link-sweep.mjs`,
+  builds `assets/built/pchq.{css,js}`, zips, and runs gscan when `GSCAN` is
+  set. Never edit the partial. The 35 real-player pages are in no menu (owner).
+- **Only `default.hbs`'s header changed**, plus `assets/css/pchq.css` (the
+  header and dock, a shorter article header, table fixes, room for the dock,
+  no "min read") and `assets/js/pchq-nav.js`. The dark look is still
+  `codeinjection_head` (`assets/blog-dark.css`). The tag/author `noindex` line
+  that used to be a hand edit to Casper lives in the fork now.
+- **Preview without a Ghost**: `ops/preview-theme.mjs <stem | /blog/path/>`
+  swaps the header into a draft or a live page (`preview_start blog-preview`).
+- **Deploy / roll back**: DEPLOYMENT.md "The blog theme".
+- **On a phone the dock is the bottom 58px.** The cookie bar is lifted above
+  it in `pchq.css`; a sticky bottom ad (Journey's adhesion unit) would land on
+  it and needs a decision before ads go live (MONETIZATION.md).
 
 ## Player pages
 

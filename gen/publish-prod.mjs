@@ -1304,7 +1304,7 @@ const POSTS = [
     title: 'FC 27 Pro Clubs Build Scanner: From a Photo to a Build',
     meta_title: 'FC 27 Pro Clubs Build Scanner: Photo to Build',
     meta_description: 'Build Scanner · Photo to Build · Screenshot · Archetype · Attributes · PlayStyles · Height and Weight · Share Your Build',
-    custom_excerpt: 'Take a photo of your build on the screen and get it as a build you can save and share. Opening in the next few days.',
+    custom_excerpt: 'Photograph the four tabs of your build in the game and get it as a build you can edit, save and share. Open now on Pro Clubs HQ.',
     tags: ['News', 'Pro Clubs HQ'] },
   { file: 'a206.html', slug: 'pro-clubs-hq-app', status: 'published',
     title: 'Pro Clubs HQ App for iPhone and Android',

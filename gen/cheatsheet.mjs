@@ -22,8 +22,9 @@
 //       builds, archetype read from the build's PUBLIC page, all attributes
 //   data/fc27/match-stats.json        ops/export-match-stats.mjs: the data
 //       project's public aggregates (positives only - owner: "we do not
-//       promote negativity"); the page re-reads the day's file from
-//       /data/fc27-archetype-stats.json and redraws those two sections
+//       promote negativity"); the page re-reads the day's file from STATS_URL
+//       (pulled hourly on the box, ops/archetype-stats-pull.sh) and redraws
+//       those two sections and the comparison
 //   data/fc27/{archetypes,rules_progression}.json   ops/export-fc27-catalog.mjs
 //   gen/archetype-stats.mjs model()   the one cost model (checked there)
 //   gen/accelerate.mjs route()        the cheapest way to each AcceleRATE type
@@ -73,7 +74,7 @@ if (/<\/script/i.test(CLIENT) || CLIENT.includes('`')) throw new Error('cheatshe
 const C = new Function(`${COST_JS}\n${CLIENT}\nreturn { csSheet, csPitch, csPairs, csCompare, csCalc, csSteps, csLevel, csTop, csGrade, csFt, csCostTo };`)();
 
 export const UPDATED = '2026-10-05';   // the day the COPY changed, never today by reflex
-export const STATS_URL = '/data/fc27-archetype-stats.json';
+export const STATS_URL = '/blog/content/files/data/fc27-archetype-stats.json';   // ops/archetype-stats-pull.sh keeps it fresh, on the box
 const TIER_NAMES = ['Cheap', 'Low', 'High', 'Expensive'];
 const FEED = 6;                        // cards; the rest of the export are rows
 const RUN = { Explosive: '#2DE2C5', Lengthy: '#E3B84E', Controlled: '#a3aabb' };

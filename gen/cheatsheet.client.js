@@ -180,6 +180,10 @@ if(typeof document!=='undefined')(function(){
     var c=t.closest('[data-b]');
     if(c&&!t.closest('a,button'))openS(+c.getAttribute('data-b'))});
 
+  /* the switcher opens on this archetype, not on the first keeper */
+  var sw=$('.cs-sw'),cu=sw&&$('a.cur',sw);
+  if(cu)sw.scrollLeft=Math.max(0,cu.offsetLeft-sw.offsetLeft-(sw.clientWidth-cu.offsetWidth)/2);
+
   /* search: "<archetype> <words>" into the app's Find */
   var f=$('.cs-srch');
   if(f)f.addEventListener('submit',function(){var q=$('input[type=search]',f),h=$('input[name=q]',f);h.value=(D.name.toLowerCase()+' '+q.value).trim();ev('search',{search_term:h.value})});
@@ -219,7 +223,10 @@ if(typeof document!=='undefined')(function(){
   if(vs)vs.addEventListener('change',function(){drawV();ev('select_content',{content_type:'compare',item_id:D.id+'-vs-'+vs.value})});
 
   /* the day's match numbers, when the box has a newer file than the page */
-  if(D.statsUrl&&window.fetch)fetch(D.statsUrl,{credentials:'omit'}).then(function(r){return r.ok?r.json():null}).then(function(S){
+  /* Ghost serves the file with a year's max-age; the 6-hour block in the
+     address is what lets a browser see a newer one. */
+  var now=new Date(),blk=now.getUTCFullYear()*1000000+(now.getUTCMonth()+1)*10000+now.getUTCDate()*100+Math.floor(now.getUTCHours()/6)*6;
+  if(D.statsUrl&&window.fetch)fetch(D.statsUrl+'?d='+blk,{credentials:'omit'}).then(function(r){return r.ok?r.json():null}).then(function(S){
     if(!S||S.v!==1||!S.archetypes||!S.archetypes[D.id])return;
     if(D.S&&!(new Date(S.computedAt)>new Date(D.S.computedAt)))return;
     D.S=S;var p=$('#cs-pitch'),w=$('#cs-prs');

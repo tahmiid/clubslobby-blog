@@ -24,9 +24,10 @@ export const FEATURES = [
   { key: 'companion', n: 208, slug: 'pro-clubs-match-tracker', status: 'live', href: '/companion',
     label: 'The Companion match logger',
     why: 'Tap what went wrong during the match, and the report after it says which attributes to raise.' },
-  { key: 'photo', n: 205, slug: 'pro-clubs-build-from-a-photo', status: 'soon', href: null,
+  // Open since 1 Oct 2026 (app #381), at /scan since #411; flipped here 5 Oct.
+  { key: 'photo', n: 205, slug: 'pro-clubs-build-from-a-photo', status: 'live', href: '/scan',
     label: 'Your build from a photo',
-    why: 'Take a photo of your build on the screen and get it as a build you can share.' },
+    why: 'Photograph the four tabs of your build in the game and get it as a build you can edit and share.' },
   { key: 'app', n: 206, slug: 'pro-clubs-hq-app', status: 'soon', href: null,
     label: 'The app, for iPhone and Android',
     why: 'The builds, the builder, the meta and your club, on your phone.' },

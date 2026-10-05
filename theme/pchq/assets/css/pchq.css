@@ -75,6 +75,9 @@
 .article-byline .article-byline-meta{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .article-byline .author-name{margin:0;font-size:14px}
 .article-byline .byline-meta-content{font-size:13px}
+/* Ghost counts a page's widget data and scripts as words: a cheat sheet read
+   "48 min read". The number is wrong on every tool page, so it is not shown. */
+.byline-reading-time{display:none}
 /* A bare table in an article wore Casper's pale header and white edge fades
    on a dark page. Still scrolls sideways when it is too wide. */
 .gh-content table:not(.gist table){background:none}
