@@ -305,9 +305,17 @@ function lightbox(trigger) {
     var c = document.querySelector('.post-template .gh-content');
     if (!c || document.querySelector('.pq-tip')) return;
     if (/ProClubsHQ\/\d+\.\d+\.\d+ \((ios|android);/.test(navigator.userAgent)) return;
-    var at = c.querySelector('.pchq-aff');
-    while (at && at.parentNode !== c) at = at.parentNode;
-    if (at && at.previousElementSibling && /^H[23]$/.test(at.previousElementSibling.tagName)) at = at.previousElementSibling;
+    /* On a cheat sheet: right after the specializations section, where the
+       reader has just used the tools (the affiliate links there are at the
+       very foot, and depth decides what gets seen). */
+    var at = null, sp = c.querySelector('#specializations');
+    while (sp && sp.parentNode !== c) sp = sp.parentNode;
+    if (sp) at = sp.nextElementSibling;
+    if (!at) {
+        at = c.querySelector('.pchq-aff');
+        while (at && at.parentNode !== c) at = at.parentNode;
+        if (at && at.previousElementSibling && /^H[23]$/.test(at.previousElementSibling.tagName)) at = at.previousElementSibling;
+    }
     var d = document.createElement('div');
     d.className = 'pq-tip';
     d.innerHTML = '<div class="pq-tip-cup" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.500a2.500 2.500 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg></div>'
