@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
+<head>
+
+    {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
+    <title>{{meta_title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Preload critical resources to reduce render-blocking --}}
+    <link rel="preload" as="style" href="{{asset "built/screen.css"}}" />
+    <link rel="preload" as="style" href="{{asset "built/pchq.css"}}" />
+    <link rel="preload" as="script" href="{{asset "built/pchq.js"}}" />
+
+    {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
+    this will take care of caching and cache-busting automatically --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    {{!-- Pro Clubs HQ: the header, dock and menus, and the fixes to Casper the
+    blog needs (tables, article header, the dock's room on a phone). Kept in
+    its own file so screen.css stays the stock one. --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/pchq.css"}}" />
+
+    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
+    it should always be the last tag before the closing head tag --}}
+    {{!-- Tag and author archives are navigation, not destinations. GSC 12 Aug
+    2026: /tag/fc-26/ alone had 214 impressions and ZERO clicks, competing in
+    search with the very articles it lists; GSC 21 Sep 2026: /author/buildmaster/
+    took the click for "fc 27 pro clubs builder" and landed people on a listing.
+    noindex,follow drops both archives from results while still passing link
+    equity through to the posts.
+    This theme (pchq) is a fork of Casper 5.12.1 kept in the blog repo
+    (theme/pchq), so the line survives Ghost upgrades. See DEPLOYMENT.md. --}}
+    {{#is "tag, author"}}<meta name="robots" content="noindex, follow" />{{/is}}
+
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}} pq is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
+<div class="viewport">
+
+    {{!-- The header, the icon dock and its menus. GENERATED from gen/site-nav.mjs
+    by ops/build-theme.mjs: edit the list there, never this partial. --}}
+    {{> "pchq-nav"}}
+
+    <div class="site-content">
+        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </div>
+
+    {{!-- The global footer at the very bottom of the screen --}}
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <div class="site-footer-center">
+                <div class="site-footer-social-links">
+                    {{#social_accounts @site}}
+                        <a href="{{href}}" target="_blank" rel="noopener" aria-label="{{name}}">
+                            {{#> (concat "icons/" type)}}
+                                {{!-- Fallback rendered when no per-platform icon partial exists --}}
+                                <span>{{name}}</span>
+                            {{/undefined}}
+                        </a>
+                    {{/social_accounts}}
+                </div>
+                <nav class="site-footer-nav">
+                    {{navigation type="secondary"}}
+                </nav>
+            </div>
+            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">{{t "Powered by Ghost"}}</a></div>
+        </div>
+    </footer>
+
+</div>
+{{!-- /.viewport --}}
+
+{{#is "post, page"}}
+    {{> "lightbox"}}
+{{/is}}
+
+{{!-- Scripts: infinite scroll and the image lightbox from Casper, plus the dock's
+menus (assets/js/pchq-nav.js). Built by ops/build-theme.mjs. --}}
+<script src="{{asset "built/pchq.js"}}" defer></script>
+
+{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
+{{ghost_foot}}
+
+</body>
+</html>

@@ -90,6 +90,7 @@ const KNOWN_PATHS = new Set([
   '/', '/create', '/explore', '/meta', '/inbox', '/hq', '/my-builds', '/locker-room', '/level-rewards',
   '/lobby', '/lobby/go',   // the drop-in lobby (app #324), open 30 Sep 2026
   '/companion',             // the Companion match logger (app #437), open 3 Oct 2026
+  '/scan',                  // "Your build": photograph the game's editor (app #381/#411); read from origin/main 5 Oct 2026
   '/controls', '/controls/skill-moves', '/controls/celebrations',
   '/privacy', '/terms', '/reset-password', '/verify-email',
   '/admin', '/admin/traffic', '/admin/monetization', '/admin/style-guide',
