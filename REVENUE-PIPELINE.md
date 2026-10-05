@@ -19,6 +19,7 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 |---|---|---|---|
 | Journey by Mediavine | **Wait** | Apply on/after **2026-12-05** (domain 4 months old) | Grow signup = same flow, so do not apply early: a rejection locks 60 days |
 | Nitro (NitroPay) | Emailed 2026-10-05 | Read the reply: MCM ok after AdSense rejections? term shorter than 12 months? | Default contract 12 months + 90-day notice, exclusive; needs Google MCM |
+| Playwire (RAMP) | Emailed support@playwire.com 2026-10-05 | Read the reply: self-serve at ~270k? MCM ok after AdSense rejections? term/notice/exclusivity? | Self-serve starts ~100k pageviews; their apply form asks first/last name, so the owner fills it if they say yes; needs Google MCM |
 | Media.net | Contact form sent 2026-10-05 (hello@) | Read the reply | No Google approval needed; low RPM; fine as a stopgap until Nitro/Journey |
 | AdSense | Rejected twice ("low value content") | Optional re-apply mid-Nov | Domain age likely the cause |
 | Monumetric | Not eligible | — | Needs 3 months of traffic; small tier is WordPress-only |
@@ -30,12 +31,14 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 
 | Brand | Contact | Status | Next step |
 |---|---|---|---|
-| GameSir | marketing@gamesir.com | Emailed 2026-10-05 | Read reply; follow up ~10-12 Oct if silent |
+| GameSir | marketing@gamesir.com | Emailed 2026-10-05; auto-reply: Grace Zeng (marketing, covering Jenny) out for National Day until 9 Oct | Expect a reply ~10 Oct; follow up 13 Oct if silent |
 | KontrolFreek | s.creatorsupport@kontrolfreek.com | Emailed 2026-10-05 | same |
 | Nacon / RIG | creators-accessories@nacon.fr | Emailed 2026-10-05 | same |
 | GamerSupps | gamersupps.gg/pages/partnership | **Applied 2026-10-05** ("Application submitted successfully") | Read reply; follow up ~12 Oct if silent |
 | Sneak Energy | Awin "Sneak Legion" (merchant 116217) | Not started | Owner creates an Awin publisher account first |
 | Next wave | PowerA (Impact), ExitLag, Secretlab, G FUEL, Turtle Beach (Impact), SCUF (Sovrn) | Not started | Mostly affiliate-first; pitch the paid slot to their affiliate managers |
+
+**Pitches offer the site and the app only.** The owner has no Discord, YouTube, TikTok or Instagram content (handles only), so never offer social posts or Discord perks.
 
 ## Affiliate (state of each merchant lives in `data/affiliate-merchants.json`)
 
