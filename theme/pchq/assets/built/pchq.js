@@ -318,8 +318,16 @@ function lightbox(trigger) {
     }
     var d = document.createElement('div');
     d.className = 'pq-tip';
-    d.innerHTML = '<div class="pq-tip-cup" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.500a2.500 2.500 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg></div>'
-        + '<div class="pq-tip-tx"><b>Keep Pro Clubs HQ free</b><span>No paywall, no pop-ups. Tips pay for the servers, the EA match data and every FC 27 update.</span></div>'
-        + '<a class="pq-tip-btn" href="https://buymeacoffee.com/proclubshq" target="_blank" rel="noopener">☕ Buy us a coffee</a>';
+    /* The recognised shape (owner, 5 Oct: "usually it's just a coffee cup",
+       not a banner): one quiet line, then the yellow button with the cup and
+       the script lettering people know from Buy Me a Coffee. No box. */
+    var f = document.createElement('link');
+    f.rel = 'stylesheet';
+    f.href = 'https://fonts.googleapis.com/css2?family=Cookie&display=swap';
+    document.head.appendChild(f);
+    d.innerHTML = '<span>Pro Clubs HQ is free. Tips pay for the servers and the EA match data.</span>'
+        + '<a class="pq-tip-btn" href="https://buymeacoffee.com/proclubshq" target="_blank" rel="noopener">'
+        + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h12l-1.200 11.500a2 2 0 0 1-2 1.500H8.200a2 2 0 0 1-2-1.500z"/><path d="M4 8l1-3h12l1 3"/><path d="M8 5l.500-2h5l.500 2"/></svg>'
+        + 'Buy us a coffee</a>';
     if (at) c.insertBefore(d, at); else c.appendChild(d);
 })();

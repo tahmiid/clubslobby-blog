@@ -102,12 +102,9 @@ body.pq::before{background:#04040a!important}
 #announcement-bar-root,.gh-announcement-bar{display:none!important}
 .pq-support{display:inline-block;margin-top:10px;color:#9aa0ae;font-size:13px;text-decoration:none}
 .pq-support:hover{color:#2DE2C5}
-/* the tip card in an article */
-.pq-tip{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-radius:16px;border:1px solid rgba(255,221,0,.45);
-  background:radial-gradient(120% 160% at 0 0,rgba(255,221,0,.14),transparent 60%),rgba(14,15,26,.94);font-family:Manrope,system-ui,sans-serif}
-.pq-tip-cup{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:#FFDD00;color:#0d0c22}
-.pq-tip-cup svg{width:27px;height:27px}
-.pq-tip-tx b{display:block;font:900 18px/1.2 Archivo,system-ui,sans-serif;color:#f2f3f7}
-.pq-tip-tx span{display:block;font-size:13.5px;line-height:1.45;color:#c9cdd6;margin-top:2px}
-.pq-tip-btn{background:#FFDD00;color:#0d0c22!important;text-decoration:none!important;font:800 14px/1 Manrope,system-ui,sans-serif;padding:12px 16px;border-radius:999px;white-space:nowrap;text-align:center}
-@media(max-width:560px){.pq-tip{grid-template-columns:auto minmax(0,1fr)}.pq-tip-btn{grid-column:1/3}}
+/* the tip in an article: a line and the yellow coffee button, no box */
+.pq-tip{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:6px 0;font-family:Manrope,system-ui,sans-serif}
+.pq-tip span{font-size:13.5px;line-height:1.45;color:#9aa0ae}
+.pq-tip-btn{display:inline-flex;align-items:center;gap:8px;background:#FFDD00;color:#0d0c22!important;text-decoration:none!important;font:400 26px/1 Cookie,"Brush Script MT",cursive;padding:9px 20px 8px 16px;border-radius:12px;white-space:nowrap;box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.pq-tip-btn svg{width:24px;height:24px;flex:none}
+.pq-tip-btn:hover{filter:brightness(1.05)}
