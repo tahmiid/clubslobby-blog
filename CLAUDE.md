@@ -145,6 +145,12 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   <archetype>" strip between tools, and the header button reads "Make a
   <archetype>" on a sheet (the page's script rewrites the theme's button).
   Theme: no photo background, a clearly visible dock.
+  Second pass the same day: the page opens with the **"In 10 seconds" box**
+  (the first prototype's; the four profile tiles read as clutter and are
+  gone), a build card or row opens the build **in the app** - there is no
+  stats sheet on the blog any more (`csSheet` is dead code kept for a change
+  of mind) - and the theme hides Ghost's announcement bar (one line at the
+  foot of pchq.css).
 - **"We do not promote negativity" (owner, 5 Oct).** A win effect at or below
   zero is never printed, for an archetype or a pair. The filter is in the data
   repo (`analysis/public_stats.py`, tested), re-checked by the box's pull

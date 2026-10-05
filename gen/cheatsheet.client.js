@@ -175,10 +175,9 @@ if(typeof document!=='undefined')(function(){
     if(sb){var b=D.builds[+sb.getAttribute('data-share-build')];return share(b.n+' · FC 27 '+D.name+' build',D.site+'/b/'+b.id,'build',b.id)}
     var sh=t.closest('[data-share]');
     if(sh){var id=sh.getAttribute('data-share');return share(sh.getAttribute('data-title')||document.title,D.url+(id?'#'+id:''),'section',id||'page')}
-    var st=t.closest('[data-stats]');
-    if(st){e.preventDefault();return openS(+st.getAttribute('data-stats'))}
+    /* A build opens in the APP, not in a sheet here (owner, 5 Oct). */
     var c=t.closest('[data-b]');
-    if(c&&!t.closest('a,button'))openS(+c.getAttribute('data-b'))});
+    if(c&&!t.closest('a,button')){var bb=D.builds[+c.getAttribute('data-b')];location.href=D.site+'/b/'+bb.id+'?src=grid&ref=proclubshq.com'}});
 
   /* the theme's header button speaks for this page: "Make a Magician" */
   var cta=$('.pq-cta');if(cta&&D.make){cta.textContent=D.make;cta.href=D.site+'/create?ref=proclubshq.com'}

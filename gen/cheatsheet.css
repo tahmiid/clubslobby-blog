@@ -229,3 +229,10 @@
 .cs-sheet .sacts .go{margin-left:auto}
 .cs-toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#fff;color:#000;font:800 14px/1.2 Manrope,system-ui,sans-serif;padding:10px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9002;white-space:nowrap}
 .cs-toast.on{opacity:1}
+
+.cs-tldr{border:1px solid rgba(45,226,197,.35);background:radial-gradient(120% 140% at 0 0,rgba(45,226,197,.14),transparent 55%),#0c0f16;border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.cs-tldr .k{margin:0 0 8px;font:800 12px/1.3 Manrope,sans-serif;letter-spacing:.12em;color:var(--teal)!important;text-transform:uppercase}
+.cs-tldr ul{margin:0!important;padding:0 0 0 18px!important}
+.cs-tldr li{margin:0!important;font-size:15px;line-height:1.65;color:#d9dce3!important}
+.cs-tldr li b{color:#fff}
+.cs-b h3 a{color:inherit!important}

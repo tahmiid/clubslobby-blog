@@ -98,3 +98,5 @@ body.pq::before{background:#04040a!important}
 }
 /* "Make a Sweeper Keeper" must fit beside the logo on a phone. */
 @media(max-width:480px){.pq-logo span{display:none!important}.pq-cta{max-width:62vw;overflow:hidden;text-overflow:ellipsis}}
+/* The announcement bar is off for now (owner, 5 Oct). Delete this line to bring it back. */
+#announcement-bar-root,.gh-announcement-bar{display:none!important}

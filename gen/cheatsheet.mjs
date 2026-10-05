@@ -196,15 +196,16 @@ export function renderCheatSheet({ n, archId, slug = `pro-clubs-${archId}-build`
   const groups = ['Keeper', 'Defender', 'Midfielder', 'Forward'];
   const switcher = `<nav class="cs-sw" aria-label="All 13 archetype cheat sheets">${groups.map((g) => `<small>${g}</small>${SHEETS.filter((s) => ARCH_PAGE[s.archId].p === g)
     .map((s) => (s.archId === archId ? `<a class="cur" aria-current="page" href="${sheetHref(s.archId)}">${esc(ARCH_PAGE[s.archId].n)}</a>` : `<a href="${sheetHref(s.archId)}">${esc(ARCH_PAGE[s.archId].n)}</a>`)).join('')}`).join('')}</nav>`;
-  // Abbreviated to stay one line on a phone; the full names are in the
-  // at-a-glance block lower down.
-  const keyAbbr = a.keyAttributes.map((nm) => { const k = Object.keys(ATTRS).find((x) => ATTRS[x].name === nm); assert(k && ATTRS[k].abbr, `${archId}: key attribute "${nm}" has an abbreviation`); return ATTRS[k].abbr; });
-  const facts = `<div class="cs-facts">
-<div><small>Key attributes</small><b title="${esc(a.keyAttributes.join(', '))}">${esc(keyAbbr.join(' · '))}</b></div>
-${sig ? `<div><small>Signature PlayStyle</small><b><img src="${psImg(sig)}" alt="" width="18" height="18">${esc(psName(sig))}</b></div>` : ''}
-<div><small>Height</small><b>${ft(a.height.min)} to ${ft(a.height.max)}</b></div>
-<div><small>AP at level ${CAP_LEVEL}</small><b>${fmt(BUDGET)}</b></div>
-</div>`;
+  // "In 10 seconds" (owner, 5 Oct: the first prototype's opening box, "the
+  // most important thing"; the four tiles that replaced it read as clutter).
+  const b0 = builds[0];
+  const facts = `<div class="cs-tldr"><p class="k">In 10 seconds</p><ul>
+<li><b>Most copied:</b> <a href="${SITE}/b/${b0.id}?src=grid">${esc(b0.buildName)}</a>: ${esc([b0.accelerationType, ft(b0.height), `${b0.signature.map(psName).join(', ')} signature`].filter(Boolean).join(', '))}</li>
+<li><b>Key attributes:</b> ${esc(a.keyAttributes.join(', '))}</li>
+<li><b>Height range:</b> ${ft(a.height.min)} to ${ft(a.height.max)} (${a.heightCm.min} to ${a.heightCm.max} cm)</li>
+<li><b>Specializations:</b> ${esc(a.specializations.map((x) => specName(x.name)).join(', '))}</li>
+<li><b>AP at level ${CAP_LEVEL}:</b> ${fmt(BUDGET)}</li>
+</ul></div>`;
   const pairsHtml = C.csPairs(D, STATS);
   const chips = [[`${archId}-builds`, 'Top builds'], ['accelerate', isKeeper ? 'Height & AcceleRATE' : 'AcceleRATE'], ['levels', 'Levels'], ['on-the-pitch', 'On the pitch'],
     ...(pairsHtml ? [['wins-with', 'Wins with']] : []), ['prices', 'Price list'], ['calculator', 'AP calculator'], ['specializations', 'Specializations'], ['compare', 'Compare'], ['faq', 'FAQ']];
@@ -212,15 +213,15 @@ ${sig ? `<div><small>Signature PlayStyle</small><b><img src="${psImg(sig)}" alt=
   // ── Builds ───────────────────────────────────────────────────────────────
   const run = (b) => (b.accelerationType ? `${esc(b.accelerationType)}${b.inGameAccelerationType && b.inGameAccelerationType !== b.accelerationType ? ` (${esc(b.inGameAccelerationType)} in game)` : ''}` : '');
   const buildCard = (b, i) => `<div class="cs-b" data-b="${i}">
-<div class="top"><span class="rk">#${i + 1}</span><div><h3>${esc(b.buildName)}</h3><div class="by">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${run(b)}` : ''}</div></div><span class="lab">${stat(b)}</span></div>
+<div class="top"><span class="rk">#${i + 1}</span><div><h3><a href="${SITE}/b/${b.id}?src=grid">${esc(b.buildName)}</a></h3><div class="by">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${run(b)}` : ''}</div></div><span class="lab">${stat(b)}</span></div>
 <div class="cs-bars">${C.csTop(D, D.builds[i], 4).map(([k, v]) => `<div><span>${esc(attrName(k))}</span><i><b style="width:${v}%"></b></i><em>${v}</em></div>`).join('')}</div>
 <div class="cs-tags">${b.signature.map((x) => `<span class="g">★ ${esc(psName(x))}</span>`).join('')}${b.playstyles.map((x) => `<span>${esc(psName(x))}</span>`).join('')}</div>
-<div class="cs-acts"><button class="cs-btn" type="button" data-stats="${i}">All stats</button><button class="cs-btn" type="button" data-share-build="${i}">${ICO} Share</button><a class="cs-btn go" href="${SITE}/b/${b.id}?src=grid">Open &amp; copy →</a></div>
+<div class="cs-acts"><button class="cs-btn" type="button" data-share-build="${i}">${ICO} Share</button><a class="cs-btn go" href="${SITE}/b/${b.id}?src=grid">Open &amp; copy →</a></div>
 </div>`;
   const rest = builds.slice(FEED);
   const q = name.toLowerCase();
   const buildsCard = card(`${head(`${archId}-builds`, `Most copied FC 27 ${name} builds`)}
-<p class="sub">${pool.total} finished level-${CAP_LEVEL} ${esc(name)} builds in the catalog, most copied first. Tap one for every stat.</p>
+<p class="sub">${pool.total} finished level-${CAP_LEVEL} ${esc(name)} builds in the catalog, most copied first. Tap one to open it in the app with every stat.</p>
 <div class="cs-feed">
 ${builds.slice(0, FEED).map(buildCard).join('\n')}
 </div>
@@ -440,7 +441,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   const html = [
     kg(`<style>${CSS}</style>`),
     intro ? intro : '',
-    card(`${switcher}\n${facts}`),   // the archetype's profile first (owner, 5 Oct: "this familiarizes the user to the page")
+    card(`${facts}\n${switcher}`),   // the archetype's profile first (owner, 5 Oct: "this familiarizes the user to the page")
     kg(`<nav class="cs cs-chips" aria-label="On this page">${chips.map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join('')}</nav>`),
     buildsCard,
     scan,
