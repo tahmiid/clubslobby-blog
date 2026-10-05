@@ -14,6 +14,11 @@ earlier A/B/C round: the owner chose A's look with C's readability.
 2. **13 archetype cheat sheets**, one generator, replacing each archetype's
    current build page AT THE SAME SLUG (rankings carry over). Title pattern:
    "<Archetype> Cheat Sheet". Sections, in this order:
+   FINAL ORDER (owner, 5 Oct): switcher + facts -> top 6 builds -> more
+   builds list + search box (submits to the app's Find, `magician <text>`)
+   -> scan promo -> AcceleRATE and body -> levels -> on the pitch -> wins
+   with -> price list -> calculator -> specializations/perks -> COMPARE (near
+   the end) -> discussion -> keep reading.
    - archetype switcher (all 13) + quick facts
    - top 6 builds (house builds only, never the owner's handle), tap = stats
      sheet (all 29 attributes in Pace/Scoring/Passing/Ball control/Defending/
@@ -53,3 +58,29 @@ earlier A/B/C round: the owner chose A's look with C's readability.
 ## Open owner calls
 - Show a NEGATIVE win effect publicly? (Magician: -1.4, clear.)
 - Names for the two middle price tiers (mockup says Low / High).
+
+## SEO rules for the swap (owner, 5 Oct: "do not break any URL")
+- Every slug stays. Run `ops/link-sweep.mjs` on the whole blog after the swap
+  and compare GSC positions for the 13 pages a week later.
+- Keep the head keyword first in the title: "Best FC 27 Magician Build" is
+  position ~3 with 22-28% CTR (GSC 6 Sep-3 Oct) — append, never replace:
+  "Best FC 27 Magician Build: Cheat Sheet, AcceleRATE and Costs" (<= 60).
+- The old descriptions name builds that moved archetype (a18 still says
+  Lamine Yamal) — regenerate the keyword strips from the live builds.
+- Keep the H1 and the first paragraph's words close to the current page's, so
+  the ranking text does not vanish; the cheat sheet ADDS sections.
+- The menu never lists the 35 real-player pages (owner: no real players'
+  content promoted without consent).
+
+## Evidence (GA4, 7 Sep-4 Oct)
+- 66% of users on phones, 33% desktop: the phone layout is the design.
+- /blog/pro-clubs-magician-build is the #1 blog landing page (738 sessions);
+  the archetype build pages are 9 of the top 15 blog landings.
+- Short-engagement pages (~1 min): masteries, specializations, archetypes hub.
+
+## Comments without an account (assessed 5 Oct)
+Guest comments with a display name, stored by the app (the Companion's
+X-Guest-Id pattern), no links allowed, rate-limited per guest and IP, a
+word filter, Report on every comment, owner can hide from admin; a guest's
+comments move to the account at sign-in. No Disqus (its ads and trackers
+clash with Journey). App-lane work: ~1 session at high effort.
