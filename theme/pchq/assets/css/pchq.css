@@ -84,3 +84,17 @@
 .gh-content table:not(.gist table) td:first-child,.gh-content table:not(.gist table) td:last-child{background-image:none}
 .gh-content table:not(.gist table) th{background-color:rgba(255,255,255,.07);color:#9aa0ad}
 .gh-content table:not(.gist table) th,.gh-content table:not(.gist table) td{border-color:rgba(255,255,255,.12)}
+
+/* Owner, 5 Oct: no photo behind the blog (the minimalist page reads better),
+   and no author/date block over the article. */
+body.pq::before{background:#04040a!important}
+.article-byline,.article-tag{display:none}
+.article-header::before{display:none}
+/* The dock was barely visible on a phone. */
+@media(max-width:760px){
+  .pq-dock{background:#10131c;border-top:1px solid rgba(45,226,197,.45);box-shadow:0 -10px 30px rgba(0,0,0,.6)}
+  .pq-di{color:#d3d7e0;font-size:10.5px}
+  .pq-di svg{width:23px;height:23px}
+}
+/* "Make a Sweeper Keeper" must fit beside the logo on a phone. */
+@media(max-width:480px){.pq-logo span{display:none!important}.pq-cta{max-width:62vw;overflow:hidden;text-overflow:ellipsis}}

@@ -146,9 +146,15 @@ const ARCH_PAGE = Object.fromEntries(FC27_ARCH.map((a) => {
   }];
 }));
 
+// A section's Share button sits at its foot (owner, 5 Oct: beside the heading
+// it squeezed the title); head() leaves a marker and card() places the button.
 const head = (id, title, { kicker, shareTitle } = {}) => `${kicker ? `<p class="sub" style="margin:0;font:800 11px/1.3 Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#2DE2C5!important">${esc(kicker)}</p>` : ''}
-<div class="cs-h"><h2 class="csh" id="${id}">${esc(title)}</h2><button class="cs-btn cs-share" type="button" data-share="${id}" data-title="${esc(shareTitle ?? title)}">${ICO} Share</button></div>`;
-const card = (inner) => kg(`<div class="cs">\n${inner}\n</div>`);
+<h2 class="csh" id="${id}">${esc(title)}</h2><!--share:${id}|${esc(shareTitle ?? title)}-->`;
+const card = (inner) => {
+  const m = inner.match(/<!--share:([^|]+)\|([^>]*)-->/);
+  const body = inner.replace(/<!--share:[^>]*-->/, '');
+  return kg(`<div class="cs">\n${body}${m ? `\n<div class="cs-shr"><button class="cs-btn cs-share" type="button" data-share="${m[1]}" data-title="${m[2]}">${ICO} Share this</button></div>` : ''}\n</div>`);
+};
 
 export function renderCheatSheet({ n, archId, slug = `pro-clubs-${archId}-build`, title, intro, aboutExtra = '', faqExtra = [], rail = '', tags }) {
   const P = `a${n}`;
@@ -204,12 +210,11 @@ ${sig ? `<div><small>Signature PlayStyle</small><b><img src="${psImg(sig)}" alt=
     ...(pairsHtml ? [['wins-with', 'Wins with']] : []), ['prices', 'Price list'], ['calculator', 'AP calculator'], ['specializations', 'Specializations'], ['compare', 'Compare'], ['faq', 'FAQ']];
 
   // ── Builds ───────────────────────────────────────────────────────────────
-  const run = (b) => (b.accelerationType ? `<b style="color:${RUN[b.accelerationType] ?? '#a3aabb'}">${esc(b.accelerationType)}${b.inGameAccelerationType && b.inGameAccelerationType !== b.accelerationType ? ` (${esc(b.inGameAccelerationType)} in game)` : ''}</b>` : '');
-  const badges = (b) => `${b.signature.map((s) => `<span class="sb" title="${esc(psName(s))} (signature)"><img src="${psImg(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="21" height="21"></span>`).join('')}${b.playstyles.map((s) => `<span class="rb" title="${esc(psName(s))}"><img src="${psImg(s)}" alt="${esc(psName(s))} PlayStyle" loading="lazy" width="18" height="18"></span>`).join('')}`;
+  const run = (b) => (b.accelerationType ? `${esc(b.accelerationType)}${b.inGameAccelerationType && b.inGameAccelerationType !== b.accelerationType ? ` (${esc(b.inGameAccelerationType)} in game)` : ''}` : '');
   const buildCard = (b, i) => `<div class="cs-b" data-b="${i}">
 <div class="top"><span class="rk">#${i + 1}</span><div><h3>${esc(b.buildName)}</h3><div class="by">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${run(b)}` : ''}</div></div><span class="lab">${stat(b)}</span></div>
-<div class="cs-bars">${C.csTop(D, D.builds[i], 4).map(([k, v]) => `<div><span>${esc(attrName(k))}</span><em>${v}</em><i><b style="width:${v}%;background:${C.csGrade(v)}"></b></i></div>`).join('')}</div>
-<div class="cs-ps">${badges(b)}<span class="sg">${esc(b.signature.map(psName).join(' · '))}</span></div>
+<div class="cs-bars">${C.csTop(D, D.builds[i], 4).map(([k, v]) => `<div><span>${esc(attrName(k))}</span><i><b style="width:${v}%"></b></i><em>${v}</em></div>`).join('')}</div>
+<div class="cs-tags">${b.signature.map((x) => `<span class="g">★ ${esc(psName(x))}</span>`).join('')}${b.playstyles.map((x) => `<span>${esc(psName(x))}</span>`).join('')}</div>
 <div class="cs-acts"><button class="cs-btn" type="button" data-stats="${i}">All stats</button><button class="cs-btn" type="button" data-share-build="${i}">${ICO} Share</button><a class="cs-btn go" href="${SITE}/b/${b.id}?src=grid">Open &amp; copy →</a></div>
 </div>`;
   const rest = builds.slice(FEED);
@@ -428,23 +433,27 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   const keep = card(`<h2 class="csh" style="margin:10px 0 10px!important">Keep reading</h2>
 <div class="cs-next">${next.map(([h, l, d]) => `<a href="${h}">${esc(l)}<small>${esc(d)}</small></a>`).join('')}</div>`);
 
+  // "Between the tools, we want to take them there" (owner, 5 Oct).
+  const make = card(`<a class="cs-make" href="${SITE}/create"><b>Make ${an(esc(name))}</b><span>Open the builder and price every point as you go →</span></a>`);
+  D.make = `Make ${an(name)}`;
+
   const html = [
-    updatedLine(UPDATED, 'now a cheat sheet'),
     kg(`<style>${CSS}</style>`),
     intro ? intro : '',
-    card(switcher),
+    card(`${switcher}\n${facts}`),   // the archetype's profile first (owner, 5 Oct: "this familiarizes the user to the page")
     kg(`<nav class="cs cs-chips" aria-label="On this page">${chips.map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join('')}</nav>`),
     buildsCard,
-    card(facts),   // under the builds, not over them: the first card must start on a phone's first screen (build-list rule)
     scan,
     accel,
     levels,
+    make,
     AD_A,
     pitch,
     pairs,
     AD_B,
     prices,
     calc,
+    make,
     specsCard,
     about,
     compare,
@@ -461,6 +470,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
     faqLd,
     listLd,
     keep,
+    updatedLine(UPDATED, 'now a cheat sheet'),
     affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] }),
     AD_C,
     kg(`<script type="application/json" id="cs-data">${JSON.stringify(D).replace(/</g, '\\u003c')}</script>

@@ -133,9 +133,18 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   since app #317; `export-cheatsheet-builds.mjs` drops and names any build
   listed under one archetype and served under another. It also files the 35
   player pages under their build's LIVE archetype (12 had moved).
-- **Cards say Most copied / Most viewed, never a count**, and the page opens
-  with the builds: the quick-facts tiles sit UNDER the first six cards so a
-  card starts on a phone's first screen (the mockup had them above).
+- **Cards say Most copied / Most viewed, never a count.**
+- **Owner's review of the first live version (5 Oct), all applied - keep it
+  this way:** the look is the prototype's (`design/cheat-sheet/`): ONE green
+  (teal bars with the slight gradient, no slider grade colours, no coloured
+  AcceleRATE word), a card's four attributes as four rows on a phone,
+  PlayStyles as text tags (no logos), the profile tiles (key attributes,
+  signature, height, AP) at the TOP under the title, no published/updated
+  lines up there (the Updated line is at the foot; the theme hides the
+  byline), each tool's Share button at the section's foot, a "Make a
+  <archetype>" strip between tools, and the header button reads "Make a
+  <archetype>" on a sheet (the page's script rewrites the theme's button).
+  Theme: no photo background, a clearly visible dock.
 - **"We do not promote negativity" (owner, 5 Oct).** A win effect at or below
   zero is never printed, for an archetype or a pair. The filter is in the data
   repo (`analysis/public_stats.py`, tested), re-checked by the box's pull

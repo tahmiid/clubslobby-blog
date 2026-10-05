@@ -36,10 +36,10 @@ function csSheet(D,i){
   h+='<div class="kv"><div><small>Height</small><b>'+csFt(b.h)+'</b></div><div><small>Weight</small><b>'+b.w+' lb</b></div>'
     +'<div><small>Skill moves</small><b>'+b.sm+'★</b></div><div><small>Weak foot</small><b>'+b.wf+'★</b></div>'
     +'<div><small>PlayStyles</small><b>'+(b.sig.length+b.ps.length)+'</b></div></div>';
-  h+='<div class="cs-ps">';
-  for(var s=0;s<b.sig.length;s++)h+='<span class="sb" title="'+esc(csPs(D,b.sig[s]))+' (signature)"><img src="'+csPsImg(D,b.sig[s])+'" alt="'+esc(csPs(D,b.sig[s]))+' PlayStyle" width="21" height="21"></span>';
-  for(var r=0;r<b.ps.length;r++)h+='<span class="rb" title="'+esc(csPs(D,b.ps[r]))+'"><img src="'+csPsImg(D,b.ps[r])+'" alt="'+esc(csPs(D,b.ps[r]))+' PlayStyle" width="18" height="18"></span>';
-  h+='<span class="sg">'+esc(b.sig.concat(b.ps).map(function(x){return csPs(D,x)}).join(' · '))+'</span></div>';
+  h+='<div class="cs-tags">';
+  for(var s=0;s<b.sig.length;s++)h+='<span class="g">★ '+esc(csPs(D,b.sig[s]))+'</span>';
+  for(var r=0;r<b.ps.length;r++)h+='<span>'+esc(csPs(D,b.ps[r]))+'</span>';
+  h+='</div>';
   h+='<div class="gs">';
   for(var g=0;g<D.G.length;g++){
     var ks=D.G[g][1],sum=0,n=0,rows='';
@@ -47,7 +47,7 @@ function csSheet(D,i){
       var ix=D.K.indexOf(ks[j]),v=b.a[ix];if(v==null)continue;sum+=v;n++;
       var t=A.t[ix];
       rows+='<div class="ar"><span>'+esc(D.N[ks[j]])+(t===0?' <em class="ct t0">CHEAP</em>':t===3?' <em class="ct t3">EXPEN</em>':'')+'</span><em>'+v+'</em>'
-        +'<i><b style="width:'+v+'%;background:'+csGrade(v)+'"></b></i></div>'}
+        +'<i><b style="width:'+v+'%"></b></i></div>'}
     if(n)h+='<div class="g"><h6>'+esc(D.G[g][0])+'<b>'+Math.round(sum/n)+'</b></h6>'+rows+'</div>'}
   h+='</div>';
   h+='<div class="sacts"><button class="cs-btn" type="button" data-share-build="'+i+'">'+D.ico+' Share</button>'
@@ -179,6 +179,9 @@ if(typeof document!=='undefined')(function(){
     if(st){e.preventDefault();return openS(+st.getAttribute('data-stats'))}
     var c=t.closest('[data-b]');
     if(c&&!t.closest('a,button'))openS(+c.getAttribute('data-b'))});
+
+  /* the theme's header button speaks for this page: "Make a Magician" */
+  var cta=$('.pq-cta');if(cta&&D.make){cta.textContent=D.make;cta.href=D.site+'/create?ref=proclubshq.com'}
 
   /* the switcher opens on this archetype, not on the first keeper */
   var sw=$('.cs-sw'),cu=sw&&$('a.cur',sw);
