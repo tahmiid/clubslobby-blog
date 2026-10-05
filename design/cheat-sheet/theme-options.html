@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog Theme Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Manrope:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#05060a;font-family:Manrope,system-ui,sans-serif}
+a{color:inherit}
+/* switcher */
+.sw{position:sticky;top:0;z-index:50;display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:10px 16px;background:#111318;border-bottom:1px solid #262a33;color:#c9ccd4;font:600 13px/1.2 Manrope,sans-serif}
+.sw b{color:#fff;margin-right:6px}
+.sw button{border:1px solid #333845;background:#1a1d24;color:#d9dce3;border-radius:999px;padding:7px 14px;font:700 13px Manrope,sans-serif;cursor:pointer}
+.sw button.on{background:#2DE2C5;color:#04201b;border-color:#2DE2C5}
+.sw span{margin-left:auto;color:#8a8f9b;font-weight:500}
+.v{display:none}.v.on{display:block}
+
+/* ============ A. HQ DARK (matches the app) ============ */
+.A{background:#04040a;color:#e9ebf1;min-height:100vh}
+.A .hd{display:flex;align-items:center;gap:18px;padding:14px 20px;border-bottom:1px solid #1b1d28;position:sticky;top:49px;background:rgba(4,4,10,.92);backdrop-filter:blur(8px);z-index:5}
+.A .logo{font:900 18px Archivo;letter-spacing:.02em}.A .logo i{color:#2DE2C5;font-style:normal}
+.A .nav{display:flex;gap:16px;font:700 13px Manrope;color:#9aa0ad;overflow:auto}
+.A .nav a{text-decoration:none;white-space:nowrap}.A .nav a.on{color:#fff}
+.A .cta{margin-left:auto;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff;text-decoration:none;padding:9px 16px;border-radius:999px;font:800 13px Manrope;white-space:nowrap}
+.A .wrap{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+.A .eye{font:700 12px Manrope;letter-spacing:.14em;color:#2DE2C5;text-transform:uppercase}
+.A h1{font:900 clamp(30px,6vw,48px)/1.05 Archivo;margin:8px 0 12px;letter-spacing:-.01em}
+.A .sub{color:#a7acb8;font-size:17px;line-height:1.5;margin:0 0 18px}
+.A .meta{display:flex;gap:10px;flex-wrap:wrap;font:700 12px Manrope;color:#8a8f9b;margin-bottom:24px}
+.A .meta span{background:#11131c;border:1px solid #1f2230;padding:6px 10px;border-radius:999px}
+.A .tldr{border:1px solid rgba(45,226,197,.35);background:radial-gradient(120% 140% at 0 0,rgba(45,226,197,.14),transparent 55%),#0c0f16;border-radius:16px;padding:18px 20px;margin-bottom:30px}
+.A .tldr h3{margin:0 0 10px;font:800 13px Manrope;letter-spacing:.12em;color:#2DE2C5;text-transform:uppercase}
+.A .tldr ul{margin:0;padding-left:18px;line-height:1.7;color:#d9dce3}
+.A h2{font:800 26px/1.2 Archivo;margin:40px 0 14px}
+.A .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.A .card{display:block;text-decoration:none;background:linear-gradient(180deg,#141725,#0b0d15);border:1px solid #232739;border-radius:16px;padding:16px;transition:.15s}
+.A .card:hover{border-color:#2DE2C5;transform:translateY(-2px)}
+.A .card .rk{font:900 12px Archivo;color:#0a0b10;background:#2DE2C5;border-radius:6px;padding:3px 7px;display:inline-block}
+.A .card h4{margin:10px 0 2px;font:800 20px Archivo}
+.A .card .by{color:#8a8f9b;font-size:12.5px;margin-bottom:12px}
+.A .bars div{display:grid;grid-template-columns:96px 1fr 26px;gap:8px;align-items:center;font-size:12.5px;color:#c4c8d2;margin:5px 0}
+.A .bars i{height:6px;border-radius:9px;background:#1d2130;position:relative;overflow:hidden}
+.A .bars i b{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,#2DE2C5,#5cf2b0);border-radius:9px}
+.A .bars em{font-style:normal;font-weight:800;color:#fff;text-align:right}
+.A .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.A .tags span{font:700 11px Manrope;padding:4px 8px;border-radius:7px;background:#1b1f2d;color:#c9cdd8}
+.A .tags span.g{background:rgba(242,196,86,.16);color:#f2c456}
+.A .copy{display:flex;justify-content:space-between;margin-top:14px;font:800 12.5px Manrope;color:#2DE2C5}
+.A p{line-height:1.7;color:#cfd3dc;font-size:16.5px}
+.A .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.A .spec div{background:#0d1018;border:1px solid #1f2332;border-radius:14px;padding:14px}
+.A .spec h5{margin:0 0 4px;font:900 15px Archivo;letter-spacing:.04em}
+.A .spec small{color:#2DE2C5;font-weight:700}
+.A .spec p{font-size:13.5px;margin:8px 0 0;line-height:1.5}
+.A .ad{margin:30px 0;height:110px;border:1px dashed #2a2e3c;border-radius:12px;display:grid;place-items:center;color:#525868;font:700 11px Manrope;letter-spacing:.14em}
+.A .next{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.A .next a{text-decoration:none;background:#0e1119;border:1px solid #20243a;border-radius:12px;padding:14px;font:800 15px Archivo}
+.A .next a small{display:block;font:600 12px Manrope;color:#8a8f9b;margin-top:4px}
+
+/* ============ B. THREAD (Reddit-like) ============ */
+.B{background:#0e1113;color:#d7dadc;min-height:100vh;font-family:'IBM Plex Sans',system-ui,sans-serif}
+.B .hd{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#0e1113;border-bottom:1px solid #2a3236;position:sticky;top:49px;z-index:5}
+.B .sr{width:30px;height:30px;border-radius:50%;background:#2DE2C5;display:grid;place-items:center;font:900 12px Archivo;color:#04201b}
+.B .hd b{font-weight:700}.B .hd small{color:#8b9396}
+.B .hd .join{margin-left:auto;background:#d7dadc;color:#0e1113;border-radius:999px;padding:7px 16px;font-weight:700;font-size:13px;text-decoration:none}
+.B .wrap{max-width:760px;margin:0 auto;padding:16px 12px 80px}
+.B .op{background:#0e1113;border:1px solid #2a3236;border-radius:12px;padding:16px}
+.B .who{display:flex;gap:8px;align-items:center;font-size:12px;color:#8b9396;margin-bottom:8px}
+.B .who b{color:#d7dadc}
+.B .flair{background:#2DE2C5;color:#04201b;font-weight:700;border-radius:999px;padding:2px 8px;font-size:11px}
+.B h1{font:700 22px/1.3 'IBM Plex Sans',system-ui,sans-serif;margin:4px 0 10px;color:#f2f3f5}
+.B p{line-height:1.6;font-size:15px;margin:0 0 10px}
+.B .acts{display:flex;gap:8px;margin-top:10px}
+.B .acts span{background:#1a2024;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600}
+.B .sort{display:flex;gap:6px;margin:16px 0 10px;font-size:13px;font-weight:600}
+.B .sort span{padding:6px 12px;border-radius:999px;color:#8b9396}.B .sort span.on{background:#1a2024;color:#fff}
+.B .post{display:grid;grid-template-columns:44px 1fr;gap:10px;background:#0e1113;border:1px solid #2a3236;border-radius:12px;padding:12px;margin-bottom:10px;text-decoration:none}
+.B .post:hover{border-color:#4a5a60}
+.B .vote{display:flex;flex-direction:column;align-items:center;gap:2px;font-weight:700;font-size:13px;color:#d7dadc}
+.B .vote i{font-style:normal;color:#ff4500;font-size:16px}
+.B .vote small{font-size:10px;color:#8b9396;font-weight:500}
+.B .post h3{margin:2px 0 6px;font:600 17px 'IBM Plex Sans',system-ui,sans-serif;color:#f2f3f5}
+.B .chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.B .chips span{font-size:11.5px;padding:3px 8px;border-radius:999px;background:#1a2024;color:#c9cdd0}
+.B .chips span.s{background:#3b2f0a;color:#ffd166}
+.B .stat{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#9fe7d8;background:#0a1416;border:1px solid #16302d;border-radius:8px;padding:8px 10px;margin-top:6px;white-space:pre-wrap}
+.B .cm{margin:6px 0 0 18px;border-left:2px solid #2a3236;padding:8px 0 4px 12px}
+.B .cm .who{margin-bottom:4px}
+.B .cm p{font-size:14px}
+.B .ad{margin:14px 0;border:1px solid #2a3236;border-radius:12px;padding:12px;color:#5d676b;font-size:11px;text-align:center;height:100px;display:grid;place-items:center}
+.B .side{background:#161b1e;border-radius:12px;padding:14px;margin-top:16px;font-size:13.5px}
+.B .side h4{margin:0 0 8px;font-size:12px;letter-spacing:.08em;color:#8b9396;text-transform:uppercase}
+.B .side a{display:block;padding:6px 0;text-decoration:none;color:#d7dadc;border-bottom:1px solid #222a2e}
+
+/* ============ C. WIKI / GUIDE (Game8-like) ============ */
+.C{background:#f5f6f8;color:#1e2330;min-height:100vh;font-family:Manrope,system-ui,sans-serif}
+.C .hd{background:#0b0d14;color:#fff;padding:12px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:49px;z-index:5}
+.C .hd .logo{font:900 17px Archivo}.C .hd .logo i{color:#2DE2C5;font-style:normal}
+.C .hd input{margin-left:auto;background:#1b1e29;border:0;border-radius:8px;padding:8px 12px;color:#fff;width:min(260px,40vw);font:500 13px Manrope}
+.C .crumb{max-width:1080px;margin:0 auto;padding:14px 16px 0;font-size:12.5px;color:#6a7080}
+.C .lay{max-width:1080px;margin:0 auto;padding:8px 16px 80px;display:grid;grid-template-columns:1fr 280px;gap:24px}
+@media(max-width:860px){.C .lay{grid-template-columns:1fr}.C .toc{display:none}.C .hd input{display:none}}
+@media(max-width:520px){.A .nav{display:none}.A .logo{white-space:nowrap}.C main{padding:16px}.C .pros{grid-template-columns:1fr}}
+.C .lay>*{min-width:0}.C main{background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:22px}
+.C h1{font:900 clamp(24px,4.5vw,32px)/1.15 Archivo;margin:0 0 6px}
+.C .upd{font-size:12.5px;color:#6a7080;margin-bottom:16px}
+.C .box{background:#eefbf8;border-left:4px solid #17b897;padding:12px 14px;border-radius:6px;font-size:14.5px;line-height:1.6}
+.C h2{font:800 20px Archivo;margin:28px 0 10px;padding-bottom:6px;border-bottom:3px solid #17b897}
+.C table{display:block;overflow-x:auto;width:100%;border-collapse:collapse;font-size:14px}
+.C th{background:#1e2330;color:#fff;text-align:left;padding:9px 10px;font-weight:700;font-size:12.5px}
+.C td{border-bottom:1px solid #e7e9ee;padding:9px 10px;vertical-align:top}
+.C tr:nth-child(even) td{background:#fafbfc}
+.C .tier{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:6px;font:900 14px Archivo;color:#fff}
+.C .t-s{background:#e8463c}.C .t-a{background:#f08a24}.C .t-b{background:#2a9d8f}
+.C td a{color:#1167c9;font-weight:700;text-decoration:none}
+.C p{line-height:1.7;font-size:15.5px}
+.C .toc{background:#fff;border:1px solid #e3e6ec;border-radius:10px;padding:14px;position:sticky;top:110px}
+.C .toc h4{margin:0 0 8px;font:800 13px Archivo;letter-spacing:.06em;text-transform:uppercase}
+.C .toc a{display:block;font-size:13.5px;padding:5px 0;color:#1167c9;text-decoration:none}
+.C .info{background:#fff;border:1px solid #e3e6ec;border-radius:10px;overflow:hidden;margin-bottom:14px}
+.C .info h4{margin:0;background:#1e2330;color:#fff;padding:10px 12px;font:800 15px Archivo}
+.C .info div{display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid #eef0f3;font-size:13px}
+.C .info div b{color:#6a7080;font-weight:600}
+.C .ad{margin:18px 0;height:100px;background:#eef0f3;border-radius:8px;display:grid;place-items:center;color:#9aa0ad;font-size:11px;letter-spacing:.12em}
+.C .pros{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.C .pros div{border:1px solid #e3e6ec;border-radius:8px;padding:10px 12px;font-size:14px}
+.C .pros h5{margin:0 0 6px;font-size:13px}
+.C .note{font-size:12px;color:#8a8f9b;margin-top:24px}
+</style>
+</head>
+<body>
+
+<div class="sw"><b>Theme:</b>
+<button data-v="A" class="on">A · HQ Dark (like the app)</button>
+<button data-v="B">B · Thread (Reddit-style)</button>
+<button data-v="C">C · Wiki guide (Game8-style)</button>
+<span>Same article, real data. Grey boxes = ad slots.</span></div>
+
+<!-- ================= A ================= -->
+<div class="v A on" id="A">
+<div class="hd"><div class="logo">PRO CLUBS <i>HQ</i></div>
+<nav class="nav"><a class="on" href="#">Builds</a><a href="#">Meta</a><a href="#">Builder</a><a href="#">Lobby</a><a href="#">Companion</a><a href="#">Guides</a></nav>
+<a class="cta" href="https://proclubshq.com/create">Make a build</a></div>
+<div class="wrap">
+<div class="eye">FC 27 · Pro Clubs · Forward</div>
+<h1>Best Magician Builds in FC 27</h1>
+<p class="sub">The Magician builds players actually copy, ranked by copies. Open one, copy it, make it yours.</p>
+<div class="meta"><span>Updated 5 Oct</span><span>Level 40</span><span>Ranked by real copies</span></div>
+<div class="tldr"><h3>In 10 seconds</h3><ul>
+<li><b>Most copied:</b> Lamine Yamal: Explosive, 5'11", Trickster signature</li>
+<li><b>Key attributes:</b> Acceleration, Finishing, Curve, Balance</li>
+<li><b>Height range:</b> 162–188 cm (5'4"–6'2")</li>
+<li><b>Specializations:</b> Magician+, Hotshot, Invader</li></ul></div>
+
+<h2>The top Magician builds</h2>
+<div class="grid">
+ <a class="card" href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf"><span class="rk">#1</span><h4>Lamine Yamal</h4><div class="by">5'11" · 143 lb · Explosive</div>
+  <div class="bars"><div>Balance<i><b style="width:92%"></b></i><em>92</em></div><div>Composure<i><b style="width:89%"></b></i><em>89</em></div><div>Curve<i><b style="width:89%"></b></i><em>89</em></div><div>Dribbling<i><b style="width:89%"></b></i><em>89</em></div></div>
+  <div class="tags"><span class="g">Trickster</span><span>Technical</span><span>First Touch</span><span>Finesse Shot</span></div><div class="copy"><span>16 copies</span><span>Open →</span></div></a>
+ <a class="card" href="https://proclubshq.com/b/7b174e48-9d09-4e23-94f1-326babe7640c"><span class="rk">#2</span><h4>Neymar Jr</h4><div class="by">5'9" · 150 lb · Explosive</div>
+  <div class="bars"><div>Balance<i><b style="width:89%"></b></i><em>89</em></div><div>Ball Control<i><b style="width:89%"></b></i><em>89</em></div><div>Composure<i><b style="width:89%"></b></i><em>89</em></div><div>Dribbling<i><b style="width:89%"></b></i><em>89</em></div></div>
+  <div class="tags"><span class="g">Technical</span><span>Trickster</span><span>First Touch</span><span>Finesse Shot</span></div><div class="copy"><span>11 copies</span><span>Open →</span></div></a>
+ <a class="card" href="https://proclubshq.com/b/d6dc3938-eef2-4331-a957-0af63bf68b3a"><span class="rk">#3</span><h4>Messi '26 WC</h4><div class="by">5'7" · 159 lb · Controlled</div>
+  <div class="bars"><div>Balance<i><b style="width:96%"></b></i><em>96</em></div><div>Ball Control<i><b style="width:96%"></b></i><em>96</em></div><div>Acceleration<i><b style="width:90%"></b></i><em>90</em></div><div>Composure<i><b style="width:90%"></b></i><em>90</em></div></div>
+  <div class="tags"><span class="g">First Touch</span><span>Trickster</span><span>Tiki Taka</span><span>Bruiser</span></div><div class="copy"><span>7 copies</span><span>Open →</span></div></a>
+</div>
+<div class="ad">AD SLOT</div>
+<h2>Which specialization?</h2>
+<div class="spec">
+ <div><h5>MAGICIAN+</h5><small>First Touch+ · One, Two</small><p>Needs Acceleration 90, Composure 90, Ball Control 92.</p></div>
+ <div><h5>HOTSHOT</h5><small>Power Shot+ · Cut and Shoot</small><p>Needs Finishing 90, Shot Power 92, Long Shots 90.</p></div>
+ <div><h5>INVADER</h5><small>Incisive Pass+ · Silver Platter</small><p>Needs Att. Position 90, Vision 90, Long Pass 92.</p></div>
+</div>
+<h2>Perks</h2>
+<p><b>Getaway Driver</b> (level 10): dribble at full sprint in the opponent's half for a short boost to Agility, Balance and Reactions. <b>Ankle Breaker</b> (level 45): a fake shot that beats a defender in the final third boosts Balance, Ball Control and Dribbling.</p>
+<div class="ad">AD SLOT</div>
+<h2>Keep reading</h2>
+<div class="next"><a href="#">Spark builds<small>The other dribbler</small></a><a href="#">Magician stats<small>Every cap and cost</small></a><a href="#">Best winger builds<small>All archetypes</small></a><a href="#">Match tracker<small>Fix your build after a game</small></a></div>
+</div></div>
+
+<!-- ================= B ================= -->
+<div class="v B" id="B">
+<div class="hd"><div class="sr">HQ</div><div><b>Pro Clubs HQ</b><br><small>FC 27 builds · copied by real players</small></div><a class="join" href="https://proclubshq.com/explore">Open the app</a></div>
+<div class="wrap">
+<div class="op">
+ <div class="who"><b>BuildMaster</b> · updated 5 Oct · <span class="flair">Build guide</span></div>
+ <h1>Best Magician builds in FC 27: what people are actually copying</h1>
+ <p>We rank these by how many players copied each one into their own club, not by our opinion. Level 40, all in-game legal.</p>
+ <p>Quick facts: the Magician's key attributes are <b>Acceleration, Finishing, Curve and Balance</b>, and it can be 5'4"–6'2".</p>
+ <div class="acts"><span>▲ 39 copies (top 4)</span><span>💬 Tips</span><span>↗ Share</span></div>
+</div>
+<div class="sort"><span class="on">🔥 Most copied</span><span>✨ New</span><span>📏 Short builds</span><span>💪 Tall builds</span></div>
+
+<a class="post" href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf"><div class="vote"><i>▲</i>16<small>copies</small></div><div>
+ <div class="who"><b>u/buildmaster</b> · <span class="flair">#1</span></div>
+ <h3>Lamine Yamal: Explosive, 5'11", Trickster signature</h3>
+ <div class="chips"><span class="s">★ Trickster</span><span>Technical</span><span>First Touch</span><span>Finesse Shot</span></div>
+ <div class="stat">BAL 92  COM 89  CRV 89  DRI 89  BC 87   ·  143 lb</div></div></a>
+<div class="cm"><div class="who"><b>u/author</b> · Best at</div><p>(Here the build's author comment shows: best position, how they play it. Pulled from the build's own "How to play".)</p></div>
+
+<a class="post" href="https://proclubshq.com/b/7b174e48-9d09-4e23-94f1-326babe7640c"><div class="vote"><i>▲</i>11<small>copies</small></div><div>
+ <div class="who"><b>u/buildmaster</b> · <span class="flair">#2</span></div>
+ <h3>Neymar Jr: Explosive, 5'9", Technical signature</h3>
+ <div class="chips"><span class="s">★ Technical</span><span>Trickster</span><span>First Touch</span><span>Finesse Shot</span></div>
+ <div class="stat">BAL 89  BC 89  COM 89  DRI 89  ACC 84  ·  150 lb</div></div></a>
+
+<div class="ad">AD SLOT</div>
+
+<a class="post" href="https://proclubshq.com/b/d6dc3938-eef2-4331-a957-0af63bf68b3a"><div class="vote"><i>▲</i>7<small>copies</small></div><div>
+ <div class="who"><b>u/specialevents</b> · <span class="flair">#3</span></div>
+ <h3>Messi '26 WC: Controlled, 5'7", First Touch signature</h3>
+ <div class="chips"><span class="s">★ First Touch</span><span>Trickster</span><span>Tiki Taka</span><span>Bruiser</span></div>
+ <div class="stat">BAL 96  BC 96  ACC 90  COM 90  CRV 87  ·  159 lb</div></div></a>
+
+<a class="post" href="https://proclubshq.com/b/0aa08154-cb43-4af0-a342-1e9cceb69a99"><div class="vote"><i>▲</i>5<small>copies</small></div><div>
+ <div class="who"><b>u/throwbackfc</b> · <span class="flair">#4</span></div>
+ <h3>Ronaldinho: Explosive, 5'11", Technical signature</h3>
+ <div class="chips"><span class="s">★ Technical</span><span>Trickster</span><span>First Touch</span><span>Finesse Shot</span></div>
+ <div class="stat">BAL 92  COM 91  BC 89  DRI 89  ACC 84  ·  172 lb</div></div></a>
+
+<div class="side"><h4>Specializations</h4>
+<a href="#">MAGICIAN+ · ACC 90 · COM 90 · BC 92</a><a href="#">HOTSHOT · FIN 90 · SHP 92 · LS 90</a><a href="#">INVADER · ATT 90 · VIS 90 · LP 92</a></div>
+<div class="side"><h4>More threads</h4><a href="#">Best Spark builds</a><a href="#">Best winger builds</a><a href="#">Magician stats, every cap</a><a href="#">Find teammates: drop-in lobby</a></div>
+</div></div>
+
+<!-- ================= C ================= -->
+<div class="v C" id="C">
+<div class="hd"><div class="logo">PRO CLUBS <i>HQ</i></div><input placeholder="Search builds, archetypes, moves…"></div>
+<div class="crumb">Pro Clubs HQ › FC 27 › Archetypes › Magician</div>
+<div class="lay"><main>
+<h1>FC 27 Magician: Best Builds and Guide</h1>
+<div class="upd">Last updated 5 Oct 2026 · Level 40 · Ranked by copies</div>
+<div class="box"><b>Best Magician build:</b> Lamine Yamal (Explosive, 5'11", Trickster). The most copied Magician on Pro Clubs HQ, with 16 copies.</div>
+<h2 id="best">Best Magician builds</h2>
+<table><thead><tr><th>Rank</th><th>Build</th><th>Body / AcceleRATE</th><th>Signature</th><th>Copies</th></tr></thead><tbody>
+<tr><td><span class="tier t-s">S</span></td><td><a href="https://proclubshq.com/b/84169940-cd9e-42f4-9e15-3717cea244bf">Lamine Yamal</a></td><td>5'11" · 143 lb · Explosive</td><td>Trickster</td><td>16</td></tr>
+<tr><td><span class="tier t-s">S</span></td><td><a href="https://proclubshq.com/b/7b174e48-9d09-4e23-94f1-326babe7640c">Neymar Jr</a></td><td>5'9" · 150 lb · Explosive</td><td>Technical</td><td>11</td></tr>
+<tr><td><span class="tier t-a">A</span></td><td><a href="https://proclubshq.com/b/d6dc3938-eef2-4331-a957-0af63bf68b3a">Messi '26 WC</a></td><td>5'7" · 159 lb · Controlled</td><td>First Touch</td><td>7</td></tr>
+<tr><td><span class="tier t-b">B</span></td><td><a href="https://proclubshq.com/b/0aa08154-cb43-4af0-a342-1e9cceb69a99">Ronaldinho</a></td><td>5'11" · 172 lb · Explosive</td><td>Technical</td><td>5</td></tr>
+</tbody></table>
+<div class="ad">AD SLOT</div>
+<h2 id="spec">Specializations</h2>
+<table><thead><tr><th>Specialization</th><th>Needs</th><th>PlayStyle+</th><th>Perk</th></tr></thead><tbody>
+<tr><td><b>Magician+</b></td><td>ACC 90, COM 90, BC 92</td><td>First Touch+</td><td>One, Two</td></tr>
+<tr><td><b>Hotshot</b></td><td>FIN 90, SHP 92, LS 90</td><td>Power Shot+</td><td>Cut and Shoot</td></tr>
+<tr><td><b>Invader</b></td><td>ATT 90, VIS 90, LP 92</td><td>Incisive Pass+</td><td>Silver Platter</td></tr>
+</tbody></table>
+<h2 id="body">Height and weight</h2>
+<p>The Magician can be 162–188 cm (5'4"–6'2") and 60–80 kg (132–176 lb); the default is 175 cm and 70 kg. The top four builds sit between 5'7" and 5'11".</p>
+<h2 id="perks">Perks</h2>
+<div class="pros"><div><h5>Getaway Driver · Lv 10</h5>Full-sprint dribble in the opponent's half: short boost to Agility, Balance, Reactions.</div><div><h5>Ankle Breaker · Lv 45</h5>Fake shot past a defender in the final third: boost to Balance, Ball Control, Dribbling.</div></div>
+<div class="ad">AD SLOT</div>
+<p class="note">Tier letters here are placeholders by copy count only; a real tier would need a rule we agree on.</p>
+</main>
+<aside class="rail">
+<div class="info"><h4>Magician</h4><div><b>Position</b>Forward</div><div><b>Inspired by</b>Ronaldinho</div><div><b>Key stats</b>ACC · FIN · CRV · BAL</div><div><b>Skill moves</b>3–5★</div><div><b>Weak foot</b>3–5★</div><div><b>Default AcceleRATE</b>Controlled</div></div>
+<div class="toc"><h4>Contents</h4><a href="#best">Best builds</a><a href="#spec">Specializations</a><a href="#body">Height and weight</a><a href="#perks">Perks</a></div>
+</aside></div></div>
+
+<script>
+document.querySelectorAll('.sw button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.sw button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.v').forEach(v=>v.classList.toggle('on',v.id===b.dataset.v));
+ scrollTo(0,0);});
+</script>
+</body></html>
