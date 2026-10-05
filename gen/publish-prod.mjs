@@ -1320,6 +1320,14 @@ const POSTS = [
     meta_description: 'Drop-In Teammates · The Lobby · See Their Build First · EA Recruiting Thread · Discord · Your Club Page · PS5 · Xbox · PC · FC 27 Pro Clubs',
     custom_excerpt: 'Four ways to find teammates for drop-in, and the one that shows you their build before you play.',
     tags: ['Guides', 'FC 27'] },
+  // DRAFT, not published (gen/a209-cheapest-fc27.mjs, 2026-10-05): the owner
+  // reads it first; key-seller prices are a dated snapshot.
+  { file: 'a209.html', slug: 'fc27-cheapest-price-and-fc-points', status: 'draft',
+    title: 'Cheapest EA FC 27 & FC Points: Where to Buy Safely (October 2026)',
+    meta_title: 'Cheapest EA FC 27 & FC Points: Where to Buy Safely',
+    meta_description: 'FC 27 Price · PS5 · Xbox · PC Keys · FC Points · AMPs · Ultimate Edition · Region Locks · Safe Key Sellers',
+    custom_excerpt: 'What FC 27 costs, where a key is cheaper, and the cheapest way to get FC Points for Pro Clubs.',
+    tags: ['Guides', 'FC 27'] },
   // The Companion match logger (gen/features.mjs, 2026-10-03): app #437
   // opened that day. Header text is computed in out/a208.meta.json.
   { file: 'a208.html', slug: 'pro-clubs-match-tracker', status: 'published',
