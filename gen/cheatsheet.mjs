@@ -50,7 +50,8 @@
 //     ~/.local/node22/bin/node ops/export-cheatsheet-builds.mjs
 //     ~/.local/node22/bin/node ops/export-match-stats.mjs
 //     ~/.local/node22/bin/node gen/cheatsheets.mjs            # all 13
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { homedir } from 'node:os';
 import path from 'node:path';
 import { SITE, CATS, ATTRS, esc, kg, appCta, updatedLine } from './common.mjs';
 import { psName, psImg, FC27_ARCH, FC27_PROG } from './fc27grid.mjs';
@@ -71,8 +72,15 @@ const CSS = readFileSync(path.join(import.meta.dirname, 'cheatsheet.css'), 'utf8
 const CLIENT = readFileSync(path.join(import.meta.dirname, 'cheatsheet.client.js'), 'utf8');
 if (/<\/script/i.test(CLIENT) || CLIENT.includes('`')) throw new Error('cheatsheet.client.js: no closing script tag and no backticks');
 // The pure half of the page's script, run here for the first paint.
-const C = new Function(`${COST_JS}\n${CLIENT}\nreturn { csSheet, csPitch, csPairs, csCompare, csCalc, csSteps, csLevel, csTop, csGrade, csFt, csCostTo };`)();
+const C = new Function(`${COST_JS}\n${CLIENT}\nreturn { csBody, csBodyHtml, csDeltas, csSheet, csPitch, csPairs, csCompare, csCalc, csSteps, csLevel, csTop, csGrade, csFt, csCostTo };`)();
 
+// Comments and Save need app #450 on production. PHASE2=1 turns them on.
+const PHASE2 = process.env.PHASE2 === '1';
+// The app's own table of body shifts (416 rows, pinned on its client and its
+// server): the page's port must agree with every row when the app repo is here.
+const SHIFTS_FILE = path.join(process.env.CLUBSUI_DIR ?? path.join(homedir(), 'Desktop', 'Claude', 'ClubsUI-main'), 'frontend', 'src', '__fixtures__', 'bodyShifts.json');
+const SHIFTS = existsSync(SHIFTS_FILE) ? JSON.parse(readFileSync(SHIFTS_FILE, 'utf8')).cases : null;
+if (!SHIFTS) console.warn('  !! app repo not found: the body tool is not checked against bodyShifts.json');
 export const UPDATED = '2026-10-05';   // the day the COPY changed, never today by reflex
 export const STATS_URL = '/blog/content/files/data/fc27-archetype-stats.json';   // ops/archetype-stats-pull.sh keeps it fresh, on the box
 const TIER_NAMES = ['Cheap', 'Low', 'High', 'Expensive'];
@@ -189,7 +197,23 @@ export function renderCheatSheet({ n, archId, slug = `pro-clubs-${archId}-build`
     L: FC27_PROG.levels.map((l) => [l.level, l.ap, l.apCumulative, l.playstyleSlot ?? 0, l.signaturePerk ? 1 : 0, l.signaturePlaystyleUpgrade ? 1 : 0, l.mastery ? 1 : 0, l.cardTier ?? null]),
     perk: perk.name, sig: sig ? psName(sig) : null, mast,
     S: STATS, statsUrl: STATS_URL,
+    body: { h: [a.heightCm.min, a.heightCm.default, a.heightCm.max], w: [a.weightKg.min, a.weightKg.default, a.weightKg.max],
+      R: [...FC27_PROG.accelerationRules].sort((x, y) => x.evaluation_order - y.evaluation_order),
+      M: { height: FC27_PROG.bodyModifiers[`height_${isKeeper ? 'goalkeeper' : 'outfield'}`], weight: FC27_PROG.bodyModifiers[`weight_${isKeeper ? 'goalkeeper' : 'outfield'}`] },
+      six: [...new Set([...Object.keys(FC27_PROG.bodyModifiers[`height_${isKeeper ? 'goalkeeper' : 'outfield'}`].signs), ...Object.keys(FC27_PROG.bodyModifiers[`weight_${isKeeper ? 'goalkeeper' : 'outfield'}`].signs)])] },
   };
+  // The one FC 27 reading of the rules: a new pro on its default body shifts
+  // nothing and reads the type the game's menu shows.
+  const x0 = { cm: a.heightCm.default, kg: a.weightKg.default, ag: a.attributes.agility.min, st: a.attributes.strength.min, ac: a.attributes.acceleration.min };
+  const r0 = C.csBody(D, x0);
+  assert(Object.keys(r0.d).length === 0 && r0.menu === a.defaultAccelerationType && r0.game === a.defaultAccelerationType, `a new ${archId} reads ${a.defaultAccelerationType} on its default body`);
+  assert(D.body.six.length === 6, `${archId}: the body shifts six attributes`);
+  for (const c of (SHIFTS ?? []).filter((x) => x.archetype === archId)) {
+    const got = C.csDeltas(D, c.heightCm, Math.floor(c.weight * 0.45359237 + 0.5));
+    const clean = Object.fromEntries(Object.entries(got).filter(([, v]) => v !== 0));
+    const want = Object.fromEntries(Object.entries(c.deltas).filter(([, v]) => v !== 0));
+    assert(JSON.stringify(Object.entries(clean).sort()) === JSON.stringify(Object.entries(want).sort()), `${archId} ${c.heightCm} cm ${c.weight} lb shifts like the app (${JSON.stringify(clean)} vs ${JSON.stringify(want)})`);
+  }
   assert(D.L.length === CAP_LEVEL && D.L[CAP_LEVEL - 1][2] === BUDGET, 'the ladder ends at the AP budget');
 
   // ── Top: switcher, facts, chips ──────────────────────────────────────────
@@ -216,7 +240,7 @@ export function renderCheatSheet({ n, archId, slug = `pro-clubs-${archId}-build`
 <div class="top"><span class="rk">#${i + 1}</span><div><h3><a href="${SITE}/b/${b.id}?src=grid">${esc(b.buildName)}</a></h3><div class="by">${ft(b.height)} · ${b.weight} lbs${b.accelerationType ? ` · ${run(b)}` : ''}</div></div><span class="lab">${stat(b)}</span></div>
 <div class="cs-bars">${C.csTop(D, D.builds[i], 4).map(([k, v]) => `<div><span>${esc(attrName(k))}</span><i><b style="width:${v}%"></b></i><em>${v}</em></div>`).join('')}</div>
 <div class="cs-tags">${b.signature.map((x) => `<span class="g">★ ${esc(psName(x))}</span>`).join('')}${b.playstyles.map((x) => `<span>${esc(psName(x))}</span>`).join('')}</div>
-<div class="cs-acts"><button class="cs-btn" type="button" data-share-build="${i}">${ICO} Share</button><a class="cs-btn go" href="${SITE}/b/${b.id}?src=grid">Open &amp; copy →</a></div>
+<div class="cs-acts">${PHASE2 ? `<a class="cs-btn" href="${SITE}/b/${b.id}?src=grid&intent=save">☆ Save</a>` : ''}<button class="cs-btn" type="button" data-share-build="${i}">${ICO} Share</button><a class="cs-btn go" href="${SITE}/b/${b.id}?src=grid">Open &amp; copy →</a></div>
 </div>`;
   const rest = builds.slice(FEED);
   const q = name.toLowerCase();
@@ -264,8 +288,17 @@ ${rest.map((b, j) => `<div class="cs-mr" data-b="${j + FEED}"><div><b>${esc(b.bu
   const accel = card(`${head('accelerate', `${name} AcceleRATE, height and weight`)}
 <p>A new ${esc(name)} starts <span class="ty ${a.defaultAccelerationType}">${esc(a.defaultAccelerationType)}</span>. It can be ${ft(a.height.min)} to ${ft(a.height.max)} (${a.heightCm.min} to ${a.heightCm.max} cm) and ${a.weight.min} to ${a.weight.max} lbs (${a.weightKg.min} to ${a.weightKg.max} kg).</p>
 <p style="margin-top:8px">Of the ${NUM[builds.length] ?? builds.length} builds above, ${types.length === 1 ? `all ${NUM[builds.length] ?? builds.length} are ${types[0][0]}` : list(types.map(([t, c]) => `${NUM[c] ?? c} ${c === 1 ? 'is' : 'are'} ${t}`))}, and they stand ${hMin === hMax ? ft(hMin) : `${ft(hMin)} to ${ft(hMax)}`}.</p>
-<div class="cs-grid3" style="margin-top:12px">
-${['Explosive', 'Lengthy', 'Controlled'].map(typeCard).join('\n')}
+<div class="cs-bt" id="cs-bt">
+<p class="k">Try your body</p>
+<div class="cs-brow">
+<label><span>Height</span><b data-o="cm">${x0.cm} cm · ${ft(a.heightCm.default / 2.54 + 0.5 | 0)}</b><input type="range" name="cm" min="${a.heightCm.min}" max="${a.heightCm.max}" value="${x0.cm}"></label>
+<label><span>Weight</span><b data-o="kg">${x0.kg} kg · ${Math.round(x0.kg * 2.20462)} lb</b><input type="range" name="kg" min="${a.weightKg.min}" max="${a.weightKg.max}" value="${x0.kg}"></label>
+<label><span>Agility</span><b data-o="ag">${x0.ag}</b><input type="range" name="ag" min="${a.attributes.agility.min}" max="${a.attributes.agility.max}" value="${x0.ag}"></label>
+<label><span>Strength</span><b data-o="st">${x0.st}</b><input type="range" name="st" min="${a.attributes.strength.min}" max="${a.attributes.strength.max}" value="${x0.st}"></label>
+<label><span>Acceleration</span><b data-o="ac">${x0.ac}</b><input type="range" name="ac" min="${a.attributes.acceleration.min}" max="${a.attributes.acceleration.max}" value="${x0.ac}"></label>
+</div>
+<div id="cs-bout">${C.csBodyHtml(D, x0)}</div>
+<p class="src">Height and weight shift six attributes for free, measured from the ${esc(name)}'s default body (${a.heightCm.default} cm, ${a.weightKg.default} kg). The match reads your type after those shifts.</p>
 </div>
 <p class="src">These thresholds are the ones FC 26 used, carried into FC 27. Check any build in the <a href="/blog/lengthy-vs-controlled-vs-explosive/">AcceleRATE calculator</a>, read <a href="/blog/pro-clubs-accelerate-explosive-lengthy-controlled/">how the three types work</a>, or see <a href="/blog/pro-clubs-height-and-weight/">the heights and weights players build most</a>.</p>`);
 
@@ -438,6 +471,16 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
   const make = card(`<a class="cs-make" href="${SITE}/create"><b>Make ${an(esc(name))}</b><span>Open the builder and price every point as you go →</span></a>`);
   D.make = `Make ${an(name)}`;
 
+  const talk = PHASE2 ? card(`${head('discussion', `${name} discussion`)}
+<p class="sub">How do you play your ${esc(name)}? No account needed. <span id="cs-ccount"></span></p>
+<div class="cs-thread" id="cs-thread">
+<form id="cs-cform"><input id="cs-cname" maxlength="24" placeholder="Your name" autocomplete="nickname"><textarea id="cs-ctext" maxlength="400" placeholder="Tips, builds that worked, builds that did not…" required></textarea>
+<div class="cbar"><span id="cs-cmsg"></span><button class="cs-btn go" type="submit">Post</button></div></form>
+<div id="cs-clist"></div>
+<button class="cs-btn" type="button" id="cs-cmore" hidden>More comments</button>
+</div>`) : '';
+  if (PHASE2) chips.push(['discussion', 'Discussion']);
+
   const html = [
     kg(`<style>${CSS}</style>`),
     intro ? intro : '',
@@ -458,6 +501,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
     specsCard,
     about,
     compare,
+    talk,
     playersBlock,
     rail,
     appCta({

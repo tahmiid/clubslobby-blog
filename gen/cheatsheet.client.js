@@ -137,6 +137,46 @@ function csLevel(D,n){
   if(l[7])u.push('the '+esc(l[7])+' card');
   return '<b>Level '+n+'</b>: <b style="color:#2DE2C5">+'+l[1]+' AP</b>, '+fmt(l[2])+' AP in total'+(u.length?'. Unlocks '+u.join(', '):'')+'.'}
 
+
+/* The body tool: what a height and weight shift, and the AcceleRATE type the
+   numbers read, in the menu (what you set) and in a match (after the body's
+   shifts). A port of the app's bodyModifierDeltas + accelerationType
+   (frontend/src/lib/progression.js, #266): whole cm and kg measured from the
+   archetype's default body, the last band starting at or below the offset. */
+function csBand(bands,size){var f=null;for(var i=0;i<bands.length;i++)if(bands[i].deltaMin<=size&&(!f||bands[i].deltaMin>f.deltaMin))f=bands[i];return f}
+function csDeltas(D,cm,kg){
+  var d={},dims=[['height',cm-D.body.h[1]],['weight',kg-D.body.w[1]]];
+  for(var i=0;i<dims.length;i++){var off=dims[i][1];if(!off)continue;var g=D.body.M[dims[i][0]];if(!g)continue;
+    var b=csBand(g.bands,Math.abs(off));if(!b)continue;
+    for(var k in g.signs)if(g.signs.hasOwnProperty(k))d[k]=(d[k]||0)+g.signs[k]*b.magnitude*(off>0?1:-1)}
+  return d}
+function csType(D,ag,st,ac,cm){
+  for(var i=0;i<D.body.R.length;i++){var r=D.body.R[i];
+    if(r.height_min_cm_men!=null&&cm<r.height_min_cm_men)continue;
+    if(r.height_max_cm_men!=null&&cm>r.height_max_cm_men)continue;
+    if(r.agility_min!=null&&ag<r.agility_min)continue;
+    if(r.strength_min!=null&&st<r.strength_min)continue;
+    if(r.acceleration_min!=null&&ac<r.acceleration_min)continue;
+    if(r.differential_min!=null){var df=r.differential==='agility - strength'?ag-st:st-ag;if(df<r.differential_min)continue}
+    return r.acceleration_type}
+  return 'Controlled'}
+function csBody(D,x){
+  var d=csDeltas(D,x.cm,x.kg),e={ag:x.ag+(d.agility||0),st:x.st+(d.strength||0),ac:x.ac+(d.acceleration||0)};
+  return {d:d,e:e,menu:csType(D,x.ag,x.st,x.ac,x.cm),game:csType(D,e.ag,e.st,e.ac,x.cm)}}
+function csBodyHtml(D,x){
+  var r=csBody(D,x),h='',i;
+  h+='<div class="cs-bres"><span class="ty '+r.game+'">'+r.game+'</span><span>in a match'+(r.menu!==r.game?' · the menu shows <b>'+r.menu+'</b>':'')+'</span></div>';
+  h+='<div class="cs-six">';
+  for(i=0;i<D.body.six.length;i++){var k=D.body.six[i],v=r.d[k]||0,base=k==='agility'?x.ag:k==='strength'?x.st:k==='acceleration'?x.ac:null;
+    h+='<div><small>'+esc(D.N[k])+'</small><b class="'+(v>0?'up':v<0?'dn':'')+'">'+(v>0?'+':'')+v+'</b>'+(base!=null?'<span>'+base+' → '+(base+v)+'</span>':'')+'</div>'}
+  h+='</div>';
+  function ck(ok,t){return '<li class="'+(ok?'ok':'no')+'">'+(ok?'✓':'✗')+' '+t+'</li>'}
+  var E=null,L=null;for(i=0;i<D.body.R.length;i++){if(D.body.R[i].acceleration_type==='Explosive')E=D.body.R[i];if(D.body.R[i].acceleration_type==='Lengthy')L=D.body.R[i]}
+  h+='<div class="cs-ck"><div><b>Explosive needs</b><ul>'+ck(x.cm<=E.height_max_cm_men,'Height '+E.height_max_cm_men+' cm or under')+ck(r.e.ag>=E.agility_min,'Agility '+E.agility_min+'+')+ck(r.e.ac>=E.acceleration_min,'Acceleration '+E.acceleration_min+'+')+ck(r.e.ag-r.e.st>=E.differential_min,'Agility '+E.differential_min+' above Strength')+'</ul></div>'
+    +'<div><b>Lengthy needs</b><ul>'+ck(x.cm>=L.height_min_cm_men,'Height '+L.height_min_cm_men+' cm or over')+ck(r.e.st>=L.strength_min,'Strength '+L.strength_min+'+')+ck(r.e.ac>=L.acceleration_min,'Acceleration '+L.acceleration_min+'+')+ck(r.e.st-r.e.ag>=L.differential_min,'Strength '+L.differential_min+' above Agility')+'</ul></div></div>';
+  return h}
+function csCmFt(cm){var i=Math.floor(cm/2.54+0.5);return Math.floor(i/12)+"'"+(i%12)+'"'}
+
 /* ── the page ─────────────────────────────────────────────────────────────── */
 if(typeof document!=='undefined')(function(){
   var el=document.getElementById('cs-data');if(!el)return;
@@ -214,6 +254,14 @@ if(typeof document!=='undefined')(function(){
       $('#cs-clv').textContent=c.lvl?'Level '+c.lvl:'Over '+D.cap;$('#cs-ctier').innerHTML=csTag(D,c.t);$('#cs-csteps').innerHTML=csSteps(c,to)};
     sel.addEventListener('change',function(){calc(true)});rng.addEventListener('input',function(){calc(false)})}
 
+
+  /* body tool */
+  var bt=$('#cs-bt');
+  if(bt){
+    var drawB=function(){var x={};$$('input[type=range]',bt).forEach(function(i){x[i.name]=+i.value;var o=$('[data-o='+i.name+']',bt);if(o)o.textContent=i.name==='cm'?i.value+' cm · '+csCmFt(+i.value):i.name==='kg'?i.value+' kg · '+Math.round(i.value*2.20462)+' lb':i.value});
+      $('#cs-bout').innerHTML=csBodyHtml(D,x)};
+    bt.addEventListener('input',drawB)}
+
   /* level ladder */
   var lad=$('#cs-lad');
   if(lad)lad.addEventListener('click',function(e){var b=e.target.closest('[data-l]');if(!b)return;var n=+b.getAttribute('data-l');
@@ -223,6 +271,33 @@ if(typeof document!=='undefined')(function(){
   var vs=$('#cs-vsel');
   function drawV(){if(!vs)return;$('#cs-vname').textContent=D.A[vs.value].n;$('#cs-vtab').innerHTML=csCompare(D,D.S,vs.value)}
   if(vs)vs.addEventListener('change',function(){drawV();ev('select_content',{content_type:'compare',item_id:D.id+'-vs-'+vs.value})});
+
+
+  /* discussion (app #450): one thread per archetype, guests welcome */
+  var th=$('#cs-thread');
+  if(th){
+    var api='/api/sheets/'+D.id+'/comments',next=null,gid=null,tok=null;
+    try{gid=localStorage.getItem('clubs_guest_id');if(!gid){gid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'g'+Date.now()+Math.random().toString(16).slice(2,12);localStorage.setItem('clubs_guest_id',gid)}tok=localStorage.getItem('clubs_auth_token')}catch(e){}
+    var hdr=function(j){var o={};if(gid)o['X-Guest-Id']=gid;if(tok)o['Authorization']='Bearer '+tok;if(j)o['Content-Type']='application/json';return o};
+    var ago=function(at){var m=Math.max(1,Math.round((Date.now()-new Date(at))/6e4));return m<60?m+'m':m<1440?Math.round(m/60)+'h':Math.round(m/1440)+'d'};
+    var row=function(c){return '<div class="cs-c" data-id="'+esc(c.id)+'"><div class="who"><b>'+esc(c.handle?'@'+c.handle:c.name)+'</b> · '+ago(c.at)+'</div><p>'+esc(c.text)+'</p>'
+      +(c.build?'<a class="bref" href="'+D.site+c.build.url+'?src=grid">'+esc(c.build.name)+' →</a>':'')
+      +'<div class="ca">'+(c.mine?'<button type="button" data-del>Delete</button>':'<button type="button" data-rep>Report</button>')+'</div></div>'};
+    var list=$('#cs-clist'),more=$('#cs-cmore'),cnt=$('#cs-ccount');
+    var load=function(before){fetch(api+(before?'?before='+encodeURIComponent(before):''),{headers:hdr()}).then(function(r){return r.ok?r.json():null}).then(function(j){
+      if(!j)return;if(!before)list.innerHTML='';list.insertAdjacentHTML('beforeend',j.comments.map(row).join(''));next=j.next;more.hidden=!next;cnt.textContent=j.count?j.count+(j.count===1?' comment':' comments'):'Be the first to post';
+      if(tok)$('#cs-cname').hidden=true}).catch(function(){})};
+    more.addEventListener('click',function(){load(next)});
+    $('#cs-cform').addEventListener('submit',function(e){e.preventDefault();var t=$('#cs-ctext'),n=$('#cs-cname'),msg=$('#cs-cmsg');msg.textContent='';
+      var body={text:t.value.trim()};if(!tok)body.name=n.value.trim();
+      fetch(api,{method:'POST',headers:hdr(1),body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})}).then(function(x){
+        if(!x.ok){msg.textContent=(x.j&&x.j.detail&&x.j.detail.message)||'That did not post. Try again.';return}
+        t.value='';try{localStorage.setItem('pchq_sheet_name',n.value.trim())}catch(e){}ev('comment',{item_id:D.id});load()}).catch(function(){msg.textContent='That did not post. Try again.'})});
+    try{var sn=localStorage.getItem('pchq_sheet_name');if(sn)$('#cs-cname').value=sn}catch(e){}
+    list.addEventListener('click',function(e){var c=e.target.closest('.cs-c');if(!c)return;var id=c.getAttribute('data-id');
+      if(e.target.closest('[data-del]'))fetch('/api/sheets/comments/'+id,{method:'DELETE',headers:hdr()}).then(function(){load()});
+      if(e.target.closest('[data-rep]'))fetch('/api/sheets/comments/'+id+'/report',{method:'POST',headers:hdr(1),body:JSON.stringify({reason:'inappropriate'})}).then(function(){say('Reported. Thank you.')})});
+    load()}
 
   /* the day's match numbers, when the box has a newer file than the page */
   /* Ghost serves the file with a year's max-age; the 6-hour block in the

@@ -236,3 +236,37 @@
 .cs-tldr li{margin:0!important;font-size:15px;line-height:1.65;color:#d9dce3!important}
 .cs-tldr li b{color:#fff}
 .cs-b h3 a{color:inherit!important}
+
+.cs-bt{margin-top:12px;background:radial-gradient(120% 140% at 0 0,rgba(45,226,197,.12),transparent 55%),var(--pan);border:1px solid rgba(45,226,197,.35);border-radius:16px;padding:16px}
+.cs-bt .k{margin:0 0 10px;font:800 12px/1.3 Manrope,sans-serif;letter-spacing:.12em;color:var(--teal)!important;text-transform:uppercase}
+.cs-brow{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+@media(max-width:560px){.cs-brow{grid-template-columns:1fr}}
+.cs-brow label{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font:700 12px/1.3 Manrope,sans-serif;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.cs-brow label b{color:#fff;font:800 13.5px/1.3 Manrope,sans-serif;text-transform:none;letter-spacing:0}
+.cs-brow input{grid-column:1/3;width:100%;accent-color:#2DE2C5;margin:2px 0 0}
+.cs-bres{display:flex;align-items:center;gap:10px;margin:14px 0 10px;font-size:14px;color:var(--ink2)}
+.cs-bres .ty{font-size:15px;padding:7px 10px}
+.cs .ty.Explosive,.cs .ty.Lengthy{background:#2DE2C5}
+.cs-six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.cs-six>div{background:#0a0c13;border:1px solid var(--ring);border-radius:10px;padding:8px 10px;min-width:0}
+.cs-six small{display:block;font:700 10px/1.3 Manrope,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-six b{font:900 19px/1.2 Archivo,sans-serif;color:var(--mut)}.cs-six b.up{color:var(--teal)}.cs-six b.dn{color:#fff}
+.cs-six span{display:block;font-size:11.5px;color:var(--mut)}
+.cs-ck{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media(max-width:560px){.cs-ck{grid-template-columns:1fr}}
+.cs-ck>div{background:#0a0c13;border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
+.cs-ck b{font:800 13px/1.3 Manrope,sans-serif}
+.cs-ck ul{list-style:none!important;margin:6px 0 0!important;padding:0!important}
+.cs-ck li{margin:0!important;font-size:13px;line-height:1.6;color:var(--mut)!important}
+.cs-ck li.ok{color:var(--teal)!important}
+.cs-thread form{display:grid;gap:8px}
+.cs-thread input,.cs-thread textarea{background:#0a0c13;border:1px solid var(--ring);border-radius:12px;color:var(--ink);padding:10px 12px;font:500 16px/1.4 Manrope,sans-serif;width:100%}
+.cs-thread textarea{min-height:76px;resize:vertical}
+.cs-thread .cbar{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cs-thread #cs-cmsg{font-size:13px;color:var(--pink)}
+.cs-c{padding:12px 0;border-top:1px solid var(--ring)}
+.cs-c .who{font-size:13px;color:var(--mut)}.cs-c .who b{color:var(--ink)}
+.cs-c p{margin:4px 0 6px;font-size:14.5px;color:var(--ink2)!important;overflow-wrap:anywhere}
+.cs-c .bref{display:inline-block;font:700 12.5px Manrope,sans-serif;background:#151a29;border:1px solid var(--ring);border-radius:8px;padding:5px 8px;color:var(--teal)!important}
+.cs-c .ca button{background:none;border:0;padding:0;color:var(--mut);font:700 12px Manrope,sans-serif;cursor:pointer}
+#cs-clist{margin-top:12px}

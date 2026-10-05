@@ -157,6 +157,16 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   script and by `export-match-stats.mjs`. An archetype without a positive
   effect simply shows none; the comparison prints the win-effect row only when
   both sides have one, and a keeper's match numbers only beside a keeper's.
+- **The body tool ("Try your body", 5 Oct) is the app's model, ported.** Whole
+  cm and kg from the archetype's default body, the six shifted attributes,
+  the type the match reads, and a tick list for Explosive and Lengthy. The
+  generator runs the app's 416 `bodyShifts.json` cases through it and refuses
+  to build on a mismatch (`gen/accelerate.mjs`'s older inch/pound port is
+  stale against the app and is NOT used for shifts here).
+- **Comments and Save are built and switched off**: `PHASE2=1 node
+  gen/cheatsheets.mjs` adds the discussion section and the Save buttons (app
+  #450's API, CHEATSHEETS-PLAN.md). Publish with it only after the
+  integration lane says the API is live on production.
 - **One Signature Perk.** The catalog lists two perks per archetype; FC 27's
   40 levels unlock one (`gen/a10-level-rewards.mjs`). Never print "level 45".
 - **AcceleRATE thresholds are FC 26's, carried into FC 27**, and the section
