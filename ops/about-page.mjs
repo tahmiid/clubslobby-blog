@@ -44,6 +44,7 @@ const HTML = `
 
 <h2 id="how-the-site-is-funded">How the site is funded</h2>
 <p>Pro Clubs HQ is free to use. Some links to game retailers are affiliate links, which earn us a small commission at no extra cost to you, and display advertising may run alongside articles. Neither changes what we recommend. The details are in the <a href="https://proclubshq.com/privacy">privacy policy</a>.</p>
+<p>There is no paywall and there are no pop-ups. Tips pay for the servers, the EA match data and every FC 27 update. If Pro Clubs HQ helps you, you can <a href="https://buymeacoffee.com/proclubshq" target="_blank" rel="noopener">buy us a coffee</a>.</p>
 
 <h2 id="contact">Contact</h2>
 <p>Corrections, questions and partnership enquiries: <a href="mailto:hello@proclubshq.com">hello@proclubshq.com</a>. If a number here doesn’t match what you see in-game, tell us. That is how the site gets better.</p>

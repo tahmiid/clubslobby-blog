@@ -100,3 +100,5 @@ body.pq::before{background:#04040a!important}
 @media(max-width:480px){.pq-logo span{display:none!important}.pq-cta{max-width:62vw;overflow:hidden;text-overflow:ellipsis}}
 /* The announcement bar is off for now (owner, 5 Oct). Delete this line to bring it back. */
 #announcement-bar-root,.gh-announcement-bar{display:none!important}
+.pq-support{display:inline-block;margin-top:10px;color:#9aa0ae;font-size:13px;text-decoration:none}
+.pq-support:hover{color:#2DE2C5}
