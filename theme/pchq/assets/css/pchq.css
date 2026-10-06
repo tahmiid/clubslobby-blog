@@ -121,3 +121,8 @@ a.pq-appbar-get{background:#2DE2C5;color:#04201b!important;font-weight:800;font-
 a.pq-gp{display:inline-flex;align-items:center;gap:9px;background:#000;border:1px solid #5a5f6b;border-radius:9px;padding:5px 14px 5px 10px;color:#fff!important;text-decoration:none!important;line-height:1.05}
 a.pq-gp small{display:block;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase}
 a.pq-gp b{font-size:16px;font-weight:700}
+
+/* In-article app card (pchq-nav.js): one screen tall, image centred */
+.gh-content .pq-appcard{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;margin:2em 0;padding:0;background:#04040a}
+.gh-content .pq-appcard a{display:block;width:100%;max-width:560px;text-decoration:none!important;border:0!important}
+.gh-content .pq-appcard img{display:block;width:100%;height:auto;border-radius:18px;margin:0}

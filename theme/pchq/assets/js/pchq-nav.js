@@ -175,3 +175,61 @@
     document.body.insertBefore(bar, document.body.firstChild);
     evt('shown');
 })();
+
+/* The in-article app card (owner, 6 Oct 2026; brief: ClubsUI-main
+   docs/store/get-app/BLOG-BRIEF.md, image approved "as is"). Build articles
+   only (tag Builds), Android only, never inside the app. Never at the top:
+   readers came for the grid, so it goes after the grid and one section. It is one screen tall so whoever scrolls past
+   sees it, and nothing sticks. Beacons blog-card-shown (half in view, once)
+   and blog-card-tap, through the app's own collector like the bar's. */
+(function () {
+    var ua = navigator.userAgent || '';
+    if (!/Android/i.test(ua) || /ProClubsHQ\//.test(ua)) return;
+    if (!document.body.classList.contains('tag-builds')) return;
+    // Pages differ (cheat sheets and player pages wrap everything in one div),
+    // so place by document order: the second heading after the first grid,
+    // as that heading's own sibling - the grid, one section, then the card.
+    var c = document.querySelector('.gh-content');
+    var grid = c && c.querySelector('.grid, .cs-feed');
+    if (!grid) return;
+    var w = grid; while (w.parentNode !== c) w = w.parentNode;
+    var after = Array.prototype.filter.call(c.querySelectorAll('h2, h3'), function (h) {
+        // Only the article's own headings: directly in the article, or in a
+        // section wrapper of the grid's kind (.a72, .cs) - never one inside a
+        // panel such as the affiliate box.
+        var p = h.parentNode;
+        return (p === c || (p.parentNode === c && p.classList.contains(w.classList[0])))
+            && grid.compareDocumentPosition(h) & Node.DOCUMENT_POSITION_FOLLOWING && !grid.contains(h);
+    });
+    var h2 = after[1];
+    if (!h2) return;
+    function evt(what) {
+        try {
+            var s = sessionStorage.getItem('pchq_sid');
+            if (!s) {
+                s = Array.from(crypto.getRandomValues(new Uint8Array(8)), function (x) { return x.toString(16).padStart(2, '0'); }).join('');
+                sessionStorage.setItem('pchq_sid', s);
+            }
+            var body = JSON.stringify({ path: '/evt/blog-card-' + what, sid: s });
+            if (navigator.sendBeacon) navigator.sendBeacon('/api/metrics/view', new Blob([body], { type: 'application/json' }));
+            else fetch('/api/metrics/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+        } catch (e) {}
+    }
+    var slug = location.pathname.replace(/^\/blog\/?|\/$/g, '');
+    var card = document.createElement('div');
+    card.className = 'pq-appcard kg-width-full';
+    card.innerHTML = '<a href="https://play.google.com/store/apps/details?id=com.proclubshq.app&referrer='
+        + encodeURIComponent('utm_source=blog&utm_medium=card&utm_content=' + slug) + '" rel="noopener">'
+        + '<img src="/blog/assets/images/get-app-1080.jpg" width="1080" height="1080" loading="lazy" alt="Pro Clubs HQ for Android: build scanning, ready-to-use builds, easy copy, build sharing, price and AP comparison, meta suggestions, match stats, match companion and Discord, free."></a>';
+    card.querySelector('a').addEventListener('click', function () { evt('tap'); });
+    // Between sections, never inside one: before the heading's own section
+    // box when it has one (keeps an eyebrow such as "TOOL" with its heading).
+    var at = h2.parentNode === c ? h2 : h2.parentNode;
+    c.insertBefore(card, at);
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+            if (es[0].isIntersecting) { evt('shown'); io.disconnect(); }
+        }, { threshold: 0.5 });
+        io.observe(card);
+    }
+})();
