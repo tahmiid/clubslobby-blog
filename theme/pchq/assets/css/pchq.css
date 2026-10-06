@@ -108,3 +108,12 @@ body.pq::before{background:#04040a!important}
 .gh-content .pq-tip-btn,.pq-tip-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,221,0,.08)!important;border:2px solid #FFDD00;color:#FFDD00!important;text-decoration:none!important;font:400 26px/1 Cookie,"Brush Script MT",cursive;padding:9px 20px 8px 16px;border-radius:12px;white-space:nowrap}
 .pq-tip-btn svg{width:24px;height:24px;flex:none}
 .gh-content .pq-tip-btn:hover{background:rgba(255,221,0,.16)!important}
+
+/* Android app bar (pchq-nav.js) */
+.pq-appbar{display:flex;align-items:center;gap:10px;background:#0c0c14;border-bottom:1px solid rgba(45,226,197,.35);padding:8px 12px;font:600 13px Manrope,system-ui,sans-serif;color:#f2f3f7}
+.pq-appbar-ic{width:36px;height:36px;border-radius:9px;background:#fff;display:grid;place-items:center;flex:none}
+.pq-appbar-tx{flex:1;min-width:0;line-height:1.3}
+.pq-appbar-tx b{display:block;font-weight:800;font-size:14px}
+.pq-appbar-tx span{color:#9aa0ad;font-size:12px}
+a.pq-appbar-get{background:#2DE2C5;color:#04201b!important;font-weight:800;font-size:13px;padding:8px 16px;border-radius:999px;text-decoration:none!important}
+.pq-appbar-x{background:none;border:0;color:#9aa0ad;font-size:17px;padding:4px;cursor:pointer}

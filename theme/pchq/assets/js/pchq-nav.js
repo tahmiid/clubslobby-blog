@@ -111,3 +111,31 @@
         + 'Buy us a coffee</a>';
     if (at) c.insertBefore(d, at); else c.appendChild(d);
 })();
+
+/* The Android app bar (owner, 6 Oct 2026, design A: "the smaller icon is
+   better"). Android phones only - never iPhone/iPad, never inside the app
+   (its WebView appends "ProClubsHQ/<version>", MOBILE.md §3; the app opens
+   /blog in the phone's browser anyway). Desktops get nothing here: the footer
+   badge covers them. ✕ hides it for 14 days. The Play link carries the page
+   as utm_content so Play Console shows which pages send installs. */
+(function () {
+    var ua = navigator.userAgent || '';
+    if (!/Android/i.test(ua) || /ProClubsHQ\//.test(ua)) return;
+    try { if (+localStorage.getItem('pq_app_bar_x') > Date.now()) return; } catch (e) {}
+    var page = location.pathname.replace(/^\/blog\/?|\/$/g, '') || 'home';
+    var href = 'https://play.google.com/store/apps/details?id=com.proclubshq.app&referrer='
+        + encodeURIComponent('utm_source=blog&utm_medium=app_bar&utm_content=' + page);
+    var bar = document.createElement('div');
+    bar.className = 'pq-appbar';
+    bar.innerHTML = '<span class="pq-appbar-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">'
+        + '<path fill="#2DE2C5" d="M4 2.5v19l10-9.5z"/><path fill="#FFDD00" d="M14 12l3.2 3 3.6-2a1.1 1.1 0 0 0 0-2l-3.6-2z"/>'
+        + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg></span>'
+        + '<span class="pq-appbar-tx"><b>Better in the app</b><span>Full screen, one tap from your home screen</span></span>'
+        + '<a class="pq-appbar-get" href="' + href + '" rel="noopener">Get</a>'
+        + '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
+    bar.querySelector('.pq-appbar-x').addEventListener('click', function () {
+        bar.remove();
+        try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 14 * 864e5)); } catch (e) {}
+    });
+    document.body.insertBefore(bar, document.body.firstChild);
+})();
