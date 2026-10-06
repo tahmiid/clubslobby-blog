@@ -369,6 +369,28 @@ function lightbox(trigger) {
     var page = location.pathname.replace(/^\/blog\/?|\/$/g, '') || 'home';
     var href = 'https://play.google.com/store/apps/details?id=com.proclubshq.app&referrer='
         + encodeURIComponent('utm_source=blog&utm_medium=' + (android ? 'app_bar' : 'desktop_strip') + '&utm_content=' + page);
+    // Shows, Get taps and ✕ go to the app's own beacon (same origin, the
+    // app's per-tab sid, metrics.py EVENTS) - Play Console reports two days
+    // late (owner, 6 Oct 2026: "we must check the interaction here").
+    var kind = android ? 'appbar' : 'deskstrip';
+    function sid() {
+        try {
+            var v = sessionStorage.getItem('pchq_sid');
+            if (!v) {
+                v = Array.from(crypto.getRandomValues(new Uint8Array(8)), function (x) { return x.toString(16).padStart(2, '0'); }).join('');
+                sessionStorage.setItem('pchq_sid', v);
+            }
+            return v;
+        } catch (e) { return null; }
+    }
+    function evt(what) {
+        var s = sid(); if (!s) return;
+        try {
+            var body = JSON.stringify({ path: '/evt/blog-' + kind + '-' + what, sid: s });
+            if (navigator.sendBeacon) navigator.sendBeacon('/api/metrics/view', new Blob([body], { type: 'application/json' }));
+            else fetch('/api/metrics/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+        } catch (e) {}
+    }
     var PLAY = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">'
         + '<path fill="#2DE2C5" d="M4 2.5v19l10-9.5z"/><path fill="#FFDD00" d="M14 12l3.2 3 3.6-2a1.1 1.1 0 0 0 0-2l-3.6-2z"/>'
         + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg>';
@@ -385,9 +407,12 @@ function lightbox(trigger) {
             + '<a class="pq-gp" href="' + href + '" target="_blank" rel="noopener">' + PLAY
             + '<span><small>Get it on</small><b>Google Play</b></span></a>' + x;
     }
+    bar.querySelector('a').addEventListener('click', function () { evt('tap'); });
     bar.querySelector('.pq-appbar-x').addEventListener('click', function () {
+        evt('close');
         bar.remove();
         try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 36e5)); } catch (e) {}
     });
     document.body.insertBefore(bar, document.body.firstChild);
+    evt('shown');
 })();

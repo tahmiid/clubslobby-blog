@@ -1,7 +1,7 @@
 {
     "name": "pchq",
     "description": "Pro Clubs HQ blog theme: Casper 5.12.1 with the app header, an icon dock and section menus",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "engines": {
         "ghost": ">=5.0.0",
         "node": ">=22.12.0"
