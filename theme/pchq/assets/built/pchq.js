@@ -357,7 +357,7 @@ function lightbox(trigger) {
    better"). Android phones only - never iPhone/iPad, never inside the app
    (its WebView appends "ProClubsHQ/<version>", MOBILE.md §3; the app opens
    /blog in the phone's browser anyway). Desktops get nothing here: the footer
-   badge covers them. ✕ hides it for 14 days. The Play link carries the page
+   badge covers them. ✕ hides it for one hour (owner: "we have to push it", the app is the revenue). The Play link carries the page
    as utm_content so Play Console shows which pages send installs. */
 (function () {
     var ua = navigator.userAgent || '';
@@ -376,7 +376,7 @@ function lightbox(trigger) {
         + '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
     bar.querySelector('.pq-appbar-x').addEventListener('click', function () {
         bar.remove();
-        try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 14 * 864e5)); } catch (e) {}
+        try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 36e5)); } catch (e) {}
     });
     document.body.insertBefore(bar, document.body.firstChild);
 })();
