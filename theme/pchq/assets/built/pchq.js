@@ -356,24 +356,35 @@ function lightbox(trigger) {
 /* The Android app bar (owner, 6 Oct 2026, design A: "the smaller icon is
    better"). Android phones only - never iPhone/iPad, never inside the app
    (its WebView appends "ProClubsHQ/<version>", MOBILE.md §3; the app opens
-   /blog in the phone's browser anyway). Desktops get nothing here: the footer
-   badge covers them. ✕ hides it for one hour (owner: "we have to push it", the app is the revenue). The Play link carries the page
+   /blog in the phone's browser anyway). Desktops (owner yes, 6 Oct) get a one-line strip with the
+   Google Play badge instead; the listing's web page installs to their phone.
+   ✕ hides it for one hour (owner: "we have to push it", the app is the revenue). The Play link carries the page
    as utm_content so Play Console shows which pages send installs. */
 (function () {
     var ua = navigator.userAgent || '';
-    if (!/Android/i.test(ua) || /ProClubsHQ\//.test(ua)) return;
+    var android = /Android/i.test(ua);
+    var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (ios || /ProClubsHQ\//.test(ua) || (!android && /Mobi/i.test(ua))) return;
     try { if (+localStorage.getItem('pq_app_bar_x') > Date.now()) return; } catch (e) {}
     var page = location.pathname.replace(/^\/blog\/?|\/$/g, '') || 'home';
     var href = 'https://play.google.com/store/apps/details?id=com.proclubshq.app&referrer='
-        + encodeURIComponent('utm_source=blog&utm_medium=app_bar&utm_content=' + page);
-    var bar = document.createElement('div');
-    bar.className = 'pq-appbar';
-    bar.innerHTML = '<span class="pq-appbar-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">'
+        + encodeURIComponent('utm_source=blog&utm_medium=' + (android ? 'app_bar' : 'desktop_strip') + '&utm_content=' + page);
+    var PLAY = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">'
         + '<path fill="#2DE2C5" d="M4 2.5v19l10-9.5z"/><path fill="#FFDD00" d="M14 12l3.2 3 3.6-2a1.1 1.1 0 0 0 0-2l-3.6-2z"/>'
-        + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg></span>'
-        + '<span class="pq-appbar-tx"><b>Better in the app</b><span>Full screen, one tap from your home screen</span></span>'
-        + '<a class="pq-appbar-get" href="' + href + '" rel="noopener">Get</a>'
-        + '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
+        + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg>';
+    var bar = document.createElement('div');
+    var x = '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
+    if (android) {
+        bar.className = 'pq-appbar';
+        bar.innerHTML = '<span class="pq-appbar-ic">' + PLAY + '</span>'
+            + '<span class="pq-appbar-tx"><b>Better in the app</b><span>Full screen, one tap from your home screen</span></span>'
+            + '<a class="pq-appbar-get" href="' + href + '" rel="noopener">Get</a>' + x;
+    } else {
+        bar.className = 'pq-appbar pq-appbar-desk';
+        bar.innerHTML = '<span>Pro Clubs HQ is now on Android. Send it to your phone:</span>'
+            + '<a class="pq-gp" href="' + href + '" target="_blank" rel="noopener">' + PLAY
+            + '<span><small>Get it on</small><b>Google Play</b></span></a>' + x;
+    }
     bar.querySelector('.pq-appbar-x').addEventListener('click', function () {
         bar.remove();
         try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 36e5)); } catch (e) {}
