@@ -115,8 +115,8 @@
 /* The Android app bar (owner, 6 Oct 2026, design A: "the smaller icon is
    better"). Android phones only - never iPhone/iPad, never inside the app
    (its WebView appends "ProClubsHQ/<version>", MOBILE.md §3; the app opens
-   /blog in the phone's browser anyway). Desktops get nothing here: the footer
-   badge covers them. ✕ hides it for one hour (owner: "we have to push it", the app is the revenue). The Play link carries the page
+   /blog in the phone's browser anyway). Desktops get nothing (the owner has not decided on them yet).
+   ✕ hides it for one hour (owner: "we have to push it", the app is the revenue). The Play link carries the page
    as utm_content so Play Console shows which pages send installs. */
 (function () {
     var ua = navigator.userAgent || '';
