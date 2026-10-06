@@ -1320,6 +1320,20 @@ const POSTS = [
     meta_description: 'Drop-In Teammates · The Lobby · See Their Build First · EA Recruiting Thread · Discord · Your Club Page · PS5 · Xbox · PC · FC 27 Pro Clubs',
     custom_excerpt: 'Four ways to find teammates for drop-in, and the one that shows you their build before you play.',
     tags: ['Guides', 'FC 27'] },
+  // DRAFT for the owner's review (gen/a210-discord-app.mjs, 2026-10-06).
+  { file: 'a210.html', slug: 'pro-clubs-discord-bot', status: 'draft',
+    title: 'Pro Clubs Discord Bot: Builds, Skill Moves and Controls in Your Server',
+    meta_title: 'Pro Clubs Discord Bot for FC 27: How to Add It',
+    meta_description: 'Add the free Pro Clubs HQ Discord app to your club server: /build, /player, /skill, /celebration and /control answer with cards for PlayStation and Xbox.',
+    custom_excerpt: 'Builds, archetypes and every skill move as a card in your club\'s Discord. Free, and added in a minute.',
+    tags: ['Guides', 'FC 27'] },
+  // DRAFT for the owner's review (gen/a211-club-owners-guide.mjs, 2026-10-06).
+  { file: 'a211.html', slug: 'pro-clubs-club-owners-guide', status: 'draft',
+    title: 'Pro Clubs Club Owner\'s Guide for FC 27: Recruit, Win and Organise',
+    meta_title: 'Pro Clubs Club Owner\'s Guide for FC 27',
+    meta_description: 'Run a better FC 27 Pro Clubs club: how many humans win, the squad shapes and archetype pairs that win more, club modes and rewards, and a Discord bot for your server.',
+    custom_excerpt: 'What wins in FC 27 Pro Clubs, from real league matches: headcount, two humans at the back, the pairs that win together, and a home for the club on Discord.',
+    tags: ['Guides', 'FC 27'] },
   // DRAFT, not published (gen/a209-cheapest-fc27.mjs, 2026-10-05): the owner
   // reads it first; key-seller prices are a dated snapshot.
   { file: 'a209.html', slug: 'fc27-cheapest-price-and-fc-points', status: 'draft',
