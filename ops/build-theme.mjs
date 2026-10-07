@@ -18,6 +18,7 @@
 // Deploy and roll back: DEPLOYMENT.md "The blog theme".
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { blogHome } from './blog-home.mjs';
 import path from 'node:path';
 import { NAV, hrefOf, navLinks } from '../gen/site-nav.mjs';
 
@@ -44,7 +45,7 @@ ${NAV.map((s) => `            <button class="pq-di" type="button" data-m="${s.ke
 <div class="pq-scrim" id="pq-scrim"></div>
 <div class="pq-menu" id="pq-menu">
 ${NAV.map((s) => `    <div class="pq-mp" id="pq-m-${s.key}">
-        <div class="pq-mh"><b>${esc(s.label)}</b><span>${esc(s.blurb)}</span></div>
+        <div class="pq-mh"><b>${esc(s.label)}</b><span>${esc(s.blurb)}</span><a class="pq-all" href="/blog/#h-${s.key}">All articles →</a></div>
         <div class="pq-mgs">
 ${s.groups.map(([g, items]) => `            <div class="pq-mg"><h5>${esc(g)}</h5>${items.map(([l, h]) => `<a href="${esc(hrefOf(h))}">${esc(l)}</a>`).join('')}</div>`).join('\n')}
         </div>
@@ -53,6 +54,11 @@ ${s.groups.map(([g, items]) => `            <div class="pq-mg"><h5>${esc(g)}</h5
 <noscript><style>.pq-dock{display:none}.pq-menu{display:block;position:static;max-height:none}.pq-mp{display:block}</style></noscript>
 `;
 writeFileSync(path.join(T, 'partials', 'pchq-nav.hbs'), partial);
+
+// The blog home hub (ops/blog-home.mjs): every page, grouped, on /blog/ page 1.
+const home = await blogHome();
+writeFileSync(path.join(T, 'partials', 'pchq-home.hbs'), home.html);
+console.log(`home: ${home.posts} posts A-Z, ${home.players} players, ${home.skills} skill guides, ${home.links.length} blog links`);
 
 // Every menu link answers. A Ghost page that does not exist is a real 404
 // (unlike the app, whose shell answers 200 for anything - those go through

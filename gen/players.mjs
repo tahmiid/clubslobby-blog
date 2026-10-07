@@ -26,6 +26,7 @@
 //   and never the b-word (owner rule 2026-08-16).
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { ARCH, ATTRS, BRAND, SITE, title, esc, kg, baseCss, appCta } from './common.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
 import { affArm, affBeacon, assign as assignArms } from './affexp.mjs';
@@ -178,6 +179,9 @@ const factRows = (b, year) => {
 // two templates for one page means editing the wrong one eventually.
 
 // One arm assignment for the whole batch (gen/affexp.mjs).
+// Run as a script it writes the pages; imported (ops/build-theme.mjs reads the
+// roster for the blog home) it only exports PLAYERS.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 const ARM_OF = assignArms(PLAYERS.map((p) => p.slug));
 const all = PLAYERS;
 for (const cfg of PLAYERS) {
@@ -185,4 +189,5 @@ for (const cfg of PLAYERS) {
   const out = path.join(import.meta.dirname, '..', 'out', `a${cfg.n}.html`);
   writeFileSync(out, html);
   console.log(`a${cfg.n} ${cfg.slug.padEnd(20)} arm=${ARM_OF.get(cfg.slug).padEnd(7)} ${html.length} bytes`);
+}
 }
