@@ -37,7 +37,7 @@ export const NAV = [
       ['Attack', [['Strikers', b('best-pro-clubs-striker-builds')], ['Wingers', b('best-pro-clubs-winger-builds')], ['CAMs', b('best-pro-clubs-cam-builds')]]],
       ['Midfield', [['Midfielders', b('best-pro-clubs-midfielder-builds')], ['CMs', b('best-pro-clubs-cm-builds')], ['CDMs', b('best-pro-clubs-cdm-builds')]]],
       ['Defence', [['Defenders', b('best-pro-clubs-defender-builds')], ['Centre-backs', b('best-pro-clubs-cb-builds')], ['Full-backs', b('best-pro-clubs-fullback-builds')], ['Goalkeepers', b('best-pro-clubs-goalkeeper-builds')]]],
-      ['More', [['Level-40 builds', b('fc27-level-40-builds')], ['Specialized builds', b('fc27-best-specializations')], ['Find any build in the app →', 'app:/explore?year=27']]],
+      ['More', [['Formations and line-ups', b('best-pro-clubs-formations')], ['Level-40 builds', b('fc27-level-40-builds')], ['Specialized builds', b('fc27-best-specializations')], ['Find any build in the app →', 'app:/explore?year=27']]],
     ] },
   { key: 'tools', label: 'Tools', blurb: 'Calculators and tables that work on the page.',
     icon: '<path d="M14 6a4 4 0 0 0-5 5l-5 5 3 3 5-5a4 4 0 0 0 5-5l-2 2-2-1-1-2z"/>',

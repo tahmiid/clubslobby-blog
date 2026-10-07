@@ -1334,6 +1334,14 @@ const POSTS = [
     meta_description: 'Run a better FC 27 Pro Clubs club: how many humans win, the squad shapes and archetype pairs that win more, club modes and rewards, and a Discord bot for your server.',
     custom_excerpt: 'What wins in FC 27 Pro Clubs, from real league matches: headcount, two humans at the back, the pairs that win together, and a home for the club on Discord.',
     tags: ['Guides', 'FC 27'] },
+  // Formations and line-ups (gen/a212-lineup.mjs, 7 Oct 2026): EA match data
+  // on where humans play + formations and tactics. Header in out/a212.meta.json.
+  { file: 'a212.html', slug: "best-pro-clubs-formations", status: 'published',
+    title: "Best FC 27 Pro Clubs Formations and Line-Ups",
+    meta_title: "Best Pro Clubs Formations in FC 27: Tactics and Line-Ups",
+    meta_description: "The best FC 27 Pro Clubs formations and custom tactics, and where to play your humans: EA match data says defence first, the keeper last.",
+    custom_excerpt: "The best formations and custom tactics for FC 27 Pro Clubs, and where your humans should play.",
+    tags: ['Guides', 'FC 27'] },
   // DRAFT, not published (gen/a209-cheapest-fc27.mjs, 2026-10-05): the owner
   // reads it first; key-seller prices are a dated snapshot.
   { file: 'a209.html', slug: 'fc27-cheapest-price-and-fc-points', status: 'draft',

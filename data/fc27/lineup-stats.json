@@ -1,0 +1,108 @@
+{
+ "computedAt": "2026-10-07T23:04:43.798Z",
+ "teams": 197396,
+ "leagueMatches": 98698,
+ "from": "2026-09-17T16:31:04.000Z",
+ "to": "2026-10-07T22:34:51.000Z",
+ "bySquadSize": [
+  {
+   "humans": 2,
+   "teams": 39394,
+   "winPct": 35.8,
+   "drawPct": 11.6,
+   "goalsFor": 2.29,
+   "goalsAgainst": 2.83
+  },
+  {
+   "humans": 3,
+   "teams": 47514,
+   "winPct": 40.4,
+   "drawPct": 12.2,
+   "goalsFor": 2.61,
+   "goalsAgainst": 2.84
+  },
+  {
+   "humans": 4,
+   "teams": 39720,
+   "winPct": 44,
+   "drawPct": 12.5,
+   "goalsFor": 2.71,
+   "goalsAgainst": 2.69
+  },
+  {
+   "humans": 5,
+   "teams": 27160,
+   "winPct": 46.6,
+   "drawPct": 12.9,
+   "goalsFor": 2.7,
+   "goalsAgainst": 2.49
+  },
+  {
+   "humans": 6,
+   "teams": 17397,
+   "winPct": 49.7,
+   "drawPct": 13.3,
+   "goalsFor": 2.66,
+   "goalsAgainst": 2.25
+  },
+  {
+   "humans": 7,
+   "teams": 9506,
+   "winPct": 51.5,
+   "drawPct": 13.3,
+   "goalsFor": 2.57,
+   "goalsAgainst": 2.03
+  },
+  {
+   "humans": 8,
+   "teams": 5792,
+   "winPct": 54.5,
+   "drawPct": 14,
+   "goalsFor": 2.45,
+   "goalsAgainst": 1.77
+  },
+  {
+   "humans": 9,
+   "teams": 3742,
+   "winPct": 55.4,
+   "drawPct": 14.9,
+   "goalsFor": 2.32,
+   "goalsAgainst": 1.52
+  },
+  {
+   "humans": 10,
+   "teams": 3288,
+   "winPct": 57.8,
+   "drawPct": 15.2,
+   "goalsFor": 2.29,
+   "goalsAgainst": 1.32
+  },
+  {
+   "humans": 11,
+   "teams": 3883,
+   "winPct": 54.4,
+   "drawPct": 17.9,
+   "goalsFor": 1.96,
+   "goalsAgainst": 1.16
+  }
+ ],
+ "humanKeeper": {
+  "winEffectPts": -2.3,
+  "winEffect90": [
+   -3,
+   -1.6
+  ],
+  "effectTeams": 20939,
+  "clear": true
+ },
+ "twoPlusHumanDefenders": {
+  "winEffectPts": 3.6,
+  "winEffect90": [
+   1.6,
+   5.7
+  ],
+  "effectTeams": 11886,
+  "clear": true
+ },
+ "humanKeeperSharePct": 12.6
+}

@@ -1,110 +1,116 @@
 {
  "v": 1,
  "gameYear": 27,
- "computedAt": "2026-10-06T05:04:20.778000+00:00",
- "teams": 147308,
- "playerGames": 650566,
+ "computedAt": "2026-10-07T23:04:43.798000+00:00",
+ "teams": 197396,
+ "playerGames": 842541,
  "archetypes": {
   "magician": {
-   "games": 120849,
-   "share": 18.6,
+   "games": 161220,
+   "share": 19.1,
    "rating": 7.29,
-   "goals90": 0.8,
-   "assists90": 0.63,
-   "shots90": 2.15,
+   "goals90": 0.81,
+   "assists90": 0.64,
+   "shots90": 2.19,
    "passPct": 78,
-   "tackles90": 1.65,
+   "tackles90": 1.64,
    "saves90": 0,
-   "motmPct": 11.4,
+   "motmPct": 11.7,
    "positions": {
-    "forward": 61,
+    "forward": 62,
     "midfielder": 38
    },
    "winEffect": null,
    "with": [
     {
-     "id": "progressor",
-     "pts": 1.2,
+     "id": "recycler",
+     "pts": 1.4,
      "clear": true,
-     "teams": 6694
+     "teams": 27575
     },
     {
-     "id": "recycler",
-     "pts": 1.1,
-     "clear": true,
-     "teams": 21888
+     "id": "progressor",
+     "pts": 1,
+     "clear": false,
+     "teams": 8313
     },
     {
      "id": "marauder",
      "pts": 1,
      "clear": true,
-     "teams": 12227
+     "teams": 15108
+    },
+    {
+     "id": "finisher",
+     "pts": 0.7,
+     "clear": true,
+     "teams": 62364
     }
    ]
   },
   "finisher": {
-   "games": 116864,
-   "share": 18,
+   "games": 153103,
+   "share": 18.2,
    "rating": 7.49,
    "goals90": 1.17,
-   "assists90": 0.61,
-   "shots90": 2.93,
+   "assists90": 0.62,
+   "shots90": 2.97,
    "passPct": 80,
-   "tackles90": 1.62,
+   "tackles90": 1.59,
    "saves90": 0,
-   "motmPct": 17,
+   "motmPct": 17.4,
    "positions": {
-    "forward": 89,
+    "forward": 90,
     "midfielder": 10
    },
    "winEffect": {
-    "pts": 2.4,
+    "pts": 2.6,
     "clear": true
    },
    "with": [
     {
      "id": "recycler",
-     "pts": 3.4,
+     "pts": 3.6,
      "clear": true,
-     "teams": 25397
+     "teams": 31703
     },
     {
      "id": "progressor",
-     "pts": 3.2,
+     "pts": 3.1,
      "clear": true,
-     "teams": 9002
+     "teams": 11095
     },
     {
      "id": "finisher",
-     "pts": 2.6,
+     "pts": 2.7,
      "clear": true,
-     "teams": 22407
+     "teams": 28380
     },
     {
      "id": "boss",
-     "pts": 2.4,
+     "pts": 2.3,
      "clear": true,
-     "teams": 17097
+     "teams": 20611
     },
     {
      "id": "marauder",
-     "pts": 1.8,
+     "pts": 2.1,
      "clear": true,
-     "teams": 14344
+     "teams": 17505
     }
    ]
   },
   "creator": {
-   "games": 85532,
-   "share": 13.1,
-   "rating": 7.35,
-   "goals90": 0.42,
+   "games": 113040,
+   "share": 13.4,
+   "rating": 7.36,
+   "goals90": 0.43,
    "assists90": 0.72,
-   "shots90": 1.34,
+   "shots90": 1.39,
    "passPct": 77,
-   "tackles90": 1.88,
+   "tackles90": 1.86,
    "saves90": 0,
-   "motmPct": 9.1,
+   "motmPct": 9.5,
    "positions": {
     "forward": 9,
     "midfielder": 90
@@ -112,62 +118,68 @@
    "winEffect": null,
    "with": [
     {
-     "id": "progressor",
-     "pts": 2,
+     "id": "recycler",
+     "pts": 1.8,
      "clear": true,
-     "teams": 6534
+     "teams": 24421
     },
     {
-     "id": "recycler",
-     "pts": 1.4,
+     "id": "progressor",
+     "pts": 1.5,
      "clear": true,
-     "teams": 19506
+     "teams": 7976
     },
     {
      "id": "finisher",
-     "pts": 0.9,
+     "pts": 1.2,
      "clear": true,
-     "teams": 45421
+     "teams": 59521
+    },
+    {
+     "id": "sweeper-keeper",
+     "pts": 0.5,
+     "clear": false,
+     "teams": 3468
     }
    ]
   },
   "spark": {
-   "games": 72289,
-   "share": 11.1,
-   "rating": 7.22,
-   "goals90": 0.66,
-   "assists90": 0.55,
-   "shots90": 1.78,
+   "games": 95578,
+   "share": 11.3,
+   "rating": 7.23,
+   "goals90": 0.67,
+   "assists90": 0.56,
+   "shots90": 1.83,
    "passPct": 77,
-   "tackles90": 1.5,
+   "tackles90": 1.49,
    "saves90": 0,
-   "motmPct": 9.5,
+   "motmPct": 9.9,
    "positions": {
-    "forward": 55,
-    "midfielder": 44,
+    "forward": 57,
+    "midfielder": 42,
     "defender": 1
    },
    "winEffect": null,
    "with": [
     {
      "id": "progressor",
-     "pts": 1.2,
-     "clear": true,
-     "teams": 5574
+     "pts": 1,
+     "clear": false,
+     "teams": 6750
     }
    ]
   },
   "maestro": {
-   "games": 53566,
-   "share": 8.2,
+   "games": 68360,
+   "share": 8.1,
    "rating": 7.36,
-   "goals90": 0.26,
+   "goals90": 0.27,
    "assists90": 0.46,
-   "shots90": 0.86,
+   "shots90": 0.9,
    "passPct": 79,
-   "tackles90": 1.91,
+   "tackles90": 1.89,
    "saves90": 0,
-   "motmPct": 9.5,
+   "motmPct": 9.8,
    "positions": {
     "forward": 6,
     "midfielder": 93,
@@ -177,100 +189,100 @@
    "with": [
     {
      "id": "progressor",
-     "pts": 2.7,
+     "pts": 2.4,
      "clear": true,
-     "teams": 5489
+     "teams": 6601
     },
     {
      "id": "recycler",
-     "pts": 2.3,
+     "pts": 1.8,
      "clear": true,
-     "teams": 12935
-    },
-    {
-     "id": "sweeper-keeper",
-     "pts": 1.6,
-     "clear": false,
-     "teams": 2517
+     "teams": 15703
     },
     {
      "id": "marauder",
-     "pts": 1.6,
+     "pts": 1.7,
      "clear": true,
-     "teams": 9216
+     "teams": 11074
+    },
+    {
+     "id": "sweeper-keeper",
+     "pts": 1.4,
+     "clear": false,
+     "teams": 2889
     },
     {
      "id": "finisher",
-     "pts": 1,
+     "pts": 1.1,
      "clear": true,
-     "teams": 28788
+     "teams": 36493
     }
    ]
   },
   "recycler": {
-   "games": 44647,
-   "share": 6.9,
+   "games": 55635,
+   "share": 6.6,
    "rating": 7.45,
    "goals90": 0.14,
-   "assists90": 0.19,
-   "shots90": 0.49,
+   "assists90": 0.2,
+   "shots90": 0.51,
    "passPct": 82,
    "tackles90": 2.01,
    "saves90": 0,
-   "motmPct": 11.6,
+   "motmPct": 12,
    "positions": {
     "forward": 2,
-    "midfielder": 89,
-    "defender": 9
+    "midfielder": 90,
+    "defender": 8
    },
    "winEffect": {
-    "pts": 2.4,
+    "pts": 2.5,
     "clear": true
    },
    "with": [
     {
      "id": "finisher",
-     "pts": 3.4,
+     "pts": 3.6,
      "clear": true,
-     "teams": 25397
+     "teams": 31703
     },
     {
      "id": "progressor",
-     "pts": 3,
+     "pts": 2.7,
      "clear": true,
-     "teams": 4840
+     "teams": 5714
     },
     {
      "id": "boss",
      "pts": 2.6,
      "clear": true,
-     "teams": 10152
+     "teams": 11954
     },
     {
      "id": "marauder",
-     "pts": 2.5,
+     "pts": 2.3,
      "clear": true,
-     "teams": 8331
+     "teams": 9910
     },
     {
      "id": "sweeper-keeper",
-     "pts": 2.3,
+     "pts": 2.2,
      "clear": true,
-     "teams": 2257
+     "teams": 2582
     }
    ]
   },
   "target": {
-   "games": 35032,
-   "share": 5.4,
+   "games": 46537,
+   "share": 5.5,
    "rating": 7.4,
    "goals90": 1.08,
    "assists90": 0.55,
-   "shots90": 3.24,
-   "passPct": 80,
-   "tackles90": 1.33,
+   "shots90": 3.28,
+   "passPct": 79,
+   "tackles90": 1.3,
    "saves90": 0,
-   "motmPct": 15.1,
+   "motmPct": 15.4,
    "positions": {
     "forward": 93,
     "midfielder": 7
@@ -279,126 +291,129 @@
    "with": [
     {
      "id": "recycler",
-     "pts": 0.8,
-     "clear": false,
-     "teams": 9032
+     "pts": 1.1,
+     "clear": true,
+     "teams": 11317
     }
    ]
   },
   "boss": {
-   "games": 33669,
-   "share": 5.2,
+   "games": 40550,
+   "share": 4.8,
    "rating": 7.22,
-   "goals90": 0.08,
+   "goals90": 0.09,
    "assists90": 0.07,
-   "shots90": 0.4,
+   "shots90": 0.42,
    "passPct": 81,
-   "tackles90": 1.49,
+   "tackles90": 1.51,
    "saves90": 0,
-   "motmPct": 7.2,
+   "motmPct": 7.5,
    "positions": {
     "forward": 2,
     "midfielder": 11,
     "defender": 87
    },
-   "winEffect": null,
+   "winEffect": {
+    "pts": 0.5,
+    "clear": false
+   },
    "with": [
     {
      "id": "recycler",
      "pts": 2.6,
      "clear": true,
-     "teams": 10152
+     "teams": 11954
     },
     {
      "id": "progressor",
      "pts": 2.4,
      "clear": true,
-     "teams": 5091
+     "teams": 5978
     },
     {
      "id": "finisher",
-     "pts": 2.4,
+     "pts": 2.3,
      "clear": true,
-     "teams": 17097
+     "teams": 20611
     },
     {
      "id": "marauder",
-     "pts": 0.9,
-     "clear": false,
-     "teams": 8001
+     "pts": 1.4,
+     "clear": true,
+     "teams": 9440
     },
     {
      "id": "maestro",
      "pts": 0.6,
      "clear": false,
-     "teams": 11130
+     "teams": 13181
     }
    ]
   },
   "marauder": {
-   "games": 27709,
-   "share": 4.3,
+   "games": 33793,
+   "share": 4,
    "rating": 7.28,
    "goals90": 0.22,
-   "assists90": 0.22,
-   "shots90": 0.62,
+   "assists90": 0.23,
+   "shots90": 0.65,
    "passPct": 79,
-   "tackles90": 1.67,
+   "tackles90": 1.68,
    "saves90": 0,
-   "motmPct": 9.3,
+   "motmPct": 9.8,
    "positions": {
-    "forward": 11,
+    "forward": 12,
     "midfielder": 38,
     "defender": 50
    },
    "winEffect": {
-    "pts": 1.2,
+    "pts": 1.3,
     "clear": true
    },
    "with": [
     {
      "id": "progressor",
-     "pts": 3.3,
+     "pts": 3.2,
      "clear": true,
-     "teams": 3997
+     "teams": 4747
     },
     {
      "id": "recycler",
-     "pts": 2.5,
+     "pts": 2.3,
      "clear": true,
-     "teams": 8331
+     "teams": 9910
     },
     {
      "id": "finisher",
-     "pts": 1.8,
+     "pts": 2.1,
      "clear": true,
-     "teams": 14344
-    },
-    {
-     "id": "maestro",
-     "pts": 1.6,
-     "clear": true,
-     "teams": 9216
+     "teams": 17505
     },
     {
      "id": "sweeper-keeper",
-     "pts": 1.3,
+     "pts": 1.8,
      "clear": false,
-     "teams": 1844
+     "teams": 2101
+    },
+    {
+     "id": "maestro",
+     "pts": 1.7,
+     "clear": true,
+     "teams": 11074
     }
    ]
   },
   "disruptor": {
-   "games": 25845,
-   "share": 4,
+   "games": 32426,
+   "share": 3.8,
    "rating": 7.39,
-   "goals90": 0.12,
+   "goals90": 0.13,
    "assists90": 0.18,
-   "shots90": 0.48,
+   "shots90": 0.51,
    "passPct": 81,
    "tackles90": 1.91,
    "saves90": 0,
-   "motmPct": 11.1,
+   "motmPct": 11.4,
    "positions": {
     "forward": 3,
     "midfielder": 85,
@@ -408,99 +423,93 @@
    "with": [
     {
      "id": "progressor",
-     "pts": 2.8,
+     "pts": 2,
      "clear": true,
-     "teams": 3015
-    },
-    {
-     "id": "finisher",
-     "pts": 0.9,
-     "clear": true,
-     "teams": 15154
+     "teams": 3573
     },
     {
      "id": "sweeper-keeper",
      "pts": 0.8,
      "clear": false,
-     "teams": 1435
+     "teams": 1633
+    },
+    {
+     "id": "finisher",
+     "pts": 0.8,
+     "clear": true,
+     "teams": 18803
     },
     {
      "id": "recycler",
-     "pts": 0.6,
-     "clear": false,
-     "teams": 6554
-    },
-    {
-     "id": "maestro",
      "pts": 0.5,
      "clear": false,
-     "teams": 7949
+     "teams": 7899
     }
    ]
   },
   "progressor": {
-   "games": 15212,
-   "share": 2.3,
-   "rating": 7.39,
+   "games": 18711,
+   "share": 2.2,
+   "rating": 7.4,
    "goals90": 0.12,
-   "assists90": 0.19,
-   "shots90": 0.44,
+   "assists90": 0.21,
+   "shots90": 0.45,
    "passPct": 80,
-   "tackles90": 1.69,
+   "tackles90": 1.71,
    "saves90": 0,
-   "motmPct": 10.6,
+   "motmPct": 10.9,
    "positions": {
     "forward": 3,
-    "midfielder": 45,
-    "defender": 52
+    "midfielder": 47,
+    "defender": 50
    },
    "winEffect": {
-    "pts": 2.8,
+    "pts": 2.5,
     "clear": true
    },
    "with": [
     {
      "id": "progressor",
-     "pts": 4.7,
+     "pts": 4.6,
      "clear": true,
-     "teams": 1699
+     "teams": 2030
     },
     {
      "id": "marauder",
-     "pts": 3.3,
-     "clear": true,
-     "teams": 3997
-    },
-    {
-     "id": "sweeper-keeper",
      "pts": 3.2,
      "clear": true,
-     "teams": 1327
+     "teams": 4747
     },
     {
      "id": "finisher",
-     "pts": 3.2,
+     "pts": 3.1,
      "clear": true,
-     "teams": 9002
+     "teams": 11095
     },
     {
      "id": "recycler",
-     "pts": 3,
+     "pts": 2.7,
      "clear": true,
-     "teams": 4840
+     "teams": 5714
+    },
+    {
+     "id": "sweeper-keeper",
+     "pts": 2.6,
+     "clear": false,
+     "teams": 1486
     }
    ]
   },
   "shot-stopper": {
-   "games": 13492,
-   "share": 2.1,
-   "rating": 5.76,
+   "games": 16681,
+   "share": 2,
+   "rating": 5.75,
    "goals90": 0.01,
    "assists90": 0,
    "shots90": 0.05,
-   "passPct": 78,
+   "passPct": 77,
    "tackles90": 0.02,
-   "saves90": 4.27,
+   "saves90": 4.33,
    "motmPct": 1.8,
    "positions": {
     "goalkeeper": 99
@@ -509,52 +518,53 @@
    "with": []
   },
   "sweeper-keeper": {
-   "games": 5803,
-   "share": 0.9,
-   "rating": 5.8,
+   "games": 6840,
+   "share": 0.8,
+   "rating": 5.79,
    "goals90": 0.02,
    "assists90": 0.01,
    "shots90": 0.07,
    "passPct": 78,
    "tackles90": 0.04,
-   "saves90": 4.1,
-   "motmPct": 1.7,
+   "saves90": 4.12,
+   "motmPct": 1.8,
    "positions": {
     "forward": 1,
     "midfielder": 1,
+    "defender": 1,
     "goalkeeper": 98
    },
    "winEffect": null,
    "with": [
     {
      "id": "progressor",
-     "pts": 3.2,
-     "clear": true,
-     "teams": 1327
+     "pts": 2.6,
+     "clear": false,
+     "teams": 1486
     },
     {
      "id": "recycler",
-     "pts": 2.3,
+     "pts": 2.2,
      "clear": true,
-     "teams": 2257
-    },
-    {
-     "id": "maestro",
-     "pts": 1.6,
-     "clear": false,
-     "teams": 2517
+     "teams": 2582
     },
     {
      "id": "marauder",
-     "pts": 1.3,
+     "pts": 1.8,
      "clear": false,
-     "teams": 1844
+     "teams": 2101
+    },
+    {
+     "id": "maestro",
+     "pts": 1.4,
+     "clear": false,
+     "teams": 2889
     },
     {
      "id": "disruptor",
      "pts": 0.8,
      "clear": false,
-     "teams": 1435
+     "teams": 1633
     }
    ]
   }

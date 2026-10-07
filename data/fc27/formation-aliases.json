@@ -1,0 +1,322 @@
+[
+ {
+  "descriptive_name": "4-1-2-1-2 Wide",
+  "numbered_name": "4-1-2-1-2",
+  "ea_formation_id": 14,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "RM",
+   "LM",
+   "CAM",
+   "ST",
+   "ST"
+  ],
+  "evidence": "wide: carries RM + LM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-1-2-1-2 Narrow",
+  "numbered_name": "4-1-2-1-2 (2)",
+  "ea_formation_id": 15,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CM",
+   "CM",
+   "CAM",
+   "ST",
+   "ST"
+  ],
+  "evidence": "narrow: the wide pair becomes central CM + CM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-2-3-1 Narrow",
+  "numbered_name": "4-2-3-1",
+  "ea_formation_id": 3,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CDM",
+   "CAM",
+   "CAM",
+   "CAM",
+   "ST"
+  ],
+  "evidence": "narrow: the band behind the striker is three central CAMs",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-2-3-1 Wide",
+  "numbered_name": "4-2-3-1 (2)",
+  "ea_formation_id": 4,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CDM",
+   "RM",
+   "LM",
+   "CAM",
+   "ST"
+  ],
+  "evidence": "wide: that band becomes RM + LM + CAM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-3-3 Flat",
+  "numbered_name": "4-3-3",
+  "ea_formation_id": 8,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CM",
+   "CM",
+   "CM",
+   "RW",
+   "ST",
+   "LW"
+  ],
+  "evidence": "flat: midfield three sit in line as CM + CM + CM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-3-3 Holding",
+  "numbered_name": "4-3-3 (2)",
+  "ea_formation_id": 9,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CM",
+   "CM",
+   "RW",
+   "ST",
+   "LW"
+  ],
+  "evidence": "holding: one CDM anchors behind two CMs",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-3-3 Defend",
+  "numbered_name": "4-3-3 (3)",
+  "ea_formation_id": 10,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CDM",
+   "CM",
+   "RW",
+   "ST",
+   "LW"
+  ],
+  "evidence": "defend: two CDMs shield, leaving one CM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-3-3 Attack",
+  "numbered_name": "4-3-3 (4)",
+  "ea_formation_id": 11,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CM",
+   "CM",
+   "CAM",
+   "RW",
+   "ST",
+   "LW"
+  ],
+  "evidence": "attack: the deepest midfielder is pushed to CAM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-4-1-1 Midfield",
+  "numbered_name": "4-4-1-1",
+  "ea_formation_id": 18,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "RM",
+   "CM",
+   "CM",
+   "LM",
+   "CAM",
+   "ST"
+  ],
+  "evidence": "only one 4-4-1-1 shape exists in the data",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-4-2 Flat",
+  "numbered_name": "4-4-2",
+  "ea_formation_id": 16,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "RM",
+   "CM",
+   "CM",
+   "LM",
+   "ST",
+   "ST"
+  ],
+  "evidence": "flat: RM + CM + CM + LM in line",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-4-2 Holding",
+  "numbered_name": "4-4-2 (2)",
+  "ea_formation_id": 17,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CDM",
+   "RM",
+   "LM",
+   "ST",
+   "ST"
+  ],
+  "evidence": "holding: the central pair drops to CDM + CDM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-5-1 Attack",
+  "numbered_name": "4-5-1",
+  "ea_formation_id": 21,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "RM",
+   "CM",
+   "LM",
+   "CAM",
+   "CAM",
+   "ST"
+  ],
+  "evidence": "attack: two of the five push up to CAM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "4-5-1 Flat",
+  "numbered_name": "4-5-1 (2)",
+  "ea_formation_id": 20,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "LB",
+   "RM",
+   "CM",
+   "CM",
+   "CM",
+   "LM",
+   "ST"
+  ],
+  "evidence": "flat: three CMs across the middle, no CAM",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "3-4-3 Flat",
+  "numbered_name": "3-4-3",
+  "ea_formation_id": 25,
+  "general_position_codes": [
+   "GK",
+   "CB",
+   "CB",
+   "CB",
+   "RM",
+   "CM",
+   "CM",
+   "LM",
+   "RW",
+   "ST",
+   "LW"
+  ],
+  "evidence": "only one 3-4-3 shape exists in the data",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "5-3-2 Holding",
+  "numbered_name": "5-3-2",
+  "ea_formation_id": 31,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "CB",
+   "LB",
+   "CDM",
+   "CM",
+   "CM",
+   "ST",
+   "ST"
+  ],
+  "evidence": "only one 5-3-2 shape exists in the data",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ },
+ {
+  "descriptive_name": "5-4-1 Flat",
+  "numbered_name": "5-4-1",
+  "ea_formation_id": 33,
+  "general_position_codes": [
+   "GK",
+   "RB",
+   "CB",
+   "CB",
+   "CB",
+   "LB",
+   "RM",
+   "CM",
+   "CM",
+   "LM",
+   "ST"
+  ],
+  "evidence": "only one 5-4-1 shape exists in the data",
+  "confidence": "HIGH \u2014 slot composition matches the descriptive name"
+ }
+]
