@@ -164,3 +164,10 @@ a.pq-gp b{font-size:16px;font-weight:700}
   .ph-azl{columns:1}
 }
 .pq-mh .pq-all{margin-left:auto;font:800 13px/1.4 Manrope,system-ui,sans-serif;color:#2DE2C5;text-decoration:none;white-space:nowrap}
+/* the app bar sticks until closed (owner, 7 Oct 2026); --pq-bar-h is set by pchq-nav.js */
+.pq-appbar{position:sticky;top:0;z-index:970}
+.pq-head{top:var(--pq-bar-h,0px)}
+.pq-menu{top:calc(59px + var(--pq-bar-h,0px))}
+html{scroll-padding-top:var(--pq-bar-h,0px)}
+@media(max-width:760px){.pq-menu{top:auto}}
+@media(min-width:761px){.pq-appbar{justify-content:center}.pq-appbar-tx{flex:0 1 auto}}

@@ -155,24 +155,26 @@
         + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg>';
     var bar = document.createElement('div');
     var x = '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
-    if (android) {
-        bar.className = 'pq-appbar';
-        bar.innerHTML = '<span class="pq-appbar-ic">' + PLAY + '</span>'
-            + '<span class="pq-appbar-tx"><b>Better in the app</b><span>Full screen, one tap from your home screen</span></span>'
-            + '<a class="pq-appbar-get" href="' + href + '" rel="noopener">Get</a>' + x;
-    } else {
-        bar.className = 'pq-appbar pq-appbar-desk';
-        bar.innerHTML = '<span>Pro Clubs HQ is now on Android. Send it to your phone:</span>'
-            + '<a class="pq-gp" href="' + href + '" target="_blank" rel="noopener">' + PLAY
-            + '<span><small>Get it on</small><b>Google Play</b></span></a>' + x;
-    }
+    // One design everywhere (owner, 7 Oct 2026: the phone bar performs far
+    // better than the old desktop strip). The beacons and utm_medium still say
+    // which device it was shown on.
+    bar.className = 'pq-appbar';
+    bar.innerHTML = '<span class="pq-appbar-ic">' + PLAY + '</span>'
+        + '<span class="pq-appbar-tx"><b>Better in the app</b><span>Full screen, one tap from your home screen</span></span>'
+        + '<a class="pq-appbar-get" href="' + href + '" target="_blank" rel="noopener">Get</a>' + x;
     bar.querySelector('a').addEventListener('click', function () { evt('tap'); });
     bar.querySelector('.pq-appbar-x').addEventListener('click', function () {
         evt('close');
         bar.remove();
+        setH();
         try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 36e5)); } catch (e) {}
     });
     document.body.insertBefore(bar, document.body.firstChild);
+    // Sticky until closed, like the app's bar (owner, 7 Oct 2026). Its height
+    // goes in --pq-bar-h so the desktop header and menus sit under it.
+    function setH() { document.documentElement.style.setProperty('--pq-bar-h', (bar.isConnected ? bar.offsetHeight : 0) + 'px'); }
+    setH();
+    window.addEventListener('resize', setH);
     evt('shown');
 })();
 
