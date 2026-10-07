@@ -95,6 +95,17 @@ const buildUrl = (m, dest, tagKey = 'default') => {
     }
     return `${m.store}/dp/${dest}?tag=${tag}`;
   }
+  if (m.network === 'impact') {
+    // Impact's Regular link (Create-a-link panel, 2026-10-07) wraps the
+    // destination in `u=`. The placement key rides in subId1, which Impact
+    // reports per value — the per-placement split Amazon's tags gave us.
+    const i = m.impact || {};
+    if (!i.mpid || !i.adid || !i.campaign) {
+      throw new Error(`affiliate: ${m.label} is an Impact programme missing mpid/adid/campaign`);
+    }
+    return `https://${i.host}/c/${i.mpid}/${i.adid}/${i.campaign}`
+         + `?subId1=${encodeURIComponent(tagKey)}&u=${encodeURIComponent(dest || m.store)}`;
+  }
   throw new Error(`affiliate: unknown network "${m.network}"`);
 };
 
@@ -217,6 +228,14 @@ export const affiliateSection = (opts) => {
   const html = affiliateBlock(opts);
   return html ? `\n\n${html}` : '';
 };
+
+// FC Points (owner, 2026-10-07): Points buy AMPs and XP boosts, so this block
+// sits on the pages where readers are spending AP and planning builds — AP
+// costs, PlayStyle requirements, the build guides. One helper so every page
+// says the same thing and the products change in one place.
+export const pointsSection = (tag = 'points') => affiliateSection({
+  heading: 'FC Points for AMPs and XP boosts', layout: 'rows', tag,
+  items: ['fc27-points-xbox', 'fc27-points-pc', 'fc27-points-all'] });
 
 // Small helper for the status line in `ops/affiliate-check.mjs` and for humans.
 export const merchantStatus = () => Object.entries(MERCHANTS)

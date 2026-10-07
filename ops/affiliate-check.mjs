@@ -20,7 +20,7 @@ const files = process.argv.slice(2).length
   ? process.argv.slice(2)
   : readdirSync('out').filter((f) => f.endsWith('.html')).map((f) => join('out', f));
 
-const AFF_HREF = /awin1\.com\/cread\.php|[?&]tag=[A-Za-z0-9-]+/;
+const AFF_HREF = /awin1\.com\/cread\.php|[?&]tag=[A-Za-z0-9-]+|go\.loaded\.com\/c\//;
 const fails = [];
 
 for (const f of files) {
@@ -53,7 +53,7 @@ for (const f of files) {
   //    on a site that lives entirely on rankings risks the ranking, not just
   //    the commission.
   if (hasLink) {
-    for (const m of html.matchAll(/<a\b[^>]*awin1\.com[^>]*>|<a\b[^>]*[?&]tag=[^>]*>/g)) {
+    for (const m of html.matchAll(/<a\b[^>]*awin1\.com[^>]*>|<a\b[^>]*[?&]tag=[^>]*>|<a\b[^>]*go\.loaded\.com[^>]*>/g)) {
       if (!/rel="[^"]*sponsored/.test(m[0])) {
         fails.push(`${f}: affiliate <a> without rel="sponsored"`);
       }

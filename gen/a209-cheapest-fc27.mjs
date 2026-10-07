@@ -22,7 +22,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { kg, esc, appLinks, updatedLine } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 
 const CHECKED = '2026-10-05';
@@ -75,7 +75,7 @@ ${appLinks({ kicker: 'Before you spend', head: 'Plan the build first', body: 'Se
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${kg(`<script type="application/ld+json">\n${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }, null, 1).replace(/</g, '\\u003c')}\n</script>`)}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('cheapest')}
 
 ${AD_C}`;
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a209.html'), html);

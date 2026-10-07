@@ -68,10 +68,14 @@ t('amazon builds a /dp/ASIN link, never a search URL', () => {
 });
 
 console.log('\n4. the product catalogue');
-t('every product resolves to a known merchant and a plausible ASIN', () => {
+t('every product resolves to a known merchant and a plausible destination', () => {
   for (const [k, p] of Object.entries(PRODUCTS)) {
     assert(MERCHANTS[p.merchant], `${k}: unknown merchant ${p.merchant}`);
-    assert(/^B0[A-Z0-9]{8}$/.test(p.dest), `${k}: "${p.dest}" is not an ASIN`);
+    if (MERCHANTS[p.merchant].network === 'amazon') {
+      assert(/^B0[A-Z0-9]{8}$/.test(p.dest), `${k}: "${p.dest}" is not an ASIN`);
+    } else {
+      assert(p.dest.startsWith(MERCHANTS[p.merchant].store + '/'), `${k}: "${p.dest}" is not on ${MERCHANTS[p.merchant].store}`);
+    }
     assert(MERCHANTS[p.merchant].sells.includes(p.kind), `${k}: ${p.merchant} cannot sell ${p.kind}`);
     assert(p.label && p.label.length > 3, `${k}: no label`);
     assert(!/[£$€]\s*\d/.test(p.label), `${k}: label quotes a PRICE — against Amazon's terms`);
@@ -85,11 +89,19 @@ t('a block can be built from product keys', () => {
   assert(!/crid=|dib=|qid=|ref_=/.test(out), 'SiteStripe search cruft leaked into the link');
   MERCHANTS['amazon-us'].status = 'pending';
 });
-t('the three FC 27 SKUs are all routable now that amazon sells games', () => {
-  MERCHANTS['amazon-us'].status = 'live';
-  const out = affiliateBlock({ heading: 'Pre-order', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
-  for (const a of ['B0H9SYK5Q7', 'B0H9T7MTYK', 'B0H73HPJ1H']) assert(out.includes(a), `${a} missing`);
-  MERCHANTS['amazon-us'].status = 'pending';
+t('the three FC 27 cards route through Loaded (Impact) with a deep link and placement', () => {
+  const out = affiliateBlock({ heading: 'Get FC 27', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'], tag: 'fc27' });
+  const hrefs = [...out.matchAll(/href="([^"]+)"/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+  assert(hrefs.length >= 3, 'links missing');
+  for (const h of hrefs) {
+    assert(h.startsWith('https://go.loaded.com/c/7907246/1566025/18216?subId1=fc27&u=https%3A%2F%2Fwww.loaded.com%2F'), `bad loaded link ${h}`);
+  }
+  assert(hrefs.some((h) => h.includes('ea-sports-fc-27-standard-edition-pc-ea-app')), 'pc key missing');
+});
+t('an Impact programme missing its ids throws', () => {
+  const keep = MERCHANTS.loaded.impact; MERCHANTS.loaded.impact = {};
+  throws(() => affiliateBlock({ items: ['fc27-pc'] }), /missing mpid/, 'missing impact ids');
+  MERCHANTS.loaded.impact = keep;
 });
 t('an unknown product key throws', () => {
   throws(() => affiliateBlock({ items: ['nope-not-a-product'] }), /no product "nope/, 'unknown key');
@@ -98,8 +110,8 @@ t('an unknown product key throws', () => {
 console.log('\n5. per-placement tracking ids and banner art');
 t('each placement tag produces its own Amazon id', () => {
   MERCHANTS['amazon-us'].status = 'live';
-  const bg = affiliateBlock({ items: ['fc27-ps5'], tag: 'buildguide' });
-  const f7 = affiliateBlock({ items: ['fc27-ps5'], tag: 'fc27' });
+  const bg = affiliateBlock({ items: ['controller-ps5'], tag: 'buildguide' });
+  const f7 = affiliateBlock({ items: ['controller-ps5'], tag: 'fc27' });
   assert(bg.includes('tag=proclubshq-buildguide-20'), 'buildguide id missing');
   assert(f7.includes('tag=proclubshq-fc27-20'), 'fc27 id missing');
   assert(!bg.includes('tag=proclubshq-20"'), 'buildguide fell back to default');
@@ -107,7 +119,7 @@ t('each placement tag produces its own Amazon id', () => {
 });
 t('an unknown tag key THROWS rather than falling back', () => {
   MERCHANTS['amazon-us'].status = 'live';
-  throws(() => affiliateBlock({ items: ['fc27-ps5'], tag: 'typo' }),
+  throws(() => affiliateBlock({ items: ['controller-ps5'], tag: 'typo' }),
     /no tracking id "typo"/, 'silent fallback would lose the attribution');
   MERCHANTS['amazon-us'].status = 'pending';
 });

@@ -10,7 +10,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, appCta, archIcon, updatedLine, SITE } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, FC27_PROG, buildGrid } from './fc27grid.mjs';
 import { positionsNav } from './positions-nav.mjs';
 
@@ -63,7 +63,7 @@ ${appCta({
 <h3>Can I copy a build and change it?</h3>
 <p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Get EA SPORTS FC 27',
   layout: 'cards', cta: 'Pre-order \u2192', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('builds')}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a65.html'), html);
 console.log('a65: fc27 level 40 hub | builds', FC27_BUILDS.length, '| bytes', html.length);

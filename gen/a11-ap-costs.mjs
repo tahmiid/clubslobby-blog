@@ -26,7 +26,7 @@ import path from 'node:path';
 import { CATS, esc, kg, appCta } from './common.mjs';
 import { FC27_ARCH } from './fc27grid.mjs';
 import { cardsGrid } from './mostcopied.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import {
   model, attrName, archName, specName, pageOf, statsCss, bandsWidget, bandCost, stat, ROLE_BUILDS,
@@ -311,7 +311,7 @@ ${appCta({
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
 ${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('ap-costs')}
 
 ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
 

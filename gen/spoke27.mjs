@@ -27,7 +27,7 @@ import path from 'node:path';
 import { SITE, CATS, esc, kg, appCta, updatedLine } from './common.mjs';
 import { cardsGrid } from './mostcopied.mjs';
 import { psName, psImg } from './fc27grid.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { itemListLd } from './jsonld.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import {
@@ -227,7 +227,7 @@ ${faq.map(([q, ans]) => `<h3>${esc(q)}</h3>\n<p>${esc(ans)}</p>`).join('\n')}
 ${faqLd}
 ${listLd}
 ${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide',
-    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('buildguide')}
 
 ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
 

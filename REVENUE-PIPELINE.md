@@ -46,7 +46,7 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 |---|---|---|---|
 | Amazon | Amazon | **Live** since 2026-08-20 | — |
 | CDKeys US/UK | Awin | Applied 2026-08-19, pending | Check Awin |
-| Loaded (CDKeys renamed) | Impact | Applied 2026-10-05 (site verified by meta tag, 33d972d), pending; 2–5% | Watch Impact → Invitations / Brands; on approval add Impact support to `gen/affiliate.mjs` |
+| Loaded (CDKeys renamed) | Impact | **Approved 2026-10-07**; built into every FC 27 card + new FC Points block (merchant `loaded`, Impact program 18216); 2–5% | Pages regenerated locally, **not yet published** (needs the owner's go to run publish-prod); then read Impact reports by subId1 |
 | Eneba | own program | Account created 2026-10-05; application state unknown | Check the affiliate dashboard; ~5%, 30-day cookie |
 | Fanatical | Awin | Applied 2026-08-19, pending | Check Awin |
 

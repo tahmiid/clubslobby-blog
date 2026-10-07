@@ -704,6 +704,9 @@ node ops/affiliate-test.mjs                                       # after editin
   also matches Amazon paying badly on games and better on electronics.
 - **`sells` is enforced at generation.** Routing an accessory to a key seller
   throws rather than quietly earning 1%.
+- **Loaded (Impact) is the live merchant since 2026-10-07; Amazon is `paused`** (owner: no sales; account kept). Impact links are
+  `go.loaded.com/c/7907246/1566025/18216?subId1=<placement>&u=<loaded url>`; ids live in the merchant row.
+  `pointsSection(tag)` adds the FC Points block (AP costs, PlayStyles, build pages, cheapest-FC27).
 - Tracking ids (`awinaffid=3047467`, `tag=proclubshq-20`) are in
   `gen/affiliate.mjs` and are **not secrets** — they appear in every public
   affiliate link, exactly as the AdSense publisher id sits in

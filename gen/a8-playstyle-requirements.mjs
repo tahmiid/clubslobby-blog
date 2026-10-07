@@ -45,7 +45,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, title } from './common.mjs';
 import { FC27_ARCH, FC27_PS, FC27_PROG, psImg } from './fc27grid.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import {
   model, attrName, pageOf, statsCss, HUB, TK, BANDS, BUDGET, CAP_LEVEL, COST_JS, dayLabel,
@@ -511,7 +511,7 @@ ${appCta({
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
 ${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('playstyles')}
 
 ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
 

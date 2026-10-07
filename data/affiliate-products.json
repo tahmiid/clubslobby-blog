@@ -53,34 +53,64 @@
    "short": "KontrolFreek thumbsticks"
   },
   "fc27-ps5": {
-   "merchant": "amazon-us",
-   "dest": "B0H9SYK5Q7",
-   "kind": "game",
-   "label": "EA SPORTS FC 27 — PlayStation 5 disc",
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/playstation/gift-cards",
+   "kind": "key",
+   "label": "PlayStation Store gift card — buy FC 27 on PS5",
    "platform": "ps5",
-   "note": "PERMANENT on Amazon: CDKeys and Fanatical sell keys only, so a disc buyer has no other route. Pre-order converts at click time, which sidesteps the 24h cookie.",
+   "note": "Loaded sells no FC 27 PlayStation key (checked 2026-10-07), so PS5 readers get PS Store credit. Was the Amazon disc until 2026-10-07.",
    "badge": "PS5",
-   "short": "PlayStation 5"
+   "short": "PS Store credit"
   },
   "fc27-xbox": {
-   "merchant": "amazon-us",
-   "dest": "B0H9T7MTYK",
-   "kind": "game",
-   "label": "EA SPORTS FC 27 — Xbox Series X disc",
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/ea-sports-fc-27-standard-edition-xbox-one-xbox-series-x-s-ww",
+   "kind": "key",
+   "label": "EA SPORTS FC 27 Standard Edition — Xbox key",
    "platform": "xbox",
-   "note": "PERMANENT on Amazon, same reason as the PS5 disc.",
+   "note": "Loaded, verified on loaded.com 2026-10-07. Was the Amazon disc until 2026-10-07.",
    "badge": "XBOX",
-   "short": "Xbox Series X"
+   "short": "Xbox key"
   },
   "fc27-pc": {
-   "merchant": "amazon-us",
-   "dest": "B0H73HPJ1H",
-   "kind": "game",
-   "label": "EA SPORTS FC 27 — PC (EA App) digital",
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/ea-sports-fc-27-standard-edition-pc-ea-app",
+   "kind": "key",
+   "label": "EA SPORTS FC 27 Standard Edition — PC (EA App) key",
    "platform": "pc",
-   "note": "STOPGAP. Digital competes head-on with CDKeys/Fanatical at 3-8% against Amazon's ~1%. MOVE THIS to a key seller the day one of them approves. No disc edition exists for PC (owner, 2026-08-19).",
+   "note": "Loaded, verified on loaded.com 2026-10-07.",
    "badge": "PC",
-   "short": "PC (EA App)"
+   "short": "PC key (EA App)"
+  },
+  "fc27-points-xbox": {
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/ea-sports-fc-27-fc-points-2800-xbox-ww",
+   "kind": "points",
+   "label": "EA SPORTS FC 27 — 2800 FC Points, Xbox",
+   "platform": "xbox",
+   "badge": "XBOX",
+   "short": "2800 FC Points",
+   "note": "Loaded, verified 2026-10-07; other sizes 1050/5900/12000/18500 exist."
+  },
+  "fc27-points-pc": {
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/ea-sports-fc-27-fc-points-2800-pc-ea-app",
+   "kind": "points",
+   "label": "EA SPORTS FC 27 — 2800 FC Points, PC (EA App)",
+   "platform": "pc",
+   "badge": "PC",
+   "short": "2800 FC Points",
+   "note": "Loaded, verified 2026-10-07."
+  },
+  "fc27-points-all": {
+   "merchant": "loaded",
+   "dest": "https://www.loaded.com/gift-cards/ea-fc-points",
+   "kind": "points",
+   "label": "All EA FC Points cards at Loaded",
+   "platform": "all",
+   "badge": "ALL",
+   "short": "Every FC Points size",
+   "note": "Loaded category page, verified 2026-10-07."
   }
  }
 }

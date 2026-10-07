@@ -39,7 +39,7 @@ import { SITE, BRAND, ATTRS, esc, kg, ghostId, appCta, updatedLine } from './com
 import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
 import { FC27_ARCH, FC27_PROG, psName, psImg } from './fc27grid.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, pointsSection } from './affiliate.mjs';
 import { itemListLd } from './jsonld.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { PAGES, pageOf, positionsNav } from './positions-nav.mjs';
@@ -403,7 +403,7 @@ ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
 ${listLd}
 ${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('builds')}
 
 ${AD_C}`;
 
