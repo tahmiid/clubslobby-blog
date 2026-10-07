@@ -32,6 +32,7 @@ import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss } from './fc27grid.mjs';
 import { archOf, archTitle, mostCopiedGrid } from './mostcopied.mjs';
 import { hrefForAction } from './howto-index.mjs';
+import { PROFILES } from './player-profiles.mjs';
 
 const DIR = path.join(import.meta.dirname, '..', 'data');
 const BLOG = `${SITE}/blog`;
@@ -343,6 +344,11 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
 <p><strong>Is it free?</strong> Yes, and there is nothing to install: ${BRAND} runs in the browser.</p>
 </div>`);
 
+  const prof = PROFILES[cfg.slug];
+  if (!prof) throw new Error(`${cfg.slug}: no entry in gen/player-profiles.mjs`);
+  const profile = kg(`<div class="${P}"><h2 id="how-he-plays">How ${esc(first)} plays, and what the build copies</h2>
+${prof.map((t) => `<p>${esc(t)}</p>`).join("\n")}</div>`);
+
   const grid = mostCopiedGrid(P, leadYear, {
     exclude: new Set([lead?.id, other?.id].filter(Boolean)), excludeName: first, level: 'h3',
   });
@@ -361,6 +367,9 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
     // CTA, never above - is satisfied because the section ends with one.
     affHere('afterLead'),
     AD_A,
+    // The page's unique writing (2026-10-07, gen/player-profiles.mjs): after
+    // the build, so nothing sits before it.
+    profile,
     B ? kg(`<div class="${P}"><hr></div>`) : '',
     section(B, otherYear, `fc${otherYear}`),
     // B sits on the boundary between the two release sections; C closes the
