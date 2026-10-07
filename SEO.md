@@ -746,3 +746,12 @@ GameSpot). Do not write more player articles or levelling explainers.
   Reverted in `a538c25` (titles and sentence descriptions, roster + out/a18x.meta.json).
 - Second suspect: the 29 Sep single-position pages (cdm/cm/cam/cb/fullback) took the
   role queries from the hubs at worse positions (CDM page ~7–11). Re-read GSC ~14 Oct.
+- **Player pages were templated copies** (7 Oct): URL Inspection showed 24 of 35
+  not indexed (17 "unknown to Google", 6 "discovered - not indexed") although the
+  sitemap was read 2 Oct. About 70% of each page's text lines were shared with every
+  other player page. Fix: a per-player "How he plays" section (`gen/player-profiles.mjs`,
+  required by the generator; `3c776fa`). **Rule: a templated page family needs a
+  section that is genuinely about its subject, or Google skips most of it.**
+  Re-inspect the 24 around 14 Oct; request indexing for them in the daily routine.
+- Grounds explainer retitled 7 Oct: "Is Pro Clubs in FC 27? Yes, It's Called Clubs
+  Now" (`912ac0c`).
