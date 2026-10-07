@@ -95,8 +95,8 @@ const POSTS = [
 
   { file: 'a5.html', slug: 'fc27-the-grounds-pro-clubs-explained', status: 'published',
     title: 'Where Is Pro Clubs in FC 27? The Shortcut',
-    meta_title: 'Where Is Pro Clubs in FC 27? The Shortcut',
-    meta_description: 'Pro Clubs · FC 27 · Shortcut: R2 → Club → Go to Club · The Grounds · Clubhouse · Leagues · Playoffs · Club Tournaments',
+    meta_title: "Is Pro Clubs in FC 27? Yes, It's Called Clubs Now",
+    meta_description: "Yes, Pro Clubs is in FC 27. It is called Clubs and sits inside The Grounds. The fastest way in: R2 (RT on Xbox), Club tab, Go to Club.",
     custom_excerpt: 'Yes, Pro Clubs is in FC 27, inside The Grounds. The fastest way in: R2, Club tab, Go to Club.',
     tags: ['News', 'FC 27'] },
 
