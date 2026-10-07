@@ -55,7 +55,7 @@ import { homedir } from 'node:os';
 import path from 'node:path';
 import { SITE, CATS, ATTRS, esc, kg, appCta, updatedLine } from './common.mjs';
 import { psName, psImg, FC27_ARCH, FC27_PROG } from './fc27grid.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine, pointsSection } from './affiliate.mjs';
 import { itemListLd } from './jsonld.mjs';
 import { AD_A, AD_B, AD_C } from './ads.mjs';
 import {
@@ -498,6 +498,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
     AD_B,
     prices,
     calc,
+    pointsSection('cheatsheet').trim(),
     make,
     specsCard,
     about,
@@ -517,7 +518,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
     listLd,
     keep,
     updatedLine(UPDATED, 'now a cheat sheet'),
-    affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] }),
+    gameLine('buildguide'),
     AD_C,
     kg(`<script type="application/json" id="cs-data">${JSON.stringify(D).replace(/</g, '\\u003c')}</script>
 <script>(function(){

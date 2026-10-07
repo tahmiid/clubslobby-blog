@@ -45,7 +45,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, title } from './common.mjs';
 import { FC27_ARCH, FC27_PS, FC27_PROG, psImg } from './fc27grid.mjs';
-import { affiliateSection, pointsSection } from './affiliate.mjs';
+import { affiliateSection, gameLine, pointsSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import {
   model, attrName, pageOf, statsCss, HUB, TK, BANDS, BUDGET, CAP_LEVEL, COST_JS, dayLabel,
@@ -485,6 +485,8 @@ ${archTable()}
 
 ${AD_A}
 
+${pointsSection('playstyles')}
+
 <h2 id="out-of-reach">The PlayStyles some outfield archetypes cannot reach</h2>
 <p>A cap is the highest an attribute can go on that archetype, so no amount of AP gets past it. Among outfield archetypes, only ${words(outfieldMiss.length)} PlayStyles are out of anyone’s reach, and ${BLOCK.length > 1 ? `${words(BLOCK.length)} caps explain all of them` : 'one cap explains all of them'}:</p>
 <ul>
@@ -510,8 +512,7 @@ ${appCta({
 <h2 id="faq">Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('playstyles')}
+${gameLine('fc27')}
 
 ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
 

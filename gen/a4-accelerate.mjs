@@ -22,7 +22,7 @@ import path from 'node:path';
 import { esc, kg, appCta, appLinks } from './common.mjs';
 import { cardsGrid, topAttrsLine } from './mostcopied.mjs';
 import { planeChecker, PLANE_CHECKS } from './bodyplane.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { statsCss, dayLabel, stat, ROLE_BUILDS, BUDGET, CAP_LEVEL, list, fmt, words, Words, assert } from './archetype-stats.mjs';
 import {
@@ -340,8 +340,7 @@ ${appCta({
   label: 'Open the builder',
 })}
 
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${gameLine('fc27')}
 
 ${AD_C}`;
 

@@ -41,7 +41,7 @@ import { CATS, SITE, esc, kg, appLinks, archIcon } from './common.mjs';
 import { FC27_ARCH, psName, psImg } from './fc27grid.mjs';
 import { ft } from './spoke.mjs';
 import { cardsGrid } from './mostcopied.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import {
@@ -553,8 +553,7 @@ ${fc27Rail(R.slug)}
 <h2 id="faq">Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-    items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${gameLine('fc27')}
 
 ${AD_C}`.replace(/(Acc|Pos)\.\.(?=[\s<])/g, '$1.');
 

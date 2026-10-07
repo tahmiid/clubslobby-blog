@@ -144,7 +144,7 @@ export const DISCLOSURE =
 // Returns '' when no item's merchant is live — the article then contains no
 // affiliate markup whatsoever, which is why this can ship before any approval.
 export const affiliateBlock = ({ heading, items, image, tag = 'default',
-                                 layout = 'rows', cta = 'View \u2192' }) => {
+                                 layout = 'rows', cta = 'View \u2192', sub = '' }) => {
   const live = [];
   for (const raw of items) {
     // A string is a key into PRODUCTS; an object is a one-off item.
@@ -175,6 +175,49 @@ export const affiliateBlock = ({ heading, items, image, tag = 'default',
   // side. `rows`: three differently-named products need the width for their
   // names. Both collapse to a stack under 560px, which is where 80% of the
   // traffic is, so on mobile they converge.
+  // `line` (owner, 2026-10-07): one sentence of links at the end of a page.
+  // Most readers own the game by now, so it is a reminder, not a card.
+  if (layout === 'line') {
+    return kg(`<div class="pchq-aff pchq-affline" data-aff="1">
+<style>.pchq-affline{margin:2em 0;padding:12px 16px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(12,12,20,.6);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:#c9ccd4}
+.pchq-affline .disc{margin:0 0 4px;font-size:12.5px;color:#8b909c}.pchq-affline p{margin:0}
+.pchq-affline a{color:#2DE2C5;font-weight:700;text-decoration:none}.pchq-affline a:hover{text-decoration:underline}</style>
+<p class="disc">${esc(DISCLOSURE)}</p>
+<p>${heading ? `${esc(heading)}: ` : ''}${live.map((it) => A(it, 'affl', esc(it.short || it.label))).join(' \u00b7 ')}</p>
+</div>`);
+  }
+
+  // `packs` (owner, 2026-10-07): the FC Points card. The pack art is what
+  // a player recognises, so each tile leads with it; items without `img`
+  // become a text link under the tiles.
+  if (layout === 'packs') {
+    const tiles = live.filter((it) => it.img), more = live.filter((it) => !it.img);
+    return kg(`<div class="pchq-aff pchq-packs" data-aff="1">
+<style>.pchq-packs{margin:2em 0;padding:18px 20px;border:1px solid rgba(45,226,197,.35);border-radius:14px;background:linear-gradient(160deg,rgba(45,226,197,.08),rgba(12,12,20,.9) 55%)}
+.pchq-packs .disc{margin:0 0 10px;font:400 12.5px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:#8b909c}
+.pchq-packs h3{margin:0 0 4px;font:800 19px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f2f3f7}
+.pchq-packs .sub{margin:0 0 14px;font:400 14.5px/1.45 system-ui,-apple-system,sans-serif;color:#b8bcc6}
+.pchq-packs .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pchq-packs .tile{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03);text-decoration:none}
+.pchq-packs .tile:hover{border-color:rgba(45,226,197,.6);background:rgba(45,226,197,.08)}
+.pchq-packs .tile img{flex:0 0 64px;width:64px;height:90px;object-fit:cover;border-radius:6px}
+.pchq-packs .tile .b{display:block;font:800 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.08em;color:#2DE2C5;margin-bottom:6px}
+.pchq-packs .tile .n{display:block;font:700 15px/1.3 system-ui,-apple-system,sans-serif;color:#f2f3f7}
+.pchq-packs .tile .g{display:inline-block;margin-top:8px;padding:6px 12px;border-radius:8px;background:#2DE2C5;color:#06121a;font:800 13px/1 system-ui,-apple-system,sans-serif}
+.pchq-packs .more{margin:12px 0 0;font:400 14px/1.4 system-ui,-apple-system,sans-serif;color:#9aa0ad}
+.pchq-packs .more a{color:#2DE2C5;font-weight:700;text-decoration:none}
+@media(max-width:420px){.pchq-packs .tiles{grid-template-columns:1fr}}</style>
+<p class="disc">${esc(DISCLOSURE)}</p>
+${heading ? `<h3>${esc(heading)}</h3>` : ''}${sub ? `<p class="sub">${esc(sub)}</p>` : ''}
+<div class="tiles">
+${tiles.map((it) => A(it, 'tile', `<img src="${esc(it.img)}" alt="${esc(it.label)}" width="64" height="90" loading="lazy" decoding="async">`
+  + `<span><span class="b">${esc(it.badge || '')}</span><span class="n">${esc(it.short || it.label)}</span>`
+  + `<span class="g">${esc(cta)}</span></span>`)).join('\n')}
+</div>
+${more.length ? `<p class="more">${more.map((it) => A(it, 'affl', esc(it.short || it.label) + ' \u2192')).join(' \u00b7 ')}</p>` : ''}
+</div>`);
+  }
+
   const body = layout === 'cards'
     ? `<div class="affgrid">\n` + live.map((it) => A(it, 'affcard',
         `<span class="b">${esc(it.badge || '')}</span>`
@@ -233,9 +276,20 @@ export const affiliateSection = (opts) => {
 // sits on the pages where readers are spending AP and planning builds — AP
 // costs, PlayStyle requirements, the build guides. One helper so every page
 // says the same thing and the products change in one place.
+// Placement (owner, 2026-10-07): right after the page's first cost section —
+// the AP chart, the PlayStyle table, the build grid — because that is when the
+// reader has just seen what an upgrade costs. The discount line is the owner's
+// approved wording: vague on purpose, because the exact discount moves daily.
 export const pointsSection = (tag = 'points') => affiliateSection({
-  heading: 'FC Points for AMPs and XP boosts', layout: 'rows', tag,
+  heading: 'Short on AP? FC Points buy AMPs and XP boosts',
+  sub: 'Same Points as the in-game store, usually about 20% cheaper as a code.',
+  layout: 'packs', cta: 'Get Points', tag,
   items: ['fc27-points-xbox', 'fc27-points-pc', 'fc27-points-all'] });
+
+// The FC 27 reminder at the end of a page: one line, not a card.
+export const gameLine = (tag = 'fc27') => affiliateSection({
+  heading: 'Get EA SPORTS FC 27 at Loaded', layout: 'line', tag,
+  items: ['fc27-xbox', 'fc27-pc', 'fc27-ps5'] });
 
 // Small helper for the status line in `ops/affiliate-check.mjs` and for humans.
 export const merchantStatus = () => Object.entries(MERCHANTS)

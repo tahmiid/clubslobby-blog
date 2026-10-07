@@ -10,7 +10,7 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, appCta, archIcon, updatedLine, SITE } from './common.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
-import { affiliateSection, pointsSection } from './affiliate.mjs';
+import { affiliateSection, gameLine, pointsSection } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, FC27_PROG, buildGrid } from './fc27grid.mjs';
 import { positionsNav } from './positions-nav.mjs';
 
@@ -47,6 +47,8 @@ ${appCta({
   label: 'Open FC 27 in the builder',
 })}
 
+${pointsSection('builds').trim()}
+
 <h2>How these builds are made</h2>
 <p>Each one starts from the player's real profile — current form for today's stars, their iconic peaks for the legends — and spends the level-40 budget of ${AP} AP in identity order: PlayStyle floors first (a build's PlayStyles are what make it recognizable), then the specialization's unlock criteria, then the rest of the profile, strongest attributes first. Weaknesses stay weak on purpose; Rodrygo doesn't tackle and neither should his build.</p>
 <p>One loadout detail worth knowing: at level 40 a pro carries <strong>one signature PlayStyle and three regular slots</strong>. Most builds here wear their specialization's PlayStyle+ in the signature slot — that's mostly why you pick a spec — but where the archetype's own signature <em>is</em> the player, they keep the original: all three Mbappés wear Low Driven Shot, Vinícius wears Trickster, Kroos wears Pinged Pass.</p>
@@ -61,9 +63,7 @@ ${appCta({
 <h3>Why level 40?</h3>
 <p>Forty is FC 27's level cap, worth ${AP} AP all-in. If EA raises it in a title update, the builds have room to grow — copying one is a head start, not a throwaway.</p>
 <h3>Can I copy a build and change it?</h3>
-<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${affiliateSection({ heading: 'Get EA SPORTS FC 27',
-  layout: 'cards', cta: 'Pre-order \u2192', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('builds')}`;
+<p>Yes — copying puts the build in your locker as your own draft. Adjust anything; the builder re-prices live.</p>${gameLine('fc27')}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a65.html'), html);
 console.log('a65: fc27 level 40 hub | builds', FC27_BUILDS.length, '| bytes', html.length);

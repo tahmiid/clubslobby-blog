@@ -418,7 +418,7 @@ ${JSON.stringify({
   // merchant is pending, so adding the key to a config changes nothing until
   // `ops/affiliate-switch.mjs on` flips it.
   const affiliate = cfg.affiliate
-    ? affiliateSection({ heading: cfg.affiliateHeading || 'Pre-order EA SPORTS FC 27',
+    ? affiliateSection({ heading: 'Get EA SPORTS FC 27 at Loaded',
                          items: cfg.affiliate,
                          image: cfg.affiliateImage || 'fc27',
                          // Its own Amazon tracking id, so the Associates report
@@ -426,7 +426,7 @@ ${JSON.stringify({
                          // the FC 27 pages. That question is unanswerable from
                          // our side: outbound clicks never touch our nginx.
                          tag: cfg.affiliateTag || 'buildguide',
-                         layout: 'cards', cta: 'Pre-order \u2192' })
+                         layout: 'line' })
     : '';
 
   // ── FC 27 first (2026-09-14) ─────────────────────────────────────────────

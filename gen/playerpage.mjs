@@ -278,7 +278,7 @@ ${PCHQ_CSS}
   // and this is the same split visible on Amazon's side.
   const gameTag = arm === 'afterLead' ? 'fc27' : 'buildguide';
   const gameBlock = affArm(arm, {
-    heading: 'Get the game', layout: 'rows', image: 'fc27', tag: gameTag,
+    heading: 'Get EA SPORTS FC 27 at Loaded', layout: 'line', tag: gameTag,
     items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'],
   });
   const kitBlock = affArm('kit', {

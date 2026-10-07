@@ -23,7 +23,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { CONTROLS, renderMove, moveList, padSwitcher, CONTROL_CSS } from './controls.mjs';
@@ -206,9 +206,7 @@ is in that list — the new set-piece tactics all live on its
 still works — the changes above are the complete list.</p>
 
 ${AD_A}
-${affiliateSection({ heading: 'Get the game',
-  layout: 'rows', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${gameLine('fc27')}
 
 <h2>The changes, in short</h2>
 <p>EA FC 27's control changes concentrate in three places: set pieces, skill

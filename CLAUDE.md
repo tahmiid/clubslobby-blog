@@ -706,7 +706,10 @@ node ops/affiliate-test.mjs                                       # after editin
   throws rather than quietly earning 1%.
 - **Loaded (Impact) is the live merchant since 2026-10-07; Amazon is `paused`** (owner: no sales; account kept). Impact links are
   `go.loaded.com/c/7907246/1566025/18216?subId1=<placement>&u=<loaded url>`; ids live in the merchant row.
-  `pointsSection(tag)` adds the FC Points block (AP costs, PlayStyles, build pages, cheapest-FC27).
+  Placement (owner, 2026-10-07): `pointsSection(tag)` — the FC Points card with pack art — goes right after the
+  page's first cost section (after AD_A; after the AP calculator on cheat sheets); `gameLine(tag)` is the one-line
+  FC 27 link at the end. Only a209 keeps the big game card. Pack images: content/images/2026/08/aff-fcpoints-*.png
+  (copied into Ghost's folder: `ghost-admin.mjs` call() is JSON-only and cannot upload).
 - Tracking ids (`awinaffid=3047467`, `tag=proclubshq-20`) are in
   `gen/affiliate.mjs` and are **not secrets** — they appear in every public
   affiliate link, exactly as the AdSense publisher id sits in

@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { BRAND, SITE, esc, kg, appCta } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
 import { moveList, padSwitcher, lookup } from './controls.mjs';
 import { inputCard as sharedCard, bothCard, HOWTO_STYLE, comboWords, comboWordsXbox } from './howto-common.mjs';
@@ -47,9 +47,7 @@ const STYLE = HOWTO_STYLE;
 
 // The game block: readers of a skill page own a controller already; the game
 // is the purchase in front of them (owner, 2026-08-20). Every page carries it.
-const gameBlock = affiliateSection({ heading: 'Get the game',
-  layout: 'rows', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
+const gameBlock = gameLine('fc27');
 
 function renderMove(m, i) {
   const others = MOVES.filter((x) => x.slug !== m.slug && x.star === m.star).slice(0, 3);

@@ -15,7 +15,7 @@
 import { writeFileSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { CONTROLS, padSwitcher, CONTROL_CSS, lookup, renderMove } from './controls.mjs';
 import { screenList, SCREEN_CSS } from './controls-screen.mjs';
@@ -129,9 +129,7 @@ const nOf = (title) => pageRows(title).length;
 const nameSpan = (title, n = 3) => pageRows(title).slice(0, n).map((m) => esc(m.name)).join(', ');
 const tierNames = (title, picks) => picks.map(esc).join(', ');
 
-const gameBlock = affiliateSection({ heading: 'Get the game',
-  layout: 'rows', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
+const gameBlock = gameLine('fc27');
 const kitBlock = affiliateSection({ heading: 'Kit worth having',
   layout: 'rows', image: 'controllers', tag: 'fc27',
   items: ['controller-ps5', 'controller-xbox', 'thumb-grips'] });

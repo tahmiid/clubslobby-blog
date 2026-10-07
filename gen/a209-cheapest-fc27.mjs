@@ -57,6 +57,8 @@ ${table(['Platform', 'Store', 'Price', 'Saving'], SNAPSHOT)}
 
 ${AD_A}
 
+${pointsSection('cheapest')}
+
 <h2>Region locks and staying safe</h2>
 <ul>
 <li><strong>Check the region on the listing.</strong> A code sold for one region may not redeem on an account from another. The listing says which it is.</li>
@@ -75,7 +77,7 @@ ${appLinks({ kicker: 'Before you spend', head: 'Plan the build first', body: 'Se
 <h2>Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${kg(`<script type="application/ld+json">\n${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }, null, 1).replace(/</g, '\\u003c')}\n</script>`)}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('cheapest')}
+${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'buildguide', items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
 
 ${AD_C}`;
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a209.html'), html);

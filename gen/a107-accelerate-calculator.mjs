@@ -26,7 +26,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, appLinks } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { statsCss, dayLabel, BUDGET, CAP_LEVEL, list, fmt, words, Words, assert } from './archetype-stats.mjs';
@@ -298,8 +298,7 @@ ${appCta({
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
 
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${gameLine('fc27')}
 
 ${AD_C}
 

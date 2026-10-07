@@ -26,7 +26,7 @@ import path from 'node:path';
 import { BRAND, esc, kg, appCta, archIcon } from './common.mjs';
 import { FC27_ARCH } from './fc27grid.mjs';
 import { AD_A, AD_C } from './ads.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { fc27Rail } from './fc27bridge.mjs';
 import { statsCss, dayLabel, list, words, Words } from './archetype-stats.mjs';
 import { ORDER, SEASON, FORMATION, LEAD_LO, LEAD_HI, VOTERS } from './meta27.mjs';
@@ -198,8 +198,7 @@ ${appCta({
 <h2 id="faq">Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${ld}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}
+${gameLine('fc27')}
 
 ${AD_C}`;
 

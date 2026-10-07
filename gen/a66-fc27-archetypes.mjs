@@ -9,7 +9,7 @@
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { esc, kg, appCta, archIcon, updatedLine, SITE } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { FC27_BUILDS, FC27_ARCH, buildGrid, psName } from './fc27grid.mjs';
 
 const GROUPS = [
@@ -73,9 +73,7 @@ ${appCta({
 <h3>Which FC 27 archetype should I play?</h3>
 <p>Position first: Finisher or Target up top, Maestro or Creator in midfield, Boss or Progressor at the back. Then open a few builds above and see whose PlayStyles fit how you actually play — that's a better guide than any tier list.</p>
 <h3>Are the FC 27 numbers final?</h3>
-<p>Yes — every number in the builder is read from the game. If EA retunes anything in a title update, the builder re-prices automatically.</p>${affiliateSection({ heading: 'Get EA SPORTS FC 27',
-  layout: 'cards', cta: 'Buy \u2192', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}`;
+<p>Yes — every number in the builder is read from the game. If EA retunes anything in a title update, the builder re-prices automatically.</p>${gameLine('fc27')}`;
 
 writeFileSync(path.join(import.meta.dirname, '..', 'out', 'a66.html'), html);
 console.log('a66: fc27 archetypes hub | featured', featuredUnique.length, '| bytes', html.length);

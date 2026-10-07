@@ -29,7 +29,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { SITE, esc, kg, appCta } from './common.mjs';
-import { affiliateSection } from './affiliate.mjs';
+import { affiliateSection, gameLine } from './affiliate.mjs';
 import { AD_A } from './ads.mjs';
 import { padSwitcher } from './controls.mjs';
 import { breadcrumbLd, howToLd, plainCombo } from './jsonld.mjs';
@@ -61,9 +61,7 @@ const linkArches = (text) => {
   return out;
 };
 
-const gameBlock = affiliateSection({ heading: 'Get the game',
-  layout: 'rows', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] });
+const gameBlock = gameLine('fc27');
 
 // What the diff says about a page's actions, in words. Computed per action;
 // a page whose actions disagree says nothing rather than something half-true.

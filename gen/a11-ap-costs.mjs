@@ -26,7 +26,7 @@ import path from 'node:path';
 import { CATS, esc, kg, appCta } from './common.mjs';
 import { FC27_ARCH } from './fc27grid.mjs';
 import { cardsGrid } from './mostcopied.mjs';
-import { affiliateSection, pointsSection } from './affiliate.mjs';
+import { affiliateSection, gameLine, pointsSection } from './affiliate.mjs';
 import { AD_A, AD_C } from './ads.mjs';
 import {
   model, attrName, archName, specName, pageOf, statsCss, bandsWidget, bandCost, stat, ROLE_BUILDS,
@@ -291,6 +291,8 @@ ${cardsGrid(`${P}-g`, {
 
 ${AD_A}
 
+${pointsSection('ap-costs')}
+
 <h2 id="specializations">The cheapest specialization on every archetype</h2>
 <p>A specialization asks for three attributes at 90 or 92, so what it costs depends on the archetype's tiers. The cheapest in the game is ${specName(cheapestSpec.s.name)} on the ${M[cheapestSpec.id].name}, ${fmt(cheapestSpec.s.ap)} AP; the dearest is ${specName(dearestSpec.s.name)} on the ${M[dearestSpec.id].name}, ${fmt(dearestSpec.s.ap)}.</p>
 ${specTable()}
@@ -310,8 +312,7 @@ ${appCta({
 <h2 id="faq">Frequently asked questions</h2>
 ${faq.map(([q, a]) => `<h3>${esc(q)}</h3>\n<p>${esc(a)}</p>`).join('\n')}
 ${faqLd}
-${affiliateSection({ heading: 'Get EA SPORTS FC 27', layout: 'cards', cta: 'Buy now →', image: 'fc27', tag: 'fc27',
-  items: ['fc27-ps5', 'fc27-xbox', 'fc27-pc'] })}${pointsSection('ap-costs')}
+${gameLine('fc27')}
 
 ${AD_C}`.replace(/(Acc)\.\.(?=[\s<])/g, '$1.');
 

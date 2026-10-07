@@ -90,7 +90,8 @@
    "platform": "xbox",
    "badge": "XBOX",
    "short": "2800 FC Points",
-   "note": "Loaded, verified 2026-10-07; other sizes 1050/5900/12000/18500 exist."
+   "note": "Loaded, verified 2026-10-07; other sizes 1050/5900/12000/18500 exist.",
+   "img": "https://proclubshq.com/blog/content/images/2026/08/aff-fcpoints-xbox.png"
   },
   "fc27-points-pc": {
    "merchant": "loaded",
@@ -98,9 +99,10 @@
    "kind": "points",
    "label": "EA SPORTS FC 27 — 2800 FC Points, PC (EA App)",
    "platform": "pc",
-   "badge": "PC",
+   "badge": "PC (EA App)",
    "short": "2800 FC Points",
-   "note": "Loaded, verified 2026-10-07."
+   "note": "Loaded, verified 2026-10-07.",
+   "img": "https://proclubshq.com/blog/content/images/2026/08/aff-fcpoints-pc.png"
   },
   "fc27-points-all": {
    "merchant": "loaded",
@@ -109,7 +111,7 @@
    "label": "All EA FC Points cards at Loaded",
    "platform": "all",
    "badge": "ALL",
-   "short": "Every FC Points size",
+   "short": "All Points sizes",
    "note": "Loaded category page, verified 2026-10-07."
   }
  }

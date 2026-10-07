@@ -46,7 +46,7 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 |---|---|---|---|
 | Amazon | Amazon | **Live** since 2026-08-20 | — |
 | CDKeys US/UK | Awin | Applied 2026-08-19, pending | Check Awin |
-| Loaded (CDKeys renamed) | Impact | **Approved 2026-10-07**; built into every FC 27 card + new FC Points block (merchant `loaded`, Impact program 18216); 2–5% | **Published 2026-10-07** (178 pages; box backup /root/publish/bak-20261007-loaded). Next: placement pass (Points box at AP totals, game box to one line, beacon on every box); read Impact by subId1 |
+| Loaded (CDKeys renamed) | Impact | **Approved 2026-10-07**; built into every FC 27 card + new FC Points block (merchant `loaded`, Impact program 18216); 2–5% | **Published 2026-10-07** (178 pages; box backup /root/publish/bak-20261007-loaded). Placement pass live same day: FC Points card (pack art) after the first cost section on 27 pages, FC 27 as one line at the end elsewhere. Read Impact clicks by subId1 (ap-costs, playstyles, builds, cheatsheet, cheapest, fc27, buildguide) ~21 Oct. **Owner: W-8 tax form + finance setup in Impact before any payout** |
 | Eneba | own program | Account created 2026-10-05; application state unknown | Check the affiliate dashboard; ~5%, 30-day cookie |
 | Fanatical | Awin | Applied 2026-08-19, pending | Check Awin |
 
