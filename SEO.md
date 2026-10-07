@@ -730,3 +730,19 @@ GameSpot). Do not write more player articles or levelling explainers.
   runs. Left alone by owner decision.~~ **Since 24 Sep `main` is
   fast-forwarded to `dev` after every deploy** (app CLAUDE.md, "Finishing"):
   `main` is what production runs, `dev` is what is next.
+
+## 7 Oct 2026 — the position hubs' short titles were reverted
+
+- On 26 Sep (`27a1b45`) the five group hubs (a188–a192) got short titles ("Best FC 27
+  Striker Builds") and keyword-strip descriptions. From 28 Sep they lost 71–94% of
+  clicks (striker 606 → 77, midfielder 200 → 13, comparing 25–28 Sep with 2–5 Oct),
+  while the archetype spokes lost 20–30% (launch demand fading). Their main queries
+  ("best cdm build fc 27", "best striker build fc 27") fell from page 1 to almost no
+  impressions. GSC's average position hid it (5 → 6): queries that vanish leave the average.
+- Google ignored both the short title (it showed the H1) and the strip description
+  (it showed a body sentence). Strip vs sentence descriptions site-wide: -44% vs -48%
+  clicks, so the description format alone is NOT proven harmful.
+- **Rule: a hub's title names the roles people search** ("CDM, CM, CAM", "by Role").
+  Reverted in `a538c25` (titles and sentence descriptions, roster + out/a18x.meta.json).
+- Second suspect: the 29 Sep single-position pages (cdm/cm/cam/cb/fullback) took the
+  role queries from the hubs at worse positions (CDM page ~7–11). Re-read GSC ~14 Oct.
