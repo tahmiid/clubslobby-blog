@@ -102,6 +102,7 @@ body.pq::before{background:#04040a!important}
 #announcement-bar-root,.gh-announcement-bar{display:none!important}
 .pq-support{display:inline-block;margin-top:10px;color:#9aa0ae;font-size:13px;text-decoration:none}
 .pq-support:hover{color:#2DE2C5}
+.pq-disclaimer{max-width:720px;margin:14px auto 0;padding:0 16px;color:#6b7180;font-size:12px;line-height:1.5;text-align:center}
 /* the tip in an article: a line and the yellow coffee button, no box */
 .pq-tip{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:6px 0;font-family:Manrope,system-ui,sans-serif}
 .pq-tip span{font-size:13.5px;line-height:1.45;color:#9aa0ae}
