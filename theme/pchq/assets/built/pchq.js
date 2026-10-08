@@ -476,3 +476,57 @@ function lightbox(trigger) {
         io.observe(card);
     }
 })();
+
+/* The blog's own page view (app #477, owner 8 Oct 2026): nginx counts every
+   request, people and the bots that pass for them; this is the page that RAN.
+   Into the app's collector (/api/metrics/blog-view, its own collection, never
+   the app's page numbers), with the app's per-tab sid and per-browser vid -
+   same origin, same ids - and the referring SITE on the visit's first page.
+   Our own browsers (pchq_internal) send nothing. */
+(function () {
+    try {
+        if (localStorage.getItem('pchq_internal') === '1') return;
+        var hex = function (n) { return Array.from(crypto.getRandomValues(new Uint8Array(n)), function (x) { return x.toString(16).padStart(2, '0'); }).join(''); };
+        var sid = sessionStorage.getItem('pchq_sid'); if (!sid) { sid = hex(8); sessionStorage.setItem('pchq_sid', sid); }
+        var vid = localStorage.getItem('pchq_vid'); if (!vid || !/^[a-f0-9]{16,32}$/.test(vid)) { vid = hex(16); localStorage.setItem('pchq_vid', vid); }
+        var ref = null;
+        if (!sessionStorage.getItem('pchq_ref')) {
+            sessionStorage.setItem('pchq_ref', '1');
+            try { var h = document.referrer ? new URL(document.referrer).hostname : ''; if (h && h !== location.hostname) ref = h; } catch (e) {}
+        }
+        var body = JSON.stringify({ path: location.pathname, sid: sid, vid: vid, ref: ref });
+        if (navigator.sendBeacon) navigator.sendBeacon('/api/metrics/blog-view', new Blob([body], { type: 'application/json' }));
+        else fetch('/api/metrics/blog-view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (e) {}
+})();
+
+/* Website display ads on the blog (app #477, owner 8 Oct 2026): Media.net in
+   slot A only (after the grid - `gen/ads.mjs` markers), switched on and off in
+   the app's admin -> Money (the same `/api/app/config` webAds as Find and
+   Meta). Never in the store apps, never for our own browsers, never where the
+   cookie bar asks first (the same over-inclusive test as the bar: any
+   Europe/* timezone or UTC), never on the articles listed under "No ad on". */
+(function () {
+    try {
+        if (/ProClubsHQ\//.test(navigator.userAgent || '') || localStorage.getItem('pchq_internal') === '1') return;
+        var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+        if (/^Europe\//.test(tz) || /^(UTC|Etc\/UTC|GMT|Etc\/GMT)$/.test(tz) || tz === 'Atlantic/Reykjavik' || tz === 'Atlantic/Canary' || tz === 'Atlantic/Madeira' || tz === 'Atlantic/Azores') return;
+        var slot = document.querySelector('.pchq-ad[data-ad="a"]');
+        if (!slot) return;
+        var slug = location.pathname.replace(/^\/blog\/?|\/$/g, '');
+        fetch('/api/app/config', { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (cfg) {
+            var w = cfg && cfg.webAds, u = w && w.units && w.units.blog;
+            if (!u || (w.blogSkip || []).indexOf(slug) >= 0) return;
+            var size = u.size || '300x250', hgt = +size.split('x')[1] || 250;
+            window._mNHandle = window._mNHandle || {}; window._mNHandle.queue = window._mNHandle.queue || [];
+            window.medianet_versionId = '3121199';
+            var s = document.createElement('script'); s.async = true;
+            s.src = 'https://contextual.media.net/dmedianet.js?cid=' + encodeURIComponent(w.cid);
+            document.head.appendChild(s);
+            var div = document.createElement('div'); div.id = 'mn-blog-a';
+            slot.style.minHeight = hgt + 'px'; slot.style.display = 'flex'; slot.style.justifyContent = 'center'; slot.style.margin = '1.5em 0';
+            slot.appendChild(div);
+            window._mNHandle.queue.push(function () { try { window._mNDetails.loadTag('mn-blog-a', size, u.crid); } catch (e) {} });
+        }).catch(function () {});
+    } catch (e) {}
+})();

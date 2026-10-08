@@ -7,6 +7,29 @@ nothing has to be retrofitted into a design that never left room for it.
 Nothing here is live. No ad script, affiliate link or consent banner is in
 production as of this date.
 
+> ### 2026-10-08 — Media.net is built and OFF (app #477)
+>
+> Owner, 8 Oct: Media.net now (applied ~6 Oct, no answer yet), Journey on or
+> after 5 Dec. Built switched off, ONE switch in the app's admin -> Money ->
+> Website ads: customer id, a unit id and size per place, on/off.
+>
+> - **Blog: slot A only** (after the grid; `gen/ads.mjs` markers), filled by
+>   the theme (`pchq-nav.js`, theme 1.0.19) from `/api/app/config` `webAds`.
+>   **Never on the two articles that send the most readers to the app**
+>   (magician build 2,411 and the striker hub 2,097 app crossings in 14 days
+>   of nginx logs) - the admin's "No ad on" list.
+> - **App: in-feed on Find and Meta only** (owner: more places later only if
+>   revenue needs it).
+> - **Never** in the store apps, for our own browsers, or where the cookie bar
+>   asks first (UK/EEA/CH): that needs a TCF consent tool, and the bar says "no
+>   ads". **Before switching on:** Media.net's ads.txt lines in
+>   `frontend/public/ads.txt`, and the privacy page's ad paragraph.
+> - Measured from now, before any ad: `adblock-on/off` (once a visit),
+>   `consent-shown/granted/denied`, `webad-shown`, `support-tap-*`; and the
+>   blog's own JS page views (`blog_views`, admin -> Traffic "counted by the
+>   page itself") to show networks the human share of nginx's count.
+> - `ads-switch.sh` and the AdSense block stay as history; nothing here uses them.
+
 > ### 2026-09-02 — the ad crawler never saw the fix; recrawl at 60%; do not request yet
 >
 > **#187.** nginx's `$og_crawler` map named Googlebot and the social bots and
