@@ -31,12 +31,15 @@ const ld = (obj) =>
  *  "Hold *L2* and push *R* down then up" -> "Hold L2 and push R down then up" */
 export const plainCombo = (s) => String(s ?? '').replace(/\*([^*]+)\*/g, '$1');
 
-/** items: [[name, url|null], ...] - urls absolute or /blog/... */
+/** items: [[name, url|null], ...] - urls absolute or /blog/...
+ *  Only the LAST item may lack a url: Google rejects a middle level with no
+ *  `item` ("Breadcrumbs: 1 invalid item" on all 35 player pages, 8 Oct 2026),
+ *  so a link-less middle level is dropped rather than emitted. */
 export const breadcrumbLd = (items) =>
   ld({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map(([name, url], i) => ({
+    itemListElement: items.filter(([, url], i) => url || i === items.length - 1).map(([name, url], i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name,
