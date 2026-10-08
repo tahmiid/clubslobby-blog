@@ -732,9 +732,13 @@ GameSpot). Do not write more player articles or levelling explainers.
   with app #437. Its tile→attribute table is `app/companion.py` EVENTS
   transcribed; re-read it when the tiles change. Request indexing for it is
   first in the next daily run.
-- **`/lobby` has no crawler twin in the app** (a crawler gets the shell) and
-  is not in the app sitemap: an app-repo task if the lobby is to rank on its
-  own address.
+- **`/lobby` (Play) and `/companion` have real crawler twins** since app
+  #473 (8 Oct 2026): ~150 words each on what the page does (Play: My Agent,
+  My Scout, transfer requests, the drop-in wall; Companion: the one-tap
+  logger and its report), and both are in the app sitemap. `/create`'s twin
+  is real too but stays out of the sitemap: the home page owns "builder".
+  `/level-rewards` now links `/blog/pro-clubs-level-rewards/`, which owns
+  "level cap" (app #471).
 - **The other pages that show builds still carry the 25 Sep export** (issue
   #11): 130 of the 470 house builds changed archetype with app #317, and only
   the ten position pages were regenerated on 29 Sep.
