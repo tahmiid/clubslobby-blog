@@ -95,6 +95,8 @@ ${AD_A}
 <p>A server can follow up to 3 clubs. <code>/unfollow</code> stops one.</p>
 
 <h2>What the cards look like</h2>
+${kg(`<div class="dsc">${fig('/api/discord/scout/common-gen5/57708.jpg', 'The scouting card the Discord bot sends for /scout', 'What /scout answers with.')}</div>`)}
+${kg(`<div class="dsc">${fig('/api/discord/scout/common-gen5/57708.jpg?kind=danger', 'The player-to-watch card the Discord bot sends for /danger', 'What /danger answers with.')}</div>`)}
 ${kg(`<div class="dsc">${fig('/api/discord/archetype/magician.jpg', 'The Magician archetype card the Discord bot sends', 'What /build magician answers with.')}</div>`)}
 ${kg(`<div class="dsc">${fig('/api/discord/controls/fc27_skill_move_3_star_heel_flick.png', 'The Heel Flick inputs on PlayStation and Xbox', 'What /skill heel flick answers with: one line per platform.')}</div>`)}
 
