@@ -93,6 +93,16 @@ as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
    how-tos for moves without a page -> fc27-skill-moves), plus a prefix rule
    for the scheme-less /blog/proclubshq.com/blog/<slug>/. Re-run the 404 read
    monthly; redirect only to a live page and never shadow one.
+4c. **Crawler pages follow only what the index keeps** (ClubsUI #186/#467,
+   8 Oct 2026): a crawler page's link to a build the index does not keep says
+   `rel="nofollow"` (the link stays - the person's page has it too), and
+   `/crawl/explore` lists every advertised build, every release, so no curated
+   build is an orphan. The blog half of #186 (grids limited to the curated
+   set) changes what readers see and waits for the owner.
+4d. **`Allow: /api/og/` in the app's robots.txt** (8 Oct 2026): every build
+   and static page names `/api/og/...` as its image and thumbnail, and the old
+   `Disallow: /api/` blocked them all; the longer rule wins in Google's
+   matching, so only the share images open.
 5. **Tag and author archives are `noindex`** and were sitemapped anyway; Google
    honours the noindex, and `tag/fc-26` fell 330 → 19 impressions week-on-week
    on its own (measured 3 Sep).
