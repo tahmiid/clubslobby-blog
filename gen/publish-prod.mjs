@@ -1320,12 +1320,12 @@ const POSTS = [
     meta_description: 'Drop-In Teammates · The Lobby · See Their Build First · EA Recruiting Thread · Discord · Your Club Page · PS5 · Xbox · PC · FC 27 Pro Clubs',
     custom_excerpt: 'Four ways to find teammates for drop-in, and the one that shows you their build before you play.',
     tags: ['Guides', 'FC 27'] },
-  // Published 2026-10-06 on the owner's word (gen/a210-discord-app.mjs, 2026-10-06).
+  // Published 2026-10-06 on the owner's word (gen/a210-discord-app.mjs); rewritten 8 Oct (blog #15).
   { file: 'a210.html', slug: 'pro-clubs-discord-bot', status: 'published',
-    title: 'Pro Clubs Discord Bot: Builds, Skill Moves and Controls in Your Server',
-    meta_title: 'Pro Clubs Discord Bot for FC 27: How to Add It',
-    meta_description: 'Add the free Pro Clubs HQ Discord app to your club server: /build, /player, /skill, /celebration and /control answer with cards for PlayStation and Xbox.',
-    custom_excerpt: 'Builds, archetypes and every skill move as a card in your club\'s Discord. Free, and added in a minute.',
+    title: 'Pro Clubs Discord Bot: Every Command and How to Add It',
+    meta_title: 'Pro Clubs Discord Bot for FC 27: Commands and Setup',
+    meta_description: 'Every Pro Clubs HQ Discord bot command A to Z: /scout, /h2h, /card, /follow, /build, /skill and more, plus how to add it to your server or account.',
+    custom_excerpt: 'Every command in one table, how to install it, and how to make it post your club\'s wins by itself.',
     tags: ['Guides', 'FC 27'] },
   // Published 2026-10-06 on the owner's word (gen/a211-club-owners-guide.mjs, 2026-10-06).
   { file: 'a211.html', slug: 'pro-clubs-club-owners-guide', status: 'published',
