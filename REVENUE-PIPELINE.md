@@ -26,6 +26,7 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 | Raptive | Not eligible | Feb 2027 | 6-month domain age |
 | AdMob (iOS/Android apps) | **Live** | Later: mediation with Meta/AppLovin | |
 | Buy Me a Coffee (tips) | **Live on the blog** 2026-10-05: footer link on every page + About page | App placements (reel card, My HQ line, account row) await Integration's deploy | buymeacoffee.com/proclubshq, shown as Pro Clubs HQ; "Club Supporter" $5/month or $50/year; goal $500 a month running costs; web only, never in the store apps |
+| Club Supporter (per club, paid) | **Built on app dev 8 Oct 2026, not deployed** (app 5aad89b4, docs/SUPPORTERS.md): the full opponent scout in the Companion for a paying club's members; payments by BMC webhook or by hand | Owner: create the BMC $5/month membership + $40 season extra, the webhook to /api/supporters/bmc and BMC_WEBHOOK_SECRET; deploy; part 2 = Monday club report (first free) | $5/month or $40/season per club (owner, 8 Oct; was $50/year); est. $17-84/month at first; web only |
 
 ## Sponsorships ($100–300 2-week launch push · $200–400/mo guide sponsor · $300–800/mo featured partner)
 
