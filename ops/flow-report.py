@@ -147,6 +147,8 @@ def main():
                 r = REQ.match(m['req'] or '')
                 if not r or r['method'] != 'GET':
                     continue
+                if 'version-check=' in r['path']:   # the app's tab poll (#414 / #466)
+                    continue
                 target = POST.match(r['path'].split('?')[0])
                 ref = m['ref'] or ''
                 src = None

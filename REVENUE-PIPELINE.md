@@ -5,7 +5,7 @@ The live tracker. **Update the row in the same sitting something changes**
 in `MONETIZATION.md`; this file is only "where each thing stands now".
 Replies arrive in the owner's Gmail (hello@proclubshq.com forwards there).
 
-Last updated: 2026-10-05
+Last updated: 2026-10-08
 
 ## Traffic numbers to quote (5 Sep – 4 Oct 2026)
 
@@ -17,10 +17,10 @@ clicks/28 days. Pitch: `~/ProClubsHQ-Vault/media/sponsorship/sponsorship-pitch-2
 
 | Stream | Status | Next step | Notes |
 |---|---|---|---|
-| Journey by Mediavine | **Wait** | Apply on/after **2026-12-05** (domain 4 months old) | Grow signup = same flow, so do not apply early: a rejection locks 60 days |
-| Nitro (NitroPay) | **Replied 2026-10-07** (Madison): MCM not auto-blocked, other demand serves from day one and Google joins later; term is 12 months + 90 days' notice, no shorter term for new sites; in-feed units, call nitroAds.onNavigate() in the SPA | 2026-10-07 Madison confirmed: exclusive for display ads on proclubshq.com only; Loaded affiliate and AdMob apps OK; applying commits nothing, the 12-month term starts at signing. Early exit is NOT offered (ask before signing). Apply form (nitropay.com #contact) is a lead form asking first/last name, so the owner fills it; waiting on Playwire before choosing | Default contract 12 months + 90-day notice, exclusive; needs Google MCM |
+| Journey by Mediavine | **Chosen (owner, 8 Oct)**: the long-term network | Apply on/after **2026-12-05** (domain 4 months old). Before applying: thin crawler pages fixed (/privacy and /terms done in ClubsUI #466), and the privacy policy's "the website carries no advertising" rewritten for wherever ads will run | Grow signup = same flow, so do not apply early: a rejection locks 60 days |
+| Nitro (NitroPay) | **Not chosen (owner, 8 Oct: Media.net now + Journey in December)**: its 12-month exclusive term would block Journey until ~Jan 2028. Nothing was signed; no reply sent. Earlier: **replied 2026-10-07** (Madison): MCM not auto-blocked, other demand serves from day one and Google joins later; term is 12 months + 90 days' notice, no shorter term for new sites; in-feed units, call nitroAds.onNavigate() in the SPA | 2026-10-07 Madison confirmed: exclusive for display ads on proclubshq.com only; Loaded affiliate and AdMob apps OK; applying commits nothing, the 12-month term starts at signing. Early exit is NOT offered (ask before signing). Apply form (nitropay.com #contact) is a lead form asking first/last name, so the owner fills it; waiting on Playwire before choosing | Default contract 12 months + 90-day notice, exclusive; needs Google MCM |
 | Playwire (RAMP) | **Not eligible** (Gabrielle, 2026-10-07): needs 500k pageviews/month for a few consecutive months, mostly US; managed service suggested; terms only at review | Read the reply: self-serve at ~270k? MCM ok after AdSense rejections? term/notice/exclusivity? | Self-serve starts ~100k pageviews; their apply form asks first/last name, so the owner fills it if they say yes; needs Google MCM |
-| Media.net | Contact form sent 2026-10-05 (hello@) | Read the reply | No Google approval needed; low RPM; fine as a stopgap until Nitro/Journey |
+| Media.net | **Chosen as the stopgap (owner, 8 Oct)**; contact form sent 2026-10-05 (hello@), no reply yet | Owner follows up from hello@ if nothing arrives by ~12 Oct; on approval, place in-feed units only (blog slot A first, then Find/Meta) and update /privacy the same day | No Google approval needed; low RPM; fine as a stopgap until Nitro/Journey |
 | AdSense | Rejected twice ("low value content") | Optional re-apply mid-Nov | Domain age likely the cause |
 | Monumetric | Not eligible | — | Needs 3 months of traffic; small tier is WordPress-only |
 | Raptive | Not eligible | Feb 2027 | 6-month domain age |

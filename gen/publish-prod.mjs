@@ -1310,7 +1310,7 @@ const POSTS = [
     title: 'Pro Clubs HQ App for iPhone and Android',
     meta_title: 'Pro Clubs App for FC 27: iPhone and Android',
     meta_description: 'iPhone · Android · Builder · Builds to Copy · Meta · Controls · Club Pages · Notifications · FC 27 Pro Clubs',
-    custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. Coming in the next few weeks.',
+    custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. On Google Play now; coming to the App Store.',
     tags: ['News', 'Pro Clubs HQ'] },
   // The drop-in teammates list (gen/a207-dropin-teammates.mjs, 2026-09-30):
   // the lobby opened that day; every way to find teammates, the lobby first.

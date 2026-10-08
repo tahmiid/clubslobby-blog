@@ -204,9 +204,12 @@ ${kg(`<div class="hqt"><style>.hqt table{display:table!important;table-layout:fi
     title: `${BRAND} App for iPhone and Android`,
     meta_title: 'Pro Clubs App for FC 27: iPhone and Android',
     meta_description: 'iPhone · Android · Builder · Builds to Copy · Meta · Controls · Club Pages · Notifications · FC 27 Pro Clubs',
-    custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. Coming in the next few weeks.',
-    when: 'in the next few weeks', note: 'the app is coming to the App Store and Google Play in the next few weeks',
-    soonVerb: 'Coming',
+    // 8 Oct 2026 (#466): Android is on Google Play (production since 6 Oct,
+    // MOBILE.md); the iPhone app is in Apple's review. Stays 'soon' until the
+    // App Store has it - then 'live', the links, and this page's FAQ drops "When".
+    custom_excerpt: 'The builds, the builder, the meta and your club, in an app for iPhone and Android. On Google Play now; coming to the App Store.',
+    when: 'to the App Store', note: 'the Android app is on Google Play; the iPhone app is in Apple\'s review',
+    soonVerb: 'On Google Play now · coming', updated: '2026-10-08',
     head: `${BRAND} on your phone`,
     points: [
       'For iPhone and Android.',
@@ -226,7 +229,7 @@ ${kg(`<div class="hqt"><style>.hqt table{display:table!important;table-layout:fi
         ] },
     ],
     faq: [
-      ['When is the app out?', 'In the next few weeks, on the App Store and on Google Play. This page will carry both links the day it is.'],
+      ['When is the app out?', 'On Android it is out now: search Pro Clubs HQ on Google Play. The iPhone app is in Apple\'s review and comes to the App Store when Apple approves it; this page will carry its link that day.'],
       [`Can I use ${BRAND} on my phone today?`, 'Yes. The site works in any phone browser, with everything the app will have.'],
       ['Do I need an account for the app?', 'Yes. The app asks you to sign in when you open it. On the site you can look at every build without an account, and you need one only to save your own.'],
     ],

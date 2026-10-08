@@ -211,6 +211,11 @@ def main():
                     continue
                 if STATIC.search(path_q):
                     continue
+                # The open-tab version poll (ClubsUI #414 part 1 / #466): every
+                # open tab fetches /?version-check=... every 10 minutes since
+                # 1 Oct. A poll is not a page load. Mirrors analytics_collect.py.
+                if 'version-check=' in path_q:
+                    continue
 
                 # -- blog article views -------------------------------------
                 if path.startswith('/blog'):

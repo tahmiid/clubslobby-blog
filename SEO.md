@@ -86,6 +86,13 @@ as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
    steps: ClubsUI `docs/SHARING.md` "Player articles own player searches".
    Unmapped house builds keep the #141/#185 rules above. **Read the
    Ronaldo, Messi and Mbappe queries again ~29 Oct** before calling it.
+4b. **Dead blog addresses people actually reach get a 301** (ClubsUI #466,
+   8 Oct 2026): 49 exact rules in CLUBS27-BLOG-REDIRECTS from 15 days of
+   human 404s (guessed player slugs, "-fc-27-attributes-playstyles-controls"
+   titles, stats pages for archetypes that have none -> their cheat sheet,
+   how-tos for moves without a page -> fc27-skill-moves), plus a prefix rule
+   for the scheme-less /blog/proclubshq.com/blog/<slug>/. Re-run the 404 read
+   monthly; redirect only to a live page and never shadow one.
 5. **Tag and author archives are `noindex`** and were sitemapped anyway; Google
    honours the noindex, and `tag/fc-26` fell 330 → 19 impressions week-on-week
    on its own (measured 3 Sep).
@@ -136,6 +143,13 @@ every build page. The logs show it executing the SPA (256 `/b/` GETs and 256
 
 **Rules:**
 
+- **AI answer and AI search agents are in the map since 8 Oct 2026** (ClubsUI
+  #466): ChatGPT-User, OAI-SearchBot, PerplexityBot, Perplexity-User,
+  Claude-User, Claude-SearchBot, DuckAssistBot, YouBot, MistralAI-User,
+  Applebot. ChatGPT-User alone made 6,110 app-page fetches in ~15 days and got
+  the empty shell every time; its blog fetches turned into visits ~16x more
+  often than its app fetches. **`GeminiiOS` is people** (Google's iPhone app
+  WebView) - never add "Gemini". Training crawlers stay out.
 - The three agents are in the map now. **This is not cloaking** — it serves the
   ad crawler exactly what the search crawler gets, the direction Google's
   dynamic-rendering guidance permits. Serving the ad crawler *less* was the
