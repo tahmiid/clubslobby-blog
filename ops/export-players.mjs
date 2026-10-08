@@ -6,11 +6,14 @@
 // /api/builds/<id>/public (CLAUDE.md publish rule 1: the SPA answers 200 to
 // anything, so an API 200 is the only proof a /b/<id> link is alive).
 //
-// Selection per player and year: search the explore API, keep only builds
-// from the house accounts, match on the player's name (diacritic-blind),
-// prefer the most-viewed. `match` overrides the name when the roster names a
-// build differently ("Mbappé Golden Boot '26", "Henry '04 Arsenal").
-//
+// Selection (#465, 8 Oct 2026): the app's mapping, `GET /api/player-pages`
+// (catalog/player_pages.json in the app repo), names every house build a
+// player's article owns - years, levels and editions - newest first. The old
+// name search matched "Son" to twelve Spurs players and pulled R9 onto the
+// Cristiano page; an explicit list cannot. The mapped builds' own /b/ pages
+// noindex and link back here, so the article is the one URL that ranks.
+// `PCHQ_API` reads the mapping from another API (a lane, before a deploy);
+// every build is still fetched and verified on PRODUCTION.
 // Re-run whenever the house catalog changes; generators read the files, so a
 // stale export is a stale article, not a broken one.
 import { writeFileSync, mkdirSync } from 'node:fs';
@@ -65,31 +68,25 @@ const get = async (p) => {
   return r.json();
 };
 
-const pick = async (player, year) => {
-  const { builds } = await get(`/explore?q=${encodeURIComponent(player.q)}&year=${year}&limit=24`);
-  const needles = (player.match ?? [deburr(player.name)]).map(deburr);
-  const mine = builds.filter((b) =>
-    HOUSE.has(b.creator?.handle) &&
-    needles.some((n) => deburr(b.buildName).includes(n)) &&
-    b.gameYear === year);
-  mine.sort((a, b) => (b.viewCount ?? 0) - (a.viewCount ?? 0));
-  const doc = mine[0];
-  if (!doc) return null;
-  // The only verification that means anything (rule 1).
-  const full = await get(`/builds/${doc.id}/public`);
-  return full;
-};
-
+const API = process.env.PCHQ_API ?? `${SITE}/api`;
+const mapping = await (await fetch(`${API}/player-pages`)).json();
+const MAPPED = new Map(mapping.players.map((m) => [m.slug, m]));
 const outDir = path.join(import.meta.dirname, '..', 'data', 'players');
 mkdirSync(outDir, { recursive: true });
 
 let missing = 0;
 for (const p of PLAYERS) {
-  const fc27 = await pick(p, 27);
-  const fc26 = await pick(p, 26);
-  if (!fc26 && !fc27) { console.error(`!! ${p.slug}: nothing found`); missing++; continue; }
+  const m = MAPPED.get(p.slug);
+  if (!m?.builds.length) { console.error(`!! ${p.slug}: not in the app's player_pages.json`); missing++; continue; }
+  // The only verification that means anything (rule 1), on production.
+  const versions = [];
+  for (const b of m.builds) versions.push(await get(`/builds/${b.id}/public`));
+  // The first of a release is its lead: the mapping lists the main build
+  // before its editions, and the API keeps that order within a year and level.
+  const fc27 = versions.find((v) => v.gameYear === 27) ?? null;
+  const fc26 = versions.find((v) => v.gameYear === 26) ?? null;
   writeFileSync(path.join(outDir, `${p.slug}.json`),
-    JSON.stringify({ player: p.name, slug: p.slug, fc27, fc26 }, null, 1));
-  console.log(`${p.slug.padEnd(18)} 27:${fc27 ? fc27.buildName : '—'}  26:${fc26 ? fc26.buildName : '—'}`);
+    JSON.stringify({ player: p.name, slug: p.slug, fc27, fc26, versions }, null, 1));
+  console.log(`${p.slug.padEnd(18)} ${versions.length} versions, lead 27:${fc27 ? fc27.buildName : '—'}`);
 }
 if (missing) process.exit(1);

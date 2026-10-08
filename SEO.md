@@ -75,6 +75,17 @@ as auto-generated, drowning 57 real articles (MONETIZATION.md, 2026-08-22).
    `/b/` URLs still draw ~10,000 impressions a month from the pre-#141 index
    (127 URLs / 9,896 impressions on 3 Sep). They are
    the rejection. Let them fall out.
+4a. **A player's builds defer to the player's article** (#465, owner,
+   8 Oct 2026). "ronaldo build" drew ~400 impressions and ~0 clicks over
+   8 Sep-6 Oct, split across the FC 26 `/b/`, the article and the FC 27 `/b/`.
+   The article's URL survives every level, edition and release; a build page
+   does not. The app's `catalog/player_pages.json` maps player -> article ->
+   house builds; a mapped build leaves the sitemap, serves `noindex, follow`
+   and links the article, whose "Every X build" grid lists every version
+   (`ops/export-players.mjs` reads `GET /api/player-pages`). App rule and
+   steps: ClubsUI `docs/SHARING.md` "Player articles own player searches".
+   Unmapped house builds keep the #141/#185 rules above. **Read the
+   Ronaldo, Messi and Mbappe queries again ~29 Oct** before calling it.
 5. **Tag and author archives are `noindex`** and were sitemapped anyway; Google
    honours the noindex, and `tag/fc-26` fell 330 → 19 impressions week-on-week
    on its own (measured 3 Sep).
@@ -542,6 +553,9 @@ GameSpot). Do not write more player articles or levelling explainers.
   qualified shape ("X build fc 26") converts at 7%. The FC 27 version of that
   shape does not exist yet and arrives at launch: be ranking for it on the
   18th rather than three weeks after.
+- **New player articles come from `scripts/player_pages_coverage.py`** (app
+  repo, run on the box): high-view house builds no article owns, 8 Oct 2026.
+  That queue supersedes the next line for players we already build.
 - **Do not write new player articles from thin demand.** The implied backlog
   was seven queries, 12 impressions, 0 clicks *(2 Sep analysis; not
   re-derived)*.

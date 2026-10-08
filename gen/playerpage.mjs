@@ -30,7 +30,7 @@ import { affArm, affBeacon } from './affexp.mjs';
 import { breadcrumbLd } from './jsonld.mjs';
 import { ft, psIcon, psName } from './spoke.mjs';
 import { gridCss } from './fc27grid.mjs';
-import { archOf, archTitle, mostCopiedGrid } from './mostcopied.mjs';
+import { archOf, archTitle, cardsGrid, mostCopiedGrid } from './mostcopied.mjs';
 import { hrefForAction } from './howto-index.mjs';
 import { PROFILES } from './player-profiles.mjs';
 
@@ -349,8 +349,22 @@ ${(leadAn.specs ?? []).length ? `<p><strong>Which specialization?</strong> ${esc
   const profile = kg(`<div class="${P}"><h2 id="how-he-plays">How ${esc(first)} plays, and what the build copies</h2>
 ${prof.map((t) => `<p>${esc(t)}</p>`).join("\n")}</div>`);
 
-  const grid = mostCopiedGrid(P, leadYear, {
-    exclude: new Set([lead?.id, other?.id].filter(Boolean)), excludeName: first, level: 'h3',
+  // Every other version this player's article owns (#465): levels,
+  // editions and releases, newest first - the app's mapping decides which and
+  // in what order (ops/export-players.mjs). Their own /b/ pages noindex and
+  // link here, so this grid is how a searcher reaches a level 60 or a World
+  // Cup edition from the one URL that ranks. A new version is a mapping line
+  // and a regenerate; nothing here changes.
+  const versions = (data.versions ?? []).filter((v) => v.id !== lead.id);
+  const versionsGrid = versions.length ? cardsGrid(P, {
+    builds: versions, heading: `Every ${first} build`, id: 'versions', level: 'h3',
+    stat: (b) => `FC ${b.gameYear}`,
+    sub: 'Other releases, levels and editions, newest first. Tap one to open it in the app.',
+  }) : '';
+
+  const grid = versionsGrid + mostCopiedGrid(P, leadYear, {
+    exclude: new Set([lead?.id, other?.id, ...versions.map((v) => v.id)].filter(Boolean)),
+    excludeName: first, level: 'h3',
   });
 
   return [
