@@ -304,6 +304,12 @@ function lightbox(trigger) {
                 t.setAttribute('aria-selected', String(on));
             });
             Array.prototype.forEach.call(sheet.querySelectorAll('.pq-gs-p'), function (p) { p.hidden = p.id !== 'pq-gs-' + key; });
+            reveal();
+        }
+        /* the open section's chip in view (the row scrolls on a narrow phone) */
+        function reveal() {
+            var on = sheet.querySelector('.pq-gs-tab.on');
+            if (on && !sheet.hidden) on.parentNode.scrollLeft = Math.max(0, on.offsetLeft - 16);
         }
         if (home) show(home);
         var opened = false;
@@ -315,6 +321,7 @@ function lightbox(trigger) {
             door.setAttribute('aria-expanded', 'true');
             document.documentElement.style.overflow = 'hidden';
             sheet.querySelector('.pq-gs-body').scrollTop = 0;
+            reveal();
             try { history.pushState({ pqSheet: 1 }, ''); } catch (e) {}
             evt('blog-guides-open');
         }
@@ -547,6 +554,32 @@ function lightbox(trigger) {
     var PLAY = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">'
         + '<path fill="#2DE2C5" d="M4 2.5v19l10-9.5z"/><path fill="#FFDD00" d="M14 12l3.2 3 3.6-2a1.1 1.1 0 0 0 0-2l-3.6-2z"/>'
         + '<path fill="#4f8bff" d="M4 2.5L14 12l3.2-3z"/><path fill="#FF6B8A" d="M4 21.5L14 12l3.2 3z"/></svg>';
+    /* A wide desktop (#485, 10 Oct 2026): the app's QR card (#484) at the
+       bottom left, where the app's own pages show it - one look on both
+       sides. Wide = the card fits beside a 720px column with 24px each side
+       (the app's SidePanel test). Its taps and closes count as blog-deskcard-*. */
+    if (!android && window.innerWidth >= 1416) {
+        kind = 'deskcard';
+        var card = document.createElement('aside');
+        card.className = 'pq-qrcard';
+        var qhref = 'https://play.google.com/store/apps/details?id=com.proclubshq.app&referrer='
+            + encodeURIComponent('utm_source=blog&utm_medium=desktop_qr&utm_content=' + page);
+        card.innerHTML = '<a href="' + qhref + '" target="_blank" rel="noopener noreferrer">'
+            + '<span class="pq-qrcard-m"><img src="/assets/play-qr.svg" alt="" width="146" height="146" loading="lazy"></span>'
+            + '<span class="pq-qrcard-b"><span class="pq-qrcard-t">Get the app</span><b class="pq-qrcard-h" style="display:block">On your phone?</b>'
+            + '<span class="pq-qrcard-l" style="display:block">Scan with your phone\'s camera to install Pro Clubs HQ for Android.</span>'
+            + '<span class="pq-qrcard-c">' + PLAY.replace('width="24" height="24"', 'width="18" height="18"') + 'Get it on Google Play</span></span></a>'
+            + '<button class="pq-qrcard-x" type="button" aria-label="Close">✕</button>';
+        card.querySelector('a').addEventListener('click', function () { evt('tap'); });
+        card.querySelector('.pq-qrcard-x').addEventListener('click', function () {
+            evt('close');
+            card.remove();
+            try { localStorage.setItem('pq_app_bar_x', String(Date.now() + 36e5)); } catch (e) {}
+        });
+        document.body.appendChild(card);
+        evt('shown');
+        return;
+    }
     var bar = document.createElement('div');
     var x = '<button class="pq-appbar-x" type="button" aria-label="Close">✕</button>';
     // One design everywhere (owner, 7 Oct 2026: the phone bar performs far

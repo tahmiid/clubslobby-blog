@@ -224,6 +224,10 @@ Builder, Meta, My HQ); the old icon dock's six menus are the **Guides sheet**
 - **Inside the store apps the blog opens in the app** (the app's ShellBridge),
   so the theme strips every outside payment link there (store rules:
   Buy Me a Coffee, PayPal, Patreon, Ko-fi) - `html.pq-in-app`.
+- **The header and the dock never move** (owner, 10 Oct 2026): the get-app
+  bar sits UNDER the header (`.pq-appbar` fixed at 60/72px, the page starts
+  under it); a wide desktop (>= 1416px) gets the app's QR card bottom left
+  instead (`blog-deskcard-*`).
 - **On a lane**: the app's dev server serves `/blog` with this theme swapped
   in (`ops/theme-swap.mjs`, used by its `src/setupProxy.js` and by
   `ops/preview-theme.mjs`) - build the theme first.
