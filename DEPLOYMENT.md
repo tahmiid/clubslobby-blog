@@ -732,12 +732,15 @@ ops/cheatsheets-rollback.sh theme                              # back to Casper:
   (must still carry `noindex, follow`), `/blog/about/`, a 404; then a phone
   width and a desktop width in a browser. 5 Oct: all 200, tag and author still
   noindex.
-- **Since 1.1.0 (#485, the app's header and dock, 10 Oct 2026) the theme
-  needs the APP first**: its header calls the app's API (`/api/auth/me`,
-  `/api/lobby/status`, `/api/notifications`), every post's discussion block
-  calls `/api/guides/<slug>/comments` and links `/discussion/<slug>` - all
-  served only by an app build with #485. Order: **app deploy (with migration
-  0144) → the index → the theme**:
+- **1.1.0 (#485, the app's header and dock, 10 Oct 2026) ships BEFORE the
+  app's #485**, then the index, then the app (with migration 0144). Why that
+  way round: the theme's calls are the app's existing ones (`/api/auth/me`,
+  `/api/lobby/status`, `/api/notifications`) except the discussion block's
+  `/api/guides/<slug>/comments`, which answers 404 until the app ships - and
+  on a 404 the block draws nothing and a cheat sheet keeps its own thread.
+  The app's #485 is what opens blog pages INSIDE the store apps; shipped
+  first, they would show the OLD theme there (no app dock) until the theme
+  followed. Order: **theme → the index → the app**:
 
   ```bash
   # the index the app reads (ops/guides-index.mjs, written by build-theme)
@@ -745,6 +748,7 @@ ops/cheatsheets-rollback.sh theme                              # back to Casper:
   ssh clubs 'chown ghost:ghost /var/www/proclubslobby/content/files/data/guides-index.json; chmod 644 /var/www/proclubslobby/content/files/data/guides-index.json; curl -s -o /dev/null -w "%{http_code}\n" https://proclubshq.com/blog/content/files/data/guides-index.json'
   ```
 
+  (Until the app ships, `blog-deskcard-*` beacons are refused - minutes.)
   Rebuild and re-copy the index after publishing a new page (the app's Find
   and Guides sheet list what it lists; a page it does not list has no
   discussion). **Rollback of 1.1.0 alone**: upload
