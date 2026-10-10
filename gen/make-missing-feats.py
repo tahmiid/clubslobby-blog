@@ -39,6 +39,8 @@ COVERS = [
      'EA SPORTS FC 27 key art with LEVEL 40 across it'),
     ('fc27-skills',   'SKILL MOVES',     'fc27-new-skill-moves',
      'EA SPORTS FC 27 key art with SKILL MOVES across it'),
+    ('fc27-duos',     'DUOS',            'best-pro-clubs-archetype-duos',
+     'EA SPORTS FC 27 key art with DUOS across it'),
 ]
 
 # The thirteen how-tos. Each keyword is the distinctive part of the move's

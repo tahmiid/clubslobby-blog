@@ -1,0 +1,5837 @@
+{
+ "computedAt": "2026-10-10T15:35:19.763000+00:00",
+ "teams": 270060,
+ "leagueMatches": 135030,
+ "pairs": [
+  {
+   "ids": [
+    "progressor",
+    "progressor"
+   ],
+   "pts": 4,
+   "lo": 2.3,
+   "hi": 5.8,
+   "teams": 3053,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 6,
+     "with": 53.5,
+     "without": 49.9,
+     "teams": 254
+    },
+    {
+     "humans": 7,
+     "with": 52.4,
+     "without": 51.5,
+     "teams": 294
+    },
+    {
+     "humans": 8,
+     "with": 60.1,
+     "without": 53.5,
+     "teams": 351
+    },
+    {
+     "humans": 9,
+     "with": 61.4,
+     "without": 54.8,
+     "teams": 396
+    },
+    {
+     "humans": 10,
+     "with": 60.8,
+     "without": 56.2,
+     "teams": 520
+    },
+    {
+     "humans": 11,
+     "with": 54.9,
+     "without": 53.9,
+     "teams": 864
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "finisher"
+   ],
+   "pts": 3.5,
+   "lo": 2.9,
+   "hi": 4,
+   "teams": 45635,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 39.8,
+     "without": 35.4,
+     "teams": 686
+    },
+    {
+     "humans": 3,
+     "with": 43.8,
+     "without": 39.8,
+     "teams": 3649
+    },
+    {
+     "humans": 4,
+     "with": 47.4,
+     "without": 43.3,
+     "teams": 7308
+    },
+    {
+     "humans": 5,
+     "with": 49.2,
+     "without": 45.8,
+     "teams": 9059
+    },
+    {
+     "humans": 6,
+     "with": 52.5,
+     "without": 48.7,
+     "teams": 8552
+    },
+    {
+     "humans": 7,
+     "with": 53.3,
+     "without": 50.5,
+     "teams": 5150
+    },
+    {
+     "humans": 8,
+     "with": 55.6,
+     "without": 52.4,
+     "teams": 3516
+    },
+    {
+     "humans": 9,
+     "with": 57.1,
+     "without": 53.6,
+     "teams": 2591
+    },
+    {
+     "humans": 10,
+     "with": 57.5,
+     "without": 56,
+     "teams": 2367
+    },
+    {
+     "humans": 11,
+     "with": 55.6,
+     "without": 52.4,
+     "teams": 2863
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "recycler"
+   ],
+   "pts": 3,
+   "lo": 1.8,
+   "hi": 4.1,
+   "teams": 8265,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 48.6,
+     "without": 43.9,
+     "teams": 360
+    },
+    {
+     "humans": 5,
+     "with": 51.3,
+     "without": 46.5,
+     "teams": 731
+    },
+    {
+     "humans": 6,
+     "with": 54.9,
+     "without": 49.8,
+     "teams": 1039
+    },
+    {
+     "humans": 7,
+     "with": 54.6,
+     "without": 51.2,
+     "teams": 1138
+    },
+    {
+     "humans": 8,
+     "with": 55.3,
+     "without": 53.5,
+     "teams": 1167
+    },
+    {
+     "humans": 9,
+     "with": 55.6,
+     "without": 55.2,
+     "teams": 1041
+    },
+    {
+     "humans": 10,
+     "with": 58.9,
+     "without": 56,
+     "teams": 1115
+    },
+    {
+     "humans": 11,
+     "with": 56.4,
+     "without": 53.1,
+     "teams": 1512
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "finisher"
+   ],
+   "pts": 2.9,
+   "lo": 2.1,
+   "hi": 3.8,
+   "teams": 15712,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 40.2,
+     "without": 35.5,
+     "teams": 301
+    },
+    {
+     "humans": 3,
+     "with": 42.6,
+     "without": 40,
+     "teams": 846
+    },
+    {
+     "humans": 4,
+     "with": 49.2,
+     "without": 43.7,
+     "teams": 1525
+    },
+    {
+     "humans": 5,
+     "with": 51,
+     "without": 46.4,
+     "teams": 2057
+    },
+    {
+     "humans": 6,
+     "with": 52.9,
+     "without": 49.7,
+     "teams": 2115
+    },
+    {
+     "humans": 7,
+     "with": 54.1,
+     "without": 51.1,
+     "teams": 1965
+    },
+    {
+     "humans": 8,
+     "with": 54.4,
+     "without": 53.6,
+     "teams": 1665
+    },
+    {
+     "humans": 9,
+     "with": 56.4,
+     "without": 54.9,
+     "teams": 1422
+    },
+    {
+     "humans": 10,
+     "with": 58.8,
+     "without": 55.7,
+     "teams": 1541
+    },
+    {
+     "humans": 11,
+     "with": 55.2,
+     "without": 53.2,
+     "teams": 2321
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "marauder"
+   ],
+   "pts": 2.7,
+   "lo": 1.6,
+   "hi": 4,
+   "teams": 6878,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 51.4,
+     "without": 43.9,
+     "teams": 245
+    },
+    {
+     "humans": 5,
+     "with": 53.8,
+     "without": 46.5,
+     "teams": 474
+    },
+    {
+     "humans": 6,
+     "with": 56.9,
+     "without": 49.8,
+     "teams": 671
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.5,
+     "teams": 793
+    },
+    {
+     "humans": 8,
+     "with": 57.8,
+     "without": 53.3,
+     "teams": 907
+    },
+    {
+     "humans": 9,
+     "with": 52.4,
+     "without": 55.9,
+     "teams": 982
+    },
+    {
+     "humans": 10,
+     "with": 58,
+     "without": 56.3,
+     "teams": 1154
+    },
+    {
+     "humans": 11,
+     "with": 56.2,
+     "without": 53.2,
+     "teams": 1496
+    }
+   ]
+  },
+  {
+   "ids": [
+    "finisher",
+    "finisher"
+   ],
+   "pts": 2.7,
+   "lo": 2.1,
+   "hi": 3.1,
+   "teams": 40175,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 37.2,
+     "without": 35.4,
+     "teams": 2053
+    },
+    {
+     "humans": 3,
+     "with": 42.7,
+     "without": 39.8,
+     "teams": 6234
+    },
+    {
+     "humans": 4,
+     "with": 46.1,
+     "without": 43.5,
+     "teams": 8046
+    },
+    {
+     "humans": 5,
+     "with": 48,
+     "without": 46.3,
+     "teams": 6794
+    },
+    {
+     "humans": 6,
+     "with": 51.6,
+     "without": 49.5,
+     "teams": 5496
+    },
+    {
+     "humans": 7,
+     "with": 53.8,
+     "without": 50.8,
+     "teams": 3367
+    },
+    {
+     "humans": 8,
+     "with": 55.5,
+     "without": 53.1,
+     "teams": 2224
+    },
+    {
+     "humans": 9,
+     "with": 57.1,
+     "without": 54.5,
+     "teams": 1688
+    },
+    {
+     "humans": 10,
+     "with": 59.1,
+     "without": 55.4,
+     "teams": 1750
+    },
+    {
+     "humans": 11,
+     "with": 57.1,
+     "without": 51.3,
+     "teams": 2639
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "recycler"
+   ],
+   "pts": 2.5,
+   "lo": 1.7,
+   "hi": 3.3,
+   "teams": 17585,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 37.2,
+     "without": 40.1,
+     "teams": 207
+    },
+    {
+     "humans": 4,
+     "with": 47.9,
+     "without": 43.8,
+     "teams": 555
+    },
+    {
+     "humans": 5,
+     "with": 50.3,
+     "without": 46.5,
+     "teams": 1229
+    },
+    {
+     "humans": 6,
+     "with": 50.5,
+     "without": 49.9,
+     "teams": 1966
+    },
+    {
+     "humans": 7,
+     "with": 54.8,
+     "without": 50.8,
+     "teams": 2602
+    },
+    {
+     "humans": 8,
+     "with": 56,
+     "without": 52.7,
+     "teams": 2721
+    },
+    {
+     "humans": 9,
+     "with": 56.7,
+     "without": 54,
+     "teams": 2529
+    },
+    {
+     "humans": 10,
+     "with": 57.8,
+     "without": 55.4,
+     "teams": 2584
+    },
+    {
+     "humans": 11,
+     "with": 54.8,
+     "without": 53,
+     "teams": 3126
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "boss"
+   ],
+   "pts": 2.4,
+   "lo": 1.3,
+   "hi": 3.6,
+   "teams": 8541,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 44.1,
+     "without": 43.9,
+     "teams": 238
+    },
+    {
+     "humans": 5,
+     "with": 52.3,
+     "without": 46.5,
+     "teams": 407
+    },
+    {
+     "humans": 6,
+     "with": 53,
+     "without": 49.9,
+     "teams": 645
+    },
+    {
+     "humans": 7,
+     "with": 54.4,
+     "without": 51.3,
+     "teams": 914
+    },
+    {
+     "humans": 8,
+     "with": 56.4,
+     "without": 53.4,
+     "teams": 1163
+    },
+    {
+     "humans": 9,
+     "with": 56.2,
+     "without": 55,
+     "teams": 1241
+    },
+    {
+     "humans": 10,
+     "with": 58.9,
+     "without": 55.7,
+     "teams": 1539
+    },
+    {
+     "humans": 11,
+     "with": 55.1,
+     "without": 53.3,
+     "teams": 2305
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "progressor"
+   ],
+   "pts": 2.2,
+   "lo": -0.1,
+   "hi": 4.3,
+   "teams": 2224,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 8,
+     "with": 52.5,
+     "without": 53.8,
+     "teams": 204
+    },
+    {
+     "humans": 9,
+     "with": 52,
+     "without": 55.4,
+     "teams": 250
+    },
+    {
+     "humans": 10,
+     "with": 57.1,
+     "without": 56.7,
+     "teams": 273
+    },
+    {
+     "humans": 11,
+     "with": 57.5,
+     "without": 53.3,
+     "teams": 974
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "recycler"
+   ],
+   "pts": 2.1,
+   "lo": 1.3,
+   "hi": 3,
+   "teams": 14720,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 41.8,
+     "without": 40,
+     "teams": 237
+    },
+    {
+     "humans": 4,
+     "with": 46,
+     "without": 43.9,
+     "teams": 729
+    },
+    {
+     "humans": 5,
+     "with": 50.4,
+     "without": 46.5,
+     "teams": 1358
+    },
+    {
+     "humans": 6,
+     "with": 52,
+     "without": 49.8,
+     "teams": 2087
+    },
+    {
+     "humans": 7,
+     "with": 53.9,
+     "without": 51,
+     "teams": 2294
+    },
+    {
+     "humans": 8,
+     "with": 55.6,
+     "without": 53.2,
+     "teams": 2144
+    },
+    {
+     "humans": 9,
+     "with": 55.2,
+     "without": 55.3,
+     "teams": 1937
+    },
+    {
+     "humans": 10,
+     "with": 57.6,
+     "without": 56.2,
+     "teams": 1832
+    },
+    {
+     "humans": 11,
+     "with": 55.5,
+     "without": 53.1,
+     "teams": 2076
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "disruptor"
+   ],
+   "pts": 2,
+   "lo": 0.6,
+   "hi": 3.5,
+   "teams": 5091,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 47.6,
+     "without": 43.9,
+     "teams": 227
+    },
+    {
+     "humans": 5,
+     "with": 48,
+     "without": 46.6,
+     "teams": 417
+    },
+    {
+     "humans": 6,
+     "with": 53.5,
+     "without": 49.9,
+     "teams": 622
+    },
+    {
+     "humans": 7,
+     "with": 53.4,
+     "without": 51.4,
+     "teams": 676
+    },
+    {
+     "humans": 8,
+     "with": 57.2,
+     "without": 53.5,
+     "teams": 668
+    },
+    {
+     "humans": 9,
+     "with": 56.1,
+     "without": 55.2,
+     "teams": 644
+    },
+    {
+     "humans": 10,
+     "with": 58,
+     "without": 56.5,
+     "teams": 784
+    },
+    {
+     "humans": 11,
+     "with": 54.5,
+     "without": 53.9,
+     "teams": 994
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "finisher"
+   ],
+   "pts": 2,
+   "lo": 1.3,
+   "hi": 2.7,
+   "teams": 25550,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 38.4,
+     "without": 35.5,
+     "teams": 393
+    },
+    {
+     "humans": 3,
+     "with": 41.5,
+     "without": 40,
+     "teams": 1498
+    },
+    {
+     "humans": 4,
+     "with": 47,
+     "without": 43.7,
+     "teams": 2638
+    },
+    {
+     "humans": 5,
+     "with": 49.4,
+     "without": 46.3,
+     "teams": 3329
+    },
+    {
+     "humans": 6,
+     "with": 52.1,
+     "without": 49.6,
+     "teams": 3763
+    },
+    {
+     "humans": 7,
+     "with": 53.3,
+     "without": 50.9,
+     "teams": 3461
+    },
+    {
+     "humans": 8,
+     "with": 54.8,
+     "without": 53.3,
+     "teams": 2841
+    },
+    {
+     "humans": 9,
+     "with": 55.6,
+     "without": 55,
+     "teams": 2438
+    },
+    {
+     "humans": 10,
+     "with": 56.8,
+     "without": 56.6,
+     "teams": 2457
+    },
+    {
+     "humans": 11,
+     "with": 54.8,
+     "without": 53.3,
+     "teams": 2785
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "finisher"
+   ],
+   "pts": 1.9,
+   "lo": 1.2,
+   "hi": 2.8,
+   "teams": 29702,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 41.2,
+     "without": 35.5,
+     "teams": 255
+    },
+    {
+     "humans": 3,
+     "with": 39.1,
+     "without": 40.1,
+     "teams": 1086
+    },
+    {
+     "humans": 4,
+     "with": 45.7,
+     "without": 43.8,
+     "teams": 2363
+    },
+    {
+     "humans": 5,
+     "with": 48.2,
+     "without": 46.5,
+     "teams": 3151
+    },
+    {
+     "humans": 6,
+     "with": 50.8,
+     "without": 49.8,
+     "teams": 3973
+    },
+    {
+     "humans": 7,
+     "with": 53.1,
+     "without": 50.9,
+     "teams": 4103
+    },
+    {
+     "humans": 8,
+     "with": 54.9,
+     "without": 52.9,
+     "teams": 3708
+    },
+    {
+     "humans": 9,
+     "with": 56.8,
+     "without": 53,
+     "teams": 3281
+    },
+    {
+     "humans": 10,
+     "with": 57.3,
+     "without": 55.3,
+     "teams": 3463
+    },
+    {
+     "humans": 11,
+     "with": 54.4,
+     "without": 52.7,
+     "teams": 4376
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "creator"
+   ],
+   "pts": 1.9,
+   "lo": 1.4,
+   "hi": 2.5,
+   "teams": 35666,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 32.9,
+     "without": 35.5,
+     "teams": 219
+    },
+    {
+     "humans": 3,
+     "with": 43.5,
+     "without": 39.9,
+     "teams": 2127
+    },
+    {
+     "humans": 4,
+     "with": 46.1,
+     "without": 43.7,
+     "teams": 5215
+    },
+    {
+     "humans": 5,
+     "with": 48,
+     "without": 46.3,
+     "teams": 7357
+    },
+    {
+     "humans": 6,
+     "with": 51.7,
+     "without": 49.3,
+     "teams": 7264
+    },
+    {
+     "humans": 7,
+     "with": 51.8,
+     "without": 51.4,
+     "teams": 4412
+    },
+    {
+     "humans": 8,
+     "with": 54.9,
+     "without": 53.1,
+     "teams": 2996
+    },
+    {
+     "humans": 9,
+     "with": 56.3,
+     "without": 54.6,
+     "teams": 2082
+    },
+    {
+     "humans": 10,
+     "with": 56.6,
+     "without": 56.8,
+     "teams": 1906
+    },
+    {
+     "humans": 11,
+     "with": 56,
+     "without": 52.8,
+     "teams": 2169
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "maestro"
+   ],
+   "pts": 1.7,
+   "lo": 0.7,
+   "hi": 2.8,
+   "teams": 9419,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 44.2,
+     "without": 40,
+     "teams": 217
+    },
+    {
+     "humans": 4,
+     "with": 46.6,
+     "without": 43.9,
+     "teams": 543
+    },
+    {
+     "humans": 5,
+     "with": 49.9,
+     "without": 46.5,
+     "teams": 926
+    },
+    {
+     "humans": 6,
+     "with": 50.5,
+     "without": 49.9,
+     "teams": 1196
+    },
+    {
+     "humans": 7,
+     "with": 54.1,
+     "without": 51.3,
+     "teams": 1241
+    },
+    {
+     "humans": 8,
+     "with": 54.8,
+     "without": 53.6,
+     "teams": 1158
+    },
+    {
+     "humans": 9,
+     "with": 55.1,
+     "without": 55.3,
+     "teams": 1092
+    },
+    {
+     "humans": 10,
+     "with": 58.4,
+     "without": 56.2,
+     "teams": 1183
+    },
+    {
+     "humans": 11,
+     "with": 55.2,
+     "without": 53.4,
+     "teams": 1840
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "creator"
+   ],
+   "pts": 1.7,
+   "lo": 0.7,
+   "hi": 2.5,
+   "teams": 11381,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 42.5,
+     "without": 40,
+     "teams": 400
+    },
+    {
+     "humans": 4,
+     "with": 45.7,
+     "without": 43.9,
+     "teams": 946
+    },
+    {
+     "humans": 5,
+     "with": 48.9,
+     "without": 46.5,
+     "teams": 1435
+    },
+    {
+     "humans": 6,
+     "with": 51.7,
+     "without": 49.8,
+     "teams": 1692
+    },
+    {
+     "humans": 7,
+     "with": 52.8,
+     "without": 51.4,
+     "teams": 1563
+    },
+    {
+     "humans": 8,
+     "with": 55.3,
+     "without": 53.5,
+     "teams": 1333
+    },
+    {
+     "humans": 9,
+     "with": 54.5,
+     "without": 55.5,
+     "teams": 1122
+    },
+    {
+     "humans": 10,
+     "with": 57.7,
+     "without": 56.4,
+     "teams": 1212
+    },
+    {
+     "humans": 11,
+     "with": 56.5,
+     "without": 53,
+     "teams": 1660
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "recycler"
+   ],
+   "pts": 1.7,
+   "lo": 0.9,
+   "hi": 2.6,
+   "teams": 10678,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 44,
+     "without": 43.9,
+     "teams": 647
+    },
+    {
+     "humans": 5,
+     "with": 48.7,
+     "without": 46.5,
+     "teams": 1388
+    },
+    {
+     "humans": 6,
+     "with": 53.7,
+     "without": 49.6,
+     "teams": 2345
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.5,
+     "teams": 1650
+    },
+    {
+     "humans": 8,
+     "with": 55.6,
+     "without": 53.4,
+     "teams": 1375
+    },
+    {
+     "humans": 9,
+     "with": 55.3,
+     "without": 55.3,
+     "teams": 1032
+    },
+    {
+     "humans": 10,
+     "with": 58.8,
+     "without": 56.2,
+     "teams": 969
+    },
+    {
+     "humans": 11,
+     "with": 53.3,
+     "without": 54.2,
+     "teams": 1074
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "recycler"
+   ],
+   "pts": 1.6,
+   "lo": 0,
+   "hi": 3.2,
+   "teams": 3715,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 5,
+     "with": 50,
+     "without": 46.6,
+     "teams": 282
+    },
+    {
+     "humans": 6,
+     "with": 51.2,
+     "without": 49.9,
+     "teams": 385
+    },
+    {
+     "humans": 7,
+     "with": 55,
+     "without": 51.4,
+     "teams": 460
+    },
+    {
+     "humans": 8,
+     "with": 52.6,
+     "without": 53.9,
+     "teams": 403
+    },
+    {
+     "humans": 9,
+     "with": 56.7,
+     "without": 55.2,
+     "teams": 411
+    },
+    {
+     "humans": 10,
+     "with": 56,
+     "without": 56.8,
+     "teams": 425
+    },
+    {
+     "humans": 11,
+     "with": 55.5,
+     "without": 53.6,
+     "teams": 1129
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "maestro"
+   ],
+   "pts": 1.6,
+   "lo": 0.9,
+   "hi": 2.3,
+   "teams": 22856,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.7,
+     "without": 40,
+     "teams": 797
+    },
+    {
+     "humans": 4,
+     "with": 46.2,
+     "without": 43.8,
+     "teams": 2240
+    },
+    {
+     "humans": 5,
+     "with": 48.5,
+     "without": 46.4,
+     "teams": 3723
+    },
+    {
+     "humans": 6,
+     "with": 50.4,
+     "without": 49.9,
+     "teams": 4840
+    },
+    {
+     "humans": 7,
+     "with": 53,
+     "without": 51.1,
+     "teams": 3076
+    },
+    {
+     "humans": 8,
+     "with": 56,
+     "without": 52.9,
+     "teams": 2355
+    },
+    {
+     "humans": 9,
+     "with": 55.9,
+     "without": 55,
+     "teams": 1805
+    },
+    {
+     "humans": 10,
+     "with": 57.7,
+     "without": 56.1,
+     "teams": 1751
+    },
+    {
+     "humans": 11,
+     "with": 54.9,
+     "without": 53.4,
+     "teams": 2209
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "maestro"
+   ],
+   "pts": 1.4,
+   "lo": -0.1,
+   "hi": 3.2,
+   "teams": 4130,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 5,
+     "with": 51.2,
+     "without": 46.6,
+     "teams": 295
+    },
+    {
+     "humans": 6,
+     "with": 52.4,
+     "without": 49.9,
+     "teams": 429
+    },
+    {
+     "humans": 7,
+     "with": 54.7,
+     "without": 51.4,
+     "teams": 464
+    },
+    {
+     "humans": 8,
+     "with": 53.7,
+     "without": 53.8,
+     "teams": 423
+    },
+    {
+     "humans": 9,
+     "with": 56,
+     "without": 55.2,
+     "teams": 432
+    },
+    {
+     "humans": 10,
+     "with": 54.2,
+     "without": 57,
+     "teams": 441
+    },
+    {
+     "humans": 11,
+     "with": 54.8,
+     "without": 53.8,
+     "teams": 1387
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "magician"
+   ],
+   "pts": 1.2,
+   "lo": 0.6,
+   "hi": 1.7,
+   "teams": 39054,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 33.4,
+     "without": 35.5,
+     "teams": 596
+    },
+    {
+     "humans": 3,
+     "with": 41.2,
+     "without": 40,
+     "teams": 2833
+    },
+    {
+     "humans": 4,
+     "with": 46.3,
+     "without": 43.6,
+     "teams": 6448
+    },
+    {
+     "humans": 5,
+     "with": 47.9,
+     "without": 46.2,
+     "teams": 8377
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 49.9,
+     "teams": 7779
+    },
+    {
+     "humans": 7,
+     "with": 52.3,
+     "without": 51.1,
+     "teams": 4534
+    },
+    {
+     "humans": 8,
+     "with": 54.2,
+     "without": 53.6,
+     "teams": 2975
+    },
+    {
+     "humans": 9,
+     "with": 55.4,
+     "without": 55.2,
+     "teams": 2070
+    },
+    {
+     "humans": 10,
+     "with": 56.6,
+     "without": 56.8,
+     "teams": 1707
+    },
+    {
+     "humans": 11,
+     "with": 54.5,
+     "without": 53.8,
+     "teams": 1804
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "finisher"
+   ],
+   "pts": 1.2,
+   "lo": 0.7,
+   "hi": 1.7,
+   "teams": 51442,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 38.1,
+     "without": 35.4,
+     "teams": 2150
+    },
+    {
+     "humans": 3,
+     "with": 41.6,
+     "without": 39.9,
+     "teams": 5834
+    },
+    {
+     "humans": 4,
+     "with": 45.5,
+     "without": 43.6,
+     "teams": 8955
+    },
+    {
+     "humans": 5,
+     "with": 46.8,
+     "without": 46.5,
+     "teams": 9352
+    },
+    {
+     "humans": 6,
+     "with": 50.3,
+     "without": 49.8,
+     "teams": 8505
+    },
+    {
+     "humans": 7,
+     "with": 52.8,
+     "without": 50.8,
+     "teams": 4972
+    },
+    {
+     "humans": 8,
+     "with": 54.6,
+     "without": 53.2,
+     "teams": 3378
+    },
+    {
+     "humans": 9,
+     "with": 55.7,
+     "without": 54.9,
+     "teams": 2523
+    },
+    {
+     "humans": 10,
+     "with": 57.4,
+     "without": 55.9,
+     "teams": 2524
+    },
+    {
+     "humans": 11,
+     "with": 54.2,
+     "without": 53.8,
+     "teams": 3377
+    }
+   ]
+  },
+  {
+   "ids": [
+    "creator",
+    "finisher"
+   ],
+   "pts": 1.2,
+   "lo": 0.8,
+   "hi": 1.6,
+   "teams": 83724,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 37.9,
+     "without": 35.2,
+     "teams": 5968
+    },
+    {
+     "humans": 3,
+     "with": 41.5,
+     "without": 39.6,
+     "teams": 15336
+    },
+    {
+     "humans": 4,
+     "with": 44.7,
+     "without": 43.5,
+     "teams": 18045
+    },
+    {
+     "humans": 5,
+     "with": 46.7,
+     "without": 46.5,
+     "teams": 14915
+    },
+    {
+     "humans": 6,
+     "with": 50.8,
+     "without": 49.3,
+     "teams": 11243
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.4,
+     "teams": 6386
+    },
+    {
+     "humans": 8,
+     "with": 54,
+     "without": 53.6,
+     "teams": 3856
+    },
+    {
+     "humans": 9,
+     "with": 55.8,
+     "without": 54.8,
+     "teams": 2631
+    },
+    {
+     "humans": 10,
+     "with": 56.5,
+     "without": 57,
+     "teams": 2518
+    },
+    {
+     "humans": 11,
+     "with": 54.8,
+     "without": 53.1,
+     "teams": 3023
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "maestro"
+   ],
+   "pts": 1.1,
+   "lo": 0.3,
+   "hi": 1.9,
+   "teams": 16329,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.2,
+     "without": 40.1,
+     "teams": 510
+    },
+    {
+     "humans": 4,
+     "with": 48.3,
+     "without": 43.8,
+     "teams": 959
+    },
+    {
+     "humans": 5,
+     "with": 47.7,
+     "without": 46.6,
+     "teams": 1640
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 49.9,
+     "teams": 2345
+    },
+    {
+     "humans": 7,
+     "with": 53.3,
+     "without": 51.1,
+     "teams": 2426
+    },
+    {
+     "humans": 8,
+     "with": 56.3,
+     "without": 52.9,
+     "teams": 2136
+    },
+    {
+     "humans": 9,
+     "with": 54.9,
+     "without": 55.5,
+     "teams": 1864
+    },
+    {
+     "humans": 10,
+     "with": 56,
+     "without": 57.2,
+     "teams": 1958
+    },
+    {
+     "humans": 11,
+     "with": 54.1,
+     "without": 53.9,
+     "teams": 2376
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "target"
+   ],
+   "pts": 1.1,
+   "lo": 0.5,
+   "hi": 1.9,
+   "teams": 16043,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.8,
+     "without": 40,
+     "teams": 1119
+    },
+    {
+     "humans": 4,
+     "with": 46,
+     "without": 43.8,
+     "teams": 2674
+    },
+    {
+     "humans": 5,
+     "with": 49.2,
+     "without": 46.4,
+     "teams": 3313
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 49.9,
+     "teams": 3012
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.5,
+     "teams": 1775
+    },
+    {
+     "humans": 8,
+     "with": 54.6,
+     "without": 53.6,
+     "teams": 1247
+    },
+    {
+     "humans": 9,
+     "with": 55.7,
+     "without": 55.2,
+     "teams": 931
+    },
+    {
+     "humans": 10,
+     "with": 57.3,
+     "without": 56.6,
+     "teams": 826
+    },
+    {
+     "humans": 11,
+     "with": 52.4,
+     "without": 54.3,
+     "teams": 979
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "marauder"
+   ],
+   "pts": 1,
+   "lo": -0.5,
+   "hi": 2.9,
+   "teams": 3088,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 6,
+     "with": 54.3,
+     "without": 49.9,
+     "teams": 230
+    },
+    {
+     "humans": 7,
+     "with": 54.7,
+     "without": 51.5,
+     "teams": 289
+    },
+    {
+     "humans": 8,
+     "with": 51.3,
+     "without": 53.9,
+     "teams": 318
+    },
+    {
+     "humans": 9,
+     "with": 53.7,
+     "without": 55.4,
+     "teams": 378
+    },
+    {
+     "humans": 10,
+     "with": 54.6,
+     "without": 56.9,
+     "teams": 416
+    },
+    {
+     "humans": 11,
+     "with": 55.5,
+     "without": 53.6,
+     "teams": 1144
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "finisher"
+   ],
+   "pts": 1,
+   "lo": 0.4,
+   "hi": 1.6,
+   "teams": 27149,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 31.6,
+     "without": 35.5,
+     "teams": 513
+    },
+    {
+     "humans": 3,
+     "with": 39.4,
+     "without": 40.1,
+     "teams": 2083
+    },
+    {
+     "humans": 4,
+     "with": 44.7,
+     "without": 43.8,
+     "teams": 4059
+    },
+    {
+     "humans": 5,
+     "with": 48.8,
+     "without": 46.3,
+     "teams": 4997
+    },
+    {
+     "humans": 6,
+     "with": 51.5,
+     "without": 49.6,
+     "teams": 4855
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.4,
+     "teams": 3253
+    },
+    {
+     "humans": 8,
+     "with": 54.5,
+     "without": 53.5,
+     "teams": 2206
+    },
+    {
+     "humans": 9,
+     "with": 57.7,
+     "without": 54.2,
+     "teams": 1704
+    },
+    {
+     "humans": 10,
+     "with": 56.6,
+     "without": 56.8,
+     "teams": 1678
+    },
+    {
+     "humans": 11,
+     "with": 52.7,
+     "without": 54.6,
+     "teams": 1870
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "marauder"
+   ],
+   "pts": 0.9,
+   "lo": -0.3,
+   "hi": 1.9,
+   "teams": 13965,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 41.6,
+     "without": 43.9,
+     "teams": 375
+    },
+    {
+     "humans": 5,
+     "with": 49.6,
+     "without": 46.6,
+     "teams": 671
+    },
+    {
+     "humans": 6,
+     "with": 49,
+     "without": 50,
+     "teams": 1107
+    },
+    {
+     "humans": 7,
+     "with": 54,
+     "without": 51.2,
+     "teams": 1550
+    },
+    {
+     "humans": 8,
+     "with": 55.4,
+     "without": 53.2,
+     "teams": 2075
+    },
+    {
+     "humans": 9,
+     "with": 55.5,
+     "without": 55.1,
+     "teams": 2309
+    },
+    {
+     "humans": 10,
+     "with": 56.5,
+     "without": 56.9,
+     "teams": 2639
+    },
+    {
+     "humans": 11,
+     "with": 54.3,
+     "without": 53.7,
+     "teams": 3064
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "recycler"
+   ],
+   "pts": 0.9,
+   "lo": 0,
+   "hi": 1.7,
+   "teams": 11604,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 39.8,
+     "without": 40.1,
+     "teams": 226
+    },
+    {
+     "humans": 4,
+     "with": 45,
+     "without": 43.9,
+     "teams": 733
+    },
+    {
+     "humans": 5,
+     "with": 48,
+     "without": 46.5,
+     "teams": 1591
+    },
+    {
+     "humans": 6,
+     "with": 51.5,
+     "without": 49.8,
+     "teams": 2399
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.5,
+     "teams": 1773
+    },
+    {
+     "humans": 8,
+     "with": 54.8,
+     "without": 53.6,
+     "teams": 1435
+    },
+    {
+     "humans": 9,
+     "with": 56.4,
+     "without": 55,
+     "teams": 1190
+    },
+    {
+     "humans": 10,
+     "with": 57.8,
+     "without": 56.4,
+     "teams": 1070
+    },
+    {
+     "humans": 11,
+     "with": 52.8,
+     "without": 54.3,
+     "teams": 1182
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "marauder"
+   ],
+   "pts": 0.8,
+   "lo": -0.3,
+   "hi": 2.1,
+   "teams": 7854,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 43.7,
+     "without": 40,
+     "teams": 206
+    },
+    {
+     "humans": 4,
+     "with": 47.3,
+     "without": 43.9,
+     "teams": 385
+    },
+    {
+     "humans": 5,
+     "with": 48.4,
+     "without": 46.6,
+     "teams": 504
+    },
+    {
+     "humans": 6,
+     "with": 55.2,
+     "without": 49.8,
+     "teams": 714
+    },
+    {
+     "humans": 7,
+     "with": 50.1,
+     "without": 51.6,
+     "teams": 854
+    },
+    {
+     "humans": 8,
+     "with": 54.2,
+     "without": 53.7,
+     "teams": 1082
+    },
+    {
+     "humans": 9,
+     "with": 55.7,
+     "without": 55.2,
+     "teams": 1131
+    },
+    {
+     "humans": 10,
+     "with": 56.3,
+     "without": 56.9,
+     "teams": 1339
+    },
+    {
+     "humans": 11,
+     "with": 53.7,
+     "without": 54.1,
+     "teams": 1555
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "magician"
+   ],
+   "pts": 0.6,
+   "lo": 0.1,
+   "hi": 1.5,
+   "teams": 21528,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.6,
+     "without": 35.5,
+     "teams": 373
+    },
+    {
+     "humans": 3,
+     "with": 42,
+     "without": 40,
+     "teams": 1230
+    },
+    {
+     "humans": 4,
+     "with": 45.8,
+     "without": 43.8,
+     "teams": 2189
+    },
+    {
+     "humans": 5,
+     "with": 47.9,
+     "without": 46.5,
+     "teams": 3087
+    },
+    {
+     "humans": 6,
+     "with": 50.7,
+     "without": 49.9,
+     "teams": 3341
+    },
+    {
+     "humans": 7,
+     "with": 51.7,
+     "without": 51.5,
+     "teams": 3154
+    },
+    {
+     "humans": 8,
+     "with": 55.1,
+     "without": 53.2,
+     "teams": 2548
+    },
+    {
+     "humans": 9,
+     "with": 53.9,
+     "without": 56,
+     "teams": 1991
+    },
+    {
+     "humans": 10,
+     "with": 54.8,
+     "without": 57.8,
+     "teams": 1823
+    },
+    {
+     "humans": 11,
+     "with": 55.5,
+     "without": 53.3,
+     "teams": 1822
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "disruptor"
+   ],
+   "pts": 0.6,
+   "lo": -0.9,
+   "hi": 1.7,
+   "teams": 4499,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 42.5,
+     "without": 43.9,
+     "teams": 226
+    },
+    {
+     "humans": 5,
+     "with": 48.8,
+     "without": 46.6,
+     "teams": 576
+    },
+    {
+     "humans": 6,
+     "with": 50.1,
+     "without": 50,
+     "teams": 861
+    },
+    {
+     "humans": 7,
+     "with": 53.8,
+     "without": 51.4,
+     "teams": 708
+    },
+    {
+     "humans": 8,
+     "with": 57.4,
+     "without": 53.5,
+     "teams": 563
+    },
+    {
+     "humans": 9,
+     "with": 55.9,
+     "without": 55.2,
+     "teams": 449
+    },
+    {
+     "humans": 10,
+     "with": 50.4,
+     "without": 57.4,
+     "teams": 512
+    },
+    {
+     "humans": 11,
+     "with": 56.8,
+     "without": 53.7,
+     "teams": 514
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "spark"
+   ],
+   "pts": 0.5,
+   "lo": -0.4,
+   "hi": 1.5,
+   "teams": 9601,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 44.3,
+     "without": 40,
+     "teams": 370
+    },
+    {
+     "humans": 4,
+     "with": 45.1,
+     "without": 43.9,
+     "teams": 809
+    },
+    {
+     "humans": 5,
+     "with": 49,
+     "without": 46.5,
+     "teams": 1142
+    },
+    {
+     "humans": 6,
+     "with": 49.7,
+     "without": 50,
+     "teams": 1281
+    },
+    {
+     "humans": 7,
+     "with": 51.4,
+     "without": 51.5,
+     "teams": 1318
+    },
+    {
+     "humans": 8,
+     "with": 54.9,
+     "without": 53.6,
+     "teams": 1140
+    },
+    {
+     "humans": 9,
+     "with": 54.2,
+     "without": 55.5,
+     "teams": 987
+    },
+    {
+     "humans": 10,
+     "with": 57.6,
+     "without": 56.5,
+     "teams": 1002
+    },
+    {
+     "humans": 11,
+     "with": 53.1,
+     "without": 54.3,
+     "teams": 1481
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "magician"
+   ],
+   "pts": 0.5,
+   "lo": -0.3,
+   "hi": 1.4,
+   "teams": 11675,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 44.5,
+     "without": 40,
+     "teams": 598
+    },
+    {
+     "humans": 4,
+     "with": 46.9,
+     "without": 43.8,
+     "teams": 1188
+    },
+    {
+     "humans": 5,
+     "with": 48.2,
+     "without": 46.5,
+     "teams": 1571
+    },
+    {
+     "humans": 6,
+     "with": 50.7,
+     "without": 49.9,
+     "teams": 1762
+    },
+    {
+     "humans": 7,
+     "with": 51.4,
+     "without": 51.5,
+     "teams": 1554
+    },
+    {
+     "humans": 8,
+     "with": 53.6,
+     "without": 53.8,
+     "teams": 1359
+    },
+    {
+     "humans": 9,
+     "with": 53.6,
+     "without": 55.7,
+     "teams": 1100
+    },
+    {
+     "humans": 10,
+     "with": 55.6,
+     "without": 57,
+     "teams": 1092
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54.1,
+     "teams": 1311
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "maestro"
+   ],
+   "pts": 0.5,
+   "lo": -0.2,
+   "hi": 1.3,
+   "teams": 14349,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.3,
+     "without": 40.1,
+     "teams": 496
+    },
+    {
+     "humans": 4,
+     "with": 44.4,
+     "without": 43.9,
+     "teams": 1325
+    },
+    {
+     "humans": 5,
+     "with": 48.6,
+     "without": 46.5,
+     "teams": 2179
+    },
+    {
+     "humans": 6,
+     "with": 49.6,
+     "without": 50,
+     "teams": 2895
+    },
+    {
+     "humans": 7,
+     "with": 50.4,
+     "without": 51.7,
+     "teams": 1858
+    },
+    {
+     "humans": 8,
+     "with": 56,
+     "without": 53.3,
+     "teams": 1412
+    },
+    {
+     "humans": 9,
+     "with": 55.1,
+     "without": 55.3,
+     "teams": 1126
+    },
+    {
+     "humans": 10,
+     "with": 57.7,
+     "without": 56.4,
+     "teams": 1237
+    },
+    {
+     "humans": 11,
+     "with": 54.6,
+     "without": 53.7,
+     "teams": 1756
+    }
+   ]
+  },
+  {
+   "ids": [
+    "magician",
+    "finisher"
+   ],
+   "pts": 0.5,
+   "lo": 0.1,
+   "hi": 0.9,
+   "teams": 85622,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 37,
+     "without": 35.3,
+     "teams": 6725
+    },
+    {
+     "humans": 3,
+     "with": 40.9,
+     "without": 39.7,
+     "teams": 16786
+    },
+    {
+     "humans": 4,
+     "with": 44.4,
+     "without": 43.6,
+     "teams": 19378
+    },
+    {
+     "humans": 5,
+     "with": 46.5,
+     "without": 46.7,
+     "teams": 15482
+    },
+    {
+     "humans": 6,
+     "with": 49.8,
+     "without": 50.1,
+     "teams": 10923
+    },
+    {
+     "humans": 7,
+     "with": 51.8,
+     "without": 51.3,
+     "teams": 6046
+    },
+    {
+     "humans": 8,
+     "with": 54,
+     "without": 53.6,
+     "teams": 3590
+    },
+    {
+     "humans": 9,
+     "with": 55.3,
+     "without": 55.2,
+     "teams": 2402
+    },
+    {
+     "humans": 10,
+     "with": 56.1,
+     "without": 57.2,
+     "teams": 2124
+    },
+    {
+     "humans": 11,
+     "with": 53.7,
+     "without": 54.3,
+     "teams": 2313
+    }
+   ]
+  },
+  {
+   "ids": [
+    "finisher",
+    "target"
+   ],
+   "pts": 0.5,
+   "lo": -0.2,
+   "hi": 1.2,
+   "teams": 23481,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 35.2,
+     "without": 35.5,
+     "teams": 1220
+    },
+    {
+     "humans": 3,
+     "with": 40.2,
+     "without": 40,
+     "teams": 4130
+    },
+    {
+     "humans": 4,
+     "with": 44.9,
+     "without": 43.8,
+     "teams": 5026
+    },
+    {
+     "humans": 5,
+     "with": 47.1,
+     "without": 46.6,
+     "teams": 4165
+    },
+    {
+     "humans": 6,
+     "with": 49.7,
+     "without": 50,
+     "teams": 3120
+    },
+    {
+     "humans": 7,
+     "with": 54.2,
+     "without": 51.1,
+     "teams": 1852
+    },
+    {
+     "humans": 8,
+     "with": 53.8,
+     "without": 53.8,
+     "teams": 1193
+    },
+    {
+     "humans": 9,
+     "with": 56,
+     "without": 55.1,
+     "teams": 888
+    },
+    {
+     "humans": 10,
+     "with": 56.5,
+     "without": 56.7,
+     "teams": 883
+    },
+    {
+     "humans": 11,
+     "with": 52.1,
+     "without": 54.5,
+     "teams": 1066
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "maestro"
+   ],
+   "pts": 0.4,
+   "lo": -0.5,
+   "hi": 1.1,
+   "teams": 14285,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 39.3,
+     "without": 40.1,
+     "teams": 527
+    },
+    {
+     "humans": 4,
+     "with": 43.7,
+     "without": 43.9,
+     "teams": 1255
+    },
+    {
+     "humans": 5,
+     "with": 48.3,
+     "without": 46.5,
+     "teams": 2183
+    },
+    {
+     "humans": 6,
+     "with": 50.3,
+     "without": 49.9,
+     "teams": 2976
+    },
+    {
+     "humans": 7,
+     "with": 53.5,
+     "without": 51.2,
+     "teams": 1950
+    },
+    {
+     "humans": 8,
+     "with": 53.2,
+     "without": 53.9,
+     "teams": 1465
+    },
+    {
+     "humans": 9,
+     "with": 56.4,
+     "without": 55,
+     "teams": 1201
+    },
+    {
+     "humans": 10,
+     "with": 56.8,
+     "without": 56.7,
+     "teams": 1246
+    },
+    {
+     "humans": 11,
+     "with": 52.1,
+     "without": 54.7,
+     "teams": 1444
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "disruptor"
+   ],
+   "pts": 0.3,
+   "lo": -1.6,
+   "hi": 2.1,
+   "teams": 2317,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 6,
+     "with": 52.7,
+     "without": 49.9,
+     "teams": 207
+    },
+    {
+     "humans": 7,
+     "with": 54.1,
+     "without": 51.5,
+     "teams": 292
+    },
+    {
+     "humans": 8,
+     "with": 54.1,
+     "without": 53.8,
+     "teams": 270
+    },
+    {
+     "humans": 9,
+     "with": 57.2,
+     "without": 55.2,
+     "teams": 250
+    },
+    {
+     "humans": 10,
+     "with": 51.4,
+     "without": 57,
+     "teams": 292
+    },
+    {
+     "humans": 11,
+     "with": 53.6,
+     "without": 54.1,
+     "teams": 765
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "boss"
+   ],
+   "pts": 0.2,
+   "lo": -0.9,
+   "hi": 1.4,
+   "teams": 12566,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 35.7,
+     "without": 43.9,
+     "teams": 272
+    },
+    {
+     "humans": 5,
+     "with": 49,
+     "without": 46.6,
+     "teams": 463
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 50,
+     "teams": 749
+    },
+    {
+     "humans": 7,
+     "with": 53.3,
+     "without": 51.4,
+     "teams": 1139
+    },
+    {
+     "humans": 8,
+     "with": 55.3,
+     "without": 53.4,
+     "teams": 1665
+    },
+    {
+     "humans": 9,
+     "with": 56,
+     "without": 54.9,
+     "teams": 1876
+    },
+    {
+     "humans": 10,
+     "with": 57.8,
+     "without": 55.4,
+     "teams": 2622
+    },
+    {
+     "humans": 11,
+     "with": 53.1,
+     "without": 55.7,
+     "teams": 3692
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "creator"
+   ],
+   "pts": 0.1,
+   "lo": -1.4,
+   "hi": 1.6,
+   "teams": 4858,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 42.9,
+     "without": 43.9,
+     "teams": 326
+    },
+    {
+     "humans": 5,
+     "with": 49.8,
+     "without": 46.6,
+     "teams": 504
+    },
+    {
+     "humans": 6,
+     "with": 47.9,
+     "without": 50,
+     "teams": 576
+    },
+    {
+     "humans": 7,
+     "with": 53.5,
+     "without": 51.4,
+     "teams": 600
+    },
+    {
+     "humans": 8,
+     "with": 49.5,
+     "without": 54.1,
+     "teams": 511
+    },
+    {
+     "humans": 9,
+     "with": 54.2,
+     "without": 55.4,
+     "teams": 454
+    },
+    {
+     "humans": 10,
+     "with": 54.6,
+     "without": 56.9,
+     "teams": 443
+    },
+    {
+     "humans": 11,
+     "with": 56.3,
+     "without": 53.4,
+     "teams": 1203
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "maestro"
+   ],
+   "pts": 0.1,
+   "lo": -0.8,
+   "hi": 1,
+   "teams": 19396,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 30.1,
+     "without": 40.1,
+     "teams": 332
+    },
+    {
+     "humans": 4,
+     "with": 41.4,
+     "without": 43.9,
+     "teams": 775
+    },
+    {
+     "humans": 5,
+     "with": 46,
+     "without": 46.6,
+     "teams": 1364
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 49.9,
+     "teams": 2465
+    },
+    {
+     "humans": 7,
+     "with": 53,
+     "without": 51.2,
+     "teams": 2697
+    },
+    {
+     "humans": 8,
+     "with": 54.6,
+     "without": 53.4,
+     "teams": 2744
+    },
+    {
+     "humans": 9,
+     "with": 55.1,
+     "without": 55.4,
+     "teams": 2514
+    },
+    {
+     "humans": 10,
+     "with": 57.1,
+     "without": 56.2,
+     "teams": 2777
+    },
+    {
+     "humans": 11,
+     "with": 53.8,
+     "without": 54.4,
+     "teams": 3671
+    }
+   ]
+  },
+  {
+   "ids": [
+    "progressor",
+    "target"
+   ],
+   "pts": 0,
+   "lo": -1.2,
+   "hi": 1.3,
+   "teams": 6368,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 37.4,
+     "without": 40.1,
+     "teams": 364
+    },
+    {
+     "humans": 4,
+     "with": 40.6,
+     "without": 43.9,
+     "teams": 722
+    },
+    {
+     "humans": 5,
+     "with": 48.5,
+     "without": 46.6,
+     "teams": 882
+    },
+    {
+     "humans": 6,
+     "with": 50.6,
+     "without": 49.9,
+     "teams": 896
+    },
+    {
+     "humans": 7,
+     "with": 53.1,
+     "without": 51.4,
+     "teams": 768
+    },
+    {
+     "humans": 8,
+     "with": 56.9,
+     "without": 53.5,
+     "teams": 685
+    },
+    {
+     "humans": 9,
+     "with": 54.8,
+     "without": 55.3,
+     "teams": 586
+    },
+    {
+     "humans": 10,
+     "with": 56.6,
+     "without": 56.7,
+     "teams": 604
+    },
+    {
+     "humans": 11,
+     "with": 51.6,
+     "without": 54.4,
+     "teams": 775
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "target"
+   ],
+   "pts": 0,
+   "lo": -0.8,
+   "hi": 1,
+   "teams": 9945,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 38.9,
+     "without": 40.1,
+     "teams": 707
+    },
+    {
+     "humans": 4,
+     "with": 44.9,
+     "without": 43.9,
+     "teams": 1218
+    },
+    {
+     "humans": 5,
+     "with": 47.2,
+     "without": 46.6,
+     "teams": 1382
+    },
+    {
+     "humans": 6,
+     "with": 51.3,
+     "without": 49.9,
+     "teams": 1463
+    },
+    {
+     "humans": 7,
+     "with": 51.7,
+     "without": 51.5,
+     "teams": 1347
+    },
+    {
+     "humans": 8,
+     "with": 54.9,
+     "without": 53.6,
+     "teams": 1052
+    },
+    {
+     "humans": 9,
+     "with": 52.8,
+     "without": 55.7,
+     "teams": 880
+    },
+    {
+     "humans": 10,
+     "with": 56.1,
+     "without": 56.8,
+     "teams": 805
+    },
+    {
+     "humans": 11,
+     "with": 52.2,
+     "without": 54.4,
+     "teams": 923
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "creator"
+   ],
+   "pts": 0,
+   "lo": -0.7,
+   "hi": 0.6,
+   "teams": 21622,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 36.8,
+     "without": 40.1,
+     "teams": 1332
+    },
+    {
+     "humans": 4,
+     "with": 43.6,
+     "without": 43.9,
+     "teams": 3001
+    },
+    {
+     "humans": 5,
+     "with": 47,
+     "without": 46.6,
+     "teams": 4171
+    },
+    {
+     "humans": 6,
+     "with": 50,
+     "without": 50,
+     "teams": 4287
+    },
+    {
+     "humans": 7,
+     "with": 51.7,
+     "without": 51.5,
+     "teams": 2810
+    },
+    {
+     "humans": 8,
+     "with": 54.9,
+     "without": 53.5,
+     "teams": 1869
+    },
+    {
+     "humans": 9,
+     "with": 56.3,
+     "without": 55,
+     "teams": 1349
+    },
+    {
+     "humans": 10,
+     "with": 56,
+     "without": 57,
+     "teams": 1316
+    },
+    {
+     "humans": 11,
+     "with": 53.3,
+     "without": 54.3,
+     "teams": 1429
+    }
+   ]
+  },
+  {
+   "ids": [
+    "recycler",
+    "spark"
+   ],
+   "pts": 0,
+   "lo": -0.7,
+   "hi": 0.7,
+   "teams": 27752,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 31.9,
+     "without": 35.5,
+     "teams": 238
+    },
+    {
+     "humans": 3,
+     "with": 39.2,
+     "without": 40.1,
+     "teams": 1416
+    },
+    {
+     "humans": 4,
+     "with": 44,
+     "without": 43.9,
+     "teams": 3715
+    },
+    {
+     "humans": 5,
+     "with": 47.2,
+     "without": 46.5,
+     "teams": 5543
+    },
+    {
+     "humans": 6,
+     "with": 50.2,
+     "without": 49.9,
+     "teams": 5637
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.5,
+     "teams": 3505
+    },
+    {
+     "humans": 8,
+     "with": 53.9,
+     "without": 53.7,
+     "teams": 2471
+    },
+    {
+     "humans": 9,
+     "with": 54.7,
+     "without": 55.5,
+     "teams": 1715
+    },
+    {
+     "humans": 10,
+     "with": 56.4,
+     "without": 56.8,
+     "teams": 1591
+    },
+    {
+     "humans": 11,
+     "with": 52.7,
+     "without": 54.7,
+     "teams": 1974
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "disruptor"
+   ],
+   "pts": -0.2,
+   "lo": -1.2,
+   "hi": 0.8,
+   "teams": 9485,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 42.4,
+     "without": 43.9,
+     "teams": 472
+    },
+    {
+     "humans": 5,
+     "with": 48.3,
+     "without": 46.6,
+     "teams": 876
+    },
+    {
+     "humans": 6,
+     "with": 52,
+     "without": 49.9,
+     "teams": 1270
+    },
+    {
+     "humans": 7,
+     "with": 51.9,
+     "without": 51.5,
+     "teams": 1467
+    },
+    {
+     "humans": 8,
+     "with": 54.1,
+     "without": 53.7,
+     "teams": 1298
+    },
+    {
+     "humans": 9,
+     "with": 55.3,
+     "without": 55.3,
+     "teams": 1195
+    },
+    {
+     "humans": 10,
+     "with": 55.4,
+     "without": 57.2,
+     "teams": 1314
+    },
+    {
+     "humans": 11,
+     "with": 52.7,
+     "without": 54.4,
+     "teams": 1378
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "creator"
+   ],
+   "pts": -0.2,
+   "lo": -0.9,
+   "hi": 0.6,
+   "teams": 20811,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.8,
+     "without": 40,
+     "teams": 961
+    },
+    {
+     "humans": 4,
+     "with": 45.1,
+     "without": 43.8,
+     "teams": 1898
+    },
+    {
+     "humans": 5,
+     "with": 46.1,
+     "without": 46.7,
+     "teams": 2658
+    },
+    {
+     "humans": 6,
+     "with": 49.9,
+     "without": 50,
+     "teams": 3167
+    },
+    {
+     "humans": 7,
+     "with": 51,
+     "without": 51.7,
+     "teams": 3222
+    },
+    {
+     "humans": 8,
+     "with": 53.9,
+     "without": 53.8,
+     "teams": 2542
+    },
+    {
+     "humans": 9,
+     "with": 54.3,
+     "without": 55.8,
+     "teams": 2017
+    },
+    {
+     "humans": 10,
+     "with": 55.5,
+     "without": 57.5,
+     "teams": 2013
+    },
+    {
+     "humans": 11,
+     "with": 54.8,
+     "without": 53.5,
+     "teams": 2193
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "magician"
+   ],
+   "pts": -0.2,
+   "lo": -0.8,
+   "hi": 0.4,
+   "teams": 23310,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.6,
+     "without": 35.5,
+     "teams": 295
+    },
+    {
+     "humans": 3,
+     "with": 39.8,
+     "without": 40.1,
+     "teams": 1865
+    },
+    {
+     "humans": 4,
+     "with": 42.5,
+     "without": 44,
+     "teams": 3527
+    },
+    {
+     "humans": 5,
+     "with": 47.6,
+     "without": 46.5,
+     "teams": 4733
+    },
+    {
+     "humans": 6,
+     "with": 50,
+     "without": 50,
+     "teams": 4516
+    },
+    {
+     "humans": 7,
+     "with": 51,
+     "without": 51.7,
+     "teams": 2801
+    },
+    {
+     "humans": 8,
+     "with": 53.6,
+     "without": 53.8,
+     "teams": 1884
+    },
+    {
+     "humans": 9,
+     "with": 57.1,
+     "without": 54.7,
+     "teams": 1310
+    },
+    {
+     "humans": 10,
+     "with": 54.1,
+     "without": 57.6,
+     "teams": 1214
+    },
+    {
+     "humans": 11,
+     "with": 52.6,
+     "without": 54.4,
+     "teams": 1231
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "finisher"
+   ],
+   "pts": -0.3,
+   "lo": -1.6,
+   "hi": 1,
+   "teams": 6635,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.4,
+     "without": 40.1,
+     "teams": 428
+    },
+    {
+     "humans": 4,
+     "with": 43.8,
+     "without": 43.9,
+     "teams": 514
+    },
+    {
+     "humans": 5,
+     "with": 44.6,
+     "without": 46.6,
+     "teams": 670
+    },
+    {
+     "humans": 6,
+     "with": 50.5,
+     "without": 49.9,
+     "teams": 728
+    },
+    {
+     "humans": 7,
+     "with": 53.1,
+     "without": 51.4,
+     "teams": 737
+    },
+    {
+     "humans": 8,
+     "with": 50.1,
+     "without": 54.1,
+     "teams": 605
+    },
+    {
+     "humans": 9,
+     "with": 54.8,
+     "without": 55.3,
+     "teams": 562
+    },
+    {
+     "humans": 10,
+     "with": 53.2,
+     "without": 57.2,
+     "teams": 598
+    },
+    {
+     "humans": 11,
+     "with": 55.2,
+     "without": 53.5,
+     "teams": 1639
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "disruptor"
+   ],
+   "pts": -0.4,
+   "lo": -1.5,
+   "hi": 0.5,
+   "teams": 11074,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 41,
+     "without": 43.9,
+     "teams": 324
+    },
+    {
+     "humans": 5,
+     "with": 48,
+     "without": 46.6,
+     "teams": 729
+    },
+    {
+     "humans": 6,
+     "with": 47.6,
+     "without": 50.1,
+     "teams": 1246
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.5,
+     "teams": 1590
+    },
+    {
+     "humans": 8,
+     "with": 55.4,
+     "without": 53.4,
+     "teams": 1682
+    },
+    {
+     "humans": 9,
+     "with": 57.3,
+     "without": 54.4,
+     "teams": 1610
+    },
+    {
+     "humans": 10,
+     "with": 55.5,
+     "without": 57.4,
+     "teams": 1772
+    },
+    {
+     "humans": 11,
+     "with": 51.8,
+     "without": 55.2,
+     "teams": 2032
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "creator"
+   ],
+   "pts": -0.4,
+   "lo": -1.2,
+   "hi": 0.4,
+   "teams": 23706,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 34.7,
+     "without": 40.1,
+     "teams": 605
+    },
+    {
+     "humans": 4,
+     "with": 41.6,
+     "without": 44,
+     "teams": 1554
+    },
+    {
+     "humans": 5,
+     "with": 47.3,
+     "without": 46.6,
+     "teams": 2560
+    },
+    {
+     "humans": 6,
+     "with": 48.9,
+     "without": 50.1,
+     "teams": 3345
+    },
+    {
+     "humans": 7,
+     "with": 52.3,
+     "without": 51.2,
+     "teams": 3584
+    },
+    {
+     "humans": 8,
+     "with": 54.2,
+     "without": 53.5,
+     "teams": 3255
+    },
+    {
+     "humans": 9,
+     "with": 55.2,
+     "without": 55.4,
+     "teams": 2717
+    },
+    {
+     "humans": 10,
+     "with": 55.9,
+     "without": 57.8,
+     "teams": 2764
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54.1,
+     "teams": 3294
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "magician"
+   ],
+   "pts": -0.4,
+   "lo": -1,
+   "hi": 0.4,
+   "teams": 22927,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 38.7,
+     "without": 40.1,
+     "teams": 819
+    },
+    {
+     "humans": 4,
+     "with": 42.2,
+     "without": 43.9,
+     "teams": 1829
+    },
+    {
+     "humans": 5,
+     "with": 47.4,
+     "without": 46.5,
+     "teams": 2776
+    },
+    {
+     "humans": 6,
+     "with": 48.7,
+     "without": 50.1,
+     "teams": 3267
+    },
+    {
+     "humans": 7,
+     "with": 52.1,
+     "without": 51.3,
+     "teams": 3393
+    },
+    {
+     "humans": 8,
+     "with": 54.5,
+     "without": 53.4,
+     "teams": 3054
+    },
+    {
+     "humans": 9,
+     "with": 55.2,
+     "without": 55.4,
+     "teams": 2519
+    },
+    {
+     "humans": 10,
+     "with": 55.4,
+     "without": 58.1,
+     "teams": 2485
+    },
+    {
+     "humans": 11,
+     "with": 53.4,
+     "without": 54.6,
+     "teams": 2653
+    }
+   ]
+  },
+  {
+   "ids": [
+    "spark",
+    "finisher"
+   ],
+   "pts": -0.4,
+   "lo": -0.7,
+   "hi": 0.1,
+   "teams": 59619,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 35.4,
+     "without": 35.5,
+     "teams": 3113
+    },
+    {
+     "humans": 3,
+     "with": 40.8,
+     "without": 39.9,
+     "teams": 10016
+    },
+    {
+     "humans": 4,
+     "with": 43.3,
+     "without": 44.1,
+     "teams": 12680
+    },
+    {
+     "humans": 5,
+     "with": 46.6,
+     "without": 46.6,
+     "teams": 10992
+    },
+    {
+     "humans": 6,
+     "with": 49.9,
+     "without": 50,
+     "teams": 8220
+    },
+    {
+     "humans": 7,
+     "with": 51,
+     "without": 51.8,
+     "teams": 4831
+    },
+    {
+     "humans": 8,
+     "with": 52.5,
+     "without": 54.6,
+     "teams": 3121
+    },
+    {
+     "humans": 9,
+     "with": 55,
+     "without": 55.5,
+     "teams": 2076
+    },
+    {
+     "humans": 10,
+     "with": 56.8,
+     "without": 56.6,
+     "teams": 2082
+    },
+    {
+     "humans": 11,
+     "with": 52.3,
+     "without": 55.4,
+     "teams": 2609
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "recycler"
+   ],
+   "pts": -0.5,
+   "lo": -1.7,
+   "hi": 0.7,
+   "teams": 8590,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 41.6,
+     "without": 43.9,
+     "teams": 322
+    },
+    {
+     "humans": 5,
+     "with": 46.6,
+     "without": 46.6,
+     "teams": 717
+    },
+    {
+     "humans": 6,
+     "with": 49.7,
+     "without": 50,
+     "teams": 892
+    },
+    {
+     "humans": 7,
+     "with": 51.5,
+     "without": 51.5,
+     "teams": 1133
+    },
+    {
+     "humans": 8,
+     "with": 52.8,
+     "without": 53.9,
+     "teams": 1053
+    },
+    {
+     "humans": 9,
+     "with": 54.9,
+     "without": 55.4,
+     "teams": 1037
+    },
+    {
+     "humans": 10,
+     "with": 54.8,
+     "without": 57.2,
+     "teams": 976
+    },
+    {
+     "humans": 11,
+     "with": 54.5,
+     "without": 53.6,
+     "teams": 2318
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "boss"
+   ],
+   "pts": -0.5,
+   "lo": -2.1,
+   "hi": 1.2,
+   "teams": 4353,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 6,
+     "with": 49.6,
+     "without": 50,
+     "teams": 242
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.5,
+     "teams": 354
+    },
+    {
+     "humans": 8,
+     "with": 50.7,
+     "without": 54,
+     "teams": 454
+    },
+    {
+     "humans": 9,
+     "with": 54.7,
+     "without": 55.3,
+     "teams": 541
+    },
+    {
+     "humans": 10,
+     "with": 53.4,
+     "without": 57.2,
+     "teams": 638
+    },
+    {
+     "humans": 11,
+     "with": 55.4,
+     "without": 53.4,
+     "teams": 1774
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "magician"
+   ],
+   "pts": -0.6,
+   "lo": -1.9,
+   "hi": 0.7,
+   "teams": 4882,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 41,
+     "without": 40.1,
+     "teams": 278
+    },
+    {
+     "humans": 4,
+     "with": 40.4,
+     "without": 43.9,
+     "teams": 431
+    },
+    {
+     "humans": 5,
+     "with": 45.6,
+     "without": 46.6,
+     "teams": 563
+    },
+    {
+     "humans": 6,
+     "with": 49.4,
+     "without": 50,
+     "teams": 626
+    },
+    {
+     "humans": 7,
+     "with": 52.1,
+     "without": 51.5,
+     "teams": 643
+    },
+    {
+     "humans": 8,
+     "with": 52,
+     "without": 53.9,
+     "teams": 477
+    },
+    {
+     "humans": 9,
+     "with": 53.2,
+     "without": 55.5,
+     "teams": 436
+    },
+    {
+     "humans": 10,
+     "with": 53.6,
+     "without": 57,
+     "teams": 425
+    },
+    {
+     "humans": 11,
+     "with": 56.3,
+     "without": 53.5,
+     "teams": 950
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "target"
+   ],
+   "pts": -0.6,
+   "lo": -1.4,
+   "hi": 0.5,
+   "teams": 10929,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 40.5,
+     "without": 40.1,
+     "teams": 437
+    },
+    {
+     "humans": 4,
+     "with": 43.1,
+     "without": 43.9,
+     "teams": 960
+    },
+    {
+     "humans": 5,
+     "with": 47.3,
+     "without": 46.6,
+     "teams": 1282
+    },
+    {
+     "humans": 6,
+     "with": 49.3,
+     "without": 50,
+     "teams": 1452
+    },
+    {
+     "humans": 7,
+     "with": 52.5,
+     "without": 51.4,
+     "teams": 1483
+    },
+    {
+     "humans": 8,
+     "with": 55,
+     "without": 53.5,
+     "teams": 1381
+    },
+    {
+     "humans": 9,
+     "with": 53.8,
+     "without": 55.7,
+     "teams": 1170
+    },
+    {
+     "humans": 10,
+     "with": 55.4,
+     "without": 57.1,
+     "teams": 1184
+    },
+    {
+     "humans": 11,
+     "with": 51.1,
+     "without": 55,
+     "teams": 1469
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "progressor"
+   ],
+   "pts": -0.7,
+   "lo": -2.1,
+   "hi": 1,
+   "teams": 4589,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 5,
+     "with": 47.9,
+     "without": 46.6,
+     "teams": 267
+    },
+    {
+     "humans": 6,
+     "with": 51.3,
+     "without": 49.9,
+     "teams": 335
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.5,
+     "teams": 417
+    },
+    {
+     "humans": 8,
+     "with": 54.5,
+     "without": 53.7,
+     "teams": 517
+    },
+    {
+     "humans": 9,
+     "with": 55.3,
+     "without": 55.3,
+     "teams": 535
+    },
+    {
+     "humans": 10,
+     "with": 53.8,
+     "without": 57.1,
+     "teams": 638
+    },
+    {
+     "humans": 11,
+     "with": 54.1,
+     "without": 54,
+     "teams": 1720
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "target"
+   ],
+   "pts": -0.8,
+   "lo": -1.8,
+   "hi": 0.3,
+   "teams": 10085,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 41.7,
+     "without": 40,
+     "teams": 856
+    },
+    {
+     "humans": 4,
+     "with": 42.4,
+     "without": 43.9,
+     "teams": 1600
+    },
+    {
+     "humans": 5,
+     "with": 48.1,
+     "without": 46.5,
+     "teams": 2011
+    },
+    {
+     "humans": 6,
+     "with": 49.2,
+     "without": 50,
+     "teams": 1835
+    },
+    {
+     "humans": 7,
+     "with": 50.2,
+     "without": 51.6,
+     "teams": 1146
+    },
+    {
+     "humans": 8,
+     "with": 52.8,
+     "without": 53.9,
+     "teams": 771
+    },
+    {
+     "humans": 9,
+     "with": 56.2,
+     "without": 55.2,
+     "teams": 575
+    },
+    {
+     "humans": 10,
+     "with": 51.7,
+     "without": 57.3,
+     "teams": 522
+    },
+    {
+     "humans": 11,
+     "with": 48.7,
+     "without": 54.7,
+     "teams": 634
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "finisher"
+   ],
+   "pts": -0.9,
+   "lo": -1.8,
+   "hi": 0.1,
+   "teams": 15841,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 33.8,
+     "without": 35.5,
+     "teams": 299
+    },
+    {
+     "humans": 3,
+     "with": 38.1,
+     "without": 40.1,
+     "teams": 896
+    },
+    {
+     "humans": 4,
+     "with": 44.3,
+     "without": 43.9,
+     "teams": 1566
+    },
+    {
+     "humans": 5,
+     "with": 46.5,
+     "without": 46.6,
+     "teams": 1995
+    },
+    {
+     "humans": 6,
+     "with": 49.6,
+     "without": 50,
+     "teams": 1851
+    },
+    {
+     "humans": 7,
+     "with": 50.7,
+     "without": 51.7,
+     "teams": 1863
+    },
+    {
+     "humans": 8,
+     "with": 51.6,
+     "without": 54.3,
+     "teams": 1529
+    },
+    {
+     "humans": 9,
+     "with": 53.6,
+     "without": 55.8,
+     "teams": 1373
+    },
+    {
+     "humans": 10,
+     "with": 55.1,
+     "without": 57.3,
+     "teams": 1351
+    },
+    {
+     "humans": 11,
+     "with": 54.2,
+     "without": 53.7,
+     "teams": 3157
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "creator"
+   ],
+   "pts": -0.9,
+   "lo": -1.4,
+   "hi": -0.3,
+   "teams": 33936,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 32.8,
+     "without": 35.5,
+     "teams": 293
+    },
+    {
+     "humans": 3,
+     "with": 40,
+     "without": 40.1,
+     "teams": 2466
+    },
+    {
+     "humans": 4,
+     "with": 42.9,
+     "without": 44,
+     "teams": 5202
+    },
+    {
+     "humans": 5,
+     "with": 45.7,
+     "without": 46.8,
+     "teams": 6688
+    },
+    {
+     "humans": 6,
+     "with": 48.9,
+     "without": 50.4,
+     "teams": 6864
+    },
+    {
+     "humans": 7,
+     "with": 51.5,
+     "without": 51.5,
+     "teams": 3966
+    },
+    {
+     "humans": 8,
+     "with": 53.9,
+     "without": 53.7,
+     "teams": 2549
+    },
+    {
+     "humans": 9,
+     "with": 54.9,
+     "without": 55.5,
+     "teams": 1864
+    },
+    {
+     "humans": 10,
+     "with": 55.1,
+     "without": 57.7,
+     "teams": 1827
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54.1,
+     "teams": 2299
+    }
+   ]
+  },
+  {
+   "ids": [
+    "magician",
+    "target"
+   ],
+   "pts": -0.9,
+   "lo": -1.4,
+   "hi": -0.4,
+   "teams": 28778,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.1,
+     "without": 35.5,
+     "teams": 2041
+    },
+    {
+     "humans": 3,
+     "with": 40.2,
+     "without": 40,
+     "teams": 5850
+    },
+    {
+     "humans": 4,
+     "with": 43,
+     "without": 44,
+     "teams": 6546
+    },
+    {
+     "humans": 5,
+     "with": 46.5,
+     "without": 46.6,
+     "teams": 5378
+    },
+    {
+     "humans": 6,
+     "with": 48.3,
+     "without": 50.3,
+     "teams": 3763
+    },
+    {
+     "humans": 7,
+     "with": 49.4,
+     "without": 51.9,
+     "teams": 1934
+    },
+    {
+     "humans": 8,
+     "with": 54.6,
+     "without": 53.7,
+     "teams": 1250
+    },
+    {
+     "humans": 9,
+     "with": 52.8,
+     "without": 55.7,
+     "teams": 799
+    },
+    {
+     "humans": 10,
+     "with": 52.5,
+     "without": 57.3,
+     "teams": 631
+    },
+    {
+     "humans": 11,
+     "with": 52,
+     "without": 54.3,
+     "teams": 664
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "magician"
+   ],
+   "pts": -1,
+   "lo": -1.5,
+   "hi": -0.5,
+   "teams": 43204,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.4,
+     "without": 35.5,
+     "teams": 1448
+    },
+    {
+     "humans": 3,
+     "with": 38.8,
+     "without": 40.2,
+     "teams": 4728
+    },
+    {
+     "humans": 4,
+     "with": 44.4,
+     "without": 43.8,
+     "teams": 7985
+    },
+    {
+     "humans": 5,
+     "with": 45.1,
+     "without": 47,
+     "teams": 8586
+    },
+    {
+     "humans": 6,
+     "with": 49.2,
+     "without": 50.3,
+     "teams": 7679
+    },
+    {
+     "humans": 7,
+     "with": 50.9,
+     "without": 51.8,
+     "teams": 4349
+    },
+    {
+     "humans": 8,
+     "with": 53.5,
+     "without": 53.9,
+     "teams": 2804
+    },
+    {
+     "humans": 9,
+     "with": 54.3,
+     "without": 55.8,
+     "teams": 1940
+    },
+    {
+     "humans": 10,
+     "with": 55.5,
+     "without": 57.4,
+     "teams": 1781
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54.1,
+     "teams": 1984
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "target"
+   ],
+   "pts": -1,
+   "lo": -1.8,
+   "hi": -0.3,
+   "teams": 17626,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 33.9,
+     "without": 35.5,
+     "teams": 623
+    },
+    {
+     "humans": 3,
+     "with": 39.6,
+     "without": 40.1,
+     "teams": 2044
+    },
+    {
+     "humans": 4,
+     "with": 42.3,
+     "without": 44,
+     "teams": 3101
+    },
+    {
+     "humans": 5,
+     "with": 46.7,
+     "without": 46.6,
+     "teams": 3355
+    },
+    {
+     "humans": 6,
+     "with": 48.9,
+     "without": 50.1,
+     "teams": 2856
+    },
+    {
+     "humans": 7,
+     "with": 52.9,
+     "without": 51.3,
+     "teams": 1730
+    },
+    {
+     "humans": 8,
+     "with": 53,
+     "without": 53.9,
+     "teams": 1165
+    },
+    {
+     "humans": 9,
+     "with": 53.1,
+     "without": 55.7,
+     "teams": 900
+    },
+    {
+     "humans": 10,
+     "with": 54.4,
+     "without": 57.2,
+     "teams": 838
+    },
+    {
+     "humans": 11,
+     "with": 50.3,
+     "without": 54.9,
+     "teams": 1077
+    }
+   ]
+  },
+  {
+   "ids": [
+    "marauder",
+    "spark"
+   ],
+   "pts": -1.1,
+   "lo": -1.9,
+   "hi": -0.2,
+   "teams": 16815,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 38.1,
+     "without": 35.5,
+     "teams": 239
+    },
+    {
+     "humans": 3,
+     "with": 36.5,
+     "without": 40.1,
+     "teams": 704
+    },
+    {
+     "humans": 4,
+     "with": 46,
+     "without": 43.8,
+     "teams": 1588
+    },
+    {
+     "humans": 5,
+     "with": 45.5,
+     "without": 46.7,
+     "teams": 2110
+    },
+    {
+     "humans": 6,
+     "with": 50.5,
+     "without": 49.9,
+     "teams": 2618
+    },
+    {
+     "humans": 7,
+     "with": 52,
+     "without": 51.4,
+     "teams": 2485
+    },
+    {
+     "humans": 8,
+     "with": 51.5,
+     "without": 54.5,
+     "teams": 2040
+    },
+    {
+     "humans": 9,
+     "with": 52.6,
+     "without": 56.4,
+     "teams": 1605
+    },
+    {
+     "humans": 10,
+     "with": 55.6,
+     "without": 57.3,
+     "teams": 1617
+    },
+    {
+     "humans": 11,
+     "with": 51.7,
+     "without": 55.1,
+     "teams": 1833
+    }
+   ]
+  },
+  {
+   "ids": [
+    "disruptor",
+    "spark"
+   ],
+   "pts": -1.2,
+   "lo": -2.1,
+   "hi": -0.5,
+   "teams": 17571,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 38.9,
+     "without": 40.1,
+     "teams": 1006
+    },
+    {
+     "humans": 4,
+     "with": 42.6,
+     "without": 43.9,
+     "teams": 2314
+    },
+    {
+     "humans": 5,
+     "with": 46.9,
+     "without": 46.6,
+     "teams": 3268
+    },
+    {
+     "humans": 6,
+     "with": 48.7,
+     "without": 50.2,
+     "teams": 3464
+    },
+    {
+     "humans": 7,
+     "with": 51,
+     "without": 51.6,
+     "teams": 2243
+    },
+    {
+     "humans": 8,
+     "with": 51.9,
+     "without": 54.3,
+     "teams": 1630
+    },
+    {
+     "humans": 9,
+     "with": 54.7,
+     "without": 55.4,
+     "teams": 1121
+    },
+    {
+     "humans": 10,
+     "with": 54.8,
+     "without": 57.2,
+     "teams": 1089
+    },
+    {
+     "humans": 11,
+     "with": 51.5,
+     "without": 54.7,
+     "teams": 1277
+    }
+   ]
+  },
+  {
+   "ids": [
+    "magician",
+    "magician"
+   ],
+   "pts": -1.2,
+   "lo": -1.6,
+   "hi": -0.7,
+   "teams": 50859,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.4,
+     "without": 35.6,
+     "teams": 3298
+    },
+    {
+     "humans": 3,
+     "with": 39.6,
+     "without": 40.1,
+     "teams": 9478
+    },
+    {
+     "humans": 4,
+     "with": 43.7,
+     "without": 43.9,
+     "teams": 11952
+    },
+    {
+     "humans": 5,
+     "with": 45.3,
+     "without": 47,
+     "teams": 9679
+    },
+    {
+     "humans": 6,
+     "with": 48.7,
+     "without": 50.4,
+     "teams": 7077
+    },
+    {
+     "humans": 7,
+     "with": 49.7,
+     "without": 52.3,
+     "teams": 3895
+    },
+    {
+     "humans": 8,
+     "with": 52.6,
+     "without": 54.2,
+     "teams": 2188
+    },
+    {
+     "humans": 9,
+     "with": 54.4,
+     "without": 55.6,
+     "teams": 1280
+    },
+    {
+     "humans": 10,
+     "with": 55.7,
+     "without": 57,
+     "teams": 1105
+    },
+    {
+     "humans": 11,
+     "with": 52.6,
+     "without": 54.3,
+     "teams": 979
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "target"
+   ],
+   "pts": -1.3,
+   "lo": -3.1,
+   "hi": 0.6,
+   "teams": 2441,
+   "clear": false,
+   "bySize": [
+    {
+     "humans": 5,
+     "with": 48.2,
+     "without": 46.6,
+     "teams": 280
+    },
+    {
+     "humans": 6,
+     "with": 51,
+     "without": 50,
+     "teams": 312
+    },
+    {
+     "humans": 7,
+     "with": 54.1,
+     "without": 51.5,
+     "teams": 290
+    },
+    {
+     "humans": 8,
+     "with": 50.7,
+     "without": 53.9,
+     "teams": 229
+    },
+    {
+     "humans": 9,
+     "with": 51.2,
+     "without": 55.4,
+     "teams": 213
+    },
+    {
+     "humans": 10,
+     "with": 51.8,
+     "without": 56.9,
+     "teams": 220
+    },
+    {
+     "humans": 11,
+     "with": 52.2,
+     "without": 54.2,
+     "teams": 533
+    }
+   ]
+  },
+  {
+   "ids": [
+    "creator",
+    "target"
+   ],
+   "pts": -1.3,
+   "lo": -1.8,
+   "hi": -0.8,
+   "teams": 29985,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 35.7,
+     "without": 35.5,
+     "teams": 2086
+    },
+    {
+     "humans": 3,
+     "with": 39.2,
+     "without": 40.1,
+     "teams": 5545
+    },
+    {
+     "humans": 4,
+     "with": 42.1,
+     "without": 44.1,
+     "teams": 6338
+    },
+    {
+     "humans": 5,
+     "with": 45.6,
+     "without": 46.8,
+     "teams": 5652
+    },
+    {
+     "humans": 6,
+     "with": 48.7,
+     "without": 50.2,
+     "teams": 4016
+    },
+    {
+     "humans": 7,
+     "with": 50.7,
+     "without": 51.7,
+     "teams": 2250
+    },
+    {
+     "humans": 8,
+     "with": 53.9,
+     "without": 53.8,
+     "teams": 1424
+    },
+    {
+     "humans": 9,
+     "with": 53.6,
+     "without": 55.6,
+     "teams": 970
+    },
+    {
+     "humans": 10,
+     "with": 54.5,
+     "without": 57.2,
+     "teams": 859
+    },
+    {
+     "humans": 11,
+     "with": 50.9,
+     "without": 54.6,
+     "teams": 931
+    }
+   ]
+  },
+  {
+   "ids": [
+    "maestro",
+    "spark"
+   ],
+   "pts": -1.6,
+   "lo": -2.1,
+   "hi": -1,
+   "teams": 31430,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 31.4,
+     "without": 35.5,
+     "teams": 640
+    },
+    {
+     "humans": 3,
+     "with": 38.1,
+     "without": 40.1,
+     "teams": 2808
+    },
+    {
+     "humans": 4,
+     "with": 41.5,
+     "without": 44.1,
+     "teams": 5048
+    },
+    {
+     "humans": 5,
+     "with": 46.3,
+     "without": 46.7,
+     "teams": 6046
+    },
+    {
+     "humans": 6,
+     "with": 49,
+     "without": 50.2,
+     "teams": 5744
+    },
+    {
+     "humans": 7,
+     "with": 51,
+     "without": 51.7,
+     "teams": 3458
+    },
+    {
+     "humans": 8,
+     "with": 52,
+     "without": 54.5,
+     "teams": 2323
+    },
+    {
+     "humans": 9,
+     "with": 54.6,
+     "without": 55.5,
+     "teams": 1613
+    },
+    {
+     "humans": 10,
+     "with": 56.8,
+     "without": 56.7,
+     "teams": 1667
+    },
+    {
+     "humans": 11,
+     "with": 51.5,
+     "without": 55.5,
+     "teams": 2150
+    }
+   ]
+  },
+  {
+   "ids": [
+    "boss",
+    "spark"
+   ],
+   "pts": -1.7,
+   "lo": -2.6,
+   "hi": -1,
+   "teams": 18972,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 38.3,
+     "without": 40.1,
+     "teams": 525
+    },
+    {
+     "humans": 4,
+     "with": 42.2,
+     "without": 43.9,
+     "teams": 1091
+    },
+    {
+     "humans": 5,
+     "with": 47,
+     "without": 46.6,
+     "teams": 1822
+    },
+    {
+     "humans": 6,
+     "with": 47.9,
+     "without": 50.2,
+     "teams": 2516
+    },
+    {
+     "humans": 7,
+     "with": 51.6,
+     "without": 51.5,
+     "teams": 2771
+    },
+    {
+     "humans": 8,
+     "with": 52.2,
+     "without": 54.5,
+     "teams": 2664
+    },
+    {
+     "humans": 9,
+     "with": 54.7,
+     "without": 55.7,
+     "teams": 2195
+    },
+    {
+     "humans": 10,
+     "with": 56.1,
+     "without": 57.2,
+     "teams": 2358
+    },
+    {
+     "humans": 11,
+     "with": 51.6,
+     "without": 56.6,
+     "teams": 2927
+    }
+   ]
+  },
+  {
+   "ids": [
+    "creator",
+    "magician"
+   ],
+   "pts": -1.7,
+   "lo": -2.1,
+   "hi": -1.3,
+   "teams": 69504,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.6,
+     "without": 35.6,
+     "teams": 3805
+    },
+    {
+     "humans": 3,
+     "with": 38.9,
+     "without": 40.3,
+     "teams": 12299
+    },
+    {
+     "humans": 4,
+     "with": 43,
+     "without": 44.3,
+     "teams": 15579
+    },
+    {
+     "humans": 5,
+     "with": 45.4,
+     "without": 47.3,
+     "teams": 13638
+    },
+    {
+     "humans": 6,
+     "with": 48.4,
+     "without": 51,
+     "teams": 10155
+    },
+    {
+     "humans": 7,
+     "with": 50,
+     "without": 52.6,
+     "teams": 5492
+    },
+    {
+     "humans": 8,
+     "with": 53.6,
+     "without": 53.9,
+     "teams": 3196
+    },
+    {
+     "humans": 9,
+     "with": 54.3,
+     "without": 55.9,
+     "teams": 2018
+    },
+    {
+     "humans": 10,
+     "with": 54,
+     "without": 58.2,
+     "teams": 1700
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54,
+     "teams": 1743
+    }
+   ]
+  },
+  {
+   "ids": [
+    "target",
+    "target"
+   ],
+   "pts": -1.8,
+   "lo": -3.3,
+   "hi": -0.6,
+   "teams": 3252,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 40.3,
+     "without": 35.5,
+     "teams": 201
+    },
+    {
+     "humans": 3,
+     "with": 43.6,
+     "without": 40,
+     "teams": 447
+    },
+    {
+     "humans": 4,
+     "with": 39.6,
+     "without": 43.9,
+     "teams": 624
+    },
+    {
+     "humans": 5,
+     "with": 44.7,
+     "without": 46.6,
+     "teams": 586
+    },
+    {
+     "humans": 6,
+     "with": 45.8,
+     "without": 50,
+     "teams": 459
+    },
+    {
+     "humans": 7,
+     "with": 50.7,
+     "without": 51.5,
+     "teams": 272
+    },
+    {
+     "humans": 11,
+     "with": 48.4,
+     "without": 54.2,
+     "teams": 221
+    }
+   ]
+  },
+  {
+   "ids": [
+    "creator",
+    "spark"
+   ],
+   "pts": -1.9,
+   "lo": -2.4,
+   "hi": -1.6,
+   "teams": 48987,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 33.6,
+     "without": 35.6,
+     "teams": 1687
+    },
+    {
+     "humans": 3,
+     "with": 39.6,
+     "without": 40.1,
+     "teams": 7031
+    },
+    {
+     "humans": 4,
+     "with": 42.2,
+     "without": 44.3,
+     "teams": 10310
+    },
+    {
+     "humans": 5,
+     "with": 45,
+     "without": 47.2,
+     "teams": 9744
+    },
+    {
+     "humans": 6,
+     "with": 48.6,
+     "without": 50.5,
+     "teams": 7667
+    },
+    {
+     "humans": 7,
+     "with": 50,
+     "without": 52.2,
+     "teams": 4408
+    },
+    {
+     "humans": 8,
+     "with": 51.7,
+     "without": 54.9,
+     "teams": 2774
+    },
+    {
+     "humans": 9,
+     "with": 53.7,
+     "without": 56,
+     "teams": 1777
+    },
+    {
+     "humans": 10,
+     "with": 54.4,
+     "without": 57.9,
+     "teams": 1661
+    },
+    {
+     "humans": 11,
+     "with": 52.8,
+     "without": 54.7,
+     "teams": 2039
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "disruptor"
+   ],
+   "pts": -2.1,
+   "lo": -3.6,
+   "hi": -0.9,
+   "teams": 5461,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 41.7,
+     "without": 43.9,
+     "teams": 211
+    },
+    {
+     "humans": 5,
+     "with": 46.6,
+     "without": 46.6,
+     "teams": 464
+    },
+    {
+     "humans": 6,
+     "with": 49.4,
+     "without": 50,
+     "teams": 563
+    },
+    {
+     "humans": 7,
+     "with": 50.8,
+     "without": 51.6,
+     "teams": 731
+    },
+    {
+     "humans": 8,
+     "with": 52.9,
+     "without": 53.9,
+     "teams": 656
+    },
+    {
+     "humans": 9,
+     "with": 52.4,
+     "without": 55.6,
+     "teams": 617
+    },
+    {
+     "humans": 10,
+     "with": 54,
+     "without": 57.1,
+     "teams": 630
+    },
+    {
+     "humans": 11,
+     "with": 51.9,
+     "without": 54.8,
+     "teams": 1514
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "marauder"
+   ],
+   "pts": -2.2,
+   "lo": -3.7,
+   "hi": -0.9,
+   "teams": 6821,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 41.1,
+     "without": 43.9,
+     "teams": 231
+    },
+    {
+     "humans": 5,
+     "with": 48.4,
+     "without": 46.6,
+     "teams": 374
+    },
+    {
+     "humans": 6,
+     "with": 50,
+     "without": 50,
+     "teams": 510
+    },
+    {
+     "humans": 7,
+     "with": 47.6,
+     "without": 51.7,
+     "teams": 683
+    },
+    {
+     "humans": 8,
+     "with": 50.3,
+     "without": 54.2,
+     "teams": 798
+    },
+    {
+     "humans": 9,
+     "with": 53,
+     "without": 55.7,
+     "teams": 886
+    },
+    {
+     "humans": 10,
+     "with": 52.6,
+     "without": 57.7,
+     "teams": 955
+    },
+    {
+     "humans": 11,
+     "with": 53.9,
+     "without": 54.1,
+     "teams": 2286
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "maestro"
+   ],
+   "pts": -2.3,
+   "lo": -3.5,
+   "hi": -1.3,
+   "teams": 9412,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 39,
+     "without": 40.1,
+     "teams": 231
+    },
+    {
+     "humans": 4,
+     "with": 38.9,
+     "without": 43.9,
+     "teams": 478
+    },
+    {
+     "humans": 5,
+     "with": 42.5,
+     "without": 46.7,
+     "teams": 890
+    },
+    {
+     "humans": 6,
+     "with": 48.5,
+     "without": 50,
+     "teams": 943
+    },
+    {
+     "humans": 7,
+     "with": 50.7,
+     "without": 51.6,
+     "teams": 1146
+    },
+    {
+     "humans": 8,
+     "with": 50.3,
+     "without": 54.3,
+     "teams": 1063
+    },
+    {
+     "humans": 9,
+     "with": 52,
+     "without": 56,
+     "teams": 1012
+    },
+    {
+     "humans": 10,
+     "with": 55.1,
+     "without": 57.1,
+     "teams": 989
+    },
+    {
+     "humans": 11,
+     "with": 53.6,
+     "without": 54.4,
+     "teams": 2636
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "target"
+   ],
+   "pts": -2.3,
+   "lo": -3.6,
+   "hi": -1,
+   "teams": 5921,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 37.5,
+     "without": 40.1,
+     "teams": 381
+    },
+    {
+     "humans": 4,
+     "with": 45.2,
+     "without": 43.9,
+     "teams": 646
+    },
+    {
+     "humans": 5,
+     "with": 45.8,
+     "without": 46.6,
+     "teams": 800
+    },
+    {
+     "humans": 6,
+     "with": 49.7,
+     "without": 50,
+     "teams": 724
+    },
+    {
+     "humans": 7,
+     "with": 48.2,
+     "without": 51.7,
+     "teams": 720
+    },
+    {
+     "humans": 8,
+     "with": 51,
+     "without": 54,
+     "teams": 573
+    },
+    {
+     "humans": 9,
+     "with": 51.6,
+     "without": 55.6,
+     "teams": 498
+    },
+    {
+     "humans": 10,
+     "with": 53.5,
+     "without": 57,
+     "teams": 428
+    },
+    {
+     "humans": 11,
+     "with": 50.9,
+     "without": 54.7,
+     "teams": 1049
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "creator"
+   ],
+   "pts": -2.4,
+   "lo": -3.3,
+   "hi": -1.4,
+   "teams": 12151,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 36.3,
+     "without": 40.1,
+     "teams": 520
+    },
+    {
+     "humans": 4,
+     "with": 43.3,
+     "without": 43.9,
+     "teams": 1068
+    },
+    {
+     "humans": 5,
+     "with": 45.8,
+     "without": 46.6,
+     "teams": 1593
+    },
+    {
+     "humans": 6,
+     "with": 49.1,
+     "without": 50,
+     "teams": 1520
+    },
+    {
+     "humans": 7,
+     "with": 46.8,
+     "without": 52.2,
+     "teams": 1604
+    },
+    {
+     "humans": 8,
+     "with": 50.8,
+     "without": 54.3,
+     "teams": 1205
+    },
+    {
+     "humans": 9,
+     "with": 53,
+     "without": 55.8,
+     "teams": 1084
+    },
+    {
+     "humans": 10,
+     "with": 53.7,
+     "without": 57.5,
+     "teams": 1068
+    },
+    {
+     "humans": 11,
+     "with": 53.5,
+     "without": 54.4,
+     "teams": 2404
+    }
+   ]
+  },
+  {
+   "ids": [
+    "spark",
+    "magician"
+   ],
+   "pts": -2.4,
+   "lo": -2.8,
+   "hi": -1.9,
+   "teams": 53426,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 33,
+     "without": 35.6,
+     "teams": 2981
+    },
+    {
+     "humans": 3,
+     "with": 38.1,
+     "without": 40.4,
+     "teams": 9050
+    },
+    {
+     "humans": 4,
+     "with": 42.1,
+     "without": 44.4,
+     "teams": 11903
+    },
+    {
+     "humans": 5,
+     "with": 45.1,
+     "without": 47.2,
+     "teams": 10347
+    },
+    {
+     "humans": 6,
+     "with": 48.1,
+     "without": 50.8,
+     "teams": 7766
+    },
+    {
+     "humans": 7,
+     "with": 49.6,
+     "without": 52.4,
+     "teams": 4275
+    },
+    {
+     "humans": 8,
+     "with": 51.2,
+     "without": 55,
+     "teams": 2604
+    },
+    {
+     "humans": 9,
+     "with": 54.8,
+     "without": 55.5,
+     "teams": 1620
+    },
+    {
+     "humans": 10,
+     "with": 54.8,
+     "without": 57.5,
+     "teams": 1395
+    },
+    {
+     "humans": 11,
+     "with": 51.8,
+     "without": 54.9,
+     "teams": 1570
+    }
+   ]
+  },
+  {
+   "ids": [
+    "spark",
+    "target"
+   ],
+   "pts": -2.4,
+   "lo": -3,
+   "hi": -1.8,
+   "teams": 21767,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 34.2,
+     "without": 35.5,
+     "teams": 1290
+    },
+    {
+     "humans": 3,
+     "with": 37.1,
+     "without": 40.2,
+     "teams": 3681
+    },
+    {
+     "humans": 4,
+     "with": 41.4,
+     "without": 44.1,
+     "teams": 4643
+    },
+    {
+     "humans": 5,
+     "with": 45.9,
+     "without": 46.7,
+     "teams": 4040
+    },
+    {
+     "humans": 6,
+     "with": 47.6,
+     "without": 50.3,
+     "teams": 2995
+    },
+    {
+     "humans": 7,
+     "with": 50.9,
+     "without": 51.6,
+     "teams": 1762
+    },
+    {
+     "humans": 8,
+     "with": 51.4,
+     "without": 54.2,
+     "teams": 1106
+    },
+    {
+     "humans": 9,
+     "with": 51.4,
+     "without": 55.9,
+     "teams": 788
+    },
+    {
+     "humans": 10,
+     "with": 53.8,
+     "without": 57.2,
+     "teams": 697
+    },
+    {
+     "humans": 11,
+     "with": 48.9,
+     "without": 54.9,
+     "teams": 824
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "boss"
+   ],
+   "pts": -2.5,
+   "lo": -3.8,
+   "hi": -1.2,
+   "teams": 9853,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 38,
+     "without": 43.9,
+     "teams": 303
+    },
+    {
+     "humans": 5,
+     "with": 44.5,
+     "without": 46.6,
+     "teams": 560
+    },
+    {
+     "humans": 6,
+     "with": 47.9,
+     "without": 50,
+     "teams": 708
+    },
+    {
+     "humans": 7,
+     "with": 48,
+     "without": 51.8,
+     "teams": 917
+    },
+    {
+     "humans": 8,
+     "with": 54.1,
+     "without": 53.8,
+     "teams": 1069
+    },
+    {
+     "humans": 9,
+     "with": 52.6,
+     "without": 56.1,
+     "teams": 1338
+    },
+    {
+     "humans": 10,
+     "with": 55.1,
+     "without": 57.4,
+     "teams": 1395
+    },
+    {
+     "humans": 11,
+     "with": 53.1,
+     "without": 55.5,
+     "teams": 3442
+    }
+   ]
+  },
+  {
+   "ids": [
+    "sweeper-keeper",
+    "spark"
+   ],
+   "pts": -2.5,
+   "lo": -4,
+   "hi": -0.9,
+   "teams": 4072,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 4,
+     "with": 47.1,
+     "without": 43.9,
+     "teams": 263
+    },
+    {
+     "humans": 5,
+     "with": 47.5,
+     "without": 46.6,
+     "teams": 362
+    },
+    {
+     "humans": 6,
+     "with": 44.4,
+     "without": 50.1,
+     "teams": 478
+    },
+    {
+     "humans": 7,
+     "with": 51.9,
+     "without": 51.5,
+     "teams": 503
+    },
+    {
+     "humans": 8,
+     "with": 50,
+     "without": 54,
+     "teams": 424
+    },
+    {
+     "humans": 9,
+     "with": 51.3,
+     "without": 55.6,
+     "teams": 372
+    },
+    {
+     "humans": 10,
+     "with": 54.7,
+     "without": 56.9,
+     "teams": 402
+    },
+    {
+     "humans": 11,
+     "with": 50.9,
+     "without": 54.7,
+     "teams": 1056
+    }
+   ]
+  },
+  {
+   "ids": [
+    "creator",
+    "creator"
+   ],
+   "pts": -2.5,
+   "lo": -3.1,
+   "hi": -1.8,
+   "teams": 21381,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 30.6,
+     "without": 35.5,
+     "teams": 271
+    },
+    {
+     "humans": 3,
+     "with": 37.1,
+     "without": 40.1,
+     "teams": 1877
+    },
+    {
+     "humans": 4,
+     "with": 42,
+     "without": 44,
+     "teams": 4128
+    },
+    {
+     "humans": 5,
+     "with": 44,
+     "without": 47,
+     "teams": 4639
+    },
+    {
+     "humans": 6,
+     "with": 48.6,
+     "without": 50.2,
+     "teams": 4025
+    },
+    {
+     "humans": 7,
+     "with": 49.6,
+     "without": 51.9,
+     "teams": 2425
+    },
+    {
+     "humans": 8,
+     "with": 49.2,
+     "without": 54.8,
+     "teams": 1428
+    },
+    {
+     "humans": 9,
+     "with": 51.7,
+     "without": 56,
+     "teams": 933
+    },
+    {
+     "humans": 10,
+     "with": 56.4,
+     "without": 56.8,
+     "teams": 828
+    },
+    {
+     "humans": 11,
+     "with": 54.3,
+     "without": 54,
+     "teams": 877
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "magician"
+   ],
+   "pts": -2.7,
+   "lo": -3.5,
+   "hi": -1.6,
+   "teams": 12089,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 30.9,
+     "without": 35.5,
+     "teams": 262
+    },
+    {
+     "humans": 3,
+     "with": 38.9,
+     "without": 40.1,
+     "teams": 737
+    },
+    {
+     "humans": 4,
+     "with": 43.9,
+     "without": 43.9,
+     "teams": 1285
+    },
+    {
+     "humans": 5,
+     "with": 45.5,
+     "without": 46.7,
+     "teams": 1639
+    },
+    {
+     "humans": 6,
+     "with": 48.8,
+     "without": 50,
+     "teams": 1540
+    },
+    {
+     "humans": 7,
+     "with": 47.2,
+     "without": 52.1,
+     "teams": 1514
+    },
+    {
+     "humans": 8,
+     "with": 48.3,
+     "without": 54.7,
+     "teams": 1194
+    },
+    {
+     "humans": 9,
+     "with": 53.3,
+     "without": 55.7,
+     "teams": 1026
+    },
+    {
+     "humans": 10,
+     "with": 52.9,
+     "without": 57.6,
+     "teams": 904
+    },
+    {
+     "humans": 11,
+     "with": 52.4,
+     "without": 54.9,
+     "teams": 2002
+    }
+   ]
+  },
+  {
+   "ids": [
+    "spark",
+    "spark"
+   ],
+   "pts": -2.8,
+   "lo": -3.4,
+   "hi": -2.2,
+   "teams": 21932,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 2,
+     "with": 31.5,
+     "without": 35.6,
+     "teams": 785
+    },
+    {
+     "humans": 3,
+     "with": 37.7,
+     "without": 40.2,
+     "teams": 2629
+    },
+    {
+     "humans": 4,
+     "with": 40.9,
+     "without": 44.2,
+     "teams": 4375
+    },
+    {
+     "humans": 5,
+     "with": 44,
+     "without": 47,
+     "teams": 4345
+    },
+    {
+     "humans": 6,
+     "with": 48.4,
+     "without": 50.2,
+     "teams": 3409
+    },
+    {
+     "humans": 7,
+     "with": 49.8,
+     "without": 51.8,
+     "teams": 2083
+    },
+    {
+     "humans": 8,
+     "with": 49.5,
+     "without": 54.7,
+     "teams": 1433
+    },
+    {
+     "humans": 9,
+     "with": 55.1,
+     "without": 55.3,
+     "teams": 910
+    },
+    {
+     "humans": 10,
+     "with": 54.7,
+     "without": 57.1,
+     "teams": 861
+    },
+    {
+     "humans": 11,
+     "with": 50.9,
+     "without": 54.8,
+     "teams": 1137
+    }
+   ]
+  },
+  {
+   "ids": [
+    "shot-stopper",
+    "spark"
+   ],
+   "pts": -3.1,
+   "lo": -4.1,
+   "hi": -2.1,
+   "teams": 9948,
+   "clear": true,
+   "bySize": [
+    {
+     "humans": 3,
+     "with": 35.5,
+     "without": 40.1,
+     "teams": 406
+    },
+    {
+     "humans": 4,
+     "with": 41.2,
+     "without": 43.9,
+     "teams": 800
+    },
+    {
+     "humans": 5,
+     "with": 44.2,
+     "without": 46.7,
+     "teams": 1130
+    },
+    {
+     "humans": 6,
+     "with": 47.6,
+     "without": 50.1,
+     "teams": 1148
+    },
+    {
+     "humans": 7,
+     "with": 49.1,
+     "without": 51.8,
+     "teams": 1341
+    },
+    {
+     "humans": 8,
+     "with": 49.9,
+     "without": 54.4,
+     "teams": 1042
+    },
+    {
+     "humans": 9,
+     "with": 54,
+     "without": 55.5,
+     "teams": 898
+    },
+    {
+     "humans": 10,
+     "with": 51.9,
+     "without": 57.8,
+     "teams": 904
+    },
+    {
+     "humans": 11,
+     "with": 52.4,
+     "without": 55,
+     "teams": 2165
+    }
+   ]
+  }
+ ]
+}

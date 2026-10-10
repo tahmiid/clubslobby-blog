@@ -199,6 +199,7 @@ const MAP = [
   ['feat-fc27-disruptor.jpg', 'fc27-disruptor-build', "EA SPORTS FC 27 key art with DISRUPTOR across it"],
   ['feat-fc27-level40.jpg', 'fc27-level-40-builds', "EA SPORTS FC 27 key art with LEVEL 40 across it"],
   ['feat-fc27-skills.jpg', 'fc27-new-skill-moves', "EA SPORTS FC 27 key art with SKILL MOVES across it"],
+  ['feat-fc27-duos.jpg', 'best-pro-clubs-archetype-duos', 'EA SPORTS FC 27 key art with DUOS across it'],
   ['feat-skill-giant-fake-shot.jpg', 'fc27-how-to-giant-fake-shot', "EA SPORTS FC 27 key art with FAKE SHOT across it"],
   ['feat-skill-stop-and-go.jpg', 'fc27-how-to-stop-and-go', "EA SPORTS FC 27 key art with STOP & GO across it"],
   ['feat-skill-drag-to-drag.jpg', 'fc27-how-to-drag-to-drag', "EA SPORTS FC 27 key art with DRAG TO DRAG across it"],

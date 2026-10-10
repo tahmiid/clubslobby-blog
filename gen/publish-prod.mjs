@@ -1342,6 +1342,14 @@ const POSTS = [
     meta_description: "The best FC 27 Pro Clubs formations and custom tactics, and where to play your humans: EA match data says defence first, the keeper last.",
     custom_excerpt: "The best formations and custom tactics for FC 27 Pro Clubs, and where your humans should play.",
     tags: ['Guides', 'FC 27'] },
+  // Archetype duos (gen/a213-duos.mjs, 10 Oct 2026): best AND worst pairs from EA match data,
+  // the owner's call with the r/fifaclubs duos post. Header in out/a213.meta.json.
+  { file: 'a213.html', slug: "best-pro-clubs-archetype-duos", status: 'published',
+    title: "Best Archetype Duos in FC 27 Pro Clubs: Who Wins Together",
+    meta_title: "Best Archetype Duos in FC 27 Pro Clubs",
+    meta_description: "Which FC 27 Pro Clubs archetypes win together, and which lose: Recycler + Finisher leads, Two Sparks trails. EA match data, every duo.",
+    custom_excerpt: "The archetype pairs that win more, and less, when two humans play them in the same FC 27 Pro Clubs team.",
+    tags: ['Guides', 'FC 27'] },
   // DRAFT, not published (gen/a209-cheapest-fc27.mjs, 2026-10-05): the owner
   // reads it first; key-seller prices are a dated snapshot.
   { file: 'a209.html', slug: 'fc27-cheapest-price-and-fc-points', status: 'draft',
