@@ -53,6 +53,12 @@ export function swapTheme(html) {
     ? html.replace(jsTag, () => `<script>${js}</script>`)
     : html.replace('</body>', () => `<script>${js}</script>\n</body>`);
   if (!/class="[^"]*\bpq\b/.test(html)) html = html.replace(/<body class="/, '<body class="pq ');
+  // default.hbs's early get-app bar reservation (partials/pchq-barh.hbs), in the head.
+  const barh = read('partials', 'pchq-barh.hbs').replace(/\{\{!--[\s\S]*?--\}\}\n?/g, '');
+  if (!html.includes("'--pq-bar-h','64px'")) html = html.replace('</head>', () => barh + '\n</head>');
+  // post.hbs's inline-switcher script (partials/pchq-padsw.hbs, #487 follow-up), before the content.
+  const padsw = read('partials', 'pchq-padsw.hbs').replace(/\{\{!--[\s\S]*?--\}\}\n?/g, '');
+  if (!html.includes('pq-padsw-ph')) html = html.replace(/<section class="gh-content gh-canvas">/, (m) => padsw + '\n' + m);
   // post.hbs's end slot (app #487), on a page rendered by an older post.hbs:
   // just inside the end of the post's content section.
   if (!/data-ad="end"/.test(html)) html = html.replace(/(<\/section>\s*(?:<section class="article-comments[\s\S]*?<\/section>\s*)?<\/article>)/, '<div class="pchq-ad" data-ad="end"></div>$1');

@@ -1,0 +1,33 @@
+{{!-- The controls switcher (PlayStation / Xbox, colour or white buttons, the
+     game's wording or simple), INLINE above the page's first control (app
+     #487 follow-up, owner 10 Oct 2026: the article's own dock sat behind the
+     app's dock - "they need to go inline ... the dock for the blog articles
+     is not going to stay").
+
+     An article emits the switcher at its END (gen/controls.mjs padSwitcher),
+     and the top of a long article is drawn before the parser gets there - so
+     moving it afterwards pushed the list down (measured, desktop). Instead,
+     the moment the first control row (.cwrap) is parsed, a placeholder of
+     the switcher's exact shape goes in above its block, before anything is
+     drawn (a MutationObserver callback runs before rendering, and before the
+     next inline script); when the real switcher arrives it takes the
+     placeholder's place - same size, nothing moves - and its own script then
+     runs on it. A page that never brings one loses the placeholder.
+     Runs before {{content}}; ops/theme-swap.mjs injects the same script on a
+     lane preview. pchq.css owns the look (.gh-content .padsw). --}}
+<script>(function(){try{
+if(!('MutationObserver' in window))return;
+var ph=null,done=false,mo;
+var read='auth';try{var s=JSON.parse(localStorage.getItem('pchq-pad')||'{}');read=s.read||(innerWidth<=640?'simple':'auth');}catch(e){read=innerWidth<=640?'simple':'auth';}
+var make=function(){var d=document.createElement('div');d.className='padsw pq-padsw-ph';d.setAttribute('aria-hidden','true');
+d.innerHTML='<div class="padsw-seg"><button type="button" tabindex="-1"><img class="padsw-i" alt=""><span>PlayStation</span></button><button type="button" tabindex="-1"><img class="padsw-i" alt=""><span>Xbox</span></button></div><button class="padsw-c" type="button" tabindex="-1"></button><span class="padsw-sep"></span><button class="padsw-m" type="button" tabindex="-1">'+(read==='simple'?'game wording':'simple')+'</button>';return d;};
+var stop=function(){done=true;if(mo)mo.disconnect();};
+var see=function(n){if(n.nodeType!==1||done)return;
+var sw=n.classList.contains('padsw')?n:null;
+if(sw&&sw!==ph){if(ph){ph.replaceWith(sw);ph=null;}stop();return;}
+if(!ph){var cw=n.classList.contains('cwrap')?n:null;if(!cw)return;var c=cw.closest('.gh-content');if(!c)return;
+var t=cw;while(t.parentElement&&t.parentElement!==c)t=t.parentElement;ph=make();c.insertBefore(ph,t);}};
+mo=new MutationObserver(function(rs){for(var i=0;i<rs.length&&!done;i++){var a=rs[i].addedNodes;for(var j=0;j<a.length&&!done;j++){var n=a[j];see(n);if(n.nodeType===1&&n.querySelectorAll&&!done){var q=n.querySelectorAll('.cwrap,.padsw');for(var k=0;k<q.length&&!done;k++)see(q[k]);}}}});
+mo.observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener('DOMContentLoaded',function(){if(ph){ph.remove();ph=null;}stop();});
+}catch(e){}})();</script>

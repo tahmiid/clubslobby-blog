@@ -401,8 +401,9 @@ export const moveList = (moves, platform = DEFAULT_PLATFORM, set = DEFAULT_SET) 
   }).join('\n') + `\n</div>`;
 
 // ── The switcher ───────────────────────────────────────────────────────────
-// Floating, always reachable, and remembered — a reader who plays on Xbox sets
-// it once and every page obeys. Inline script and inline style, like every
+// Inline above the page's first control (the theme moves it there - an
+// article may emit it anywhere, most at the end), and remembered — a reader
+// who plays on Xbox sets it once and every page obeys. Inline script and inline style, like every
 // other widget here; nothing is fetched.
 export const padSwitcher = () => `<div class="padsw" hidden>
 <div class="padsw-seg" data-k="platform" role="group" aria-label="Controller">
@@ -714,16 +715,16 @@ a.cm-name:hover{text-decoration:underline}
 .cm.playing .cm-cap{opacity:1}
 .cspeed{margin:0 0 14px;font:600 12px/1.4 system-ui,-apple-system,sans-serif;color:#5c6474}
 /* ── the switcher ─────────────────────────────────────────────────────── */
-/* Fixed to the bottom, cleared past the browser's own bottom bar
-   (env(safe-area-inset-bottom)), and promoted to its own compositor layer —
-   an unpromoted fixed element shimmers while a phone's URL bar collapses,
-   which read as page "jitter" while scrolling (owner, 2026-08-21). */
-.padsw{position:fixed;left:50%;transform:translateX(-50%) translateZ(0);
-  bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;
-  max-width:calc(100vw - 12px);will-change:transform;
+/* INLINE, never a dock (owner, 10 Oct 2026, app #487 follow-up: the app's
+   dock owns the bottom of the screen since theme 1.1.0 and this one sat
+   behind it). The theme puts it above the page's first control before the
+   page is drawn (theme partials/pchq-padsw.hbs) and carries its whole look
+   (pchq.css ".gh-content .padsw"); these rules are the same shape for a
+   page seen without the theme. */
+.padsw{position:relative;width:max-content;max-width:100%;margin:1.4em auto;
   display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;
   border:1px solid #33506f;background:rgba(8,16,26,.97);
-  box-shadow:0 10px 30px rgba(0,0,0,.62);font:600 14px/1 system-ui,-apple-system,sans-serif}
+  font:600 14px/1 system-ui,-apple-system,sans-serif}
 .padsw-seg{display:flex;gap:4px}
 .padsw-seg button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
   border:1px solid transparent;background:transparent;color:#9aa0ae;cursor:pointer;font:inherit}
@@ -744,7 +745,7 @@ a.cm-name:hover{text-decoration:underline}
 @media(max-width:640px){
   /* Phone dock: the logos alone, LARGE — 28px marks were invisible over a
      phone's bottom bar (owner, 2026-08-21). The icons are the buttons now. */
-  .padsw{bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:13px;gap:4px;padding:6px}
+  .padsw{font-size:13px;gap:4px;padding:6px}
   .padsw-seg button span{display:none}
   .padsw-seg button{padding:8px 11px}
   .padsw-i{width:38px;height:38px}

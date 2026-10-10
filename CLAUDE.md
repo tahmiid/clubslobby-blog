@@ -200,7 +200,7 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   a10 still carry it until their next regenerate. Do not run
   `ops/ab-inject.mjs` again: its list still names the sheets' files.
 
-## The app's header and dock on the blog (#485, theme 1.1.0) — built 10 Oct 2026, not live
+## The app's header and dock on the blog (#485, theme 1.1.0) — LIVE 10 Oct 2026
 
 The owner, 10 Oct 2026: the blog and the app "should look like one single
 suite". Every blog page draws the APP's header (HQ mark, Lobby, Companion,
@@ -231,6 +231,31 @@ Builder, Meta, My HQ); the old icon dock's six menus are the **Guides sheet**
 - **On a lane**: the app's dev server serves `/blog` with this theme swapped
   in (`ops/theme-swap.mjs`, used by its `src/setupProxy.js` and by
   `ops/preview-theme.mjs`) - build the theme first.
+
+### Theme 1.2.0 (app #487) — built 10 Oct 2026, not live
+
+- **House ads** (`pchq-nav.js` `pqHouse`): where Media.net does not take a
+  slot, the article markers A, B, C (`gen/ads.mjs`) and the theme's new end
+  slot (`post.hbs`) show one of OUR cards - app pages by default - as told
+  by the app's admin -> Money -> House ads (`/api/app/config` `houseAds.blog`,
+  ClubsUI `docs/BLOG_APP.md` "Phase 3"). A slot is filled only while it is
+  below the screen, never within a screen of another card: nothing moves.
+  Shown/tapped go to the app's showings ledger as place `blog`.
+- **The controls switcher is inline, never a dock** (owner, 10 Oct 2026: it
+  sat behind the app's dock). Articles still emit it at their end
+  (`gen/controls.mjs padSwitcher`); `partials/pchq-padsw.hbs` puts a
+  placeholder of its exact shape above the first control as that control is
+  parsed and swaps the real one in - measured 0 layout shift on phone and
+  desktop with a 4x slower CPU. Its whole look is in `pchq.css`
+  (`.gh-content .padsw`); `gen/controls.mjs` no longer says `fixed`.
+- **The get-app bar's 64px is reserved before the first paint**
+  (`partials/pchq-barh.hbs`, same rules as pchq-nav.js; the bar is a fixed
+  64px with its line clamped), so the page no longer slides down when it lands.
+- **The guides index carries each article's cover** (`image`, Ghost's 600px
+  size, from the sitemap in `ops/blog-home.mjs`) - the app's article cards.
+- Known, not fixed: a long title can re-wrap when Archivo arrives
+  (Google Fonts `display=swap` in the site-wide code injection) - 0.027 on
+  the celebrations page on desktop.
 
 ## The theme: `pchq` (theme/pchq) — LIVE 5 Oct 2026
 

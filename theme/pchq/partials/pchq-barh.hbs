@@ -1,0 +1,7 @@
+{{!-- The get-app bar's place, decided BEFORE the first paint (#487
+     follow-up): the same rules as pchq-nav.js (Android or a desktop; never
+     an iPhone/iPad, another phone or the apps; not while closed; a wide
+     desktop gets the QR card instead), so the page starts under the bar
+     and never slides down when it lands. ops/theme-swap.mjs injects it on a
+     lane preview. --}}
+<script>(function(){try{var u=navigator.userAgent||'',a=/Android/i.test(u),i=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);if(i||/ProClubsHQ\//.test(u)||(!a&&/Mobi/i.test(u)))return;if(+localStorage.getItem('pq_app_bar_x')>Date.now())return;if(!a&&innerWidth>=1416)return;document.documentElement.style.setProperty('--pq-bar-h','64px');}catch(e){}})();</script>
