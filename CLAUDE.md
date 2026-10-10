@@ -232,7 +232,7 @@ Builder, Meta, My HQ); the old icon dock's six menus are the **Guides sheet**
   in (`ops/theme-swap.mjs`, used by its `src/setupProxy.js` and by
   `ops/preview-theme.mjs`) - build the theme first.
 
-### Theme 1.2.0 (app #487) — built 10 Oct 2026, not live
+### Theme 1.2.0 (app #487) — LIVE 10 Oct 2026 (~20:20 UTC)
 
 - **House ads** (`pchq-nav.js` `pqHouse`): where Media.net does not take a
   slot, the article markers A, B, C (`gen/ads.mjs`) and the theme's new end

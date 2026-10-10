@@ -755,6 +755,16 @@ ops/cheatsheets-rollback.sh theme                              # back to Casper:
   `out/pchq-1.0.20-rollback.zip` (a copy is in the vault,
   `backups/blog-theme/`) under the name `pchq` and activate it - the header
   and menus of 5-9 Oct come back; the app's side needs nothing.
+- **1.2.0 (app #487, LIVE 10 Oct 2026 ~20:20 UTC)** went on AFTER the app
+  (its house cards read `/api/app/config` `houseAds.blog`, which the app's
+  deploy of 19:50 serves): build, link sweep, `ops/cheatsheets-deploy.sh
+  theme` (warnings 0, errors 0), the guides index re-copied. Verified: `/blog/`,
+  `/about/`, a post, `/tag/guides/` still `noindex, follow`, a 404, and on a
+  phone `/blog/fc27-skill-moves/` with the switcher inline above the first
+  move. **Rollback to 1.1.0**: upload `out/pchq-1.1.0-rollback.zip` as `pchq`
+  and activate (`theme-deploy.mjs`), or untar
+  `/var/backups/clubs27/blog-theme-pchq-20261010-2019.tgz` over the theme dir
+  and re-activate.
 - **The whole rollback** (theme and the 13 cheat sheets) is
   `ops/cheatsheets-rollback.sh`; its copy of the old pages is
   `/root/publish/bak-20261005-cheatsheets` on the box. Run on production
