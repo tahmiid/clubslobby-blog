@@ -24,12 +24,18 @@ const UA = { headers: { Cookie: 'pchq_int=1', 'User-Agent': 'proclubshq-blog bui
 async function livePosts() {
   const xml = await (await fetch(`${SITE}/blog/sitemap-posts.xml`, UA)).text();
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).filter((u) => !/\.(png|jpe?g|webp)$/.test(u));
+  // Each post's cover (the sitemap's image:loc), at Ghost's 600px size: the
+  // app's house cards show it (app #487, ops/guides-index.mjs `image`).
+  const cover = new Map([...xml.matchAll(/<url><loc>([^<]+)<\/loc>[\s\S]*?<\/url>/g)].map((m) => {
+    const img = (m[0].match(/<image:loc>([^<]+)<\/image:loc>/) ?? [])[1];
+    return [m[1], img ? new URL(img).pathname.replace('/blog/content/images/', '/blog/content/images/size/w600/') : null];
+  }));
   const out = [];
   for (let i = 0; i < urls.length; i += 8) {
     out.push(...await Promise.all(urls.slice(i, i + 8).map(async (u) => {
       const h = await (await fetch(u, UA)).text();
       const t = (h.match(/<h1[^>]*class="article-title"[^>]*>([\s\S]*?)<\/h1>/) ?? h.match(/<title>([^<]*)/))[1];
-      return { href: new URL(u).pathname, title: t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim() };
+      return { href: new URL(u).pathname, image: cover.get(u) ?? null, title: t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim() };
     })));
   }
   return out.sort((a, b) => a.title.localeCompare(b.title));

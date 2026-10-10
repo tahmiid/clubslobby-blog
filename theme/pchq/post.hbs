@@ -87,6 +87,8 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
+        {{!-- House ads' end slot (app #487): empty, no height, until pchq-nav.js fills it below the fold. --}}
+        <div class="pchq-ad" data-ad="end"></div>
     </section>
 
     {{#if comments}}

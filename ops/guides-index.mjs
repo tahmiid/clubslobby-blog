@@ -12,7 +12,9 @@
 //
 //   nav:      [{key, label, blurb, groups: [{label, items: [{label, href}]}]}]
 //             href: '/blog/<slug>/' or an app path ('/meta'), never a full URL
-//   articles: [{slug, title, section, thread}]
+//   articles: [{slug, title, section, thread, image}]
+//             image: the cover at Ghost's 600px size, a path (app #487's
+//             house cards), absent when the post has none
 //             thread: the discussion - a cheat sheet's archetype id (its #450
 //             thread, so nothing said there is lost), else 'post-<slug>'
 import { NAV } from '../gen/site-nav.mjs';
@@ -31,10 +33,11 @@ export function guidesIndex({ list, playerHrefs = [], skillHrefs = [] }) {
   for (const h of playerHrefs) if (!sectionOf.has(h)) sectionOf.set(h, 'Player builds');
   for (const h of skillHrefs) if (!sectionOf.has(h)) sectionOf.set(h, 'Skill moves');
   const sheetThread = new Map(SHEETS.map((s) => [sheetHref(s.archId), s.archId]));
-  const articles = list.map(({ href, title }) => {
+  const articles = list.map(({ href, title, image }) => {
     const slug = slugOf(href);
     if (!slug) return null;
-    return { slug, title, section: sectionOf.get(href) ?? 'Guides', thread: sheetThread.get(href) ?? `post-${slug}` };
+    return { slug, title, section: sectionOf.get(href) ?? 'Guides', thread: sheetThread.get(href) ?? `post-${slug}`,
+      ...(image && /^\/blog\/content\/images\//.test(image) ? { image } : {}) };
   }).filter(Boolean);
   const bad = articles.filter((a) => !/^[a-z0-9-]+$/.test(a.slug));
   if (bad.length) throw new Error(`guides-index: odd slugs ${bad.map((a) => a.slug).join(', ')}`);

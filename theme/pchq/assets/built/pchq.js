@@ -686,33 +686,129 @@ function lightbox(trigger) {
     } catch (e) {}
 })();
 
+/* The app's answer for this browser (/api/app/config), asked ONCE for the
+   page: Media.net's units (webAds) and the house ads (houseAds.blog). */
+var pqConfig = function () {
+    if (!window.__pqCfg) window.__pqCfg = fetch('/api/app/config', { credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    return window.__pqCfg;
+};
+
 /* Website display ads on the blog (app #477, owner 8 Oct 2026): Media.net in
    slot A only (after the grid - `gen/ads.mjs` markers), switched on and off in
    the app's admin -> Money (the same `/api/app/config` webAds as Find and
    Meta). Never in the store apps, never for our own browsers, never where the
    cookie bar asks first (the same over-inclusive test as the bar: any
    Europe/* timezone or UTC), never on the articles listed under "No ad on". */
-(function () {
+var pqMedianet = function (cfg) {
     try {
-        if (/ProClubsHQ\//.test(navigator.userAgent || '') || localStorage.getItem('pchq_internal') === '1') return;
+        if (/ProClubsHQ\//.test(navigator.userAgent || '') || localStorage.getItem('pchq_internal') === '1') return false;
         var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-        if (/^Europe\//.test(tz) || /^(UTC|Etc\/UTC|GMT|Etc\/GMT)$/.test(tz) || tz === 'Atlantic/Reykjavik' || tz === 'Atlantic/Canary' || tz === 'Atlantic/Madeira' || tz === 'Atlantic/Azores') return;
+        if (/^Europe\//.test(tz) || /^(UTC|Etc\/UTC|GMT|Etc\/GMT)$/.test(tz) || tz === 'Atlantic/Reykjavik' || tz === 'Atlantic/Canary' || tz === 'Atlantic/Madeira' || tz === 'Atlantic/Azores') return false;
         var slot = document.querySelector('.pchq-ad[data-ad="a"]');
-        if (!slot) return;
+        if (!slot) return false;
         var slug = location.pathname.replace(/^\/blog\/?|\/$/g, '');
-        fetch('/api/app/config', { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (cfg) {
-            var w = cfg && cfg.webAds, u = w && w.units && w.units.blog;
-            if (!u || (w.blogSkip || []).indexOf(slug) >= 0) return;
-            var size = u.size || '300x250', hgt = +size.split('x')[1] || 250;
-            window._mNHandle = window._mNHandle || {}; window._mNHandle.queue = window._mNHandle.queue || [];
-            window.medianet_versionId = '3121199';
-            var s = document.createElement('script'); s.async = true;
-            s.src = 'https://contextual.media.net/dmedianet.js?cid=' + encodeURIComponent(w.cid);
-            document.head.appendChild(s);
-            var div = document.createElement('div'); div.id = 'mn-blog-a';
-            slot.style.minHeight = hgt + 'px'; slot.style.display = 'flex'; slot.style.justifyContent = 'center'; slot.style.margin = '1.5em 0';
-            slot.appendChild(div);
-            window._mNHandle.queue.push(function () { try { window._mNDetails.loadTag('mn-blog-a', size, u.crid); } catch (e) {} });
-        }).catch(function () {});
-    } catch (e) {}
+        var w = cfg && cfg.webAds, u = w && w.units && w.units.blog;
+        if (!u || (w.blogSkip || []).indexOf(slug) >= 0) return false;
+        var size = u.size || '300x250', hgt = +size.split('x')[1] || 250;
+        window._mNHandle = window._mNHandle || {}; window._mNHandle.queue = window._mNHandle.queue || [];
+        window.medianet_versionId = '3121199';
+        var s = document.createElement('script'); s.async = true;
+        s.src = 'https://contextual.media.net/dmedianet.js?cid=' + encodeURIComponent(w.cid);
+        document.head.appendChild(s);
+        var div = document.createElement('div'); div.id = 'mn-blog-a';
+        slot.style.minHeight = hgt + 'px'; slot.style.display = 'flex'; slot.style.justifyContent = 'center'; slot.style.margin = '1.5em 0';
+        slot.appendChild(div);
+        window._mNHandle.queue.push(function () { try { window._mNDetails.loadTag('mn-blog-a', size, u.crid); } catch (e) {} });
+        return true;
+    } catch (e) { return false; }
+};
+
+/* House ads on the blog (app #487, owner 10 Oct 2026: "in blog, we will
+   advertise our app pages"): where no paid ad took a slot, one of our own
+   cards - the app's pages, or other articles, or both (admin -> Money ->
+   House ads, `houseAds.blog`). The article's slots A, B, C (gen/ads.mjs) and
+   the theme's end slot (post.hbs), each only if the admin keeps it on.
+   NOTHING MOVES: a slot is filled only while it is below the screen, so the
+   card arrives where nobody is looking yet; one the reader has already
+   reached stays empty. Each card is counted like the app's house cards
+   (POST /api/metrics/showings, place "blog") while half of it is on screen;
+   our own browsers send nothing. */
+var pqHouse = function (cfg, paidA) {
+    var h = cfg && cfg.houseAds && cfg.houseAds.blog;
+    if (!h) return;
+    var here = location.pathname.replace(/^\/blog\/?|\/$/g, '');
+    var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (x) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[x]; }); };
+    var slots = [];
+    h.slots.forEach(function (k) {
+        if (k === 'a' && paidA) return;
+        document.querySelectorAll('.pchq-ad[data-ad="' + k + '"]').forEach(function (el) { if (!el.childNodes.length) slots.push({ el: el, key: k }); });
+    });
+    if (!slots.length) return;
+    var appCards = (h.cards || []).map(function (c) {
+        return { id: c.card, href: c.to + (c.to.indexOf('?') >= 0 ? '&' : '?') + 'ref=proclubshq.com', art: c.art, pos: c.position || '50% 20%',
+            tag: 'Pro Clubs HQ', title: c.title, line: c.line, cta: c.cta };
+    });
+    var draw = function (articles) {
+        var arts = (articles || []).filter(function (a) { return a.slug && a.slug !== here && (!h.articles || !h.articles.length || h.articles.indexOf(a.slug) >= 0); })
+            .map(function (a) {
+                return { id: 'blog', variant: a.slug, href: '/blog/' + a.slug + '/', art: a.image || '/assets/locker-room.webp', pos: '50% 30%',
+                    tag: 'Guide', title: a.title, line: a.section || 'Guides', cta: 'Read the guide' };
+            });
+        var pool = [];
+        if (h.fill === 'articles') pool = arts.length ? arts : appCards;
+        else if (h.fill === 'both') { for (var i = 0; i < Math.max(arts.length, appCards.length); i++) { if (appCards[i]) pool.push(appCards[i]); if (arts[i]) pool.push(arts[i]); } }
+        else pool = appCards;
+        if (!pool.length) return;
+        var seed = 1; try { seed = +sessionStorage.getItem('pchq_house_seed') || 0; if (!seed) { seed = 1 + Math.floor(Math.random() * 9973); sessionStorage.setItem('pchq_house_seed', String(seed)); } } catch (e) {}
+        var internal = false; try { internal = localStorage.getItem('pchq_internal') === '1'; } catch (e) {}
+        var used = {}, last = -1e9, gap = Math.max(700, window.innerHeight || 800);
+        slots.forEach(function (s, n) {
+            var top = s.el.getBoundingClientRect().top;
+            // Below the screen, or nothing: a card above or on screen would push the words the reader is on.
+            if (top < (window.innerHeight || 800)) return;
+            // Never two cards within a screen of each other (slot C and the end slot often touch).
+            if (top - last < gap) return;
+            last = top;
+            var c = pool[(seed + n * 7 + here.length) % pool.length];
+            for (var t = 0; t < pool.length && used[c.id + (c.variant || '')]; t++) c = pool[(seed + n * 7 + here.length + t + 1) % pool.length];
+            used[c.id + (c.variant || '')] = 1;
+            s.el.innerHTML = '<a class="pq-hc" href="' + esc(c.href) + '" data-card="' + esc(c.id) + '">'
+                + '<img src="' + esc(c.art) + '" alt="" width="120" height="120" loading="lazy" decoding="async" style="object-position:' + esc(c.pos) + '">'
+                + '<span><em>' + esc(c.tag) + '</em><b>' + esc(c.title) + '</b><small>' + esc(c.line) + '</small><i>' + esc(c.cta) + '</i></span></a>';
+            if (internal || !('IntersectionObserver' in window)) return;
+            var row = { what: 'card', id: c.id, surface: 'blog', index: n, dwellMs: 0,
+                variant: (c.variant ? c.variant : s.key + ' · ' + here).slice(0, 80), member: (function () { try { return !!localStorage.getItem('clubs_auth_token'); } catch (e) { return false; } })() };
+            var since = 0, seen = false, sent = false;
+            var send = function () {
+                if (!seen || sent) return;
+                if (since) { row.dwellMs += Date.now() - since; since = 0; }
+                sent = true;
+                try {
+                    var hex = function (k) { return Array.from(crypto.getRandomValues(new Uint8Array(k)), function (x) { return x.toString(16).padStart(2, '0'); }).join(''); };
+                    var sid = sessionStorage.getItem('pchq_sid'); if (!sid) { sid = hex(8); sessionStorage.setItem('pchq_sid', sid); }
+                    var body = JSON.stringify({ sid: sid, vid: localStorage.getItem('pchq_vid') || null, items: [row] });
+                    if (navigator.sendBeacon) navigator.sendBeacon('/api/metrics/showings', new Blob([body], { type: 'application/json' }));
+                    else fetch('/api/metrics/showings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+                } catch (e) {}
+            };
+            new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (e.isIntersecting && e.intersectionRatio >= 0.5) { seen = true; if (!since) since = Date.now(); }
+                    else if (since) { row.dwellMs += Date.now() - since; since = 0; }
+                });
+            }, { threshold: [0, 0.5] }).observe(s.el);
+            s.el.querySelector('a').addEventListener('click', function () { row.tapped = true; seen = true; send(); });
+            addEventListener('pagehide', send);
+            document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') send(); });
+        });
+    };
+    if (h.fill === 'app') draw([]);
+    else fetch('/api/guides', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { draw(d && d.articles); }).catch(function () { draw([]); });
+};
+
+(function () {
+    if (!document.querySelector('.pchq-ad')) return;
+    pqConfig().then(function (cfg) { var paid = pqMedianet(cfg); pqHouse(cfg, paid); });
 })();

@@ -25,7 +25,9 @@ export function swapTheme(html) {
   const js = read('assets', 'built', 'pchq.js');
 
   // 1. the header partial
-  let a = html.indexOf('<header class="pq-head"');
+  // 1.1.0's (the app's header, #485) or the older pchq one: both end at the partial's <noscript>.
+  let a = html.indexOf('<header class="pq-ah"');
+  if (a < 0) a = html.indexOf('<header class="pq-head"');
   let b = -1;
   if (a >= 0) {
     const end = '</noscript>';
@@ -51,5 +53,8 @@ export function swapTheme(html) {
     ? html.replace(jsTag, () => `<script>${js}</script>`)
     : html.replace('</body>', () => `<script>${js}</script>\n</body>`);
   if (!/class="[^"]*\bpq\b/.test(html)) html = html.replace(/<body class="/, '<body class="pq ');
+  // post.hbs's end slot (app #487), on a page rendered by an older post.hbs:
+  // just inside the end of the post's content section.
+  if (!/data-ad="end"/.test(html)) html = html.replace(/(<\/section>\s*(?:<section class="article-comments[\s\S]*?<\/section>\s*)?<\/article>)/, '<div class="pchq-ad" data-ad="end"></div>$1');
   return html;
 }
