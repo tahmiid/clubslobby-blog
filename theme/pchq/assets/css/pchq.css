@@ -3,61 +3,104 @@
    (assets/blog-dark.css in the blog repo), so switching back to Casper
    changes the chrome and nothing else.
    px only: Casper sets html{font-size:62.5%}. */
-:root{--pq-head-h:58px}
+:root{--pq-head-h:60px}
 
-/* ── header ─────────────────────────────────────────────────────────────── */
-.pq-head{position:sticky;top:0;z-index:960;background:rgba(4,4,10,.95);border-bottom:1px solid rgba(255,255,255,.1);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
-.pq-head-in{display:flex;align-items:center;gap:14px;max-width:1200px;margin:0 auto;height:58px;padding:0 max(4vmin,20px)}
-.pq-logo{display:flex;align-items:center;gap:10px;flex:none;text-decoration:none;color:#f2f3f7}
-.pq-logo img{width:34px;height:34px;border-radius:50%;display:block}
-.pq-logo span{font:900 16px/1 Archivo,system-ui,sans-serif;letter-spacing:.02em;white-space:nowrap;color:#f2f3f7}
-.pq-logo span i{font-style:normal;color:#2DE2C5}
-.pq-dock{display:flex;gap:2px;margin-left:6px}
-.pq-di{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;color:#9aa0ad;font:700 11px/1 Manrope,system-ui,sans-serif;padding:7px 10px;border-radius:10px;cursor:pointer;white-space:nowrap}
-.pq-di svg{width:21px;height:21px;display:block}
-.pq-di:hover{color:#fff;background:rgba(255,255,255,.06)}
-.pq-di.on{color:#2DE2C5}
-.pq-sp{flex:1}
-.pq-search{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:none;border:0;color:#f2f3f7;cursor:pointer;padding:0}
-.pq-search:hover{background:rgba(255,255,255,.08)}
-.pq-search svg{width:19px;height:19px;fill:currentColor}
-.pq-cta{flex:none;background:linear-gradient(90deg,#2c55e8,#7b2ff7);color:#fff!important;text-decoration:none;padding:10px 16px;border-radius:999px;font:800 13px/1 Manrope,system-ui,sans-serif;white-space:nowrap}
-@media(max-width:940px){.pq-logo span{display:none}}
+/* ── the app's header, Guides sheet and dock (#485, 10 Oct 2026) ─────────
+   Copies of the app's (ClubsUI AppHeader / AuthControl / GuidesControl /
+   BottomDock), measured from the running app: one suite. Markup:
+   ops/app-chrome.mjs; behaviour: assets/js/pchq-nav.js. Change the app's,
+   then these. */
+.pq-ah,.pq-gs,.pq-adk,.pq-talk{font-family:Manrope,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.pq-ah{position:fixed;left:0;right:0;top:var(--pq-bar-h,0px);z-index:960;height:60px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:12px 16px;background:#06060b}
+.pq-ah-home{flex:none;display:block;line-height:0}
+.pq-ah-home img{width:36px;height:36px;display:block;user-select:none}
+.pq-ah-sp{flex:1}
+.pq-ah-doors{flex:none;display:flex;align-items:center;gap:2px}
+.pq-ad{position:relative;flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:0;padding:0;background:none;color:rgba(255,255,255,.7);cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:background-color .15s,color .15s}
+.pq-ad:hover{background:rgba(255,255,255,.1);color:#fff}
+.pq-ad.on{color:#fff}
+.pq-ad svg{display:block}
+.pq-ad-held{visibility:hidden}
+.pq-ad-dot{position:absolute;right:2px;top:2px;width:10px;height:10px;border-radius:50%;background:#3DF28B;box-shadow:0 0 0 2px #08080e}
+.pq-ad-n{position:absolute;right:-2px;top:-2px;min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;border-radius:9px;background:#E8452F;color:#fff;font:800 10.5px/18px Manrope,system-ui,sans-serif;text-align:center}
+.pq-acct{flex:none;margin-left:4px;display:flex;align-items:center;justify-content:center;width:30px;height:30px;box-sizing:border-box;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:rgba(12,12,20,.55);color:rgba(255,255,255,.75);text-decoration:none;overflow:hidden}
+.pq-acct:hover{border-color:rgba(255,255,255,.6);color:#fff}
+.pq-acct img{width:100%;height:100%;object-fit:cover;display:block}
+.pq-acct b{font:800 12px/1 Archivo,Manrope,sans-serif;color:rgba(255,255,255,.9)}
+@media(min-width:1180px){.pq-ah{height:72px;padding:16px 28px}.pq-ah-home img{width:40px;height:40px}.pq-ah-doors{gap:8px}}
+/* the page starts under the header (the app's 60px spacer), the dock's room at the foot */
+.viewport{padding-top:60px;padding-bottom:calc(66px + max(9px,env(safe-area-inset-bottom)))}
+@media(min-width:1180px){.viewport{padding-top:72px}}
+html{scroll-padding-top:calc(72px + var(--pq-bar-h,0px))}
+#pchq-consent{bottom:calc(72px + env(safe-area-inset-bottom))!important}
 
-/* ── menus ──────────────────────────────────────────────────────────────── */
-.pq-scrim{position:fixed;inset:0;z-index:940;background:rgba(0,0,0,.55);display:none}
-.pq-scrim.open{display:block}
-.pq-menu{position:fixed;left:0;right:0;top:59px;z-index:950;display:none;background:#0b0d14;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px rgba(0,0,0,.6);
-  max-height:calc(100vh - 80px);overflow:auto;overscroll-behavior:contain;font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
-.pq-menu.open{display:block}
-.pq-mp{display:none;max-width:1200px;margin:0 auto;padding:18px max(4vmin,20px) 24px}
-.pq-mp.on{display:block}
-.pq-mh{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:14px}
-.pq-mh b{font:900 20px/1.2 Archivo,system-ui,sans-serif;color:#f2f3f7}
-.pq-mh span{color:#9aa0ad;font-size:14px;line-height:1.4}
+/* the Guides sheet: the app's BottomSheet (520px, centred on a big screen) */
+.pq-gs-scrim{position:fixed;inset:0;z-index:980;background:rgba(0,0,0,.8)}
+.pq-gs{position:fixed;left:0;right:0;bottom:0;z-index:990;margin:0 auto;max-width:520px;max-height:85vh;max-height:85dvh;display:flex;flex-direction:column;box-sizing:border-box;background:#0c0c14;color:#fff;border:1px solid rgba(255,255,255,.1);border-bottom:0;border-radius:10px 10px 0 0;transform:translateY(0);transition:transform .25s ease}
+.pq-gs[hidden],.pq-gs-scrim[hidden]{display:none}
+.pq-gs-grab{flex:none;margin:10px auto 0;width:40px;height:4px;border-radius:999px;background:rgba(255,255,255,.2)}
+.pq-gs-head{flex:none;padding:8px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}
+.pq-gs-head h2{margin:0!important;font:800 15px/1.25 Archivo,Manrope,sans-serif!important;letter-spacing:-.01em;color:#fff!important}
+.pq-gs-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:12px 16px calc(env(safe-area-inset-bottom) + 16px)}
+.pq-gs-find{display:flex;align-items:center;gap:10px;height:44px;padding:0 16px;margin:0;border-radius:999px;background:rgba(255,255,255,.13);color:rgba(255,255,255,.55)}
+.pq-gs-find svg{flex:none}
+.pq-gs .pq-gs-find input{flex:1;min-width:0;height:100%;margin:0;padding:0;border:0!important;background:none!important;box-shadow:none!important;outline:none;color:#fff;font:400 16px/1 Manrope,system-ui,sans-serif;-webkit-appearance:none;appearance:none}
+.pq-gs-find input::placeholder{color:rgba(255,255,255,.55)}
+.pq-gs-tabs{display:flex;gap:3px;margin-top:12px}
+.pq-gs-tab{flex:1 1 auto;min-width:0;height:36px;padding:0 4px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font:600 11.5px/1 Manrope,system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.pq-gs-tab:hover{background:rgba(255,255,255,.16)}
+.pq-gs-tab.on{background:#fff;color:#000}
+.pq-gs-blurb{margin:12px 0 0!important;font-size:13px!important;line-height:1.4!important;color:rgba(255,255,255,.5)!important}
+.pq-gs-g{margin-top:16px}
+.pq-gs-g h3{margin:0!important;font:700 11px/1.3 Manrope,system-ui,sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase;color:rgba(255,255,255,.45)!important}
+.pq-gs-r{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.08);text-decoration:none!important;color:#fff}
+.pq-gs-g h3+.pq-gs-r{margin-top:0}
+.pq-gs-r span{flex:1;min-width:0}
+.pq-gs-r b{display:block;font:700 15px/1.375 Manrope,system-ui,sans-serif;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pq-gs-r small{display:block;margin-top:2px;font-size:13px;line-height:1.3;color:rgba(255,255,255,.5)}
+.pq-gs-r svg{flex:none;color:rgba(255,255,255,.35)}
+.pq-gs-r.cur b{color:#2DE2C5}
+.pq-gs-all{margin-top:16px}
+
+/* the dock: the app's BottomDock, the phone's on every screen (430px centred from 640px) */
+.pq-adk{position:fixed;left:0;right:0;bottom:0;z-index:950;display:flex;padding:6px 4px max(9px,env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(6,6,11,.9),rgba(6,6,11,.6));-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+@media(min-width:640px){.pq-adk{left:50%;right:auto;width:430px;transform:translateX(-50%)}}
+.pq-dk{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0;color:rgba(255,255,255,.5);text-decoration:none!important;-webkit-tap-highlight-color:transparent;transition:color .3s}
+.pq-dk svg{display:block}
+.pq-dk span{font:600 10.5px/1 Manrope,system-ui,sans-serif;white-space:nowrap}
+.pq-dk i{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:0}
+.pq-dk.on{color:#fff}
+.pq-dk-make b{position:relative;display:flex;align-items:center;justify-content:center;width:46px;height:30px}
+.pq-dk-make s{position:absolute;top:0;bottom:0;width:100%;border-radius:9px;text-decoration:none}
+.pq-dk-make s:first-child{left:-3px;background:#2DE2C5}
+.pq-dk-make s:nth-child(2){right:-3px;background:#5d96ff}
+.pq-dk-make em{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:9px;background:#fff;color:#08080e}
+
+/* the discussion at a post's end (#485): the count, the two newest, the way in */
+.gh-content .pq-talk{margin:2.4em 0 0;padding:18px 0 4px;border-top:1px solid rgba(255,255,255,.1);color:#fff}
+.gh-content .pq-talk h2{margin:0 0 2px!important;font:900 22px/1.2 Archivo,Manrope,sans-serif!important;color:#fff!important}
+.pq-talk-n{margin:0 0 12px!important;font-size:13px!important;color:rgba(255,255,255,.5)!important}
+.pq-talk-c{display:flex;align-items:flex-start;gap:10px;margin:0 0 14px}
+.pq-talk-f{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);overflow:hidden;font:800 12px/1 Archivo,Manrope,sans-serif}
+.pq-talk-f img{width:100%;height:100%;object-fit:cover}
+.pq-talk-m{flex:1;min-width:0}
+.pq-talk-w{font-size:12.5px;font-weight:800;color:#fff}
+.pq-talk-w.anon{color:rgba(255,255,255,.6)}
+.pq-talk-t{margin-left:6px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.4)}
+.gh-content .pq-talk-b{margin:2px 0 0!important;font-size:14px!important;line-height:1.35!important;color:rgba(255,255,255,.9)!important;white-space:pre-wrap;word-break:break-word}
+.pq-talk-h{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:4px;font-size:11px;font-weight:700;color:rgba(255,255,255,.45)}
+.gh-content a.pq-talk-go{display:flex;align-items:center;justify-content:center;height:48px;margin:6px 0 0;border-radius:999px;background:#fff;color:#000!important;text-decoration:none!important;font:800 15px/1 Manrope,system-ui,sans-serif;box-shadow:none}
+
+/* inside the store apps (#485): what the stores' rules keep out of an app -
+   an outside payment link - is taken out by pchq-nav.js; the footer's own
+   coffee link goes here too */
+html.pq-in-app .pq-support{display:none!important}
+
+/* the hub's groups (they were the old menus' look) */
 .pq-mgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
 .pq-mg h5{margin:0 0 6px;font:800 11px/1.3 Manrope,system-ui,sans-serif!important;letter-spacing:.12em;color:#9aa0ad!important;text-transform:uppercase}
 .pq-mg a{display:block;text-decoration:none;padding:7px 0;font:700 15px/1.3 Manrope,system-ui,sans-serif;color:#cfd3dc}
 .pq-mg a:hover,.pq-mg a.cur{color:#2DE2C5}
-
-/* ── a phone: the header scrolls away, the dock sits at the bottom ──────── */
-@media(max-width:760px){
-  :root{--pq-head-h:0px}
-  .pq-head{position:static}
-  .pq-head-in{height:52px;gap:8px;padding:0 16px}
-  .pq-logo span{display:inline}
-  .pq-dock{position:fixed;left:0;right:0;bottom:0;z-index:960;margin:0;justify-content:space-around;gap:0;background:rgba(8,9,15,.97);border-top:1px solid rgba(255,255,255,.12);
-    padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
-  .pq-di{flex:1;min-width:0;padding:5px 2px;font-size:10px}
-  .pq-menu{top:auto;bottom:calc(58px + env(safe-area-inset-bottom));max-height:72vh;border:1px solid rgba(255,255,255,.12);border-bottom:0;border-radius:18px 18px 0 0}
-  .pq-mp{padding:16px 16px 20px}
-  .pq-mgs{grid-template-columns:1fr 1fr;gap:16px 14px}
-  .pq-cta{padding:9px 13px}
-  .article-excerpt{font-size:15.5px;line-height:1.45}
-  /* room for the dock under the footer, and the cookie bar above the dock */
-  .viewport{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
-  #pchq-consent{bottom:calc(72px + env(safe-area-inset-bottom))!important}
-}
 
 /* ── Casper, adjusted ───────────────────────────────────────────────────── */
 /* The dark CSS's header scrim (inset -24px -40px) made every article 40px
@@ -90,14 +133,6 @@
 body.pq::before{background:#04040a!important}
 .article-byline,.article-tag{display:none}
 .article-header::before{display:none}
-/* The dock was barely visible on a phone. */
-@media(max-width:760px){
-  .pq-dock{background:#10131c;border-top:1px solid rgba(45,226,197,.45);box-shadow:0 -10px 30px rgba(0,0,0,.6)}
-  .pq-di{color:#d3d7e0;font-size:10.5px}
-  .pq-di svg{width:23px;height:23px}
-}
-/* "Make a Sweeper Keeper" must fit beside the logo on a phone. */
-@media(max-width:480px){.pq-logo span{display:none!important}.pq-cta{max-width:62vw;overflow:hidden;text-overflow:ellipsis}}
 /* The announcement bar is off for now (owner, 5 Oct). Delete this line to bring it back. */
 #announcement-bar-root,.gh-announcement-bar{display:none!important}
 .pq-support{display:inline-block;margin-top:10px;color:#9aa0ae;font-size:13px;text-decoration:none}
@@ -164,11 +199,7 @@ a.pq-gp b{font-size:16px;font-weight:700}
   .ph-cols .pq-mg{columns:2}
   .ph-azl{columns:1}
 }
-.pq-mh .pq-all{margin-left:auto;font:800 13px/1.4 Manrope,system-ui,sans-serif;color:#2DE2C5;text-decoration:none;white-space:nowrap}
 /* the app bar sticks until closed (owner, 7 Oct 2026); --pq-bar-h is set by pchq-nav.js */
 .pq-appbar{position:sticky;top:0;z-index:970}
-.pq-head{top:var(--pq-bar-h,0px)}
-.pq-menu{top:calc(59px + var(--pq-bar-h,0px))}
 html{scroll-padding-top:var(--pq-bar-h,0px)}
-@media(max-width:760px){.pq-menu{top:auto}}
 @media(min-width:761px){.pq-appbar{justify-content:center}.pq-appbar-tx{flex:0 1 auto}}

@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import path from 'node:path';
+import { swapTheme } from './theme-swap.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
 const T = path.join(ROOT, 'theme', 'pchq');
@@ -36,22 +37,9 @@ if (src.startsWith('/')) {
   html = readFileSync(path.join(DIR, `${src}.html`), 'utf8');
   name = nameArg ?? src;
 }
-const logo = (html.match(/<a class="gh-head-logo[^>]*>\s*<img src="([^"]+)"/) ?? [])[1] ?? '';
-const nav = readFileSync(path.join(T, 'partials', 'pchq-nav.hbs'), 'utf8')
-  .replace(/\{\{!--[\s\S]*?--\}\}\n?/g, '')
-  .replace(/\{\{@site\.url\}\}/g, 'https://proclubshq.com/blog')
-  .replace(/\{\{@site\.title\}\}/g, 'Pro Clubs HQ')
-  .replace(/\{\{#if @site\.logo\}\}([\s\S]*?)\{\{\/if\}\}/, logo ? '$1' : '')
-  .replace(/\{\{@site\.logo\}\}/g, logo)
-  .replace(/\{\{> "icons\/search"\}\}/, readFileSync(path.join(T, 'partials', 'icons', 'search.hbs'), 'utf8'));
-if (/\{\{/.test(nav)) throw new Error('the nav partial has a handlebars tag this preview does not know');
-const a = html.indexOf('<header id="gh-head"');
-const b = html.indexOf('</header>', a);
-if (a < 0 || b < 0) throw new Error('page has no Casper header to replace');
-html = html.slice(0, a) + nav + html.slice(b + '</header>'.length);
-html = html.replace('</head>', `<style id="pchq-theme">${readFileSync(path.join(T, 'assets', 'built', 'pchq.css'), 'utf8')}</style>\n</head>`)
-  .replace(/<body class="/, '<body class="pq ')
-  .replace('</body>', `<script>${readFileSync(path.join(T, 'assets', 'js', 'pchq-nav.js'), 'utf8')}</script>\n</body>`);
+// The swap itself is ops/theme-swap.mjs (shared with the app's lane, #485):
+// the theme's header partial and built CSS/JS, whatever version the page had.
+html = swapTheme(html);
 const out = path.join(DIR, `${name}-t.html`);
 writeFileSync(out, html);
 console.log(`${out}: ${html.length} bytes · http://localhost:8766/${name}-t.html`);

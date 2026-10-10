@@ -85,5 +85,5 @@ r.querySelectorAll('.ph-sec').forEach(function(s){var hit=0;s.querySelectorAll('
 s.querySelectorAll('.pq-mg').forEach(function(g){g.hidden=q&&!g.querySelector('a:not([hidden])');});s.hidden=q&&!hit;if(hit)any=true;});n.hidden=!q||any;});})();</script>
 `;
   const links = [...new Set([...html.matchAll(/href="(\/blog\/[^"#]*)"/g)].map((m) => m[1]))];
-  return { html, posts: posts.length, players: players.length, skills: skills.length, links };
+  return { html, posts: posts.length, players: players.length, skills: skills.length, links, list: posts, playerHrefs: players.map(([, h]) => h), skillHrefs: skills.map(([, h]) => h) };
 }

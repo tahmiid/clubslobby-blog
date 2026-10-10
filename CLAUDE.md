@@ -200,6 +200,34 @@ $N ops/link-sweep.mjs out/a18.html …        # then ops/cheatsheets-deploy.sh p
   a10 still carry it until their next regenerate. Do not run
   `ops/ab-inject.mjs` again: its list still names the sheets' files.
 
+## The app's header and dock on the blog (#485, theme 1.1.0) — built 10 Oct 2026, not live
+
+The owner, 10 Oct 2026: the blog and the app "should look like one single
+suite". Every blog page draws the APP's header (HQ mark, Lobby, Companion,
+Guides, Controls, Inbox, the account) and the APP's dock (Home, Find Builds,
+Builder, Meta, My HQ); the old icon dock's six menus are the **Guides sheet**
+(the header's book). The plan, every path and the reasons: ClubsUI
+`docs/BLOG_APP.md` (the app repo) - read it before touching any of this.
+
+- **`ops/app-chrome.mjs` draws them** - copies of the app's components,
+  measured from the running app. Change the app's header or dock, change
+  these. Links into the app are relative and carry `?ref=proclubshq.com`;
+  Home is `/?dock=home` (a first landing on `/` would open Builder).
+- **`gen/site-nav.mjs` is still the ONE list**: the sheet's sections, and
+  `ops/guides-index.mjs` writes it with every live article to
+  `out/guides-index.json` - the app's Find and Guides sheet read it (deploy:
+  DEPLOYMENT.md "The blog theme"). `--app` also copies it into the app.
+- **Every post ends with a discussion** (pchq-nav.js): the count, the two
+  newest, "Join the discussion" -> the app's `/discussion/<slug>` (the reel's
+  comments: replies, hearts, report). A cheat sheet's own #450 thread gives
+  its place up to it - same thread. Threads live in the app's API.
+- **Inside the store apps the blog opens in the app** (the app's ShellBridge),
+  so the theme strips every outside payment link there (store rules:
+  Buy Me a Coffee, PayPal, Patreon, Ko-fi) - `html.pq-in-app`.
+- **On a lane**: the app's dev server serves `/blog` with this theme swapped
+  in (`ops/theme-swap.mjs`, used by its `src/setupProxy.js` and by
+  `ops/preview-theme.mjs`) - build the theme first.
+
 ## The theme: `pchq` (theme/pchq) — LIVE 5 Oct 2026
 
 - **The tip (Buy Me a Coffee) is placed by the theme's script**

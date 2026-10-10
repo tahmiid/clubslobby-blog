@@ -732,6 +732,25 @@ ops/cheatsheets-rollback.sh theme                              # back to Casper:
   (must still carry `noindex, follow`), `/blog/about/`, a 404; then a phone
   width and a desktop width in a browser. 5 Oct: all 200, tag and author still
   noindex.
+- **Since 1.1.0 (#485, the app's header and dock, 10 Oct 2026) the theme
+  needs the APP first**: its header calls the app's API (`/api/auth/me`,
+  `/api/lobby/status`, `/api/notifications`), every post's discussion block
+  calls `/api/guides/<slug>/comments` and links `/discussion/<slug>` - all
+  served only by an app build with #485. Order: **app deploy (with migration
+  0144) → the index → the theme**:
+
+  ```bash
+  # the index the app reads (ops/guides-index.mjs, written by build-theme)
+  scp out/guides-index.json clubs:/var/www/proclubslobby/content/files/data/guides-index.json
+  ssh clubs 'chown ghost:ghost /var/www/proclubslobby/content/files/data/guides-index.json; chmod 644 /var/www/proclubslobby/content/files/data/guides-index.json; curl -s -o /dev/null -w "%{http_code}\n" https://proclubshq.com/blog/content/files/data/guides-index.json'
+  ```
+
+  Rebuild and re-copy the index after publishing a new page (the app's Find
+  and Guides sheet list what it lists; a page it does not list has no
+  discussion). **Rollback of 1.1.0 alone**: upload
+  `out/pchq-1.0.20-rollback.zip` (a copy is in the vault,
+  `backups/blog-theme/`) under the name `pchq` and activate it - the header
+  and menus of 5-9 Oct come back; the app's side needs nothing.
 - **The whole rollback** (theme and the 13 cheat sheets) is
   `ops/cheatsheets-rollback.sh`; its copy of the old pages is
   `/root/publish/bak-20261005-cheatsheets` on the box. Run on production
